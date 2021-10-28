@@ -26,7 +26,7 @@ def convert(input_path, output_path=None, frame_offset=1):
         lines_in = f.readlines()
     
     with open(output_path, 'w') as f:
-        for line in lines_in[-1:]:
+        for line in lines_in:
             line_ele = line.split(" ")
             line_out = "%s %s %d %s %s %s %s -1 -1\n" % (
                 line_ele[0], line_ele[1],
