@@ -16,7 +16,11 @@ def reformat(pathSrc):
 
 	for track in os.listdir(resultPath):
 		for tracklet in os.listdir(resultPath + track):
-			shutil.copy(galPath + tracklet + "/car.jpg", pathDst + track + "_" + tracklet + ".jpg")
+			try:
+				shutil.copy(galPath + tracklet + "/car.jpg", pathDst + track + "_" + tracklet + ".jpg")
+			except:
+				print("\n\n***\nFailed to copy: ",galPath, tracklet, "/car.jpg","\nto: ",
+				pathDst, track, "_",tracklet,".jpg", "\n***\n\n")
 
 def reformat_shenzen(pathSrc):
 	pathDst = pathSrc + "reformatted_results/"
@@ -26,7 +30,11 @@ def reformat_shenzen(pathSrc):
 
 	for track in os.listdir(resultPath):
 		for tracklet in os.listdir(resultPath + track):
-			shutil.copy(resultPath + track + "/" + tracklet + "/car.jpg", pathDst + track + "_" + tracklet + ".jpg")
+			try:
+				shutil.copy(resultPath + track + "/" + tracklet + "/car.jpg", pathDst + track + "_" + tracklet + ".jpg")
+			except:
+				print("\n\n***\nFailed to copy: ", resultPath, track, "/", tracklet,
+				"\nto: ",pathDst, track, "_", tracklet, ".jpg", "\n***\n\n")
 
 if __name__ == '__main__':
     args = get_args()
