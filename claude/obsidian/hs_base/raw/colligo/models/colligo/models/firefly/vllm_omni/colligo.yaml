@@ -1,0 +1,35 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.firefly.clio_common[public]
+  - pydantic
+
+# vLLM-Omni: image-to-image editing via vLLM 0.18 + vLLM-Omni 0.18.
+# Uses PyTorch 2.10+cu128 + FlashInfer backend.
+custom_pyenv: vllm_omni_0_18_0
+
+# Increase request timeout for long video generation
+# Default is 300s (5 min), but videos with many frames can take 10-20 minutes
+request:
+  client_http_total_request_timeout_s: 1200  # 20 minutes
+
+deps:
+- colligo.data
+- colligo.models.common.adapter_utils
+- deep-gemm
+- flashinfer-cubin
+- flashinfer-jit-cache
+- flashinfer-python
+- guidance
+- imageio
+- numpy
+- opentelemetry-propagator-b3
+- pillow
+- torch
+- torchvision
+- vllm
+- vllm-omni
+- xgrammar

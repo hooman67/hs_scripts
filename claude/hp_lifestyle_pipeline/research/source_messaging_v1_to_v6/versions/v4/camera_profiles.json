@@ -1,0 +1,2425 @@
+{
+  "version": "camera-v2-draft-2026-10-22-r3",
+  "status": "draft_for_text_evaluation",
+  "runtime_image_analysis": false,
+  "fixed_presets_user_confirmed": true,
+  "unknown_tag_policy": "conservative_tight_no_props_no_room_details; debug marks unknown; never guess angle from an unregistered tag",
+  "aliases": {
+    "laptop_Back_CloseUp": "laptop_BackCloseUp",
+    "laptop_Back_CloseUp90": "laptop_BackCloseUp90",
+    "laptop_Back_Left_CloseUp": "laptop_BackLeftCloseUp",
+    "laptop_Back_Left_Medium": "laptop_BackLeftMedium",
+    "laptop_Back_Left_MediumLow": "laptop_BackLeftMediumLow",
+    "laptop_Back_Left_Wide": "laptop_BackLeftWide",
+    "laptop_Back_Medium": "laptop_BackMedium",
+    "laptop_Back_Right_CloseUp": "laptop_BackRightCloseUp",
+    "laptop_Back_Right_Medium": "laptop_BackRightMedium",
+    "laptop_Back_Right_MediumLow": "laptop_BackRightMediumLow",
+    "laptop_Back_Right_Wide": "laptop_BackRightWide",
+    "laptop_Back_Wide": "laptop_BackWide",
+    "laptop_Front_CloseUp": "laptop_FrontCloseUp",
+    "laptop_Front_CloseUpHigh": "laptop_FrontCloseUpHigh",
+    "laptop_Front_Left_CloseUp": "laptop_FrontLeftCloseUp",
+    "laptop_Front_Left_Medium": "laptop_FrontLeftMedium",
+    "laptop_Front_Left_MediumHigh": "laptop_FrontLeftMediumHigh",
+    "laptop_Front_Left_Wide": "laptop_FrontLeftWide",
+    "laptop_Front_Medium": "laptop_FrontMedium",
+    "laptop_Front_MediumHigh": "laptop_FrontMediumHigh",
+    "laptop_Front_Right_CloseUp": "laptop_FrontRightCloseUp",
+    "laptop_Front_Right_CloseUpLow": "laptop_FrontRightCloseUpLow",
+    "laptop_Front_Right_Medium": "laptop_FrontRightMedium",
+    "laptop_Front_Right_Wide": "laptop_FrontRightWide",
+    "laptop_Front_Wide": "laptop_FrontWide",
+    "laptop_Front_WideLow": "laptop_FrontWideLow",
+    "laptop_Left_CloseUp": "laptop_LeftCloseUp",
+    "laptop_Left_CloseUp90": "laptop_LeftCloseUp90",
+    "laptop_Left_Wide": "laptop_LeftWide",
+    "laptop_Left_WideHigh": "laptop_LeftWideHigh",
+    "laptop_Right_CloseUp": "laptop_RightCloseUp",
+    "laptop_Right_CloseUp90": "laptop_RightCloseUp90",
+    "laptop_Right_Medium": "laptop_RightMedium",
+    "laptop_Right_MediumHigh": "laptop_RightMediumHigh",
+    "laptop_Right_Wide": "laptop_RightWide",
+    "laptop_Right_WideLow": "laptop_RightWideLow",
+    "laptop_Top_Front_CloseUp": "laptop_TopFrontCloseUp",
+    "laptop_Top_Front_Left_Wide": "laptop_TopFrontLeftWide",
+    "laptop_Top_Front_Medium": "laptop_TopFrontMedium",
+    "laptop_Top_Front_Right_Wide": "laptop_TopFrontRightWide",
+    "printer_Back_CloseUp": "printer_BackCloseUp",
+    "printer_Back_CloseUp90": "printer_BackCloseUp90",
+    "printer_Back_Left_CloseUp": "printer_BackLeftCloseUp",
+    "printer_Back_Left_Medium": "printer_BackLeftMedium",
+    "printer_Back_Left_MediumLow": "printer_BackLeftMediumLow",
+    "printer_Back_Left_Wide": "printer_BackLeftWide",
+    "printer_Back_Medium": "printer_BackMedium",
+    "printer_Back_Right_CloseUp": "printer_BackRightCloseUp",
+    "printer_Back_Right_Medium": "printer_BackRightMedium",
+    "printer_Back_Right_MediumLow": "printer_BackRightMediumLow",
+    "printer_Back_Right_Wide": "printer_BackRightWide",
+    "printer_Back_Wide": "printer_BackWide",
+    "printer_Front_CloseUp": "printer_FrontCloseUp",
+    "printer_Front_CloseUpHigh": "printer_FrontCloseUpHigh",
+    "printer_Front_Left_CloseUp": "printer_FrontLeftCloseUp",
+    "printer_Front_Left_Medium": "printer_FrontLeftMedium",
+    "printer_Front_Left_MediumHigh": "printer_FrontLeftMediumHigh",
+    "printer_Front_Left_Wide": "printer_FrontLeftWide",
+    "printer_Front_Medium": "printer_FrontMedium",
+    "printer_Front_MediumHigh": "printer_FrontMediumHigh",
+    "printer_Front_Right_CloseUp": "printer_FrontRightCloseUp",
+    "printer_Front_Right_CloseUpLow": "printer_FrontRightCloseUpLow",
+    "printer_Front_Right_Medium": "printer_FrontRightMedium",
+    "printer_Front_Right_Wide": "printer_FrontRightWide",
+    "printer_Front_Wide": "printer_FrontWide",
+    "printer_Front_WideLow": "printer_FrontWideLow",
+    "printer_Left_CloseUp": "printer_LeftCloseUp",
+    "printer_Left_CloseUp90": "printer_LeftCloseUp90",
+    "printer_Left_Wide": "printer_LeftWide",
+    "printer_Left_WideHigh": "printer_LeftWideHigh",
+    "printer_Right_CloseUp": "printer_RightCloseUp",
+    "printer_Right_CloseUp90": "printer_RightCloseUp90",
+    "printer_Right_Medium": "printer_RightMedium",
+    "printer_Right_MediumHigh": "printer_RightMediumHigh",
+    "printer_Right_Wide": "printer_RightWide",
+    "printer_Right_WideLow": "printer_RightWideLow",
+    "printer_Top_Front_CloseUp": "printer_TopFrontCloseUp",
+    "printer_Top_Front_Left_Wide": "printer_TopFrontLeftWide",
+    "printer_Top_Front_Medium": "printer_TopFrontMedium",
+    "printer_Top_Front_Right_Wide": "printer_TopFrontRightWide",
+    "printer_CAM_review": "printer_CAMReview",
+    "miniPC_Back_CloseUp": "miniPC_BackCloseUp",
+    "miniPC_Back_CloseUp90": "miniPC_BackCloseUp90",
+    "miniPC_Back_Left_CloseUp": "miniPC_BackLeftCloseUp",
+    "miniPC_Back_Left_Medium": "miniPC_BackLeftMedium",
+    "miniPC_Back_Left_MediumLow": "miniPC_BackLeftMediumLow",
+    "miniPC_Back_Left_Wide": "miniPC_BackLeftWide",
+    "miniPC_Back_Medium": "miniPC_BackMedium",
+    "miniPC_Back_Right_CloseUp": "miniPC_BackRightCloseUp",
+    "miniPC_Back_Right_Medium": "miniPC_BackRightMedium",
+    "miniPC_Back_Right_MediumLow": "miniPC_BackRightMediumLow",
+    "miniPC_Back_Right_Wide": "miniPC_BackRightWide",
+    "miniPC_Back_Wide": "miniPC_BackWide",
+    "miniPC_Front_CloseUp": "miniPC_FrontCloseUp",
+    "miniPC_Front_CloseUpHigh": "miniPC_FrontCloseUpHigh",
+    "miniPC_Front_Left_CloseUp": "miniPC_FrontLeftCloseUp",
+    "miniPC_Front_Left_Medium": "miniPC_FrontLeftMedium",
+    "miniPC_Front_Left_MediumHigh": "miniPC_FrontLeftMediumHigh",
+    "miniPC_Front_Left_Wide": "miniPC_FrontLeftWide",
+    "miniPC_Front_Medium": "miniPC_FrontMedium",
+    "miniPC_Front_MediumHigh": "miniPC_FrontMediumHigh",
+    "miniPC_Front_Right_CloseUp": "miniPC_FrontRightCloseUp",
+    "miniPC_Front_Right_CloseUpLow": "miniPC_FrontRightCloseUpLow",
+    "miniPC_Front_Right_Medium": "miniPC_FrontRightMedium",
+    "miniPC_Front_Right_Wide": "miniPC_FrontRightWide",
+    "miniPC_Front_Wide": "miniPC_FrontWide",
+    "miniPC_Front_WideLow": "miniPC_FrontWideLow",
+    "miniPC_Left_CloseUp": "miniPC_LeftCloseUp",
+    "miniPC_Left_CloseUp90": "miniPC_LeftCloseUp90",
+    "miniPC_Left_Wide": "miniPC_LeftWide",
+    "miniPC_Left_WideHigh": "miniPC_LeftWideHigh",
+    "miniPC_Right_CloseUp": "miniPC_RightCloseUp",
+    "miniPC_Right_CloseUp90": "miniPC_RightCloseUp90",
+    "miniPC_Right_Medium": "miniPC_RightMedium",
+    "miniPC_Right_MediumHigh": "miniPC_RightMediumHigh",
+    "miniPC_Right_Wide": "miniPC_RightWide",
+    "miniPC_Right_WideLow": "miniPC_RightWideLow",
+    "miniPC_Top_Front_CloseUp": "miniPC_TopFrontCloseUp",
+    "miniPC_Top_Front_Left_Wide": "miniPC_TopFrontLeftWide",
+    "miniPC_Top_Front_Medium": "miniPC_TopFrontMedium",
+    "miniPC_Top_Front_Right_Wide": "miniPC_TopFrontRightWide",
+    "miniPC_CAM_review": "miniPC_CAMReview"
+  },
+  "profiles": [
+    {
+      "tag": "laptop_BackCloseUp",
+      "source_camera_name": "Back_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.38161892,
+        0.62019179
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackCloseUp90",
+      "source_camera_name": "Back_CloseUp90",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.42398071,
+        0.69532945
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackLeftCloseUp",
+      "source_camera_name": "Back_Left_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.23065355,
+        0.36129761
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackLeftMedium",
+      "source_camera_name": "Back_Left_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.09110006,
+        0.14387004
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackLeftMediumLow",
+      "source_camera_name": "Back_Left_MediumLow",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "low",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.06020779,
+        0.09246318
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackLeftWide",
+      "source_camera_name": "Back_Left_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.05403985,
+        0.0866038
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackMedium",
+      "source_camera_name": "Back_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.11083476,
+        0.17988756
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackRightCloseUp",
+      "source_camera_name": "Back_Right_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.23802185,
+        0.38402642
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackRightMedium",
+      "source_camera_name": "Back_Right_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.12325033,
+        0.19331021
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackRightMediumLow",
+      "source_camera_name": "Back_Right_MediumLow",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "low",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.15766398,
+        0.25129022
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackRightWide",
+      "source_camera_name": "Back_Right_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.03239441,
+        0.0516883
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_BackWide",
+      "source_camera_name": "Back_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "level",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.0563914,
+        0.09159682
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontCloseUp",
+      "source_camera_name": "Front_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.39186944,
+        0.60181851
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontCloseUpHigh",
+      "source_camera_name": "Front_CloseUpHigh",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "high",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.32500373,
+        0.51058621
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontLeftCloseUp",
+      "source_camera_name": "Front_Left_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.27031962,
+        0.42408583
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontLeftMedium",
+      "source_camera_name": "Front_Left_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.1456994,
+        0.22847493
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontLeftMediumHigh",
+      "source_camera_name": "Front_Left_MediumHigh",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "high",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.17751058,
+        0.28076681
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontLeftWide",
+      "source_camera_name": "Front_Left_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.04453362,
+        0.06875102
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontMedium",
+      "source_camera_name": "Front_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.18036397,
+        0.27926975
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontMediumHigh",
+      "source_camera_name": "Front_MediumHigh",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "high",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.14246114,
+        0.22312927
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontRightCloseUp",
+      "source_camera_name": "Front_Right_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.30007935,
+        0.46883816
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Use a surface-and-light scene to accommodate the tightest reviewed framing for this type; no SKU lookup is available."
+      ]
+    },
+    {
+      "tag": "laptop_FrontRightCloseUpLow",
+      "source_camera_name": "Front_Right_CloseUpLow",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "low",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.25115289,
+        0.39146084
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontRightMedium",
+      "source_camera_name": "Front_Right_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.14523994,
+        0.22698636
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontRightWide",
+      "source_camera_name": "Front_Right_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.03500197,
+        0.0541687
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontWide",
+      "source_camera_name": "Front_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.0745714,
+        0.11576165
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_FrontWideLow",
+      "source_camera_name": "Front_WideLow",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "low",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.06062486,
+        0.0920088
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_LeftCloseUp",
+      "source_camera_name": "Left_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.13771396,
+        0.21940952
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_LeftCloseUp90",
+      "source_camera_name": "Left_CloseUp90",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.08732775,
+        0.13978916
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_LeftWide",
+      "source_camera_name": "Left_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.05025567,
+        0.07884047
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_LeftWideHigh",
+      "source_camera_name": "Left_WideHigh",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "high",
+      "max_local_props": 3,
+      "max_background_details": 1,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.08854675,
+        0.14008755
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_RightCloseUp",
+      "source_camera_name": "Right_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.1426256,
+        0.22827996
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_RightCloseUp90",
+      "source_camera_name": "Right_CloseUp90",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.0860104,
+        0.13759359
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_RightMedium",
+      "source_camera_name": "Right_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.09393311,
+        0.1496582
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_RightMediumHigh",
+      "source_camera_name": "Right_MediumHigh",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "high",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.12099711,
+        0.19367811
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_RightWide",
+      "source_camera_name": "Right_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.0322876,
+        0.05118815
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_RightWideLow",
+      "source_camera_name": "Right_WideLow",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "low",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.02862549,
+        0.04475742
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_TopFrontCloseUp",
+      "source_camera_name": "Top_Front_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "top_oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.30658298,
+        0.4899648
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_TopFrontLeftWide",
+      "source_camera_name": "Top_Front_Left_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "max_local_props": 3,
+      "max_background_details": 0,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.07074822,
+        0.11319139
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_TopFrontMedium",
+      "source_camera_name": "Top_Front_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "top_oblique",
+      "max_local_props": 2,
+      "max_background_details": 0,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.15558539,
+        0.24786207
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "laptop_TopFrontRightWide",
+      "source_camera_name": "Top_Front_Right_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "max_local_props": 3,
+      "max_background_details": 0,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 4,
+      "observed_alpha_occupancy_range": [
+        0.0878635,
+        0.14043511
+      ],
+      "source_approval_status": "customer_approved_user_confirmed",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackCloseUp",
+      "source_camera_name": "Back_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackCloseUp90",
+      "source_camera_name": "Back_CloseUp90",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackLeftCloseUp",
+      "source_camera_name": "Back_Left_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackLeftMedium",
+      "source_camera_name": "Back_Left_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackLeftMediumLow",
+      "source_camera_name": "Back_Left_MediumLow",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "low",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackLeftWide",
+      "source_camera_name": "Back_Left_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackMedium",
+      "source_camera_name": "Back_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackRightCloseUp",
+      "source_camera_name": "Back_Right_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackRightMedium",
+      "source_camera_name": "Back_Right_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackRightMediumLow",
+      "source_camera_name": "Back_Right_MediumLow",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "low",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackRightWide",
+      "source_camera_name": "Back_Right_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_BackWide",
+      "source_camera_name": "Back_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "level",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontCloseUp",
+      "source_camera_name": "Front_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontCloseUpHigh",
+      "source_camera_name": "Front_CloseUpHigh",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "high",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontLeftCloseUp",
+      "source_camera_name": "Front_Left_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontLeftMedium",
+      "source_camera_name": "Front_Left_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontLeftMediumHigh",
+      "source_camera_name": "Front_Left_MediumHigh",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "high",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontLeftWide",
+      "source_camera_name": "Front_Left_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontMedium",
+      "source_camera_name": "Front_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontMediumHigh",
+      "source_camera_name": "Front_MediumHigh",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "high",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontRightCloseUp",
+      "source_camera_name": "Front_Right_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontRightCloseUpLow",
+      "source_camera_name": "Front_Right_CloseUpLow",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "low",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontRightMedium",
+      "source_camera_name": "Front_Right_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontRightWide",
+      "source_camera_name": "Front_Right_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontWide",
+      "source_camera_name": "Front_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_FrontWideLow",
+      "source_camera_name": "Front_WideLow",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "low",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_LeftCloseUp",
+      "source_camera_name": "Left_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_LeftCloseUp90",
+      "source_camera_name": "Left_CloseUp90",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_LeftWide",
+      "source_camera_name": "Left_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_LeftWideHigh",
+      "source_camera_name": "Left_WideHigh",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "high",
+      "max_local_props": 3,
+      "max_background_details": 1,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_RightCloseUp",
+      "source_camera_name": "Right_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Reviewed printer render shows a near-level side face with little visible top surface; keep local support description minimal."
+      ]
+    },
+    {
+      "tag": "printer_RightCloseUp90",
+      "source_camera_name": "Right_CloseUp90",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_RightMedium",
+      "source_camera_name": "Right_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_RightMediumHigh",
+      "source_camera_name": "Right_MediumHigh",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "high",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_RightWide",
+      "source_camera_name": "Right_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_RightWideLow",
+      "source_camera_name": "Right_WideLow",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "low",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_TopFrontCloseUp",
+      "source_camera_name": "Top_Front_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "top_oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_TopFrontLeftWide",
+      "source_camera_name": "Top_Front_Left_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "max_local_props": 3,
+      "max_background_details": 0,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_TopFrontMedium",
+      "source_camera_name": "Top_Front_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "top_oblique",
+      "max_local_props": 2,
+      "max_background_details": 0,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_TopFrontRightWide",
+      "source_camera_name": "Top_Front_Right_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "max_local_props": 3,
+      "max_background_details": 0,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests."
+      ]
+    },
+    {
+      "tag": "printer_CAMReview",
+      "source_camera_name": "CAM_review",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "development_assumption_actual_customer_approval_pending",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Opaque review tag; use tight profile by explicit offline mapping, not name interpretation."
+      ]
+    },
+    {
+      "tag": "miniPC_BackCloseUp",
+      "source_camera_name": "Back_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackCloseUp90",
+      "source_camera_name": "Back_CloseUp90",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackLeftCloseUp",
+      "source_camera_name": "Back_Left_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackLeftMedium",
+      "source_camera_name": "Back_Left_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackLeftMediumLow",
+      "source_camera_name": "Back_Left_MediumLow",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "low",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackLeftWide",
+      "source_camera_name": "Back_Left_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackMedium",
+      "source_camera_name": "Back_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackRightCloseUp",
+      "source_camera_name": "Back_Right_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackRightMedium",
+      "source_camera_name": "Back_Right_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackRightMediumLow",
+      "source_camera_name": "Back_Right_MediumLow",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "low",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackRightWide",
+      "source_camera_name": "Back_Right_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_BackWide",
+      "source_camera_name": "Back_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "level",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontCloseUp",
+      "source_camera_name": "Front_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontCloseUpHigh",
+      "source_camera_name": "Front_CloseUpHigh",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "high",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontLeftCloseUp",
+      "source_camera_name": "Front_Left_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontLeftMedium",
+      "source_camera_name": "Front_Left_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontLeftMediumHigh",
+      "source_camera_name": "Front_Left_MediumHigh",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "high",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontLeftWide",
+      "source_camera_name": "Front_Left_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontMedium",
+      "source_camera_name": "Front_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontMediumHigh",
+      "source_camera_name": "Front_MediumHigh",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "high",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontRightCloseUp",
+      "source_camera_name": "Front_Right_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontRightCloseUpLow",
+      "source_camera_name": "Front_Right_CloseUpLow",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "low",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontRightMedium",
+      "source_camera_name": "Front_Right_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontRightWide",
+      "source_camera_name": "Front_Right_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontWide",
+      "source_camera_name": "Front_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontWideLow",
+      "source_camera_name": "Front_WideLow",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "low",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_LeftCloseUp",
+      "source_camera_name": "Left_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_LeftCloseUp90",
+      "source_camera_name": "Left_CloseUp90",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_LeftWide",
+      "source_camera_name": "Left_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_LeftWideHigh",
+      "source_camera_name": "Left_WideHigh",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "high",
+      "max_local_props": 3,
+      "max_background_details": 1,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_RightCloseUp",
+      "source_camera_name": "Right_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_RightCloseUp90",
+      "source_camera_name": "Right_CloseUp90",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_RightMedium",
+      "source_camera_name": "Right_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_RightMediumHigh",
+      "source_camera_name": "Right_MediumHigh",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "high",
+      "max_local_props": 2,
+      "max_background_details": 1,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_RightWide",
+      "source_camera_name": "Right_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_RightWideLow",
+      "source_camera_name": "Right_WideLow",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "low",
+      "max_local_props": 3,
+      "max_background_details": 2,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_TopFrontCloseUp",
+      "source_camera_name": "Top_Front_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "top_oblique",
+      "max_local_props": 2,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_TopFrontLeftWide",
+      "source_camera_name": "Top_Front_Left_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "max_local_props": 3,
+      "max_background_details": 0,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_TopFrontMedium",
+      "source_camera_name": "Top_Front_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "top_oblique",
+      "max_local_props": 2,
+      "max_background_details": 0,
+      "people_policy": "optional_partial_activity",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_TopFrontRightWide",
+      "source_camera_name": "Top_Front_Right_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "max_local_props": 3,
+      "max_background_details": 0,
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    },
+    {
+      "tag": "miniPC_CAMReview",
+      "source_camera_name": "CAM_review",
+      "device_family": "miniPC",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 1,
+      "max_background_details": 0,
+      "people_policy": "omit",
+      "review_basis": "offline_visual_review_of_supplied_views; density limits are design hypotheses, not measured object capacity",
+      "observed_asset_count": 1,
+      "source_approval_status": "user_confirmed_device_type_corrected_source_label",
+      "notes": [
+        "Blank alpha pixels are not guaranteed usable tabletop or room space; do not convert occupancy into a prop quota.",
+        "Preserve selected view even where its rendered product looks smaller than the camera name suggests.",
+        "Opaque review tag; use tight profile by explicit offline mapping, not name interpretation.",
+        "Offline type calibration covers one supplied miniPC; preserve its existing scale and do not interpret small silhouette coverage as permission to fill the frame."
+      ]
+    }
+  ],
+  "source_catalog": "research/camera_aware/data/camera_catalog.json",
+  "limitations": [
+    "Runtime contains only source messaging and ProductType_CameraName; no product names or images.",
+    "A type profile conservatively covers its reviewed reference views; it does not infer the exact SKU from marketing copy.",
+    "Regular supplied views are 16:9; review views can have other dimensions. Never choose a new crop or aspect ratio from these notes.",
+    "Density limits are offline visual design hypotheses, not measured usable tabletop capacity.",
+    "Device types and camera names are versioned registry entries; new types or views require explicit offline review."
+  ],
+  "device_types": [
+    "laptop",
+    "printer",
+    "miniPC"
+  ]
+}

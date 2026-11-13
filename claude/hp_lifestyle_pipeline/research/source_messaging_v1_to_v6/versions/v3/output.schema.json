@@ -1,0 +1,331 @@
+{
+  "type": "object",
+  "properties": {
+    "prompts": {
+      "type": "array",
+      "minItems": 30,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "Home",
+              "Office",
+              "Education",
+              "Gaming"
+            ]
+          },
+          "subsetting": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "source_relevance_score": {
+            "type": "integer"
+          },
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "source_grounded",
+              "source_adjacent",
+              "creative_departure"
+            ]
+          },
+          "score_components": {
+            "type": "object",
+            "properties": {
+              "setting": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  10,
+                  20,
+                  30
+                ]
+              },
+              "activity": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  10,
+                  20,
+                  30
+                ]
+              },
+              "materials": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  5,
+                  10,
+                  15,
+                  20
+                ]
+              },
+              "use_context": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  5,
+                  10,
+                  15,
+                  20
+                ]
+              }
+            },
+            "required": [
+              "setting",
+              "activity",
+              "materials",
+              "use_context"
+            ],
+            "additionalProperties": false
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "creative_departures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "visual_signature": {
+            "type": "object",
+            "properties": {
+              "surface": {
+                "type": "string"
+              },
+              "light": {
+                "type": "string"
+              },
+              "local_props": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "background_details": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "people": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "surface",
+              "light",
+              "local_props",
+              "background_details",
+              "people"
+            ],
+            "additionalProperties": false
+          },
+          "camera_omissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "environment",
+          "subsetting",
+          "text",
+          "source_relevance_score",
+          "relationship",
+          "score_components",
+          "evidence_ids",
+          "explanation",
+          "creative_departures",
+          "visual_signature",
+          "camera_omissions"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "debug": {
+      "type": "object",
+      "properties": {
+        "source_evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "message_id": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "message_id",
+              "path",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "ksp_mappings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ksp_id": {
+                "type": "string"
+              },
+              "explanation": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ksp_id",
+              "explanation"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "value_proposition": {
+          "type": "object",
+          "properties": {
+            "explanation": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "explanation"
+          ],
+          "additionalProperties": false
+        },
+        "input_assessment": {
+          "type": "string"
+        },
+        "count_explanation": {
+          "type": "string"
+        },
+        "used_fallback": {
+          "type": "boolean"
+        },
+        "ignored_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "diversity_summary": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "camera": {
+          "type": "object",
+          "properties": {
+            "requested_tag": {
+              "type": "string"
+            },
+            "resolved_tag": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "device_type": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "profile_version": {
+              "type": "string"
+            },
+            "resolution": {
+              "type": "string",
+              "enum": [
+                "exact",
+                "alias",
+                "unknown",
+                "missing"
+              ]
+            },
+            "framing": {
+              "type": "string"
+            },
+            "elevation": {
+              "type": "string"
+            },
+            "max_local_props": {
+              "type": "integer"
+            },
+            "max_background_details": {
+              "type": "integer"
+            },
+            "people_policy": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "requested_tag",
+            "resolved_tag",
+            "device_type",
+            "profile_version",
+            "resolution",
+            "framing",
+            "elevation",
+            "max_local_props",
+            "max_background_details",
+            "people_policy"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "source_evidence",
+        "ksp_mappings",
+        "value_proposition",
+        "input_assessment",
+        "count_explanation",
+        "used_fallback",
+        "ignored_fields",
+        "diversity_summary",
+        "limitations",
+        "camera"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "prompts",
+    "debug"
+  ],
+  "additionalProperties": false
+}

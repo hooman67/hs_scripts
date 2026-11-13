@@ -1,0 +1,23 @@
+visibility: public
+deps:
+- colligo.data
+- colligo.httpx
+- colligo.models.build
+- colligo.models.external_services.openai
+- defusedxml
+- numpy
+- onnxruntime-gpu
+- pymupdf
+- pytest
+- python-pptx
+- requests-toolbelt
+- urllib3
+exclude:
+- tooling
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.external_services.openai[public]
+  - pydantic

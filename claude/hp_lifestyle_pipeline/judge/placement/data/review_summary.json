@@ -1,0 +1,35 @@
+{
+  "title": "Prototype result: useful reach warnings, alignment remains unreliable",
+  "conclusion": "Not ready for automatic image acceptance. Scores and verdicts are provisional.",
+  "findings": [
+    "18 final target images: 8 development images and 10 held-out images. Five fixed visual examples are shown separately; their three development case families are excluded from target evaluation.",
+    "On held-out data, all three specifically attributed reach complaints were detected. One of those comments also identified an alignment problem that the judge missed (3 of 4 mapped defect types detected across those three comments).",
+    "Of two other held-out alignment comments with no named variant, one had a matching issue detected in at least one candidate; the other was missed in both. This is comparison-set evidence, not exact-image agreement.",
+    "Held-out verdicts: 7 pass, 3 review, 0 fail. Row13 V14 received 92.5/pass despite a human alignment complaint. Row26 received 100/pass in both versions despite the comparison-level alignment complaint.",
+    "No human absolute placement ratings or reliable negative labels exist in these snapshots. Do not interpret these counts as accuracy, sensitivity over production data, specificity or calibrated threshold performance."
+  ],
+  "weights": [
+    {
+      "component": "Support and scenario",
+      "weight": "20%"
+    },
+    {
+      "component": "Access and usability",
+      "weight": "30%"
+    },
+    {
+      "component": "Orientation and furniture alignment",
+      "weight": "20%"
+    },
+    {
+      "component": "Scale and perspective",
+      "weight": "15%"
+    },
+    {
+      "component": "Contact and physical integration",
+      "weight": "15%"
+    }
+  ],
+  "scoring_note": "Severity0\u20134 converts to component scores100,75,50,25,0. Weighted average excludes unobservable components; coverage and confidence are separate. A clear major issue vetoes an overall pass. Partial observations do not certify hidden details.",
+  "limitations": "Small purposive pilot; three exact-target held-out comment records, no gold absolute scores, possible shared device/view families. V14 scene-stage provenance is supported by code/report lineage but lacks a complete raw-PNG artifact chain. Confidence labels are model-derived, not calibrated probabilities. GPT-5.5 high with fixed visual examples averaged52.9seconds per held-out image in this run."
+}

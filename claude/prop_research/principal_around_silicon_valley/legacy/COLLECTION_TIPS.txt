@@ -1,0 +1,346 @@
+================================================================================
+PENINSULA HOME PRICE DATA COLLECTION - TIPS & BEST PRACTICES
+================================================================================
+
+Tips for accurate, efficient data collection from Zillow, Redfin, and MLS sources
+
+================================================================================
+ZILLOW DATA COLLECTION TIPS
+================================================================================
+
+1. FINDING MEDIAN PRICES
+   - After arriving at Zillow page for a town, look for:
+     * "Median home price" statistic (often in top-right or search results)
+     * "Zestimate" for median property value
+     * "Market data" or "Market stats" section
+   - AVOID: Average prices (can be skewed by luxury homes)
+   - NOTE: Zillow shows LISTING prices by default; check "Sold" tab for actual sale prices
+
+2. FILTERING FOR 3BR HOMES
+   - Click "More filters" or "Advanced search"
+   - Set "Beds" = 3
+   - This will filter results but may not always show median specifically
+   - If 3BR median isn't shown, note overall median and add "3BR filter: not available"
+
+3. PRICE TIMING
+   - Zillow updates listing data daily
+   - Sold data (actual transactions) can lag by 1-2 weeks
+   - Record the date you accessed the page (Zillow shows this in footer)
+   - Higher confidence: Data from "Sold" tab (actual transactions)
+   - Medium confidence: "List" prices (asking prices, not actual sales)
+
+4. RELIABILITY NOTES
+   - Zillow prices are based on active & recent listings
+   - They don't include expired or withdrawn listings
+   - Best for current market snapshot
+   - June (mid-year) is typically normal market activity
+
+5. TIPS FOR CLEANER DATA
+   - Screenshot or write down the exact median figure shown
+   - Don't estimate or round - write exactly what's displayed
+   - If it shows "$1.95M" write "$1,950,000" (convert properly)
+   - Note if it's a "median" or "estimated median" (slightly different)
+   - Record the date/time accessed (e.g., "2026-06-22 2:30 PM PT")
+
+6. RED FLAGS
+   - Very old data (more than 3 months old) = lower confidence
+   - Unusual spikes (>20% from historical trend) = verify with second source
+   - No data shown for town = may need direct agent contact
+   - Zillow shows "new homes only" = verify it's showing all homes
+
+================================================================================
+REDFIN DATA COLLECTION TIPS
+================================================================================
+
+1. NAVIGATING REDFIN MARKET PAGES
+   - Redfin market pages are cleaner than Zillow
+   - Look for clear "Market Data" section showing:
+     * Median list price
+     * Median sale price
+     * Average list price
+     * Average sale price
+   - All data is usually visible without scrolling
+
+2. FILTERING FOR 3BR HOMES
+   - Left sidebar has "Beds" filter
+   - Select exactly "3 bed"
+   - Page will refresh and show 3BR-specific data
+   - IMPORTANT: Screenshot or note both overall AND 3BR median for comparison
+
+3. UNDERSTANDING REDFIN'S DATA
+   - "Median Sale Price" = Most reliable (actual transactions)
+   - "Median List Price" = What homes are listed for (often higher than sale)
+   - Redfin data is from MLS, which is the most authoritative source
+   - Data is typically updated weekly, sometimes daily
+
+4. MARKET TRENDS SECTION
+   - Scroll down to see "Market Trends"
+   - Shows price trends over months/years
+   - Useful for assessing if market is appreciating/declining
+   - Record trend direction (e.g., "+5% YoY" or "-2% YoY")
+
+5. CONFIDENCE ASSESSMENT
+   - Median Sale Price from Redfin = HIGHEST confidence (actual closed sales)
+   - Based on real MLS data from Bay Area MLS
+   - Usually the most reliable single source
+   - If Zillow and Redfin median prices differ significantly, Redfin usually wins
+
+6. TIPS FOR CLEAN DATA
+   - Redfin prices are clearly displayed with no ambiguity
+   - Write down BOTH list and sale prices
+   - Sale price is more important for your analysis
+   - Note the "As of" date shown (usually current week)
+   - Save the URL after you get data (good for verification later)
+
+7. RED FLAGS
+   - "Insufficient data" message = too few 3BR sales = use overall median instead
+   - Very low price = may be foreclosures/short sales (distressed properties)
+   - Sudden drops = market shift (worth noting)
+   - No data for 3BR specifically = market may be too small
+
+================================================================================
+MLS & COUNTY ASSESSOR DATA COLLECTION
+================================================================================
+
+1. COUNTY ASSESSOR APPROACH
+   - San Mateo County Assessor: https://www.smc-ca.gov/assessor
+   - Use their online property search tool
+   - Search by ZIP code for each town
+   - Look for "Sold" properties in the last 3-6 months
+   - Note sale prices and property details (bedrooms, sqft)
+   - Calculate median manually if <50 sales shown
+   - Highest confidence source (government/official records)
+
+2. MLS DIRECT ACCESS
+   - SFRMLS (Bay Area MLS): https://www.sfrmls.com/
+   - Requires agent access for full data
+   - But some market reports are public
+   - Contact local real estate agents (template provided)
+   - Ask for: "Recent sales statistics for 3BR homes in [town]"
+   - Agents usually provide: median, average, DOM, list-to-sale ratio
+
+3. LOCAL REAL ESTATE AGENTS
+   - Every town has active agents
+   - They maintain current MLS data
+   - Email template provided in peninsula_market_research_guide.md
+   - Most will respond within 24-48 hours
+   - Ask for: "3BR median sale price, current market conditions, market trend"
+
+4. DATA FROM AGENTS
+   - Usually comes in email with market snapshot
+   - Shows 3BR-specific data (what you need!)
+   - Often includes: # of sales, DOM, absorption rate
+   - May include comparison to previous months/years
+   - This is HIGH confidence data (professionals have real data)
+
+5. TIPS FOR AGENT OUTREACH
+   - Personalize email (use agent's name if possible)
+   - Be specific about data needed
+   - Mention you're seriously considering the area
+   - Ask about 3BR homes specifically (your budget focus)
+   - Offer to call if they prefer (some prefer conversation)
+   - Send email mid-week (not Monday/Friday) for faster response
+
+================================================================================
+COMMON PITFALLS TO AVOID
+================================================================================
+
+1. PRICE CONFUSION
+   WRONG: Writing "1950k" when you mean $1.95M
+   RIGHT: Write "$1,950,000" or be clear about format
+   → Use consistent format throughout
+
+2. BEDROOM FILTERING
+   WRONG: Using overall median when 3BR data is available
+   RIGHT: Always filter for 3BR if possible
+   → Your budget and needs are 3BR-specific
+
+3. STALE DATA
+   WRONG: Mixing 2024 data with 2025-2026 data
+   RIGHT: Check date on all sources; prioritize current data
+   → Record date for every data point
+
+4. MEDIAN VS AVERAGE CONFUSION
+   WRONG: Recording average price as median
+   RIGHT: Clearly distinguish (median = middle point, average = mean)
+   → Median is more useful for real estate (less affected by luxury outliers)
+
+5. LISTING VS SOLD PRICE
+   WRONG: Using list prices as if they're actual sales prices
+   RIGHT: Prioritize sold/transaction prices
+   → Listing prices are often 5-10% higher than actual sales
+
+6. SOURCE MIXING
+   WRONG: Averaging Zillow estimate, Redfin list price, and MLS sold price
+   RIGHT: Compare similar data types or note the type in analysis
+   → Apples to apples comparison
+
+7. INCOMPLETE CROSS-REFERENCING
+   WRONG: Trusting single source completely
+   RIGHT: Get 2-3 sources per town
+   → Multiple sources catch data errors
+
+8. DATA QUALITY ISSUES
+   WRONG: Not verifying unusual numbers
+   RIGHT: Flag prices that seem off trend and investigate
+   → Example: If 2024 was $1.8M and 2026 suddenly shows $900K, verify
+
+9. TIMEZONE/TIMING ISSUES
+   WRONG: Comparing week-old Zillow with current Redfin
+   RIGHT: Try to collect all sources within 1-2 days
+   → Markets can shift week to week
+
+10. MISSING CONTEXT
+    WRONG: Recording price without any source/date info
+    RIGHT: Always record: Price + Source + Date + Confidence
+    → Context is critical for verification later
+
+================================================================================
+DATA QUALITY CHECKLIST FOR EACH ENTRY
+================================================================================
+
+Before recording a price, verify:
+
+[ ] Source is clearly identified (Zillow, Redfin, MLS, Agent, Assessor)
+[ ] Price is for 3BR homes (or noted as "overall median" if not)
+[ ] Price is in USD and properly formatted ($X,XXX,XXX)
+[ ] Data is from 2025-2026 (or clearly marked as historical)
+[ ] Date accessed/published is recorded
+[ ] Data type is clear (median vs average, list vs sold, estimated vs actual)
+[ ] Price seems reasonable compared to historical trend (not 50% off/up)
+[ ] Source URL is saved/recorded if possible
+[ ] You understand what the price represents
+[ ] Confidence level can be justified (high/medium/low)
+
+If any check fails → investigate before recording
+
+================================================================================
+PRICE REASONABLENESS CHECK
+================================================================================
+
+Based on 2024 historical data (to validate 2025-2026 ranges):
+
+EXPECT APPROX 5-15% APPRECIATION year-over-year in Bay Area:
+
+San Carlos:     2024: ~$1.9M  →  2026 expect: $2.0M-$2.3M
+Belmont:        2024: ~$1.7M  →  2026 expect: $1.8M-$2.0M
+Foster City:    2024: ~$2.0M  →  2026 expect: $2.1M-$2.4M
+Burlingame:     2024: ~$1.8M  →  2026 expect: $1.9M-$2.2M
+Millbrae:       2024: ~$1.6M  →  2026 expect: $1.7M-$2.0M
+Pacifica:       2024: ~$1.2M  →  2026 expect: $1.3M-$1.5M
+Half Moon Bay:  2024: ~$1.1M  →  2026 expect: $1.2M-$1.4M
+Daly City:      2024: ~$1.0M  →  2026 expect: $1.1M-$1.3M
+
+RED FLAG CHECK:
+- If price is >50% above expected range: verify source and data type
+- If price is >50% below expected range: verify it's not distressed sales
+- Use these as sanity checks, not hard limits
+
+================================================================================
+TIME-SAVING TIPS
+================================================================================
+
+1. BATCH SIMILAR TOWNS
+   - Visit all 8 Zillow pages in one sitting (8-10 min total)
+   - Then visit all 8 Redfin pages (8-10 min total)
+   - Build momentum rather than switching back/forth
+
+2. ORGANIZE YOUR WORKSPACE
+   - Keep JSON template open in another window
+   - Paste data immediately after collecting each town
+   - Reduces re-reading/research
+
+3. USE BROWSER TABS
+   - Open Zillow and Redfin in separate tabs
+   - Have JSON template in third tab
+   - Quick switching between research and recording
+
+4. EMAIL AGENTS EARLY
+   - Send agent request emails while doing Zillow/Redfin work
+   - Agents will respond while you're collecting other data
+   - By the time you finish Zillow/Redfin, agent data might be incoming
+
+5. NOTES APPROACH
+   - Keep notes in text file while researching
+   - Transfer to JSON after you have all data
+   - Cleaner than trying to format JSON while still collecting
+
+6. SCREENSHOT METHOD (if high confidence needed)
+   - Take screenshot of each Zillow/Redfin market page
+   - Saves time (don't need to revisit)
+   - Proves data recency if questioned later
+   - Keep screenshots in separate folder with timestamps
+
+================================================================================
+DOCUMENTATION FOR FINAL REPORT
+================================================================================
+
+Record for each data point:
+
+SOURCE DOCUMENTATION:
+- [ ] Town name
+- [ ] Bedrooms (3BR)
+- [ ] Median price (exact figure)
+- [ ] Source name (Zillow, Redfin, MLS, Agent, Assessor)
+- [ ] Source URL (if available)
+- [ ] Date data was accessed/published
+- [ ] Data type (median vs average, list vs sold, estimated vs actual)
+- [ ] Confidence level and justification
+
+ANALYSIS NOTES:
+- [ ] Comparison to other sources (consistent? conflicting?)
+- [ ] Trend information (up/down year-over-year)
+- [ ] Any unusual factors noted
+- [ ] Red flags or verification notes
+- [ ] Price per sqft (if sqft data available)
+
+FOLLOW-UP:
+- [ ] Any sources that need follow-up
+- [ ] Questions to ask agents
+- [ ] Additional research needed
+
+================================================================================
+INTEGRATION WITH PROPERTY RESEARCH
+================================================================================
+
+After collecting data:
+
+Step 1: Update JSON template with all collected data
+Step 2: Calculate average median per town (if multiple sources)
+Step 3: Assess overall confidence (high/medium/low) per town
+Step 4: Use for Step 2 of property research: Neighborhood Identification & Scoring
+Step 5: Input median prices into neighborhood ranking matrix
+Step 6: Use for financial scenarios in Step 4: Purchase modeling
+Step 7: Cross-reference with final property options in Step 5
+
+This data directly feeds into your $2M property purchase decision framework.
+
+================================================================================
+STILL STUCK? TRY THESE:
+================================================================================
+
+Zillow page not loading prices:
+- Try different browser or clearing cache
+- Check if town is spelled correctly
+- Try searching by ZIP code instead of town name
+
+Redfin says "insufficient data for 3BR":
+- Use overall median instead (not ideal but better than nothing)
+- Contact local agent for 3BR-specific data
+- Note in confidence field that overall median was used
+
+Agent not responding:
+- Wait 48-72 hours before follow-up
+- Try emailing different agent from same town
+- Or call real estate office directly during business hours
+
+Data seems wrong:
+- Cross-check with second source immediately
+- Verify you filtered correctly (3BR, right town, right timeframe)
+- Check if it's list price vs sale price confusion
+- Contact agent to verify
+
+================================================================================
+Document Created: June 22, 2026
+Last Updated: June 22, 2026
+================================================================================

@@ -1,0 +1,1712 @@
+--- judge/pipeline_position_experiment/full160_v22_4_3/README.md
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/README.md
+@@ -1,44 +1,24 @@
+-# V22.4.3 full-160 candidate package
++# V22.4.3-R1 bounded-retry qualitative assembly
+ 
+-This isolated package is prepared for the exact frozen 160 V6.1 rows. It has not been launched.
++This is a distinct **wrapper-only** package for assembling the requested 160-row qualitative treatment. The Foundry pipeline, system prompts, geometry, guard, thresholds, V6.1 prompts, digital twins, cameras, and frozen Stage-A guides are byte-identical to V22.4.3.
+ 
+-V22.4.3 changes only product-guard dispatch for fixed-position RGBA inputs. When a fitted affine has structurally insufficient evidence—too few inliers or inadequate source landmark spread, quadrant coverage, or hull coverage—the guard preserves the affine metrics and reasons, then lets the already-frozen alpha-mask fallback decide. Reliable dense affine failures, including scale, rotation, shear, and excess translation, remain affine-only failures.
++The wrapper submits an initial immutable endpoint job for every row. It submits one additional immutable outer job only if the initial terminal error exactly equals:
+ 
+-No prompt, geometry policy, model-call policy, threshold, retry count, selection rule, or alpha-fallback implementation changed. Both system prompts are byte-identical to V22.4.2.
+-
+-The local wrapper retains the corrected standard Stage-B artifact contract from V22.4.2.1:
+-
+-- every Stage-B attempt requires its request and response artifact;
+-- a two-call Stage-B fallback additionally requires the raw second response;
+-- every image attempt requires its image request, raw image, and invariant audit;
+-- every provenance artifact is hash- and size-verified;
+-- `ours.png` must equal the guard-selected raw attempt; and
+-- planning artifacts are not required when `reference_blue=None`.
+-
+-## Isolation
+-
+-- Package: `/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3`
+-- Run root: `/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3/run`
+-- Local endpoint: `127.0.0.1:8131`
+-- tmux sessions: `hp-v2243-full160-endpoint`, `hp-v2243-full160-runner`
+-
+-## Offline verification
+-
+-```bash
+-root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3
+-PYTHONPATH="$root" python "$root/freeze_inputs.py" --verify-only
+-PYTHONPATH="$root" python "$root/preflight.py"
+-PYTHONPATH="$root" python -m pytest "$root/tests" -q -p no:cacheprovider
++```
++RuntimeError: pipeline error: ValueError: Product invariant guard rejected both image attempts; raw attempts and metrics kept.
+ ```
+ 
+-The freeze contains 160 rows in 16 banks of 10, exact record and prompt-export hashes, V22.4.3 pipeline hashes, and standard-wrapper source hashes.
++The first passing job is selected. Any other first-job error fails immediately. A second-job error fails immediately after preserving its audit. These completion results describe a bounded-retry **qualitative assembly protocol**. They are not native V22.4.3 per-job reliability.
+ 
+-## Deliberate launch command
++Each outer job uses a unique identity and directory:
+ 
+-Do not launch until the V22.4.3 replay evidence is accepted. The prepared command is:
+-
+-```bash
+-/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3/launch_tmux.sh
++```
++{row_slug}__outer_job_1
++{row_slug}__outer_job_2
+ ```
+ 
+-The runner is serial and fail-fast. It preserves the first error and never silently continues.
++For every terminal job the package preserves the canonical submission request, terminal status, request hash, artifact manifest hash, and success or failure provenance. Successful jobs preserve all Stage-B, raw image-attempt, and guard evidence. Failed jobs preserve every artifact that the pipeline produced before rejection.
++
++The runner is serial and fail-fast. Its progress file separately reports `first_job_pass`, `recovered_on_retry`, and `terminal_failure` counts and rates.
++
++Prepared only; not launched. No model calls were made during preparation.
+--- judge/pipeline_position_experiment/full160_v22_4_3/config.py
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/config.py
+@@ -1,4 +1,4 @@
+-"""Frozen paths and identifiers for the V22.4.3 full-160 candidate."""
++"""Frozen paths and identifiers for the V22.4.3-R1 assembly protocol."""
+ 
+ from pathlib import Path
+ 
+@@ -41,20 +41,27 @@
+     "unified-blue-scale-v22.4.3-unreliable-affine-alpha-fallback-"
+     "twin-camera-guide-only-no-edit-mask"
+ )
+-WRAPPER_VERSION = "v22.4.3-standard-stage-b-artifact-contract"
++WRAPPER_VERSION = "v22.4.3-r1-bounded-outer-job-retry-1"
++RETRYABLE_GUARD_ERROR = (
++    "RuntimeError: pipeline error: ValueError: Product invariant guard rejected both "
++    "image attempts; raw attempts and metrics kept."
++)
++MAX_OUTER_JOBS = 2
+ WRAPPER_SOURCE_NAMES = (
++    "common.py",
+     "config.py",
+     "endpoint.py",
+     "run_full160.py",
+     "preflight.py",
+     "freeze_inputs.py",
++    "build_grouped_report.py",
+ )
+ PROMPT_EXPORT_SHA256 = "adcb9edb2643e45acb0cb882cdc4d65b8c256a52d58ad4a44ddd9c235287b3cd"
+ 
+ REMOTE_CONTROL_ENDPOINT = (
+     "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev"
+ )
+-LOCAL_ENDPOINT = "http://127.0.0.1:8131"
++LOCAL_ENDPOINT = "http://127.0.0.1:8132"
+ 
+ SOURCE_HASHES = {
+     "hp3p/prompts/system_3p.txt": "bb02ad09f86a9a4aa4bdeac7c023d1ece0356ecef298853436af4781fa595ddf",
+@@ -67,7 +74,7 @@
+     "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3",
+ }
+ 
+-EXPERIMENT_ID = "hp-position-flex-v22.4.3-v6.1-full160"
++EXPERIMENT_ID = "hp-position-flex-v22.4.3-r1-qualitative-assembly-v6.1-full160"
+ S3_BUCKET = "foundry-hp-enterprise-adobe-assets"
+-S3_PREFIX = "hp_position_flex_v22_4_3_v6_1_20261106/grouped"
++S3_PREFIX = "hp_position_flex_v22_4_3_r1_qualitative_assembly_v6_1_20261106/grouped"
+ 
+--- judge/pipeline_position_experiment/full160_v22_4_3/endpoint.py
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/endpoint.py
+@@ -1,12 +1,10 @@
+ #!/usr/bin/env python3
+-"""Isolated serial API for the frozen V22.4.3 wrapper-only full-160 treatment.
+-
+-Selection, Stage-A geometry, and the rendered guide are replayed from each
+-original V6.1 record. Stage B and image generation are live. Every Stage-B
+-attempt, image attempt, affine-guard outcome, and selected artifact is retained
+-under this experiment's isolated run root.
++"""Serial endpoint for the audited V22.4.3-R1 qualitative assembly protocol.
++
++The Foundry pipeline and prompts are byte-identical to V22.4.3.  The only
++change is wrapper behavior: callers may create two immutable outer jobs for a
++row.  Each job retains its own raw pipeline directory and complete audit.
+ """
+-
+ from __future__ import annotations
+ 
+ import base64
+@@ -20,33 +18,18 @@
+ from pathlib import Path
+ 
+ import foundry_aws_gateway.llm
+-from common import (
+-    atomic_json,
+-    load_json,
+-    require,
+-    sha256_bytes,
+-    sha256_file,
+-    sha256_json,
+-)
++from common import atomic_json, load_json, require, sha256_bytes, sha256_file, sha256_json
+ from config import (
+-    FREEZE,
+-    INPUT_ROOT,
+-    JOB_ROOT,
+-    PACKAGE,
+-    PIPELINE_ROOT,
+-    PIPELINE_VERSION,
+-    RECORDS,
+-    REMOTE_CONTROL_ENDPOINT,
+-    SOURCE_HASHES,
+-    WRAPPER_VERSION,
++    FREEZE, INPUT_ROOT, JOB_ROOT, MAX_OUTER_JOBS, PACKAGE, PIPELINE_ROOT,
++    PIPELINE_VERSION, RECORDS, REMOTE_CONTROL_ENDPOINT, SOURCE_HASHES,
++    RETRYABLE_GUARD_ERROR, WRAPPER_VERSION,
+ )
+ from fastapi import FastAPI, HTTPException
+ from fastapi.responses import FileResponse
+ from preflight import verify as verify_preflight
+-from pydantic import BaseModel
++from pydantic import BaseModel, Field
+ 
+ sys.path.insert(0, str(PACKAGE))
+-
+ import hp3p.pipeline as pipeline  # noqa: E402
+ from hp3p.catalog import StyleRef  # noqa: E402
+ from hp3p.evalset import Row  # noqa: E402
+@@ -56,18 +39,20 @@
+ require(pipeline.PIPELINE_VERSION == PIPELINE_VERSION, "imported pipeline version differs from freeze")
+ _freeze = load_json(FREEZE)
+ _frozen_record = {item["row_slug"]: item for item in _freeze["records"]}
+-
+ INPUT_ROOT.mkdir(parents=True, exist_ok=True)
+ JOB_ROOT.mkdir(parents=True, exist_ok=True)
+ PIPELINE_ROOT.mkdir(parents=True, exist_ok=True)
+-_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="hp-v2243-full160")
++_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="hp-v2243r1-full160")
+ _pipeline_lock = threading.Lock()
+ _instance_id = str(uuid.uuid4())
+ 
+ 
++def job_id(row_slug: str, outer_attempt: int) -> str:
++    require(outer_attempt in range(1, MAX_OUTER_JOBS + 1), "outer attempt out of range")
++    return f"{row_slug}__outer_job_{outer_attempt}"
++
++
+ class AuditClient:
+-    """Replay frozen upstream calls and audit every live Stage-B/image call."""
+-
+     def __init__(self, debug: dict, expected_guide: bytes):
+         self.debug = debug
+         self.expected_guide = expected_guide
+@@ -84,77 +69,35 @@
+             return dict(self.debug["geometryResponse"])
+         require(fields == {"layout", "camera", "composition", "prompt"}, f"unexpected schema fields: {sorted(fields)}")
+         require(bool(images) and images[0][1] == self.expected_guide, "Stage B did not receive the frozen guide")
+-        content = [{"type": "text", "text": text}] + [
+-            {
+-                "type": "image_url",
+-                "image_url": {
+-                    "url": f"data:{mime};base64,{base64.b64encode(data).decode()}",
+-                    "detail": "high",
+-                },
+-            }
+-            for mime, data in images
+-        ]
++        content = [{"type": "text", "text": text}] + [{"type": "image_url", "image_url": {"url": f"data:{mime};base64,{base64.b64encode(data).decode()}", "detail": "high"}} for mime, data in images]
+         response = self.client.chat.completions.create(
+             model=TEXT_MODEL,
+             messages=[{"role": "developer", "content": system}, {"role": "user", "content": content}],
+             response_format={"type": "json_schema", "json_schema": {"name": "result", "strict": True, "schema": schema}},
+-            max_completion_tokens=16384,
+-            store=False,
++            max_completion_tokens=16384, store=False,
+         )
+         choice = response.choices[0]
+         require(choice.finish_reason == "stop" and bool(choice.message.content), f"Astra incomplete: {choice.finish_reason}")
+         parsed = json.loads(choice.message.content)
+-        self.calls.append(
+-            {
+-                "kind": "astra_write",
+-                "attempt": 1 + sum(call["kind"] == "astra_write" for call in self.calls),
+-                "model": response.model,
+-                "finish_reason": choice.finish_reason,
+-                "system_sha256": sha256_bytes(system.encode()),
+-                "text_sha256": sha256_bytes(text.encode()),
+-                "images_sha256": [sha256_bytes(data) for _, data in images],
+-                "schema_sha256": sha256_json(schema),
+-                "response_sha256": sha256_json(parsed),
+-                "usage": getattr(response.usage, "model_dump", lambda: {})(),
+-            }
+-        )
++        self.calls.append({
++            "kind": "astra_write", "attempt": 1 + sum(c["kind"] == "astra_write" for c in self.calls),
++            "model": response.model, "finish_reason": choice.finish_reason,
++            "system_sha256": sha256_bytes(system.encode()), "text_sha256": sha256_bytes(text.encode()),
++            "images_sha256": [sha256_bytes(data) for _, data in images], "schema_sha256": sha256_json(schema),
++            "response_sha256": sha256_json(parsed), "usage": getattr(response.usage, "model_dump", lambda: {})(),
++        })
+         return parsed
+ 
+-    def edit_image(
+-        self,
+-        prompt: str,
+-        images: list[tuple[str, bytes]],
+-        size: str,
+-        mask: bytes | None = None,
+-    ) -> bytes:
++    def edit_image(self, prompt: str, images: list[tuple[str, bytes]], size: str, mask: bytes | None = None) -> bytes:
+         require(mask is None and len(images) == 1 and images[0][1] == self.expected_guide, "image call must use only the frozen guide and no mask")
+-        files = [
+-            (f"image{i}.{mime.split('/')[1]}", io.BytesIO(data), mime)
+-            for i, (mime, data) in enumerate(images, 1)
+-        ]
+-        response = self.client.images.edit(
+-            model=IMAGE_MODEL,
+-            image=files,
+-            prompt=prompt,
+-            n=1,
+-            size=size,
+-            quality="high",
+-            output_format="png",
+-            background="opaque",
+-        )
++        files = [(f"image{i}.{mime.split('/')[1]}", io.BytesIO(data), mime) for i, (mime, data) in enumerate(images, 1)]
++        response = self.client.images.edit(model=IMAGE_MODEL, image=files, prompt=prompt, n=1, size=size, quality="high", output_format="png", background="opaque")
+         output = base64.b64decode(response.data[0].b64_json)
+-        self.calls.append(
+-            {
+-                "kind": "image_edit",
+-                "attempt": 1 + sum(call["kind"] == "image_edit" for call in self.calls),
+-                "model": IMAGE_MODEL,
+-                "size": size,
+-                "prompt_sha256": sha256_bytes(prompt.encode()),
+-                "guide_sha256": sha256_bytes(images[0][1]),
+-                "mask": False,
+-                "output_sha256": sha256_bytes(output),
+-            }
+-        )
++        self.calls.append({
++            "kind": "image_edit", "attempt": 1 + sum(c["kind"] == "image_edit" for c in self.calls),
++            "model": IMAGE_MODEL, "size": size, "prompt_sha256": sha256_bytes(prompt.encode()),
++            "guide_sha256": sha256_bytes(images[0][1]), "mask": False, "output_sha256": sha256_bytes(output),
++        })
+         return output
+ 
+ 
+@@ -163,8 +106,7 @@
+     if frozen is None:
+         raise KeyError(slug)
+     path = Path(frozen["path"])
+-    require(path.parent == RECORDS, f"record is outside frozen record root: {path}")
+-    require(sha256_file(path) == frozen["sha256"], f"record changed: {slug}")
++    require(path.parent == RECORDS and sha256_file(path) == frozen["sha256"], f"record changed: {slug}")
+     record = load_json(path)
+     require(record["prompt_sha256"] == frozen["prompt_sha256"], f"prompt hash changed: {slug}")
+     return record, path
+@@ -174,13 +116,9 @@
+     slug = record["row_slug"]
+     dest = INPUT_ROOT / slug
+     dest.mkdir(parents=True, exist_ok=True)
+-    files = {
+-        "product.png": "hp16_product.png",
+-        "reference.png": "hp16_reference.png",
+-        "guide.png": "hp16_geometry_guide.png",
+-    }
++    files = {"product.png": "hp16_product.png", "reference.png": "hp16_reference.png", "guide.png": "hp16_geometry_guide.png"}
+     provenance_path = dest / "input_provenance.json"
+-    frozen_provenance = load_json(provenance_path) if provenance_path.exists() else None
++    frozen = load_json(provenance_path) if provenance_path.exists() else None
+     provenance = {}
+     for local_name, remote_name in files.items():
+         path = dest / local_name
+@@ -191,113 +129,79 @@
+                 temp.write_bytes(response.read())
+             temp.replace(path)
+         entry = {"path": str(path), "sha256": sha256_file(path), "source_url": url}
+-        if frozen_provenance is not None:
+-            require(
+-                frozen_provenance.get(local_name) == entry,
+-                f"cached frozen input changed for {slug}/{local_name}",
+-            )
++        if frozen is not None:
++            require(frozen.get(local_name) == entry, f"cached frozen input changed for {slug}/{local_name}")
+         provenance[local_name] = entry
+-    if frozen_provenance is None:
++    if frozen is None:
+         atomic_json(provenance_path, provenance)
+     return dest, provenance
+ 
+ 
+-def _status_path(slug: str) -> Path:
+-    return JOB_ROOT / slug / "status.json"
+-
+-
+-def _write_status(slug: str, value: dict) -> None:
+-    atomic_json(_status_path(slug), value)
+-
+-
+-def _read_status(slug: str) -> dict | None:
+-    path = _status_path(slug)
++def _status_path(jid: str) -> Path:
++    return JOB_ROOT / jid / "status.json"
++
++
++def _write_status(jid: str, value: dict) -> None:
++    atomic_json(_status_path(jid), value)
++
++
++def _read_status(jid: str) -> dict | None:
++    path = _status_path(jid)
+     return load_json(path) if path.exists() else None
+ 
+ 
+-def _artifact_manifest(row_dir: Path, result: dict) -> dict:
+-    names = [
+-        "result.json",
+-        "ours.png",
+-        "input.png",
+-        "mask.png",
+-        "ref_2.png",
+-        "geometry_guide.png",
+-        "geometry_text.txt",
+-        "geometry_request.json",
+-        "geometry_response.json",
+-        "stage_b_attempt_2_raw_response.json",
+-    ]
+-    for attempt in (1, 2):
+-        names.extend(
+-            [
+-                f"stage_b_attempt_{attempt}_request.json",
+-                f"stage_b_attempt_{attempt}_response.json",
+-                f"gpt_{attempt}.png",
+-                f"image_request_attempt_{attempt}.json",
+-                f"product_invariant_attempt_{attempt}.json",
+-            ]
+-        )
++def _all_artifacts(row_dir: Path, job_dir: Path) -> dict:
+     artifacts = {}
+-    for name in names:
+-        path = row_dir / name
+-        if path.is_file():
+-            artifacts[name] = {"path": str(path), "sha256": sha256_file(path), "bytes": path.stat().st_size}
++    for label, root in (("pipeline", row_dir), ("job", job_dir)):
++        if not root.exists():
++            continue
++        for path in sorted(root.rglob("*")):
++            if path.is_file() and path.name not in {"provenance.json", "failure_provenance.json", "status.json"}:
++                key = f"{label}/{path.relative_to(root)}"
++                artifacts[key] = {"path": str(path), "sha256": sha256_file(path), "bytes": path.stat().st_size}
++    return artifacts
++
++
++def _validate_success_artifacts(row_dir: Path, result: dict, artifacts: dict) -> None:
++    by_name = {Path(v["path"]).name: v for v in artifacts.values()}
+     image_calls = int(result["image_calls"])
+     stage_b = result.get("stage_b_attempts") or []
+     guard = result.get("product_invariant_guard") or {}
+-    guard_attempts = guard.get("attempts") or []
+-    require(image_calls in (1, 2), f"unexpected image call count: {image_calls}")
+-    require(len(stage_b) in (1, 2), f"unexpected Stage-B attempt count: {len(stage_b)}")
+-    for attempt in range(1, len(stage_b) + 1):
+-        require(f"stage_b_attempt_{attempt}_request.json" in artifacts, f"missing Stage-B request {attempt}")
+-        require(f"stage_b_attempt_{attempt}_response.json" in artifacts, f"missing Stage-B response {attempt}")
++    attempts = guard.get("attempts") or []
++    require(image_calls in (1, 2) and len(stage_b) in (1, 2), "invalid attempt counts")
++    require(len(attempts) == image_calls, "guard/image attempt count mismatch")
++    selected = guard.get("selected_attempt")
++    require(selected in (1, 2) and selected <= image_calls and attempts[selected - 1].get("verdict") == "pass", "guard did not select a passing attempt")
++    core = {"result.json", "ours.png", "input.png", "mask.png", "ref_2.png", "geometry_guide.png", "geometry_text.txt", "geometry_request.json", "geometry_response.json", "stage_b_attempt_1_request.json", "stage_b_attempt_1_response.json", "calls.json"}
++    require(core <= set(by_name), f"missing core artifacts: {sorted(core - set(by_name))}")
++    for i in range(1, len(stage_b) + 1):
++        require(f"stage_b_attempt_{i}_request.json" in by_name and f"stage_b_attempt_{i}_response.json" in by_name, f"missing Stage-B attempt {i}")
+     if len(stage_b) == 2:
+-        require("stage_b_attempt_2_raw_response.json" in artifacts, "missing raw Stage-B retry response")
+-    require(len(guard_attempts) == image_calls, "guard attempt count does not equal image attempt count")
+-    selected = guard.get("selected_attempt")
+-    require(selected in (1, 2) and selected <= image_calls, "guard did not select a valid attempt")
+-    require(guard_attempts[selected - 1].get("verdict") == "pass", "selected image attempt did not pass guard")
+-    for attempt in range(1, image_calls + 1):
+-        require(f"gpt_{attempt}.png" in artifacts, f"missing image attempt {attempt}")
+-        require(f"image_request_attempt_{attempt}.json" in artifacts, f"missing image request {attempt}")
+-        require(f"product_invariant_attempt_{attempt}.json" in artifacts, f"missing guard metrics {attempt}")
+-    required_core = {
+-        "result.json",
+-        "ours.png",
+-        "input.png",
+-        "mask.png",
+-        "ref_2.png",
+-        "geometry_guide.png",
+-        "geometry_text.txt",
+-        "geometry_request.json",
+-        "geometry_response.json",
+-        "stage_b_attempt_1_request.json",
+-        "stage_b_attempt_1_response.json",
+-    }
+-    require(required_core <= set(artifacts), f"missing core artifacts: {sorted(required_core - set(artifacts))}")
+-    selected_sha = artifacts[f"gpt_{selected}.png"]["sha256"]
+-    require(artifacts["ours.png"]["sha256"] == selected_sha, "ours.png differs from guard-selected attempt")
+-    return artifacts
+-
+-
+-def _execute(slug: str) -> None:
+-    job_dir = JOB_ROOT / slug
+-    job_dir.mkdir(parents=True, exist_ok=True)
+-    _write_status(
+-        slug,
+-        {"jobId": slug, "rowSlug": slug, "done": False, "stage": "running", "error": None, "instanceId": _instance_id},
+-    )
++        require("stage_b_attempt_2_raw_response.json" in by_name, "missing raw Stage-B retry response")
++    for i in range(1, image_calls + 1):
++        for name in (f"gpt_{i}.png", f"image_request_attempt_{i}.json", f"product_invariant_attempt_{i}.json"):
++            require(name in by_name, f"missing {name}")
++    require(by_name["ours.png"]["sha256"] == by_name[f"gpt_{selected}.png"]["sha256"], "ours.png differs from selected attempt")
++
++
++def _execute(row_slug: str, outer_attempt: int, submission: dict, submission_sha: str) -> None:
++    jid = job_id(row_slug, outer_attempt)
++    job_dir = JOB_ROOT / jid
++    row_dir = PIPELINE_ROOT / "rows" / jid
++    client = None
++    record = None
++    record_path = None
++    input_provenance = None
++    result = None
++    _write_status(jid, {"jobId": jid, "rowSlug": row_slug, "outerAttempt": outer_attempt, "done": False, "stage": "running", "error": None, "instanceId": _instance_id, "submissionRequestSha256": submission_sha})
+     try:
+-        record, record_path = _record(slug)
++        record, record_path = _record(row_slug)
+         inputs, input_provenance = _download_inputs(record)
+         debug = record["scene_debug"]
+-        guide = (inputs / "guide.png").read_bytes()
+-        hero = (inputs / "product.png").read_bytes()
+-        reference = (inputs / "reference.png").read_bytes()
++        guide, hero, reference = (inputs / "guide.png").read_bytes(), (inputs / "product.png").read_bytes(), (inputs / "reference.png").read_bytes()
+         meta = debug["reference"]
+         style_ref = StyleRef(meta["id"], meta["name"], meta["tone"], meta["content"], "image/png", reference)
+-        row = Row(slug, record["prompt"], "frozen-v6.1-control-inputs", 2368, 1776, [])
++        row = Row(jid, record["prompt"], "frozen-v6.1-control-inputs", 2368, 1776, [])
+         client = AuditClient(debug, guide)
+         original_builder = pipeline.build_guide
+ 
+@@ -309,95 +213,79 @@
+         with _pipeline_lock:
+             pipeline.build_guide = frozen_guide
+             try:
+-                result = pipeline.run_row(
+-                    row,
+-                    client,
+-                    [style_ref],
+-                    PIPELINE_ROOT,
+-                    hero,
+-                    ref_count=1,
+-                    size=(2368, 1776),
+-                    camera=debug["twinCamera"],
+-                )
++                result = pipeline.run_row(row, client, [style_ref], PIPELINE_ROOT, hero, ref_count=1, size=(2368, 1776), camera=debug["twinCamera"])
+             finally:
+                 pipeline.build_guide = original_builder
+         require(result["status"] == "ok", f"pipeline error: {result.get('error')}")
+         require(result["pipeline_version"] == PIPELINE_VERSION, "result pipeline version mismatch")
+-        row_dir = PIPELINE_ROOT / "rows" / slug
+         require((row_dir / "geometry_guide.png").read_bytes() == guide, "persisted guide differs from frozen input")
+-        artifacts = _artifact_manifest(row_dir, result)
+         atomic_json(job_dir / "calls.json", client.calls)
+-        artifacts["calls.json"] = {
+-            "path": str(job_dir / "calls.json"),
+-            "sha256": sha256_file(job_dir / "calls.json"),
+-            "bytes": (job_dir / "calls.json").stat().st_size,
+-        }
++        artifacts = _all_artifacts(row_dir, job_dir)
++        _validate_success_artifacts(row_dir, result, artifacts)
+         provenance = {
+-            "schema_version": "hp-position-flex-row-provenance-v1",
+-            "experiment_id": _freeze["experiment_id"],
+-            "row_slug": slug,
+-            "row_id": record["row_id"],
++            "schema_version": "hp-position-flex-row-provenance-v22.4.3-r1",
++            "experiment_id": _freeze["experiment_id"], "row_slug": row_slug, "job_id": jid,
++            "outer_attempt": outer_attempt, "submission_request": submission,
++            "submission_request_sha256": submission_sha, "row_id": record["row_id"],
+             "record": {"path": str(record_path), "sha256": sha256_file(record_path)},
+-            "prompt_sha256": record["prompt_sha256"],
+-            "control_job_id": record["job_id"],
+-            "input_artifacts": input_provenance,
+-            "pipeline_version": result["pipeline_version"],
+-            "wrapper_version": WRAPPER_VERSION,
+-            "source_hashes": SOURCE_HASHES,
+-            "stage_b_attempts": result["stage_b_attempts"],
+-            "image_calls": result["image_calls"],
+-            "product_invariant_guard": result["product_invariant_guard"],
+-            "selected_attempt": result["product_invariant_guard"]["selected_attempt"],
+-            "calls": client.calls,
++            "prompt_sha256": record["prompt_sha256"], "control_job_id": record["job_id"],
++            "input_artifacts": input_provenance, "pipeline_version": result["pipeline_version"],
++            "wrapper_version": WRAPPER_VERSION, "source_hashes": SOURCE_HASHES,
++            "stage_b_attempts": result["stage_b_attempts"], "image_calls": result["image_calls"],
++            "product_invariant_guard": result["product_invariant_guard"], "calls": client.calls,
+             "artifacts": artifacts,
+         }
+         atomic_json(job_dir / "provenance.json", provenance)
+-        _write_status(
+-            slug,
+-            {
+-                "jobId": slug,
+-                "rowSlug": slug,
+-                "done": True,
+-                "stage": "done",
+-                "error": None,
+-                "instanceId": _instance_id,
+-                "pipelineVersion": PIPELINE_VERSION,
+-                "wrapperVersion": WRAPPER_VERSION,
+-                "sourceHashes": SOURCE_HASHES,
+-                "imageCalls": result["image_calls"],
+-                "stageBAttempts": len(result["stage_b_attempts"]),
+-                "selectedAttempt": result["product_invariant_guard"]["selected_attempt"],
+-                "guardVerdicts": [item["verdict"] for item in result["product_invariant_guard"]["attempts"]],
+-                "provenanceSha256": sha256_file(job_dir / "provenance.json"),
+-            },
+-        )
+-    except Exception as error:  # Preserve the first failing row for fail-fast runner diagnostics.
+-        _write_status(
+-            slug,
+-            {"jobId": slug, "rowSlug": slug, "done": True, "stage": "error", "instanceId": _instance_id, "error": f"{type(error).__name__}: {error}"[:4000]},
+-        )
++        manifest_sha = sha256_json(artifacts)
++        _write_status(jid, {
++            "jobId": jid, "rowSlug": row_slug, "outerAttempt": outer_attempt, "done": True,
++            "stage": "done", "error": None, "instanceId": _instance_id,
++            "submissionRequestSha256": submission_sha, "pipelineVersion": PIPELINE_VERSION,
++            "wrapperVersion": WRAPPER_VERSION, "sourceHashes": SOURCE_HASHES,
++            "imageCalls": result["image_calls"], "stageBAttempts": len(result["stage_b_attempts"]),
++            "selectedAttempt": result["product_invariant_guard"]["selected_attempt"],
++            "guardVerdicts": [x["verdict"] for x in result["product_invariant_guard"]["attempts"]],
++            "artifactManifestSha256": manifest_sha,
++            "provenanceSha256": sha256_file(job_dir / "provenance.json"),
++        })
++    except Exception as error:
++        error_text = f"{type(error).__name__}: {error}"[:4000]
++        if client is not None:
++            atomic_json(job_dir / "calls.json", client.calls)
++        artifacts = _all_artifacts(row_dir, job_dir)
++        failure = {
++            "schema_version": "hp-position-flex-failure-provenance-v22.4.3-r1",
++            "experiment_id": _freeze["experiment_id"], "row_slug": row_slug, "job_id": jid,
++            "outer_attempt": outer_attempt, "submission_request": submission,
++            "submission_request_sha256": submission_sha, "error": error_text,
++            "record": ({"path": str(record_path), "sha256": sha256_file(record_path)} if record_path else None),
++            "prompt_sha256": (record.get("prompt_sha256") if record else None),
++            "input_artifacts": input_provenance, "pipeline_version": PIPELINE_VERSION,
++            "wrapper_version": WRAPPER_VERSION, "source_hashes": SOURCE_HASHES,
++            "pipeline_result": result, "calls": (client.calls if client else []), "artifacts": artifacts,
++        }
++        atomic_json(job_dir / "failure_provenance.json", failure)
++        _write_status(jid, {
++            "jobId": jid, "rowSlug": row_slug, "outerAttempt": outer_attempt, "done": True,
++            "stage": "error", "instanceId": _instance_id, "error": error_text,
++            "submissionRequestSha256": submission_sha, "pipelineVersion": PIPELINE_VERSION,
++            "wrapperVersion": WRAPPER_VERSION, "sourceHashes": SOURCE_HASHES,
++            "artifactManifestSha256": sha256_json(artifacts),
++            "failureProvenanceSha256": sha256_file(job_dir / "failure_provenance.json"),
++        })
+ 
+ 
+ class GenerateRequest(BaseModel):
+     rowSlug: str
+-
+-
+-app = FastAPI(title="HP V22.4.3 wrapper-only position-flex full160", version="1")
++    outerAttempt: int = Field(ge=1, le=MAX_OUTER_JOBS)
++
++
++app = FastAPI(title="HP V22.4.3-R1 audited qualitative assembly", version="1")
+ 
+ 
+ @app.get("/health")
+ def health():
+-    return {
+-        "ok": True,
+-        "experimentId": _freeze["experiment_id"],
+-        "pipelineVersion": PIPELINE_VERSION,
+-        "wrapperVersion": WRAPPER_VERSION,
+-        "sourceHashes": SOURCE_HASHES,
+-        "records": len(_frozen_record),
+-        "maxWorkers": 1,
+-        "instanceId": _instance_id,
+-        "runRoot": str(PIPELINE_ROOT),
+-    }
++    return {"ok": True, "experimentId": _freeze["experiment_id"], "pipelineVersion": PIPELINE_VERSION, "wrapperVersion": WRAPPER_VERSION, "sourceHashes": SOURCE_HASHES, "records": len(_frozen_record), "maxWorkers": 1, "maxOuterJobs": MAX_OUTER_JOBS, "instanceId": _instance_id, "runRoot": str(PIPELINE_ROOT)}
+ 
+ 
+ @app.post("/api/generate")
+@@ -406,37 +294,43 @@
+         _record(request.rowSlug)
+     except KeyError:
+         raise HTTPException(404, "unknown frozen V6.1 row") from None
+-    existing = _read_status(request.rowSlug)
+-    if existing and existing.get("stage") == "done":
+-        return {"jobId": request.rowSlug, "statusUrl": f"/api/jobs/{request.rowSlug}"}
+-    if existing and existing.get("stage") in {"queued", "running"} and existing.get("instanceId") == _instance_id:
+-        return {"jobId": request.rowSlug, "statusUrl": f"/api/jobs/{request.rowSlug}"}
+-    _write_status(
+-        request.rowSlug,
+-        {"jobId": request.rowSlug, "rowSlug": request.rowSlug, "done": False, "stage": "queued", "error": None, "instanceId": _instance_id},
+-    )
+-    _executor.submit(_execute, request.rowSlug)
+-    return {"jobId": request.rowSlug, "statusUrl": f"/api/jobs/{request.rowSlug}"}
+-
+-
+-@app.get("/api/jobs/{job_id}")
+-def status(job_id: str):
+-    value = _read_status(job_id)
++    jid = job_id(request.rowSlug, request.outerAttempt)
++    if request.outerAttempt == 2:
++        first = _read_status(job_id(request.rowSlug, 1))
++        if not (
++            first
++            and first.get("done") is True
++            and first.get("stage") == "error"
++            and first.get("error") == RETRYABLE_GUARD_ERROR
++        ):
++            raise HTTPException(409, "outer job 2 requires the exact frozen guard rejection from outer job 1")
++    submission = {"rowSlug": request.rowSlug, "outerAttempt": request.outerAttempt}
++    submission_sha = sha256_json(submission)
++    existing = _read_status(jid)
++    if existing:
++        require(existing.get("submissionRequestSha256") == submission_sha, "immutable job request differs")
++        return {"jobId": jid, "statusUrl": f"/api/jobs/{jid}"}
++    (JOB_ROOT / jid).mkdir(parents=True, exist_ok=False)
++    atomic_json(JOB_ROOT / jid / "submission_request.json", submission)
++    _write_status(jid, {"jobId": jid, "rowSlug": request.rowSlug, "outerAttempt": request.outerAttempt, "done": False, "stage": "queued", "error": None, "instanceId": _instance_id, "submissionRequestSha256": submission_sha})
++    _executor.submit(_execute, request.rowSlug, request.outerAttempt, submission, submission_sha)
++    return {"jobId": jid, "statusUrl": f"/api/jobs/{jid}"}
++
++
++@app.get("/api/jobs/{jid}")
++def status(jid: str):
++    value = _read_status(jid)
+     if value is None:
+         raise HTTPException(404, "unknown job")
+     return value
+ 
+ 
+-@app.get("/api/jobs/{job_id}/artifacts/{filename}")
+-def artifact(job_id: str, filename: str):
+-    allowed = {"provenance.json", "calls.json", "result.json", "ours.png", "gpt_1.png", "gpt_2.png", "geometry_guide.png"}
+-    if filename not in allowed or job_id not in _frozen_record:
++@app.get("/api/jobs/{jid}/artifacts/{filename}")
++def artifact(jid: str, filename: str):
++    allowed = {"provenance.json", "failure_provenance.json", "calls.json", "submission_request.json", "result.json", "ours.png", "gpt_1.png", "gpt_2.png", "geometry_guide.png"}
++    if filename not in allowed or not (JOB_ROOT / jid).is_dir():
+         raise HTTPException(404, "unknown artifact")
+-    if filename in {"provenance.json", "calls.json"}:
+-        path = JOB_ROOT / job_id / filename
+-    else:
+-        path = PIPELINE_ROOT / "rows" / job_id / filename
++    path = JOB_ROOT / jid / filename if filename in {"provenance.json", "failure_provenance.json", "calls.json", "submission_request.json"} else PIPELINE_ROOT / "rows" / jid / filename
+     if not path.is_file():
+         raise HTTPException(404, "artifact not ready")
+     return FileResponse(path)
+-
+--- judge/pipeline_position_experiment/full160_v22_4_3/freeze_inputs.py
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/freeze_inputs.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Freeze exact V6.1 inputs, V22.4.3 pipeline code, and the standard Stage-B wrapper.
++"""Freeze inputs, byte-identical V22.4.3, and the R1 outer-retry wrapper.
+ 
+ This script is local-only: it performs no network or model calls. Re-running it
+ is intentionally refused once ``freeze.json`` exists unless ``--verify-only``
+@@ -34,6 +34,8 @@
+     WORKTREE,
+     WRAPPER_SOURCE_NAMES,
+     WRAPPER_VERSION,
++    MAX_OUTER_JOBS,
++    RETRYABLE_GUARD_ERROR,
+ )
+ 
+ 
+@@ -95,7 +97,7 @@
+     require(all(value == set(range(1, 11)) for value in ranks.values()), "bank ranks must be 1..10")
+ 
+     manifest = {
+-        "schema_version": "hp-position-flex-full160-freeze-v1",
++        "schema_version": "hp-position-flex-v22.4.3-r1-freeze-v1",
+         "experiment_id": EXPERIMENT_ID,
+         "created_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+         "treatment": {
+@@ -106,10 +108,17 @@
+             "wrapper_version": WRAPPER_VERSION,
+             "wrapper_source_hashes": wrapper_hashes,
+             "policy": (
+-                "V22.4.3 density-aware x-y translation with the full-affine guard and "
+-                "a calibrated alpha-masked fixed-position fallback when affine evidence "
+-                "cannot be established reliably, plus one bounded fixed-position image retry"
++                "Pipeline and prompts are byte-identical to V22.4.3. The assembly wrapper "
++                "allows one second independent endpoint job only when the first terminal "
++                "error exactly equals the frozen product-invariant guard rejection string. "
++                "The first passing job is selected; this is not native V22.4.3 reliability."
+             ),
++            "outer_job_policy": {
++                "maximum_jobs_per_row": MAX_OUTER_JOBS,
++                "retry_only_exact_error": RETRYABLE_GUARD_ERROR,
++                "selection": "first passing outer job",
++                "reliability_interpretation": "qualitative assembly only",
++            },
+         },
+         "prompt_export": {
+             "path": str(PROMPT_EXPORT.resolve()),
+--- judge/pipeline_position_experiment/full160_v22_4_3/preflight.py
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/preflight.py
+@@ -73,13 +73,14 @@
+         str(ROOT.parent / "full160_v22_4_1/run"),
+         str(ROOT.parent / "full160_v22_4_2/run"),
+         str(ROOT.parent / "full160_v22_4_2_1/run"),
++        str(ROOT.parent / "full160_v22_4_3/run"),
+     }
+     for path in (RUN_ROOT, PIPELINE_ROOT, JOB_ROOT):
+         require(
+             not any(path == Path(item) or Path(item) in path.parents for item in forbidden),
+             f"output collides with historical experiment: {path}",
+         )
+-        require("full160_v22_4_3" in str(path), f"output is not isolated under V22.4.3: {path}")
++        require("full160_v22_4_3_r1" in str(path), f"output is not isolated under V22.4.3-R1: {path}")
+     if PROGRESS.exists() and not allow_progress:
+         progress = load_json(PROGRESS)
+         require(not progress.get("done"), "progress exists; use --allow-progress to resume")
+@@ -95,6 +96,8 @@
+         "records_digest": freeze["records_digest"],
+         "isolated_run_root": str(RUN_ROOT),
+         "serial_default": True,
++        "max_outer_jobs_per_row": 2,
++        "native_reliability_claim": False,
+     }
+ 
+ 
+--- judge/pipeline_position_experiment/full160_v22_4_3/run_full160.py
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/run_full160.py
+@@ -1,6 +1,5 @@
+ #!/usr/bin/env python3
+-"""Fail-fast, atomically resumable, serial V22.4.3 wrapper-only full-160 submitter."""
+-
++"""Serial bounded-outer-retry V22.4.3-R1 qualitative-assembly runner."""
+ from __future__ import annotations
+ 
+ import fcntl
+@@ -9,122 +8,154 @@
+ import urllib.request
+ from pathlib import Path
+ 
+-from common import atomic_json, load_json, require, sha256_file
++from common import atomic_json, load_json, require, sha256_file, sha256_json
+ from config import (
+-    FREEZE,
+-    JOB_ROOT,
+-    LOCAL_ENDPOINT,
+-    PIPELINE_VERSION,
+-    PROGRESS,
+-    SOURCE_HASHES,
+-    WRAPPER_VERSION,
++    FREEZE, JOB_ROOT, LOCAL_ENDPOINT, MAX_OUTER_JOBS, PIPELINE_VERSION,
++    PROGRESS, RETRYABLE_GUARD_ERROR, SOURCE_HASHES, WRAPPER_VERSION,
+ )
+ from preflight import verify as verify_preflight
+ 
+ 
++def job_id(slug: str, outer_attempt: int) -> str:
++    require(1 <= outer_attempt <= MAX_OUTER_JOBS, "outer attempt out of range")
++    return f"{slug}__outer_job_{outer_attempt}"
++
++
++def request(method: str, path: str, body: dict | None = None) -> dict:
++    data = json.dumps(body).encode() if body is not None else None
++    req = urllib.request.Request(LOCAL_ENDPOINT + path, data=data, method=method, headers={"Content-Type": "application/json"})
++    with urllib.request.urlopen(req, timeout=60) as response:
++        return json.loads(response.read())
++
++
+ def required_artifact_names(provenance: dict) -> set[str]:
+-    """Return artifacts required by the standard (reference_blue=None) branch."""
+     stage_b_count = len(provenance["stage_b_attempts"])
+     image_count = int(provenance["image_calls"])
+-    require(stage_b_count in (1, 2), "Stage-B attempt count invalid")
+-    require(image_count in (1, 2), "image attempt count invalid")
+-    required = {
+-        "result.json", "ours.png", "input.png", "mask.png", "ref_2.png",
+-        "geometry_guide.png", "geometry_text.txt", "geometry_request.json",
+-        "geometry_response.json", "calls.json",
+-    }
++    require(stage_b_count in (1, 2) and image_count in (1, 2), "attempt counts invalid")
++    required = {"result.json", "ours.png", "input.png", "mask.png", "ref_2.png", "geometry_guide.png", "geometry_text.txt", "geometry_request.json", "geometry_response.json", "calls.json", "submission_request.json"}
+     for attempt in range(1, stage_b_count + 1):
+-        required.add(f"stage_b_attempt_{attempt}_request.json")
+-        required.add(f"stage_b_attempt_{attempt}_response.json")
++        required |= {f"stage_b_attempt_{attempt}_request.json", f"stage_b_attempt_{attempt}_response.json"}
+     if stage_b_count == 2:
+         required.add("stage_b_attempt_2_raw_response.json")
+     for attempt in range(1, image_count + 1):
+-        required.add(f"gpt_{attempt}.png")
+-        required.add(f"image_request_attempt_{attempt}.json")
+-        required.add(f"product_invariant_attempt_{attempt}.json")
++        required |= {f"gpt_{attempt}.png", f"image_request_attempt_{attempt}.json", f"product_invariant_attempt_{attempt}.json"}
+     return required
+ 
+ 
+-def request(method: str, path: str, body: dict | None = None) -> dict:
+-    data = json.dumps(body).encode() if body is not None else None
+-    req = urllib.request.Request(
+-        LOCAL_ENDPOINT + path,
+-        data=data,
+-        method=method,
+-        headers={"Content-Type": "application/json"},
+-    )
+-    with urllib.request.urlopen(req, timeout=60) as response:
+-        return json.loads(response.read())
+-
+-
+-def validate_completed(slug: str, status: dict) -> dict:
+-    require(status.get("done") is True and status.get("stage") == "done", f"{slug}: job is not done")
+-    require(status.get("pipelineVersion") == PIPELINE_VERSION, f"{slug}: pipeline version mismatch")
+-    require(status.get("wrapperVersion") == WRAPPER_VERSION, f"{slug}: wrapper version mismatch")
+-    require(status.get("sourceHashes") == SOURCE_HASHES, f"{slug}: source hash mismatch")
+-    provenance_path = JOB_ROOT / slug / "provenance.json"
+-    require(provenance_path.is_file(), f"{slug}: missing provenance")
+-    require(sha256_file(provenance_path) == status["provenanceSha256"], f"{slug}: provenance hash mismatch")
+-    provenance = load_json(provenance_path)
+-    require(provenance["pipeline_version"] == PIPELINE_VERSION, f"{slug}: provenance pipeline mismatch")
+-    require(provenance["wrapper_version"] == WRAPPER_VERSION, f"{slug}: provenance wrapper mismatch")
+-    require(provenance["source_hashes"] == SOURCE_HASHES, f"{slug}: provenance source mismatch")
+-    attempts = provenance["product_invariant_guard"]["attempts"]
+-    selected = provenance["product_invariant_guard"]["selected_attempt"]
+-    require(selected in (1, 2) and attempts[selected - 1]["verdict"] == "pass", f"{slug}: guard has no passing selection")
+-    require(len(attempts) == provenance["image_calls"], f"{slug}: guard/image attempt mismatch")
+-    artifacts = provenance.get("artifacts") or {}
+-    required = required_artifact_names(provenance)
+-    require(required <= set(artifacts), f"{slug}: incomplete artifact manifest")
++def _artifact_names(artifacts: dict) -> set[str]:
++    return {Path(item["path"]).name for item in artifacts.values()}
++
++
++def _validate_artifacts(jid: str, artifacts: dict) -> None:
+     for name, item in artifacts.items():
+         path = Path(item["path"])
+-        require(path.is_file(), f"{slug}: missing artifact {name}")
+-        require(sha256_file(path) == item["sha256"], f"{slug}: artifact hash mismatch: {name}")
+-        require(path.stat().st_size == item["bytes"], f"{slug}: artifact size mismatch: {name}")
+-    selected_raw = artifacts[f"gpt_{selected}.png"]
+-    require(artifacts["ours.png"]["sha256"] == selected_raw["sha256"], f"{slug}: selected output differs from raw attempt")
++        require(path.is_file(), f"{jid}: missing artifact {name}")
++        require(sha256_file(path) == item["sha256"], f"{jid}: artifact hash mismatch: {name}")
++        require(path.stat().st_size == item["bytes"], f"{jid}: artifact size mismatch: {name}")
++
++
++def validate_completed(slug: str, outer_attempt: int, status: dict) -> dict:
++    jid = job_id(slug, outer_attempt)
++    require(status.get("jobId") == jid and status.get("rowSlug") == slug and status.get("outerAttempt") == outer_attempt, f"{jid}: identity mismatch")
++    require(status.get("done") is True and status.get("stage") == "done", f"{jid}: job is not done")
++    require(status.get("pipelineVersion") == PIPELINE_VERSION and status.get("wrapperVersion") == WRAPPER_VERSION, f"{jid}: version mismatch")
++    require(status.get("sourceHashes") == SOURCE_HASHES, f"{jid}: source hash mismatch")
++    job = JOB_ROOT / jid
++    request_body = load_json(job / "submission_request.json")
++    require(request_body == {"rowSlug": slug, "outerAttempt": outer_attempt}, f"{jid}: submission request differs")
++    require(status["submissionRequestSha256"] == sha256_json(request_body), f"{jid}: request hash mismatch")
++    provenance_path = job / "provenance.json"
++    require(provenance_path.is_file() and sha256_file(provenance_path) == status["provenanceSha256"], f"{jid}: provenance hash mismatch")
++    provenance = load_json(provenance_path)
++    require(provenance["job_id"] == jid and provenance["row_slug"] == slug and provenance["outer_attempt"] == outer_attempt, f"{jid}: provenance identity mismatch")
++    require(provenance["submission_request_sha256"] == status["submissionRequestSha256"], f"{jid}: provenance request mismatch")
++    require(provenance["pipeline_version"] == PIPELINE_VERSION and provenance["wrapper_version"] == WRAPPER_VERSION and provenance["source_hashes"] == SOURCE_HASHES, f"{jid}: provenance version mismatch")
++    guard = provenance["product_invariant_guard"]
++    selected = guard["selected_attempt"]
++    require(selected in (1, 2) and guard["attempts"][selected - 1]["verdict"] == "pass", f"{jid}: guard has no passing selection")
++    require(len(guard["attempts"]) == provenance["image_calls"], f"{jid}: guard/image mismatch")
++    artifacts = provenance["artifacts"]
++    require(status["artifactManifestSha256"] == sha256_json(artifacts), f"{jid}: artifact manifest hash mismatch")
++    require(required_artifact_names(provenance) <= _artifact_names(artifacts), f"{jid}: incomplete artifact manifest")
++    _validate_artifacts(jid, artifacts)
++    by_name = {Path(item["path"]).name: item for item in artifacts.values()}
++    require(by_name["ours.png"]["sha256"] == by_name[f"gpt_{selected}.png"]["sha256"], f"{jid}: selected output differs from raw attempt")
+     return provenance
++
++
++def validate_failed(slug: str, outer_attempt: int, status: dict) -> dict:
++    jid = job_id(slug, outer_attempt)
++    require(status.get("jobId") == jid and status.get("rowSlug") == slug and status.get("outerAttempt") == outer_attempt, f"{jid}: identity mismatch")
++    require(status.get("done") is True and status.get("stage") == "error" and isinstance(status.get("error"), str), f"{jid}: job is not a terminal error")
++    require(status.get("pipelineVersion") == PIPELINE_VERSION and status.get("wrapperVersion") == WRAPPER_VERSION and status.get("sourceHashes") == SOURCE_HASHES, f"{jid}: failure version mismatch")
++    job = JOB_ROOT / jid
++    request_body = load_json(job / "submission_request.json")
++    require(request_body == {"rowSlug": slug, "outerAttempt": outer_attempt}, f"{jid}: failure request differs")
++    require(status["submissionRequestSha256"] == sha256_json(request_body), f"{jid}: failure request hash mismatch")
++    path = job / "failure_provenance.json"
++    require(path.is_file() and sha256_file(path) == status["failureProvenanceSha256"], f"{jid}: failure provenance hash mismatch")
++    failure = load_json(path)
++    require(failure["job_id"] == jid and failure["error"] == status["error"], f"{jid}: failure provenance differs")
++    require(failure["submission_request_sha256"] == status["submissionRequestSha256"], f"{jid}: failure request provenance differs")
++    require(failure["pipeline_version"] == PIPELINE_VERSION and failure["wrapper_version"] == WRAPPER_VERSION and failure["source_hashes"] == SOURCE_HASHES, f"{jid}: failure provenance version mismatch")
++    require(status["artifactManifestSha256"] == sha256_json(failure["artifacts"]), f"{jid}: failure artifact manifest hash mismatch")
++    _validate_artifacts(jid, failure["artifacts"])
++    return failure
++
++
++def should_retry(status: dict, outer_attempt: int) -> bool:
++    return outer_attempt == 1 and status.get("stage") == "error" and status.get("error") == RETRYABLE_GUARD_ERROR
++
++
++def wait_for_job(slug: str, outer_attempt: int) -> dict:
++    submitted = request("POST", "/api/generate", {"rowSlug": slug, "outerAttempt": outer_attempt})
++    require(submitted["jobId"] == job_id(slug, outer_attempt), "endpoint returned wrong job ID")
++    while True:
++        status = request("GET", submitted["statusUrl"])
++        if status.get("done"):
++            return status
++        time.sleep(5)
++
++
++def audit_summary(slug: str, outer_attempt: int, status: dict) -> dict:
++    jid = job_id(slug, outer_attempt)
++    job = JOB_ROOT / jid
++    result = {
++        "job_id": jid, "outer_attempt": outer_attempt, "outcome": status["stage"],
++        "error": status.get("error"), "submission_request_sha256": status["submissionRequestSha256"],
++        "status_path": str(job / "status.json"), "status_sha256": sha256_file(job / "status.json"),
++        "artifact_manifest_sha256": status["artifactManifestSha256"],
++    }
++    if status["stage"] == "done":
++        result.update(provenance_path=str(job / "provenance.json"), provenance_sha256=status["provenanceSha256"])
++    else:
++        result.update(failure_provenance_path=str(job / "failure_provenance.json"), failure_provenance_sha256=status["failureProvenanceSha256"])
++    return result
+ 
+ 
+ def initial_progress(health: dict, freeze: dict) -> dict:
+     return {
+-        "schema_version": "hp-position-flex-full160-progress-v1",
+-        "experiment_id": freeze["experiment_id"],
+-        "freeze_sha256": sha256_file(FREEZE),
+-        "endpoint_instance_id": health["instanceId"],
+-        "pipeline_version": health["pipelineVersion"],
+-        "wrapper_version": health["wrapperVersion"],
+-        "source_hashes": health["sourceHashes"],
+-        "serial": True,
+-        "total": 160,
+-        "done": [],
+-        "rows": {},
+-        "first_error": None,
++        "schema_version": "hp-position-flex-v22.4.3-r1-qualitative-assembly-progress-v1",
++        "experiment_id": freeze["experiment_id"], "freeze_sha256": sha256_file(FREEZE),
++        "endpoint_instance_id": health["instanceId"], "pipeline_version": health["pipelineVersion"],
++        "wrapper_version": health["wrapperVersion"], "source_hashes": health["sourceHashes"],
++        "protocol": {"serial": True, "max_outer_jobs_per_row": MAX_OUTER_JOBS, "retry_only_exact_error": RETRYABLE_GUARD_ERROR, "interpretation": "Qualitative-assembly completion statistics; not native V22.4.3 per-job reliability."},
++        "total": 160, "done": [], "rows": {}, "counts": {"first_job_pass": 0, "recovered_on_retry": 0, "terminal_failure": 0}, "rates": {}, "first_error": None,
+     }
+ 
+ 
+-def completed_progress_row(provenance: dict, ordinal: int) -> dict:
+-    """Summarize one validated row without assuming duplicate top-level guard data."""
+-    guard = provenance["product_invariant_guard"]
+-    return {
+-        "ordinal": ordinal,
+-        "stage_b_attempts": len(provenance["stage_b_attempts"]),
+-        "image_attempts": provenance["image_calls"],
+-        "guard_verdicts": [attempt["verdict"] for attempt in guard["attempts"]],
+-        "selected_attempt": guard["selected_attempt"],
+-    }
++def update_rates(progress: dict) -> None:
++    counts = progress["counts"]
++    attempted = sum(counts.values())
++    progress["rates"] = {"denominator_rows_attempted": attempted, **{f"{key}_rate": (value / attempted if attempted else 0.0) for key, value in counts.items()}}
+ 
+ 
+ def main() -> int:
+     verify_preflight(allow_progress=True)
+     freeze = load_json(FREEZE)
+     health = request("GET", "/health")
+-    require(health.get("ok") is True, "endpoint health failed")
+-    require(health.get("records") == 160 and health.get("maxWorkers") == 1, "endpoint is not frozen serial full160")
+-    require(health.get("pipelineVersion") == PIPELINE_VERSION, "endpoint pipeline version mismatch")
+-    require(health.get("wrapperVersion") == WRAPPER_VERSION, "endpoint wrapper version mismatch")
+-    require(health.get("sourceHashes") == SOURCE_HASHES, "endpoint source hash mismatch")
+-
++    require(health.get("ok") is True and health.get("records") == 160 and health.get("maxWorkers") == 1 and health.get("maxOuterJobs") == MAX_OUTER_JOBS, "endpoint contract failed")
++    require(health.get("pipelineVersion") == PIPELINE_VERSION and health.get("wrapperVersion") == WRAPPER_VERSION and health.get("sourceHashes") == SOURCE_HASHES, "endpoint version contract failed")
+     lock_path = PROGRESS.with_suffix(".lock")
+     lock_path.parent.mkdir(parents=True, exist_ok=True)
+     with lock_path.open("w") as lock:
+@@ -132,62 +163,70 @@
+             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+         except BlockingIOError as error:
+             raise RuntimeError("another full160 runner holds the progress lock") from error
+-
+         progress = load_json(PROGRESS) if PROGRESS.exists() else initial_progress(health, freeze)
+-        require(progress["experiment_id"] == freeze["experiment_id"], "progress belongs to another experiment")
+-        require(progress["freeze_sha256"] == sha256_file(FREEZE), "progress freeze hash mismatch")
+-        require(progress["pipeline_version"] == PIPELINE_VERSION, "progress pipeline mismatch")
+-        require(progress["wrapper_version"] == WRAPPER_VERSION, "progress wrapper mismatch")
+-        require(progress["source_hashes"] == SOURCE_HASHES, "progress source mismatch")
+-        require(progress.get("first_error") is None, "previous first error is preserved; inspect before deliberate restart")
+-
+-        ordered = sorted(
+-            freeze["records"],
+-            key=lambda item: (item["device_id"], item["camera_tag"], item["bank_rank"]),
+-        )
++        require(progress["experiment_id"] == freeze["experiment_id"] and progress["freeze_sha256"] == sha256_file(FREEZE), "progress identity mismatch")
++        require(progress["pipeline_version"] == PIPELINE_VERSION and progress["wrapper_version"] == WRAPPER_VERSION and progress["source_hashes"] == SOURCE_HASHES, "progress version mismatch")
++        require(progress.get("first_error") is None, "terminal failure preserved; inspect before any deliberate restart")
++        ordered = sorted(freeze["records"], key=lambda x: (x["device_id"], x["camera_tag"], x["bank_rank"]))
+         done = set(progress["done"])
+-        for ordinal, item in enumerate(ordered, start=1):
++        for ordinal, item in enumerate(ordered, 1):
+             slug = item["row_slug"]
+             if slug in done:
+-                status_path = JOB_ROOT / slug / "status.json"
+-                require(status_path.is_file(), f"{slug}: progress says done but status is missing")
+-                validate_completed(slug, load_json(status_path))
++                chosen = progress["rows"][slug]["selected_job_id"]
++                attempt = int(chosen.rsplit("_", 1)[1])
++                validate_completed(slug, attempt, load_json(JOB_ROOT / chosen / "status.json"))
+                 continue
++            jobs = []
+             try:
+-                submitted = request("POST", "/api/generate", {"rowSlug": slug})
+-                while True:
+-                    status = request("GET", submitted["statusUrl"])
+-                    if status.get("done"):
+-                        break
+-                    time.sleep(5)
+-                if status.get("stage") != "done":
+-                    raise RuntimeError(status.get("error") or "pipeline returned an unspecified error")
+-                provenance = validate_completed(slug, status)
++                status1 = wait_for_job(slug, 1)
++                if status1["stage"] == "done":
++                    provenance = validate_completed(slug, 1, status1)
++                    jobs.append(audit_summary(slug, 1, status1))
++                    classification, chosen_attempt = "first_job_pass", 1
++                else:
++                    validate_failed(slug, 1, status1)
++                    jobs.append(audit_summary(slug, 1, status1))
++                    if not should_retry(status1, 1):
++                        raise RuntimeError(f"non-retryable initial job error: {status1['error']}")
++                    status2 = wait_for_job(slug, 2)
++                    if status2["stage"] == "done":
++                        provenance = validate_completed(slug, 2, status2)
++                        jobs.append(audit_summary(slug, 2, status2))
++                        classification, chosen_attempt = "recovered_on_retry", 2
++                    else:
++                        validate_failed(slug, 2, status2)
++                        jobs.append(audit_summary(slug, 2, status2))
++                        raise RuntimeError(f"second outer job failed: {status2['error']}")
+             except Exception as error:
+-                progress["first_error"] = {
+-                    "row_slug": slug,
+-                    "ordinal": ordinal,
+-                    "error": f"{type(error).__name__}: {error}",
+-                }
++                progress["counts"]["terminal_failure"] += 1
++                update_rates(progress)
++                progress["first_error"] = {"row_slug": slug, "ordinal": ordinal, "error": f"{type(error).__name__}: {error}", "jobs": jobs}
+                 atomic_json(PROGRESS, progress)
+                 raise
++            chosen = job_id(slug, chosen_attempt)
++            guard = provenance["product_invariant_guard"]
++            by_name = {Path(v["path"]).name: v for v in provenance["artifacts"].values()}
++            progress["rows"][slug] = {
++                "ordinal": ordinal, "classification": classification, "selected_job_id": chosen,
++                "selected_raw_output_sha256": by_name[f"gpt_{guard['selected_attempt']}.png"]["sha256"],
++                "jobs": jobs, "stage_b_attempts": len(provenance["stage_b_attempts"]),
++                "image_attempts": provenance["image_calls"], "guard_verdicts": [x["verdict"] for x in guard["attempts"]],
++                "selected_image_attempt": guard["selected_attempt"],
++            }
++            progress["counts"][classification] += 1
+             done.add(slug)
+-            progress["done"] = [record["row_slug"] for record in ordered if record["row_slug"] in done]
+-            row_progress = completed_progress_row(provenance, ordinal)
+-            row_progress.update({
+-                "status_sha256": sha256_file(JOB_ROOT / slug / "status.json"),
+-                "provenance_sha256": sha256_file(JOB_ROOT / slug / "provenance.json"),
+-            })
+-            progress["rows"][slug] = row_progress
++            progress["done"] = [x["row_slug"] for x in ordered if x["row_slug"] in done]
+             progress["last_completed"] = slug
++            update_rates(progress)
+             atomic_json(PROGRESS, progress)
+-            print(json.dumps({"completed": len(done), "total": 160, "row": slug}), flush=True)
++            print(json.dumps({"completed": len(done), "total": 160, "row": slug, "classification": classification}), flush=True)
+         progress["complete"] = True
++        progress["methodological_note"] = "Each row may use a second independent endpoint job only after an exact product-invariant guard rejection. Rates describe this bounded-retry qualitative assembly protocol and must not be reported as native V22.4.3 reliability."
++        update_rates(progress)
+         atomic_json(PROGRESS, progress)
+-        print(json.dumps({"complete": True, "rows": len(done), "progress": str(PROGRESS)}), flush=True)
++        print(json.dumps({"complete": True, "counts": progress["counts"], "rates": progress["rates"], "progress": str(PROGRESS)}), flush=True)
+     return 0
+ 
+ 
+ if __name__ == "__main__":
+     raise SystemExit(main())
+-
+--- judge/pipeline_position_experiment/full160_v22_4_3/build_grouped_report.py
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/build_grouped_report.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Build a 16-bank x 10-prompt FE report for completed V22.4.3 wrapper outputs.
++"""Build the V22.4.3-R1 bounded-retry qualitative-assembly FE report.
+ 
+ No upload is performed. The report includes control, treatment, digital twin,
+ both raw image attempts when a fallback occurred, guard evidence, Stage-B audit
+@@ -34,7 +34,7 @@
+ 
+ 
+ GATEWAY = "https://foundry-aws-corp.adobe.io/asset"
+-TITLE = "HP V22.4.3 position-flex experiment — V6.1 grouped by source input"
++TITLE = "HP V22.4.3-R1 bounded-retry qualitative assembly — V6.1 grouped by source input"
+ 
+ 
+ def link_or_copy(source: Path, destination: Path) -> None:
+@@ -155,7 +155,9 @@
+             slug = item["row_slug"]
+             record = load_json(Path(item["path"]))
+             control = control_by_slug[slug]
+-            job_dir = JOB_ROOT / slug
++            row_progress = progress["rows"][slug]
++            selected_job_id = row_progress["selected_job_id"]
++            job_dir = JOB_ROOT / selected_job_id
+             status = load_json(job_dir / "status.json")
+             require(status["stage"] == "done", f"{slug}: treatment not done")
+             provenance = load_json(job_dir / "provenance.json")
+@@ -179,7 +181,7 @@
+                 values = [
+                     image_card(
+                         f"{prefix}/selected.png",
+-                        "V22.4.3 selected treatment output",
++                        "V22.4.3-R1 selected qualitative-assembly output",
+                         "model_output",
+                         **{
+                             "Selected attempt": selected,
+@@ -211,6 +213,7 @@
+                                 "product_invariant_guard": guard,
+                                 "calls": provenance["calls"],
+                                 "source_hashes": provenance["source_hashes"],
++                                "outer_job_protocol": row_progress,
+                             },
+                             indent=2,
+                         ),
+@@ -246,6 +249,9 @@
+                 "Control job ID": record["job_id"],
+                 "Prompt SHA-256": record["prompt_sha256"],
+                 "Treatment provenance SHA-256": status["provenanceSha256"],
++                "Outer-job classification": row_progress["classification"],
++                "Selected outer job": selected_job_id,
++                "Outer jobs attempted": len(row_progress["jobs"]),
+             }
+             if slug in judge_by_slug:
+                 judge_kv = judge_by_slug[slug]["meta_data"].get("key_val_informations", {})
+@@ -269,7 +275,7 @@
+             "is_secure": True,
+             "meta_texts": [
+                 f"{TITLE} — {group}",
+-                ["Treatment", {"Version": PIPELINE_VERSION, "Rows": 10, "Ranks": "1–10", "Guard": "full-affine plus calibrated alpha-mask fallback"}],
++                ["Treatment", {"Version": PIPELINE_VERSION, "Rows": 10, "Ranks": "1–10", "Guard": "unchanged V22.4.3", "Outer retry": "at most one, exact guard rejection only", "Interpretation": "qualitative assembly; not native reliability"}],
+             ],
+             "rows": group_rows,
+         }
+@@ -303,6 +309,11 @@
+                     "Inputs held fixed": "V6.1 prompts, digital twins, camera tags, Stage-A geometry, and guide images",
+                     "Changed": "Stage-B/final product-position policy",
+                     "Guard": "Every live output must pass full-affine product invariants; one bounded fixed-position fallback is allowed",
++                    "Assembly wrapper": "At most one new outer job after exact guard rejection; first passing job selected",
++                    "Reliability claim": "None; protocol rates are reported separately from native V22.4.3",
++                    "First-job passes": progress["counts"]["first_job_pass"],
++                    "Recovered on retry": progress["counts"]["recovered_on_retry"],
++                    "Terminal failures": progress["counts"]["terminal_failure"],
+                 },
+             ],
+         ],
+@@ -312,7 +323,7 @@
+     atomic_json(REPORT_ROOT / "data.json", root_data)
+     shutil.copy2(FE_VIEWER, REPORT_ROOT / "viewer.html")
+     manifest = {
+-        "schema_version": "hp-position-flex-grouped-fe-v1",
++        "schema_version": "hp-position-flex-v22.4.3-r1-grouped-fe-v1",
+         "title": TITLE,
+         "rows": 160,
+         "banks": 16,
+@@ -324,6 +335,9 @@
+         "optional_treatment_judge_report": str(judge_report) if judge_report else None,
+         "optional_treatment_judge_sha256": judge_hash,
+         "pipeline_version": PIPELINE_VERSION,
++        "assembly_counts": progress["counts"],
++        "assembly_rates": progress["rates"],
++        "native_reliability_claim": False,
+         "publish_destination": f"s3://{S3_BUCKET}/{S3_PREFIX}/",
+         "viewer_url": f"{GATEWAY}/{S3_BUCKET}/{S3_PREFIX}/viewer.html",
+         "groups": group_manifest,
+--- judge/pipeline_position_experiment/full160_v22_4_3/run_endpoint.sh
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/run_endpoint.sh
+@@ -2,7 +2,7 @@
+ set -euo pipefail
+ umask 077
+ 
+-root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3
++root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1
+ package=/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25
+ mkdir -p "$root/logs"
+ cd "$root"
+@@ -16,6 +16,6 @@
+     --with 'fastapi>=0.115,<1' \
+     --with 'uvicorn>=0.34,<1' \
+     --extra-index-url 'https://artifacts.adobeitc.com/artifactory/api/pypi/pypi-adobeshared-release/simple' \
+-    uvicorn endpoint:app --host 127.0.0.1 --port 8131 \
++    uvicorn endpoint:app --host 127.0.0.1 --port 8132 \
+     >"$root/logs/endpoint.stdout.log" 2>"$root/logs/endpoint.stderr.log"
+ 
+--- judge/pipeline_position_experiment/full160_v22_4_3/run_full160.sh
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/run_full160.sh
+@@ -2,7 +2,7 @@
+ set -euo pipefail
+ umask 077
+ 
+-root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3
++root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1
+ mkdir -p "$root/logs"
+ set +e
+ PYTHONPATH="$root" python "$root/run_full160.py" \
+--- judge/pipeline_position_experiment/full160_v22_4_3/launch_tmux.sh
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/launch_tmux.sh
+@@ -1,12 +1,12 @@
+ #!/usr/bin/env bash
+ set -euo pipefail
+ 
+-# Deliberately not invoked during preparation. Run only after the V22.4.3 gate
++# Deliberately not invoked during preparation. Run only after the V22.4.3-R1 assembly gate
+ # is accepted. Two durable sessions keep the endpoint and serial runner alive
+ # after SSH disconnects.
+-root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3
+-endpoint_session=hp-v2243-full160-endpoint
+-runner_session=hp-v2243-full160-runner
++root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1
++endpoint_session=hp-v2243r1-full160-endpoint
++runner_session=hp-v2243r1-full160-runner
+ 
+ PYTHONPATH="$root" python "$root/preflight.py" --allow-progress
+ if tmux has-session -t "$endpoint_session" 2>/dev/null; then
+@@ -20,7 +20,7 @@
+ tmux new-session -d -s "$endpoint_session" "$root/run_endpoint.sh"
+ 
+ for _ in $(seq 1 120); do
+-  if curl -fsS http://127.0.0.1:8131/health >/dev/null; then
++  if curl -fsS http://127.0.0.1:8132/health >/dev/null; then
+     tmux new-session -d -s "$runner_session" "$root/run_full160.sh"
+     printf 'Started %s and %s\n' "$endpoint_session" "$runner_session"
+     exit 0
+--- judge/pipeline_position_experiment/full160_v22_4_3/tests/test_contract.py
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/tests/test_contract.py
+@@ -7,233 +7,169 @@
+ from unittest.mock import patch
+ 
+ from build_grouped_report import validate_sources_only
+-from common import atomic_json, load_json, sha256_file
++from common import atomic_json, load_json, sha256_file, sha256_json
+ from config import (
+-    FREEZE,
+-    JOB_ROOT,
+-    PIPELINE_ROOT,
+-    PIPELINE_VERSION,
+-    RUN_ROOT,
+-    SOURCE_HASHES,
+-    WRAPPER_VERSION,
++    FREEZE, JOB_ROOT, MAX_OUTER_JOBS, PACKAGE, PIPELINE_ROOT, PIPELINE_VERSION,
++    RETRYABLE_GUARD_ERROR, ROOT, RUN_ROOT, SOURCE_HASHES, WRAPPER_VERSION,
+ )
+ from preflight import verify as verify_preflight
+ from run_full160 import (
+-    completed_progress_row,
+-    required_artifact_names,
+-    validate_completed,
++    audit_summary, initial_progress, job_id, required_artifact_names,
++    should_retry, update_rates, validate_completed, validate_failed,
+ )
+ 
+ 
+-class Full160ContractTest(unittest.TestCase):
+-    @staticmethod
+-    def completed_fixture(root: Path) -> tuple[str, dict, dict]:
+-        slug = "fixture"
+-        job = root / slug
+-        job.mkdir()
++class ContractTest(unittest.TestCase):
++    def make_success(self, root: Path, slug="fixture", attempt=1):
++        jid = job_id(slug, attempt)
++        job = root / jid
++        job.mkdir(parents=True)
++        submission = {"rowSlug": slug, "outerAttempt": attempt}
++        atomic_json(job / "submission_request.json", submission)
+         provenance = {
+-            "pipeline_version": PIPELINE_VERSION,
+-            "wrapper_version": WRAPPER_VERSION,
+-            "source_hashes": SOURCE_HASHES,
+-            "stage_b_attempts": [{"attempt": 1}],
++            "job_id": jid, "row_slug": slug, "outer_attempt": attempt,
++            "submission_request_sha256": sha256_json(submission),
++            "pipeline_version": PIPELINE_VERSION, "wrapper_version": WRAPPER_VERSION,
++            "source_hashes": SOURCE_HASHES, "stage_b_attempts": [{"attempt": 1}],
+             "image_calls": 1,
+-            "product_invariant_guard": {
+-                "attempts": [{"verdict": "pass"}],
+-                "selected_attempt": 1,
+-            },
++            "product_invariant_guard": {"attempts": [{"verdict": "pass"}], "selected_attempt": 1},
+             "artifacts": {},
+         }
+         for name in sorted(required_artifact_names(provenance)):
+             path = job / name
+-            path.write_bytes(b"selected" if name in {"ours.png", "gpt_1.png"} else name.encode())
+-            provenance["artifacts"][name] = {
+-                "path": str(path),
+-                "sha256": sha256_file(path),
+-                "bytes": path.stat().st_size,
+-            }
++            if not path.exists():
++                path.write_bytes(b"selected" if name in {"ours.png", "gpt_1.png"} else name.encode())
++            provenance["artifacts"][f"fixture/{name}"] = {"path": str(path), "sha256": sha256_file(path), "bytes": path.stat().st_size}
+         atomic_json(job / "provenance.json", provenance)
+         status = {
+-            "done": True,
+-            "stage": "done",
+-            "pipelineVersion": PIPELINE_VERSION,
+-            "wrapperVersion": WRAPPER_VERSION,
+-            "sourceHashes": SOURCE_HASHES,
++            "jobId": jid, "rowSlug": slug, "outerAttempt": attempt, "done": True,
++            "stage": "done", "error": None, "pipelineVersion": PIPELINE_VERSION,
++            "wrapperVersion": WRAPPER_VERSION, "sourceHashes": SOURCE_HASHES,
++            "submissionRequestSha256": sha256_json(submission),
++            "artifactManifestSha256": sha256_json(provenance["artifacts"]),
+             "provenanceSha256": sha256_file(job / "provenance.json"),
+         }
+-        return slug, provenance, status
++        atomic_json(job / "status.json", status)
++        return jid, provenance, status
+ 
+-    def test_frozen_preflight_and_group_contract(self) -> None:
++    def make_failure(self, root: Path, slug="fixture", attempt=1, error=RETRYABLE_GUARD_ERROR):
++        jid = job_id(slug, attempt)
++        job = root / jid
++        job.mkdir(parents=True)
++        submission = {"rowSlug": slug, "outerAttempt": attempt}
++        atomic_json(job / "submission_request.json", submission)
++        artifact = job / "gpt_1.png"
++        artifact.write_bytes(b"failed raw attempt")
++        artifacts = {"fixture/gpt_1.png": {"path": str(artifact), "sha256": sha256_file(artifact), "bytes": artifact.stat().st_size}}
++        failure = {
++            "job_id": jid, "row_slug": slug, "outer_attempt": attempt,
++            "submission_request_sha256": sha256_json(submission), "error": error,
++            "pipeline_version": PIPELINE_VERSION, "wrapper_version": WRAPPER_VERSION,
++            "source_hashes": SOURCE_HASHES, "artifacts": artifacts,
++        }
++        atomic_json(job / "failure_provenance.json", failure)
++        status = {
++            "jobId": jid, "rowSlug": slug, "outerAttempt": attempt, "done": True,
++            "stage": "error", "error": error, "pipelineVersion": PIPELINE_VERSION,
++            "wrapperVersion": WRAPPER_VERSION, "sourceHashes": SOURCE_HASHES,
++            "submissionRequestSha256": sha256_json(submission),
++            "artifactManifestSha256": sha256_json(artifacts),
++            "failureProvenanceSha256": sha256_file(job / "failure_provenance.json"),
++        }
++        atomic_json(job / "status.json", status)
++        return jid, failure, status
++
++    def test_frozen_preflight_and_160_by_16_contract(self):
+         result = verify_preflight(allow_progress=True)
+-        self.assertEqual(result["rows"], 160)
+-        self.assertEqual(result["banks"], 16)
+-        self.assertTrue(result["serial_default"])
+-        grouped = validate_sources_only()
+-        self.assertEqual(grouped, {"ok": True, "rows": 160, "banks": 16, "prompts_per_bank": 10})
++        self.assertEqual((result["rows"], result["banks"], result["max_outer_jobs_per_row"]), (160, 16, 2))
++        self.assertFalse(result["native_reliability_claim"])
++        self.assertEqual(validate_sources_only(), {"ok": True, "rows": 160, "banks": 16, "prompts_per_bank": 10})
+ 
+-    def test_atomic_json_replaces_complete_document(self) -> None:
+-        with tempfile.TemporaryDirectory() as directory:
+-            path = Path(directory) / "progress.json"
+-            atomic_json(path, {"done": ["a"]})
+-            atomic_json(path, {"done": ["a", "b"], "complete": True})
+-            self.assertEqual(load_json(path), {"done": ["a", "b"], "complete": True})
+-            self.assertFalse(list(path.parent.glob("*.tmp.*")))
++    def test_job_ids_are_distinct_and_bounded(self):
++        self.assertEqual(job_id("row", 1), "row__outer_job_1")
++        self.assertEqual(job_id("row", 2), "row__outer_job_2")
++        self.assertNotEqual(job_id("row", 1), job_id("row", 2))
++        with self.assertRaisesRegex(RuntimeError, "outer attempt"):
++            job_id("row", 3)
+ 
+-    def test_completed_row_requires_guard_selected_pass(self) -> None:
+-        with tempfile.TemporaryDirectory() as directory:
+-            root = Path(directory)
+-            slug, provenance, status = self.completed_fixture(root)
+-            job = root / slug
+-            with patch("run_full160.JOB_ROOT", root):
+-                self.assertEqual(validate_completed(slug, status), provenance)
+-                provenance["product_invariant_guard"]["attempts"][0]["verdict"] = "fail"
+-                atomic_json(job / "provenance.json", provenance)
+-                status["provenanceSha256"] = sha256_file(job / "provenance.json")
+-                with self.assertRaisesRegex(RuntimeError, "guard has no passing selection"):
+-                    validate_completed(slug, status)
++    def test_retry_only_exact_guard_error_on_first_job(self):
++        self.assertTrue(should_retry({"stage": "error", "error": RETRYABLE_GUARD_ERROR}, 1))
++        self.assertFalse(should_retry({"stage": "error", "error": RETRYABLE_GUARD_ERROR + " "}, 1))
++        self.assertFalse(should_retry({"stage": "error", "error": "TimeoutError: x"}, 1))
++        self.assertFalse(should_retry({"stage": "done", "error": None}, 1))
++        self.assertFalse(should_retry({"stage": "error", "error": RETRYABLE_GUARD_ERROR}, 2))
+ 
+-    def test_standard_branch_requires_stage_b_and_not_planning_artifacts(self) -> None:
+-        with tempfile.TemporaryDirectory() as directory:
+-            root = Path(directory)
+-            slug, provenance, status = self.completed_fixture(root)
+-            self.assertNotIn("planning_request.json", provenance["artifacts"])
+-            self.assertNotIn("planning_response.json", provenance["artifacts"])
+-            self.assertIn("stage_b_attempt_1_request.json", provenance["artifacts"])
+-            self.assertIn("stage_b_attempt_1_response.json", provenance["artifacts"])
+-            with patch("run_full160.JOB_ROOT", root):
+-                self.assertEqual(validate_completed(slug, status), provenance)
+-                provenance["artifacts"].pop("stage_b_attempt_1_request.json")
+-                atomic_json(root / slug / "provenance.json", provenance)
+-                status["provenanceSha256"] = sha256_file(root / slug / "provenance.json")
+-                with self.assertRaisesRegex(RuntimeError, "incomplete artifact manifest"):
+-                    validate_completed(slug, status)
++    def test_success_audit_selects_first_passing_job(self):
++        with tempfile.TemporaryDirectory() as d, patch("run_full160.JOB_ROOT", Path(d)):
++            jid, provenance, status = self.make_success(Path(d), attempt=1)
++            self.assertEqual(validate_completed("fixture", 1, status), provenance)
++            summary = audit_summary("fixture", 1, status)
++            self.assertEqual((summary["job_id"], summary["outcome"]), (jid, "done"))
++            self.assertFalse((Path(d) / job_id("fixture", 2)).exists())
+ 
+-    def test_second_stage_b_attempt_requires_raw_response(self) -> None:
+-        provenance = {
+-            "stage_b_attempts": [{"attempt": 1}, {"attempt": 2}],
+-            "image_calls": 2,
+-        }
+-        required = required_artifact_names(provenance)
+-        self.assertIn("stage_b_attempt_2_request.json", required)
+-        self.assertIn("stage_b_attempt_2_response.json", required)
+-        self.assertIn("stage_b_attempt_2_raw_response.json", required)
+-        self.assertIn("gpt_2.png", required)
++    def test_failed_job_is_fully_hash_audited(self):
++        with tempfile.TemporaryDirectory() as d, patch("run_full160.JOB_ROOT", Path(d)):
++            _, failure, status = self.make_failure(Path(d))
++            self.assertEqual(validate_failed("fixture", 1, status), failure)
++            Path(next(iter(failure["artifacts"].values()))["path"]).write_bytes(b"tampered")
++            with self.assertRaisesRegex(RuntimeError, "artifact hash mismatch"):
++                validate_failed("fixture", 1, status)
+ 
+-    def test_validator_hash_checks_every_declared_artifact(self) -> None:
+-        with tempfile.TemporaryDirectory() as directory:
+-            root = Path(directory)
+-            slug, provenance, status = self.completed_fixture(root)
+-            job = root / slug
+-            diagnostic = job / "optional_diagnostic.json"
+-            diagnostic.write_text("frozen")
+-            provenance["artifacts"][diagnostic.name] = {
+-                "path": str(diagnostic),
+-                "sha256": sha256_file(diagnostic),
+-                "bytes": diagnostic.stat().st_size,
+-            }
+-            atomic_json(job / "provenance.json", provenance)
+-            status["provenanceSha256"] = sha256_file(job / "provenance.json")
+-            diagnostic.write_text("tampered")
+-            with patch("run_full160.JOB_ROOT", root):
+-                with self.assertRaisesRegex(RuntimeError, "artifact hash mismatch"):
+-                    validate_completed(slug, status)
++    def test_second_job_success_is_independently_audited(self):
++        with tempfile.TemporaryDirectory() as d, patch("run_full160.JOB_ROOT", Path(d)):
++            _, _, failed = self.make_failure(Path(d), attempt=1)
++            _, success, passed = self.make_success(Path(d), attempt=2)
++            validate_failed("fixture", 1, failed)
++            self.assertEqual(validate_completed("fixture", 2, passed), success)
++            self.assertNotEqual(failed["submissionRequestSha256"], passed["submissionRequestSha256"])
+ 
+-    def test_validator_rejects_selected_output_mismatch(self) -> None:
+-        with tempfile.TemporaryDirectory() as directory:
+-            root = Path(directory)
+-            slug, provenance, status = self.completed_fixture(root)
+-            job = root / slug
+-            ours = job / "ours.png"
+-            ours.write_bytes(b"not-the-selected-attempt")
+-            provenance["artifacts"]["ours.png"].update(
+-                sha256=sha256_file(ours), bytes=ours.stat().st_size
+-            )
+-            atomic_json(job / "provenance.json", provenance)
+-            status["provenanceSha256"] = sha256_file(job / "provenance.json")
+-            with patch("run_full160.JOB_ROOT", root):
+-                with self.assertRaisesRegex(RuntimeError, "selected output differs"):
+-                    validate_completed(slug, status)
++    def test_second_failure_is_terminal_not_retryable(self):
++        with tempfile.TemporaryDirectory() as d, patch("run_full160.JOB_ROOT", Path(d)):
++            _, _, first = self.make_failure(Path(d), attempt=1)
++            _, _, second = self.make_failure(Path(d), attempt=2)
++            validate_failed("fixture", 1, first)
++            validate_failed("fixture", 2, second)
++            self.assertTrue(should_retry(first, 1))
++            self.assertFalse(should_retry(second, 2))
+ 
+-    def test_outputs_are_isolated_from_v2233_failed_tree(self) -> None:
+-        old = Path(
+-            "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/"
+-            "pipeline_position_experiment/full160_v22_3_3"
+-        )
+-        for path in (RUN_ROOT, PIPELINE_ROOT, JOB_ROOT):
+-            self.assertIn("full160_v22_4_3", str(path))
+-            self.assertNotEqual(path, old / "run")
+-            self.assertNotIn(old / "run", path.parents)
++    def test_progress_rates_distinguish_protocol_outcomes(self):
++        progress = {"counts": {"first_job_pass": 7, "recovered_on_retry": 2, "terminal_failure": 1}}
++        update_rates(progress)
++        self.assertEqual(progress["rates"]["denominator_rows_attempted"], 10)
++        self.assertEqual(progress["rates"]["first_job_pass_rate"], .7)
++        self.assertEqual(progress["rates"]["recovered_on_retry_rate"], .2)
++        self.assertEqual(progress["rates"]["terminal_failure_rate"], .1)
+ 
+-    def test_preflight_rejects_v2233_failed_tree_as_output(self) -> None:
+-        old_run = Path(
+-            "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/"
+-            "pipeline_position_experiment/full160_v22_3_3/run"
+-        )
+-        with (
+-            patch("preflight.RUN_ROOT", old_run),
+-            patch("preflight.PIPELINE_ROOT", old_run / "pipeline"),
+-            patch("preflight.JOB_ROOT", old_run / "jobs"),
+-        ):
++    def test_initial_progress_disclaims_native_reliability(self):
++        freeze = load_json(FREEZE)
++        health = {"instanceId": "x", "pipelineVersion": PIPELINE_VERSION, "wrapperVersion": WRAPPER_VERSION, "sourceHashes": SOURCE_HASHES}
++        progress = initial_progress(health, freeze)
++        self.assertIn("not native V22.4.3", progress["protocol"]["interpretation"])
++        self.assertEqual(progress["protocol"]["max_outer_jobs_per_row"], MAX_OUTER_JOBS)
++
++    def test_pipeline_sources_remain_exactly_frozen(self):
++        freeze = load_json(FREEZE)
++        actual = {name: sha256_file(PACKAGE / name) for name in SOURCE_HASHES}
++        self.assertEqual(actual, SOURCE_HASHES)
++        self.assertEqual(actual, freeze["treatment"]["source_hashes"])
++
++    def test_old_v2243_tree_is_forbidden_and_distinct(self):
++        old = ROOT.parent / "full160_v22_4_3" / "run"
++        self.assertNotEqual(RUN_ROOT, old)
++        with patch("preflight.RUN_ROOT", old), patch("preflight.PIPELINE_ROOT", old / "pipeline"), patch("preflight.JOB_ROOT", old / "jobs"):
+             with self.assertRaisesRegex(RuntimeError, "collides with historical experiment"):
+                 verify_preflight(allow_progress=True)
+ 
+-    def test_preflight_rejects_v2241_failed_tree_as_output(self) -> None:
+-        old_run = Path(
+-            "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/"
+-            "pipeline_position_experiment/full160_v22_4_1/run"
+-        )
+-        with (
+-            patch("preflight.RUN_ROOT", old_run),
+-            patch("preflight.PIPELINE_ROOT", old_run / "pipeline"),
+-            patch("preflight.JOB_ROOT", old_run / "jobs"),
+-        ):
+-            with self.assertRaisesRegex(RuntimeError, "collides with historical experiment"):
+-                verify_preflight(allow_progress=True)
++    def test_freeze_declares_exact_retry_policy(self):
++        policy = load_json(FREEZE)["treatment"]["outer_job_policy"]
++        self.assertEqual(policy["maximum_jobs_per_row"], 2)
++        self.assertEqual(policy["retry_only_exact_error"], RETRYABLE_GUARD_ERROR)
++        self.assertEqual(policy["selection"], "first passing outer job")
+ 
+-    def test_preflight_rejects_prior_failed_tree_as_output(self) -> None:
+-        old_run = Path(
+-            "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/"
+-            "pipeline_position_experiment/full160_v22_4_2_1/run"
+-        )
+-        with (
+-            patch("preflight.RUN_ROOT", old_run),
+-            patch("preflight.PIPELINE_ROOT", old_run / "pipeline"),
+-            patch("preflight.JOB_ROOT", old_run / "jobs"),
+-        ):
+-            with self.assertRaisesRegex(RuntimeError, "collides with historical experiment"):
+-                verify_preflight(allow_progress=True)
+-
+-    def test_freeze_has_exact_bank_ranks(self) -> None:
+-        freeze = json.loads(FREEZE.read_text())
+-        groups: dict[str, list[int]] = {}
+-        for row in freeze["records"]:
+-            groups.setdefault(f"{row['device_id']}__{row['camera_tag']}", []).append(row["bank_rank"])
+-        self.assertEqual(len(groups), 16)
+-        self.assertTrue(all(sorted(ranks) == list(range(1, 11)) for ranks in groups.values()))
+-
+-    def test_progress_row_reads_selected_attempt_from_guard(self) -> None:
+-        # Representative V22.4.3 smoke provenance intentionally has no
+-        # duplicate top-level selected_attempt field.
+-        provenance = {
+-            "stage_b_attempts": [{"attempt": 1}],
+-            "image_calls": 2,
+-            "product_invariant_guard": {
+-                "attempts": [{"verdict": "fail"}, {"verdict": "pass"}],
+-                "selected_attempt": 2,
+-            },
+-        }
+-        self.assertNotIn("selected_attempt", provenance)
+-        self.assertEqual(
+-            completed_progress_row(provenance, 17),
+-            {
+-                "ordinal": 17,
+-                "stage_b_attempts": 1,
+-                "image_attempts": 2,
+-                "guard_verdicts": ["fail", "pass"],
+-                "selected_attempt": 2,
+-            },
+-        )
++    def test_no_run_or_log_tree_created_during_preparation(self):
++        self.assertFalse(RUN_ROOT.exists())
++        self.assertFalse((ROOT / "logs").exists())
+ 
+ 
+ if __name__ == "__main__":
+     unittest.main()
+-
+--- judge/pipeline_position_experiment/full160_v22_4_3/freeze.json
++++ judge/pipeline_position_experiment/full160_v22_4_3_r1/freeze.json
+@@ -1,7 +1,7 @@
+ {
+-  "schema_version": "hp-position-flex-full160-freeze-v1",
+-  "experiment_id": "hp-position-flex-v22.4.3-v6.1-full160",
+-  "created_at_utc": "2026-11-06T06:39:40.023569+00:00",
++  "schema_version": "hp-position-flex-v22.4.3-r1-freeze-v1",
++  "experiment_id": "hp-position-flex-v22.4.3-r1-qualitative-assembly-v6.1-full160",
++  "created_at_utc": "2026-11-06T06:59:51.801006+00:00",
+   "treatment": {
+     "pipeline_version": "unified-blue-scale-v22.4.3-unreliable-affine-alpha-fallback-twin-camera-guide-only-no-edit-mask",
+     "base_pr": "Adobe-Firefly/foundry#4349",
+@@ -16,15 +16,23 @@
+       "hp3p/invariants.py": "4f833b0d0822d0d6e4dff1b41b39d46b2cb3cd9e3671e5b1339faf15ccbd810a",
+       "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3"
+     },
+-    "wrapper_version": "v22.4.3-standard-stage-b-artifact-contract",
++    "wrapper_version": "v22.4.3-r1-bounded-outer-job-retry-1",
+     "wrapper_source_hashes": {
+-      "config.py": "b49432e6828f459e413bd5dea92bbf9b64ab50ca679b4865ff193c8519b94d7d",
+-      "endpoint.py": "73db03382c2b624b33c5592aadc20bfc1a168d53eabdb414affe233a60a2e5da",
+-      "run_full160.py": "9474e8a4075805d681488ab8347fa407e81a70ad9e073982f28993853100cd65",
+-      "preflight.py": "ed290bf9f3d981d5fafb1b262b52c1ccc14692cac30d9289de5ea836efa213be",
+-      "freeze_inputs.py": "1f6290f602fdbcdbcc2e7e6aae78f02b14ce72b36a8088bc38f57b6cdbf3e57e"
+-    },
+-    "policy": "V22.4.3 density-aware x-y translation with the full-affine guard and a calibrated alpha-masked fixed-position fallback when affine evidence cannot be established reliably, plus one bounded fixed-position image retry"
++      "common.py": "36900f4fe743f6c1b983fc0438df902788d6133d8c5c39afafc488cdd504f4ec",
++      "config.py": "c56456f7be917da8d6fa078ccd79433466ab9e0da0e3766458554d611487bcac",
++      "endpoint.py": "7b06988e91469f896caf0551e646a917af266365db23fe5bdeeee461bdf19c3d",
++      "run_full160.py": "c394165cedbdba1bd104a74313f02e268b8ca0785afd61c81d03ba6faa3e5c14",
++      "preflight.py": "11911345d3b988089354381e8d7547cef25a97e1fb59ce5a0d1a254417cff91f",
++      "freeze_inputs.py": "47a24daa43e0e39f1ea79cf029d4bf2f6a28dc92b54f510d5891afaa5515638b",
++      "build_grouped_report.py": "b21bf2eee0e452271357adc464dd29ab2004f4ff19b42212ae9f04c89127ed14"
++    },
++    "policy": "Pipeline and prompts are byte-identical to V22.4.3. The assembly wrapper allows one second independent endpoint job only when the first terminal error exactly equals the frozen product-invariant guard rejection string. The first passing job is selected; this is not native V22.4.3 reliability.",
++    "outer_job_policy": {
++      "maximum_jobs_per_row": 2,
++      "retry_only_exact_error": "RuntimeError: pipeline error: ValueError: Product invariant guard rejected both image attempts; raw attempts and metrics kept.",
++      "selection": "first passing outer job",
++      "reliability_interpretation": "qualitative assembly only"
++    }
+   },
+   "prompt_export": {
+     "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/revisions/v6.1-expanded-20261103-r6/exports/final/prompts_all_160.json",
+@@ -2465,5 +2473,5 @@
+     "path": "/home/colligo/hs_scripts/claude/dotclaude/scripts/fe_html/annotation_viewer.html",
+     "sha256": "b10c91e5f939b555ce0332f7269baefd2e1ef1b0117c6ae9530188808cbbcc2a"
+   },
+-  "freeze_payload_sha256": "d20d701d937eb7c3e1d68dcdae90bfdf4af46e23e908d11240f12fc0b0d3dfe0"
++  "freeze_payload_sha256": "1cec9936b23a3b8faa15f5c4527bca2a4393232291400f97de43242655777521"
+ }

@@ -1,0 +1,53 @@
+{
+  "slug": "cashmere__laptop_FrontWide__p1__retained_control",
+  "base_slug": "cashmere__laptop_FrontWide__p1",
+  "mode": "retained_control",
+  "device_id": "cashmere",
+  "camera_id": "Front_Wide",
+  "prompt": "A glass-walled office planning area uses a sturdy table with two unlabelled architectural finish samples and a stone paperweight. A ribbed-glass divider and a freestanding felt privacy screen make the room feel prepared for a private discussion under cool, even light.",
+  "pipeline_version": "unified-blue-scale-v22-recomposed-support-stage-b-placement-twin-camera-guide-only-no-mask",
+  "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+  "output_sha256": "72b399373ce4de267e7f88e05ba7ca0f62459ba20bc54a212da61a6cb3c51c1c",
+  "final_prompt_sha256": "a220cdf90ee7e900878571973a34d6500cb14f652c45d4e5b17d6d6c8a1e97bc",
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1009,
+        "prompt_tokens": 13492,
+        "total_tokens": 14501,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 45,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "mask": false
+    }
+  ]
+}

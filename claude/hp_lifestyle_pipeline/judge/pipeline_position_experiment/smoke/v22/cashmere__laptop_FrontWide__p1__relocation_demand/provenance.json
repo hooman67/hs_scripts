@@ -1,0 +1,53 @@
+{
+  "slug": "cashmere__laptop_FrontWide__p1__relocation_demand",
+  "base_slug": "cashmere__laptop_FrontWide__p1",
+  "mode": "relocation_demand",
+  "device_id": "cashmere",
+  "camera_id": "Front_Wide",
+  "prompt": "A wide glass-walled office planning room. Move the fully visible laptop into a right-hand workstation, leaving a broad unobstructed aisle and open tabletop area on the left. Keep the laptop's exact view and pixel size. Compose a new sturdy worktable beneath it with a user-facing edge and a chair aligned directly with the keyboard. Add a felt privacy screen in the far background and cool even daylight.",
+  "pipeline_version": "unified-blue-scale-v22-recomposed-support-stage-b-placement-twin-camera-guide-only-no-mask",
+  "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+  "output_sha256": "19e81d005e2ff22e257283c484b7c304cbfe2398d52bd7a6954751861bf110b6",
+  "final_prompt_sha256": "55a4d315911330bb2370122145f86b7cc50a576e662cd4bf361d3413df659f5c",
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1027,
+        "prompt_tokens": 13520,
+        "total_tokens": 14547,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 117,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "mask": false
+    }
+  ]
+}

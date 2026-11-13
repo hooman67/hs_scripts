@@ -1,0 +1,389 @@
+{
+  "schema_version": 3,
+  "row_id": "cashmere__laptop_FrontCloseUp::p7",
+  "status": "failed",
+  "completed_at_utc": "2026-11-12T03:07:04.749325+00:00",
+  "prompt_sha256": "18d56b85130aee7b1f4e959c73a641456610148578e0f505b92e9723516805b7",
+  "job_id": "20261112T030639Z_ee877b6fa71f",
+  "error": "RuntimeError: ValueError: Elliptical support must contain all four product footprint corners.",
+  "final_status": {
+    "jobId": "20261112T030639Z_ee877b6fa71f",
+    "done": true,
+    "createdAt": "2026-11-12T03:06:39.729077+00:00",
+    "instanceId": "58dce2e7-3473-421e-944d-db9392f848f3",
+    "candidateLineage": {
+      "candidateId": "hp-pr4523-d1e5ae5323de-exact",
+      "codeTreeSha256": "4da08388491b36f6435aeea29d40b780bdd02b06b81f1a35b86999b0b6e8694e",
+      "generator": "GPT Image 2.5 / single reference / no grading",
+      "imageModel": "gpt-image-2.5-sunburst-2026-09-08",
+      "imageSettings": {
+        "background": "opaque",
+        "count": 1,
+        "inputs": "one generated geometry guide",
+        "mask": false,
+        "operation": "images.edit",
+        "outputFormat": "png",
+        "quality": "high",
+        "size": "2368x1776"
+      },
+      "inputManifestSha256": "7cc98fe46f5983acbf5fd9b781bf108ecdee12a042e953686201e9900698a1c5",
+      "patchSha256": null,
+      "pipelineVersion": "unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+      "referenceCaptionsSha256": "c92fd69684a64d0e6e1f4771c3d29a66ac07ba6f729c3843f83f59c7f16e3085",
+      "referenceCatalogSha256": "d1e87ce902b7ad62d9dd7e8287326a0225270ad065a4efeba9dd167dc0b12771",
+      "rewriterVersion": "Adobe-Firefly/foundry#4523 / d1e5ae5323de / unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+      "sourceCommit": "d1e5ae5323dedebc3b06ed173a3731307bd0623a",
+      "textModel": "gpt-6-astra",
+      "candidateManifestSha256": "c62f172f4dd08c6f4d229079c22e1b77751a6e008e13366dab2de14d3026542f",
+      "configSha256": "b69086f3856f5a90c4fd0ebff1e142de90f3dc51c807e85ad8e00fea989f4faa",
+      "deploymentManifestSha256": "8701a44a54e016a2837807926f5fe10c8bb6901286471f59b9ee83b4aba972e3",
+      "codeTreeScope": "41 byte-exact PR source files; restored assets and 16 inputs pinned separately",
+      "runtimeImports": {
+        "hp3p": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/__init__.py",
+        "pipeline": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/pipeline.py",
+        "geometry": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/geometry.py",
+        "openaiClient": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/openai_client.py",
+        "wrapperClient": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/endpoint.py"
+      }
+    },
+    "params": {
+      "digitalTwinId": "cashmere_x",
+      "cameraId": "Front_CloseUp",
+      "prompt": "A round café table sits just inside the window line, paired with a wooden café chair and a connected upholstered banquette along the wall. On the tabletop, a ceramic drinking cup rests on a plain ceramic saucer beside a paper notebook open to blank pages and a plain writing pen, leaving a clear working patch at the near edge. Café curtains, a globe pendant light, a secondary café table across the aisle, and a potted leafy plant keep the neighborhood setting recognizable, while a closed unbranded shoulder bag rests beside the wooden café chair without blocking the walkway.",
+      "digitalTwinName": "Cashmere / EliteBook X",
+      "cameraPath": "/World/Cameras/Front_CloseUp/Front_CloseUp",
+      "heroLighting": "Approved original USDZ lighting",
+      "productVersion": "ac71c90cd2df40d8788a3fa523e7cf2a30895fe77e63e000b39d915853ccc13d",
+      "generationMode": "sceneOnly",
+      "candidateId": "hp-pr4523-d1e5ae5323de-exact",
+      "configSha256": "b69086f3856f5a90c4fd0ebff1e142de90f3dc51c807e85ad8e00fea989f4faa"
+    },
+    "stages": {
+      "hero": {
+        "status": "done",
+        "ms": 0,
+        "error": null,
+        "has_image": true,
+        "detail": {
+          "digitalTwinId": "cashmere_x",
+          "digitalTwinName": "Cashmere / EliteBook X",
+          "cameraId": "Front_CloseUp",
+          "cameraPath": "/World/Cameras/Front_CloseUp/Front_CloseUp",
+          "heroLighting": "Approved original USDZ lighting",
+          "productVersion": "ac71c90cd2df40d8788a3fa523e7cf2a30895fe77e63e000b39d915853ccc13d",
+          "productSha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c"
+        }
+      },
+      "scene": {
+        "status": "error",
+        "ms": 0,
+        "error": "RuntimeError: ValueError: Elliptical support must contain all four product footprint corners.",
+        "has_image": false,
+        "detail": {
+          "rewriterVersion": "Adobe-Firefly/foundry#4523 / d1e5ae5323de / unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+          "rewriterBackend": "Astra / original request only",
+          "pipelineVersion": "unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+          "candidateLineage": {
+            "candidateId": "hp-pr4523-d1e5ae5323de-exact",
+            "codeTreeSha256": "4da08388491b36f6435aeea29d40b780bdd02b06b81f1a35b86999b0b6e8694e",
+            "generator": "GPT Image 2.5 / single reference / no grading",
+            "imageModel": "gpt-image-2.5-sunburst-2026-09-08",
+            "imageSettings": {
+              "background": "opaque",
+              "count": 1,
+              "inputs": "one generated geometry guide",
+              "mask": false,
+              "operation": "images.edit",
+              "outputFormat": "png",
+              "quality": "high",
+              "size": "2368x1776"
+            },
+            "inputManifestSha256": "7cc98fe46f5983acbf5fd9b781bf108ecdee12a042e953686201e9900698a1c5",
+            "patchSha256": null,
+            "pipelineVersion": "unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+            "referenceCaptionsSha256": "c92fd69684a64d0e6e1f4771c3d29a66ac07ba6f729c3843f83f59c7f16e3085",
+            "referenceCatalogSha256": "d1e87ce902b7ad62d9dd7e8287326a0225270ad065a4efeba9dd167dc0b12771",
+            "rewriterVersion": "Adobe-Firefly/foundry#4523 / d1e5ae5323de / unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+            "sourceCommit": "d1e5ae5323dedebc3b06ed173a3731307bd0623a",
+            "textModel": "gpt-6-astra",
+            "candidateManifestSha256": "c62f172f4dd08c6f4d229079c22e1b77751a6e008e13366dab2de14d3026542f",
+            "configSha256": "b69086f3856f5a90c4fd0ebff1e142de90f3dc51c807e85ad8e00fea989f4faa",
+            "deploymentManifestSha256": "8701a44a54e016a2837807926f5fe10c8bb6901286471f59b9ee83b4aba972e3",
+            "codeTreeScope": "41 byte-exact PR source files; restored assets and 16 inputs pinned separately",
+            "runtimeImports": {
+              "hp3p": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/__init__.py",
+              "pipeline": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/pipeline.py",
+              "geometry": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/geometry.py",
+              "openaiClient": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/openai_client.py",
+              "wrapperClient": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/endpoint.py"
+            }
+          },
+          "baselinePromptUsed": false,
+          "originalPrompt": "A round café table sits just inside the window line, paired with a wooden café chair and a connected upholstered banquette along the wall. On the tabletop, a ceramic drinking cup rests on a plain ceramic saucer beside a paper notebook open to blank pages and a plain writing pen, leaving a clear working patch at the near edge. Café curtains, a globe pendant light, a secondary café table across the aisle, and a potted leafy plant keep the neighborhood setting recognizable, while a closed unbranded shoulder bag rests beside the wooden café chair without blocking the walkway.",
+          "textModel": "gpt-6-astra",
+          "imageModel": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "refCount": 1,
+          "imageCalls": 0,
+          "graded": false,
+          "maskSource": "derived from frozen product render by pinned hp3p.mask.prepare",
+          "productPixelLock": "Unmasked generation; product preservation is instructed, not guaranteed.",
+          "imageMaskApplied": false,
+          "imageInputOrder": [
+            "hp16_geometry_guide.png"
+          ],
+          "twinCamera": {
+            "back": [
+              0.5658033324582015,
+              0.8208077314765848,
+              0.07836617208627959
+            ],
+            "bbox_err_px": 0.48329102887464614,
+            "cameraPrim": "/World/Cameras/Front_CloseUp/Front_CloseUp",
+            "focal_length": 0.8999999761581421,
+            "footprint_corners_m": [
+              [
+                0.08330991531023649,
+                0.23314591674625393,
+                0.7500261348435809
+              ],
+              [
+                0.3683394408776596,
+                0.104054683536665,
+                0.7500261348435809
+              ],
+              [
+                0.46054789757123327,
+                0.3076481577891159,
+                0.7500261348435809
+              ],
+              [
+                0.17551837200381018,
+                0.43673939099870485,
+                0.7500261348435809
+              ]
+            ],
+            "front_xy": [
+              0.412563934186031,
+              0.9109286471557168
+            ],
+            "horizontal_aperture": 0.36000001430511475,
+            "position_m": [
+              1.0583163499832153,
+              1.375186800956726,
+              0.9702531099319458
+            ],
+            "product_height_m": 0.21796391083724587,
+            "right": [
+              -0.8233398052976244,
+              0.5675487336012852,
+              2.1760923890143612e-07
+            ],
+            "up": [
+              -0.044476443109402665,
+              -0.06452211199147014,
+              0.9969246426247554
+            ],
+            "vertical_aperture": 0.20250000059604645
+          },
+          "twinCameraSummary": {
+            "camera_above_support_top_m": 0.22022697508836486,
+            "camera_horizontal_distance_m": 1.3560846704071858,
+            "camera_distance_to_product_center_m": 1.3606399552103,
+            "camera_azimuth_from_product_front_deg": -11.077196142646212,
+            "camera_pitch_down_deg": 4.4946594238280095,
+            "camera_roll_deg": 1.2468090972106438e-05,
+            "camera_aim_offset_deg": 0.863726610919759,
+            "product_base_center_px": [
+              1272.3966312600014,
+              1377.8985366778907
+            ],
+            "lens_35mm_equivalent_mm": 86.53322488026657,
+            "horizontal_fov_deg": 22.61986640748259,
+            "vertical_fov_deg": 17.061532333211563,
+            "base_edge_yaw_deg": 10.213469531726426,
+            "product_footprint_width_m": 0.312899947166443,
+            "product_footprint_depth_m": 0.2235010117292404,
+            "product_height_m": 0.21796391083724587,
+            "product_front_faces_user_side": "near_camera",
+            "visible_faces": [
+              {
+                "face": "front",
+                "image_side": "right"
+              },
+              {
+                "face": "user's left side",
+                "image_side": "left"
+              }
+            ]
+          },
+          "selection": {
+            "tone": "Cool (Blue/Overcast)",
+            "content": "Mobile / Café Worker",
+            "rationale": "The café table, banquette, cup, and notebook establish a café workspace. No explicit lighting tone is specified, so the HP Blue World default applies."
+          },
+          "reference": {
+            "id": "style_009",
+            "name": "HP 009 · Mobile / Café Worker",
+            "tone": "Cool (Blue/Overcast)",
+            "content": "Mobile / Café Worker"
+          },
+          "geometryResponse": {
+            "geometry": {
+              "support_height_m": 0.74,
+              "support_width_m": 0.8,
+              "support_depth_m": 0.8,
+              "user_edge_gap_m": 0.065,
+              "support_lateral_offset_m": -0.08,
+              "support_top_shape": "round",
+              "user_side": "near_camera",
+              "back_edge_against_wall": false,
+              "furniture_boxes": [
+                {
+                  "kind": "working_seat",
+                  "label": "Wooden café chair at the user-facing rim, mostly cropped below the frame",
+                  "box": [
+                    0.3,
+                    0.94,
+                    0.7,
+                    1.0
+                  ]
+                },
+                {
+                  "kind": "background_furniture",
+                  "label": "Connected upholstered banquette along the left wall beyond the primary table",
+                  "box": [
+                    0.0,
+                    0.28,
+                    0.21,
+                    0.58
+                  ]
+                },
+                {
+                  "kind": "background_furniture",
+                  "label": "Secondary café table across the aisle on the right, cropped by the frame",
+                  "box": [
+                    0.89,
+                    0.43,
+                    1.0,
+                    0.7
+                  ]
+                }
+              ]
+            },
+            "product_category": "laptop"
+          },
+          "geometry": {
+            "support_height_m": 0.74,
+            "support_width_m": 0.8,
+            "support_depth_m": 0.8,
+            "user_edge_gap_m": 0.065,
+            "support_lateral_offset_m": -0.08,
+            "support_top_shape": "round",
+            "user_side": "near_camera",
+            "back_edge_against_wall": false,
+            "furniture_boxes": [
+              {
+                "kind": "working_seat",
+                "label": "Wooden café chair at the user-facing rim, mostly cropped below the frame",
+                "box": [
+                  0.3,
+                  0.94,
+                  0.7,
+                  1.0
+                ]
+              },
+              {
+                "kind": "background_furniture",
+                "label": "Connected upholstered banquette along the left wall beyond the primary table",
+                "box": [
+                  0.0,
+                  0.28,
+                  0.21,
+                  0.58
+                ]
+              },
+              {
+                "kind": "background_furniture",
+                "label": "Secondary café table across the aisle on the right, cropped by the frame",
+                "box": [
+                  0.89,
+                  0.43,
+                  1.0,
+                  0.7
+                ]
+              }
+            ]
+          },
+          "guideInfo": null,
+          "geometryText": null,
+          "productCategory": "laptop",
+          "layout": null,
+          "camera": null,
+          "composition": null,
+          "scene": null,
+          "look": null,
+          "conflicts": null,
+          "finalPrompt": null
+        }
+      },
+      "ibl": {
+        "status": "skipped",
+        "ms": 0,
+        "error": null,
+        "has_image": false,
+        "detail": {}
+      },
+      "backplate": {
+        "status": "skipped",
+        "ms": 0,
+        "error": null,
+        "has_image": false,
+        "detail": {}
+      },
+      "recomposite": {
+        "status": "skipped",
+        "ms": 0,
+        "error": null,
+        "has_image": false,
+        "detail": {}
+      },
+      "relight": {
+        "status": "skipped",
+        "ms": 0,
+        "error": null,
+        "has_image": false,
+        "detail": {}
+      }
+    },
+    "completedAt": "2026-11-12T03:07:01.901034+00:00"
+  },
+  "run_sha256": "965946d1acca9a92ee32680dbccae5b4276247e06308f008a9428940aec29275",
+  "catalog_sha256": "98f80e6123887c1d9879f47c4ad61d2d5a4463d63e72a2f381d7e4edc2621be9",
+  "lineage": {
+    "label": "hp-pr4523-d1e5ae5323de-exact",
+    "endpoint_base_url": "http://127.0.0.1:39055",
+    "endpoint": "http://127.0.0.1:39055/api/generate",
+    "generator": "GPT Image 2.5 / single reference / no grading",
+    "rewriterVersion": "Adobe-Firefly/foundry#4523 / d1e5ae5323de / unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+    "pipelineVersion": "unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+    "source_commit": "d1e5ae5323dedebc3b06ed173a3731307bd0623a",
+    "patch_sha256": null,
+    "runtime_tree_sha256": "4da08388491b36f6435aeea29d40b780bdd02b06b81f1a35b86999b0b6e8694e",
+    "source_manifest_sha256": "c62f172f4dd08c6f4d229079c22e1b77751a6e008e13366dab2de14d3026542f",
+    "deployment_manifest_sha256": "8701a44a54e016a2837807926f5fe10c8bb6901286471f59b9ee83b4aba972e3",
+    "candidate_config_sha256": "b69086f3856f5a90c4fd0ebff1e142de90f3dc51c807e85ad8e00fea989f4faa",
+    "scene_contract": {
+      "textModel": "gpt-6-astra",
+      "imageModel": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "refCount": 1,
+      "imageCalls": 1,
+      "graded": false,
+      "imageMaskApplied": false,
+      "imageInputOrder": [
+        "hp16_geometry_guide.png"
+      ]
+    }
+  }
+}

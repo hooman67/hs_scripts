@@ -1,0 +1,338 @@
+{
+  "audit_id": "first-pass-async-job-source-checks-2026-11-10",
+  "retrieved_on": "2026-11-10",
+  "scope": "Primary-document fact check for a generic asynchronous video-job interview exercise. This is evidence, not lesson design. Eight source families were checked; related sections within one official manual are grouped together.",
+  "source_groups": [
+    {
+      "id": "aws-sqs-developer-guide",
+      "publisher": "Amazon Web Services",
+      "source_class": "official product documentation",
+      "confidence": "high for documented SQS behavior",
+      "pages": [
+        {
+          "title": "Amazon SQS standard queues and at-least-once delivery",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html",
+          "exact_excerpts": [
+            "Amazon SQS stores copies of your messages on multiple servers for redundancy and high availability. On rare occasions, one of the servers that stores a copy of a message might be unavailable when you receive or delete a message.",
+            "If this occurs, the copy of the message isn't deleted on the server that is unavailable, and you might get that message copy again when you receive messages. Design your applications to be idempotent (they should not be affected adversely when processing the same message more than once)."
+          ],
+          "limits": [
+            "A successful delete does not make duplicate delivery impossible in a standard queue.",
+            "At-least-once delivery requires idempotent application handling; SQS does not provide exactly-once processing for standard queues."
+          ]
+        },
+        {
+          "title": "Amazon SQS visibility timeout",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html",
+          "exact_excerpts": [
+            "When you receive a message from an Amazon SQS queue, it remains in the queue but becomes temporarily invisible to other consumers.",
+            "During this period, you're expected to process and delete the message. If you don't delete it before the timeout expires, the message becomes visible again in the queue and can be retrieved by another consumer.",
+            "The default visibility timeout for a queue is 30 seconds, but you can adjust this to match the time your application needs to process and delete a message."
+          ],
+          "limits": [
+            "The maximum visibility timeout is 12 hours from the time Amazon SQS receives the ReceiveMessage request; extending it does not reset that maximum.",
+            "For standard queues, visibility does not absolutely prevent another delivery during the timeout and is not a database ownership fence.",
+            "Standard queues have an approximate 120,000 in-flight-message limit, dependent on traffic and backlog."
+          ]
+        },
+        {
+          "title": "Amazon SQS short and long polling",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-short-and-long-polling.html",
+          "exact_excerpts": [
+            "Short polling (default) – The ReceiveMessage request queries a subset of servers (based on a weighted random distribution) to find available messages and sends an immediate response, even if no messages are found.",
+            "When the wait time for the ReceiveMessage API action is greater than 0, long polling is in effect. The maximum long polling wait time is 20 seconds."
+          ],
+          "limits": [
+            "SQS receiving is pull-based polling; long polling can still return an empty response in rare cases or when the wait expires."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aws-sqs-api-reference",
+      "publisher": "Amazon Web Services",
+      "source_class": "official API reference",
+      "confidence": "high for request fields and service limits",
+      "pages": [
+        {
+          "title": "SendMessage",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html",
+          "exact_excerpts": [
+            "Delivers a message to the specified queue.",
+            "A message can include only XML, JSON, and unformatted text.",
+            "The minimum size is one character. The maximum size is 1 MiB or 1,048,576 bytes",
+            "The request was not made over HTTPS or did not use SigV4 for signing."
+          ]
+        },
+        {
+          "title": "ReceiveMessage",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html",
+          "exact_excerpts": [
+            "Retrieves one or more messages (up to 10), from the specified queue. Using the WaitTimeSeconds parameter enables long-poll support.",
+            "The receipt handle is the identifier you must provide when deleting the message."
+          ]
+        },
+        {
+          "title": "DeleteMessage",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessage.html",
+          "exact_excerpts": [
+            "Deletes the specified message from the specified queue. To select the message to delete, use the ReceiptHandle of the message (not the MessageId which you receive when you send the message).",
+            "Each time you receive a message, meaning when a consumer retrieves a message from the queue, it comes with a unique ReceiptHandle. If you receive the same message more than once, you will get a different ReceiptHandle each time. When you want to delete a message using the DeleteMessage action, you must use the ReceiptHandle from the most recent time you received the message. If you use an old ReceiptHandle, the request will succeed, but the message might not be deleted."
+          ]
+        }
+      ],
+      "verified_mechanics": [
+        "MessageBody is a required string; JSON is serialized application data in that string, not an SQS-enforced application schema.",
+        "ReceiveMessage returns at most 10 messages; MaxNumberOfMessages defaults to 1.",
+        "DeleteMessage uses the latest receipt handle for that delivery attempt, not the MessageId or the application's durable job identifier.",
+        "The API reference's InvalidSecurity error states that a request was not made over HTTPS or did not use SigV4, so raw API requests require signed HTTPS; SDKs normally perform this transport/signing work."
+      ],
+      "limits": [
+        "FIFO-only deduplication fields do not change standard-queue semantics.",
+        "A receipt handle is ephemeral to a receive attempt and should not be stored as the job's identity."
+      ]
+    },
+    {
+      "id": "aws-sdk-python-sqs-examples",
+      "publisher": "Amazon Web Services",
+      "source_class": "official SDK code examples",
+      "confidence": "high as an SDK usage example; lower than the API reference for semantic guarantees",
+      "pages": [
+        {
+          "title": "Amazon SQS examples using SDK for Python (Boto3)",
+          "url": "https://docs.aws.amazon.com/code-library/latest/ug/python_3_sqs_code_examples.html",
+          "exact_excerpts": [
+            "Send a message to an Amazon SQS queue.",
+            "Receive a batch of messages in a single request from an SQS queue."
+          ],
+          "verified_mechanics": [
+            "The examples call queue.send_message with MessageBody, queue.receive_messages with MaxNumberOfMessages and WaitTimeSeconds, and delete received messages using receipt handles."
+          ],
+          "limits": [
+            "Examples show client flow, not a service guarantee; use the SQS API reference and Developer Guide for semantics and limits."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "amazon-rds-postgresql",
+      "publisher": "Amazon Web Services",
+      "source_class": "official managed-database documentation",
+      "confidence": "high for RDS product scope",
+      "pages": [
+        {
+          "title": "Amazon RDS for PostgreSQL",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html",
+          "exact_excerpts": [
+            "Amazon RDS supports DB instances running several versions of PostgreSQL.",
+            "You can use any standard SQL client application to run commands for the instance from your client computer."
+          ],
+          "limits": [
+            "RDS is the managed hosting layer. SQL details remain PostgreSQL-version-specific, so the selected RDS engine version must be checked before relying on a version-specific feature."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "postgresql-current-manual",
+      "publisher": "PostgreSQL Global Development Group",
+      "source_class": "official upstream database manual",
+      "confidence": "high for current PostgreSQL semantics; verify the target RDS engine version",
+      "pages": [
+        {
+          "title": "Transactions",
+          "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html",
+          "exact_excerpts": [
+            "The essential point of a transaction is that it bundles multiple steps into a single, all-or-nothing operation. The intermediate states between the steps are not visible to other concurrent transactions, and if some failure occurs that prevents the transaction from completing, then none of the steps affect the database at all."
+          ]
+        },
+        {
+          "title": "Unique Constraints",
+          "url": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS",
+          "exact_excerpts": [
+            "Unique constraints ensure that the data contained in a column, or a group of columns, is unique among all the rows in the table.",
+            "Adding a unique constraint will automatically create a unique B-tree index on the column or group of columns listed in the constraint."
+          ]
+        },
+        {
+          "title": "UPDATE",
+          "url": "https://www.postgresql.org/docs/current/sql-update.html",
+          "exact_excerpts": [
+            "UPDATE changes the values of the specified columns in all rows that satisfy the condition.",
+            "Only rows for which this expression returns true will be updated.",
+            "The optional RETURNING clause causes UPDATE to compute and return value(s) based on each row actually updated."
+          ]
+        }
+      ],
+      "verified_mechanics": [
+        "A non-null composite unique constraint such as tenant_id plus idempotency_key can reject duplicate request records.",
+        "An UPDATE with state/version/lease conditions in its WHERE clause changes only matching rows; RETURNING can reveal which row was actually updated."
+      ],
+      "limits": [
+        "Unique constraints treat null values as distinct by default unless NULLS NOT DISTINCT is requested; idempotency-key columns should be non-null for this use.",
+        "Database atomicity does not include an SQS publish or S3 write. Isolation level and predicate design still determine concurrent behavior.",
+        "A successful conditional UPDATE proves only the database transition; it does not by itself fence a stale worker from an external side effect."
+      ]
+    },
+    {
+      "id": "aws-dynamodb-developer-guide",
+      "publisher": "Amazon Web Services",
+      "source_class": "official product documentation",
+      "confidence": "high for DynamoDB behavior; included only as an alternative design",
+      "pages": [
+        {
+          "title": "Condition expressions",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html",
+          "exact_excerpts": [
+            "The PutItem operation overwrites an item with the same primary key (if it exists). If you want to avoid this, use a condition expression. This allows the write to proceed only if the item in question does not already have the same primary key.",
+            "If the condition expression evaluates to true, the operation succeeds; otherwise, it fails."
+          ]
+        },
+        {
+          "title": "DynamoDB transaction example",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-example.html",
+          "exact_excerpts": [
+            "The following code snippets illustrate how to use DynamoDB transactions to coordinate the multiple steps that are required to create and process an order. Using a single all-or-nothing operation ensures that if any part of the transaction fails, no actions in the transaction are run and no changes are made."
+          ]
+        },
+        {
+          "title": "DynamoDB transaction APIs",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html",
+          "exact_excerpts": [
+            "TransactWriteItems is a synchronous and idempotent write operation that groups up to 100 write actions in a single all-or-nothing operation."
+          ]
+        }
+      ],
+      "limits": [
+        "The 100 actions must target distinct items in the same AWS account and Region and total no more than 4 MB; two operations cannot target the same item in one transaction.",
+        "The client-token idempotency window is 10 minutes.",
+        "DynamoDB transactions do not include SQS or S3 atomically. Transaction records can reach streams gradually and interleave, so stream consumers cannot infer atomic transaction boundaries from record arrival.",
+        "This is an alternative persistence design, not a drop-in explanation of relational SQL."
+      ]
+    },
+    {
+      "id": "aws-s3-user-guide",
+      "publisher": "Amazon Web Services",
+      "source_class": "official product documentation",
+      "confidence": "high for S3 durability and version behavior",
+      "pages": [
+        {
+          "title": "Retaining multiple versions of objects with S3 Versioning",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html",
+          "exact_excerpts": [
+            "Versioning in Amazon S3 is a means of keeping multiple variants of an object in the same bucket.",
+            "When you enable versioning in a bucket, all new objects are versioned and given a unique version ID.",
+            "By default, S3 Versioning is disabled on buckets, and you must explicitly enable it."
+          ]
+        },
+        {
+          "title": "Retrieving object versions",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/RetrievingObjectVersions.html",
+          "exact_excerpts": [
+            "A simple GET request retrieves the current version of an object.",
+            "To retrieve a specific version, you have to specify its version ID."
+          ]
+        },
+        {
+          "title": "Data protection in Amazon S3",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/DataDurability.html",
+          "exact_excerpts": [
+            "S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA, S3 Glacier Instant Retrieval, S3 Glacier Flexible Retrieval, and S3 Glacier Deep Archive redundantly store objects on multiple devices across a minimum of three Availability Zones in an AWS Region.",
+            "Designed to provide 99.999999999% durability and 99.99% availability of objects over a given year."
+          ]
+        }
+      ],
+      "verified_mechanics": [
+        "A durable output reference needs at least bucket and object key; when versioning is enabled, retain the returned version ID to address an immutable stored version rather than whichever version is current later."
+      ],
+      "limits": [
+        "Versioning is disabled by default, so a design cannot assume a usable version ID without bucket configuration.",
+        "The durability statement is a service design target, not a guarantee that application metadata points to the intended object or that incomplete/malformed output is correct.",
+        "S3 One Zone-IA has a different placement model and was excluded from the multi-Availability-Zone excerpt."
+      ]
+    },
+    {
+      "id": "microsoft-transactional-outbox",
+      "publisher": "Microsoft",
+      "source_class": "official architecture guidance",
+      "confidence": "high for the generic pattern definition; product-specific implementation details are not generalized",
+      "pages": [
+        {
+          "title": "Implement the Transactional Outbox pattern by using Azure Cosmos DB",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/databases/guide/transactional-out-box-cosmos",
+          "exact_excerpts": [
+            "This pattern saves events in a data store that's typically in an outbox table in your database before it pushes them to a message broker.",
+            "When you save the business object and its events within the same database transaction, the system guarantees no data loss. The transaction either commits everything or rolls back everything if an error occurs.",
+            "To publish the events, a separate service or worker process queries the outbox table for unhandled entries, publishes them, and marks them as processed."
+          ]
+        }
+      ],
+      "limits": [
+        "The generic definition applies to a relational outbox, but most of this page is a Cosmos DB/Service Bus implementation and must not be presented as an AWS or PostgreSQL prescription.",
+        "The same-transaction guarantee covers the business row and outbox row. Publishing is still asynchronous and can be retried, so downstream consumers still need idempotency and ordering rules where required.",
+        "The page displayed an authorization banner during anonymous retrieval, although the article body and quoted material were returned."
+      ],
+      "source_access_note": "The previously known AWS Prescriptive Guidance URL https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html returned HTTP 404 on 2026-11-10, so it was not treated as current evidence."
+    }
+  ],
+  "supplemental_review_checks": [
+    {
+      "topic": "PostgreSQL lease clock semantics",
+      "url": "https://www.postgresql.org/docs/current/functions-datetime.html#FUNCTIONS-DATETIME-CURRENT",
+      "retrieved_on": "2026-11-10",
+      "exact_excerpt": "transaction_timestamp() is equivalent to CURRENT_TIMESTAMP, but is named to clearly reflect what it returns. statement_timestamp() returns the start time of the current statement (more specifically, the time of receipt of the latest command message from the client). statement_timestamp() and transaction_timestamp() return the same value during the first statement of a transaction, but might differ during subsequent statements. clock_timestamp() returns the actual current time, and therefore its value changes even within a single SQL statement.",
+      "review_implication": "CURRENT_TIMESTAMP is fixed at transaction start. Lease acquisition, renewal, and finalization must deliberately define which instant governs expiry; a transaction opened early can otherwise use stale time. Keep ownership updates to short transactions and use an appropriate database clock expression consistently."
+    },
+    {
+      "topic": "S3 no-overwrite conditional write",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-writes.html",
+      "retrieved_on": "2026-11-10",
+      "exact_excerpts": [
+        "By using conditional writes, you can add an additional header to your WRITE requests to specify preconditions for your Amazon S3 operation. To conditionally write objects, add the HTTP If-None-Match or If-Match header.",
+        "The If-None-Match header prevents overwrites of existing data by validating that there's not an object with the same key name already in your bucket."
+      ],
+      "limits": "If-None-Match checks the current version in a versioned bucket. The guide still needs a concrete baseline: conditional creation for a unique key, or versioning plus storing the selected version ID."
+    },
+    {
+      "topic": "S3 presigned URL",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html",
+      "retrieved_on": "2026-11-10",
+      "exact_excerpts": [
+        "You can use presigned URLs to grant time-limited access to objects in Amazon S3 without updating your bucket policy.",
+        "You can use the presigned URL multiple times, up to the expiration date and time."
+      ],
+      "limits": "It is a reusable bearer capability until expiry, not a one-use link. Access checks must happen before issuance and expiry should be bounded."
+    },
+    {
+      "topic": "ECS Fargate GPU support",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html",
+      "retrieved_on": "2026-11-10",
+      "exact_excerpt": "This parameter isn't supported for containers that are hosted on Fargate.",
+      "context": "The sentence appears under the GPU resource requirement. The guide's statement that a GPU workload needs a GPU-capable environment and cannot substitute ECS Fargate for GPU-equipped EC2 is supported by the current ECS task-definition documentation."
+    },
+    {
+      "topic": "SQS FIFO deduplication boundary",
+      "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html",
+      "retrieved_on": "2026-11-10",
+      "exact_excerpt": "If you retry the SendMessage action within the 5-minute deduplication interval, Amazon SQS doesn't introduce any duplicates into the queue.",
+      "limits": "This queue-send deduplication statement does not make PostgreSQL, computation, and S3 one transaction and does not guarantee exactly one external business side effect. The guide's narrower wording is correct."
+    }
+  ],
+  "internal_cross_check": {
+    "classification": "authorized read-only inspection of confidential internal source; metadata and generic lessons only",
+    "repository": "/home/colligo/colligo",
+    "repository_revision": "afc6bae7401468ada329774517c6c6f362663d16",
+    "revision_timestamp": "2026-11-09T11:54:04-08:00",
+    "file": "/home/colligo/colligo/pylibs/colligo/fastapi/endpoints/v3_async_jobs.py",
+    "file_sha256": "48f60658e0fb5a7c26c74f3c419f68f367f7208ab74d9e6d06e17df03e1c6308",
+    "file_lines": 338,
+    "inspected_on": "2026-11-10",
+    "scope": "Status and cancellation endpoint behavior only. Submission, queue consumption, storage schemas, SQS, RDS, and S3 implementation were outside this file and were not inferred.",
+    "generic_connections": [
+      "An asynchronous API can expose explicit status and cancellation URLs while returning Retry-After guidance during a running state.",
+      "Cancellation can be a transitional request state rather than an immediate terminal fact; completed, timed-out, cancelled, and unknown jobs need distinct outcomes.",
+      "A routing or queue-version parameter may need to remain in generated links so later status/cancel requests address the same namespace."
+    ],
+    "confidentiality_note": "No internal code, endpoint strings, customer data, configuration values, or internal best-practice claim is reproduced here. The observations describe only generic API-state concepts."
+  }
+}

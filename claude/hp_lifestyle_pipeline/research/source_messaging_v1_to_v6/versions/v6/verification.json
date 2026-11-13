@@ -1,0 +1,31 @@
+{
+  "as_of_utc": "2026-11-03T00:00:00-08:00",
+  "status": "reviewed_text_evaluation_passed",
+  "test_command": "python -m pytest research/source_messaging_v1_to_v6/versions/v6/tests eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/test_run_eval.py -q",
+  "test_result": {
+    "passed": 245,
+    "failed": 0,
+    "duration_seconds": 14.45,
+    "provider_mode": "mocked for tests; separate actual GPT-5.5 evaluation recorded"
+  },
+  "accepted_catalog_revision": "approved-20261029-r2",
+  "approved_prop_entries": 237,
+  "rejected_prop_entries": 3,
+  "held_uncertain_entries": 22,
+  "accepted_eval_revision": "v6-approved-20261029-final-r44",
+  "evaluation": {
+    "banks": 16,
+    "candidates": 160,
+    "selected_prompts": 96,
+    "initial_pass_banks": 5,
+    "one_repair_pass_banks": 11,
+    "manual_model_field_edits": 0,
+    "images_generated": 96
+  },
+  "limitations": [
+    "The accepted composite selects whole unchanged successful banks from preserved development calls and is not a fresh-batch reliability estimate.",
+    "Lexicon scanning does not prove arbitrary prose contains no unlisted objects.",
+    "Text checks do not prove final image compliance.",
+    "Camera labels are inherited offline profiles and were not remeasured in this text evaluation."
+  ]
+}

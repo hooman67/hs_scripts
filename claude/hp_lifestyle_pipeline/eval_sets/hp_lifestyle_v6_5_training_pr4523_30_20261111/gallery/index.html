@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HP lifestyle V6.4 / replacement V6.5 - training-derived</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading">Connecting to Adobe sign-in...</div>
+  <main id="content" class="hidden">
+    <header>
+      <h1>HP lifestyle V6.4 / replacement V6.5 - training-derived</h1>
+      <p>30 matched device/camera/rank slots. Same PR4523 / V15.7 shapes pipeline.</p>
+      <p class="muted">Ranks are not equivalent scenes or paired random seeds.
+        Original C-Tech comments describe V6.4, not judgments of V6.5.
+        New image quality, product lighting, branding and geometry require review.</p>
+      <p>The previous V6.5 candidate was rejected. This is a new, isolated
+        training-photograph-derived version: everyday functional props and
+        furnished rooms, with realistic prop reuse and no people or extra electronics.
+        Visual resemblance remains for human review, not a validated quality claim.</p>
+      <p id="textRecovery" class="muted"></p>
+      <nav class="downloads">
+        <a href="../downloads/prompts_all_v6_5_160.txt">All160 V6.5 prompts - TXT</a>
+        <a href="../downloads/prompts_all_v6_5_160.json">All160 V6.5 prompts - JSON</a>
+        <a href="../downloads/selected_v6_5_30.txt">These30 prompts - TXT</a>
+        <a href="../downloads/astra_training_design.json">Actual Astra training-derived design</a>
+        <a href="../downloads/text_completion_audit.json">Native text outcomes and authorized recovery audit</a>
+      </nav>
+      <details id="trainingReferences">
+        <summary>Training photographs and Astra's actual analysis (48 sampled images)</summary>
+        <p>These are input references, not generations. People and electronics
+          visible here are excluded from generated scenes. Search hits include
+          repeated photo sets and non-scene advertisements; this is a purposive
+          sample, not 48 independent rooms or an exhaustive corpus analysis.</p>
+        <div id="trainingExamples" class="input-grid"></div>
+      </details>
+      <label>Device <select id="device"><option value="">All devices</option></select></label>
+      <label><input id="showPrompts" type="checkbox"> Expand source prompts</label>
+      <p id="status" role="status"></p><p id="error" role="alert"></p>
+    </header>
+    <div id="comparison"></div>
+  </main>
+  <dialog id="lightbox">
+    <button id="closeImage" type="button">Close</button>
+    <img id="largeImage" alt="">
+    <p><a id="originalImage" target="_blank" rel="noopener">Open full-resolution original</a></p>
+  </dialog>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script>
+  <script src="./main.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => initializeIMS());</script>
+</body>
+</html>

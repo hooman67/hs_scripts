@@ -1,0 +1,176 @@
+{
+  "version": "hp-lifestyle-ctech-v4.1-freeze-20261027-v1",
+  "created_at_utc": "2026-10-27T21:06:09+00:00",
+  "status": "frozen_awaiting_ctech_feedback",
+  "scope": "Freeze the reviewed V4.1 text, generation inputs, runtime, terminal run evidence, distribution publication, and generated-image gallery state while C-Tech feedback is pending.",
+  "project_root": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline",
+  "eval_root": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026",
+  "run_root": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_ctech_v4_1_pilot_20261026_corrected_twins_20261027",
+  "freeze_semantics": {
+    "prompt_or_generation_input_changes": false,
+    "new_generation_submissions": false,
+    "generation_retries": false,
+    "all_120_rows_terminal": true,
+    "all_120_images_done": false,
+    "image_quality_accepted": false,
+    "image_quality_status": "awaiting_ctech_feedback",
+    "note": "This records the observed V4.1 state. It does not claim that failed rows produced images or that C-Tech accepted image quality."
+  },
+  "reviewed_text": {
+    "runtime_version_root": "research/source_messaging/versions/v4.1",
+    "reviewed_case_json": {
+      "path": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/reviewed_prompt_cases.json",
+      "case_count": 4,
+      "sha256": "c1300c01f001dc57a1a00e380399473ed70e8b38dfc9dd3e17d45d420b8c8173"
+    },
+    "reviewed_120_json": {
+      "path": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/pilot_prompts.json",
+      "prompt_count": 120,
+      "sha256": "1e99134ab8e1c1bab1f91eb74dc6d35b22b44c5a33d11b66566d84869957e57a"
+    },
+    "accepted_prompt_cases": {
+      "path": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/accepted_prompt_cases.json",
+      "case_count": 4,
+      "sha256": "c1300c01f001dc57a1a00e380399473ed70e8b38dfc9dd3e17d45d420b8c8173"
+    },
+    "runtime_system_prompt_sha256": "986957bcc1a5e218daea3594c037036b9d6d25af79847efbe0a95c849591fb04"
+  },
+  "source_inputs": {
+    "case_count": 4,
+    "path_root": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/inputs",
+    "input_hashes_are_pinned_in": "artifact_checksums.sha256"
+  },
+  "corrected_assets": {
+    "path_root": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027",
+    "selected_render_count": 4,
+    "manifest_sha256": "b5d1a01ea36214c82c3cd70317100e542577fd829b44e92e4d7f0ff522df473b",
+    "render_hashes": {
+      "laptop_FrontRightCloseUp": "eaeb86ec0159a4dbe3796ed01c5237376f784b98ca001bb23ed410c0518b8d96",
+      "laptop_FrontRightWide": "75d0443c3b33bdfb3743045ddee2074dd4f969d5fce6816a2ae9d1852407bf5a",
+      "printer_FrontRightCloseUp": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "printer_FrontRightWide": "a1307d682bfb7eef2b60cb1b8882875c5bff866d4a8961b308da932e29a223c5"
+    }
+  },
+  "image_authorization": {
+    "path": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/image_generation_manifest.json",
+    "sha256": "52a7cb4538510dcd6bf76e1189a022f79dfea36fa163c4275c6f3f2ff08b3a64",
+    "authorized_rows": 120,
+    "authorized_images_per_row": 1,
+    "candidate_texts_unchanged": true
+  },
+  "generation_runtime": {
+    "runner": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/generation/run_generation.py",
+    "runner_sha256": "4dc94c8a791c3b16aa7c05f634be8d052b32f488b9d8a15a7c974a5776b1deb6",
+    "supervisor": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/generation/supervise_generation.py",
+    "supervisor_sha256": "d5dbc006bd3d174eb3f9de5877f11c61afc50236553ddc14919e0ce266d5273e",
+    "final_supervisor_status": "terminal_failures",
+    "final_supervisor_decision": "all_120_rows_accounted_with_terminal_failures",
+    "invocation_count": 1,
+    "no_second_invocation": true
+  },
+  "generation_terminal_state": {
+    "as_of_utc": "2026-10-27T21:05:46.738164+00:00",
+    "expected_rows": 120,
+    "done": 116,
+    "failed": 4,
+    "pending": 0,
+    "missing": 0,
+    "ambiguous": 0,
+    "safe_retry": 0,
+    "summary_path": "local_data/generation_runs/hp_lifestyle_ctech_v4_1_pilot_20261026_corrected_twins_20261027/summary.json",
+    "summary_sha256": "9582d535878f86084cea61b20d31aa9749af0db1329c18f1ce3a0ccbf0013bba",
+    "results_path": "local_data/generation_runs/hp_lifestyle_ctech_v4_1_pilot_20261026_corrected_twins_20261027/results.jsonl",
+    "results_sha256": "9a4c61659fcdf2bcec44f8117c8a6d2ef79e1edce39d1cc2eba72c27b61fdb90"
+  },
+  "terminal_failures": [
+    {
+      "row_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp__p14__laptop_FrontRightCloseUp__corrected_white_20261026",
+      "status": "failed_terminal",
+      "error_code": "job_timeout",
+      "message": "The job timed out."
+    },
+    {
+      "row_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp__p10__printer_FrontRightCloseUp__corrected_white_20261026",
+      "status": "failed_terminal",
+      "error_code": "job_timeout",
+      "message": "The job timed out."
+    },
+    {
+      "row_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp__p3__printer_FrontRightCloseUp__corrected_white_20261026",
+      "status": "failed_terminal",
+      "error_code": "job_timeout",
+      "message": "The job timed out."
+    },
+    {
+      "row_id": "ee810cf51bb82bb4__printer_FrontRightWide__p23__printer_FrontRightWide__corrected_white_20261026",
+      "status": "failed_terminal",
+      "error_code": "job_timeout",
+      "message": "The job timed out."
+    }
+  ],
+  "failure_evidence": {
+    "results_source": "local_data/generation_runs/hp_lifestyle_ctech_v4_1_pilot_20261026_corrected_twins_20261027/results.jsonl",
+    "journal_sources_are_pinned_in": "artifact_checksums.sha256",
+    "interpretation": "Each journal source records failed_terminal with the endpoint error job_timeout. No retry is classified safe by the final summary."
+  },
+  "distribution_publication": {
+    "status": "published_and_browser_validated",
+    "publication_path": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/distribution_analysis_v1/publication.json",
+    "publication_sha256": "b8a664d91325629705ef24c778cdd163f82f12f75e32d4f4d1fec4e0df7818f2",
+    "bucket": "foundry-hp-enterprise-adobe-assets",
+    "prefix": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/distribution_analysis_v1",
+    "gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/distribution_analysis_v1/gallery/index.html",
+    "remote_object_count": 13,
+    "browser_validation_status": "passed"
+  },
+  "generation_gallery_publication": {
+    "status": "terminal_failures",
+    "publication_path": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/generation_publication/publication.json",
+    "publication_sha256": "6c140f2c03380c2560f253b240d2ffc530d795fc73add54f90e27f926a8d0885",
+    "published_at_utc": "2026-10-27T21:06:05.247217+00:00",
+    "bucket": "foundry-hp-enterprise-adobe-assets",
+    "prefix": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/generated_v4_1",
+    "gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/generated_v4_1/gallery/index.html",
+    "status_counts": {
+      "done": 116,
+      "pending": 0,
+      "failed": 4
+    },
+    "object_count_including_publication_manifest": 131,
+    "content_object_count": 130,
+    "gallery_data_sha256": "5f88b2f6450eae4950075dc0d8ef60ad27b89afc5078a70c95f4804c6a11f7fe",
+    "all_uploaded_objects_head_and_get_verified": true,
+    "all_done_images_hash_verified": true,
+    "all_corrected_input_hashes_verified": true,
+    "publisher_model_or_endpoint_calls": false,
+    "publisher_supervisor_status": "terminal_failures"
+  },
+  "artifact_index": {
+    "checksum_file": "eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/freeze_20261027/artifact_checksums.sha256",
+    "path_basis": "repository-relative paths from project_root",
+    "coverage": [
+      "V4.1 runtime source and schemas",
+      "reviewed text and 120 prompt JSON",
+      "four source-input JSON files",
+      "corrected asset manifests and local evidence",
+      "image authorization",
+      "generation and publication runners",
+      "terminal run summary, results, logs, and four failure journals",
+      "distribution publication and browser validation",
+      "terminal generation gallery publication and validation"
+    ]
+  },
+  "checkpoint_storage": {
+    "durable_checkout": "/home/colligo/hs_scripts",
+    "run_directory_apparent_bytes": 575294396,
+    "run_directory_allocated_human": "518 MiB",
+    "run_directory_git_ignored": true,
+    "tracked_eval_files_apparent_bytes": 26994444,
+    "eval_directory_apparent_bytes": 37098187,
+    "eval_directory_allocated_human": "18 MiB",
+    "current_tracked_publication_delta_bytes": 310403,
+    "new_freeze_files_bytes": 22850,
+    "git_safe_current_checkpoint_bytes": 333253,
+    "git_policy": "Do not add the generated run or ignored PNG screenshots/assets as ordinary Git candidates. The three tracked terminal publication-state JSON files plus the two new freeze files are the current Git-safe checkpoint candidates."
+  }
+}

@@ -1,0 +1,49 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.external_services.openai[public]
+  - colligo.models.image_providers.firefly[public]
+  - colligo.models.image_providers.stock[public]
+  - colligo.models.prompt_forge.worker[public]
+  - pydantic
+deps:
+- colligo.data
+- colligo.external_services.business_kit
+- colligo.external_services.ims
+- colligo.httpx
+- colligo.image
+- colligo.models.build
+- colligo.models.common.metrics
+- colligo.models.dentro.pylib[public]
+- colligo.models.dentro.worker.models.phi_3_text[public]
+- colligo.models.external_services.openai
+- colligo.models.firefly.diffusion.common[public]
+- colligo.models.image_providers.common
+- colligo.models.image_providers.firefly
+- colligo.models.image_providers.stock
+- colligo.models.masking.select_subject_v1[public]
+- colligo.models.text2design.adobeone
+- extcolors
+- face_fixup
+- facenet-pytorch
+- httpx
+- imutils
+- numpy
+- opencv-contrib-python-headless
+- pillow
+- pybreaker
+- pytest
+- python-dateutil
+- requests-toolbelt
+- scikit-learn
+- scipy
+- sentence-transformers
+- shapely
+- torch
+- torchvision
+exclude:
+- examples
+- "..."

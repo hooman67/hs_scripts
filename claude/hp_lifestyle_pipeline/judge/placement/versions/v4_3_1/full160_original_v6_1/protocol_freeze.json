@@ -1,0 +1,48 @@
+{
+  "schema_version": "hp-placement-v4.3.1-full160-freeze-v1",
+  "status": "prepared_not_launched",
+  "created_at_utc": "2026-11-06T04:26:24.175623+00:00",
+  "protocol_version": "hp-natural-placement-v4.3.1-compact-quality-canary-v1",
+  "dataset": "original V6.1 scene-generation images",
+  "manifest": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/new_v6_1_eval_20261105/manifest.json",
+    "sha256": "fd84149fa421c32602358c325b4fb14ed555d3e5033fb92bc2800ab37e6daefc",
+    "records": 160
+  },
+  "model": {
+    "requested": "gpt-5.5",
+    "route": "foundry_direct_openai",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 24000,
+    "sdk_retries": 0,
+    "application_total_attempts_max": 2,
+    "timeout_seconds": 600,
+    "concurrency_default": 2,
+    "concurrency_max": 2
+  },
+  "files": {
+    "PROVENANCE.md": "fc8e700870c505be038d0ff56434f391ce0d8676b1c9b120b38e2d7da9a9902a",
+    "system_prompt.md": "ff3edca4b99db7dc9fb23c0f83468a438c430b31e70573846eb6236b5bb72568",
+    "assessment_schema.json": "dc1554ca428fcc54cb6c462ed0fea9ffe34389fe9e14fbf883069ea920df3f13",
+    "result_schema.json": "6692c245b6ddfe7e06e3b2eff775ce7ef5543167dfabfe44fac569ad98bb0d6e",
+    "wire_schema.json": "8a09887271a0c03536dba1f2f836afd55e4e0ec9c07bef82c1d583a406fb643d",
+    "scoring.py": "3d9715bd8bd77354795681b9cdd1659acc28fefbfa415dec00de3add90f706af",
+    "crop.py": "c0b1d2e20ae10d172587782b65ab8a7b7282033c655864c8dd84d95912791fab",
+    "anchor_selection.py": "32f96d12b1aba988e34c6dad5235e8e8a50210a80356a1b97b64503ebce24fb8",
+    "anchors/anchor_catalog.json": "0ed988da25f1159b22d1e7897a7172324a298105fdaab7025105d830504032b3",
+    "run_judge.py": "ed88106b8b24a4cfd610282a5bd46f7e6ea08b1a0bcf93297261a410369da439"
+  },
+  "batch_files": {
+    "run_batch.py": "7737b62f4b12ddacdf144d73c349e692181970ece616a484a518d91bc9b31c09",
+    "build_grouped_report.py": "993698635b99045b12a4c7756f27f1a25c88d1b08544dc24336485bdcf57fff4"
+  },
+  "result_audit_hashes": {
+    "system_prompt_sha256": "ff3edca4b99db7dc9fb23c0f83468a438c430b31e70573846eb6236b5bb72568",
+    "assessment_schema_sha256": "dc1554ca428fcc54cb6c462ed0fea9ffe34389fe9e14fbf883069ea920df3f13",
+    "wire_schema_sha256": "f96cdf2ff3dd45b27f0dc5e9d9aec2e67058faebddedaea0a03f1d5af83cf190",
+    "scoring_sha256": "3d9715bd8bd77354795681b9cdd1659acc28fefbfa415dec00de3add90f706af",
+    "crop_algorithm_sha256": "c0b1d2e20ae10d172587782b65ab8a7b7282033c655864c8dd84d95912791fab",
+    "anchor_catalog_sha256": "0ed988da25f1159b22d1e7897a7172324a298105fdaab7025105d830504032b3"
+  },
+  "execution_gate": "No model call is authorized by this freeze. A live runner invocation additionally requires --acknowledge-launch-authorized."
+}

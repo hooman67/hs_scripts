@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foundry.adobe.com/schemas/hp-natural-placement-v4-assessment.json",
+  "title": "HP Natural Placement V4 model assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage_status",
+    "unable_reason",
+    "functional_front",
+    "context_reading",
+    "checks",
+    "general_artifact_warnings"
+  ],
+  "properties": {
+    "stage_status": {"type": "string", "enum": ["assessed", "unable"]},
+    "unable_reason": {
+      "type": ["string", "null"],
+      "enum": [null, "unreadable_image", "target_not_identifiable", "product_type_conflict"]
+    },
+    "functional_front": {"type": "string"},
+    "context_reading": {"type": "string"},
+    "checks": {
+      "anyOf": [
+        {"$ref": "#/$defs/checks"},
+        {"type": "null"}
+      ]
+    },
+    "general_artifact_warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "evidence"],
+        "properties": {
+          "code": {"type": "string", "const": "unrelated_rendering_artifact"},
+          "evidence": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "visibility",
+        "severity",
+        "confidence",
+        "warning_level",
+        "issue_codes",
+        "evidence",
+        "consequence",
+        "alternative_explanation",
+        "visibility_limit"
+      ],
+      "properties": {
+        "visibility": {"type": "string", "enum": ["observed", "partial", "unobservable"]},
+        "severity": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+        "warning_level": {"type": "string", "enum": ["none", "advisory", "review"]},
+        "issue_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "inappropriate_support",
+              "occupied_workstation",
+              "misplaced_support_furniture",
+              "incoherent_use_zone",
+              "unmotivated_device_position",
+              "incoherent_prop_arrangement",
+              "blocked_operating_path",
+              "excessive_reach",
+              "no_feasible_user_position",
+              "chair_displacement",
+              "device_support_axis_conflict",
+              "furniture_layout_conflict",
+              "implausible_scale",
+              "missing_required_support",
+              "malformed_support_furniture",
+              "conflicting_perspective",
+              "unsupported_product",
+              "floating",
+              "sinking_or_intersection",
+              "inconsistent_shadow",
+              "inconsistent_reflection"
+            ]
+          }
+        },
+        "evidence": {"type": "string", "minLength": 1},
+        "consequence": {"type": "string"},
+        "alternative_explanation": {"type": "string"},
+        "visibility_limit": {"type": "string"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support_role",
+        "room_use_zone",
+        "device_surface_position",
+        "props_use_relation",
+        "operating_access",
+        "user_position",
+        "device_support_axes",
+        "furniture_room_axes",
+        "product_scale",
+        "support_anatomy",
+        "shared_perspective",
+        "support_contact",
+        "shadows_reflections"
+      ],
+      "properties": {
+        "support_role": {"$ref": "#/$defs/check"},
+        "room_use_zone": {"$ref": "#/$defs/check"},
+        "device_surface_position": {"$ref": "#/$defs/check"},
+        "props_use_relation": {"$ref": "#/$defs/check"},
+        "operating_access": {"$ref": "#/$defs/check"},
+        "user_position": {"$ref": "#/$defs/check"},
+        "device_support_axes": {"$ref": "#/$defs/check"},
+        "furniture_room_axes": {"$ref": "#/$defs/check"},
+        "product_scale": {"$ref": "#/$defs/check"},
+        "support_anatomy": {"$ref": "#/$defs/check"},
+        "shared_perspective": {"$ref": "#/$defs/check"},
+        "support_contact": {"$ref": "#/$defs/check"},
+        "shadows_reflections": {"$ref": "#/$defs/check"}
+      }
+    }
+  }
+}

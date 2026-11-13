@@ -1,0 +1,440 @@
+{
+  "schema_version": "placement-v4-target-anchor-plan-v1",
+  "status": "candidate_only_not_frozen_or_evaluated",
+  "target_labels_or_verdicts_in_runtime_target_text": false,
+  "maximum_anchor_count": 4,
+  "selection_uses_target_annotation": false,
+  "source_catalog": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/anchored_candidate/anchor_catalog.json",
+  "source_catalog_sha256": "6675a77a36f569f4067339ccce424b51047355c0ce0b613cc703c03a7637113e",
+  "targets": [
+    {
+      "target_record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "target_product_type": "laptop",
+      "target_device": "elitebook",
+      "target_camera": "FrontLeftMedium",
+      "target_prompt_rank": "p1",
+      "target_generated_image_sha256": "29ddf3428f33def18d55241cecc9a4d4c74658d612b3c0531adda74d6facbb11",
+      "target_twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "target_scene_prompt_sha256": "11778f1fe4d699dc3a1df9f491767f79e0415c65268a367fd340f312dda0d8e0",
+      "target_exact_family": "elitebook|FrontLeftMedium|p1",
+      "target_near_duplicate_family": "laptop|FrontLeftMedium|p1",
+      "selected_anchor_ids": [
+        "elitebook__laptop_FrontWide__p2",
+        "tassel__printer_FrontCloseUp__p1",
+        "magic__printer_FrontLeftMedium__p1",
+        "elitebook__laptop_FrontCloseUp__p1"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "elitebook__laptop_FrontLeftMedium__p1": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ],
+        "cashmere__laptop_FrontLeftMedium__p1": [
+          "same_product_type_camera_prompt_rank_near_family"
+        ],
+        "elitebook__laptop_FrontLeftMedium__p2": [
+          "same_twin_image_hash"
+        ],
+        "elitebook__laptop_FrontLeftMedium__p3": [
+          "same_twin_image_hash"
+        ]
+      }
+    },
+    {
+      "target_record_id": "tassel__printer_FrontWide__p1",
+      "target_product_type": "printer",
+      "target_device": "tassel",
+      "target_camera": "FrontWide",
+      "target_prompt_rank": "p1",
+      "target_generated_image_sha256": "2b0cac6e221ec5b73492f42957983de9ebe20a585f9c824a4fa2017d0b697fe7",
+      "target_twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "target_scene_prompt_sha256": "8e619ed3e296ff558cf10fc460bd5c3fee01c8c176f7cad8a55d4af703650e09",
+      "target_exact_family": "tassel|FrontWide|p1",
+      "target_near_duplicate_family": "printer|FrontWide|p1",
+      "selected_anchor_ids": [
+        "tassel__printer_FrontCloseUp__p1",
+        "magic__printer_FrontLeftMedium__p1",
+        "tassel__printer_FrontCloseUp__p2",
+        "magic__printer_FrontRightCloseUp__p2"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "tassel__printer_FrontWide__p1": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ]
+      }
+    },
+    {
+      "target_record_id": "cashmere__laptop_FrontLeftMedium__p1",
+      "target_product_type": "laptop",
+      "target_device": "cashmere",
+      "target_camera": "FrontLeftMedium",
+      "target_prompt_rank": "p1",
+      "target_generated_image_sha256": "35064f3c05ccdf8a3c840c9177fe63de5704bd2795fd1c2bbceced01520d9a14",
+      "target_twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "target_scene_prompt_sha256": "ef1f129cd9681856d6982a95634c2f5f5c2f8cdc244a28d7df15c555dee820a5",
+      "target_exact_family": "cashmere|FrontLeftMedium|p1",
+      "target_near_duplicate_family": "laptop|FrontLeftMedium|p1",
+      "selected_anchor_ids": [
+        "elitebook__laptop_FrontLeftMedium__p3",
+        "tassel__printer_FrontCloseUp__p1",
+        "elitebook__laptop_FrontLeftMedium__p2",
+        "elitebook__laptop_FrontCloseUp__p1"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "elitebook__laptop_FrontLeftMedium__p1": [
+          "same_product_type_camera_prompt_rank_near_family"
+        ],
+        "cashmere__laptop_FrontLeftMedium__p1": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ]
+      }
+    },
+    {
+      "target_record_id": "tassel__printer_FrontCloseUp__p1",
+      "target_product_type": "printer",
+      "target_device": "tassel",
+      "target_camera": "FrontCloseUp",
+      "target_prompt_rank": "p1",
+      "target_generated_image_sha256": "51c593234bfa195b88210dd4152f393312aefcf120e21e454c17612cd1432f6f",
+      "target_twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "target_scene_prompt_sha256": "a64c021c0ba0c748820ed3d4d0abaefc50fcae8bced21ca065daa020c9057b44",
+      "target_exact_family": "tassel|FrontCloseUp|p1",
+      "target_near_duplicate_family": "printer|FrontCloseUp|p1",
+      "selected_anchor_ids": [
+        "tassel__printer_FrontRightCloseUp__p2",
+        "magic__printer_FrontLeftMedium__p1",
+        "tassel__printer_FrontLeftMedium__p2",
+        "magic__printer_FrontRightCloseUp__p2"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "tassel__printer_FrontCloseUp__p1": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ],
+        "tassel__printer_FrontCloseUp__p2": [
+          "same_twin_image_hash"
+        ]
+      }
+    },
+    {
+      "target_record_id": "elitebook__laptop_FrontCloseUp__p1",
+      "target_product_type": "laptop",
+      "target_device": "elitebook",
+      "target_camera": "FrontCloseUp",
+      "target_prompt_rank": "p1",
+      "target_generated_image_sha256": "59f7df458cd91a7cc6a2258697f8aeea766a5fb73498523c891d50ffa6be0b9e",
+      "target_twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "target_scene_prompt_sha256": "ce606704ee1e49fa0cdd36977a7ffbd7f37ede60ba785d47fcc4ff4f171af02b",
+      "target_exact_family": "elitebook|FrontCloseUp|p1",
+      "target_near_duplicate_family": "laptop|FrontCloseUp|p1",
+      "selected_anchor_ids": [
+        "cashmere__laptop_FrontLeftMedium__p1",
+        "tassel__printer_FrontCloseUp__p1",
+        "elitebook__laptop_FrontLeftMedium__p2",
+        "magic__printer_FrontRightCloseUp__p2"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "elitebook__laptop_FrontCloseUp__p1": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ]
+      }
+    },
+    {
+      "target_record_id": "tassel__printer_FrontRightCloseUp__p1",
+      "target_product_type": "printer",
+      "target_device": "tassel",
+      "target_camera": "FrontRightCloseUp",
+      "target_prompt_rank": "p1",
+      "target_generated_image_sha256": "d5ede905a920b1c052525d2edfbdf0bcc53aa12da64b7dfc76493fb2cee7d0e6",
+      "target_twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "target_scene_prompt_sha256": "64d9be266af9c84caf692eedf81851e252bec22fc5820dd8418bd1b5585823a9",
+      "target_exact_family": "tassel|FrontRightCloseUp|p1",
+      "target_near_duplicate_family": "printer|FrontRightCloseUp|p1",
+      "selected_anchor_ids": [
+        "tassel__printer_FrontCloseUp__p1",
+        "magic__printer_FrontLeftMedium__p1",
+        "tassel__printer_FrontCloseUp__p2",
+        "magic__printer_FrontRightCloseUp__p2"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "tassel__printer_FrontRightCloseUp__p2": [
+          "same_twin_image_hash"
+        ]
+      }
+    },
+    {
+      "target_record_id": "magic__printer_FrontLeftMedium__p1",
+      "target_product_type": "printer",
+      "target_device": "magic",
+      "target_camera": "FrontLeftMedium",
+      "target_prompt_rank": "p1",
+      "target_generated_image_sha256": "3889537a465377790671fe8efbeb189fd673391e47ccea5a62c76a9dc0efad7f",
+      "target_twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "target_scene_prompt_sha256": "5d60a3b04f4632450765d07554038fc712a7a7aacc133a5c75175810db62cf9a",
+      "target_exact_family": "magic|FrontLeftMedium|p1",
+      "target_near_duplicate_family": "printer|FrontLeftMedium|p1",
+      "selected_anchor_ids": [
+        "tassel__printer_FrontCloseUp__p1",
+        "elitebook__laptop_FrontLeftMedium__p2",
+        "tassel__printer_FrontLeftMedium__p2",
+        "magic__printer_FrontRightCloseUp__p2"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "magic__printer_FrontLeftMedium__p1": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ]
+      }
+    },
+    {
+      "target_record_id": "tassel__printer_FrontLeftMedium__p2",
+      "target_product_type": "printer",
+      "target_device": "tassel",
+      "target_camera": "FrontLeftMedium",
+      "target_prompt_rank": "p2",
+      "target_generated_image_sha256": "e69a6f9f1eb25bdb5a529222fd74fe3bd45adabca3d4f1db94b04bbc119d1cf6",
+      "target_twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "target_scene_prompt_sha256": "b759f7454ed8facc39fc465000b78cd33eae2d508732b1adfd00a2f48bd43bc0",
+      "target_exact_family": "tassel|FrontLeftMedium|p2",
+      "target_near_duplicate_family": "printer|FrontLeftMedium|p2",
+      "selected_anchor_ids": [
+        "tassel__printer_FrontCloseUp__p1",
+        "magic__printer_FrontLeftMedium__p1",
+        "tassel__printer_FrontCloseUp__p2",
+        "magic__printer_FrontRightCloseUp__p2"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "tassel__printer_FrontLeftMedium__p2": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ]
+      }
+    },
+    {
+      "target_record_id": "elitebook__laptop_FrontLeftMedium__p2",
+      "target_product_type": "laptop",
+      "target_device": "elitebook",
+      "target_camera": "FrontLeftMedium",
+      "target_prompt_rank": "p2",
+      "target_generated_image_sha256": "1d96f1e169fcc0724c480b778f7baba35b3260612310cf1b42df1aa923fea141",
+      "target_twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "target_scene_prompt_sha256": "d3d278286bef54d083e160db381aa9fc928febf039a6df39e8aec3313bddc874",
+      "target_exact_family": "elitebook|FrontLeftMedium|p2",
+      "target_near_duplicate_family": "laptop|FrontLeftMedium|p2",
+      "selected_anchor_ids": [
+        "cashmere__laptop_FrontLeftMedium__p1",
+        "tassel__printer_FrontCloseUp__p1",
+        "magic__printer_FrontLeftMedium__p1",
+        "elitebook__laptop_FrontCloseUp__p1"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "elitebook__laptop_FrontLeftMedium__p1": [
+          "same_twin_image_hash"
+        ],
+        "elitebook__laptop_FrontLeftMedium__p2": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ],
+        "elitebook__laptop_FrontLeftMedium__p3": [
+          "same_twin_image_hash"
+        ]
+      }
+    },
+    {
+      "target_record_id": "elitebook__laptop_FrontWide__p2",
+      "target_product_type": "laptop",
+      "target_device": "elitebook",
+      "target_camera": "FrontWide",
+      "target_prompt_rank": "p2",
+      "target_generated_image_sha256": "85aafa41a5f1a4028da064ddb1e70cda982311147308776bfaba5697965fc131",
+      "target_twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "target_scene_prompt_sha256": "efe70a88b79b2dad9d00cf7f069e8f3afc7e577bb189838ff181a9c3d97cd6c9",
+      "target_exact_family": "elitebook|FrontWide|p2",
+      "target_near_duplicate_family": "laptop|FrontWide|p2",
+      "selected_anchor_ids": [
+        "cashmere__laptop_FrontLeftMedium__p1",
+        "tassel__printer_FrontWide__p1",
+        "elitebook__laptop_FrontLeftMedium__p2",
+        "elitebook__laptop_FrontCloseUp__p1"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "elitebook__laptop_FrontWide__p2": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ]
+      }
+    },
+    {
+      "target_record_id": "tassel__printer_FrontCloseUp__p2",
+      "target_product_type": "printer",
+      "target_device": "tassel",
+      "target_camera": "FrontCloseUp",
+      "target_prompt_rank": "p2",
+      "target_generated_image_sha256": "e532a54e6c1c56bd013e4793c71b7a935dd4d4a9186acfee9832cae66187b87f",
+      "target_twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "target_scene_prompt_sha256": "eec56a502f7a5fb415f55f24b388c0103fa748493aac218edbe4fb3c3ad1642b",
+      "target_exact_family": "tassel|FrontCloseUp|p2",
+      "target_near_duplicate_family": "printer|FrontCloseUp|p2",
+      "selected_anchor_ids": [
+        "tassel__printer_FrontRightCloseUp__p2",
+        "magic__printer_FrontLeftMedium__p1",
+        "tassel__printer_FrontLeftMedium__p2",
+        "magic__printer_FrontRightCloseUp__p2"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "tassel__printer_FrontCloseUp__p1": [
+          "same_twin_image_hash"
+        ],
+        "tassel__printer_FrontCloseUp__p2": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ]
+      }
+    },
+    {
+      "target_record_id": "magic__printer_FrontRightCloseUp__p2",
+      "target_product_type": "printer",
+      "target_device": "magic",
+      "target_camera": "FrontRightCloseUp",
+      "target_prompt_rank": "p2",
+      "target_generated_image_sha256": "87f3068a15486de81808e2bbe2dcaea0256843bd757aa0f36df3082f8cf08d11",
+      "target_twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "target_scene_prompt_sha256": "e8d841fbb5e04a16559fc2af76c71cc612f25a7d64a0616cdfb8dae647ffc621",
+      "target_exact_family": "magic|FrontRightCloseUp|p2",
+      "target_near_duplicate_family": "printer|FrontRightCloseUp|p2",
+      "selected_anchor_ids": [
+        "tassel__printer_FrontCloseUp__p1",
+        "magic__printer_FrontLeftMedium__p1",
+        "tassel__printer_FrontCloseUp__p2",
+        "elitebook__laptop_FrontCloseUp__p1"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "magic__printer_FrontRightCloseUp__p2": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ],
+        "tassel__printer_FrontRightCloseUp__p2": [
+          "same_product_type_camera_prompt_rank_near_family"
+        ]
+      }
+    },
+    {
+      "target_record_id": "tassel__printer_FrontRightCloseUp__p2",
+      "target_product_type": "printer",
+      "target_device": "tassel",
+      "target_camera": "FrontRightCloseUp",
+      "target_prompt_rank": "p2",
+      "target_generated_image_sha256": "a20d3e7701400eff3185e83806d3540f18a7f8f69d13b67325940e0837dc1ae2",
+      "target_twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "target_scene_prompt_sha256": "eeee75d654dacef472c7d29fbad6237d201268388a535c4bf9d03c6829ebb84d",
+      "target_exact_family": "tassel|FrontRightCloseUp|p2",
+      "target_near_duplicate_family": "printer|FrontRightCloseUp|p2",
+      "selected_anchor_ids": [
+        "tassel__printer_FrontCloseUp__p1",
+        "magic__printer_FrontLeftMedium__p1",
+        "tassel__printer_FrontCloseUp__p2",
+        "elitebook__laptop_FrontCloseUp__p1"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "magic__printer_FrontRightCloseUp__p2": [
+          "same_product_type_camera_prompt_rank_near_family"
+        ],
+        "tassel__printer_FrontRightCloseUp__p2": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ]
+      }
+    },
+    {
+      "target_record_id": "elitebook__laptop_BackRightCloseUp__p3",
+      "target_product_type": "laptop",
+      "target_device": "elitebook",
+      "target_camera": "BackRightCloseUp",
+      "target_prompt_rank": "p3",
+      "target_generated_image_sha256": "93fd3d75bd310093c36f2ff140777ea5b8485e87963a7782f645b435ef93517d",
+      "target_twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "target_scene_prompt_sha256": "5829759f801806ff4f6923fa2c0bb4a5370d3fcc38e37410dbd76eb486b03c5c",
+      "target_exact_family": "elitebook|BackRightCloseUp|p3",
+      "target_near_duplicate_family": "laptop|BackRightCloseUp|p3",
+      "selected_anchor_ids": [
+        "cashmere__laptop_FrontLeftMedium__p1",
+        "tassel__printer_FrontCloseUp__p1",
+        "elitebook__laptop_FrontLeftMedium__p2",
+        "elitebook__laptop_FrontCloseUp__p1"
+      ],
+      "excluded_anchor_ids_with_reasons": {}
+    },
+    {
+      "target_record_id": "elitebook__laptop_FrontLeftMedium__p3",
+      "target_product_type": "laptop",
+      "target_device": "elitebook",
+      "target_camera": "FrontLeftMedium",
+      "target_prompt_rank": "p3",
+      "target_generated_image_sha256": "4ae0ab7bcf02a4194b0803f9811ac07e55bff8a29be94d7848f8ce043f96c453",
+      "target_twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "target_scene_prompt_sha256": "60ec2b4d837dd46ec7a366fdd7aada610b7ec148417bb846b52d9c0b29f49c3f",
+      "target_exact_family": "elitebook|FrontLeftMedium|p3",
+      "target_near_duplicate_family": "laptop|FrontLeftMedium|p3",
+      "selected_anchor_ids": [
+        "cashmere__laptop_FrontLeftMedium__p1",
+        "tassel__printer_FrontCloseUp__p1",
+        "magic__printer_FrontLeftMedium__p1",
+        "elitebook__laptop_FrontCloseUp__p1"
+      ],
+      "excluded_anchor_ids_with_reasons": {
+        "elitebook__laptop_FrontLeftMedium__p1": [
+          "same_twin_image_hash"
+        ],
+        "elitebook__laptop_FrontLeftMedium__p2": [
+          "same_twin_image_hash"
+        ],
+        "elitebook__laptop_FrontLeftMedium__p3": [
+          "exact_generated_image_hash",
+          "same_twin_image_hash",
+          "exact_scene_prompt_hash",
+          "same_device_camera_prompt_rank_family",
+          "same_product_type_camera_prompt_rank_near_family"
+        ]
+      }
+    }
+  ]
+}

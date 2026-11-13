@@ -1,0 +1,72 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+custom_pyenv: ff_services_gr6
+deps:
+- Pillow
+- PyYAML
+- adobe-torio
+- adobeone
+- atomicx
+- catpad
+- clean-fid
+- colligo.data
+- colligo.image
+- data_chef
+- dcmoe
+- decord
+- dill
+- duckdb
+- einops
+- fe-html
+- feature_registry
+- ff_vendored_gr6
+- firecats
+- flash-attn
+- flashattn_hopper
+- g5nie
+- genie
+- genie-contrib
+- imageio
+- jieba
+- lpips
+- magi-attention
+- models-t5-xxl[model]
+- mori
+- moviepy
+- msgspec
+- numpy
+- omegaconf
+- opencv-contrib-python-headless
+- orion
+- pandas
+- phonemizer
+- piat
+- popeen
+- pyarrow
+- pykakasi
+- pypinyin
+- scikit-learn
+- scipy
+- smallperm
+- sqlglot
+- st-attn
+- structlog
+- torch
+- torchaudio
+- torchcodec
+- torchvision
+- transformers
+- types-boto3-full
+- xxhash
+exclude:
+- "..."
+
+# This does not change behavior of the code
+# This is useful when for any reason the tar of deps uploaded to s3 or the cache of CI agents
+# being corrupted. Bump this to cause a new value and invalidate the cache.
+# "1" is added to force rebuild with latest colligo.base that includes JOB_RESOURCE_GONE
+pyenv_cache_etag: "1"

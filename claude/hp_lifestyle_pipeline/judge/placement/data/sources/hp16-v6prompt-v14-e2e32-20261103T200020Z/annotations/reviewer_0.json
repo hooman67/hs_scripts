@@ -1,0 +1,877 @@
+{
+  "schema": "fe-html/annotations@1",
+  "ldap": "adarabi",
+  "reviewer": {
+    "ldap": "adarabi",
+    "email": null,
+    "name": null,
+    "identity_source": "stored"
+  },
+  "submitted_at": "2026-11-04T00:00:21.699Z",
+  "report": {
+    "dir": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/",
+    "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z",
+    "sources": [
+      "data.json"
+    ],
+    "title": "HP16, V6 user prompts: V13 vs V14",
+    "total_rows": 32,
+    "metadata": [
+      [
+        "Comparison scope",
+        {
+          "Cases": 32,
+          "User prompt": "V6, identical for both",
+          "Product input": "identical",
+          "V13": "colligo pipeline, V13 rewriter (V6 run of the source viewer)",
+          "V14": "PR #4256 @4d685d95c, 2368x1776, one image call"
+        }
+      ],
+      [
+        "Outcome",
+        {
+          "V14": "32/32 succeeded, no retries"
+        }
+      ]
+    ],
+    "evaluation_unit": "Same product/camera and same V6 user prompt; V13 versus V14 final image preference",
+    "row_ranges": null,
+    "rows_pending": 0,
+    "complete": true
+  },
+  "questions": [
+    {
+      "id": "overall_preference_0",
+      "text": "Overall preference",
+      "hard_check": false,
+      "rubric": {
+        "key": "custom",
+        "name": "Version preference",
+        "options": [
+          {
+            "value": "v13",
+            "label": "V13",
+            "tone": "alt"
+          },
+          {
+            "value": "v14",
+            "label": "V14",
+            "tone": "alt"
+          },
+          {
+            "value": "tie",
+            "label": "Tie",
+            "tone": "neutral"
+          },
+          {
+            "value": "both_unusable",
+            "label": "Both unusable",
+            "tone": "bad"
+          }
+        ]
+      }
+    }
+  ],
+  "rows": [
+    {
+      "key": "01_cashmere_x_Front_CloseUp",
+      "row_idx": 1,
+      "evalset_item_id": "01_cashmere_x_Front_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/01/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/01/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "02_cashmere_x_Front_CloseUp",
+      "row_idx": 2,
+      "evalset_item_id": "02_cashmere_x_Front_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/02/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/02/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "03_cashmere_x_Back_Right_CloseUp",
+      "row_idx": 3,
+      "evalset_item_id": "03_cashmere_x_Back_Right_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/03/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/03/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "04_cashmere_x_Back_Right_CloseUp",
+      "row_idx": 4,
+      "evalset_item_id": "04_cashmere_x_Back_Right_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/04/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/04/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "05_cashmere_x_Front_Left_Medium",
+      "row_idx": 5,
+      "evalset_item_id": "05_cashmere_x_Front_Left_Medium",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/05/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/05/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "06_cashmere_x_Front_Left_Medium",
+      "row_idx": 6,
+      "evalset_item_id": "06_cashmere_x_Front_Left_Medium",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/06/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/06/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "07_cashmere_x_Front_Wide",
+      "row_idx": 7,
+      "evalset_item_id": "07_cashmere_x_Front_Wide",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/07/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/07/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "08_cashmere_x_Front_Wide",
+      "row_idx": 8,
+      "evalset_item_id": "08_cashmere_x_Front_Wide",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/08/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/08/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "09_elitebook_13_Front_CloseUp",
+      "row_idx": 9,
+      "evalset_item_id": "09_elitebook_13_Front_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/09/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/09/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "10_elitebook_13_Front_CloseUp",
+      "row_idx": 10,
+      "evalset_item_id": "10_elitebook_13_Front_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/10/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/10/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "11_elitebook_13_Back_Right_CloseUp",
+      "row_idx": 11,
+      "evalset_item_id": "11_elitebook_13_Back_Right_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/11/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/11/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "12_elitebook_13_Back_Right_CloseUp",
+      "row_idx": 12,
+      "evalset_item_id": "12_elitebook_13_Back_Right_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/12/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/12/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "13_elitebook_13_Front_Left_Medium",
+      "row_idx": 13,
+      "evalset_item_id": "13_elitebook_13_Front_Left_Medium",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/13/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/13/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "14_elitebook_13_Front_Left_Medium",
+      "row_idx": 14,
+      "evalset_item_id": "14_elitebook_13_Front_Left_Medium",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/14/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/14/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "15_elitebook_13_Front_Wide",
+      "row_idx": 15,
+      "evalset_item_id": "15_elitebook_13_Front_Wide",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/15/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/15/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "16_elitebook_13_Front_Wide",
+      "row_idx": 16,
+      "evalset_item_id": "16_elitebook_13_Front_Wide",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/16/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/16/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "17_tassel_Front_CloseUp",
+      "row_idx": 17,
+      "evalset_item_id": "17_tassel_Front_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/17/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/17/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "18_tassel_Front_CloseUp",
+      "row_idx": 18,
+      "evalset_item_id": "18_tassel_Front_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/18/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/18/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "19_tassel_Front_Right_CloseUp",
+      "row_idx": 19,
+      "evalset_item_id": "19_tassel_Front_Right_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/19/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/19/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "20_tassel_Front_Right_CloseUp",
+      "row_idx": 20,
+      "evalset_item_id": "20_tassel_Front_Right_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/20/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/20/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "21_tassel_Front_Left_Medium",
+      "row_idx": 21,
+      "evalset_item_id": "21_tassel_Front_Left_Medium",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/21/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/21/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "22_tassel_Front_Left_Medium",
+      "row_idx": 22,
+      "evalset_item_id": "22_tassel_Front_Left_Medium",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/22/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/22/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "23_tassel_Front_Wide",
+      "row_idx": 23,
+      "evalset_item_id": "23_tassel_Front_Wide",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/23/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/23/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "24_tassel_Front_Wide",
+      "row_idx": 24,
+      "evalset_item_id": "24_tassel_Front_Wide",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/24/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/24/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "25_adf_printer_Front_CloseUp",
+      "row_idx": 25,
+      "evalset_item_id": "25_adf_printer_Front_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/25/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/25/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "26_adf_printer_Front_CloseUp",
+      "row_idx": 26,
+      "evalset_item_id": "26_adf_printer_Front_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/26/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/26/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "27_adf_printer_Front_Right_CloseUp",
+      "row_idx": 27,
+      "evalset_item_id": "27_adf_printer_Front_Right_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/27/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/27/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "28_adf_printer_Front_Right_CloseUp",
+      "row_idx": 28,
+      "evalset_item_id": "28_adf_printer_Front_Right_CloseUp",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/28/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/28/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "29_adf_printer_Front_Left_Medium",
+      "row_idx": 29,
+      "evalset_item_id": "29_adf_printer_Front_Left_Medium",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/29/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/29/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "30_adf_printer_Front_Left_Medium",
+      "row_idx": 30,
+      "evalset_item_id": "30_adf_printer_Front_Left_Medium",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/30/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/30/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v14"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "31_adf_printer_Front_Wide",
+      "row_idx": 31,
+      "evalset_item_id": "31_adf_printer_Front_Wide",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/31/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/31/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    },
+    {
+      "key": "32_adf_printer_Front_Wide",
+      "row_idx": 32,
+      "evalset_item_id": "32_adf_printer_Front_Wide",
+      "comparison_assets": [
+        {
+          "label": "V13 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/32/v6_final.png",
+          "width": 1216,
+          "height": 912
+        },
+        {
+          "label": "V14 final",
+          "image_src": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v14-e2e32-20261103T200020Z/originals/32/v14_final.png",
+          "width": 2368,
+          "height": 1776
+        }
+      ],
+      "answers": {
+        "overall_preference_0": "v13"
+      },
+      "comment": "",
+      "complete": true,
+      "blocked_by": null
+    }
+  ]
+}

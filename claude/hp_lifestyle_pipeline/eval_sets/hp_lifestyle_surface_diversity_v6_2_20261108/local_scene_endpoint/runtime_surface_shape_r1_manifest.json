@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "as_of_date": "2026-11-09",
+  "status": "isolated_candidate_not_deployed",
+  "external_calls": {
+    "deployment": false,
+    "image_api": false,
+    "llm_api": false,
+    "server_started": false
+  },
+  "source": {
+    "repository_checkout_read_only": "/home/colligo/foundry-pr4349-position-exp",
+    "commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+    "package_path": "experimental/adarabi/hp-3p-gpt25",
+    "runtime_copy": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/local_scene_endpoint/runtime",
+    "runtime_file_count": 41,
+    "runtime_tree_sha256": "631fe047e7b82c6c690f038effda1155b0ffde5ecdbf8be745164db649a80de5",
+    "runtime_tree_hash_algorithm": "SHA-256 over sorted lines: relative_path NUL byte_size NUL file_sha256 newline"
+  },
+  "reviewed_policy": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/prompt_writer_v6_2/surface_diversity_20261108/shape_prompt_review/root_reviewed_policy.json",
+    "sha256": "c3fc57a5834e000f31b560ac57d2cd5df88cbe78a8c8f0882ed22ce2eda34f0e",
+    "geometry_section_exact": true,
+    "constant_values_exact": true,
+    "unchanged_system_sections_byte_identical": true,
+    "printer_wall_assignment_sources_identical_to_pinned_commit": true
+  },
+  "pipeline_version": "unified-blue-scale-v20-surface-shape-r1",
+  "changed_files": {
+    "hp3p/geometry.py": {
+      "base_sha256": "8bd8e878c85825743b4f67d93430208ea216ad60a5cb0e3d877f1ed118e8764e",
+      "candidate_sha256": "1a0d872f1a03de280b07fb72e7e8ae22e019443844b974b5276ccd826049b4e5"
+    },
+    "hp3p/pipeline.py": {
+      "base_sha256": "8dc1a634ecf69ec6efcaeb399c60e3c9b94b208fe1095c0ab3ea6e065a22307d",
+      "candidate_sha256": "ec795e2a69d7de2b2e28e0f433e8d433db73458a92e3976f7df4132562ad0b89"
+    },
+    "hp3p/prompts/system_3p.txt": {
+      "base_sha256": "bf402c52998b1f1c7bdf1aed45c51d1c101cc43432b1c17561ecaf74a97017a2",
+      "candidate_sha256": "178e9fac56cd5746384cdbe9a96deec0c92bac8c8225a68de3f5364067e4fdae"
+    },
+    "tests/test_geometry.py": {
+      "base_sha256": "38e9422d45cca33eff518510036e0e1784522eb7fc583f712d6c36856ab2bfb4",
+      "candidate_sha256": "3c2b0f7663ac3287c613146a4a964085370a170242b8973132d6b24d9f73d401"
+    },
+    "tests/test_pipeline.py": {
+      "base_sha256": "955514a0a4f817ed00cf79a82daa2dfbe8d7443732c6d477f0e6f82ea974b673",
+      "candidate_sha256": "7e8fdeacf939c3c7fb10e8381b72d2b918e9ed0e242c96055260bbedb6f5f097"
+    }
+  },
+  "applicable_patch": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/local_scene_endpoint/runtime_surface_shape_r1.patch",
+    "sha256": "95ddc80d7d62e75c6f7461a45011a6412a35a4bc03a36fada517fdf5888a8843",
+    "strip_level": 1,
+    "dry_run_passed": true,
+    "applied_tree_byte_identical_to_runtime": true
+  },
+  "test_environment": {
+    "uv": "0.8.22",
+    "python": "3.12.11",
+    "numpy": "2.5.3",
+    "Pillow": "12.3.0",
+    "openai": "3.14.1",
+    "pytest": "9.1.1",
+    "ruff": "0.16.8",
+    "fake_dependency_stubs": false
+  },
+  "verification": {
+    "full_pytest": "157 passed in 33.14s",
+    "focused_geometry_pytest": "54 passed in 0.89s",
+    "ruff_F_E9_I": "passed",
+    "strict_schema_closure": "passed for geometry, twin geometry, plan and twin plan",
+    "reviewed_constant_value_comparison": "passed",
+    "pinned_non_geometry_prompt_comparison": "passed",
+    "pinned_non_replaced_pipeline_ast_comparison": "passed"
+  },
+  "known_inconsistencies_preserved_or_flagged": [
+    "The untouched Product-first system section allows an unspecified printer shelf, side table or credenza, while the reviewed Geometry section narrows the default to a substantial cabinet, low credenza, fitted counter or dedicated equipment table.",
+    "root_reviewed_policy.json change_notes says wall anchoring applies to the printer support rather than forcing the printer chassis against the wall, but root_review_notes rejects that change and both reviewed wall constants retain the original chassis-against-wall wording. This integration follows root_review_notes and the reviewed constants.",
+    "ReferenceBlue.VERSION remains unchanged because the requested edit scope named PIPELINE_VERSION and prohibited unrelated changes. If the reference-anchored histogram mode is deployed with this prompt, its cache version requires a separate decision to avoid reusing pre-shape rows.",
+    "The pinned README and CONTEXT describe earlier policy versions. They remain unchanged because this candidate is isolated and the requested source edit scope excluded documentation."
+  ]
+}

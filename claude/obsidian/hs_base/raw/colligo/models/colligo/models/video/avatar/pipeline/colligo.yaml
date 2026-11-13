@@ -1,0 +1,18 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.audio.tts_bl[public]
+  - pydantic
+deps:
+- colligo.data
+- colligo.external_services.cai
+- colligo.external_services.common
+- colligo.models.audio.tts_bl
+- colligo.models.cai
+- colligo.models.video.avatar.ffmpeg_worker[public]
+- colligo.models.video.avatar.ffmpeg_worker_bg[public]
+- colligo.models.video.avatar.utils
+- colligo.rhode

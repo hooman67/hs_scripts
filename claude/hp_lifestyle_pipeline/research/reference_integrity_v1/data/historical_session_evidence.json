@@ -1,0 +1,253 @@
+{
+  "as_of": "2026-10-22",
+  "historical_source": {
+    "path": "/home/colligo/.codex/sessions/2026/10/13/rollout-2026-10-13T17-08-49-01a137bd-8502-7e10-a987-eb2a6b2702f8.jsonl",
+    "sha256_at_extraction": "69d2b191fb51109f928dcd44f7346a1b5e2dc6b4d822f7b3a8e820c6043295e4",
+    "bytes_at_extraction": 10128952,
+    "event_ordinals": [
+      1206,
+      1215,
+      1222,
+      1256,
+      2366,
+      2392,
+      2417
+    ],
+    "selected_event_raw_line_sha256": {
+      "1206": "4110fe033028907ca3868aa404cf166ca4823c5da8d2a3c1b9a92786659940a8",
+      "1215": "a77ca6e0ebd3fa28c7080610b64066c66c37320db0465237e6f45787608c491c",
+      "1222": "36199d8e5846215ad4187be9dd2c83b0c6f374127be2f2cafba3168186455626",
+      "1256": "124b24720fbbe07ab54ab1f0e0a38f107ddbb1633a79f0ffb5e3fbffcba72f88",
+      "2366": "26216beece60f778c02ca17dec1dd6c63db9f13f8344836d92ce1ff87000763c",
+      "2392": "63e770b0204bc361b1ac09158abf4b67c88582df221bdb4f675c1a64a1744848",
+      "2417": "c60c6813fd97edfe65382dc868107862c7eeeccf555596a5e160dce512aefe90"
+    },
+    "limitation": "The source is the durable Codex session event log from the original run. The session file remains appendable, so its whole-file hash can change; the selected raw event-line hashes identify the cited records. This extract intentionally omits the expired output presigned URL and credential-like query fields."
+  },
+  "code_sources": {
+    "eval_data": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_prompt_digital_twin_eval_v1/gallery/data.js",
+      "sha256": "77c4f3de3668f3b0225c07243f594fb5473888d0342c3dc2501ab9378ec1c153"
+    },
+    "historical_runner": {
+      "repo": "/home/colligo/hs_scripts",
+      "commit": "ffd0ba95ec9594f4a09d9b7c242b580c007ba97b",
+      "repo_path": "claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_prompt_digital_twin_eval_v1/generation/run_generation.py",
+      "sha256": "194165b20bd39e4e66ac532a84f48cfbc3f28d2dbc64aea75dbc4898709db897"
+    }
+  },
+  "smoke_upload": {
+    "event_ordinal": 1206,
+    "execution_id": "exec-b413793c-4adc-43dc-a14d-d9bedefd76b9",
+    "timestamp": "2026-10-15T00:43:47.936Z",
+    "uploaded_path_from_command": "/mnt/localssd/hp_lifestyle_pipeline/digital_twin_renders_first_column/00_baseline-0007.jpg",
+    "returned_blob_id": "fed63b3c-76ef-4c99-ae98-56054a01291f",
+    "response_status_excerpt": "status 200 content-type application/json bytes 187",
+    "command": "/usr/bin/bash -lc python - <<'PY'\nimport httpx,json\nurl='https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8000.or2.colligo.dev/v2/storage/image'\np='/mnt/localssd/hp_lifestyle_pipeline/digital_twin_renders_first_column/00_baseline-0007.jpg'\nwith open(p,'rb') as f:\n r=httpx.post(url,content=f.read(),headers={'content-type':'image/jpeg'},timeout=60)\nprint('status',r.status_code,'content-type',r.headers.get('content-type'),'bytes',len(r.content))\nprint((r.text or '')[:1000])\nif r.is_success:\n open('/tmp/hp_blob_probe.json','w').write(json.dumps(r.json(),indent=2))\nPY"
+  },
+  "smoke_row": {
+    "event_ordinals": [
+      1215,
+      1222,
+      1256
+    ],
+    "execution_ids": [
+      "exec-e6353be3-2dab-45bc-b1bb-c760d5abd986",
+      "exec-b816966c-9b1c-42c9-9d97-19bcd34c8900",
+      "exec-0a9a2e20-94d5-4e92-a791-1399a9fef7e1"
+    ],
+    "eval_first_row": {
+      "row_id": "ee810cf51bb82bb4:p1:baseline-0016",
+      "prompt_key": "ee810cf51bb82bb4:p1",
+      "twin_id": "baseline-0016",
+      "twin_file": "09_baseline-0016.jpg",
+      "device_category": "Printer",
+      "original_twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg"
+    },
+    "eval_first_prompt": {
+      "key": "ee810cf51bb82bb4:p1",
+      "source_id": "ee810cf51bb82bb4",
+      "prompt_id": "p1",
+      "environment": "Office",
+      "text": "A practical small office workspace centered on a broad wooden desk with sorted forms, records folders, color handouts, a paper notebook, pens, and a neat stack of finished pages. A corkboard with schedules, file cabinets, a rolling chair, a small plant, and daylight from a nearby window make the room feel busy, organized, and used for everyday paperwork.",
+      "source_product": "HP Smart Tank 7602 All-in-One",
+      "device_category": "Printer"
+    },
+    "eval_first_twin": {
+      "viewer_position": 9,
+      "evalset_item_id": "baseline-0016",
+      "column_label": "Input: Input 3: First Frame Cond",
+      "model_role": "model_input",
+      "width": 2368,
+      "height": 1776,
+      "source_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg",
+      "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg",
+      "local_filename": "09_baseline-0016.jpg",
+      "bytes": 124300,
+      "sha256": "ea37612566c142ce1a31461708f6219fb68549f13998e5b58b33b4fbb0629301",
+      "device_category": "Printer",
+      "scene_environment": "Corp Office",
+      "scene_surface": "Conference Room Side Table"
+    },
+    "submitted_blob_id": "fed63b3c-76ef-4c99-ae98-56054a01291f",
+    "job_id": "urn:ff:jobs::47b7b833-b48f-4cae-91d1-f581f225f6de",
+    "debugData": {
+      "usedPrompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits flush on a broad wooden desk in the lower right, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the left of the laptop on the desk, arrange sorted forms, records folders, and an open paper notebook with pens. In the background on the left, place a corkboard with schedules on the wall above a metal file cabinet. Add a small potted plant on the desk behind the laptop to the right, with soft daylight streaming in from a window on the far left. <scene> An open HP laptop sits on a broad wooden desk alongside sorted forms, folders, and a notebook in a practical, organized small office workspace. <type> photorealistic, lifestyle photography, interior design photography <lighting> soft_light, soft cool daylight from window screen-left, diffused, gentle shadows <composition> wide-angle feel, shallow depth of field with the background softly blurred; the laptop in the lower right is in sharp focus at its position, sitting flush with no gap beneath its base; clear near-mid-far layering with negative space around the product <background> A practical office environment featuring a wall-mounted corkboard with schedules and a metal file cabinet in the background on the left; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, balancing the warm wood tones of the desk. <camera> wide_angle, high angle <entities> <label> HP laptop <description> An open dark blue HP laptop with a visible ``hp`` logo on the palm rest and an active screen, positioned in the lower right of the desk. <label> wooden desk <description> A broad, smooth wooden desk surface filling the foreground and mid-ground, supporting the laptop and office supplies. <label> office supplies <description> A neat arrangement of sorted forms, records folders, and an open paper notebook with pens resting on the desk to the left of the laptop. <label> corkboard <description> A rectangular corkboard pinned with paper schedules and notes, mounted on the wall in the background left. <label> file cabinet <description> A metal file cabinet standing against the wall beneath the corkboard in the background left. <label> potted plant <description> A small green potted plant sitting on the desk behind the laptop to the right.",
+      "rawPrompt": "A practical small office workspace centered on a broad wooden desk with sorted forms, records folders, color handouts, a paper notebook, pens, and a neat stack of finished pages. A corkboard with schedules, file cabinets, a rolling chair, a small plant, and daylight from a nearby window make the room feel busy, organized, and used for everyday paperwork.",
+      "rewriteLatencyMs": 22123.82542202249,
+      "task": "i2i_prod_only",
+      "isInstructEdit": true,
+      "stage1Output": {
+        "editing_instruction": "Generate a scene where the laptop from Before_Image1 sits flush on a broad wooden desk in the lower right, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the left of the laptop on the desk, arrange sorted forms, records folders, and an open paper notebook with pens. In the background on the left, place a corkboard with schedules on the wall above a metal file cabinet. Add a small potted plant on the desk behind the laptop to the right, with soft daylight streaming in from a window on the far left.",
+        "prompt": {
+          "scene": "An open HP laptop sits on a broad wooden desk alongside sorted forms, folders, and a notebook in a practical, organized small office workspace.",
+          "type": "photorealistic, lifestyle photography, interior design photography",
+          "lighting": "soft_light, soft cool daylight from window screen-left, diffused, gentle shadows",
+          "background": "A practical office environment featuring a wall-mounted corkboard with schedules and a metal file cabinet in the background on the left; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, balancing the warm wood tones of the desk.",
+          "composition": "wide-angle feel, shallow depth of field with the background softly blurred; the laptop in the lower right is in sharp focus at its position, sitting flush with no gap beneath its base; clear near-mid-far layering with negative space around the product",
+          "camera": {
+            "shot size": "wide_angle",
+            "camera_angle": "high angle"
+          },
+          "entities": [
+            {
+              "label": "HP laptop",
+              "description": "An open dark blue HP laptop with a visible ``hp`` logo on the palm rest and an active screen, positioned in the lower right of the desk."
+            },
+            {
+              "label": "wooden desk",
+              "description": "A broad, smooth wooden desk surface filling the foreground and mid-ground, supporting the laptop and office supplies."
+            },
+            {
+              "label": "office supplies",
+              "description": "A neat arrangement of sorted forms, records folders, and an open paper notebook with pens resting on the desk to the left of the laptop."
+            },
+            {
+              "label": "corkboard",
+              "description": "A rectangular corkboard pinned with paper schedules and notes, mounted on the wall in the background left."
+            },
+            {
+              "label": "file cabinet",
+              "description": "A metal file cabinet standing against the wall beneath the corkboard in the background left."
+            },
+            {
+              "label": "potted plant",
+              "description": "A small green potted plant sitting on the desk behind the laptop to the right."
+            }
+          ]
+        }
+      },
+      "workflow": "hp_image",
+      "negPrompt": "<scene> An incoherent and poorly formed scene with no clear subject or focus. <type> low quality, distorted, unrealistic. <lighting> Overexposed or underexposed with harsh noise, uneven brightness, and distracting artifacts, a dark blurred foreground object blocking the key light <composition> Unbalanced, off-centered, tilted, cropped awkwardly, blurred focus, a large out-of-focus object in the immediate foreground, a defocused object or blob intruding from the bottom-left / left / bottom edge, foreground obstruction, near-foreground clutter, a product floating or detached from any surface <background> Backgrounds may contain random clutter, irrelevant elements, or unrealistic geometry. <camera> camera is not aligned with the subject <entities> People or objects may appear distorted, with unnatural proportions, extra limbs, missing fingers, or mismatched facial features. Text may be unreadable, misspelled, or nonsensical. Colors are inconsistent, textures are muddy, and details are blurred or pixelated.",
+      "cfgScale": 5.0,
+      "numInferenceSteps": 50,
+      "seed": 42,
+      "width": 2368,
+      "height": 1776
+    }
+  },
+  "resumable_run": {
+    "event_ordinal": 2366,
+    "execution_id": "exec-5849de7c-9a55-4ba6-80e1-4f714c881ff9",
+    "timestamp": "2026-10-15T08:11:06.789Z",
+    "relevant_log_lines": [
+      "[17:47:42] imported successful smoke row ee810cf51bb82bb4:p1:baseline-0016",
+      "[17:47:42] reference blobs: 1 cached, 29 to upload",
+      "[17:47:43] uploaded reference baseline-0018 (8/30)",
+      "[01:11:06] summary: {\"updated_at_utc\": \"2026-10-15T08:11:06.697786+00:00\", \"endpoint\": \"https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8000.or2.colligo.dev/v1/image/generate\", \"upload_endpoint\": \"https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8000.or2.colligo.dev/v2/storage/image\", \"settings\": {\"width\": 2368, \"height\": 1776, \"n\": 1, \"enablePromptRewrite\": true, \"rewriterModel\": \"gemini-3.1-pro\", \"numInferenceSteps\": 50}, \"expected_rows\": 192, \"record_count\": 192, \"done_count\": 192, \"failed_count\": 0, \"missing_count\": 0, \"failed_row_ids\": []}"
+    ],
+    "interpretive_note": "The runner imported the smoke row and one blob mapping, reported one cached mapping, and uploaded only 29 remaining twins. There is an upload line for baseline-0018 and no upload line for baseline-0016."
+  },
+  "rows_affected_by_cached_baseline_0016_blob": {
+    "count": 8,
+    "row_ids": [
+      "ee810cf51bb82bb4:p1:baseline-0016",
+      "160db92655412f4d:p1:baseline-0016",
+      "8bbf8af1d8cbf4b2:p1:baseline-0016",
+      "8189f3ad5af37a81:p1:baseline-0016",
+      "8189f3ad5af37a81:p2:baseline-0016",
+      "324b14a617dfedba:p1:baseline-0016",
+      "943faef0af11484f:p1:baseline-0016",
+      "943faef0af11484f:p2:baseline-0016"
+    ],
+    "rows": [
+      {
+        "row_id": "ee810cf51bb82bb4:p1:baseline-0016",
+        "prompt_key": "ee810cf51bb82bb4:p1",
+        "twin_id": "baseline-0016",
+        "twin_file": "09_baseline-0016.jpg",
+        "device_category": "Printer",
+        "original_twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg"
+      },
+      {
+        "row_id": "160db92655412f4d:p1:baseline-0016",
+        "prompt_key": "160db92655412f4d:p1",
+        "twin_id": "baseline-0016",
+        "twin_file": "09_baseline-0016.jpg",
+        "device_category": "Printer",
+        "original_twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg"
+      },
+      {
+        "row_id": "8bbf8af1d8cbf4b2:p1:baseline-0016",
+        "prompt_key": "8bbf8af1d8cbf4b2:p1",
+        "twin_id": "baseline-0016",
+        "twin_file": "09_baseline-0016.jpg",
+        "device_category": "Printer",
+        "original_twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg"
+      },
+      {
+        "row_id": "8189f3ad5af37a81:p1:baseline-0016",
+        "prompt_key": "8189f3ad5af37a81:p1",
+        "twin_id": "baseline-0016",
+        "twin_file": "09_baseline-0016.jpg",
+        "device_category": "Printer",
+        "original_twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg"
+      },
+      {
+        "row_id": "8189f3ad5af37a81:p2:baseline-0016",
+        "prompt_key": "8189f3ad5af37a81:p2",
+        "twin_id": "baseline-0016",
+        "twin_file": "09_baseline-0016.jpg",
+        "device_category": "Printer",
+        "original_twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg"
+      },
+      {
+        "row_id": "324b14a617dfedba:p1:baseline-0016",
+        "prompt_key": "324b14a617dfedba:p1",
+        "twin_id": "baseline-0016",
+        "twin_file": "09_baseline-0016.jpg",
+        "device_category": "Printer",
+        "original_twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg"
+      },
+      {
+        "row_id": "943faef0af11484f:p1:baseline-0016",
+        "prompt_key": "943faef0af11484f:p1",
+        "twin_id": "baseline-0016",
+        "twin_file": "09_baseline-0016.jpg",
+        "device_category": "Printer",
+        "original_twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg"
+      },
+      {
+        "row_id": "943faef0af11484f:p2:baseline-0016",
+        "prompt_key": "943faef0af11484f:p2",
+        "twin_id": "baseline-0016",
+        "twin_file": "09_baseline-0016.jpg",
+        "device_category": "Printer",
+        "original_twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/FFP-83052-foundry-FFP-88382-hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference-2026.09.24-18.44.25/inference/hp12_pr33690_v4_plain_vs_spatial_gemini_subset42_step01102000_inference_step01102000_ema=False_2026-09-24T19:16:32/inference_hp_non_ema_inference_hp_gen_edit_hp_i2i_pr33690_v4_gemini_subset42_2048px_2026-09-24T19:31:28_f3d76e35-8189-4007-9c5c-c08a5d24f9f9/assets/row9_baseline-0016_img0.jpg"
+      }
+    ],
+    "derivation": "generate_row builds every payload from blobs[row['twin_id']]['id']; after the smoke import cached the uploaded baseline-0007 blob under baseline-0016, every eval row whose twin_id is baseline-0016 reused that blob."
+  },
+  "historical_mechanical_validation": {
+    "event_ordinal": 2392,
+    "execution_id": "exec-0b40302e-f89e-4270-85dc-e0bae2d974fa",
+    "timestamp": "2026-10-15T08:11:47.990Z",
+    "output": "validated 192/192 records, payloads, debug responses, unique image IDs/files, and 2368x1776 dimensions\nimage_bytes 948518000\nresults_json_bytes 3120562"
+  },
+  "historical_s3_publication_validation": {
+    "event_ordinal": 2417,
+    "execution_id": "exec-43ddcc31-e14a-425d-9bef-3bb4e027fc54",
+    "timestamp": "2026-10-15T08:12:39.393Z",
+    "output": "object_count 199\ntotal_bytes 953756971\nby_area {'gallery': 5, 'images': 192, 'results.json': 1, 'summary.json': 1}\nimage_count 192 image_bytes 948518000\nall 192 S3 image sizes match local files\n2089365 eval_sets/hp_lifestyle_prompt_digital_twin_eval_v1/generated_v1/gallery/data.js\n4869 eval_sets/hp_lifestyle_prompt_digital_twin_eval_v1/generated_v1/gallery/imsauth.js\n3986 eval_sets/hp_lifestyle_prompt_digital_twin_eval_v1/generated_v1/gallery/index.html\n12222 eval_sets/hp_lifestyle_prompt_digital_twin_eval_v1/generated_v1/gallery/main.js\n7375 eval_sets/hp_lifestyle_prompt_digital_twin_eval_v1/generated_v1/gallery/style.css\n3120562 eval_sets/hp_lifestyle_prompt_digital_twin_eval_v1/generated_v1/results.json\n592 eval_sets/hp_lifestyle_prompt_digital_twin_eval_v1/generated_v1/summary.json\n3986\ttext/html\n4869\tapplication/javascript\n2089365\tapplication/javascript\n12222\tapplication/javascript\n7375\ttext/css\n592\tapplication/json\n3120562\tapplication/json\n4834609\timage/png"
+  }
+}

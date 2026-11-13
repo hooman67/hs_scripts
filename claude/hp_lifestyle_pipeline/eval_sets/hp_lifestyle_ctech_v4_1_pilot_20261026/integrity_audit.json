@@ -1,0 +1,99 @@
+{
+  "version": "v4.1-runner-integrity-audit-v1",
+  "as_of": "2026-10-26T16:58:27-07:00",
+  "scope": {
+    "runner": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/run_gpt55.py",
+    "records_root": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/records",
+    "network_calls_made": 0,
+    "records_deleted": 0
+  },
+  "current_inventory": {
+    "confidence": "VERIFIED",
+    "completed_raw_attempt_files": 68,
+    "completed_raw_attempt_bytes": 9312588,
+    "distinct_raw_attempt_sha256": 68,
+    "case_directories": 4,
+    "distinct_request_sha256": 32,
+    "distinct_system_prompt_sha256": 8,
+    "raw_attempt_inventory_sha256": "8da33683365c5582431669e0afd1782032493e000541f2d54f5b47c258fa3802",
+    "inventory_hash_method": "SHA-256 of newline-terminated, path-sorted rows: relative_path<TAB>byte_count<TAB>file_sha256",
+    "per_case": {
+      "22fdbf19f03d1a31__laptop_FrontRightCloseUp": {
+        "files": 16,
+        "minimum_index": 1,
+        "maximum_index": 16
+      },
+      "22fdbf19f03d1a31__laptop_FrontRightWide": {
+        "files": 17,
+        "minimum_index": 1,
+        "maximum_index": 17
+      },
+      "ee810cf51bb82bb4__printer_FrontRightCloseUp": {
+        "files": 15,
+        "minimum_index": 1,
+        "maximum_index": 15
+      },
+      "ee810cf51bb82bb4__printer_FrontRightWide": {
+        "files": 20,
+        "minimum_index": 1,
+        "maximum_index": 20
+      }
+    }
+  },
+  "provenance_contradictions": [
+    {
+      "confidence": "VERIFIED",
+      "claimed_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/records/attempts/22fdbf19f03d1a31__laptop_FrontRightWide/sample_011.json",
+      "claimed_raw_record_sha256": "a115b123ff7d4e3ee8c65ee816388ac68606aadfd76f4f73e0c8a5eb68dfc65c",
+      "current_raw_record_sha256_at_claimed_path": "792f4908f8bc35a5e45519ec1540faf9cfb3151bbfe15e97c1051e4439d9281f",
+      "claim_sources": [
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/manual_review_overrides.json",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/accepted_prompt_cases.json"
+      ],
+      "claimed_bytes_currently_preserved_at": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/records/attempts/22fdbf19f03d1a31__laptop_FrontRightWide/sample_009.json",
+      "impact": "No response bytes are proved lost, because the claimed hash survives byte-for-byte. The original filename/path association for this rejected attempt is contradictory and cannot be recovered from the saved evidence alone.",
+      "possible_explanations": [
+        "the raw record path was reused or overwritten and the earlier bytes were also retained elsewhere",
+        "the rejection metadata recorded the wrong sample path"
+      ]
+    }
+  ],
+  "unresolved_limits": [
+    {
+      "confidence": "UNVERIFIED",
+      "statement": "The current files cannot prove that no other response was overwritten before a checksum-bearing reference to it was saved. There was no pre-existing immutable allocation ledger against which to compare the 68 surviving files."
+    },
+    {
+      "confidence": "VERIFIED",
+      "statement": "Historical attempts embed provider responses in mutable-looking sample paths and have no separate immutable provider-response file. The patched runner applies the stronger boundary only to future calls."
+    }
+  ],
+  "fix": {
+    "confidence": "VERIFIED",
+    "behavior": [
+      "Future completed attempts allocate max sample index across every system/request revision in the case, then add one.",
+      "Creation uses exclusive file mode and retries allocation after a race; existing record bytes are never replaced.",
+      "Indices above 999 remain discoverable and continue numerically.",
+      "Every future provider response is first written once to a UUID-keyed immutable provider-response record before parsing.",
+      "Transport retry snapshots use UUID-keyed, per-transport-attempt paths instead of overwriting sample_001.pending.json.",
+      "Reuse and rebuild inspect only the newest attempt for the exact request; a newer failure or rejection cannot expose an older success as current."
+    ],
+    "runner_sha256": "ba6a7b1fdacbeb199467582e7296fddf7defd604ac53b750d220f68d46235ed1",
+    "helper_sha256": "efc66e3a7fa6d79f5641ae44f17b83b56332f309d5c358ba63bc32ca0f3200c9",
+    "test_sha256": "ea848582604ce9a4683ad87f48912351796e0d598f26ad3250f7e544d520574e"
+  },
+  "verification": {
+    "confidence": "VERIFIED",
+    "fixture": "temporary local directories only",
+    "test_count": 5,
+    "tests_passed": 5,
+    "covered": [
+      "exclusive creation refuses an existing provider-response path and preserves its bytes",
+      "gap-safe global-max allocation without overwriting the would-be len+1 target",
+      "numeric discovery/allocation above sample_999",
+      "two concurrent writers receive distinct paths",
+      "newest matching failure blocks stale older success"
+    ],
+    "command": "python /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/test_record_integrity.py -v"
+  }
+}

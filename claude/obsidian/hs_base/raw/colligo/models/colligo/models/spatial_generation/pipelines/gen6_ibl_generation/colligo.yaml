@@ -1,0 +1,21 @@
+has_build_module: true
+custom_pyenv: 3diva_ttt_fe_gen6
+visibility:
+- colligo.models.compare.v1.images.generate_ibl
+- colligo.models.compare.v1.images.generate_panorama
+
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.spatial_generation.common[public]
+  - colligo.models.spatial_generation.pipelines.gen6_pano_generation[public]
+  - pydantic
+deps:
+- colligo.caplan_taxonomy
+- colligo.models.common.adapter_utils
+- colligo.models.spatial_generation.common
+- colligo.models.spatial_generation.pipelines.gen6_ibl_hdr_merge[public]
+- colligo.models.spatial_generation.pipelines.gen6_pano_generation
+- colligo.models.spatial_generation.workers.vlm_caption[public]

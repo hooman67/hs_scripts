@@ -1,0 +1,202 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 8,
+  "warning_count": 1,
+  "errors": [
+    {
+      "code": "ctech_extension_environment",
+      "detail": "category_extension must change the reference environment",
+      "candidate_id": "p24"
+    },
+    {
+      "code": "ctech_extension_environment",
+      "detail": "category_extension must change the reference environment",
+      "candidate_id": "p26"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'collectibles', 'shelving']",
+      "candidate_id": "p6"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'collectibles', 'shelving'] but signature has 2 entries",
+      "candidate_id": "p6"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['plants', 'shelving', 'workstations']",
+      "candidate_id": "p13"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['plants', 'shelving', 'workstations'] but signature has 2 entries",
+      "candidate_id": "p13"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'collectibles', 'shelving']",
+      "candidate_id": "p26"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'collectibles', 'shelving'] but signature has 2 entries",
+      "candidate_id": "p26"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 5,
+    "environments": {
+      "Café": 6,
+      "Office": 6,
+      "Home": 7,
+      "Gaming": 4,
+      "Creative Studio": 4,
+      "Education": 3
+    },
+    "relationships": {
+      "creative_departure": 17,
+      "source_adjacent": 6,
+      "source_grounded": 7
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 7,
+      "Office": 6,
+      "Education": 3,
+      "Gaming": 4,
+      "Café": 6,
+      "Creative Studio": 4
+    },
+    "relationship_counts": {
+      "source_grounded": 7,
+      "source_adjacent": 6,
+      "creative_departure": 17
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 11,
+      "close_adaptation": 10,
+      "category_extension": 9
+    },
+    "ctech_reference_counts": {
+      "CT12": 2,
+      "CT13": 2,
+      "CT11": 1,
+      "CT18": 2,
+      "CT14": 2,
+      "CT15": 2,
+      "CT03": 3,
+      "CT10": 2,
+      "CT06": 1,
+      "CT16": 2,
+      "CT17": 1,
+      "CT01": 1,
+      "CT02": 1,
+      "CT04": 2,
+      "CT05": 1,
+      "CT09": 2,
+      "CT08": 1,
+      "CT07": 2
+    },
+    "ctech_score_range": [
+      60,
+      91
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p16",
+          "p27",
+          "p28",
+          "p30"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e1",
+          "e5"
+        ],
+        "prompt_ids": [
+          "p8",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p23",
+          "p24",
+          "p25",
+          "p26",
+          "p27",
+          "p28",
+          "p29",
+          "p30"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e2"
+        ],
+        "prompt_ids": [
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p17",
+          "p18",
+          "p20",
+          "p21",
+          "p24",
+          "p26",
+          "p29"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p2",
+          "p4",
+          "p7",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p18",
+          "p20",
+          "p21",
+          "p24",
+          "p29"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "cb579d7aa449f48eb8b7bca0ee76118be1edd5ca7d22ac79f83cebe405a2b9c3"
+}

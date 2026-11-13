@@ -1,0 +1,180 @@
+{
+  "slug": "magic__printer_FrontWide__p1__relocation_demand",
+  "base_slug": "magic__printer_FrontWide__p1",
+  "mode": "relocation_demand",
+  "device_id": "magic",
+  "camera_id": "Front_Wide",
+  "prompt": "A wide open-office output area. Relocate the fully visible printer to a right-of-center dedicated output station, leaving the left side of the room open for paper sorting and circulation. Preserve the printer's exact view and pixel size. Compose a new pale oak support table beneath it, square to the fixed printer orientation, with believable edge clearances, wall alignment and unobstructed standing access at the front. Use soft clear daylight and an orderly office background.",
+  "pipeline_version": "unified-blue-scale-v22.3.3-clean-fixed-rewrite-affine-guard-twin-camera-guide-only-no-mask",
+  "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+  "status": "ok",
+  "error": null,
+  "output_sha256": "d56f5a16d3b0a28442c6625bb79da6f5e079edc723028988a7328c67867b68b7",
+  "attempt_1_sha256": "d56f5a16d3b0a28442c6625bb79da6f5e079edc723028988a7328c67867b68b7",
+  "attempt_2_sha256": null,
+  "product_invariant_guard": {
+    "guard_version": "full-affine-v1.2",
+    "attempts": [
+      {
+        "guard_version": "full-affine-v1.2",
+        "fixed_position": false,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.5,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          629,
+          633,
+          1203,
+          1206
+        ],
+        "matches": 44,
+        "inliers": 33,
+        "inlier_ratio": 0.75,
+        "full_affine_matrix": [
+          [
+            1.0080986851854035,
+            -0.005471580037464071,
+            813.6735242883983
+          ],
+          [
+            0.0011104490270768673,
+            1.0017134432148505,
+            -200.29905573822342
+          ]
+        ],
+        "partial_affine_matrix": [
+          [
+            1.00571709386253,
+            -0.0010147737607368065,
+            812.2286919115124
+          ],
+          [
+            0.0010147737607368065,
+            1.00571709386253,
+            -203.5674789420001
+          ]
+        ],
+        "partial_inliers": 33,
+        "singular_values": [
+          1.0087776779967614,
+          1.0010452282741782
+        ],
+        "anisotropy_ratio": 1.0077243759864019,
+        "rotation_deg": 0.18763999503342982,
+        "column_shear_cos": 0.004360625037893296,
+        "residual_median_px": 0.6928155180016909,
+        "residual_p95_px": 2.247826362787524,
+        "source_span_x_fraction": 0.9484719038009644,
+        "source_span_y_fraction": 0.732511043548584,
+        "source_quadrants": 4,
+        "source_hull_fraction": 0.5502565772000817,
+        "transformed_product_corners_px": [
+          [
+            1444.3040871063022,
+            434.4840262548083
+          ],
+          [
+            2022.952732402724,
+            435.1214239963505
+          ],
+          [
+            2019.8175170412571,
+            1009.1032269584598
+          ],
+          [
+            1441.1688717448355,
+            1008.4658292169177
+          ]
+        ],
+        "corners_in_frame": true,
+        "translation_x_px": 813.6735242883983,
+        "translation_y_px": -200.29905573822342,
+        "checks": {
+          "inliers": true,
+          "inlier_ratio": true,
+          "singular_min": true,
+          "singular_max": true,
+          "anisotropy": true,
+          "rotation": true,
+          "shear": true,
+          "residual_median": true,
+          "residual_p95": true,
+          "span_x": true,
+          "span_y": true,
+          "quadrants": true,
+          "hull": true,
+          "corners": true
+        },
+        "reasons": [],
+        "verdict": "pass"
+      }
+    ],
+    "selected_attempt": 1
+  },
+  "final_prompt_sha256": "d7bb2c4c484042fe3fbc77ecd6024fb1ad6cd0c2d9732dc6375b0e4d89632d9a",
+  "selected_prompt_sha256": "d7bb2c4c484042fe3fbc77ecd6024fb1ad6cd0c2d9732dc6375b0e4d89632d9a",
+  "stage_b_attempts": [
+    {
+      "attempt": 1,
+      "system_sha256": "8b8c236baf906c572841aed4a31c94bc3d497073693e6c1c6e414400156eff90",
+      "text_sha256": "cbc839eda9bf9264484b5e12aa3bae1dcc5c5f0db9fc69a57620fcf1aa31971f",
+      "request_sha256": "a8e0c814a1fd641bfac6766a7745b13bf8f721f1eb063502307f7476229d597e",
+      "response_sha256": "43c053fe47df867e7f892f0901a24d4f97e6d9ced532e490892032cb1ab620f4",
+      "executable_prompt_sha256": "d7bb2c4c484042fe3fbc77ecd6024fb1ad6cd0c2d9732dc6375b0e4d89632d9a"
+    }
+  ],
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 990,
+        "prompt_tokens": 14268,
+        "total_tokens": 15258,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 89,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 13696,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "mask": false
+    }
+  ]
+}

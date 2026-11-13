@@ -1,0 +1,65 @@
+#!/usr/bin/env python3
+"""Hand-verified shot index for the Glacier Bay laundry-sink storyboard (one continuous ~:60 spot).
+Built from the extracted slide text + the shoot photos. One entry per SHOT SERIES."""
+import json, os
+REPO=os.path.dirname(os.path.abspath(__file__))
+
+product={
+ "name":"Glacier Bay Drop-In Laundry Sink with Faucet + RTA Cabinet (CLICKREADY Technology)",
+ "retailer":"The Home Depot (exclusive)",
+ "specs":["RTA cabinet, tool-free CLICKREADY assembly (no tools/glue/screws; push-click-connect; ~3X faster)",
+          "orange click connectors on panel edges","9-inch deep, 9-gallon stainless steel sink basin",
+          "grid basket strainer","pull-down faucet","drain kit + water lines included",
+          "brushed nickel hardware","soft-close doors/hinges",
+          "5 finishes: Alpine White, White Oak, Ink Blue, Fern Green, Raven Black"],
+ "supers":["Tool-Free Cabinet Construction","Complete with Drain Kit and Water Lines","5 Color Finishes"],
+ "talent":"A couple (woman, long dark hair; man, grey hair) assembling in a styled laundry room (day)",
+}
+
+# VO is one continuous read, segmented by beat:
+vo=[
+ ("1A","Upgrade your laundry room with the Glacier Bay Drop-In Laundry Sink with Faucet and Ready to Assemble Cabinet with CLICKREADY Technology — where style meets simplicity."),
+ ("2A/3A","Designed with exclusive CLICKREADY Technology, assembly is 3X faster than traditional cabinets because there's no tools, glue, or screws required. Just push, click, and connect."),
+ ("4A/4B/5A","The 9-inch deep, 9 gallon stainless steel sink includes a grid basket strainer, and the pull-down faucet makes cleanups simple."),
+ ("1B","Choose from five durable, chip-resistant finishes - Alpine White, White Oak, Ink Blue, Fern Green, and Raven Black..."),
+ ("6A/7A/7B","...each with brushed nickel hardware and soft-close doors for a polished, modern look."),
+ ("8A/8B","Transform your laundry room into something you'll love. It's fast, easy and available only at the Home Depot."),
+]
+
+series=[
+ {"id":"1A","slides":[2,3],"title":"Couple assembling the cabinet on the laundry-room floor",
+  "shots":["1A WS","1A WS","1A WS","1A MCU","1A CU"],
+  "action":"Couple kneeling on the floor laying out and beginning to assemble the white RTA cabinet panels (orange click connectors visible); assembly manual on the floor.","vo_beat":"1A"},
+ {"id":"2A","slides":[4],"title":"Clicking the sideboards onto the base","super":"Tool-Free Cabinet Construction",
+  "shots":["2A MS","2A CU","2A CU"],
+  "action":"Medium + close-up of a side panel being pushed/clicked onto the base — tool-free.","vo_beat":"2A/3A"},
+ {"id":"3A","slides":[4],"title":"Click technology connecting (macro)",
+  "shots":["3A ECU","3A ECU"],
+  "action":"Extreme close-up of the orange CLICKREADY connectors engaging as two panels snap together.","vo_beat":"2A/3A"},
+ {"id":"4A","slides":[5],"title":"Couple standing the cabinet up",
+  "shots":["4A MS"],"action":"Couple lifts the assembled cabinet box upright into position.","vo_beat":"4A/4B/5A"},
+ {"id":"4B","slides":[5],"title":"Placing the sink basin",
+  "shots":["4B MS"],"action":"Couple lowers the stainless drop-in sink basin into the cabinet top.","vo_beat":"4A/4B/5A"},
+ {"id":"5A","slides":[5],"title":"Faucet attaches and pulls down","super":"Complete with Drain Kit and Water Lines",
+  "shots":["5A CU","5A CU","5A CU"],"action":"Close-ups of the pull-down faucet being attached and the spray head pulling down.","vo_beat":"4A/4B/5A"},
+ {"id":"1B","slides":[6],"title":"B-roll of colored sinks (5 finishes)","super":"5 Color Finishes",
+  "shots":["photo b-roll"],"action":"Product b-roll cycling the 5 finishes: Alpine White, White Oak, Ink Blue, Fern Green, Raven Black.","vo_beat":"1B"},
+ {"id":"6A","slides":[7],"title":"Brushed nickel hardware (close-ups)",
+  "shots":["6A ECU","6A CU","6A MS"],"action":"Close-ups isolating the brushed-nickel cabinet hardware.","vo_beat":"6A/7A/7B"},
+ {"id":"7A","slides":[7],"title":"Cabinet doors closing (talent then isolate)",
+  "shots":["7A CU","7A CU"],"action":"Doors closing, starting with talent's hand then isolating on the door.","vo_beat":"6A/7A/7B"},
+ {"id":"7B","slides":[7],"title":"Soft-close hinge (macro)",
+  "shots":["7B ECU"],"action":"Extreme close-up of the soft-close hinge easing the door shut.","vo_beat":"6A/7A/7B"},
+ {"id":"8A","slides":[8],"title":"Turning on the faucet",
+  "shots":["8A (female)","8A Alt (couple)"],"action":"Female (or couple) turns on the finished faucet; water runs.","vo_beat":"8A/8B"},
+ {"id":"8B","slides":[8],"title":"Hero / walk-away",
+  "shots":["8B hero"],"action":"Hero shot of the finished sink+cabinet as the female/couple leaves the room.","vo_beat":"8A/8B"},
+]
+
+deck={"deck":"Glacier Bay Drop-In Laundry Sink storyboard (ClickReady, THD 2025)",
+ "source_pptx":"/home/colligo/THD_laundry_sink_storyboard/Storyboard ClickReady 10_1_25 v2a-FINALBOARDS CLEAN.pptx",
+ "format":"one continuous promotional/how-to spot (~:60), shot series 1A–8B",
+ "slides":8,"product":product,"vo_script":[{"beat":b,"line":l} for b,l in vo],"series":series}
+json.dump(deck, open(os.path.join(REPO,"storyboard.json"),"w"), indent=1)
+print("wrote storyboard.json —", len(series), "shot series across 8 slides")
+for s in series: print(f"  {s['id']:3} slides {s['slides']}  {s['title']}")

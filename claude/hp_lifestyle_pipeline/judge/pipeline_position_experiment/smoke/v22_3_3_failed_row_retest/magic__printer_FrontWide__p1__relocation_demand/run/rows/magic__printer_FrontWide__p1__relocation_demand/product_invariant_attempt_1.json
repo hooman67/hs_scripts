@@ -1,0 +1,110 @@
+{
+  "guard_version": "full-affine-v1.2",
+  "fixed_position": false,
+  "thresholds": {
+    "min_inliers": 20,
+    "min_inlier_ratio": 0.55,
+    "singular_min": 0.98,
+    "singular_max": 1.02,
+    "max_anisotropy_ratio": 1.02,
+    "max_abs_rotation_deg": 1.0,
+    "max_column_shear_cos": 0.02,
+    "max_residual_median_px": 1.5,
+    "max_residual_p95_px": 3.5,
+    "min_source_span_x_fraction": 0.45,
+    "min_source_span_y_fraction": 0.4,
+    "min_source_quadrants": 3,
+    "min_source_hull_fraction": 0.12,
+    "max_fixed_translation_px": 8.0
+  },
+  "product_bounds_px": [
+    629,
+    633,
+    1203,
+    1206
+  ],
+  "matches": 37,
+  "inliers": 26,
+  "inlier_ratio": 0.7027027027027027,
+  "full_affine_matrix": [
+    [
+      0.9964342543733671,
+      -0.04441373523115949,
+      814.5051580683675
+    ],
+    [
+      0.018969476479368964,
+      0.9939942137948441,
+      -97.94550065266753
+    ]
+  ],
+  "partial_affine_matrix": [
+    [
+      0.9914003853258176,
+      -0.02104481522249628,
+      799.6872730079314
+    ],
+    [
+      0.02104481522249628,
+      0.9914003853258176,
+      -97.86487927808882
+    ]
+  ],
+  "partial_inliers": 24,
+  "singular_values": [
+    1.0084991939784695,
+    0.982938206097464
+  ],
+  "anisotropy_ratio": 1.0260046742739706,
+  "rotation_deg": 1.8239106808681975,
+  "column_shear_cos": 0.025614524791853686,
+  "residual_median_px": 0.7541622405228448,
+  "residual_p95_px": 1.886791386018265,
+  "source_span_x_fraction": 0.6753450632095337,
+  "source_span_y_fraction": 0.4374200999736786,
+  "source_quadrants": 3,
+  "source_hull_fraction": 0.12190268641619294,
+  "transformed_product_corners_px": [
+    [
+      1413.1484096678914,
+      543.1846373849919
+    ],
+    [
+      1985.1016716782042,
+      554.0731168841496
+    ],
+    [
+      1959.6526013907496,
+      1123.6318013885952
+    ],
+    [
+      1387.6993393804369,
+      1112.7433218894375
+    ]
+  ],
+  "corners_in_frame": true,
+  "translation_x_px": 814.5051580683675,
+  "translation_y_px": -97.94550065266753,
+  "checks": {
+    "inliers": true,
+    "inlier_ratio": true,
+    "singular_min": true,
+    "singular_max": true,
+    "anisotropy": false,
+    "rotation": false,
+    "shear": false,
+    "residual_median": true,
+    "residual_p95": true,
+    "span_x": true,
+    "span_y": true,
+    "quadrants": true,
+    "hull": true,
+    "corners": true
+  },
+  "reasons": [
+    "anisotropy",
+    "rotation",
+    "shear"
+  ],
+  "verdict": "fail"
+}

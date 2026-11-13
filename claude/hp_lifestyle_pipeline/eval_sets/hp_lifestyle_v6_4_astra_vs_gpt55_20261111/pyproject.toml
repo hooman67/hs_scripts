@@ -1,0 +1,33 @@
+[project]
+name = "hp-v64-astra-writer-comparison"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "foundry-aws-gateway[llm]==2.0.0",
+    "types-boto3-bedrock-runtime==1.43.17",
+    "openai==3.49.0",
+    "jsonschema==4.26.0",
+    "numpy==2.5.3",
+    "Pillow==12.3.0",
+    "fastapi==0.136.3",
+    "uvicorn==0.49.0",
+    "httpx==0.28.1",
+    "boto3",
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2", "playwright"]
+
+[tool.uv.sources]
+foundry-aws-gateway = { path = "/home/colligo/.copilot/session-state/d423dece-a631-40b8-bfeb-2365df3a2c75/files/foundry_aws_gateway-2.0.0-py3-none-any.whl" }
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["hp_prompt_writer_v6_4/tests", "tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP"]

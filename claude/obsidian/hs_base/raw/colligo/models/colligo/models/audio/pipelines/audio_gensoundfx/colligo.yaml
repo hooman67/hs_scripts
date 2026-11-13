@@ -1,0 +1,30 @@
+visibility: public
+public:
+  files:
+  - constants.py
+  deps:
+  - colligo.base
+  - colligo.models.audio.common[public]
+  - colligo.models.firefly.vllm_serve[public]
+deps:
+- colligo.caplan_taxonomy
+- colligo.data
+- colligo.external_services.acp
+- colligo.external_services.business_kit
+- colligo.external_services.cai
+- colligo.httpx
+- colligo.models.audio.audiotagger[public]
+- colligo.models.audio.common
+- colligo.models.audio.soundlift[public]
+- colligo.models.cai
+- colligo.models.common.adapter_utils
+- colligo.models.common.metrics
+- colligo.models.external_services.prompt_suggestion
+- colligo.models.firefly.service_common.persistence
+- colligo.rhode
+- numpy
+- opencv-contrib-python-headless
+- pillow
+- pydantic
+- torch
+- torchaudio

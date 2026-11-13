@@ -1,0 +1,56 @@
+{
+  "slug": "cashmere__laptop_FrontWide__p1",
+  "control_job_id": "20261105T202456Z_a0aecc9d",
+  "device_id": "cashmere",
+  "camera_id": "Front_Wide",
+  "prompt": "A glass-walled office planning area uses a sturdy table with two unlabelled architectural finish samples and a stone paperweight. A ribbed-glass divider and a freestanding felt privacy screen make the room feel prepared for a private discussion under cool, even light.",
+  "pr_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+  "pipeline_version": "unified-blue-scale-v21-translation-only-stage-b-placement-twin-camera-guide-only-no-mask",
+  "text_model": "gpt-6-astra",
+  "image_model": "gpt-image-2.5-sunburst-2026-09-08",
+  "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+  "control_output_sha256": "0fadecd95bcca35eab528a37b2e624416c55c58838f516a71a2e11e0318a024a",
+  "treatment_output_sha256": "dbd8150681a85f167ebe7581f59fc0e860dc9c2982cddf83bd884366128adec0",
+  "final_prompt_sha256": "e2f9de333ce099606a64f63623e8fd634a2ce493c5ed8cae5b7de3883dc54343",
+  "image_calls": 1,
+  "mask_applied": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 970,
+        "prompt_tokens": 12672,
+        "total_tokens": 13642,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "mask": false
+    }
+  ]
+}

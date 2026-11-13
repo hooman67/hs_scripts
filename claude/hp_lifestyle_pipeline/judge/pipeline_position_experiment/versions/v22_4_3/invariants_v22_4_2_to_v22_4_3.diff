@@ -1,0 +1,36 @@
+--- judge/pipeline_position_experiment/versions/v22_4_3/pre_v22_4_3_snapshot/invariants_v22_4_2.py	2026-11-05 22:32:32.433757247 -0800
++++ /home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/hp3p/invariants.py	2026-11-05 22:32:42.823743429 -0800
+@@ -7,7 +7,7 @@
+ import cv2
+ import numpy as np
+ 
+-GUARD_VERSION = "full-affine-v1.4-affine-failure-alpha-fallback"
++GUARD_VERSION = "full-affine-v1.5-unreliable-affine-alpha-fallback"
+ THRESHOLDS = {
+     "min_inliers": 20,
+     "min_inlier_ratio": 0.55,
+@@ -280,5 +280,22 @@
+     # composed entirely of standard JSON scalar types.
+     checks = {name: bool(passed) for name, passed in checks.items()}
+     reasons = [name for name, passed in checks.items() if not passed]
+-    return json_native({**metrics, "checks": checks, "reasons": reasons,
+-                        "verdict": "pass" if not reasons else "fail"})
++    primary = json_native({**metrics, "checks": checks, "reasons": reasons,
++                           "verdict": "pass" if not reasons else "fail"})
++    reliability_checks = ("inliers", "span_x", "span_y", "quadrants", "hull")
++    unreliable_affine = any(not checks[name] for name in reliability_checks)
++    if fixed_position and product_mask is not None and unreliable_affine:
++        fallback = _assess_fixed_textureless(src, dst, _decode_alpha(product_mask))
++        return json_native({
++            **primary,
++            "primary_verdict": primary["verdict"],
++            "primary_reasons": primary["reasons"],
++            "fallback_dispatch_reason": "structurally_insufficient_affine_evidence",
++            "affine_evidence_reliability_checks": {
++                name: checks[name] for name in reliability_checks
++            },
++            "textureless_fallback": fallback,
++            "verdict": fallback["verdict"],
++            "reasons": fallback["reasons"],
++        })
++    return primary

@@ -1,0 +1,1013 @@
+{
+  "schema_version": "placement-v3-v6.1-v2-baseline-freeze-v2",
+  "created_at_utc": "2026-11-05T22:55:15.294709+00:00",
+  "status": "frozen_before_v2_baseline_calls",
+  "run_name": "v6_1_v2_baseline",
+  "output_dir": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline",
+  "model": "gpt-5.5",
+  "reasoning_effort": "high",
+  "visual_anchors": true,
+  "workers_initial": 4,
+  "expected_count": 160,
+  "input_contract": {
+    "runtime_fields": [
+      "generated_image",
+      "twin_image",
+      "product_type",
+      "scene_prompt",
+      "image_stage"
+    ],
+    "human_annotations_passed_to_judge": false,
+    "rewritten_prompts_passed_to_judge": false,
+    "image_stage": "scene_generation"
+  },
+  "v2_protocol": {
+    "protocol_version": "placement-judge-v2-request-v3",
+    "policy_version": "placement-scoring-policy-v2",
+    "threshold_status": "provisional_not_human_calibrated",
+    "visual_anchor_expected_count": 7
+  },
+  "files": {
+    "judge/placement/versions/v2/system_prompt.md": "e30c7ab88c9e3ed2179738fa31abfa3598cf205d4f96f4069a49a9b3655cc0df",
+    "judge/placement/versions/v2/observation_schema.json": "77bf7067c0b8a9a7c5a4d8c7025f8f6c36215744f2529073373d20a09743fa19",
+    "judge/placement/versions/v2/scoring.py": "0f3a1473d60e22fbf921c2883a7f61cb03519678c664f06470e7ca5739b434ae",
+    "judge/placement/versions/v2/run_judge.py": "3f5258ef3bf4fc9f4fca8d18602bce046a36837dc34573428f82ef714c4a277e",
+    "judge/placement/versions/v2/run_batch.py": "4587b652ef2773db5710d26038e62d0759e5b8ac3e4dc02c7148d3d0b2fdc33b",
+    "judge/placement/versions/v2/data/visual_anchors.json": "db43e5aa1550015cc26c0615e965a1a1214f2c9cd7fb007241c3255b288ac74f",
+    "judge/placement/versions/v3/data/new_v6_1_eval_20261105/manifest.json": "fd84149fa421c32602358c325b4fb14ed555d3e5033fb92bc2800ab37e6daefc",
+    "judge/placement/versions/v3/run_v2_baseline_for_v6_1.py": "7a3eaab27b9643eb8773cea019569115a039fd84b6db9ed6dd459744869e0dba",
+    "judge/placement/versions/v3/data/v6_1_v2_baseline_freeze.json": "df1ffcfd862c5613a0a30d3c21b872273931c2eb659d5495226956151c8a2edc"
+  },
+  "record_ids_in_order": [
+    "cashmere__laptop_FrontCloseUp__p1",
+    "elitebook__laptop_BackRightCloseUp__p1",
+    "tassel__printer_FrontLeftMedium__p1",
+    "magic__printer_FrontWide__p1",
+    "cashmere__laptop_BackRightCloseUp__p1",
+    "elitebook__laptop_FrontLeftMedium__p1",
+    "tassel__printer_FrontWide__p1",
+    "magic__printer_FrontCloseUp__p1",
+    "cashmere__laptop_FrontLeftMedium__p1",
+    "elitebook__laptop_FrontWide__p1",
+    "tassel__printer_FrontCloseUp__p1",
+    "magic__printer_FrontRightCloseUp__p1",
+    "cashmere__laptop_FrontWide__p1",
+    "elitebook__laptop_FrontCloseUp__p1",
+    "tassel__printer_FrontRightCloseUp__p1",
+    "magic__printer_FrontLeftMedium__p1",
+    "cashmere__laptop_FrontCloseUp__p2",
+    "elitebook__laptop_BackRightCloseUp__p2",
+    "tassel__printer_FrontLeftMedium__p2",
+    "magic__printer_FrontWide__p2",
+    "cashmere__laptop_BackRightCloseUp__p2",
+    "elitebook__laptop_FrontLeftMedium__p2",
+    "tassel__printer_FrontWide__p2",
+    "magic__printer_FrontCloseUp__p2",
+    "cashmere__laptop_FrontLeftMedium__p2",
+    "elitebook__laptop_FrontWide__p2",
+    "tassel__printer_FrontCloseUp__p2",
+    "magic__printer_FrontRightCloseUp__p2",
+    "cashmere__laptop_FrontWide__p2",
+    "elitebook__laptop_FrontCloseUp__p2",
+    "tassel__printer_FrontRightCloseUp__p2",
+    "magic__printer_FrontLeftMedium__p2",
+    "cashmere__laptop_FrontCloseUp__p3",
+    "elitebook__laptop_BackRightCloseUp__p3",
+    "tassel__printer_FrontLeftMedium__p3",
+    "magic__printer_FrontWide__p3",
+    "cashmere__laptop_BackRightCloseUp__p3",
+    "elitebook__laptop_FrontLeftMedium__p3",
+    "tassel__printer_FrontWide__p3",
+    "magic__printer_FrontCloseUp__p3",
+    "cashmere__laptop_FrontLeftMedium__p3",
+    "elitebook__laptop_FrontWide__p3",
+    "tassel__printer_FrontCloseUp__p3",
+    "magic__printer_FrontRightCloseUp__p3",
+    "cashmere__laptop_FrontWide__p3",
+    "elitebook__laptop_FrontCloseUp__p3",
+    "tassel__printer_FrontRightCloseUp__p3",
+    "magic__printer_FrontLeftMedium__p3",
+    "cashmere__laptop_FrontCloseUp__p4",
+    "elitebook__laptop_BackRightCloseUp__p4",
+    "tassel__printer_FrontLeftMedium__p4",
+    "magic__printer_FrontWide__p4",
+    "cashmere__laptop_BackRightCloseUp__p4",
+    "elitebook__laptop_FrontLeftMedium__p4",
+    "tassel__printer_FrontWide__p4",
+    "magic__printer_FrontCloseUp__p4",
+    "cashmere__laptop_FrontLeftMedium__p4",
+    "elitebook__laptop_FrontWide__p4",
+    "tassel__printer_FrontCloseUp__p4",
+    "magic__printer_FrontRightCloseUp__p4",
+    "cashmere__laptop_FrontWide__p4",
+    "elitebook__laptop_FrontCloseUp__p4",
+    "tassel__printer_FrontRightCloseUp__p4",
+    "magic__printer_FrontLeftMedium__p4",
+    "cashmere__laptop_FrontCloseUp__p5",
+    "elitebook__laptop_BackRightCloseUp__p5",
+    "tassel__printer_FrontLeftMedium__p5",
+    "magic__printer_FrontWide__p5",
+    "cashmere__laptop_BackRightCloseUp__p5",
+    "elitebook__laptop_FrontLeftMedium__p5",
+    "tassel__printer_FrontWide__p5",
+    "magic__printer_FrontCloseUp__p5",
+    "cashmere__laptop_FrontLeftMedium__p5",
+    "elitebook__laptop_FrontWide__p5",
+    "tassel__printer_FrontCloseUp__p5",
+    "magic__printer_FrontRightCloseUp__p5",
+    "cashmere__laptop_FrontWide__p5",
+    "elitebook__laptop_FrontCloseUp__p5",
+    "tassel__printer_FrontRightCloseUp__p5",
+    "magic__printer_FrontLeftMedium__p5",
+    "cashmere__laptop_FrontCloseUp__p6",
+    "elitebook__laptop_BackRightCloseUp__p6",
+    "tassel__printer_FrontLeftMedium__p6",
+    "magic__printer_FrontWide__p6",
+    "cashmere__laptop_BackRightCloseUp__p6",
+    "elitebook__laptop_FrontLeftMedium__p6",
+    "tassel__printer_FrontWide__p6",
+    "magic__printer_FrontCloseUp__p6",
+    "cashmere__laptop_FrontLeftMedium__p6",
+    "elitebook__laptop_FrontWide__p6",
+    "tassel__printer_FrontCloseUp__p6",
+    "magic__printer_FrontRightCloseUp__p6",
+    "cashmere__laptop_FrontWide__p6",
+    "elitebook__laptop_FrontCloseUp__p6",
+    "tassel__printer_FrontRightCloseUp__p6",
+    "magic__printer_FrontLeftMedium__p6",
+    "cashmere__laptop_FrontCloseUp__p7",
+    "elitebook__laptop_BackRightCloseUp__p7",
+    "tassel__printer_FrontLeftMedium__p7",
+    "magic__printer_FrontWide__p7",
+    "cashmere__laptop_BackRightCloseUp__p7",
+    "elitebook__laptop_FrontLeftMedium__p7",
+    "tassel__printer_FrontWide__p7",
+    "magic__printer_FrontCloseUp__p7",
+    "cashmere__laptop_FrontLeftMedium__p7",
+    "elitebook__laptop_FrontWide__p7",
+    "tassel__printer_FrontCloseUp__p7",
+    "magic__printer_FrontRightCloseUp__p7",
+    "cashmere__laptop_FrontWide__p7",
+    "elitebook__laptop_FrontCloseUp__p7",
+    "tassel__printer_FrontRightCloseUp__p7",
+    "magic__printer_FrontLeftMedium__p7",
+    "cashmere__laptop_FrontCloseUp__p8",
+    "elitebook__laptop_BackRightCloseUp__p8",
+    "tassel__printer_FrontLeftMedium__p8",
+    "magic__printer_FrontWide__p8",
+    "cashmere__laptop_BackRightCloseUp__p8",
+    "elitebook__laptop_FrontLeftMedium__p8",
+    "tassel__printer_FrontWide__p8",
+    "magic__printer_FrontCloseUp__p8",
+    "cashmere__laptop_FrontLeftMedium__p8",
+    "elitebook__laptop_FrontWide__p8",
+    "tassel__printer_FrontCloseUp__p8",
+    "magic__printer_FrontRightCloseUp__p8",
+    "cashmere__laptop_FrontWide__p8",
+    "elitebook__laptop_FrontCloseUp__p8",
+    "tassel__printer_FrontRightCloseUp__p8",
+    "magic__printer_FrontLeftMedium__p8",
+    "cashmere__laptop_FrontCloseUp__p9",
+    "elitebook__laptop_BackRightCloseUp__p9",
+    "tassel__printer_FrontLeftMedium__p9",
+    "magic__printer_FrontWide__p9",
+    "cashmere__laptop_BackRightCloseUp__p9",
+    "elitebook__laptop_FrontLeftMedium__p9",
+    "tassel__printer_FrontWide__p9",
+    "magic__printer_FrontCloseUp__p9",
+    "cashmere__laptop_FrontLeftMedium__p9",
+    "elitebook__laptop_FrontWide__p9",
+    "tassel__printer_FrontCloseUp__p9",
+    "magic__printer_FrontRightCloseUp__p9",
+    "cashmere__laptop_FrontWide__p9",
+    "elitebook__laptop_FrontCloseUp__p9",
+    "tassel__printer_FrontRightCloseUp__p9",
+    "magic__printer_FrontLeftMedium__p9",
+    "cashmere__laptop_FrontCloseUp__p10",
+    "elitebook__laptop_BackRightCloseUp__p10",
+    "tassel__printer_FrontLeftMedium__p10",
+    "magic__printer_FrontWide__p10",
+    "cashmere__laptop_BackRightCloseUp__p10",
+    "elitebook__laptop_FrontLeftMedium__p10",
+    "tassel__printer_FrontWide__p10",
+    "magic__printer_FrontCloseUp__p10",
+    "cashmere__laptop_FrontLeftMedium__p10",
+    "elitebook__laptop_FrontWide__p10",
+    "tassel__printer_FrontCloseUp__p10",
+    "magic__printer_FrontRightCloseUp__p10",
+    "cashmere__laptop_FrontWide__p10",
+    "elitebook__laptop_FrontCloseUp__p10",
+    "tassel__printer_FrontRightCloseUp__p10",
+    "magic__printer_FrontLeftMedium__p10"
+  ],
+  "input_hashes": {
+    "cashmere__laptop_FrontCloseUp__p1": {
+      "generated_image_sha256": "a05fe049075d174fb212099b5988f64d61eb4c6f5fab34382b25a09d15a17896",
+      "twin_image_sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "scene_prompt_sha256": "d73ff4200640b286d72ad394192d70b2d544dfada62328aaff4f212eb463cdf1"
+    },
+    "elitebook__laptop_BackRightCloseUp__p1": {
+      "generated_image_sha256": "1e8dafa1254df63e4057fce0421fd48a275575c2502fd737ad011e613bf3c116",
+      "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "scene_prompt_sha256": "3e25f08d841092bea80f5273e06314b3a3b6bfd75d25544b2610739dee227897"
+    },
+    "tassel__printer_FrontLeftMedium__p1": {
+      "generated_image_sha256": "b0945afb0d89de3f837acdcd71b0e0cdb2700766cab5277b575628e885c6929d",
+      "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "scene_prompt_sha256": "bd17509db7bbb450f78fc8cdad2ec4100f34e4c39355371861d9309fce5624ef"
+    },
+    "magic__printer_FrontWide__p1": {
+      "generated_image_sha256": "bde7761cccc88806ff9f61ff95c938f599636fb297cd07e2d3ab9c3395dc0fbe",
+      "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "scene_prompt_sha256": "233aef1655777842f05712631ebfab9ec9b1302ee41cc313b66b71f89780909b"
+    },
+    "cashmere__laptop_BackRightCloseUp__p1": {
+      "generated_image_sha256": "3bc1932f924d226e426bbb65faae614be5435b3f3f4deff0d142c6951d1eefed",
+      "twin_image_sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e",
+      "scene_prompt_sha256": "7ec8bb643324335314d27d83d4dc36bf85fd9cc8743ee82105310d16e16d6bd9"
+    },
+    "elitebook__laptop_FrontLeftMedium__p1": {
+      "generated_image_sha256": "29ddf3428f33def18d55241cecc9a4d4c74658d612b3c0531adda74d6facbb11",
+      "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "scene_prompt_sha256": "11778f1fe4d699dc3a1df9f491767f79e0415c65268a367fd340f312dda0d8e0"
+    },
+    "tassel__printer_FrontWide__p1": {
+      "generated_image_sha256": "2b0cac6e221ec5b73492f42957983de9ebe20a585f9c824a4fa2017d0b697fe7",
+      "twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "scene_prompt_sha256": "8e619ed3e296ff558cf10fc460bd5c3fee01c8c176f7cad8a55d4af703650e09"
+    },
+    "magic__printer_FrontCloseUp__p1": {
+      "generated_image_sha256": "682a2fde5a4bbe83e9c6f35b6c4afeb8b4ae3dc16a5a9c31dd426efa334bdb28",
+      "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+      "scene_prompt_sha256": "59c05ce15d81b92d9d2ecb15185a2443a55e9ee96683b79dad850be5d19e4812"
+    },
+    "cashmere__laptop_FrontLeftMedium__p1": {
+      "generated_image_sha256": "35064f3c05ccdf8a3c840c9177fe63de5704bd2795fd1c2bbceced01520d9a14",
+      "twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "scene_prompt_sha256": "ef1f129cd9681856d6982a95634c2f5f5c2f8cdc244a28d7df15c555dee820a5"
+    },
+    "elitebook__laptop_FrontWide__p1": {
+      "generated_image_sha256": "828d842f5a76d3d3e78ecb08411a2487e936119888ff8a60ebbd128b4881efa3",
+      "twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "scene_prompt_sha256": "9884969da85b376c428bac05e989788a355bace99cd8f753d937620d2cd47d62"
+    },
+    "tassel__printer_FrontCloseUp__p1": {
+      "generated_image_sha256": "51c593234bfa195b88210dd4152f393312aefcf120e21e454c17612cd1432f6f",
+      "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "scene_prompt_sha256": "a64c021c0ba0c748820ed3d4d0abaefc50fcae8bced21ca065daa020c9057b44"
+    },
+    "magic__printer_FrontRightCloseUp__p1": {
+      "generated_image_sha256": "0046a27207b2afe6fe0475c4e08c95710738f5c9bf7fb5f7990399d03706c139",
+      "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "scene_prompt_sha256": "09e96635c43130d4b85bfa85b1bee715d9cc372797cebf6dfbc2d386d44aaff4"
+    },
+    "cashmere__laptop_FrontWide__p1": {
+      "generated_image_sha256": "0fadecd95bcca35eab528a37b2e624416c55c58838f516a71a2e11e0318a024a",
+      "twin_image_sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "scene_prompt_sha256": "2a9154658fbdb300262b94927d747407b35e959551112c68e29d6945f93a62af"
+    },
+    "elitebook__laptop_FrontCloseUp__p1": {
+      "generated_image_sha256": "59f7df458cd91a7cc6a2258697f8aeea766a5fb73498523c891d50ffa6be0b9e",
+      "twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "scene_prompt_sha256": "ce606704ee1e49fa0cdd36977a7ffbd7f37ede60ba785d47fcc4ff4f171af02b"
+    },
+    "tassel__printer_FrontRightCloseUp__p1": {
+      "generated_image_sha256": "d5ede905a920b1c052525d2edfbdf0bcc53aa12da64b7dfc76493fb2cee7d0e6",
+      "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "scene_prompt_sha256": "64d9be266af9c84caf692eedf81851e252bec22fc5820dd8418bd1b5585823a9"
+    },
+    "magic__printer_FrontLeftMedium__p1": {
+      "generated_image_sha256": "3889537a465377790671fe8efbeb189fd673391e47ccea5a62c76a9dc0efad7f",
+      "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "scene_prompt_sha256": "5d60a3b04f4632450765d07554038fc712a7a7aacc133a5c75175810db62cf9a"
+    },
+    "cashmere__laptop_FrontCloseUp__p2": {
+      "generated_image_sha256": "d8dc4b75ecd3320737fa43266672c31e1e2385e5527b7e30e12185f3f31cf030",
+      "twin_image_sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "scene_prompt_sha256": "cd58e0e1c186db8113625c08d9f4de3fca7e9c0a60e232586e8596d828166750"
+    },
+    "elitebook__laptop_BackRightCloseUp__p2": {
+      "generated_image_sha256": "7c825e0cb42473cfe0daf6b5185e10b2b0922e63ec7352ccadae46b4ebef9e8f",
+      "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "scene_prompt_sha256": "d3920efa8c6b8271f094b7253e05d257621734f6c4444ef8ecb77d56ae56839f"
+    },
+    "tassel__printer_FrontLeftMedium__p2": {
+      "generated_image_sha256": "e69a6f9f1eb25bdb5a529222fd74fe3bd45adabca3d4f1db94b04bbc119d1cf6",
+      "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "scene_prompt_sha256": "b759f7454ed8facc39fc465000b78cd33eae2d508732b1adfd00a2f48bd43bc0"
+    },
+    "magic__printer_FrontWide__p2": {
+      "generated_image_sha256": "37e69f2a740e99cf92d86609753c6b3a08a2fc0c033a75bd8563a0feca302e26",
+      "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "scene_prompt_sha256": "c49bca2e4c924f8f2e234db7391408d66fccce2d50f5b91287674249b063835f"
+    },
+    "cashmere__laptop_BackRightCloseUp__p2": {
+      "generated_image_sha256": "d54881a60adc34e44ea67f276c5e087714236848c159ddeacb2b3ce2b2004f17",
+      "twin_image_sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e",
+      "scene_prompt_sha256": "b5c27317ba7139ada8cf34c38f0b22d29c8e49af8a15fe2da8a0ca6a63fe9bba"
+    },
+    "elitebook__laptop_FrontLeftMedium__p2": {
+      "generated_image_sha256": "1d96f1e169fcc0724c480b778f7baba35b3260612310cf1b42df1aa923fea141",
+      "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "scene_prompt_sha256": "d3d278286bef54d083e160db381aa9fc928febf039a6df39e8aec3313bddc874"
+    },
+    "tassel__printer_FrontWide__p2": {
+      "generated_image_sha256": "1cce9b2c002c9f8d1b94fda36a6e52f695edd309d87af84fc8427e9b2da4f5ef",
+      "twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "scene_prompt_sha256": "bf1ccd5e7aa7522fd3e055e415e3c57a1e22f293a4a909f1e769180130cd69a0"
+    },
+    "magic__printer_FrontCloseUp__p2": {
+      "generated_image_sha256": "c7c97dac3d999d74d7dab97213fa9f788b068038b8231ba7bf4cce4aee477946",
+      "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+      "scene_prompt_sha256": "45df8610cb07d1b6ab4b4c59ba9cd64187b05c48e69285fe91040b1fe84cd39c"
+    },
+    "cashmere__laptop_FrontLeftMedium__p2": {
+      "generated_image_sha256": "2bac1eee51fddc4be8c73b97b3242d99112822f3ad373ddd149f6509d1cb08f8",
+      "twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "scene_prompt_sha256": "473a164f5bdb269111fecf1929e3652cd42127007bc1ab9f0ed8ae7363369639"
+    },
+    "elitebook__laptop_FrontWide__p2": {
+      "generated_image_sha256": "85aafa41a5f1a4028da064ddb1e70cda982311147308776bfaba5697965fc131",
+      "twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "scene_prompt_sha256": "efe70a88b79b2dad9d00cf7f069e8f3afc7e577bb189838ff181a9c3d97cd6c9"
+    },
+    "tassel__printer_FrontCloseUp__p2": {
+      "generated_image_sha256": "e532a54e6c1c56bd013e4793c71b7a935dd4d4a9186acfee9832cae66187b87f",
+      "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "scene_prompt_sha256": "eec56a502f7a5fb415f55f24b388c0103fa748493aac218edbe4fb3c3ad1642b"
+    },
+    "magic__printer_FrontRightCloseUp__p2": {
+      "generated_image_sha256": "87f3068a15486de81808e2bbe2dcaea0256843bd757aa0f36df3082f8cf08d11",
+      "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "scene_prompt_sha256": "e8d841fbb5e04a16559fc2af76c71cc612f25a7d64a0616cdfb8dae647ffc621"
+    },
+    "cashmere__laptop_FrontWide__p2": {
+      "generated_image_sha256": "596fa0deba5b7737515bdebba7f0ae627efab894a53989291668a35d30ee1a58",
+      "twin_image_sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "scene_prompt_sha256": "7bc7425e887286b661aa053e7c10349e74eb8eb32715730fcca4ca97f1657b29"
+    },
+    "elitebook__laptop_FrontCloseUp__p2": {
+      "generated_image_sha256": "9e5a3df581479692e752cac8cd453935162a61a864157834d6a61c963d83613a",
+      "twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "scene_prompt_sha256": "bfac5fcc1dc2ddc342df66c1ada484883c82ecf9281e17b6ccbdba2a7ccd6c9e"
+    },
+    "tassel__printer_FrontRightCloseUp__p2": {
+      "generated_image_sha256": "a20d3e7701400eff3185e83806d3540f18a7f8f69d13b67325940e0837dc1ae2",
+      "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "scene_prompt_sha256": "eeee75d654dacef472c7d29fbad6237d201268388a535c4bf9d03c6829ebb84d"
+    },
+    "magic__printer_FrontLeftMedium__p2": {
+      "generated_image_sha256": "cb2674e7e508266ca0b8cd9e6c461f9b703895fcd1a71201719b52bbe4f4728f",
+      "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "scene_prompt_sha256": "febe54139581937646e3492cc3f0ec570cc3fb85e50ce1ef7dab765216498d4e"
+    },
+    "cashmere__laptop_FrontCloseUp__p3": {
+      "generated_image_sha256": "0944a69643c1a740cd5442308275fa8ec66088a48c36d58ae4502538a6df0c26",
+      "twin_image_sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "scene_prompt_sha256": "e6a1d5b14400b6fd343a798565017ba77923000fcffedce3ee0a755e821172d2"
+    },
+    "elitebook__laptop_BackRightCloseUp__p3": {
+      "generated_image_sha256": "93fd3d75bd310093c36f2ff140777ea5b8485e87963a7782f645b435ef93517d",
+      "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "scene_prompt_sha256": "5829759f801806ff4f6923fa2c0bb4a5370d3fcc38e37410dbd76eb486b03c5c"
+    },
+    "tassel__printer_FrontLeftMedium__p3": {
+      "generated_image_sha256": "8f22790501c60eda7ee2607691e3fe1046a4f6320da30352b9c2471b2a87dfb1",
+      "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "scene_prompt_sha256": "018c660240ad2945e88c8d2d4d475183b4f6c40a71c34844ab7e69f791bfee5f"
+    },
+    "magic__printer_FrontWide__p3": {
+      "generated_image_sha256": "fe2e36242175eb4eff1856e420adbf027f4a5046fefde8c65cb22f2fd0dce0b3",
+      "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "scene_prompt_sha256": "8c3b574e6b024e1bba1cfc2f5e57b7707d6b5eff2598d876727b5d1dade292b2"
+    },
+    "cashmere__laptop_BackRightCloseUp__p3": {
+      "generated_image_sha256": "3b40b4de2a23f3ae77b11e60ed2d42157cb07d8be3db8357e4034518b73a5f7e",
+      "twin_image_sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e",
+      "scene_prompt_sha256": "7cc3aaa79053955bcc4b7f0137c893aaf31de3d38b80a2889d784c2667105fdb"
+    },
+    "elitebook__laptop_FrontLeftMedium__p3": {
+      "generated_image_sha256": "4ae0ab7bcf02a4194b0803f9811ac07e55bff8a29be94d7848f8ce043f96c453",
+      "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "scene_prompt_sha256": "60ec2b4d837dd46ec7a366fdd7aada610b7ec148417bb846b52d9c0b29f49c3f"
+    },
+    "tassel__printer_FrontWide__p3": {
+      "generated_image_sha256": "e9fb49e88d7153f07a0b2c4715c0c0ec32aea00117620759abd46dc0279b61b5",
+      "twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "scene_prompt_sha256": "3cb3e6810ddfb9103ff13cb391170ac43c37cc681969c358611f4731bb52d212"
+    },
+    "magic__printer_FrontCloseUp__p3": {
+      "generated_image_sha256": "48942b830e767eb1cb31dc8bad3f65887e43b571d146cad173909c8d4ea1559e",
+      "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+      "scene_prompt_sha256": "e261f7d6ee5b3e0288d6a9b2d0f69c7b2cd87e6733d34d9fd4c2995744710baf"
+    },
+    "cashmere__laptop_FrontLeftMedium__p3": {
+      "generated_image_sha256": "c541b73ee62a0317014f0c55affe6d27502d759acbedbbbf57a7cda6765b0fcf",
+      "twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "scene_prompt_sha256": "ea79de350908e8f872368a89c876e5da8656011ad6d18ca735d0123d4d2fb166"
+    },
+    "elitebook__laptop_FrontWide__p3": {
+      "generated_image_sha256": "1832c67fdb474418e9e67fcdfdb301150b0e235526a159d04bf2cd877bc8971e",
+      "twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "scene_prompt_sha256": "6fc989e96ac5e7ab30b028da76ef172cab684d8c7e820d6ddf55d42d229c868d"
+    },
+    "tassel__printer_FrontCloseUp__p3": {
+      "generated_image_sha256": "a811ffb90ba9fa99b61390d23f29822d9f4b7841fba50d0ddc187958ca3e8914",
+      "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "scene_prompt_sha256": "036dd2622ce1652bd857f7c6b82b0a740b8689aad6f57c80974f166e840dce81"
+    },
+    "magic__printer_FrontRightCloseUp__p3": {
+      "generated_image_sha256": "f9542c7d6d0a2b9ad9a7215db9ab6d73f99498cd817738b55e3442a449be838a",
+      "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "scene_prompt_sha256": "aaf9be084a6f83df0b00116577cb4aeef76393a7b4f03ae1fbeeb99ca8741c08"
+    },
+    "cashmere__laptop_FrontWide__p3": {
+      "generated_image_sha256": "ea59a4f78730ee60289f08328e42d7240aeadb131cc37993ca0f6d1a70bef62e",
+      "twin_image_sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "scene_prompt_sha256": "f431eaa79d822fa276f9156df587f524c9712fed8d61cd8ba26b1a93d569e706"
+    },
+    "elitebook__laptop_FrontCloseUp__p3": {
+      "generated_image_sha256": "2d0123a6853017d7fd892124003fb84e7634d876b53c77a30c5d936a589f0779",
+      "twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "scene_prompt_sha256": "a6596921ae1872141e974695dea88f71e42b06b0d828bc57b5bfed93fa07386f"
+    },
+    "tassel__printer_FrontRightCloseUp__p3": {
+      "generated_image_sha256": "f502d240f135e77d54cb22694292eaba92c1302abe6d8497c0b123c06edfff4f",
+      "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "scene_prompt_sha256": "e10bb6847b2d1b141ffd50055a68d351b5072191b25192d1ebcb18c1356cbc70"
+    },
+    "magic__printer_FrontLeftMedium__p3": {
+      "generated_image_sha256": "bf0bed35574c37a5fc606a20834ff97245ee34864f5bebdfea4ed1f72db2fe3d",
+      "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "scene_prompt_sha256": "9f2463ec884a6acdd909d9496a6f80a1b9c31a25502696daab1d1d6ae2fad63a"
+    },
+    "cashmere__laptop_FrontCloseUp__p4": {
+      "generated_image_sha256": "d575a36813ea597728407cd514194b943f8f80cc430e58a6eda75d8c8ca7cf2d",
+      "twin_image_sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "scene_prompt_sha256": "ee973f7d2cfb5944c31238e81971af5c813e57bfd9766260a44cafc23789cbbd"
+    },
+    "elitebook__laptop_BackRightCloseUp__p4": {
+      "generated_image_sha256": "1c9bf6d1b705fec0a1b2d2b44a6695da2f54d9a64430770bb1f64cb0d4a8527d",
+      "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "scene_prompt_sha256": "077383103f464e552acdb9227e23d83f9d6d8f79c3bd7982ee6695f2dd9dc361"
+    },
+    "tassel__printer_FrontLeftMedium__p4": {
+      "generated_image_sha256": "01261386e78dc52081410d3eddd24e3f608334b6fb91df136c286ec28e151143",
+      "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "scene_prompt_sha256": "19fe6af7db6e4fd42afd5b992b811f4c52ad443fb401aad7b51cfde4dbc048e5"
+    },
+    "magic__printer_FrontWide__p4": {
+      "generated_image_sha256": "956e077ad345810115972dd6627de398d6e60ed365a9acaa523829a868aa24f6",
+      "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "scene_prompt_sha256": "1c128db5e83b25c2321474a608b073ba91970273b61d0f6da6e8949d834cbbb4"
+    },
+    "cashmere__laptop_BackRightCloseUp__p4": {
+      "generated_image_sha256": "fdf295e0018a41a9756f0628baa7eff572fb9861a5de3cdba4c5c88e9453cf3e",
+      "twin_image_sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e",
+      "scene_prompt_sha256": "7367b1c1b123c13ab507a997e15ef72d73deb8331bebe6acef86a049b4305edd"
+    },
+    "elitebook__laptop_FrontLeftMedium__p4": {
+      "generated_image_sha256": "3604da12e4fd5134a560f8e3fc88b63d590b5a5dd51f2d38d4002115480d363b",
+      "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "scene_prompt_sha256": "faa2bc396516568a974b24a89a39ce9c9c1483754bdc51bc6c29e14c18878f5d"
+    },
+    "tassel__printer_FrontWide__p4": {
+      "generated_image_sha256": "9d98fc598e82040bb4ac2df02625cba0eb6a90fb7215c8f2c68a1c3e10b0f184",
+      "twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "scene_prompt_sha256": "eb2819a1cf97860d0b28bca4b1d55a682f2eef997cbd84c38f53fe4172b7b60d"
+    },
+    "magic__printer_FrontCloseUp__p4": {
+      "generated_image_sha256": "5e16ac9c2afbcc2983ba9891154642c927a746e4670b06b31f2f2fd4350beb29",
+      "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+      "scene_prompt_sha256": "6a52a9ae343e3609554243a5d8f406d554c16deb1a0cf38a7a5562b7bfcb9e2f"
+    },
+    "cashmere__laptop_FrontLeftMedium__p4": {
+      "generated_image_sha256": "8df657d6b67de9b7bef3424f7bffe75f5de2641afd163ccb956630982892400f",
+      "twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "scene_prompt_sha256": "9c80963a053c14ccf20aad2f77ae2eaed14fefeb05d73bd80f00e5d7785152b1"
+    },
+    "elitebook__laptop_FrontWide__p4": {
+      "generated_image_sha256": "40a6486a2c583ecfc9b140283bc10edd2d477172fb73b277d3ab416ff8f02ee8",
+      "twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "scene_prompt_sha256": "aa306e9d5e6d1ed8bf42eacad1d8d4f708482fbc33d167009f1339ba1ce6f967"
+    },
+    "tassel__printer_FrontCloseUp__p4": {
+      "generated_image_sha256": "8aa34e88031e6a392636604d42650e469ab106a5486dbcf9f998ac77ee3734bc",
+      "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "scene_prompt_sha256": "85c4735ab8ebc859b18098803771009f1a5d7ce9ad6b18516a657eec5912e4fc"
+    },
+    "magic__printer_FrontRightCloseUp__p4": {
+      "generated_image_sha256": "ce2f092aa132844680df0a376b078aa89c6f1b8618eeb9f2e8bbbf13a0c68c30",
+      "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "scene_prompt_sha256": "09cf1d1f1d2931f6ca1c61404a0216bd17ea20c81d6923c40a421758e84503a0"
+    },
+    "cashmere__laptop_FrontWide__p4": {
+      "generated_image_sha256": "3b6ff0c1d798e489de2d217fa05598ea8512000cb7129c10e69a8ea5ae80ff73",
+      "twin_image_sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "scene_prompt_sha256": "11b8dc3218d60e90737ce17e5e5b5cb31d0430e1c840af8a92530eb7fac820e0"
+    },
+    "elitebook__laptop_FrontCloseUp__p4": {
+      "generated_image_sha256": "d83b36e0af1327f722d3daf632861523d3002d058a1f33a735f2fd1ac1aabd14",
+      "twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "scene_prompt_sha256": "8423475d8a78af8bda3e73f96899be43d9be0184e153f237cd5a67f6e904b193"
+    },
+    "tassel__printer_FrontRightCloseUp__p4": {
+      "generated_image_sha256": "1a12d7cd7f23a5e8e27c5a06ae76dd3f905430d8b53b855ba4c2be53da969ce4",
+      "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "scene_prompt_sha256": "76b956dc179a70db9b743e2fcb6666c637fb39e069b5a6696b03ac81445899c6"
+    },
+    "magic__printer_FrontLeftMedium__p4": {
+      "generated_image_sha256": "ca75120dbc32626626df0e651f9c8c8e22f1b0d520403d9fb64e7741bd269103",
+      "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "scene_prompt_sha256": "185f7f848d04c610b34c66005881839e201a1f9a3bb53e57cec6d0fdf953a7c7"
+    },
+    "cashmere__laptop_FrontCloseUp__p5": {
+      "generated_image_sha256": "a72396ebf8d8e2619150da2f21260e663373c6bc826b2f9f2dd59950989be76c",
+      "twin_image_sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "scene_prompt_sha256": "75f9aea54bea73ff21c59bec11c7c9db286da73dd9ea7cb8e40581960473e819"
+    },
+    "elitebook__laptop_BackRightCloseUp__p5": {
+      "generated_image_sha256": "1c5c3cab3ddbfbf84acbb0cb1d36103c2396f8243559aad79ce965b1d47e620f",
+      "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "scene_prompt_sha256": "ec8480344ec031d1c680b1e8f8699dc448732059b231de07be153fc89525346e"
+    },
+    "tassel__printer_FrontLeftMedium__p5": {
+      "generated_image_sha256": "502bcb61542a19b60e53ed7e6d6dd82c943fdfddc78ce6c4c72bcefffc820ba6",
+      "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "scene_prompt_sha256": "7a4f215ee37746dfd60cc04f1eedc4417a1ee7d31092fef449a6bf586f2c7680"
+    },
+    "magic__printer_FrontWide__p5": {
+      "generated_image_sha256": "13eb4b2709e9703b12ceb97992ce847a3d0d5cecf1188d8b60e556d81ebad94c",
+      "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "scene_prompt_sha256": "281e32057bb4508477c778a626a6765dbfac45ac8c0ca060f972ae61eb44ad83"
+    },
+    "cashmere__laptop_BackRightCloseUp__p5": {
+      "generated_image_sha256": "e4d14a282807936840b562a73b9f571b20c2e2e643da0d321eee822ced46df20",
+      "twin_image_sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e",
+      "scene_prompt_sha256": "6588673d693b636a1418149c75e58babdfd983f9bdf9710f99e3ff8357effe2f"
+    },
+    "elitebook__laptop_FrontLeftMedium__p5": {
+      "generated_image_sha256": "be54d6d04a9d9242d157af9c265495c5d5da78865e2075c0e971312741f286fc",
+      "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "scene_prompt_sha256": "cbaad0b01e924dbd0fe17137a7f75cc94f597594bd52e3ec3b120240c5cc97ae"
+    },
+    "tassel__printer_FrontWide__p5": {
+      "generated_image_sha256": "6894d7072818a44c2698f1808587bbb98ae4ff073f09e00fe24db6346124527e",
+      "twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "scene_prompt_sha256": "b443e6ddeb94ee5b469d327faeec71509c4e39b42f121625aafdfc87d82faa2e"
+    },
+    "magic__printer_FrontCloseUp__p5": {
+      "generated_image_sha256": "8e51fab74d67bf7dce16d358ceb619fe1ba4633a39b7ef38dff224fb1def1b08",
+      "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+      "scene_prompt_sha256": "41e673f90bb481ec41dac6624f6c2940e034ff6ec8a6af9ad8866af4ba8d07cf"
+    },
+    "cashmere__laptop_FrontLeftMedium__p5": {
+      "generated_image_sha256": "85a9bc02a30d952ba14c11896c34f01f30761f878eeca8aa0a53ea390932edbf",
+      "twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "scene_prompt_sha256": "c3c8a623f4573bbc398ea7bcc0bddcc1f11b84f2f3fa974ced4b96810258fc36"
+    },
+    "elitebook__laptop_FrontWide__p5": {
+      "generated_image_sha256": "728db60b338cab4894c05dc54a976f237b366572b7796011c7cfced3285dc200",
+      "twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "scene_prompt_sha256": "bdec570e486a850e629c069e8e6bdeca9b034c89d3dc4e01cadcd543f146a896"
+    },
+    "tassel__printer_FrontCloseUp__p5": {
+      "generated_image_sha256": "7164720f2f3862b4c419c70bdbfb9bcc5abe202ffe4b55068c14b34fec96c90b",
+      "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "scene_prompt_sha256": "e38de44a4c9384bb0fce83a4fdaf6f99d6110c3a83c79af8f9a57e84e7af26f1"
+    },
+    "magic__printer_FrontRightCloseUp__p5": {
+      "generated_image_sha256": "079cb9313c098635943e027b625e3cb9b3c9b8558d08923c0b3129a28284ffb3",
+      "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "scene_prompt_sha256": "0d36108742877433d6f6e06f128db3ebf78fe215474a508ce5f8103104dbacd8"
+    },
+    "cashmere__laptop_FrontWide__p5": {
+      "generated_image_sha256": "4fe79fd4120c5ba33faf962f89b899aef51c15eb69afbb0085a2c6cd26eeaa45",
+      "twin_image_sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "scene_prompt_sha256": "8024e4b98fdde8835f12ee9c0d085ea9cf0194199eec3bd8fff46fcac6c06fc2"
+    },
+    "elitebook__laptop_FrontCloseUp__p5": {
+      "generated_image_sha256": "0b2e19a91335e29c27485bd3fc9535f9721282e10077c608ddafb74e9047d8b0",
+      "twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "scene_prompt_sha256": "b19edd44d74a7569d34a141222e8eba2761bd8b1bae29d769d3910ace28addb3"
+    },
+    "tassel__printer_FrontRightCloseUp__p5": {
+      "generated_image_sha256": "4e0a19ed52f1b0c3b63b69b04062a1832d7b921a45da3244ef0023cd36a0a0c6",
+      "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "scene_prompt_sha256": "1fc3511b8a3780e1760cec2fe07d50119383dd87182ec903a7eb1633c161bcc3"
+    },
+    "magic__printer_FrontLeftMedium__p5": {
+      "generated_image_sha256": "855d3f50e4e834f3fc61fcc4db0f5afe39abc870d2a240b4a24e875dadf34b38",
+      "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "scene_prompt_sha256": "2feea94ee5c825178a02217b178247eab60e61e06bc6906783fc05f24fab9c5c"
+    },
+    "cashmere__laptop_FrontCloseUp__p6": {
+      "generated_image_sha256": "07435fa1cb1afa0f89646482613053b287ab27a1505337781f06c130d3a6e025",
+      "twin_image_sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "scene_prompt_sha256": "b042292ff552f855a473810d0e7c97b21fbcb32c90e89806d9436f3b1aaa5dc7"
+    },
+    "elitebook__laptop_BackRightCloseUp__p6": {
+      "generated_image_sha256": "c53367a81e85b2ee7d9f1e03df8f4ad3d45ab20f5c84cb36007829040dc4b3d1",
+      "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "scene_prompt_sha256": "f8bd3faec3db2eda2b6b76e75bd89303c9a1c1e94dc6253baeab190b5a8a45d8"
+    },
+    "tassel__printer_FrontLeftMedium__p6": {
+      "generated_image_sha256": "9f63830bd7f8cbdda1d773d83b7d0d42896783aaea0ab9be0a2e37fca18ee573",
+      "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "scene_prompt_sha256": "161b78b5e2ffce43aeb2d7258640179476de5d892336335042bd79c33cdd9e98"
+    },
+    "magic__printer_FrontWide__p6": {
+      "generated_image_sha256": "c1d8707f3f60204dd4182146dee032235928205878562f11ed6a1cd373717f96",
+      "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "scene_prompt_sha256": "3ae6ea78c3cce7cf24c0311b730441536b4fbb1212da62228e531a6d1f97422f"
+    },
+    "cashmere__laptop_BackRightCloseUp__p6": {
+      "generated_image_sha256": "1b917624f12ec57a63057288d3dceaa1d6ff4b6347198e46a7c21d57e3d3cfff",
+      "twin_image_sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e",
+      "scene_prompt_sha256": "4b5bdb019232226d42031e34795dc2f7cb150a7c4a69441fe127700fd7673239"
+    },
+    "elitebook__laptop_FrontLeftMedium__p6": {
+      "generated_image_sha256": "6e1c3ebede7037bc55a266359d31758f848fe328aed83250afd8484f15c44110",
+      "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "scene_prompt_sha256": "d6ae07b11b40afb0a781438ce4fc7eeb872f73bd7706aa08b0db8fb9999f8ba4"
+    },
+    "tassel__printer_FrontWide__p6": {
+      "generated_image_sha256": "22352f8a0f0469518c70c1ca41c4af261bbad7fb4f5cc857c2ac3d7ec23fba4e",
+      "twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "scene_prompt_sha256": "127ca08262b386e258ea69ad64ba037084ca3703e56ad5c49080ff9a0cfceec5"
+    },
+    "magic__printer_FrontCloseUp__p6": {
+      "generated_image_sha256": "6eeabb04dca6e3e3bc4b07a19465baf25310d675a0740d0f5cc5af3b8fc91da6",
+      "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+      "scene_prompt_sha256": "efec7db929edc44f8b1d3991057bc7299f977066d4ea133ba0f074ea48a99429"
+    },
+    "cashmere__laptop_FrontLeftMedium__p6": {
+      "generated_image_sha256": "43a9dd36e4f4ab647302c14116ad0f082c22df3245dc5d3961487276469957ba",
+      "twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "scene_prompt_sha256": "456a7a24984d96575b089cebdd7acb2509d2157f7a682ad5010d791a3f89724b"
+    },
+    "elitebook__laptop_FrontWide__p6": {
+      "generated_image_sha256": "4af71a41786f032e252792f93a93a5885555e5171ff055b0db7ee1381aabc6d8",
+      "twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "scene_prompt_sha256": "8ccd59e95626f41596448dd67de99a658564f14a09c8c1fa4539295cc7353e06"
+    },
+    "tassel__printer_FrontCloseUp__p6": {
+      "generated_image_sha256": "b97e72ee8ea984e1f23451b531f1ac19ccc37639326bd6843614ad13beb16aa3",
+      "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "scene_prompt_sha256": "0c5692b0c07f993fe366e49488c49efc1823c3a53d2a2549607cad0807e2976d"
+    },
+    "magic__printer_FrontRightCloseUp__p6": {
+      "generated_image_sha256": "2466988ea15bcf15ad1bbc5d756a4c377fe81f39d1b759d1a4e5554e7ff7035c",
+      "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "scene_prompt_sha256": "01dab626c16cd4618a6c28a6395d1575cbe55d2519db3b95b03c748175b13b45"
+    },
+    "cashmere__laptop_FrontWide__p6": {
+      "generated_image_sha256": "98194c66aee19a8ce732145a80f517a86ab99ba5f022520560de52a42eeef378",
+      "twin_image_sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "scene_prompt_sha256": "e18d1d814e4eb14265b634b33746f1252c50f9f990bb8c73798a8d6dedb2a37a"
+    },
+    "elitebook__laptop_FrontCloseUp__p6": {
+      "generated_image_sha256": "c2d504b14a2cd6bfb157137de620d51205b48c895d3914fd1e523371e671f55e",
+      "twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "scene_prompt_sha256": "44d25aa5170909db3158f8e40e448ac925bc580d18ee2835a491d17cfe7753a4"
+    },
+    "tassel__printer_FrontRightCloseUp__p6": {
+      "generated_image_sha256": "86a152cb08eccb49b6920f40cc333f508f5598b538057123df9e3da142c19027",
+      "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "scene_prompt_sha256": "7fa54567881767ebd1b6cccd3244fb296f5bd47423ced5e530c71dea90f66ae1"
+    },
+    "magic__printer_FrontLeftMedium__p6": {
+      "generated_image_sha256": "b44e0c2e2ac11d1fefbdad2a184af2233a8efb30aa4e12da2f8bd2f112412661",
+      "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "scene_prompt_sha256": "60089b858b10da50c05b91789adf9256a6faf5d69da0683311a3ca1884eb8667"
+    },
+    "cashmere__laptop_FrontCloseUp__p7": {
+      "generated_image_sha256": "9976a63eda1c78e12beaf00ca42b70c7f70bbeaff5cbd1f9aff798d47c1f7f8a",
+      "twin_image_sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "scene_prompt_sha256": "90cb1aab98e4989be46cba75027b5ef2b2477806a3c938920e7e087bac386f45"
+    },
+    "elitebook__laptop_BackRightCloseUp__p7": {
+      "generated_image_sha256": "78b1f44e4b123d63e7bb7801e0791693a2e4a0e5f0ea840798512e54b0ed204c",
+      "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "scene_prompt_sha256": "94c2201722562d4cd821b0e63ca11cdefdd77b87393301741f131e8b73e9ed68"
+    },
+    "tassel__printer_FrontLeftMedium__p7": {
+      "generated_image_sha256": "608f88ef1b80d2c4c7344cc5b362484468e1496ec1e401d7a1e57d6526f559ae",
+      "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "scene_prompt_sha256": "1e85cee51178906ce4a105613424872ae164edc3b5d9975c5a6c4b701cfacd84"
+    },
+    "magic__printer_FrontWide__p7": {
+      "generated_image_sha256": "f9556eafa066f490b54e90a3baf05f4b08a32ed599d6a444dfe01c36457f2710",
+      "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "scene_prompt_sha256": "4cdfceb9e73bb84acf18a1d4747dce1f4aa683f86edf6365c12e3a81e114c65d"
+    },
+    "cashmere__laptop_BackRightCloseUp__p7": {
+      "generated_image_sha256": "3fdf2737c60789d48f60eada6d26f339feac7b89c7c95591a4a6205a530e0097",
+      "twin_image_sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e",
+      "scene_prompt_sha256": "4dd5bac65a045e80ed47d21faa28b146f96f7f5551dac027128a0773aba00706"
+    },
+    "elitebook__laptop_FrontLeftMedium__p7": {
+      "generated_image_sha256": "688168c31739426e2b5088042d548ae4a92cc3d6841600d56b4f666497e598e7",
+      "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "scene_prompt_sha256": "0be82fc4d5d7a89b8ca83f4e9a54ab477bb656cf287ded5c8efadc3e29463260"
+    },
+    "tassel__printer_FrontWide__p7": {
+      "generated_image_sha256": "6bd6f075995543b8fba6d2fe195b68cd86ba0ccce74f895fde32fc7679a0d7d3",
+      "twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "scene_prompt_sha256": "3cb10311183ddc47b1efd38c73d2af0fbf7add1fc9f875993a980e69e3481f37"
+    },
+    "magic__printer_FrontCloseUp__p7": {
+      "generated_image_sha256": "ac2d1e12f37e24f1260ee36eab1ad9a520190f0ef98360294fc4ae3c3d81711d",
+      "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+      "scene_prompt_sha256": "246b390cc2870d356dfba91856d9aa8cc94e3b4820c81bc5a1d558bf61103f0b"
+    },
+    "cashmere__laptop_FrontLeftMedium__p7": {
+      "generated_image_sha256": "e9b35f647139215b32f9a27f9c80cfa317f5fe2577d393c5f199abd4289ae223",
+      "twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "scene_prompt_sha256": "41af933877e2162df132f95a2cbe8bc0af7eda09a9b4b2684fa5788e0fc7cdf8"
+    },
+    "elitebook__laptop_FrontWide__p7": {
+      "generated_image_sha256": "b76333545bcc2f5af34a454fb547017dbdbd9116f360a2647a751fd121bbcdb4",
+      "twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "scene_prompt_sha256": "ac6f00234392a3de0579d2afbed9359bc9b6035d48d83d8b4193369adc08c61c"
+    },
+    "tassel__printer_FrontCloseUp__p7": {
+      "generated_image_sha256": "c2fc4f2313c405543a2d5ab69bfd80442cb7ba32bc3f637f526a5542e9fdfcf4",
+      "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "scene_prompt_sha256": "b61d1a1f034ca70f8db36406932348842bf16023d60c31025dd19b11063059c0"
+    },
+    "magic__printer_FrontRightCloseUp__p7": {
+      "generated_image_sha256": "6637cd5784a4c5d202262adc2db57597a8146d8d1acc2d064d6e06354156b85c",
+      "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "scene_prompt_sha256": "96653c7a3f6ac0c14b8a1da9c20b153819c179faf1e14f9d4cfa803681de43f6"
+    },
+    "cashmere__laptop_FrontWide__p7": {
+      "generated_image_sha256": "47e7b7e401d31da79a18fdbe7301db6b5edd6a1b9aa7c1cd13f1ee7a11b45043",
+      "twin_image_sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "scene_prompt_sha256": "34e389d5470319c538ca5f6e753c6fab0c6212336b0f5dfc38aba56e0e5e72c6"
+    },
+    "elitebook__laptop_FrontCloseUp__p7": {
+      "generated_image_sha256": "6b3a9f08ae88e850b0cb1f528a5f229ddfcd74a03e0e5bec7ec8d28456a77900",
+      "twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "scene_prompt_sha256": "9d4232ba4d722dfa92647337b73da56ccb07a375793be13bd2191ed5f52eff46"
+    },
+    "tassel__printer_FrontRightCloseUp__p7": {
+      "generated_image_sha256": "38497efc7b08e0ea3fc0f526c1e970b29fa9c4230c1e3e8c98a74abad10a545b",
+      "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "scene_prompt_sha256": "89cf52ada033c6ab2512900a86e7b918f1d26f4e8e3d3dccae676e0b2becfb50"
+    },
+    "magic__printer_FrontLeftMedium__p7": {
+      "generated_image_sha256": "0a341c13159cb66480e3d5179176e25030e684fb8992dce62beb3059597ca56d",
+      "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "scene_prompt_sha256": "cb9eb69d55a07c940baa9fa161f2c30050c07c9e3b6378067a2d03ac9f1a5a15"
+    },
+    "cashmere__laptop_FrontCloseUp__p8": {
+      "generated_image_sha256": "dc5ef299fc35dcdbf46e22e9776042bee69382c9f8f6a08f8351efc7b8443760",
+      "twin_image_sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "scene_prompt_sha256": "a6d967b42f07810965fe086227ca54bdbecbc0757968d4761219ea2b4160ac97"
+    },
+    "elitebook__laptop_BackRightCloseUp__p8": {
+      "generated_image_sha256": "8ba76bc72cfa1e54af810736824538014817b06a43bc037ae8c96199d425432c",
+      "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "scene_prompt_sha256": "0965c2192fb0779ae8dde9ae7a8d6eba77fc53d3f5607e723c7081e13e73acb9"
+    },
+    "tassel__printer_FrontLeftMedium__p8": {
+      "generated_image_sha256": "30b3c4aa048386baa32345d7f723c52edd07ddb3a69baa2e96d593fe4222876e",
+      "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "scene_prompt_sha256": "eac978a9e573647db492964063960bfb10e70f234362fbeef7cc870a4d3d63db"
+    },
+    "magic__printer_FrontWide__p8": {
+      "generated_image_sha256": "ec6602c60e0f8bc0b25f99b78db24165250bf4b2ebb561d7272000fafcc24039",
+      "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "scene_prompt_sha256": "cd8e9e6139aad79e4d32bbd7fc2a80c3b7b91e5b4c1bdc3807ffe33c56fa8017"
+    },
+    "cashmere__laptop_BackRightCloseUp__p8": {
+      "generated_image_sha256": "5701b154cd97d435c1805309c47edaae23589711718c4b8a23e6e7ea8fe9978f",
+      "twin_image_sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e",
+      "scene_prompt_sha256": "1a25a7edf46a89eec33e812b72a5db8ea2eba6f213922f88c58d0c22354edd0e"
+    },
+    "elitebook__laptop_FrontLeftMedium__p8": {
+      "generated_image_sha256": "f4a4dfb39dee7b13851dea5b993d1127d70b4d3fdd955dc37c63beb31f591dc1",
+      "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "scene_prompt_sha256": "9f4cc2cc3a0952d123823ea94c1405a7ab9e04ce70d151d11be4d577d10d2c30"
+    },
+    "tassel__printer_FrontWide__p8": {
+      "generated_image_sha256": "6fe35801f025cc18ae84a810d99c6f9637b80b575294212a8e629fb8cbd94201",
+      "twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "scene_prompt_sha256": "a7714c3c295b4ca630e9de546e0204c9d2bf36d6a9731ef60343b7cc09deb420"
+    },
+    "magic__printer_FrontCloseUp__p8": {
+      "generated_image_sha256": "7f22fd625de5f0d3d6fb8b6fcf2a437ce6254f77a5d480256ea96894df170d3c",
+      "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+      "scene_prompt_sha256": "feb077387798555fff71ccf2d255660b2eb2197d52456454ad695b93144243dd"
+    },
+    "cashmere__laptop_FrontLeftMedium__p8": {
+      "generated_image_sha256": "049518e634f02a53aecd0d1e471d021db12fe2c023dd4da590fd910e85d6d0cf",
+      "twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "scene_prompt_sha256": "953e394fb5b12ac450f59567095621dc4f295cd3f2da4d8e532a502dfd4bdcc7"
+    },
+    "elitebook__laptop_FrontWide__p8": {
+      "generated_image_sha256": "57b15e8bb0607026598287dfb65f760ba26339e311c27aa2591c47a548bd0515",
+      "twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "scene_prompt_sha256": "e998941822d5181e3163fdd73a782d1b3bc7e21294eff03fdcae097bfe53f3c5"
+    },
+    "tassel__printer_FrontCloseUp__p8": {
+      "generated_image_sha256": "0a65a4b3b718e4228b142a2eb6335838201fe4eb5443811f66fc336483a12167",
+      "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "scene_prompt_sha256": "ea07fccbb44d371b35af7b45becb6885246090dc26a64a518b471e2e6a3469a1"
+    },
+    "magic__printer_FrontRightCloseUp__p8": {
+      "generated_image_sha256": "84cba4efca9a322f57ab00a9a9153fa19e585c4f3a0d85b8db89d21df6b0ec18",
+      "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "scene_prompt_sha256": "4ae234940745562812934f96d5e5a79f35576e83b67e08608a60c4b1b72840b8"
+    },
+    "cashmere__laptop_FrontWide__p8": {
+      "generated_image_sha256": "04b7b2f5746fd3055b552ace6691a756f206f9a3128080c1061bc4c4abacde97",
+      "twin_image_sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "scene_prompt_sha256": "da0e8c79f45db004bb803412c2bc9508846a4eba299a8cc8057d4dd420d2bc0f"
+    },
+    "elitebook__laptop_FrontCloseUp__p8": {
+      "generated_image_sha256": "37c1c5e971b0b2490fa0f57760c7a23d5f15ecc275de0b09bdc9ae21caf83361",
+      "twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "scene_prompt_sha256": "754a621222873f47322d772c9e31adbf32ebc3019f911d87f36e235f71e6b746"
+    },
+    "tassel__printer_FrontRightCloseUp__p8": {
+      "generated_image_sha256": "f3131967a4a9bbe9c43c602efa0f8f196443bba22466787aa018180cf7dc8da4",
+      "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "scene_prompt_sha256": "cb9ee9b1eae0dd140ed8bafc847a0489b39aba5e393a7a376f284675c34c0bd0"
+    },
+    "magic__printer_FrontLeftMedium__p8": {
+      "generated_image_sha256": "9882f529cd22f7f79c47177ede526d6a8b83bd8fba4be9ed3038b7c5e7016ef0",
+      "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "scene_prompt_sha256": "8d171e19cd851db49327f0dacda37f42d3e451fdbf5400dbb536b69e2c5fcc86"
+    },
+    "cashmere__laptop_FrontCloseUp__p9": {
+      "generated_image_sha256": "f842be648a84401449b039b656878798bbdae2d2ee8e0cf72441fab080ac3e51",
+      "twin_image_sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "scene_prompt_sha256": "08537501b87e2518206973238ce436120f56b8c0d58b71f1825d2ff0ec83c5ca"
+    },
+    "elitebook__laptop_BackRightCloseUp__p9": {
+      "generated_image_sha256": "4e1c3d58820da9488083ca1f54333423f3d4903a29ff0f2a7255d470c8bfba50",
+      "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "scene_prompt_sha256": "689dc4c7124bf93a4d8c339bcf701f9048c831890508943b2e66038d701b0838"
+    },
+    "tassel__printer_FrontLeftMedium__p9": {
+      "generated_image_sha256": "f4194500bed1b8c3d91a889cf7353173f57e0b2df202c97fe4f33563711526ec",
+      "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "scene_prompt_sha256": "24b9293a6424e4c719b75cf6f359b6fca3d374ed6c51353b9a7ff2d51c25b6cb"
+    },
+    "magic__printer_FrontWide__p9": {
+      "generated_image_sha256": "3243024a97f006f53d1052768aadaa124f6ac83bd0a8f8e64fae5f0e513e1744",
+      "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "scene_prompt_sha256": "9bea55e3e4ebe9a0d5bbf6c2029cdb31f1a1e0c322b9a3458840536b7a3192c4"
+    },
+    "cashmere__laptop_BackRightCloseUp__p9": {
+      "generated_image_sha256": "b56c6e47a0fe859d76db7235b160c927b9ea439ea2ace06e00f01573f12d038e",
+      "twin_image_sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e",
+      "scene_prompt_sha256": "39eb6529cb3bb9fbf27342260a6de4eb908901470874a52fa3f6a50f52ecc713"
+    },
+    "elitebook__laptop_FrontLeftMedium__p9": {
+      "generated_image_sha256": "078f93f87a87718f2c52b2dd07519aeaee2c56baf10a2ca8cd3e82ecd7537ea7",
+      "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "scene_prompt_sha256": "aa10951dcfd0aaea360a06d7c1599f27a9daf5a2b64527c636a5a1952ad15cdd"
+    },
+    "tassel__printer_FrontWide__p9": {
+      "generated_image_sha256": "ee622ac4eb1157c39ed5bdb6daf1e5ccafd208a7a20d1566c7a44ee6ff7b85c1",
+      "twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "scene_prompt_sha256": "cfd5efb87d66f9b6f2a6986d24638d34ee3c0004ee73b96ca49da94bd0056abb"
+    },
+    "magic__printer_FrontCloseUp__p9": {
+      "generated_image_sha256": "1eef52e3615bcd65f423b5d21155032bb96ece58276bf658cf5198005a0a34ef",
+      "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+      "scene_prompt_sha256": "635c7263a4ffef490bb5543aee723fcc9705dbcca6022e12d9b503d6a8f590d6"
+    },
+    "cashmere__laptop_FrontLeftMedium__p9": {
+      "generated_image_sha256": "90b7f919807ed2308b256691cbec33dc4c4b78d89371e961f940bf52a6f81e6e",
+      "twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "scene_prompt_sha256": "6c2c5fdb8dc0e2a1393066576f63fbc483250e05037d1d333288e70c1739ba0d"
+    },
+    "elitebook__laptop_FrontWide__p9": {
+      "generated_image_sha256": "323f3cf2a060007d2bb0b7076a3541b4b04e19800b3a92890465a6edd560289a",
+      "twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "scene_prompt_sha256": "d2f9ec4806860416277b96addcbbbf2e199be671c3d746679aaa89df44aeee71"
+    },
+    "tassel__printer_FrontCloseUp__p9": {
+      "generated_image_sha256": "31c2054baed240c83fa371fd52a4df6ff8c03c729b1a2e68be99adc9bb3b3a4f",
+      "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "scene_prompt_sha256": "d44ac9553366dc4cb20c7ef64afd3662b83c25528b188da11c0e1c1f3884adf2"
+    },
+    "magic__printer_FrontRightCloseUp__p9": {
+      "generated_image_sha256": "1172b6a75673d5bebc9b0b11773473223305a2dd2873d0905fbec4653db325de",
+      "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "scene_prompt_sha256": "656a1080b4ff9301e56ae0f7b0b790b914febecd87e6ad0b24c19cbc65fed7d4"
+    },
+    "cashmere__laptop_FrontWide__p9": {
+      "generated_image_sha256": "37a5e5b147453e78a7a6326954fdc47392c20b490366ec8a7c81bfa9f96cbf79",
+      "twin_image_sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "scene_prompt_sha256": "527f1530b0baffc0c33d7ce9edd38d67fd4ceaec41211e743ac3d8a20e402b8d"
+    },
+    "elitebook__laptop_FrontCloseUp__p9": {
+      "generated_image_sha256": "29f5cbde97e822e22d8f790a925036de2ecbd10eb443c118e76ee186d0d6330f",
+      "twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "scene_prompt_sha256": "3f3bbdca24e70cc94fe55b140cbd1cff584e06763512ecdb547a8c10f45a396e"
+    },
+    "tassel__printer_FrontRightCloseUp__p9": {
+      "generated_image_sha256": "ed530affcc7a4ba48a711723313bb74732dd3ceb0614e5c9b4c5aa26fd84b140",
+      "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "scene_prompt_sha256": "cd5919e5628ac5e16c4eb3cb9f1404405ae9433f3be1cba135e6a299bf0c7857"
+    },
+    "magic__printer_FrontLeftMedium__p9": {
+      "generated_image_sha256": "693d8d6fe3b9f9b4601cfdeeec6c1d3df8c91e45c7469ae3cd6a3079f7f55c76",
+      "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "scene_prompt_sha256": "425c488d00c6bdedea1d571dce27106014c1c5ade38cbe0ce7fce214d7c37fb9"
+    },
+    "cashmere__laptop_FrontCloseUp__p10": {
+      "generated_image_sha256": "09507e390b728801161e1c8a18b4583e7f5cb3c797c905e4621ad8ed36fa60e5",
+      "twin_image_sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "scene_prompt_sha256": "9e293a6a7eec6643f441a95a5aed5c18a7cb0cc04280393d3132349187027b9a"
+    },
+    "elitebook__laptop_BackRightCloseUp__p10": {
+      "generated_image_sha256": "220aaecbd4f2e8350112f7d1708c4102a59267b4cb8c9c574f1cfb8c85c0d691",
+      "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+      "scene_prompt_sha256": "daaa3c0367342e89de5626eabc4b54ba78d116ce41e2808a91ea6bbfe724afa3"
+    },
+    "tassel__printer_FrontLeftMedium__p10": {
+      "generated_image_sha256": "8629953db6239ae56a045d174b514ff1b119521d2795450154a5fd12d49e0518",
+      "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+      "scene_prompt_sha256": "ed8d22fa971621ccfd17074eb048cfd30c049f7e26c3b4a0d766f5c79934c023"
+    },
+    "magic__printer_FrontWide__p10": {
+      "generated_image_sha256": "23c74a003ea8ef69bdd3373f4eed93432019a5caac39e778ec187462bbc3b2eb",
+      "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "scene_prompt_sha256": "19f82cbedc0319f339c29a72abeb27e11fd1d86e8a504eac243051c26011fe9f"
+    },
+    "cashmere__laptop_BackRightCloseUp__p10": {
+      "generated_image_sha256": "b2f28e8107d736c81b11247f600842e6a77cf98dd38c77828dc3cb5c4517a455",
+      "twin_image_sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e",
+      "scene_prompt_sha256": "8e4edb041dab4cb2214ef8adca99efcba7c5bc7912585b6ac35da6763b88667b"
+    },
+    "elitebook__laptop_FrontLeftMedium__p10": {
+      "generated_image_sha256": "56cc1001849a42ed0cbd085505f2c7b8bbdcafc7e5d4afb032a69f2a0ffc9a5d",
+      "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+      "scene_prompt_sha256": "343ffe6c8ae93bcafffc0a36cb28cc77d8cf2f1fd7f0a3675c9cf5fd16f12a3f"
+    },
+    "tassel__printer_FrontWide__p10": {
+      "generated_image_sha256": "306816468276d9b73938e9e7188e444083cb807d9fe8f9749be99bb598b9df78",
+      "twin_image_sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "scene_prompt_sha256": "a3a443d916cea16aff2dc975b1c787ea8df758626248188417770f19adc0d441"
+    },
+    "magic__printer_FrontCloseUp__p10": {
+      "generated_image_sha256": "77c75c923bd40454451a748c68e65c1f8836bb008e91fc28cfae9a3c7a7b4bf8",
+      "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+      "scene_prompt_sha256": "73629a12ac5284785ea06ab51ae0b410a88d3fea00ec4e7105bdd0d762e5d4b9"
+    },
+    "cashmere__laptop_FrontLeftMedium__p10": {
+      "generated_image_sha256": "6dc48a09a6cc6390a8db85ef2842e7bc309cf79239ad7c79b7581c3f584bd04e",
+      "twin_image_sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+      "scene_prompt_sha256": "7b22261c803982b9398fba86a07ac836ed6d66b655ff4b92e9021ac364046178"
+    },
+    "elitebook__laptop_FrontWide__p10": {
+      "generated_image_sha256": "36b05277e1b3dce5f2d9f13e5dfa4569685509033204793f13cd7d76dcc91bd3",
+      "twin_image_sha256": "7a02fa1e6df390151bc8b126dc37c846bbcefce3e3bf8b965482d4080b8c7f43",
+      "scene_prompt_sha256": "b12aaefaa9463fb6ab837eea99c28af423a532c257fba8861fa6fbe52dbc5ce6"
+    },
+    "tassel__printer_FrontCloseUp__p10": {
+      "generated_image_sha256": "ef1757bdda659e197b144f673d7ef521807b5423466bd80fc38d92aac4975c21",
+      "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "scene_prompt_sha256": "e9cd284f93c8498ee440c0aa2a874bfa24f1a7e932d0067a8e3379a366fd65b7"
+    },
+    "magic__printer_FrontRightCloseUp__p10": {
+      "generated_image_sha256": "4dc2c94cf34c37423314d5a86016682d9302b9a0cac9ec168276a25d5831370e",
+      "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "scene_prompt_sha256": "37ef64c95f7bdb088a84ac656ae61517e604a6dd8ccd91e3b637200c422a3c3a"
+    },
+    "cashmere__laptop_FrontWide__p10": {
+      "generated_image_sha256": "9d90402ca27eccfcd0eb90cdbb37fdf1149a6628ce18ed0add4342a66a34ab6e",
+      "twin_image_sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "scene_prompt_sha256": "33b78e953eb81ba7783d0287547030af744d4da348c52426cc4b0ef4da354f67"
+    },
+    "elitebook__laptop_FrontCloseUp__p10": {
+      "generated_image_sha256": "14ee0694aa539c0a56d5233b9cb4d6f3c88f00508050c170eca46340dcf6b983",
+      "twin_image_sha256": "180421b7fbeb64ea66c40b8d014e053e9aa5966ef7ed15e35b37c532c0caffbc",
+      "scene_prompt_sha256": "d8a1e30cf400026f52dce3e3dfa31afbb1a680451144f06e13f6796bd64339b9"
+    },
+    "tassel__printer_FrontRightCloseUp__p10": {
+      "generated_image_sha256": "a55446fc126fb7f2bda5aa2e204394ef48d620d64ea6ee980b7e2f7f0dd75175",
+      "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+      "scene_prompt_sha256": "d28bb3a2731cbd69db4655de4f1b4be745e2e43b012174d5c61fa839f209dc34"
+    },
+    "magic__printer_FrontLeftMedium__p10": {
+      "generated_image_sha256": "6a5b0e83ba2bb74c6ce09358e7b7695746285f442669a7e24511550ea93ebdc9",
+      "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+      "scene_prompt_sha256": "76e90bbe9ebcd795ebe955cc25d75f824b07b82a043451e709ac46893dcafcc0"
+    }
+  },
+  "preserved_pre_api_failure_attempt": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline_failed_env_20261105",
+    "progress_sha256": "fce4c30c07c8e4ef739a9b37d1c1eee87e0b205b1dc13b1cb763d21db10611fd",
+    "result_files": 160,
+    "uniform_error_type": "ModuleNotFoundError",
+    "api_attempts_recorded": 0,
+    "cause": "plain Python environment lacked the openai package; retry uses the unchanged v2 dependency list via uv"
+  }
+}

@@ -1,0 +1,243 @@
+================================================================================
+PENINSULA 3BR MARKET PRICE RESEARCH - QUICK START (60 seconds)
+================================================================================
+
+GOAL: Collect 2025-2026 median home prices for 8 Peninsula towns
+
+TIME OPTIONS:
+  - 20-30 min (QUICK)       → Zillow + Redfin only
+  - 1-2 hours (THOROUGH)    → Add MLS/agents (RECOMMENDED)
+  - 2-4 hours (COMPREHENSIVE) → Deep validation + historical analysis
+
+================================================================================
+STEP 1: OPEN THIS GUIDE (2 min)
+================================================================================
+
+Read: /home/colligo/hs_scripts/claude/prop_research/peninsula_market_research_guide.md
+      ^ Contains all town URLs and data sources
+
+Pick your option:
+  [ ] A = Quick (20-30 min, Zillow+Redfin)
+  [ ] B = Thorough (1-2 hours, add agents) ← RECOMMENDED
+  [ ] C = Comprehensive (2-4 hours, full validation)
+
+================================================================================
+OPTION A: QUICK (20-30 min) EXECUTION
+================================================================================
+
+TOWN URLS TO VISIT:
+
+ZILLOW (10 min):
+1. https://www.zillow.com/homes/for_sale/San-Carlos-CA/
+   Write down median price: _________________
+
+2. https://www.zillow.com/homes/for_sale/Belmont-CA/
+   Write down median price: _________________
+
+3. https://www.zillow.com/homes/for_sale/Foster-City-CA/
+   Write down median price: _________________
+
+4. https://www.zillow.com/homes/for_sale/Burlingame-CA/
+   Write down median price: _________________
+
+5. https://www.zillow.com/homes/for_sale/Millbrae-CA/
+   Write down median price: _________________
+
+6. https://www.zillow.com/homes/for_sale/Pacifica-CA/
+   Write down median price: _________________
+
+7. https://www.zillow.com/homes/for_sale/Half-Moon-Bay-CA/
+   Write down median price: _________________
+
+8. https://www.zillow.com/homes/for_sale/Daly-City-CA/
+   Write down median price: _________________
+
+REDFIN (10 min):
+1. https://www.redfin.com/CA/San-Carlos/ (Filter: Beds=3)
+   Write down median: _________________ Average: _________________
+
+2. https://www.redfin.com/CA/Belmont/ (Filter: Beds=3)
+   Write down median: _________________ Average: _________________
+
+3. https://www.redfin.com/CA/Foster-City/ (Filter: Beds=3)
+   Write down median: _________________ Average: _________________
+
+4. https://www.redfin.com/CA/Burlingame/ (Filter: Beds=3)
+   Write down median: _________________ Average: _________________
+
+5. https://www.redfin.com/CA/Millbrae/ (Filter: Beds=3)
+   Write down median: _________________ Average: _________________
+
+6. https://www.redfin.com/CA/Pacifica/ (Filter: Beds=3)
+   Write down median: _________________ Average: _________________
+
+7. https://www.redfin.com/CA/Half-Moon-Bay/ (Filter: Beds=3)
+   Write down median: _________________ Average: _________________
+
+8. https://www.redfin.com/CA/Daly-City/ (Filter: Beds=3)
+   Write down median: _________________ Average: _________________
+
+THEN:
+- [ ] Open: /home/colligo/hs_scripts/claude/prop_research/peninsula_market_data_2025-2026.json
+- [ ] Fill in your collected prices
+- [ ] Git add & commit
+
+TIME REMAINING: 5 minutes for formatting & commit
+
+================================================================================
+OPTION B: THOROUGH (1-2 hours) EXECUTION - RECOMMENDED
+================================================================================
+
+DAY 1 (60 min):
+- [ ] Complete Option A above (Zillow + Redfin)
+- [ ] Send agent request emails (from research guide template)
+  To: 1-2 agents in each town (guides provided in research guide)
+- [ ] Fill in partial JSON with Zillow/Redfin data
+
+DAY 2 (30 min):
+- [ ] Check email for agent responses
+- [ ] Visit San Mateo County Assessor: https://www.smc-ca.gov/assessor
+  Search each ZIP code for recent sales
+- [ ] Fill in JSON with agent MLS data + county data
+- [ ] Cross-check sources (should agree within 5-10%)
+- [ ] Git add & commit
+
+RESULT: HIGH confidence data from 3+ authoritative sources per town
+
+================================================================================
+REFERENCE PRICE RANGES (Validation Check)
+================================================================================
+
+San Carlos:     $2.0M - $2.4M
+Belmont:        $1.8M - $2.2M
+Foster City:    $2.1M - $2.5M
+Burlingame:     $1.9M - $2.3M
+Millbrae:       $1.7M - $2.1M
+Pacifica:       $1.3M - $1.7M
+Half Moon Bay:  $1.2M - $1.6M
+Daly City:      $1.1M - $1.5M
+
+If your data is >50% outside this range → double-check before trusting
+
+================================================================================
+TIPS TO SAVE TIME
+================================================================================
+
+1. Batch similar towns: Visit all 8 Zillow pages in one go (10 min)
+   Then visit all 8 Redfin pages (10 min)
+   → Faster than switching back and forth
+
+2. Keep JSON template open: Paste data immediately after each town
+   → Reduces re-reading and confusion
+
+3. Use browser tabs: Zillow in tab 1, Redfin in tab 2, JSON in tab 3
+   → Quick switching
+
+4. Email agents EARLY: Send emails while doing Zillow/Redfin work
+   → Responses will arrive while you research other sources
+
+5. Screenshot method: Take screenshots of market pages
+   → Proves data recency, prevents re-visiting
+
+================================================================================
+COMMON MISTAKES TO AVOID
+================================================================================
+
+[ ] Recording "1950k" instead of "$1,950,000" → Use consistent format
+[ ] Using overall median when 3BR data is available → Always filter for 3BR
+[ ] Mixing 2024 data with 2025-2026 data → Check dates!
+[ ] Using list prices instead of sold prices → Sold prices are real transactions
+[ ] Recording single source only → Get 2-3 sources for validation
+[ ] Not checking if price seems reasonable → Catch errors early
+
+================================================================================
+COMPLETION CHECKLIST
+================================================================================
+
+Before committing, verify:
+
+[ ] All 8 towns have data recorded
+[ ] Prices are in proper USD format ($X,XXX,XXX)
+[ ] Data dates are 2025-2026 (not 2024)
+[ ] Source names are recorded (Zillow, Redfin, agent, etc.)
+[ ] 3BR is specified (or noted if using overall median)
+[ ] Prices seem reasonable (vs reference ranges above)
+[ ] JSON file is valid (can be parsed)
+[ ] No typos in town names
+[ ] Confidence levels are assigned
+
+If all checks pass → Ready to commit
+
+================================================================================
+GIT COMMIT COMMAND
+================================================================================
+
+cd /home/colligo/hs_scripts/claude/prop_research/
+
+git add peninsula_market_data_2025-2026.json
+
+git commit -m "Collect Peninsula 3BR market prices 2025-2026
+
+[Your notes here about confidence levels, sources, any issues]
+
+Co-Authored-By: Your Name <your.email@adobe.com>"
+
+git log -1 (verify commit succeeded)
+
+================================================================================
+INTEGRATION NEXT
+================================================================================
+
+After data is committed:
+
+1. Data goes to: Step 2 - Neighborhood Identification & Scoring
+2. Use prices for: "What $2M buys in each town" assessment
+3. Input to: Neighborhood ranking matrix in property research
+4. Feeds forward to: Step 4 (financial modeling) and Step 5 (final choice)
+
+You'll reference this market data throughout the property research pipeline.
+
+================================================================================
+NEED HELP?
+================================================================================
+
+Trouble finding prices?
+  → Read: COLLECTION_TIPS.txt (troubleshooting section)
+
+Want detailed explanation?
+  → Read: peninsula_market_research_guide.md (comprehensive guide)
+
+Lost on execution?
+  → Read: COLLECTION_CHECKLIST.txt (step-by-step)
+
+Data seems wrong?
+  → Cross-check against reference ranges above
+  → Use second source to validate
+
+================================================================================
+FILES YOU'LL NEED
+================================================================================
+
+Research Guide:       peninsula_market_research_guide.md
+Data Template:        peninsula_market_data_2025-2026.json
+Collection Steps:     COLLECTION_CHECKLIST.txt
+Pro Tips:            COLLECTION_TIPS.txt
+This File:           QUICK_START_CARD.txt
+
+All in: /home/colligo/hs_scripts/claude/prop_research/
+
+================================================================================
+READY? START HERE:
+
+1. Open peninsula_market_research_guide.md
+2. Choose Option A, B, or C
+3. Follow checklist for your option
+4. Fill in JSON template
+5. Commit to git
+6. Use for Step 2 property research
+
+TIME ESTIMATE: 20 min to 2 hours depending on depth
+
+GO TIME! ✓
+
+================================================================================

@@ -1,0 +1,636 @@
+--- a/experimental/adarabi/hp-3p-gpt25/hp3p/geometry.py
++++ b/experimental/adarabi/hp-3p-gpt25/hp3p/geometry.py
+@@ -6,6 +6,7 @@
+ 
+ import numpy as np
+ from PIL import Image, ImageDraw
++from typing_extensions import NotRequired
+ 
+ 
+ class FurnitureBox(TypedDict):
+@@ -23,6 +24,7 @@
+     axis_angle_deg: float
+     support_width_m: float
+     support_depth_m: float
++    support_top_shape: NotRequired[Literal["rectangular", "round", "oval"]]
+     product_footprint_width_m: float
+     product_footprint_depth_m: float
+     user_side: Literal["near_camera", "far_from_camera", "width_left", "width_right"]
+@@ -54,10 +56,16 @@
+                                 "farther from the camera when user_side is width_left/width_right.",
+ }
+ _USER_SIDES = ("near_camera", "far_from_camera", "width_left", "width_right")
++_SUPPORT_TOP_SHAPES = ("rectangular", "round", "oval")
+ GEOMETRY_SCHEMA = {
+     "type": "object", "additionalProperties": False,
+-    "required": [*_FIELDS, "user_side", "back_edge_against_wall", "furniture_boxes"],
++    "required": [*_FIELDS, "support_top_shape", "user_side", "back_edge_against_wall", "furniture_boxes"],
+     "properties": {**{k: {"type": "number", "description": v} for k, v in _FIELDS.items()},
++                   "support_top_shape": {
++                       "type": "string", "enum": list(_SUPPORT_TOP_SHAPES),
++                       "description": "Support-top outline. Use rectangular for the existing behavior. Round "
++                       "requires equal support width and depth; oval uses those values as its full width-axis "
++                       "and depth-axis diameters."},
+                    "user_side": {"type": "string", "enum": list(_USER_SIDES),
+                                  "description": "Support edge the product's user front faces: near_camera "
+                                  "(-depth), far_from_camera (+depth), width_left (-width) or width_right (+width)."},
+@@ -351,6 +359,15 @@
+             raise ValueError(f"{name} must be positive.")
+     if geometry["user_side"] not in _USER_SIDES:
+         raise ValueError(f"user_side must be one of {', '.join(_USER_SIDES)}.")
++    shape = geometry.get("support_top_shape", "rectangular")
++    if shape not in _SUPPORT_TOP_SHAPES:
++        raise ValueError(f"support_top_shape must be one of {', '.join(_SUPPORT_TOP_SHAPES)}.")
++    if shape == "round" and not math.isclose(
++            geometry["support_width_m"], geometry["support_depth_m"], rel_tol=1e-6, abs_tol=1e-9):
++        raise ValueError("Round support tops require equal support_width_m and support_depth_m.")
++    if shape == "oval" and math.isclose(
++            geometry["support_width_m"], geometry["support_depth_m"], rel_tol=1e-6, abs_tol=1e-9):
++        raise ValueError("Oval support tops require unequal support_width_m and support_depth_m.")
+     w, h = product.size
+     info = product_anchor(mask)
+     x0, y0, x1, y1 = info["product_bounds_px"]
+@@ -422,26 +439,58 @@
+         raise ValueError("Support must contain the product base plus user_edge_gap_m along the user axis.")
+     if abs(lateral) + base_lateral > support_lateral + 1e-9:
+         raise ValueError("Support must contain the product base after support_lateral_offset_m.")
+-    support_center = (base_center + user_sign * (base_half + gap - support_half) * user_axis
++    user_extent = (support_half if shape == "rectangular" else
++                   support_half * math.sqrt(max(0.0, 1 - (lateral / support_lateral) ** 2)))
++    support_center = (base_center + user_sign * (base_half + gap - user_extent) * user_axis
+                       + lateral * lateral_axis)
+-    user_edge = [support_center + user_sign * support_half * user_axis + sign * support_lateral * lateral_axis
+-                 for sign in (-1, 1)]
++    if shape != "rectangular":
++        footprint_corners = [base_center + sx * base_w / 2 * width_axis + sz * base_d / 2 * depth_axis
++                             for sx, sz in [(-1, -1), (1, -1), (1, 1), (-1, 1)]]
++        width_radius, depth_radius = geometry["support_width_m"] / 2, geometry["support_depth_m"] / 2
++        normalized = [((float(np.dot(point - support_center, width_axis)) / width_radius) ** 2
++                       + (float(np.dot(point - support_center, depth_axis)) / depth_radius) ** 2)
++                      for point in footprint_corners]
++        if max(normalized) > 1 + 1e-9:
++            raise ValueError("Elliptical support must contain all four product footprint corners.")
+ 
+     def project(points: list[np.ndarray]) -> list[tuple[float, float]]:
+         return [(float(w / 2 + focal * p[0] / p[2]), float(h / 2 + focal * p[1] / p[2])) for p in points]
+ 
+-    corners = [rotation @ (support_center + sx * geometry["support_width_m"] / 2 * width_axis
+-                          + sz * geometry["support_depth_m"] / 2 * depth_axis - camera_position)
+-               for sx, sz in [(-1, -1), (1, -1), (1, 1), (-1, 1)]]
+-    polygon = project(_clip_near(corners))
++    if shape == "rectangular":
++        user_edge = [support_center + user_sign * support_half * user_axis
++                     + sign * support_lateral * lateral_axis for sign in (-1, 1)]
++        corners = [rotation @ (support_center + sx * geometry["support_width_m"] / 2 * width_axis
++                              + sz * geometry["support_depth_m"] / 2 * depth_axis - camera_position)
++                   for sx, sz in [(-1, -1), (1, -1), (1, 1), (-1, 1)]]
++        polygon = project(_clip_near(corners))
++    else:
++        perimeter = [rotation @ (support_center + math.cos(angle) * width_radius * width_axis
++                                 + math.sin(angle) * depth_radius * depth_axis - camera_position)
++                     for angle in np.linspace(0, 2 * math.pi, 128, endpoint=False)]
++        polygon = project(_clip_near(perimeter))
+     if len(polygon) < 3:
+         raise ValueError("Support plane is behind the estimated camera.")
+-    edge = [rotation @ (point - camera_position) for point in user_edge]
+-    if min(edge[0][2], edge[1][2]) < 0.05 <= max(edge[0][2], edge[1][2]):
+-        a, b = edge
+-        cut = a + (b - a) * ((0.05 - a[2]) / (b[2] - a[2]))
+-        edge = [a, cut] if a[2] >= 0.05 else [cut, b]
+-    user_edge_px = project(edge) if min(edge[0][2], edge[1][2]) >= 0.05 else None
++    user_edge_curve_px = user_edge_center_px = None
++    if shape == "rectangular":
++        edge = [rotation @ (point - camera_position) for point in user_edge]
++        if min(edge[0][2], edge[1][2]) < 0.05 <= max(edge[0][2], edge[1][2]):
++            a, b = edge
++            cut = a + (b - a) * ((0.05 - a[2]) / (b[2] - a[2]))
++            edge = [a, cut] if a[2] >= 0.05 else [cut, b]
++        user_edge_px = project(edge) if min(edge[0][2], edge[1][2]) >= 0.05 else None
++    else:
++        arc_center = {"near_camera": -math.pi / 2, "far_from_camera": math.pi / 2,
++                      "width_left": math.pi, "width_right": 0.0}[side]
++        user_curve = [rotation @ (support_center + math.cos(angle) * width_radius * width_axis
++                                  + math.sin(angle) * depth_radius * depth_axis - camera_position)
++                      for angle in np.linspace(arc_center - math.pi / 2, arc_center + math.pi / 2, 33)]
++        if min(point[2] for point in user_curve) >= 0.05:
++            user_edge_curve_px = project(user_curve)
++        edge_center = rotation @ (support_center + user_sign * user_extent * user_axis
++                                  - lateral * lateral_axis - camera_position)
++        if edge_center[2] >= 0.05:
++            user_edge_center_px = project([edge_center])[0]
++        user_edge_px = None
+     guide = Image.new("RGB", product.size, "white")
+     draw = ImageDraw.Draw(guide)
+     wall_px = None
+@@ -484,6 +533,11 @@
+                 wall_polygon_px=None if wall_px is None else [list(point) for point in wall_px],
+                 support_polygon_px=[list(point) for point in polygon],
+                 user_edge_px=None if user_edge_px is None else [list(point) for point in user_edge_px])
++    if shape != "rectangular":
++        info.update(support_top_shape=shape,
++                    user_edge_curve_px=None if user_edge_curve_px is None else
++                    [list(point) for point in user_edge_curve_px],
++                    user_edge_center_px=None if user_edge_center_px is None else list(user_edge_center_px))
+     buf = io.BytesIO()
+     guide.save(buf, "PNG")
+     return buf.getvalue(), info
+@@ -491,7 +545,7 @@
+ 
+ def describe_geometry(geometry: Geometry, info: dict, size: tuple[int, int], guide_image: str = "Image 1",
+                       product_category: str = "laptop", product_image: str = "Image 3") -> str:
+-    """Plain-language guide summary for the prompt writer and image prompt (laptop/table wording)."""
++    """Plain-language guide summary for the prompt writer and image prompt."""
+     g, (w, h) = geometry, size
+     side = g["user_side"]
+     along_width = side in ("near_camera", "far_from_camera")
+@@ -510,6 +564,69 @@
+     def pct(p):
+         return f"{p[0] / w * 100:.0f}% across, {p[1] / h * 100:.0f}% down"
+ 
++    shape = g.get("support_top_shape", "rectangular")
++    if shape != "rectangular" or product_category != "laptop":
++        product = "product" if product_category == "other" else product_category
++        top = "tabletop" if product_category == "laptop" else "primary support top"
++        support = "table" if product_category == "laptop" else "primary support"
++        direction = "descending" if tilt > 0 else "rising"
++        lines = [f"GEOMETRY — highest priority. Follow {guide_image} exactly."]
++        if shape == "rectangular":
++            heading = "Table" if product_category == "laptop" else "Support"
++            lines.append(
++                f"- {heading} orientation: the {support} is turned about "
++                f"{abs(info['axis_angle_deg']):.0f} degrees to the camera. Its width-axis edges run left to "
++                f"right, {direction} about {abs(tilt):.0f} degrees toward image right; its depth-axis edges "
++                f"recede toward the {recede}. The {product}'s base follows those same axes."
++            )
++        else:
++            dimensions = (f"a {g['support_width_m']:.2f} m diameter" if shape == "round" else
++                          f"{g['support_width_m']:.2f} m by {g['support_depth_m']:.2f} m")
++            lines.append(
++                f"- {support.capitalize()} shape and orientation: the {top} is {shape}, {dimensions}. Its "
++                f"width-diameter axis runs left to right, {direction} about {abs(tilt):.0f} degrees toward "
++                f"image right; its depth-diameter axis recedes toward the {recede}. The curved outline shown "
++                f"in {guide_image} is the exact rim, and the {product}'s base follows those axes."
++            )
++        if shape == "rectangular":
++            edge_name = {"near_camera": f"the {support} edge nearest the camera, in front of the {product}",
++                         "far_from_camera": f"the far {support} edge, behind the {product}",
++                         "width_left": f"the {support}'s edge on the image-left side",
++                         "width_right": f"the {support}'s edge on the image-right side"}[side]
++            if ue:
++                lines.append(f"- User-facing edge: {edge_name}. In the image it runs from {pct(ue[0])} to "
++                             f"{pct(ue[1])}. No {top} beyond this edge.")
++            else:
++                lines.append(f"- User-facing edge: {edge_name}; it lies outside the frame.")
++        else:
++            center_px, curve = info["user_edge_center_px"], info["user_edge_curve_px"]
++            location = (f" Its point aligned with the product center is at {pct(center_px)}."
++                        if center_px is not None else "")
++            if curve:
++                location += f" The user-facing half of the curved rim runs from {pct(curve[0])} to {pct(curve[-1])}."
++            lines.append(f"- User-facing rim: the {product} faces the {shape} top's curved rim.{location} "
++                         f"There is no {top} outside that curve.")
++        outline = info["support_polygon_px"]
++        outside = sum(not (0 <= px <= w and 0 <= py <= h) for px, py in outline)
++        crop = (f"{outside} of {len(outline)} sampled rim points fall outside the frame" if shape != "rectangular"
++                else f"{outside} of {len(outline)} support corners fall outside the frame")
++        lines += [
++            f"- Product on the {top}: the {product} is positioned with the center of its user-facing base edge "
++            f"{g['user_edge_gap_m'] * 100:.1f} cm in from the user-facing "
++            f"{'rim' if shape != 'rectangular' else 'edge'}. All four product-footprint corners fit inside "
++            f"the {top}; keep the product's position, size and orientation unchanged.",
++            f"- Support-top size: {g['support_width_m']:.2f} m along its width axis by "
++            f"{g['support_depth_m']:.2f} m along its depth axis, about "
++            f"{g['support_width_m'] / pw:.1f} product widths by {g['support_depth_m'] / pd:.1f} product depths.",
++            f"- Frame crop: {crop}; preserve that crop and never shrink the product to show the whole support.",
++            f"- Product: exactly as in {guide_image} (details: {product_image}), occupying "
++            f"{x0 / w * 100:.0f}-{x1 / w * 100:.0f}% across and "
++            f"{y0 / h * 100:.0f}-{y1 / h * 100:.0f}% down. Same size; never enlarge or move it.",
++            f"- Camera: {info['camera_height_m']:.2f} m high, looking down "
++            f"{info['camera_pitch_deg']:.1f} degrees, about {info['lens_35mm_equivalent_mm']:.0f} mm lens.",
++        ]
++        return "\n".join(lines)
++
+     edge_name = {"near_camera": "the table edge nearest the camera, in front of the laptop",
+                  "far_from_camera": "the far table edge, behind the laptop as seen from the camera",
+                  "width_left": "the table's short edge on the image-left side",
+--- a/experimental/adarabi/hp-3p-gpt25/hp3p/pipeline.py
++++ b/experimental/adarabi/hp-3p-gpt25/hp3p/pipeline.py
+@@ -27,7 +27,7 @@
+ 
+ WIDTH, HEIGHT = 1216, 912
+ SIZE = f"{WIDTH}x{HEIGHT}"
+-PIPELINE_VERSION = "unified-blue-scale-v20-text-blue-stage-b-placement-twin-camera-guide-only-no-mask"
++PIPELINE_VERSION = "unified-blue-scale-v20-surface-shape-r1"
+ 
+ 
+ def _select_schema(tones, contents) -> dict:
+@@ -56,19 +56,14 @@
+               "user request and Image 1.")
+ _PRINTER_WALL = (" Printers normally stand against a wall: for a printer, set back_edge_against_wall true unless "
+                  "the original user request clearly places it away from walls.")
+-_GEOMETRY_ONLY = ("\n\nTHIS CALL PLANS GEOMETRY ONLY. Return only geometry and product_category. "
+-                  "Camera text, composition, the image prompt, materials and scale notes are written in a later "
+-                  "call after the geometry guide is drawn."
+-                  "\n\nSUPPORT PLAUSIBILITY: The support must be real furniture that people actually use to hold "
+-                  "this product in this kind of room, standing where such furniture normally stands. The requested "
+-                  "support type names the furniture; it does not fix its size. Choose support_width_m, "
+-                  "support_depth_m and support_height_m typical for that furniture and for using this product: the "
+-                  "top is only as deep as such furniture normally is while still holding the product's base, and "
+-                  "the height suits how people reach and use the product. Set back_edge_against_wall true when that "
+-                  "furniture would normally stand against a wall in this room; the wall then stands at the "
+-                  "support's back edge." + _PRINTER_WALL + " The wall can never stand between camera and product. "
+-                  "Secondary furniture "
+-                  "in furniture_boxes stands beside, behind or in front of the support, never inside it.")
++_GEOMETRY_ONLY = ("""
++
++THIS CALL PLANS GEOMETRY ONLY. Return only geometry and product_category. Camera text, composition, the image prompt, materials and scale notes are written in a later call after the geometry guide is drawn.
++
++SUPPORT PLAUSIBILITY: The support must be real furniture that people actually use to hold this product in this kind of room, standing where such furniture normally stands. The requested support type names the furniture; it does not fix its size. Keep that category and its body: a cabinet, credenza or fitted counter does not become a table because its top is rectangular. For a printer with no specified support category, choose a credible substantial cabinet, low credenza, fitted counter or dedicated equipment table. A requested printer table is a substantial dedicated equipment table, not a person's occupied workstation desk; allow standing access and unobstructed operation. Choose support_width_m, support_depth_m and support_height_m typical for that furniture and for using this product: the top is only as deep as such furniture normally is while still holding the product's whole base, and the height suits how people reach and use the product. Set back_edge_against_wall true when that furniture would normally stand against a wall in this room; the wall then stands at the support's rear boundary, never through its top.""" + _PRINTER_WALL + """ The wall can never stand between camera and product. Round or oval laptop tables are often freestanding; set back_edge_against_wall false unless the original request or normal placement of the requested furniture calls for wall adjacency. Secondary furniture in furniture_boxes stands beside, behind or in front of the support, never inside it.
++
++SUPPORT SHAPE: Set support_top_shape to rectangular, round or oval, retaining the requested top shape. When shape is unspecified, retain the existing rectangular default. Printer cabinets, credenzas, fitted counters and equipment tables normally have rectangular tops. The shape field describes only the top outline, not the furniture category. Rectangular retains the existing construction and gap/offset meanings. For round, support_width_m and support_depth_m are equal physical diameters; for oval, they are unequal physical diameters. The guide must project the ellipse in the same support plane and camera. All four unchanged product-base corners must lie inside the ellipse. Choose physically normal dimensions and modest gap and lateral offset; leave full footprint-width and curved-rim clearance. For round and oval tops, user_edge_gap_m is measured along the selected user-side axis (width for width_left/width_right, depth for near_camera/far_from_camera) to the user-facing rim point aligned with the product center, not to an invented straight side. Keep the product footprint, original pixel bounds, orientation, position and size fixed. Do not widen the camera or require a complete perimeter or visible furniture base: the fixed crop may show only an arc.""")
++
+ _WRITE_HEAD = ("Write camera, composition and editing text from Image 1 (the fixed geometry guide containing the "
+                "real product), Image 3 (the same product on white), the FIXED GEOMETRY below and the original "
+                "user request.")
+@@ -76,44 +71,30 @@
+ 
+ PRIORITY ORDER (strict):
+ 1. The product (its real pixels in Image 1; Image 3 shows the same product on white for detail): its pixel position, size, orientation and visibility. Never move, resize, rotate, crop or occlude it.
+-2. The FIXED GEOMETRY (Image 1 and the text below): table orientation, the user-facing edge and its position in the frame, the product-to-edge distance, how far the tabletop extends to each side, frame crop and camera.
+-3. The original user request. It only chooses the room, support type and material, props, lighting, palette and mood.
++2. The FIXED GEOMETRY (Image 1 and the text below): support top shape and orientation, the user-facing edge or curved rim and its position in the frame, the product-to-boundary distance, how far the top extends to each side, frame crop and camera.
++3. The original user request. It chooses the room, support category and body, material, props, lighting, palette and mood. Its requested top shape is resolved in Stage A; do not redraw the fixed outline in Stage B.
+ 
+-When the user request asks for a different layout, extent, emphasis, framing, focal point, product size, or a table that fills or dominates the foreground, drop that part and follow 1 and 2. Your camera, composition and prompt must describe exactly the geometry of Image 1: the same table orientation, the user-facing edge along the near edge of the gray support area, tabletop only on the drawn support, nothing beyond the user-facing edge, props on the drawn tabletop at plausible scale beside the product, and nothing occluding the product.
++When the user request asks for a different layout, extent, emphasis, framing, focal point, product size, or a table that fills or dominates the foreground, drop that part and follow 1 and 2. Your camera, composition and prompt must describe exactly the geometry of Image 1: the same support top shape and orientation, the user-facing boundary identified by user_side on the gray support area, top surface only on the drawn support, nothing beyond its user-facing boundary, props on the drawn top at plausible scale beside the product, and nothing occluding the product. Describe straight edges and visible corners only for rectangular tops; describe curved rims and visible arcs for round or oval tops. Both round and oval physical tops project as ellipses, so use support_top_shape to name the physical shape and Image 1 to describe its projection. A cropped arc is sufficient; do not demand the full perimeter or furniture base or change the camera to reveal them. Keep the original support category beneath the fixed top: a rectangular cabinet, credenza or fitted-counter top is not an instruction to replace its body with a table. Keep the user side and operating access.
+ 
+-WRITE IN PLAIN VISUAL WORDS. The image model follows pictures and plain descriptions, not measurements. Use the numbers below only to choose your words. In layout, camera, composition and prompt, describe sizes, distances, angles and positions the way a photographer briefs a set builder: by comparison with the laptop, the frame edges and nearby objects (for example "the tabletop continues about two laptop widths to the left of the laptop and a little less to the right", "the tabletop is about three times as deep as the laptop", "the table ends inside the frame on both sides", "camera at standing eye height, looking gently down").
++WRITE IN PLAIN VISUAL WORDS. The image model follows pictures and plain descriptions, not measurements. Use the numbers below only to choose your words. In layout, camera, composition and prompt, describe sizes, distances, angles and positions the way a photographer briefs a set builder: by comparison with the product, the frame edges and nearby objects (for example "the tabletop continues about two laptop widths to the left of the laptop and a little less to the right", "the tabletop is about three times as deep as the laptop", "the table ends inside the frame on both sides", "the curved rim exits the frame on the left", "camera at standing eye height, looking gently down").
+ 
+ FIXED GEOMETRY (derived by code from Image 1):
+ """
+-_WRITE_OVERRIDE = ("\n\nSTAGE B OVERRIDE: geometry is a fixed input in this call, not an output. "
+-                   "Image 1 is the drawn geometry guide and is visible to you now. Follow the PRIORITY ORDER "
+-                   "in the user message: product first, fixed geometry second, user request third. "
+-                   "Return layout, camera, composition and prompt, each written in plain visual words. "
+-                   "layout opens the image prompt as its GEOMETRY section: short lines on how the table is "
+-                   "turned and how its edges run across the frame; which edge faces the user and where it sits "
+-                   "relative to the laptop; how close the laptop sits to that edge; how much tabletop continues "
+-                   "on each side of the laptop and how deep the table is compared with the laptop; which table "
+-                   "ends and corners stay inside the frame; the camera height and how steeply it looks down; and "
+-                   "the laptop unchanged in its place."
+-                   "\n\nIMAGE MODEL INPUT: the image model receives ONLY Image 1 and your text. It never sees the "
+-                   "style reference or the product on white. In layout, camera, composition and prompt, never "
+-                   "mention any image other than Image 1, the reference, or where a style or material came from. "
+-                   "Describe the lighting, palette, materials and textures you take from the style reference "
+-                   "directly in words, as a brief for a photographer who has never seen it. Never explain where a "
+-                   "color, material or blue carrier was adapted or transferred from. Product detail comes from the real "
+-                   "product pixels in Image 1.")
++
++_WRITE_OVERRIDE = """
++
++STAGE B OVERRIDE: geometry is a fixed input in this call, not an output. Image 1 is the drawn geometry guide and is visible to you now. Follow the PRIORITY ORDER in the user message: product first, fixed geometry second, user request third. Return layout, camera, composition and prompt, each written in plain visual words. layout opens the image prompt as its GEOMETRY section: short lines on the support's physical top shape, how its axes are turned and how its straight edges or curved rim run across the frame; which boundary faces the user and where it sits relative to the product; how close the product sits to that boundary, using the rim point aligned with the product center for a round or oval top; how much top surface continues on each side of the product and how deep the support is compared with the product; which ends and corners stay inside the frame for a rectangular top, or which arcs are visible or cropped for a round or oval top; the camera height and how steeply it looks down; and the product unchanged in its place. Do not invent straight sides or four corners for a curved top, or require its full perimeter or furniture base to be visible. Keep the support category and body from the original request, not from the shape field: a cabinet, credenza or fitted counter remains that furniture beneath its drawn top. Preserve user-side access, including standing operating access for printers.
++
++IMAGE MODEL INPUT: the image model receives ONLY Image 1 and your text. It never sees the style reference or the product on white. In layout, camera, composition and prompt, never mention any image other than Image 1, the reference, or where a style or material came from. Describe the lighting, palette, materials and textures you take from the style reference directly in words, as a brief for a photographer who has never seen it. Never explain where a color, material or blue carrier was adapted or transferred from. Product detail comes from the real product pixels in Image 1."""
++
+ _WRITE_PRINTER_WALL = ("\n\nPRINTER AGAINST THE WALL: the printer's back stands right against the wall at the "
+                        "support's back edge, with no gap, shelf or objects between them. State this plainly in the "
+                        "prompt.")
+-_LEGEND = ("Image 1 is the canvas to edit: a geometry-only diagram at the final framing whose product pixels are "
+-           "the real product. Keep those product pixels unchanged. The flat gray area with a thin darker outline "
+-           "is the exact top surface of the support: the tabletop covers exactly that area, with its edges where "
+-           "the gray area's edges are; the gray is not its color. Replace everything else in Image 1, including "
+-           "the white background and the gray fill, with the photographic scene. Never render any diagram mark. ")
+-_FINAL_CHECK = ("\n\nFinal check before rendering: the product is unchanged in position, size and orientation; "
+-                "the table orientation, user-facing edge, product-to-edge distance and tabletop extent match the "
+-                "GEOMETRY section and Image 1. Where any other text conflicts, follow GEOMETRY.")
++_LEGEND = """Image 1 is the canvas to edit: a geometry-only diagram at the final framing whose product pixels are the real product. Keep those product pixels unchanged. The flat gray area with a thin darker outline is the exact top surface of the support: the top covers exactly that area, with its boundary where the gray area's boundary is; the gray is not its color. Rectangular tops have straight edges; round and oval tops have projected elliptical rims, which the frame may crop to visible arcs. Use the fixed support_top_shape to distinguish a physically round top from an oval one, not its apparent projected proportions. Do not replace curved boundaries with straight sides or four corners, or widen the view to reveal the full outline or furniture base. The outline specifies the top, not the furniture category: retain the cabinet, credenza, fitted counter, equipment table or other support body described in the original request. Replace everything else in Image 1, including the white background and the gray fill, with the photographic scene. Never render any diagram mark. """
++
++_FINAL_CHECK = """
+ 
++Final check before rendering: the product pixels, footprint, position, size and orientation are unchanged; the support top shape and orientation, user-facing edge or curved rim, product-to-boundary distance and top extent match the GEOMETRY section and Image 1. For round or oval tops, describe the actual visible arcs rather than straight sides or four corners, and measure the user-edge gap at the rim point aligned with the product center. Do not change the camera or crop to show the full perimeter or furniture base. The support category and body still match the original request; a rectangular top has not turned a cabinet, credenza or fitted counter into a table. Keep user-side and operating access, standing access for printers, shared perspective, and no extra people or devices. Where other scene text conflicts, follow GEOMETRY, with unchanged product pixels always first."""
+ 
+ _STALE_IMAGE = re.compile(r"\bImages?\s+(?:[2-9]|1\d)\b|\breference(?:'s|\u2019s)|\b(?:style|selected) references?\b"
+                           r"|\breference (?:image|photo|photograph|picture)\b|\bthe reference\b"
+--- a/experimental/adarabi/hp-3p-gpt25/hp3p/prompts/system_3p.txt
++++ b/experimental/adarabi/hp-3p-gpt25/hp3p/prompts/system_3p.txt
+@@ -70,14 +70,17 @@
+ - Preserve {product_image}'s exact framing. The product may be small or off-center and
+   need not dominate the image. Never shrink it to reveal furniture; crop the
+   furniture at the frame instead.
+-- The support's width and depth edges follow axis_angle_deg; parallel 3D edges
+-  share vanishing points and need not look parallel on-screen. All room objects
+-  share one floor plane and consistent horizon; align furniture, not the product.
++- The support's width and depth axes follow axis_angle_deg. Rectangular edges
++  follow those axes; round and oval rims curve within the same support plane.
++  Parallel 3D edges share vanishing points and need not look parallel on-screen.
++  All room objects share one floor plane and consistent horizon; align furniture,
++  not the product.
+ - A printer sits square on its support: its front and side faces are parallel
+-  in 3D to the support edges. Estimate its axis_angle_deg from the two bottom
+-  edges meeting at the base corner nearest the camera (front bottom edge =
+-  width axis, side bottom edge = depth axis), not from the top, trays or control
+-  panel. In a frontal view, the visible front bottom edge is the width axis.
++  in 3D to the support's width and depth axes, and therefore to the edges of a
++  rectangular top. Estimate its axis_angle_deg from the two bottom edges meeting
++  at the base corner nearest the camera (front bottom edge = width axis, side
++  bottom edge = depth axis), not from the top, trays or control panel. In a
++  frontal view, the visible front bottom edge is the width axis.
+ - A laptop need not sit exactly square to its desk; the desk follows the
+   laptop's estimated chassis yaw. Other products share their chassis axes with
+   the support.
+@@ -86,22 +89,33 @@
+   from the camera requires the working chair across the table, not behind the
+   lid in the foreground. For a printer allow standing access; do not invent a
+   dedicated printer chair. Other requested office chairs belong at workstations.
+-- For laptops, keep user_edge_gap_m small so the laptop sits near the desk's
+-  user-facing edge.
+-- There is no tabletop beyond the user-facing edge. When user_side is
+-  near_camera, that region is in the lower frame: plan what fills it, such as
+-  the support's front edge, the working chair or floor, instead of extending
++- Keep the support category from the original request. For printers, when the
++  category is unspecified, choose a credible substantial cabinet, low credenza,
++  fitted counter or dedicated equipment table. A requested printer table is a
++  substantial dedicated equipment table, not a person's occupied workstation
++  desk. A cabinet, credenza or fitted counter normally has a rectangular top,
++  but must retain its described furniture body; support_top_shape specifies
++  only the top outline, not the furniture category.
++- For laptops, keep user_edge_gap_m small so the laptop sits near the support's
++  user-facing boundary. For a round or oval top, measure this gap along the selected user-side axis
++  (width for width_left/width_right, depth for near_camera/far_from_camera) to the user-facing rim point aligned with the
++  product center, not to an invented straight side. Keep the gap modest while
++  allowing the entire product base to fit inside the curved rim.
++- There is no tabletop beyond the user-facing edge or curved rim. When user_side
++  is near_camera, that region is in the lower frame: plan what fills it, such as
++  the support's front boundary, the working chair or floor, instead of extending
+   the support toward the camera.
+ - Arrange a believable lifestyle scene as if someone has just stepped away
+   from using the product, with no person shown. Plan furniture orientation
+   and spacing together: leave realistic room to sit or stand, reach the
+   product and requested supplies, and operate it without obstructions.
+-  Adapt furniture to the fixed product; do not add props merely to suggest use.
++  Adapt furniture to the fixed product; do not add props merely to suggest use
++  or add extra devices.
+ - Supply the structured "geometry" required by the schema: estimated camera
+   height, support height, look-at height, horizontal distance, vertical FOV,
+-  support yaw, support width/depth, product base footprint, user side,
+-  user-edge gap, support lateral offset and furniture boxes. Describe the same
+-  support placement in composition and the final prompt.
++  support yaw, support_top_shape, support width/depth, product base footprint,
++  user side, user-edge gap, support lateral offset and furniture boxes. Describe
++  the same support placement in composition and the final prompt.
+ - Downward pitch is derived as
+   atan((camera_height_m - look_at_height_m) / horizontal_distance_m).
+   Use zero camera roll. Do not independently choose a conflicting tilt or lens:
+@@ -113,10 +127,34 @@
+   Positive yaw means the width axis's right end is farther away; negative means
+   nearer. On-screen depth also depends on off-center product framing. The guide
+   supplies actual projected directions; do not infer them from yaw sign alone.
+-- Support and footprint sizes are construction estimates. The code places the
+-  support around the product base from user_side, user_edge_gap_m and
+-  support_lateral_offset_m, and the guide draws those edges. Keep the user's
+-  requested support type and shape.
++- Support and footprint sizes are construction estimates. Shape choice must
++  not change the product footprint or original pixel bounds. The code places
++  the support around the product base from user_side, user_edge_gap_m and
++  support_lateral_offset_m, and the guide draws its actual outline. Keep the
++  user's requested support type and shape.
++- Set support_top_shape to rectangular, round or oval. Rectangular retains the
++  existing rectangular construction and gap/offset meanings. For round,
++  support_width_m and support_depth_m are equal physical diameters. For oval,
++  they are unequal physical diameters along the support's width and depth axes.
++  Round and oval tops are projected ellipses in the same support plane and
++  camera, not rectangles with rounded corners. Use the requested shape; when
++  unspecified, retain the existing rectangular default.
++
++- For round and oval tops, all four product-base corners must lie inside the
++  ellipse; checking only the center or a rectangular bounding box is not enough.
++  Choose physically normal support dimensions and modest gap and lateral offset.
++  support_lateral_offset_m must leave clearance for the full footprint width
++  and the curved rim. Fit the support around the unchanged product, never move,
++  rotate or resize the product or alter its footprint to make it fit.
++- Printers normally stand against a wall: set back_edge_against_wall true unless
++  the original request clearly places the printer away from walls. Keep the
++  existing printer-to-wall placement policy. Round and oval laptop tables are
++  often freestanding; do not impose wall adjacency merely because a support
++  is present.
++- Describe the actual visible boundary: straight edges and visible corners for
++  rectangular tops, curved rims and visible arcs for round or oval tops. A fixed
++  crop may show only an arc. Do not widen the camera, change framing or demand
++  a full circle, full perimeter or visible furniture base to prove the shape.
+ - Furniture boxes are visible [left, top, right, bottom] bounds normalized to
+   0-1, with positive area and no overlap with fixed product bounds. Use
+   working_seat for user-side working chairs, background_furniture for others.
+--- a/experimental/adarabi/hp-3p-gpt25/tests/test_geometry.py
++++ b/experimental/adarabi/hp-3p-gpt25/tests/test_geometry.py
+@@ -78,6 +78,179 @@
+     assert (np.asarray(image.convert("RGB"))[protected] == np.asarray(Image.open(io.BytesIO(hero)))[protected]).all()
+ 
+ 
++def test_rectangle_default_and_explicit_shape_are_byte_compatible():
++    from hp3p.geometry import build_guide
++
++    implicit_guide, implicit_info = build_guide(*scene(), spec())
++    explicit_guide, explicit_info = build_guide(*scene(), spec(support_top_shape="rectangular"))
++    assert explicit_guide == implicit_guide
++    assert explicit_info == implicit_info
++
++
++@pytest.mark.parametrize("shape,width,depth", [("round", 0.8, 0.8), ("oval", 1.2, 0.7)])
++def test_curved_support_projects_perimeter_without_moving_product(shape, width, depth):
++    from hp3p.geometry import build_guide
++
++    hero, mask = scene()
++    rectangular_guide, rectangular = build_guide(hero, mask, spec())
++    curved_guide, curved = build_guide(
++        hero, mask, spec(support_top_shape=shape, support_width_m=width, support_depth_m=depth))
++    assert curved_guide != rectangular_guide
++    assert curved["support_top_shape"] == shape
++    assert len(curved["support_polygon_px"]) == 128
++    assert len(curved["user_edge_curve_px"]) == 33
++    assert curved["product_bounds_px"] == rectangular["product_bounds_px"]
++    assert curved["contact_px"] == rectangular["contact_px"]
++    assert curved["width_axis_px"] == rectangular["width_axis_px"]
++    assert curved["depth_axis_px"] == rectangular["depth_axis_px"]
++    protected = np.asarray(Image.open(io.BytesIO(mask)))[..., 3] == 255
++    expected = np.asarray(Image.open(io.BytesIO(hero)).convert("RGB"))
++    actual = np.asarray(Image.open(io.BytesIO(curved_guide)).convert("RGB"))
++    assert (actual[protected] == expected[protected]).all()
++
++
++def test_oval_outline_back_projects_to_an_ellipse_on_the_support_plane():
++    from hp3p.geometry import build_guide
++
++    geometry = spec(support_top_shape="oval")
++    _, info = build_guide(*scene(), geometry)
++    w, h = 400, 300
++    pitch = math.atan2(geometry["camera_height_m"] - geometry["look_at_height_m"],
++                       geometry["horizontal_distance_m"])
++    focal = h / (2 * math.tan(math.radians(geometry["vertical_fov_deg"]) / 2))
++    rotation = np.array([[1, 0, 0], [0, -math.cos(pitch), -math.sin(pitch)],
++                         [0, -math.sin(pitch), math.cos(pitch)]])
++    camera = np.array([0, geometry["camera_height_m"], 0])
++    world = []
++    for u, v in info["support_polygon_px"]:
++        ray = rotation.T @ np.array([(u - w / 2) / focal, (v - h / 2) / focal, 1])
++        world.append(camera + ray * ((geometry["support_height_m"] - camera[1]) / ray[1]))
++    world = np.asarray(world)
++    assert world[:, 1] == pytest.approx(geometry["support_height_m"])
++    center = world.mean(axis=0)
++    yaw = math.radians(geometry["axis_angle_deg"])
++    width_axis = np.array([math.cos(yaw), 0, math.sin(yaw)])
++    depth_axis = np.array([-math.sin(yaw), 0, math.cos(yaw)])
++    normalized = (((world - center) @ width_axis / (geometry["support_width_m"] / 2)) ** 2
++                  + ((world - center) @ depth_axis / (geometry["support_depth_m"] / 2)) ** 2)
++    assert normalized == pytest.approx(np.ones(128), abs=1e-10)
++
++
++@pytest.mark.parametrize("side,user_axis_name,user_sign", [
++    ("near_camera", "depth", -1), ("far_from_camera", "depth", 1),
++    ("width_left", "width", -1), ("width_right", "width", 1),
++])
++def test_oval_gap_uses_selected_user_axis_at_product_aligned_rim(side, user_axis_name, user_sign):
++    from hp3p.geometry import build_guide
++
++    geometry = spec(support_top_shape="oval", support_depth_m=0.8, user_side=side,
++                    user_edge_gap_m=0.04, support_lateral_offset_m=0.05)
++    _, info = build_guide(*scene(), geometry)
++    w, h = 400, 300
++    pitch = math.atan2(geometry["camera_height_m"] - geometry["look_at_height_m"],
++                       geometry["horizontal_distance_m"])
++    focal = h / (2 * math.tan(math.radians(geometry["vertical_fov_deg"]) / 2))
++    rotation = np.array([[1, 0, 0], [0, -math.cos(pitch), -math.sin(pitch)],
++                         [0, -math.sin(pitch), math.cos(pitch)]])
++    camera = np.array([0, geometry["camera_height_m"], 0])
++
++    def back_project(pixel):
++        u, v = pixel
++        ray = rotation.T @ np.array([(u - w / 2) / focal, (v - h / 2) / focal, 1])
++        return camera + ray * ((geometry["support_height_m"] - camera[1]) / ray[1])
++
++    yaw = math.radians(geometry["axis_angle_deg"])
++    width_axis = np.array([math.cos(yaw), 0, math.sin(yaw)])
++    depth_axis = np.array([-math.sin(yaw), 0, math.cos(yaw)])
++    axes = {"width": width_axis, "depth": depth_axis}
++    center = back_project(info["contact_px"])
++    near_end = -math.copysign(1, yaw)
++    base_center = (center - near_end * geometry["product_footprint_width_m"] / 2 * width_axis
++                   + geometry["product_footprint_depth_m"] / 2 * depth_axis)
++    user_axis = axes[user_axis_name]
++    base_half = (geometry["product_footprint_width_m"] / 2 if user_axis_name == "width" else
++                 geometry["product_footprint_depth_m"] / 2)
++    base_edge_center = base_center + user_sign * base_half * user_axis
++    to_rim = back_project(info["user_edge_center_px"]) - base_edge_center
++    assert np.dot(to_rim, user_sign * user_axis) == pytest.approx(geometry["user_edge_gap_m"])
++    assert np.linalg.norm(to_rim - np.dot(to_rim, user_axis) * user_axis) == pytest.approx(0, abs=1e-10)
++
++
++def test_curved_support_uses_digital_twin_projection_without_changing_product_pixels():
++    from hp3p.geometry import build_guide
++
++    position = np.array([2.1 * math.sin(math.radians(35)), -2.1 * math.cos(math.radians(35)), 1.2])
++    target = np.array([0.0, 0.0, 0.8])
++    look = (target - position) / np.linalg.norm(target - position)
++    right = np.cross(look, [0, 0, 1])
++    right /= np.linalg.norm(right)
++    camera = {"position_m": position.tolist(), "right": right.tolist(),
++              "up": np.cross(right, look).tolist(), "back": (-look).tolist(),
++              "focal_length": 50.0, "horizontal_aperture": 36.0,
++              "footprint_corners_m": [[-0.2, -0.15, 0.75], [0.2, -0.15, 0.75],
++                                      [0.2, 0.15, 0.75], [-0.2, 0.15, 0.75]],
++              "front_xy": [0.0, -1.0], "product_height_m": 0.3}
++    hero, mask = scene()
++    guide, info = build_guide(hero, mask, spec(support_top_shape="oval"), camera)
++    assert info["camera_source"] == "digital_twin"
++    assert len(info["support_polygon_px"]) == 128
++    protected = np.asarray(Image.open(io.BytesIO(mask)))[..., 3] == 255
++    assert (np.asarray(Image.open(io.BytesIO(guide)))[protected]
++            == np.asarray(Image.open(io.BytesIO(hero)))[protected]).all()
++
++
++def test_ellipse_rejects_product_corner_outside_curved_perimeter():
++    from hp3p.geometry import build_guide
++
++    # This lateral shift fits the old rectangular bounding box but pushes a base corner
++    # through an ellipse, which needs the stronger four-corner containment check.
++    with pytest.raises(ValueError, match="all four product footprint corners"):
++        build_guide(*scene(), spec(support_top_shape="oval", support_lateral_offset_m=0.4))
++
++
++def test_round_support_requires_a_physical_circle():
++    from hp3p.geometry import build_guide
++
++    with pytest.raises(ValueError, match="equal support_width_m and support_depth_m"):
++        build_guide(*scene(), spec(support_top_shape="round"))
++
++
++def test_oval_support_requires_distinct_physical_diameters():
++    from hp3p.geometry import build_guide
++
++    with pytest.raises(ValueError, match="unequal support_width_m and support_depth_m"):
++        build_guide(*scene(), spec(support_top_shape="oval", support_width_m=0.8, support_depth_m=0.8))
++
++
++def test_shape_schema_is_strict_and_bounded_while_direct_callers_keep_default():
++    from hp3p.geometry import GEOMETRY_SCHEMA
++
++    assert "support_top_shape" in GEOMETRY_SCHEMA["required"]
++    assert GEOMETRY_SCHEMA["properties"]["support_top_shape"]["enum"] == ["rectangular", "round", "oval"]
++
++
++def test_printer_geometry_prose_does_not_force_primary_support_to_be_a_table():
++    from hp3p.geometry import build_guide, describe_geometry
++
++    _, info = build_guide(*scene(), spec(support_top_shape="rectangular"))
++    text = describe_geometry(spec(support_top_shape="rectangular"), info, (400, 300),
++                             product_category="printer")
++    assert "primary support" in text.lower()
++    assert "table" not in text.lower()
++    assert "laptop" not in text.lower()
++
++
++def test_round_geometry_prose_names_curved_rim_instead_of_corners():
++    from hp3p.geometry import build_guide, describe_geometry
++
++    geometry = spec(support_top_shape="round", support_width_m=0.8, support_depth_m=0.8)
++    _, info = build_guide(*scene(), geometry)
++    text = describe_geometry(geometry, info, (400, 300))
++    assert "round" in text.lower()
++    assert "curved rim" in text.lower()
++    assert "table corners" not in text.lower()
++
++
+ @pytest.mark.parametrize("changes,field", [
+     ({"horizontal_distance_m": 0}, "horizontal_distance_m"),
+     ({"camera_height_m": float("nan")}, "camera_height_m"),
+--- a/experimental/adarabi/hp-3p-gpt25/tests/test_pipeline.py
++++ b/experimental/adarabi/hp-3p-gpt25/tests/test_pipeline.py
+@@ -260,7 +260,8 @@
+     assert res["prompt"].startswith("GEOMETRY \u2014 highest priority. Follow Image 1 exactly.\n" + fake.layout)
+     assert res["layout"] == fake.layout and res["geometry_text"] not in res["prompt"]
+     assert "WRITE IN PLAIN VISUAL WORDS" in fake.last_text and "plain visual words" in fake.rewrite_request["system"]
+-    assert res["prompt"].endswith("Where any other text conflicts, follow GEOMETRY.")
++    assert res["prompt"].endswith(
++        "Where other scene text conflicts, follow GEOMETRY, with unchanged product pixels always first.")
+     assert json.loads((out / "geometry_response.json").read_text())["geometry"] == fake.geometry
+ 
+ 
+@@ -272,7 +273,7 @@
+     words = res["geometry_text"] + fake.last_text.split("Fixed geometry JSON")[0]
+     assert "the printer is" in words and "Support orientation" in words
+     assert "laptop" not in words and " table" not in words and "tabletop" not in words
+-    assert "the support orientation, user-facing edge" in res["prompt"]
++    assert "the support top shape and orientation, user-facing edge or curved rim" in res["prompt"]
+     assert "PRINTER AGAINST THE WALL" not in fake.rewrite_request["system"]
+     fake.geometry = {**fake.geometry, "back_edge_against_wall": True}
+     run_row(ROW, fake, CAT, tmp_path / "wall", _hero(), ref_count=1)
+@@ -296,7 +297,7 @@
+     prompt = fake.edit_request["prompt"]
+     assert "as if someone has just stepped away from using the product" in system
+     assert "Plan furniture orientation and spacing together" in system
+-    assert "keep user_edge_gap_m small so the laptop sits near the desk's user-facing edge" in system
++    assert "keep user_edge_gap_m small so the laptop sits near the support's user-facing boundary" in system
+     assert "Describe the same support placement in composition and the final prompt" in system
+     assert "Adapt furniture to the fixed product; do not add props merely to suggest use" in system
+     assert "Image 1 is the canvas to edit" in prompt and "Estimated camera/support plan" not in prompt
+

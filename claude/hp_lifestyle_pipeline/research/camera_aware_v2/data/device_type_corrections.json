@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "version": "device-type-corrections-2026-10-22.1",
+  "status": "active",
+  "matching_rule": "Apply only when every exact_source_identity field matches. Never infer corrections from substrings, aliases, camera names, or apparent product shape.",
+  "corrections": [
+    {
+      "correction_id": "messi-source-printer-to-minipc-2026-10-22",
+      "exact_source_identity": {
+        "device_id": "camera_printer.locator_Messi_Ceramic-White.printer",
+        "device_asset_name_from_folder": "Messi_Ceramic-White.printer.usdz",
+        "zip_directory": "Shared/camera_printer.locator_Messi_Ceramic-White.printer/"
+      },
+      "source_declared_device_type": "printer",
+      "effective_device_type": "miniPC",
+      "provenance": {
+        "classification": "USER-CONFIRMED",
+        "confirmed_by": "Hooman Shariati",
+        "confirmed_date": "2026-10-22",
+        "statement": "camera_printer.locator_Messi_Ceramic-White.printer is mislabeled; the actual device type is miniPC, not printer."
+      }
+    }
+  ]
+}

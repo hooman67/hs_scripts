@@ -1,0 +1,169 @@
+{
+  "slug": "magic__printer_FrontWide__p1__relocation_demand",
+  "base_slug": "magic__printer_FrontWide__p1",
+  "mode": "relocation_demand",
+  "device_id": "magic",
+  "camera_id": "Front_Wide",
+  "prompt": "A wide open-office output area. Relocate the fully visible printer to a right-of-center dedicated output station, leaving the left side of the room open for paper sorting and circulation. Preserve the printer's exact view and pixel size. Compose a new pale oak support table beneath it, square to the fixed printer orientation, with believable edge clearances, wall alignment and unobstructed standing access at the front. Use soft clear daylight and an orderly office background.",
+  "pipeline_version": "unified-blue-scale-v22.3.1-full-affine-guard-bounded-fallback-twin-camera-guide-only-no-mask",
+  "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+  "status": "ok",
+  "error": null,
+  "output_sha256": "2fbab16453a74863d3a3e940517032bbfea8da1d92a0b19d9dce9f1e27fd7fb6",
+  "attempt_1_sha256": "2fbab16453a74863d3a3e940517032bbfea8da1d92a0b19d9dce9f1e27fd7fb6",
+  "attempt_2_sha256": null,
+  "product_invariant_guard": {
+    "guard_version": "full-affine-v1.1",
+    "attempts": [
+      {
+        "guard_version": "full-affine-v1.1",
+        "fixed_position": false,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.2,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          629,
+          633,
+          1203,
+          1206
+        ],
+        "matches": 46,
+        "inliers": 41,
+        "inlier_ratio": 0.8913043478260869,
+        "full_affine_matrix": [
+          [
+            0.9888519895975957,
+            -0.018763595069040843,
+            764.9396028901397
+          ],
+          [
+            0.014665094405489746,
+            0.9856091364967536,
+            -238.34908479092763
+          ]
+        ],
+        "partial_affine_matrix": [
+          [
+            0.9872295628575741,
+            -0.014807034791385289,
+            763.3080713344373
+          ],
+          [
+            0.014807034791385289,
+            0.9872295628575741,
+            -239.8358795209982
+          ]
+        ],
+        "partial_inliers": 41,
+        "singular_values": [
+          0.9899851748294676,
+          0.9847589138406948
+        ],
+        "anisotropy_ratio": 1.005307147683883,
+        "rotation_deg": 0.9699557124708131,
+        "column_shear_cos": 0.004205913208957686,
+        "residual_median_px": 0.42496922782242635,
+        "residual_p95_px": 1.4072508207183991,
+        "source_span_x_fraction": 0.9218695163726807,
+        "source_span_y_fraction": 0.5780948400497437,
+        "source_quadrants": 4,
+        "source_hull_fraction": 0.4103142974105583,
+        "transformed_product_corners_px": [
+          [
+            1375.0501486683245,
+            394.7658429925704
+          ],
+          [
+            1942.6511906973444,
+            403.18360718132163
+          ],
+          [
+            1931.899650722784,
+            967.9376423939614
+          ],
+          [
+            1364.298608693764,
+            959.5198782052103
+          ]
+        ],
+        "corners_in_frame": true,
+        "translation_x_px": 764.9396028901397,
+        "translation_y_px": -238.34908479092763,
+        "checks": {
+          "inliers": true,
+          "inlier_ratio": true,
+          "singular_min": true,
+          "singular_max": true,
+          "anisotropy": true,
+          "rotation": true,
+          "shear": true,
+          "residual_median": true,
+          "residual_p95": true,
+          "span_x": true,
+          "span_y": true,
+          "quadrants": true,
+          "hull": true,
+          "corners": true
+        },
+        "reasons": [],
+        "verdict": "pass"
+      }
+    ],
+    "selected_attempt": 1
+  },
+  "final_prompt_sha256": "7046143c882a5c9aa018bdb8d1357c5ba424e3df3d4052925687d8ab50a3723f",
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 979,
+        "prompt_tokens": 14268,
+        "total_tokens": 15247,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 77,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 13696,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "mask": false
+    }
+  ]
+}

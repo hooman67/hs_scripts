@@ -1,0 +1,207 @@
+{
+  "schema_version": "hp-natural-placement-v4.1-protocol-freeze-v1",
+  "frozen_at_utc": "2026-11-06T03:09:56.435026+00:00",
+  "status": "frozen_before_anchored_v4.1_development_evaluation",
+  "git_head_at_freeze": "c25571079be3380a290356108db919dcaf173c67",
+  "parent_unanchored_evaluation": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/data/development_15_v4_astra_evaluation_v1.json",
+    "sha256": "bb884615e5936b22b98468412eb0da94d0919dac322a322d0cb0e61b804fc995"
+  },
+  "model": "gpt-6-astra",
+  "client_route": "foundry_direct_openai",
+  "reasoning_effort": "high",
+  "max_completion_tokens": 24000,
+  "transport_timeout_seconds": 600,
+  "transport_sdk_max_retries": 0,
+  "batch_concurrency": 1,
+  "development_record_count": 15,
+  "maximum_anchor_count": 4,
+  "target_labels_passed_to_model": false,
+  "manual_output_edits_allowed": false,
+  "leave_family_out": {
+    "exact_generated_image_hash": true,
+    "same_twin_image_hash": true,
+    "exact_scene_prompt_hash": true,
+    "same_device_camera_prompt_rank": true,
+    "same_product_type_camera_prompt_rank_near_family": true
+  },
+  "application_retry": {
+    "maximum_second_attempts": 1,
+    "trigger": "transient transport or invalid structured/semantic output only",
+    "valid_judgment_retried": false
+  },
+  "deterministic_verdict_policy": {
+    "high_confidence_material_defect": "fail",
+    "medium_or_low_confidence_material_defect": "review",
+    "severity_1_review_warning": "review",
+    "severity_1_advisory": "does_not_block_pass",
+    "low_coverage_low_confidence_or_unobservable": "does_not_block_pass",
+    "unrelated_rendering_artifact": "does_not_change_placement_verdict"
+  },
+  "tests": {
+    "count": 20,
+    "status": "passed"
+  },
+  "artifacts": [
+    {
+      "path": "system_prompt.md",
+      "bytes": 9709,
+      "sha256": "aab92f7a23b2dbfe289c2fcc78ba951592f47b0739bd2714c29d7108026594e3"
+    },
+    {
+      "path": "assessment_schema.json",
+      "bytes": 5338,
+      "sha256": "86582c58cb42248ab0d9d4634dfd15583708bc8e036c5c50a721c1470b2314f9"
+    },
+    {
+      "path": "result_schema.json",
+      "bytes": 3928,
+      "sha256": "b3833a738283ec5adc2b4f363e8fcbabfb5f65f96f3fe6afb8df64823a41430b"
+    },
+    {
+      "path": "scoring.py",
+      "bytes": 12775,
+      "sha256": "d0c17fa9c2d5c52a896a4096b0d121c9d0e358abfd1617c349b425423258c0ed"
+    },
+    {
+      "path": "run_judge.py",
+      "bytes": 17656,
+      "sha256": "82e0ee9d194a52b3532537cfca5e7f45011a60e5d4bafd9d3405225b1d4694dd"
+    },
+    {
+      "path": "run_batch.py",
+      "bytes": 15328,
+      "sha256": "bc082c2ed02e49e0d58b255929bb830ecdfdfd0baa81b949cba4c61b570e21dc"
+    },
+    {
+      "path": "test_v4_scoring.py",
+      "bytes": 5661,
+      "sha256": "6bd8f22e6694c91ecf8ac258e8a6115eb23d745f446ae1e28b2a35519a010187"
+    },
+    {
+      "path": "test_v4_runtime.py",
+      "bytes": 6591,
+      "sha256": "c6e431861e45b9c337e7b4b162e9f97d41e432e1701a942d0c844c637840d64c"
+    },
+    {
+      "path": "test_anchor_provenance.py",
+      "bytes": 2929,
+      "sha256": "2f63df1ef710f53165ba6dacdeec304a727f1fff4b3b871f1dde0c5086e9a1ae"
+    },
+    {
+      "path": "evaluate_development.py",
+      "bytes": 6593,
+      "sha256": "5dd9f4da785aafda06c8ba1efcdac7edc738493cd015ae9f1941723b3328e1fd"
+    },
+    {
+      "path": "data/development_15_manifest.json",
+      "bytes": 86779,
+      "sha256": "a94e4d6e0865eaa9f9d2aa232ecc97275e5712796b79f5b9c378d0e4662e8eb0"
+    },
+    {
+      "path": "data/development_15_expectations.json",
+      "bytes": 7812,
+      "sha256": "4ae4d88c954cea9b1050fe7600113d5f0f4c45593e23c877b64f18386846620b"
+    },
+    {
+      "path": "astra/evidence/joined_feedback_context.json",
+      "bytes": 319766,
+      "sha256": "269f5ab6449f7e615b968c88cbace9edf8db39089471e816ddc9b093fba9438e"
+    },
+    {
+      "path": "astra/evidence/reviewer_0.json",
+      "bytes": 6791,
+      "sha256": "d466958fc707f504f70ec0c7273a433dfc84826aa36a1cbb46a0df201b51a1f3"
+    },
+    {
+      "path": "anchored_candidate/README.md",
+      "bytes": 1701,
+      "sha256": "d6f3a124a701742105d97eea09b389b37f4cabe0c0b65e0a0d3baa58d0fe078d"
+    },
+    {
+      "path": "anchored_candidate/anchor_guidance.json",
+      "bytes": 5037,
+      "sha256": "9d219c28b0875e93b92019f756e44425e8bd4f008510cae939307a5d05970b2d"
+    },
+    {
+      "path": "anchored_candidate/build_anchor_candidate.py",
+      "bytes": 11026,
+      "sha256": "038ed230afd76a063205523f2332c6c51aaa70f74e3919ec8e1e520c71e57167"
+    },
+    {
+      "path": "anchored_candidate/anchor_catalog.json",
+      "bytes": 18973,
+      "sha256": "6bdeea961e757c75a179303b8a1b0c42aa89ab4b8492616578be67c8e208d81a"
+    },
+    {
+      "path": "anchored_candidate/target_anchor_plan.json",
+      "bytes": 19596,
+      "sha256": "d43b5bf9999131d7ce130e7bb4572c1ec848e0fcba95714af9c307d2cb270b61"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/cashmere__laptop_FrontLeftMedium__p1.jpg",
+      "bytes": 61191,
+      "sha256": "9674024726b4d78f3e774253b0f5ea4a3ec96b4fd3cb6393512bb940528d3fca"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/elitebook__laptop_FrontCloseUp__p1.jpg",
+      "bytes": 34064,
+      "sha256": "d287d29ac4661c2f9fc1bd1b4bb4f6ce07bfc65aa49124570bef2ada0b27bc50"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/elitebook__laptop_FrontLeftMedium__p1.jpg",
+      "bytes": 52826,
+      "sha256": "de4c99b601265e5b766f5cf66c89f538f22dce00661a9d9341c4a7f848823f0d"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/elitebook__laptop_FrontLeftMedium__p2.jpg",
+      "bytes": 59153,
+      "sha256": "ba1d36210a431fd8e1109af3dd890cc14f02f600b222c97a75f17873e70d0dae"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/elitebook__laptop_FrontLeftMedium__p3.jpg",
+      "bytes": 52426,
+      "sha256": "fe117516093f8bbffe181622303e36be98a59a7bd3e265a3be1a7ec368fcf418"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/elitebook__laptop_FrontWide__p2.jpg",
+      "bytes": 46466,
+      "sha256": "d4d58e482c9cab80478a6d7bc4baa419e86d0a1748160b1d0a47b6c2d9114776"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/magic__printer_FrontLeftMedium__p1.jpg",
+      "bytes": 52875,
+      "sha256": "7a7bb331603f423de72d6205b77aee05e7d84db35eadd67d45c608b95cf35b9a"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/magic__printer_FrontRightCloseUp__p2.jpg",
+      "bytes": 55220,
+      "sha256": "8107eec8fe243ecf89c7284e50d4a518255d118f23eae2ea502dc18e3b43060e"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/tassel__printer_FrontCloseUp__p1.jpg",
+      "bytes": 46499,
+      "sha256": "c6373e5f91f52340b84e222d117b2fca70db929a5b0ea702d45aa784ade0e4da"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/tassel__printer_FrontCloseUp__p2.jpg",
+      "bytes": 49267,
+      "sha256": "b9a3850f18d2f58e360a80f820240018d0eaef4f2b34e0b32a84441d77d2921a"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/tassel__printer_FrontLeftMedium__p2.jpg",
+      "bytes": 46831,
+      "sha256": "98bb295e2408cb0de561f9c19014c14a37197209d8ae9d34f67cbd42efcf4c90"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/tassel__printer_FrontRightCloseUp__p2.jpg",
+      "bytes": 51565,
+      "sha256": "6adaf43560e0ceecd2d63574c2252fb905047d8068b917c3b0084b36aaecb01d"
+    },
+    {
+      "path": "anchored_candidate/anchors/images/tassel__printer_FrontWide__p1.jpg",
+      "bytes": 61420,
+      "sha256": "1b525808d45b8d2624827aed3a7181397bbcc149429f62a244da809ea79c5bff"
+    }
+  ]
+}

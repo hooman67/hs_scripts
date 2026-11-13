@@ -1,0 +1,10 @@
+# Exact platforms/inference/bazel_infra/ruff/ruff.toml at release/inference/v0.6.6.
+line-length = 120
+
+[lint]
+select = ["I", "F", "UP"]
+exclude = ["F401"]
+
+[lint.isort]
+known-first-party = ["bazel_infra", "frameworks", "models", "platforms", "services"]
+detect-same-package = false

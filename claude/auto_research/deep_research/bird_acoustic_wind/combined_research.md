@@ -1,0 +1,7 @@
+All 5 documents have been written to `/home/colligo/hs_scripts/claude/auto_research/runs/deep_research/acoustic_bird_monitoring/`:
+
+- `01_product_definition.md` - Problem statement, product scope v1, user workflow, pricing ($2K hardware + $500-800/node/month SaaS), ideal first customers (Pattern Energy, Avangrid, Terra-Gen, WEST, Invenergy)
+- `02_competitive_analysis.md` - Direct competitors (IdentiFlight, DTBird, Spoor, Robin Radar, Conservation Metrics), open source/DIY risk (HIGH - BirdNET + AudioMoth assemblable for <$500), big tech risk (LOW near-term, MEDIUM-HIGH from OEMs). Verdict: CONDITIONAL-GO
+- `03_feasibility_and_prototype.md` - Full architecture (edge Jetson + SCADA + cloud), detailed BOM ($836 prototype, $500-600 at volume), 10-month sprint plan, risk register (eagle vocalization frequency is CRITICAL risk), founder-market fit: 5.5/10
+- `04_customer_validation.md` - 5 target customers with entry strategies, 15+ discovery questions, demand signals (regulatory mandate, surveyor shortage, IdentiFlight cost barrier), outreach plan (REWI membership, DOE SBIR, pilot proposals), kill criteria
+- `05_comparison_scorecard.md` - Weighted score: **5.60/10**. Key strengths: clear market gap, regulatory tailwind, recurring revenue lock-in. Key weaknesses: eagles vocalize infrequently (physics limitation), $250K too tight for hardware product, founder lacks hardware/ornithology/regulatory expertise.

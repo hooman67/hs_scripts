@@ -1,0 +1,17 @@
+visibility: public
+public:
+  files:
+  - types.py
+  - constants.py
+  deps:
+  - colligo.base
+  - colligo.models.audio.common[public]
+  - pydantic
+deps:
+- colligo.models.audio.common
+- colligo.models.audio.core.generate_music
+- colligo.models.audio.core.tempo
+- omegaconf
+- torch
+- torchaudio
+- tqdm

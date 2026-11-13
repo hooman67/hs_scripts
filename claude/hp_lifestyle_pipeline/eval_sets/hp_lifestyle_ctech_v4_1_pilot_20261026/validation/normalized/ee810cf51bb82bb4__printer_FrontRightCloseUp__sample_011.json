@@ -1,0 +1,151 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 2,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "evidence_quote",
+      "detail": "e3 quote is not verbatim in ValueProposition.long_message_safe_to_inherit"
+    },
+    {
+      "code": "evidence_quote",
+      "detail": "e5 quote is not verbatim in KSP2.long_message_best_sku"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support an omission explanation; inspect: ['e4']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 5,
+    "environments": {
+      "Creative Studio": 4,
+      "Café": 5,
+      "Gaming": 4,
+      "Office": 6,
+      "Home": 7,
+      "Education": 4
+    },
+    "relationships": {
+      "creative_departure": 19,
+      "source_grounded": 10,
+      "source_adjacent": 1
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 7,
+      "Office": 6,
+      "Education": 4,
+      "Gaming": 4,
+      "Café": 5,
+      "Creative Studio": 4
+    },
+    "relationship_counts": {
+      "source_grounded": 10,
+      "source_adjacent": 1,
+      "creative_departure": 19
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 10,
+      "close_adaptation": 16,
+      "category_extension": 4
+    },
+    "ctech_reference_counts": {
+      "CT10": 2,
+      "CT08": 1,
+      "CT07": 1,
+      "CT11": 1,
+      "CT12": 3,
+      "CT14": 2,
+      "CT15": 2,
+      "CT03": 4,
+      "CT18": 3,
+      "CT04": 1,
+      "CT05": 1,
+      "CT06": 2,
+      "CT16": 1,
+      "CT13": 1,
+      "CT01": 1,
+      "CT02": 1,
+      "CT17": 1,
+      "CT09": 2
+    },
+    "ctech_score_range": [
+      65,
+      83
+    ],
+    "distinct_subsettings": 17,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e1",
+          "e5"
+        ],
+        "prompt_ids": [
+          "p16",
+          "p18",
+          "p19",
+          "p20",
+          "p22",
+          "p23",
+          "p24",
+          "p27",
+          "p28"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e2"
+        ],
+        "prompt_ids": [
+          "p2",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p19",
+          "p20",
+          "p28"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p2",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p19",
+          "p21"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "bcceabfe431bf54fcc483725cf95554481443d337b0f1f75c6e5150456daae0f"
+}

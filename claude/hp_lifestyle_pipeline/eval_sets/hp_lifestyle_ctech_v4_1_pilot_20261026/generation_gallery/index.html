@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HP Lifestyle C-Tech V4.1 · Corrected-input generation</title>
+  <link rel="stylesheet" href="./style.css?v=1">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading" class="loading-screen">Loading the 120-row generation gallery…</div>
+  <main id="content" class="hidden">
+    <header class="header-bar">
+      <div class="title-row">
+        <div>
+          <h1>HP Lifestyle C-Tech V4.1 · Corrected-input generation</h1>
+          <p id="subtitle" class="subtitle"></p>
+        </div>
+        <div id="progress" class="progress" aria-live="polite"></div>
+      </div>
+      <div id="downloads" class="downloads"></div>
+      <div class="controls">
+        <label><span>Search</span><input id="searchInput" type="search" placeholder="Prompt, case, candidate, or rewritten prompt"></label>
+        <label><span>Environment</span><select id="environmentFilter"><option value="all">All six environments</option></select></label>
+        <label><span>Device</span><select id="deviceFilter"><option value="all">All devices</option></select></label>
+        <label><span>View</span><select id="viewFilter"><option value="all">All views</option></select></label>
+        <label><span>Status</span><select id="statusFilter"><option value="all">All statuses</option><option value="done">Done</option><option value="pending">Pending</option><option value="failed">Error</option></select></label>
+        <label><span>Rows</span><select id="pageSize"><option value="20" selected>20</option><option value="40">40</option><option value="60">60</option><option value="all">All 120</option></select></label>
+      </div>
+      <div id="resultSummary" class="result-summary"></div>
+    </header>
+    <section class="table-shell" aria-label="V4.1 prompts, corrected inputs, and generated outputs">
+      <table>
+        <thead><tr>
+          <th class="prompt-column">Prompt</th>
+          <th class="input-column">Corrected input image</th>
+          <th class="source-column">Source messaging</th>
+          <th class="explanation-column">Explanation + C-Tech / provenance</th>
+          <th class="output-column">Output image</th>
+          <th class="rewrite-column">Rewritten prompt</th>
+          <th class="debug-column">Full debug / request</th>
+        </tr></thead>
+        <tbody id="galleryRows"></tbody>
+      </table>
+      <div id="emptyState" class="empty-state hidden">No matching rows.</div>
+    </section>
+    <nav class="pagination" aria-label="Gallery rows"><button id="prevPage" type="button">Previous</button><span id="pageStatus"></span><button id="nextPage" type="button">Next</button></nav>
+  </main>
+  <div id="assetModal" class="modal" role="dialog" aria-modal="true" aria-label="Image preview"><button class="close-btn" type="button" aria-label="Close preview">&times;</button><img id="modalImage" src="" alt="Full-size preview"><div id="modalInfo" class="modal-info"></div></div>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script>
+  <script src="./data.js"></script>
+  <script src="./main.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => { initializeIMS(); });</script>
+</body>
+</html>

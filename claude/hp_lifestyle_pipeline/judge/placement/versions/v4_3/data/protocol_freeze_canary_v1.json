@@ -1,0 +1,61 @@
+{
+  "schema_version": "hp-placement-v4.3-canary-freeze-v1",
+  "created_at": "2026-11-06T04:08:16.908138+00:00",
+  "status": "frozen_before_canary",
+  "purpose": "one-case GPT-5.5 transport and valid-structured-output canary; not a quality estimate",
+  "model": {
+    "requested": "gpt-5.5",
+    "route": "foundry_direct_openai",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 24000,
+    "sdk_retries": 0,
+    "application_total_attempts_max": 2,
+    "timeout_seconds": 600,
+    "concurrency": 1
+  },
+  "runtime": {
+    "python": "3.12",
+    "foundry_aws_gateway": ">=2.0.0",
+    "jsonschema": "4.25.1",
+    "pillow": "12.0.0",
+    "opencv": "4.10.0.84"
+  },
+  "files": {
+    "PROVENANCE.md": "735a2bb887fa13fe8bbc4c2306dd9722c36b32ef0c02f85ed2c65c7d177a5bb8",
+    "system_prompt.md": "b5083456b673ac7f22849e1085d12cfd11d47b04b423c41d849e50c2ca028157",
+    "build_schema.py": "879c822e0adaa6b2aa9dd42123f37e46ed1c3623b99bfc11cf12b2fc479613df",
+    "assessment_schema.json": "6a07b256d8bc0de780cc75ee8a18081c8469dbc41f0e7eef741ab9a0efe3a242",
+    "build_wire_schema.py": "70d93297e7f55bd0d106ee91889700d95ff22dd8b8fbce80427067dd97118395",
+    "wire_schema.json": "8a09887271a0c03536dba1f2f836afd55e4e0ec9c07bef82c1d583a406fb643d",
+    "result_schema.json": "54fb16f5c591dbdd3edd888746b7dbc039f3b034aace3c1da970742d2b68af1c",
+    "scoring.py": "a81af369ad2b70d51e6faac4d117a1b757490aac01115a6a3f4cab3e73f334ec",
+    "crop.py": "c0b1d2e20ae10d172587782b65ab8a7b7282033c655864c8dd84d95912791fab",
+    "anchor_selection.py": "eb5add1b1fd2ad64eed630733ddf2683ee0ac20b5010d660286fa3c0d73bf72d",
+    "anchors/anchor_catalog.json": "8fedcf3229cc9fbb9aac5b777e6ef34400a206d16d03b2b65e2e3d180fcfda07",
+    "run_judge.py": "c1e4be33bc75ff4c4be28553ec719f31e154b9fd6ad4e18fa7faf2777648daf3",
+    "preflight_gate.py": "a848414e0ad45e8a603215702631fda07a0b60acb453793ecb60e61f7fd73383",
+    "data/gate_6_preflight.json": "c77fb0efa68ca662628c899404ed425d4012014e2343ba37b50ce8d5494059cc",
+    "data/canary_input.json": "ffc5a92885a47568300684ca06afd4dfbc3a08964065c72f070c6c9f99ec7590",
+    "data/canary_manifest.json": "0a7047cbd216f98d7b46a827b7ddfce21df58c6338834c5ca9730a1bd87fcd7c",
+    "test_v4_3.py": "007cef9c4685ce17d74d46aa110f9b393f082dcbe4fb57bc59939676fc1af49f",
+    "run_canary_tmux.sh": "1bf523d9a63372022925ec0b8abdbf8819b20d81ea1a8ac6200c58520267fbe0"
+  },
+  "anchor_assets": {
+    "anchors/assets/a01_cashmere__laptop_BackRightCloseUp__p5_scene.jpg": "1ceb4996340f88e9881c5a27cc69b0754eff8cb4e5cdbb60096a7cab7c32cb41",
+    "anchors/assets/a01_cashmere__laptop_BackRightCloseUp__p5_twin.jpg": "3706eb5e283fbd8093d0589a84674aec8edfe3d5a931fb1525f4f7693c208e68",
+    "anchors/assets/a02_cashmere__laptop_FrontLeftMedium__p6_scene.jpg": "f866ba16dca56ddf4aa0332509f8e49843f80a368fdd686aec200c5df903ad96",
+    "anchors/assets/a02_cashmere__laptop_FrontLeftMedium__p6_twin.jpg": "0ce167c5a628955d5e1f59001dfb942f480ad7e4fa8f183a0a37b0e8aaad2371",
+    "anchors/assets/a03_elitebook__laptop_FrontLeftMedium__p5_scene.jpg": "fbb2a1cf936d9a115b81b100c1833c427e56910efb741901fe3875bd55edbb22",
+    "anchors/assets/a03_elitebook__laptop_FrontLeftMedium__p5_twin.jpg": "bfd6b9a7602dfe33d1ff81e7c21dc55cde6e6062e345eb46ee36e3b0ca71a080",
+    "anchors/assets/a04_elitebook__laptop_FrontLeftMedium__p6_scene.jpg": "48ee5c99cac4560f4519dd593b1fda9424b6f02d61b1a0134e689ab9586b847e",
+    "anchors/assets/a04_elitebook__laptop_FrontLeftMedium__p6_twin.jpg": "bfd6b9a7602dfe33d1ff81e7c21dc55cde6e6062e345eb46ee36e3b0ca71a080",
+    "anchors/assets/a05_magic__printer_FrontCloseUp__p5_scene.jpg": "b4d3c48be5e692bd9f63e5848f86158163a8ac7b8eebb73cc6b387c3cd567e16",
+    "anchors/assets/a05_magic__printer_FrontCloseUp__p5_twin.jpg": "cbcdd36602ab31fbb8b0c327c8e0ece01ab40cc4a1d4d5fe5436afb5e708f035",
+    "anchors/assets/a06_magic__printer_FrontWide__p2_scene.jpg": "67588bd66a0491f3ce7315749d56d221f300763e30e14ae4bba0b3441993f406",
+    "anchors/assets/a06_magic__printer_FrontWide__p2_twin.jpg": "9eb3540f9eb7ca9a76aeb6c57a88758060893e98f8b236d937f455cb975f8cb4",
+    "anchors/assets/a07_magic__printer_FrontCloseUp__p3_scene.jpg": "07533606d57b3f3ccac741eab7b3dfbf8653b99bb2101baab9f3d575925e98ee",
+    "anchors/assets/a07_magic__printer_FrontCloseUp__p3_twin.jpg": "cbcdd36602ab31fbb8b0c327c8e0ece01ab40cc4a1d4d5fe5436afb5e708f035",
+    "anchors/assets/a08_tassel__printer_FrontLeftMedium__p6_scene.jpg": "6c02b63aff623ef7b2adcb25185c3c219e8bada2349f940b6c0f1acc290ad1f6",
+    "anchors/assets/a08_tassel__printer_FrontLeftMedium__p6_twin.jpg": "515d001a505ea79ac32c513b6cb15f1dc11733049af37053d2b07daeccf33574"
+  }
+}

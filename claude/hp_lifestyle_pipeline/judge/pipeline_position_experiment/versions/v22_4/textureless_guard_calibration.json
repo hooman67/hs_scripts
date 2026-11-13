@@ -1,0 +1,2516 @@
+{
+  "version": "v22.4-calibration-v1",
+  "scope": "fixed-position texture-poor fallback only; lower-fill remains affine-only",
+  "thresholds": {
+    "min_boundary_edge_coverage_2px": 0.46,
+    "min_internal_edge_coverage_2px": 0.63,
+    "min_highpass_ncc": 0.54,
+    "min_internal_edge_samples": 100
+  },
+  "counts": {
+    "real_attempts": 31,
+    "real_affine_pass": 23,
+    "real_affine_fail": 6,
+    "real_unlabeled_too_few_matches": 2,
+    "synthetic_attempts": 55,
+    "fixed_labeled_evaluation": 71,
+    "false_accepts": 0,
+    "false_rejects": 0
+  },
+  "real": [
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_3_3/run/pipeline/rows/cashmere__laptop_BackRightCloseUp__p1/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_BackRightCloseUp__p1",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "unverifiable",
+      "affine_reasons": [
+        "too_few_matches"
+      ],
+      "label": "unlabeled",
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.9096576615990375,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.8663212435233161,
+        "internal_distance_p90_px": 2.865000009536743,
+        "highpass_ncc": 0.47074267246047935,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_3_3/run/pipeline/rows/cashmere__laptop_BackRightCloseUp__p1/product_invariant_attempt_2.json",
+      "row": "cashmere__laptop_BackRightCloseUp__p1",
+      "attempt": 2,
+      "fixed_position": true,
+      "affine_verdict": "unverifiable",
+      "affine_reasons": [
+        "too_few_matches"
+      ],
+      "label": "unlabeled",
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.7935032265120857,
+        "boundary_distance_p90_px": 6.684999942779541,
+        "internal_edge_coverage_2px": 0.9626943005181348,
+        "internal_distance_p90_px": 1.3693000078201294,
+        "highpass_ncc": 0.4507010283714692,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/cashmere__laptop_FrontCloseUp__p1__relocation_demand/run/rows/cashmere__laptop_FrontCloseUp__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontCloseUp__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.5960564881428191,
+        "boundary_distance_p90_px": 106.96014404296875,
+        "internal_edge_coverage_2px": 0.9047935348167829,
+        "internal_distance_p90_px": 1.909999966621399,
+        "highpass_ncc": 0.5920895332978858,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/cashmere__laptop_FrontCloseUp__p1__retained_control/run/rows/cashmere__laptop_FrontCloseUp__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontCloseUp__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9312549960031974,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.857743828185542,
+        "internal_distance_p90_px": 4.234300136566162,
+        "highpass_ncc": 0.6155365838773577,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/cashmere__laptop_FrontWide__p1__relocation_demand/run/rows/cashmere__laptop_FrontWide__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontWide__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "fail",
+      "affine_reasons": [
+        "residual_p95"
+      ],
+      "label": "fail",
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": 8,
+        "boundary_edge_coverage_2px": 0.008832807570977918,
+        "boundary_distance_p90_px": 139.43020629882812,
+        "internal_edge_coverage_2px": 0.015809692671394798,
+        "internal_distance_p90_px": 161.39524841308594,
+        "highpass_ncc": 0.005062039418183045,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/cashmere__laptop_FrontWide__p1__relocation_demand/run/rows/cashmere__laptop_FrontWide__p1__relocation_demand/product_invariant_attempt_2.json",
+      "row": "cashmere__laptop_FrontWide__p1__relocation_demand",
+      "attempt": 2,
+      "fixed_position": true,
+      "affine_verdict": "fail",
+      "affine_reasons": [
+        "fixed_translation_x"
+      ],
+      "label": "fail",
+      "metrics": {
+        "translation_x_px": 4,
+        "translation_y_px": 7,
+        "boundary_edge_coverage_2px": 0.17055730809674027,
+        "boundary_distance_p90_px": 96.70370330810562,
+        "internal_edge_coverage_2px": 0.09382387706855792,
+        "internal_distance_p90_px": 105.68130722045899,
+        "highpass_ncc": 0.007736689819633634,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/cashmere__laptop_FrontWide__p1__retained_control/run/rows/cashmere__laptop_FrontWide__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontWide__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.8980021030494216,
+        "boundary_distance_p90_px": 2.3243000507354736,
+        "internal_edge_coverage_2px": 0.8557919621749409,
+        "internal_distance_p90_px": 2.865000009536743,
+        "highpass_ncc": 0.6373044120876084,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/magic__printer_FrontCloseUp__p1__relocation_demand/run/rows/magic__printer_FrontCloseUp__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontCloseUp__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.7778207483322054,
+        "boundary_distance_p90_px": 4.775000095367432,
+        "internal_edge_coverage_2px": 0.9484845239370248,
+        "internal_distance_p90_px": 1.909999966621399,
+        "highpass_ncc": 0.5873075268431713,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/magic__printer_FrontCloseUp__p1__retained_control/run/rows/magic__printer_FrontCloseUp__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontCloseUp__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.7351832157014406,
+        "boundary_distance_p90_px": 35.77316589355475,
+        "internal_edge_coverage_2px": 0.8070043911320552,
+        "internal_distance_p90_px": 13.369999885559082,
+        "highpass_ncc": 0.6205476683337573,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/magic__printer_FrontWide__p1__relocation_demand/run/rows/magic__printer_FrontWide__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontWide__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": -8,
+        "translation_y_px": 8,
+        "boundary_edge_coverage_2px": 0.09315589353612168,
+        "boundary_distance_p90_px": 75.44508361816406,
+        "internal_edge_coverage_2px": 0.08957332579824809,
+        "internal_distance_p90_px": 57.300048828125,
+        "highpass_ncc": 0.010821204562727381,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/magic__printer_FrontWide__p1__retained_control/run/rows/magic__printer_FrontWide__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontWide__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": -1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.6349809885931559,
+        "boundary_distance_p90_px": 4.775000095367432,
+        "internal_edge_coverage_2px": 0.8578694546482057,
+        "internal_distance_p90_px": 2.865000009536743,
+        "highpass_ncc": 0.5294860190580358,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_2_guard_failed_conflict/cashmere__laptop_FrontCloseUp__p1__relocation_demand/run/rows/cashmere__laptop_FrontCloseUp__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontCloseUp__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.9175770494715338,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.916251522196391,
+        "internal_distance_p90_px": 1.909999966621399,
+        "highpass_ncc": 0.6767251675027908,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_2_guard_failed_conflict/cashmere__laptop_FrontCloseUp__p1__retained_control/run/rows/cashmere__laptop_FrontCloseUp__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontCloseUp__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.8759214850341949,
+        "boundary_distance_p90_px": 2.738600015640259,
+        "internal_edge_coverage_2px": 0.8634451455773275,
+        "internal_distance_p90_px": 5.477200031280518,
+        "highpass_ncc": 0.6477481523316316,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_2_guard_failed_conflict/cashmere__laptop_FrontWide__p1__relocation_demand/run/rows/cashmere__laptop_FrontWide__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontWide__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": -8,
+        "boundary_edge_coverage_2px": 0.010935856992639327,
+        "boundary_distance_p90_px": 143.55201721191418,
+        "internal_edge_coverage_2px": 0.04358747044917258,
+        "internal_distance_p90_px": 120.33016967773438,
+        "highpass_ncc": 0.008976238618625697,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_2_guard_failed_conflict/cashmere__laptop_FrontWide__p1__retained_control/run/rows/cashmere__laptop_FrontWide__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontWide__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.9535226077812828,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.8618498817966903,
+        "internal_distance_p90_px": 2.738600015640259,
+        "highpass_ncc": 0.744348462454506,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_2_guard_failed_conflict/magic__printer_FrontCloseUp__p1__relocation_demand/run/rows/magic__printer_FrontCloseUp__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontCloseUp__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.46282509910084113,
+        "boundary_distance_p90_px": 42.02001953125,
+        "internal_edge_coverage_2px": 0.8837956517082575,
+        "internal_distance_p90_px": 2.865000009536743,
+        "highpass_ncc": 0.5528839312903874,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_2_guard_failed_conflict/magic__printer_FrontCloseUp__p1__retained_control/run/rows/magic__printer_FrontCloseUp__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontCloseUp__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.6538721840858551,
+        "boundary_distance_p90_px": 41.06501770019531,
+        "internal_edge_coverage_2px": 0.8911856056549213,
+        "internal_distance_p90_px": 2.738600015640259,
+        "highpass_ncc": 0.6113526382462491,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_2_guard_failed_conflict/magic__printer_FrontWide__p1__relocation_demand/run/rows/magic__printer_FrontWide__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontWide__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "fail",
+      "affine_reasons": [
+        "singular_max"
+      ],
+      "label": "fail",
+      "metrics": {
+        "translation_x_px": -8,
+        "translation_y_px": 8,
+        "boundary_edge_coverage_2px": 0.13751584283903676,
+        "boundary_distance_p90_px": 89.23914947509765,
+        "internal_edge_coverage_2px": 0.07798813224074597,
+        "internal_distance_p90_px": 63.030059814453125,
+        "highpass_ncc": -0.001377736385079351,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_2_guard_failed_conflict/magic__printer_FrontWide__p1__retained_control/run/rows/magic__printer_FrontWide__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontWide__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "fail",
+      "affine_reasons": [
+        "singular_min"
+      ],
+      "label": "fail",
+      "metrics": {
+        "translation_x_px": -7,
+        "translation_y_px": -7,
+        "boundary_edge_coverage_2px": 0.45627376425855515,
+        "boundary_distance_p90_px": 21.712200164794922,
+        "internal_edge_coverage_2px": 0.14241311104831875,
+        "internal_distance_p90_px": 78.31008911132812,
+        "highpass_ncc": -0.006988147507712342,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_2_guard_failed_conflict/magic__printer_FrontWide__p1__retained_control/run/rows/magic__printer_FrontWide__p1__retained_control/product_invariant_attempt_2.json",
+      "row": "magic__printer_FrontWide__p1__retained_control",
+      "attempt": 2,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": -1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.7598225602027884,
+        "boundary_distance_p90_px": 4.775000095367432,
+        "internal_edge_coverage_2px": 0.8844306301215032,
+        "internal_distance_p90_px": 3.718879938125645,
+        "highpass_ncc": 0.7145714302359436,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_failed_row_retest/magic__printer_FrontWide__p1__relocation_demand/run/rows/magic__printer_FrontWide__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontWide__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "fail",
+      "affine_reasons": [
+        "anisotropy",
+        "rotation",
+        "shear"
+      ],
+      "label": "fail",
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 8,
+        "boundary_edge_coverage_2px": 0.11596958174904944,
+        "boundary_distance_p90_px": 153.54025115966792,
+        "internal_edge_coverage_2px": 0.07770556654422153,
+        "internal_distance_p90_px": 127.01518249511719,
+        "highpass_ncc": 0.0021130114706106027,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_failed_row_retest/magic__printer_FrontWide__p1__relocation_demand/run/rows/magic__printer_FrontWide__p1__relocation_demand/product_invariant_attempt_2.json",
+      "row": "magic__printer_FrontWide__p1__relocation_demand",
+      "attempt": 2,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.5424588086185045,
+        "boundary_distance_p90_px": 31.514999389648438,
+        "internal_edge_coverage_2px": 0.8386549872845437,
+        "internal_distance_p90_px": 5.603600025177002,
+        "highpass_ncc": 0.6528606764302265,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/cashmere__laptop_FrontCloseUp__p1__relocation_demand/run/rows/cashmere__laptop_FrontCloseUp__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontCloseUp__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.6095567990052403,
+        "boundary_distance_p90_px": 4.775000095367432,
+        "internal_edge_coverage_2px": 0.9052917081811137,
+        "internal_distance_p90_px": 1.909999966621399,
+        "highpass_ncc": 0.5617094169765455,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/cashmere__laptop_FrontCloseUp__p1__retained_control/run/rows/cashmere__laptop_FrontCloseUp__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontCloseUp__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9104716227018386,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.8510461640650947,
+        "internal_distance_p90_px": 5.603600025177002,
+        "highpass_ncc": 0.6720498152813377,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/cashmere__laptop_FrontWide__p1__relocation_demand/run/rows/cashmere__laptop_FrontWide__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontWide__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": -8,
+        "translation_y_px": 8,
+        "boundary_edge_coverage_2px": 0.06414300736067298,
+        "boundary_distance_p90_px": 200.39363708496097,
+        "internal_edge_coverage_2px": 0.01787825059101655,
+        "internal_distance_p90_px": 135.61019897460938,
+        "highpass_ncc": 0.004588851081870392,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/cashmere__laptop_FrontWide__p1__retained_control/run/rows/cashmere__laptop_FrontWide__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "cashmere__laptop_FrontWide__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.7819137749737118,
+        "boundary_distance_p90_px": 2.865000009536743,
+        "internal_edge_coverage_2px": 0.8627364066193853,
+        "internal_distance_p90_px": 2.738600015640259,
+        "highpass_ncc": 0.7144845315393716,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/magic__printer_FrontCloseUp__p1__relocation_demand/run/rows/magic__printer_FrontCloseUp__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontCloseUp__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.6422701343904089,
+        "boundary_distance_p90_px": 40.397911071777344,
+        "internal_edge_coverage_2px": 0.9224590339509479,
+        "internal_distance_p90_px": 1.909999966621399,
+        "highpass_ncc": 0.5490000747424963,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/magic__printer_FrontCloseUp__p1__retained_control/run/rows/magic__printer_FrontCloseUp__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontCloseUp__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.6022430629411196,
+        "boundary_distance_p90_px": 41.89361572265625,
+        "internal_edge_coverage_2px": 0.9144264753132698,
+        "internal_distance_p90_px": 1.909999966621399,
+        "highpass_ncc": 0.5751854674343417,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/magic__printer_FrontWide__p1__relocation_demand/run/rows/magic__printer_FrontWide__p1__relocation_demand/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontWide__p1__relocation_demand",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": -8,
+        "boundary_edge_coverage_2px": 0.08132657372201098,
+        "boundary_distance_p90_px": 72.03937530517578,
+        "internal_edge_coverage_2px": 0.12037298671941227,
+        "internal_distance_p90_px": 54.43504333496094,
+        "highpass_ncc": 0.0014076132487441109,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/magic__printer_FrontWide__p1__retained_control/run/rows/magic__printer_FrontWide__p1__retained_control/product_invariant_attempt_1.json",
+      "row": "magic__printer_FrontWide__p1__retained_control",
+      "attempt": 1,
+      "fixed_position": false,
+      "affine_verdict": "fail",
+      "affine_reasons": [
+        "singular_min",
+        "anisotropy"
+      ],
+      "label": "fail",
+      "metrics": {
+        "translation_x_px": 6,
+        "translation_y_px": -5,
+        "boundary_edge_coverage_2px": 0.3521335023236164,
+        "boundary_distance_p90_px": 36.290008544921875,
+        "internal_edge_coverage_2px": 0.15089008194405198,
+        "internal_distance_p90_px": 73.53507995605469,
+        "highpass_ncc": 0.029426640174157248,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "real",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/magic__printer_FrontWide__p1__retained_control/run/rows/magic__printer_FrontWide__p1__retained_control/product_invariant_attempt_2.json",
+      "row": "magic__printer_FrontWide__p1__retained_control",
+      "attempt": 2,
+      "fixed_position": true,
+      "affine_verdict": "pass",
+      "affine_reasons": [],
+      "label": "pass",
+      "metrics": {
+        "translation_x_px": -1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.7027883396704689,
+        "boundary_distance_p90_px": 7.475679874420143,
+        "internal_edge_coverage_2px": 0.817745125741735,
+        "internal_distance_p90_px": 5.730000019073486,
+        "highpass_ncc": 0.7038603909704492,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "pass"
+    }
+  ],
+  "synthetic": [
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "identity",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9179700317182544,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 1.0,
+        "internal_distance_p90_px": 0.0,
+        "highpass_ncc": 0.980994748598075,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "allowed_translation_8px",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          8.0
+        ],
+        [
+          0.0,
+          1.0,
+          -8.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": -8,
+        "boundary_edge_coverage_2px": 0.9179700317182544,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 1.0,
+        "internal_distance_p90_px": 0.0,
+        "highpass_ncc": 0.980994748598075,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "brightness_shift",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9532976047249262,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.6362694300518135,
+        "internal_distance_p90_px": 8.003740119934085,
+        "highpass_ncc": 0.9835553310995003,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "excess_translation_12px",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          12.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.6267089576725363,
+        "boundary_distance_p90_px": 4.775000095367432,
+        "internal_edge_coverage_2px": 0.9253886010362694,
+        "internal_distance_p90_px": 1.909999966621399,
+        "highpass_ncc": 0.43752400711926925,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "scale_0.96",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.96,
+          0.0,
+          51.44000000000005
+        ],
+        [
+          -0.0,
+          0.96,
+          38.74000000000004
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -5,
+        "translation_y_px": -8,
+        "boundary_edge_coverage_2px": 0.07820190309526413,
+        "boundary_distance_p90_px": 24.829999923706055,
+        "internal_edge_coverage_2px": 0.3450777202072539,
+        "internal_distance_p90_px": 9.964300155639648,
+        "highpass_ncc": 0.0006392364964055039,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "scale_1.04",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.04,
+          0.0,
+          -51.44000000000005
+        ],
+        [
+          -0.0,
+          1.04,
+          -38.74000000000004
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": 3,
+        "boundary_edge_coverage_2px": 0.01946844580553429,
+        "boundary_distance_p90_px": 18.145000457763672,
+        "internal_edge_coverage_2px": 0.29430051813471503,
+        "internal_distance_p90_px": 16.235000610351562,
+        "highpass_ncc": -0.05067701413433792,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "rotation_2deg",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.9993908270190958,
+          0.03489949670250097,
+          -33.01676610292934
+        ],
+        [
+          -0.03489949670250097,
+          0.9993908270190958,
+          45.470736791422
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -8,
+        "translation_y_px": 7,
+        "boundary_edge_coverage_2px": 0.19063764628677676,
+        "boundary_distance_p90_px": 20.05500030517578,
+        "internal_edge_coverage_2px": 0.45181347150259066,
+        "internal_distance_p90_px": 9.550000190734863,
+        "highpass_ncc": 0.017049127201510635,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "rotation_minus2deg",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.9993908270190958,
+          -0.03489949670250097,
+          34.58355900981503
+        ],
+        [
+          0.03489949670250097,
+          0.9993908270190958,
+          -44.290768727410494
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 7,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.14984140872798862,
+        "boundary_distance_p90_px": 16.235000610351562,
+        "internal_edge_coverage_2px": 0.4694300518134715,
+        "internal_distance_p90_px": 13.957039833068855,
+        "highpass_ncc": -0.003139590300106397,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "shear_0.04",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.03999999910593033,
+          -38.7400016784668
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 3,
+        "translation_y_px": 1,
+        "boundary_edge_coverage_2px": 0.5802253089795472,
+        "boundary_distance_p90_px": 10.505000114440918,
+        "internal_edge_coverage_2px": 0.6849740932642487,
+        "internal_distance_p90_px": 5.902740001678473,
+        "highpass_ncc": 0.41970716497213173,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "anisotropic_1.04_0.96",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0399999618530273,
+          0.0,
+          -51.439998626708984
+        ],
+        [
+          0.0,
+          0.9599999785423279,
+          38.7400016784668
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": -2,
+        "boundary_edge_coverage_2px": 0.02449961719348135,
+        "boundary_distance_p90_px": 19.100000381469727,
+        "internal_edge_coverage_2px": 0.28186528497409324,
+        "internal_distance_p90_px": 14.324999809265137,
+        "highpass_ncc": -0.014167517307769063,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_BackRightCloseUp__p1",
+      "transform": "solid_dark_product",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.952203871814503,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.0,
+        "internal_distance_p90_px": 53.3536376953125,
+        "highpass_ncc": 0.5994971115524091,
+        "source_boundary_samples": 9143,
+        "source_internal_edge_samples": 965,
+        "source_appearance_samples": 48128
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "identity",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9374722444266809,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 1.0,
+        "internal_distance_p90_px": 0.0,
+        "highpass_ncc": 0.993647582579538,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "allowed_translation_8px",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          8.0
+        ],
+        [
+          0.0,
+          1.0,
+          -8.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": -8,
+        "boundary_edge_coverage_2px": 0.9374722444266809,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 1.0,
+        "internal_distance_p90_px": 0.0,
+        "highpass_ncc": 0.993647582579538,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "brightness_shift",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9667821298516742,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.8266356692128861,
+        "internal_distance_p90_px": 6.432199954986572,
+        "highpass_ncc": 0.9909567658118061,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "excess_translation_12px",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          12.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.6296296296296297,
+        "boundary_distance_p90_px": 4.775000095367432,
+        "internal_edge_coverage_2px": 0.6672201926270342,
+        "internal_distance_p90_px": 3.2792999744415283,
+        "highpass_ncc": 0.2865623433853921,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "scale_0.96",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.96,
+          0.0,
+          52.22000000000005
+        ],
+        [
+          -0.0,
+          0.96,
+          37.88000000000003
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 6,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.10302868816058265,
+        "boundary_distance_p90_px": 25.78499984741211,
+        "internal_edge_coverage_2px": 0.34971770176021255,
+        "internal_distance_p90_px": 13.531499862670898,
+        "highpass_ncc": 0.023112812791271812,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "scale_1.04",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.04,
+          0.0,
+          -52.22000000000005
+        ],
+        [
+          -0.0,
+          1.04,
+          -37.88000000000003
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -6,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.12043698374633627,
+        "boundary_distance_p90_px": 22.920000076293945,
+        "internal_edge_coverage_2px": 0.3271338425772169,
+        "internal_distance_p90_px": 19.100000381469727,
+        "highpass_ncc": 0.041054241202686664,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "rotation_2deg",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.9993908270190958,
+          0.03489949670250097,
+          -32.254548050697935
+        ],
+        [
+          -0.03489949670250097,
+          0.9993908270190958,
+          46.13817975803133
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.21449507061017853,
+        "boundary_distance_p90_px": 18.145000457763672,
+        "internal_edge_coverage_2px": 0.42571681611867596,
+        "internal_distance_p90_px": 12.414999961853027,
+        "highpass_ncc": 0.07787748093752658,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "rotation_minus2deg",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.9993908270190958,
+          -0.03489949670250097,
+          33.8450987038389
+        ],
+        [
+          0.03489949670250097,
+          0.9993908270190958,
+          -44.9844061321987
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": -2,
+        "boundary_edge_coverage_2px": 0.21653788080646594,
+        "boundary_distance_p90_px": 18.145000457763672,
+        "internal_edge_coverage_2px": 0.3999778589615853,
+        "internal_distance_p90_px": 11.333600044250488,
+        "highpass_ncc": 0.05458197349304408,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "shear_0.04",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.03999999910593033,
+          -37.880001068115234
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 2,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.5453415045741185,
+        "boundary_distance_p90_px": 12.864399909973145,
+        "internal_edge_coverage_2px": 0.6098195505369202,
+        "internal_distance_p90_px": 6.432199954986572,
+        "highpass_ncc": 0.3512342668734924,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "anisotropic_1.04_0.96",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0399999618530273,
+          0.0,
+          -52.220001220703125
+        ],
+        [
+          0.0,
+          0.9599999785423279,
+          37.880001068115234
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -6,
+        "translation_y_px": 2,
+        "boundary_edge_coverage_2px": 0.08073541167066348,
+        "boundary_distance_p90_px": 22.920000076293945,
+        "internal_edge_coverage_2px": 0.38060445034872137,
+        "internal_distance_p90_px": 13.369999885559082,
+        "highpass_ncc": 0.03462883886387703,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontCloseUp__p1",
+      "transform": "solid_dark_product",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -1,
+        "translation_y_px": -1,
+        "boundary_edge_coverage_2px": 0.944932942534861,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.0,
+        "internal_distance_p90_px": 310.5886688232422,
+        "highpass_ncc": 0.44621503467522156,
+        "source_boundary_samples": 11259,
+        "source_internal_edge_samples": 18066,
+        "source_appearance_samples": 79510
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "identity",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.923869610935857,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 1.0,
+        "internal_distance_p90_px": 0.0,
+        "highpass_ncc": 0.9941068028976698,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "allowed_translation_8px",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          8.0
+        ],
+        [
+          0.0,
+          1.0,
+          -8.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": -8,
+        "boundary_edge_coverage_2px": 0.923869610935857,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 1.0,
+        "internal_distance_p90_px": 0.0,
+        "highpass_ncc": 0.9941068028976698,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "brightness_shift",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9533123028391167,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.8500295508274232,
+        "internal_distance_p90_px": 4.107900142669678,
+        "highpass_ncc": 0.9893356008937897,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "excess_translation_12px",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          12.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.6094637223974764,
+        "boundary_distance_p90_px": 4.775000095367432,
+        "internal_edge_coverage_2px": 0.7273936170212766,
+        "internal_distance_p90_px": 3.2792999744415283,
+        "highpass_ncc": 0.18538306887192105,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "scale_0.96",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.96,
+          0.0,
+          40.60000000000004
+        ],
+        [
+          -0.0,
+          0.96,
+          39.20000000000003
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 2,
+        "translation_y_px": -2,
+        "boundary_edge_coverage_2px": 0.045636172450052574,
+        "boundary_distance_p90_px": 12.414999961853027,
+        "internal_edge_coverage_2px": 0.6555851063829787,
+        "internal_distance_p90_px": 5.062900066375732,
+        "highpass_ncc": 0.0734726887383912,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "scale_1.04",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.04,
+          0.0,
+          -40.60000000000004
+        ],
+        [
+          -0.0,
+          1.04,
+          -39.20000000000003
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": 7,
+        "boundary_edge_coverage_2px": 0.4792849631966351,
+        "boundary_distance_p90_px": 17.190000534057617,
+        "internal_edge_coverage_2px": 0.462322695035461,
+        "internal_distance_p90_px": 8.054300308227539,
+        "highpass_ncc": 0.08137866247031943,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "rotation_2deg",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.9993908270190958,
+          0.03489949670250097,
+          -33.58319619283315
+        ],
+        [
+          -0.03489949670250097,
+          0.9993908270190958,
+          36.01997867432464
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.3638275499474238,
+        "boundary_distance_p90_px": 8.215800285339355,
+        "internal_edge_coverage_2px": 0.6656323877068558,
+        "internal_distance_p90_px": 5.477200031280518,
+        "highpass_ncc": 0.17967355261795812,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "rotation_minus2deg",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.9993908270190958,
+          -0.03489949670250097,
+          34.819817344068746
+        ],
+        [
+          0.03489949670250097,
+          0.9993908270190958,
+          -34.82599963175233
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.3562565720294427,
+        "boundary_distance_p90_px": 8.595000267028809,
+        "internal_edge_coverage_2px": 0.66548463356974,
+        "internal_distance_p90_px": 5.730000019073486,
+        "highpass_ncc": 0.17694941322753577,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "shear_0.04",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.03999999910593033,
+          -39.20000076293945
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.6698212407991588,
+        "boundary_distance_p90_px": 6.432199954986572,
+        "internal_edge_coverage_2px": 0.8395390070921985,
+        "internal_distance_p90_px": 2.738600015640259,
+        "highpass_ncc": 0.4394926469130373,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "anisotropic_1.04_0.96",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0399999618530273,
+          0.0,
+          -40.599998474121094
+        ],
+        [
+          0.0,
+          0.9599999785423279,
+          39.20000076293945
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 6,
+        "translation_y_px": -7,
+        "boundary_edge_coverage_2px": 0.3819137749737119,
+        "boundary_distance_p90_px": 17.190000534057617,
+        "internal_edge_coverage_2px": 0.5743203309692672,
+        "internal_distance_p90_px": 7.639999866485596,
+        "highpass_ncc": 0.06824573287879639,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "cashmere__laptop_FrontWide__p1",
+      "transform": "solid_dark_product",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -1,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9444794952681388,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.0,
+        "internal_distance_p90_px": 133.70221405029298,
+        "highpass_ncc": 0.376647075238579,
+        "source_boundary_samples": 4755,
+        "source_internal_edge_samples": 6768,
+        "source_appearance_samples": 14897
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "identity",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.8868800154693995,
+        "boundary_distance_p90_px": 2.3243000507354736,
+        "internal_edge_coverage_2px": 1.0,
+        "internal_distance_p90_px": 0.0,
+        "highpass_ncc": 0.9887173089038067,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "allowed_translation_8px",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          8.0
+        ],
+        [
+          0.0,
+          1.0,
+          -8.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": -8,
+        "boundary_edge_coverage_2px": 0.8868800154693995,
+        "boundary_distance_p90_px": 2.3243000507354736,
+        "internal_edge_coverage_2px": 1.0,
+        "internal_distance_p90_px": 0.0,
+        "highpass_ncc": 0.9887173089038067,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "brightness_shift",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9318379580392536,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.7040805397879405,
+        "internal_distance_p90_px": 16.235000610351562,
+        "highpass_ncc": 0.9868668527119593,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "excess_translation_12px",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          12.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.5752682973992072,
+        "boundary_distance_p90_px": 4.775000095367432,
+        "internal_edge_coverage_2px": 0.6763414372924922,
+        "internal_distance_p90_px": 3.819999933242798,
+        "highpass_ncc": 0.4100083596000869,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "scale_0.96",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.96,
+          0.0,
+          45.00000000000004
+        ],
+        [
+          -0.0,
+          0.96,
+          32.120000000000026
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": -3,
+        "boundary_edge_coverage_2px": 0.002030358696703084,
+        "boundary_distance_p90_px": 27.69499969482422,
+        "internal_edge_coverage_2px": 0.18742636821248795,
+        "internal_distance_p90_px": 20.05500030517578,
+        "highpass_ncc": 0.03338119553276434,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "scale_1.04",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.04,
+          0.0,
+          -45.00000000000004
+        ],
+        [
+          -0.0,
+          1.04,
+          -32.120000000000026
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -1,
+        "translation_y_px": 2,
+        "boundary_edge_coverage_2px": 0.03383931161171807,
+        "boundary_distance_p90_px": 23.875,
+        "internal_edge_coverage_2px": 0.17842990253828853,
+        "internal_distance_p90_px": 21.010000228881836,
+        "highpass_ncc": 0.027277657666325433,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "rotation_2deg",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.9993908270190958,
+          0.03489949670250097,
+          -27.33897624859101
+        ],
+        [
+          -0.03489949670250097,
+          0.9993908270190958,
+          39.7510996939797
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": -5,
+        "boundary_edge_coverage_2px": 0.18157207773373296,
+        "boundary_distance_p90_px": 18.145000457763672,
+        "internal_edge_coverage_2px": 0.2431187747670558,
+        "internal_distance_p90_px": 17.190000534057617,
+        "highpass_ncc": 0.041973904062642516,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "rotation_minus2deg",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.9993908270190958,
+          -0.03489949670250097,
+          28.709615455625546
+        ],
+        [
+          0.03489949670250097,
+          0.9993908270190958,
+          -38.772767886647486
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": -3,
+        "boundary_edge_coverage_2px": 0.15537078217151698,
+        "boundary_distance_p90_px": 16.235000610351562,
+        "internal_edge_coverage_2px": 0.23530041769304916,
+        "internal_distance_p90_px": 16.235000610351562,
+        "highpass_ncc": -0.010833692124104228,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "shear_0.04",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.03999999910593033,
+          -32.119998931884766
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 7,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.46678913274678524,
+        "boundary_distance_p90_px": 16.235000610351562,
+        "internal_edge_coverage_2px": 0.5838063617864411,
+        "internal_distance_p90_px": 11.460000038146973,
+        "highpass_ncc": 0.327554692767786,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "anisotropic_1.04_0.96",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0399999618530273,
+          0.0,
+          -45.0
+        ],
+        [
+          0.0,
+          0.9599999785423279,
+          32.119998931884766
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -8,
+        "translation_y_px": -4,
+        "boundary_edge_coverage_2px": 0.04814850623610171,
+        "boundary_distance_p90_px": 22.920000076293945,
+        "internal_edge_coverage_2px": 0.12380850380207775,
+        "internal_distance_p90_px": 25.78499984741211,
+        "highpass_ncc": -0.0053483994299217096,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontCloseUp__p1",
+      "transform": "solid_dark_product",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -1,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9604563472880209,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.0,
+        "internal_distance_p90_px": 237.4996704101562,
+        "highpass_ncc": 0.29349520067537616,
+        "source_boundary_samples": 10343,
+        "source_internal_edge_samples": 9337,
+        "source_appearance_samples": 82891
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "identity",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.8948035487959443,
+        "boundary_distance_p90_px": 2.3243000507354736,
+        "internal_edge_coverage_2px": 1.0,
+        "internal_distance_p90_px": 0.0,
+        "highpass_ncc": 0.9887500525230348,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "allowed_translation_8px",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          8.0
+        ],
+        [
+          0.0,
+          1.0,
+          -8.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": -8,
+        "boundary_edge_coverage_2px": 0.8948035487959443,
+        "boundary_distance_p90_px": 2.3243000507354736,
+        "internal_edge_coverage_2px": 1.0,
+        "internal_distance_p90_px": 0.0,
+        "highpass_ncc": 0.9887500525230348,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "brightness_shift",
+      "fixed_position": true,
+      "label": "pass",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9585973806506126,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.7471037016106244,
+        "internal_distance_p90_px": 6.684999942779541,
+        "highpass_ncc": 0.9861561985188406,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "pass"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "excess_translation_12px",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          12.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 8,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.5722433460076045,
+        "boundary_distance_p90_px": 4.775000095367432,
+        "internal_edge_coverage_2px": 0.7278892342469624,
+        "internal_distance_p90_px": 3.819999933242798,
+        "highpass_ncc": 0.4104691986000142,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "scale_0.96",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.96,
+          0.0,
+          36.62000000000003
+        ],
+        [
+          -0.0,
+          0.96,
+          36.74000000000003
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 3,
+        "translation_y_px": 6,
+        "boundary_edge_coverage_2px": 0.07858048162230671,
+        "boundary_distance_p90_px": 17.190000534057617,
+        "internal_edge_coverage_2px": 0.49307714043515116,
+        "internal_distance_p90_px": 10.505000114440918,
+        "highpass_ncc": 0.18288378569710217,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "scale_1.04",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.04,
+          0.0,
+          -36.62000000000003
+        ],
+        [
+          -0.0,
+          1.04,
+          -36.74000000000003
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -8,
+        "translation_y_px": -5,
+        "boundary_edge_coverage_2px": 0.2414448669201521,
+        "boundary_distance_p90_px": 15.279999732971191,
+        "internal_edge_coverage_2px": 0.5103136479231422,
+        "internal_distance_p90_px": 10.125800132751465,
+        "highpass_ncc": 0.21561429095280685,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "rotation_2deg",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.9993908270190958,
+          0.03489949670250097,
+          -31.497489857229308
+        ],
+        [
+          -0.03489949670250097,
+          0.9993908270190958,
+          32.51001461410018
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 1,
+        "translation_y_px": -2,
+        "boundary_edge_coverage_2px": 0.37135614702154623,
+        "boundary_distance_p90_px": 8.595000267028809,
+        "internal_edge_coverage_2px": 0.44306301215032495,
+        "internal_distance_p90_px": 7.639999866485596,
+        "highpass_ncc": 0.04272914062271271,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "rotation_minus2deg",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          0.9993908270190958,
+          -0.03489949670250097,
+          32.61288558526497
+        ],
+        [
+          0.03489949670250097,
+          0.9993908270190958,
+          -31.390963848179094
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -1,
+        "translation_y_px": 2,
+        "boundary_edge_coverage_2px": 0.3741022391212505,
+        "boundary_distance_p90_px": 8.595000267028809,
+        "internal_edge_coverage_2px": 0.3998304605820853,
+        "internal_distance_p90_px": 7.639999866485596,
+        "highpass_ncc": 0.06629202015954382,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "shear_0.04",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.03999999910593033,
+          -36.7400016784668
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -3,
+        "translation_y_px": 1,
+        "boundary_edge_coverage_2px": 0.5811153358681875,
+        "boundary_distance_p90_px": 8.595000267028809,
+        "internal_edge_coverage_2px": 0.6897428652161628,
+        "internal_distance_p90_px": 8.215800285339355,
+        "highpass_ncc": 0.3316519855860186,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "anisotropic_1.04_0.96",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0399999618530273,
+          0.0,
+          -36.619998931884766
+        ],
+        [
+          0.0,
+          0.9599999785423279,
+          36.7400016784668
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": -8,
+        "translation_y_px": 6,
+        "boundary_edge_coverage_2px": 0.21630756231516687,
+        "boundary_distance_p90_px": 16.772880554199197,
+        "internal_edge_coverage_2px": 0.5510031082226617,
+        "internal_distance_p90_px": 9.550000190734863,
+        "highpass_ncc": 0.20231723397135992,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    },
+    {
+      "kind": "synthetic",
+      "fixture": "magic__printer_FrontWide__p1",
+      "transform": "solid_dark_product",
+      "fixed_position": true,
+      "label": "fail",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "metrics": {
+        "translation_x_px": 0,
+        "translation_y_px": 0,
+        "boundary_edge_coverage_2px": 0.9638783269961977,
+        "boundary_distance_p90_px": 1.909999966621399,
+        "internal_edge_coverage_2px": 0.0,
+        "internal_distance_p90_px": 112.69015502929688,
+        "highpass_ncc": 0.3149218871121746,
+        "source_boundary_samples": 4734,
+        "source_internal_edge_samples": 3539,
+        "source_appearance_samples": 16859
+      },
+      "textureless_prediction": "fail"
+    }
+  ]
+}

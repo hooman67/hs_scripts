@@ -1,0 +1,283 @@
+{
+  "version": "v5-r3-independent-structural-provenance-review-v1",
+  "generated_at": "2026-10-27T14:43:34-07:00",
+  "status": "complete_current_r3_lineage_human_creative_review_pending",
+  "launchable": false,
+  "scope": {
+    "manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/manifest.json",
+    "manifest_sha256": "8ff485ef7078c6cb9ec950885bbdc0c1bd50a0ca4933fefca4d541c8857e3c8c",
+    "system_prompt_sha256": "45f20777724b4497abbeed9c7dd17544c43c1588d48ec04d87198c8ee181c90a",
+    "output_schema_sha256": "307811a5c24286c5a47987b6e3dc9c8c603d8519625bef6664507b66f4d15158",
+    "camera_profiles_sha256": "59b5e2b322dcd74c21432e772f3dd11513f71c182f6114b99b15e009dbeea68b",
+    "model_deployment": "gpt-5.5",
+    "current_lineage_only": true,
+    "excluded_experiments": [
+      "r1",
+      "r2"
+    ],
+    "case_count": 8,
+    "candidate_count": 160,
+    "model_calls_made_by_review": 0,
+    "generated_output_mutations": 0
+  },
+  "method": [
+    "Pinned each case to the attempt whose system-prompt hash equals the current manifest provenance.",
+    "Re-ran the deterministic V5 validator in memory against each normalized output.",
+    "Reviewed document-specific evidence, component scores, source conflicts, C-Tech references and declared edits, and camera feasibility.",
+    "Recorded only structural, provenance, scoring, C-Tech classification, and camera issues; creative quality remains for root human review."
+  ],
+  "summary": {
+    "validator_passed_cases": 3,
+    "validator_rejected_cases": 5,
+    "independent_finding_count": 14,
+    "independent_high_severity_count": 6,
+    "independent_medium_severity_count": 8,
+    "additional_camera_findings_beyond_validator": 0,
+    "conclusion": "Every case needs human review. Five are already mechanically rejected; all eight have at least one independent provenance, scoring, or C-Tech issue."
+  },
+  "cases": {
+    "elitebook__laptop_FrontRightCloseUp": {
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/elitebook__laptop_FrontRightCloseUp/sample_001.json",
+      "request_sha256": "88d09b9da9a5aee8744b414fa34793410022cbd632c7d6828de52525a30452ee",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/elitebook__laptop_FrontRightCloseUp__sample_001.json",
+      "normalized_output_file_sha256": "9038794316d112a138efba9c08c1de281d13514f4b271e7e9d87b2baa65c62e5",
+      "validator_passed": true,
+      "validator_errors": [],
+      "camera_registry_match": true,
+      "additional_camera_findings": [],
+      "independent_findings": [
+        {
+          "finding_id": "elitebook-close-ctech-1",
+          "severity": "medium",
+          "category": "ctech_relationship_mismatch",
+          "candidate_ids": ["p7", "p16"],
+          "detail": "Both are labeled minimal_camera_edit while adding lighting not stated by the selected reference. P7 adds soft daylight to CT04; p16 adds natural light to CT07. Their edit summaries describe the added lighting as retained reference content.",
+          "review_action": "Re-evaluate as close adaptations or lower the C-Tech proximity claims before acceptance."
+        }
+      ]
+    },
+    "elitebook__laptop_FrontRightWide": {
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/elitebook__laptop_FrontRightWide/sample_003.json",
+      "request_sha256": "e35fd2187c8a433e60461cc14b186d17f56b5337f23efa2943656eeb2d2894ab",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/elitebook__laptop_FrontRightWide__sample_003.json",
+      "normalized_output_file_sha256": "d7d861582b6f829cc76e2a46440d0dd3c2e9f905a51f4169b3ac48acaa820483",
+      "validator_passed": false,
+      "validator_errors": [
+        {"code": "literal_background_budget", "candidate_id": "p20"},
+        {"code": "background_signature_undercount", "candidate_id": "p20"}
+      ],
+      "camera_registry_match": true,
+      "additional_camera_findings": [],
+      "independent_findings": [
+        {
+          "finding_id": "elitebook-wide-score-1",
+          "severity": "high",
+          "category": "source_score_inflation",
+          "candidate_ids": ["p4", "p5"],
+          "detail": "Each document awards use_context=20 although the final prose shows generic stationery in a home workspace or office and does not express the cited calls/content/apps workflow or an audience. The rubric's generic-stationery calibration supports broad context credit, not full workflow-context credit.",
+          "review_action": "Rescore both document groups from the final visible text."
+        },
+        {
+          "finding_id": "elitebook-wide-ctech-1",
+          "severity": "medium",
+          "category": "ctech_relationship_mismatch",
+          "candidate_ids": ["p3", "p14", "p16"],
+          "detail": "The declared minimal edits contain additions: p3 adds a notebook absent from CT13, p14 adds comfortable seating and leafy plants absent from CT08, and p16 explicitly adds soft natural light absent from CT11.",
+          "review_action": "Reclassify or lower the C-Tech proximity claims before acceptance."
+        }
+      ]
+    },
+    "deskjet_2955__printer_FrontRightCloseUp": {
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/deskjet_2955__printer_FrontRightCloseUp/sample_003.json",
+      "request_sha256": "604a07c0bf4dab48e318983a46674f11a94a55268ea6ecd04262fb2c7ed2b6c5",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/deskjet_2955__printer_FrontRightCloseUp__sample_003.json",
+      "normalized_output_file_sha256": "6e361264032c172a8cf63161780c096de920bdac4887e1987611bdee74fb09dd",
+      "validator_passed": true,
+      "validator_errors": [],
+      "camera_registry_match": true,
+      "additional_camera_findings": [],
+      "independent_findings": [
+        {
+          "finding_id": "deskjet-close-score-1",
+          "severity": "high",
+          "category": "source_score_inflation",
+          "candidate_ids": ["p8"],
+          "detail": "A generic stack of papers receives activity=20, materials=15, and use_context=20 from each document for a score of 85. The explanation itself calls the papers a broad stand-in; the rubric calibration assigns generic stationery only broad activity/material/context credit.",
+          "review_action": "Rescore both document groups using the generic-material calibration."
+        },
+        {
+          "finding_id": "deskjet-close-ctech-1",
+          "severity": "medium",
+          "category": "ctech_relationship_mismatch",
+          "candidate_ids": ["p14", "p16", "p19"],
+          "detail": "The minimal-edit claims make substantive changes: p14 substitutes a sketchbook for CT09's generic design materials and adds warm natural light; p16 adds wooden-table material, soft natural light, and inviting atmosphere to CT11; p19 is attributed to CT03 but uses CT01-like open-office, desk, and polished-inviting wording instead of CT03's defining workstation scene.",
+          "review_action": "Re-evaluate reference IDs and relationships before acceptance."
+        }
+      ]
+    },
+    "deskjet_2955__printer_FrontRightWide": {
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/deskjet_2955__printer_FrontRightWide/sample_001.json",
+      "request_sha256": "ac9b0b9641832528bf390cbdbcb1f38882bdb6d1923dcf846ffb73940bfb6899",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/deskjet_2955__printer_FrontRightWide__sample_001.json",
+      "normalized_output_file_sha256": "ed2e4981fd202d2c7f0e325be9e6bf1d16f0c2925ded571b9193be343edbcaa0",
+      "validator_passed": false,
+      "validator_errors": [
+        {"code": "evidence_quote", "candidate_id": null},
+        {"code": "evidence_quote", "candidate_id": null},
+        {"code": "surface_not_literal", "candidate_id": "p1"},
+        {"code": "surface_not_literal", "candidate_id": "p5"},
+        {"code": "literal_background_budget", "candidate_id": "p20"},
+        {"code": "background_signature_undercount", "candidate_id": "p20"}
+      ],
+      "camera_registry_match": true,
+      "additional_camera_findings": [],
+      "independent_findings": [
+        {
+          "finding_id": "deskjet-wide-score-1",
+          "severity": "high",
+          "category": "invented_place_score_inflation",
+          "candidate_ids": ["p9", "p10", "p11"],
+          "detail": "Classroom, library, and study-room scenes each score 57.5 by awarding adjacent setting and context credit from home-learning evidence. The prompt contract explicitly says home learning does not establish classrooms or libraries; these candidates correctly declare creative_departure but their components still credit the invented institution.",
+          "review_action": "Remove unsupported setting/context credit and rescore from only the surviving worksheet/form materials."
+        },
+        {
+          "finding_id": "deskjet-wide-ctech-1",
+          "severity": "medium",
+          "category": "ctech_relationship_mismatch",
+          "candidate_ids": ["p17"],
+          "detail": "P17 declares a minimal edit of CT03 but adds CT02-style repeating workstations, framed artwork, and expansive-floor-plan language that are absent from CT03.",
+          "review_action": "Treat as a broader adaptation or select the matching reference."
+        }
+      ]
+    },
+    "laserjet__printer_FrontRightCloseUp": {
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/laserjet__printer_FrontRightCloseUp/sample_001.json",
+      "request_sha256": "0a9bb05aa472e05b6cf279d64f686f1970113259bb0fb95f10a54810b14ad831",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/laserjet__printer_FrontRightCloseUp__sample_001.json",
+      "normalized_output_file_sha256": "e9b2560b4388971c9a09837d53517b398e693057dd41afc0fb272e9e92991bf7",
+      "validator_passed": false,
+      "validator_errors": [
+        {"code": "literal_background_budget", "candidate_id": "p11"},
+        {"code": "background_signature_undercount", "candidate_id": "p11"}
+      ],
+      "camera_registry_match": true,
+      "additional_camera_findings": [],
+      "independent_findings": [
+        {
+          "finding_id": "laserjet-close-score-1",
+          "severity": "high",
+          "category": "source_score_inflation",
+          "candidate_ids": ["p5", "p7"],
+          "detail": "Generic business papers receive near-explicit workflow credit. P5 scores 87.5 and p7 scores 75 even though neither final text names a task; p7 also gives source_messaging materials=20 for generic papers and both give use_context=20 without expressing a managed workteam workflow.",
+          "review_action": "Apply the generic-paper calibration and rescore activity, materials, and use context."
+        },
+        {
+          "finding_id": "laserjet-close-ctech-1",
+          "severity": "medium",
+          "category": "ctech_relationship_mismatch",
+          "candidate_ids": ["p8", "p18"],
+          "detail": "P8 explicitly adds a notebook to CT01 while declaring minimal_camera_edit. P18 adds warm soft lighting to CT11, whose normalized reference contains no lighting treatment.",
+          "review_action": "Reclassify as broader adaptations or reduce the proximity claims."
+        }
+      ]
+    },
+    "laserjet__printer_FrontRightWide": {
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/laserjet__printer_FrontRightWide/sample_001.json",
+      "request_sha256": "bf0d4ead47cab244bac83c3d231b9e01c2170b59d39e1331670051e44b15c999",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/laserjet__printer_FrontRightWide__sample_001.json",
+      "normalized_output_file_sha256": "9331ab35c04233c1a5abaa347206b43e8e7655c696ad4026dca5932f3b818b1b",
+      "validator_passed": false,
+      "validator_errors": [
+        {"code": "literal_background_budget", "candidate_id": "p2"},
+        {"code": "background_signature_undercount", "candidate_id": "p2"},
+        {"code": "collection_used_as_surface", "candidate_id": "p4"},
+        {"code": "surface_not_literal", "candidate_id": "p4"},
+        {"code": "collection_used_as_surface", "candidate_id": "p8"},
+        {"code": "surface_not_literal", "candidate_id": "p8"},
+        {"code": "literal_background_budget", "candidate_id": "p9"},
+        {"code": "background_signature_undercount", "candidate_id": "p9"},
+        {"code": "background_signature_undercount", "candidate_id": "p15"},
+        {"code": "surface_not_literal", "candidate_id": "p15"},
+        {"code": "literal_background_budget", "candidate_id": "p17"},
+        {"code": "background_signature_undercount", "candidate_id": "p17"},
+        {"code": "literal_background_budget", "candidate_id": "p19"},
+        {"code": "background_signature_undercount", "candidate_id": "p19"}
+      ],
+      "camera_registry_match": true,
+      "additional_camera_findings": [],
+      "independent_findings": [
+        {
+          "finding_id": "laserjet-wide-ctech-1",
+          "severity": "medium",
+          "category": "ctech_relationship_mismatch",
+          "candidate_ids": ["p19"],
+          "detail": "P19 declares minimal_camera_edit while explicitly adding a book and coffee cup to CT17. These are specific new props rather than deletion, grammar, or a singular-support adjustment.",
+          "review_action": "Treat as a close adaptation before acceptance."
+        }
+      ]
+    },
+    "cashmere__laptop_FrontRightCloseUp": {
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/cashmere__laptop_FrontRightCloseUp/sample_001.json",
+      "request_sha256": "4ad42a07d1685cb534ade3f63a2425ac7fba0e4e5552d499487eaa73611a662c",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/cashmere__laptop_FrontRightCloseUp__sample_001.json",
+      "normalized_output_file_sha256": "bafbfdfea24f7146cf68d0acceb453c933aeacf6f935d79541a5e68e8f6e1477",
+      "validator_passed": true,
+      "validator_errors": [],
+      "camera_registry_match": true,
+      "additional_camera_findings": [],
+      "independent_findings": [
+        {
+          "finding_id": "cashmere-close-score-1",
+          "severity": "high",
+          "category": "invented_place_score_inflation",
+          "candidate_ids": ["p11", "p12", "p13"],
+          "detail": "A creator audience is used to award smart_brief setting=20 for a specific creative office, while generic enterprise/work-anywhere language earns source_messaging setting=10 and use_context=15. Neither document explicitly establishes a creative-studio place, and the tight prose shows no creative task or material. Scores of 32.5 overstate what survives in the text.",
+          "review_action": "Use adjacent-setting and broad-context anchors and rescore both documents."
+        },
+        {
+          "finding_id": "cashmere-close-ctech-1",
+          "severity": "medium",
+          "category": "ctech_relationship_mismatch",
+          "candidate_ids": ["p10", "p12", "p14"],
+          "detail": "The minimal-edit claims include substantive additions or substitutions: p10 replaces CT16's couch-centered support with a table, p12 adds warm light and lived-in styling absent from CT09, and p14 adds warm natural light plus casual/inviting atmosphere absent from CT08.",
+          "review_action": "Reclassify as close adaptations or lower the proximity scores."
+        }
+      ]
+    },
+    "cashmere__laptop_FrontRightWide": {
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/cashmere__laptop_FrontRightWide/sample_001.json",
+      "request_sha256": "529e1e0aa80e1bb5a92c76820a234599a6472f67a1a1a9f9c7a9942a6b554d21",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/cashmere__laptop_FrontRightWide__sample_001.json",
+      "normalized_output_file_sha256": "d19961ee6508333cf84da6741de7fad061ac26e8bb2eee1fbbb4685928708fa3",
+      "validator_passed": false,
+      "validator_errors": [
+        {"code": "literal_background_budget", "candidate_id": "p4"},
+        {"code": "background_signature_undercount", "candidate_id": "p4"},
+        {"code": "literal_background_budget", "candidate_id": "p7"},
+        {"code": "background_signature_undercount", "candidate_id": "p7"},
+        {"code": "literal_background_budget", "candidate_id": "p20"},
+        {"code": "background_signature_undercount", "candidate_id": "p20"}
+      ],
+      "camera_registry_match": true,
+      "additional_camera_findings": [],
+      "independent_findings": [
+        {
+          "finding_id": "cashmere-wide-provenance-1",
+          "severity": "high",
+          "category": "product_conflict_grounding",
+          "candidate_ids": ["p9", "p10", "p11"],
+          "detail": "The audit records an EliteBook X versus EliteBook X Flip product mismatch and says Flip-specific sketching/mode claims were not used. These candidates nevertheless cite the mismatched source's sketching and explicit 2-in-1 mode evidence, then award source_messaging activity=20, materials=20, and use_context=15. That use case is not shown to be a compatible shared cue from the smart brief.",
+          "review_action": "Remove product-dependent mismatched evidence or establish the cue independently in both documents, then rescore."
+        },
+        {
+          "finding_id": "cashmere-wide-ctech-1",
+          "severity": "medium",
+          "category": "ctech_relationship_mismatch",
+          "candidate_ids": ["p13"],
+          "detail": "P13 declares minimal_camera_edit of CT08 while adding soft natural light and an inviting/familiar atmosphere not present in the reference.",
+          "review_action": "Treat as a close adaptation before acceptance."
+        }
+      ]
+    }
+  }
+}

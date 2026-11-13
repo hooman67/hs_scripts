@@ -1,0 +1,360 @@
+{
+  "schema_version": "placement-verified-additions-independent-audit-v1",
+  "audited_at_utc": "2026-11-05T23:27:44.094053Z",
+  "development_status": "posthoc_policy_revision_not_untouched_validation",
+  "scope": {
+    "verified_run": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions/verified_runs/verified-84-v2",
+    "semantic_verifier_run": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions/runs/verifier-v3",
+    "excluded_failed_verifier_runs": [
+      "verifier-v1",
+      "verifier-v2"
+    ],
+    "new_model_calls": 0,
+    "source_or_live_output_changes": 0
+  },
+  "provenance": {
+    "diagnostic_manifest_sha256": "c18b747abd5059b071d5b2f317b00a811bb4c5c24ee4dae846378140aaf65aef",
+    "extended_manifest_sha256": "959f68231c1cf8c80ef962c29934e303cb3414ce151b1e2da2f6d1b53d2288ae",
+    "sorted_84_case_ids_sha256": "0314ce1f923dc27d177c4fd56df155c07f4495164c2f787b6871724eacafc5a6",
+    "trigger_manifest_sha256": "0797c99432381317394d66a6fa5181222ccbdd7e3abf7f1b0b3a23de6e3717dc",
+    "semantic_freeze_sha256": "ae0f85b36324d5feedc9caa7558e1eb6400bc67c4152be4855869635e349191d",
+    "semantic_runner_snapshot_sha256": "53382e595f6608a32c638f055cca7aff4f10f691435c87324dbb6cb4ff5506dd",
+    "merge_verified_v2_sha256_at_audit": "cb632c91f9a2959b5840b9afe1bf2f0babf376a50eba720c8fd302cd36bd76de",
+    "summary_sha256": "a127523aa89224bc3db72f6dc031b5213342cacf4fe4b883caa200cf0a4f558d",
+    "persisted_evaluator": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions/evaluate_verified_v2.py",
+      "sha256": "f303b13b4e83da1c8cd84b013807457ef416bb5e9e73754a94f95565556a5d62",
+      "generated_at_utc": "2026-11-05T23:29:33.064336+00:00",
+      "evaluation_artifact_sha256": "fceaab23a84691e9f73e3ff5310f673f146e8b2df12ce5d4f3d2e6919de8195c",
+      "audit_artifact_sha256": "3618e2b99505bebf9dbb5cb809d75d741ec260695ecb082a7ab72ea10625a2ae",
+      "saved_metrics_recomputed_exactly": true
+    }
+  },
+  "coverage_and_joins": {
+    "expected_case_count": 84,
+    "unique_case_count": 84,
+    "envelope_count": 84,
+    "summary_record_count": 84,
+    "exact_case_sets_match": true,
+    "source_two_pass_results": 84,
+    "source_two_pass_hash_failures": [],
+    "embedded_source_result_mismatches": [],
+    "verifier_calls": 6,
+    "triggered_components": 8,
+    "verifier_result_hash_failures": [],
+    "verifier_raw_response_hash_failures": [],
+    "trigger_source_artifact_hash_checks": 24,
+    "trigger_source_artifact_hash_failures": [],
+    "request_to_result_field_checks": 114,
+    "request_to_result_mismatches": [],
+    "assessment_raw_response_mismatches": [],
+    "source_datasets": {
+      "diagnostic-v2": 20,
+      "extended-v1": 64
+    }
+  },
+  "schema_and_inputs": {
+    "assessment_schema_validations": 6,
+    "assessment_schema_failures": [],
+    "response_schema_hash_failures": [],
+    "proposal_hash_failures": [],
+    "canonical_runtime_input_keys": [
+      "generated_image",
+      "image_stage",
+      "product_type",
+      "scene_prompt",
+      "twin_image"
+    ],
+    "runtime_input_whitelist_failures": [],
+    "source_image_hash_checks": 12,
+    "source_image_hash_failures": [],
+    "serialized_request_data_image_uri_count": 0,
+    "target_annotation_key_hits": 0,
+    "exact_target_comment_or_expectation_prose_hits": 0,
+    "model_identity_or_finish_failures": []
+  },
+  "scoring_and_decisions": {
+    "verified_compact_recomputations": 84,
+    "verified_compact_mismatch_ids": [],
+    "merged_observation_and_score_recomputations": 84,
+    "merged_mismatch_ids": [],
+    "component_provenance_mismatch_ids": [],
+    "final_policy_recomputations": 84,
+    "final_policy_mismatch_ids": [],
+    "summary_mismatch_ids": [],
+    "source_to_final_verdict_transitions": {
+      "fail->fail": 44,
+      "fail->pass": 3,
+      "pass->pass": 36,
+      "review->review": 1
+    },
+    "final_verdict_counts": {
+      "fail": 44,
+      "pass": 39,
+      "review": 1
+    },
+    "score_changes": [
+      {
+        "id": "cashmere__laptop_FrontCloseUp__p5",
+        "source_score": 59,
+        "verified_score": 100.0,
+        "source_verdict": "fail",
+        "final_verdict": "pass"
+      },
+      {
+        "id": "magic__printer_FrontCloseUp__p3",
+        "source_score": 59,
+        "verified_score": 95.0,
+        "source_verdict": "fail",
+        "final_verdict": "pass"
+      },
+      {
+        "id": "tassel__printer_FrontCloseUp__p5",
+        "source_score": 59,
+        "verified_score": 100.0,
+        "source_verdict": "fail",
+        "final_verdict": "pass"
+      }
+    ]
+  },
+  "verifier_component_outcomes": {
+    "confirmed_material_medium_or_high": 3,
+    "mild_severity_1": 2,
+    "severity_0": 2,
+    "unobservable": 1,
+    "low_confidence_material": 0,
+    "cases": [
+      {
+        "id": "cashmere__laptop_FrontCloseUp__p5",
+        "components": {
+          "access_usability": "severity_0; baseline_v2 selected",
+          "orientation_alignment": "unobservable; baseline_v2 selected"
+        },
+        "final_verdict": "pass",
+        "uncertainty_note_count": 1
+      },
+      {
+        "id": "cashmere__laptop_FrontLeftMedium__p6",
+        "components": {
+          "access_usability": "severity_2_medium; compact_v3 selected",
+          "orientation_alignment": "severity_2_medium; compact_v3 selected"
+        },
+        "final_verdict": "fail",
+        "uncertainty_note_count": 0
+      },
+      {
+        "id": "magic__printer_FrontCloseUp__p3",
+        "components": {
+          "support_scenario": "severity_1_medium; compact_v3 selected"
+        },
+        "final_verdict": "pass",
+        "uncertainty_note_count": 0
+      },
+      {
+        "id": "magic__printer_FrontLeftMedium__p1",
+        "components": {
+          "support_scenario": "severity_1_medium; compact_v3 selected"
+        },
+        "final_verdict": "fail",
+        "uncertainty_note_count": 0
+      },
+      {
+        "id": "tassel__printer_FrontCloseUp__p5",
+        "components": {
+          "support_scenario": "severity_0_high; baseline_v2 selected"
+        },
+        "final_verdict": "pass",
+        "uncertainty_note_count": 0
+      },
+      {
+        "id": "tassel__printer_FrontLeftMedium__p6",
+        "components": {
+          "support_scenario": "severity_2_medium; compact_v3 selected"
+        },
+        "final_verdict": "fail",
+        "uncertainty_note_count": 0
+      }
+    ]
+  },
+  "uncertainty_policy": {
+    "unobservable_component_ids": [
+      "cashmere__laptop_FrontCloseUp__p5:orientation_alignment"
+    ],
+    "uncertainty_note_ids": [
+      "cashmere__laptop_FrontCloseUp__p5"
+    ],
+    "verdict_override_ids": [],
+    "confidence_override_ids": [],
+    "low_confidence_material_ids": [],
+    "finding": "The unobservable verifier relation was not treated as negative evidence: baseline_v2 was selected and the final envelope retained an uncertainty note. Reported confidence was already medium, so no confidence override was needed. No real verifier output exercised the low-confidence-material pass-to-review override."
+  },
+  "evaluation_metrics": {
+    "diagnostic_20": {
+      "verdict_expectations": {
+        "matched": 6,
+        "count": 11
+      },
+      "issue_any_baseline_broad": {
+        "matched": 3,
+        "count": 15
+      },
+      "issue_any_baseline_material": {
+        "matched": 3,
+        "count": 15
+      },
+      "issue_any_final_broad": {
+        "matched": 5,
+        "count": 15
+      },
+      "issue_any_final_material": {
+        "matched": 4,
+        "count": 15
+      }
+    },
+    "extended_64": {
+      "explicit_verdict_labels": {
+        "matched": 2,
+        "count": 2
+      },
+      "v2_agreements": {
+        "matched": 56,
+        "count": 56
+      },
+      "issue_any_baseline_broad": {
+        "matched": 2,
+        "count": 6
+      },
+      "issue_any_baseline_material": {
+        "matched": 2,
+        "count": 6
+      },
+      "issue_any_final_broad": {
+        "matched": 3,
+        "count": 6
+      },
+      "issue_any_final_material": {
+        "matched": 3,
+        "count": 6
+      }
+    },
+    "material_definition": "visibility observed/partial, severity >= 2, confidence medium/high",
+    "broad_vs_material_difference_ids": [
+      "tassel__printer_FrontLeftMedium__p5"
+    ]
+  },
+  "issue_code_detail": {
+    "interpretation": "Companion codes are listed for coverage only. Their correctness was not assessed and no label is invented.",
+    "diagnostic_nonempty": [
+      {
+        "id": "magic__printer_FrontCloseUp__p2",
+        "expected_issue_any": ["blocked_operating_side", "furniture_axis_conflict", "precarious_edge", "unsupported_base"],
+        "all_codes": ["blocked_operating_side", "furniture_collision", "incoherent_use_arrangement"],
+        "broad_matched_expected": ["blocked_operating_side"],
+        "material_matched_expected": ["blocked_operating_side"],
+        "companion_codes_not_assessed": ["furniture_collision", "incoherent_use_arrangement"]
+      },
+      {
+        "id": "magic__printer_FrontWide__p5",
+        "expected_issue_any": ["malformed_support_furniture"],
+        "all_codes": ["incoherent_use_arrangement", "occupied_workstation"],
+        "broad_matched_expected": [],
+        "material_matched_expected": [],
+        "companion_codes_not_assessed": ["incoherent_use_arrangement", "occupied_workstation"]
+      },
+      {
+        "id": "tassel__printer_FrontCloseUp__p3",
+        "expected_issue_any": ["implausible_scenario", "inappropriate_support", "incoherent_use_arrangement"],
+        "all_codes": ["implausible_scenario", "inappropriate_support", "incoherent_use_arrangement", "no_user_position"],
+        "broad_matched_expected": ["implausible_scenario", "inappropriate_support", "incoherent_use_arrangement"],
+        "material_matched_expected": ["implausible_scenario", "inappropriate_support", "incoherent_use_arrangement"],
+        "companion_codes_not_assessed": ["no_user_position"]
+      },
+      {
+        "id": "tassel__printer_FrontLeftMedium__p5",
+        "expected_issue_any": ["bare_staged_setting", "incoherent_use_arrangement", "unmotivated_position"],
+        "all_codes": ["bare_staged_setting", "unmotivated_position"],
+        "broad_matched_expected": ["bare_staged_setting", "unmotivated_position"],
+        "material_matched_expected": [],
+        "companion_codes_not_assessed": []
+      },
+      {
+        "id": "cashmere__laptop_FrontLeftMedium__p6",
+        "expected_issue_any": ["chair_alignment_conflict", "no_user_position"],
+        "all_codes": ["chair_alignment_conflict", "no_user_position"],
+        "broad_matched_expected": ["chair_alignment_conflict", "no_user_position"],
+        "material_matched_expected": ["chair_alignment_conflict", "no_user_position"],
+        "companion_codes_not_assessed": []
+      },
+      {
+        "id": "regression-userfail-row25-v14",
+        "expected_issue_any": ["furniture_axis_conflict"],
+        "all_codes": ["furniture_axis_conflict"],
+        "broad_matched_expected": ["furniture_axis_conflict"],
+        "material_matched_expected": ["furniture_axis_conflict"],
+        "companion_codes_not_assessed": []
+      }
+    ],
+    "diagnostic_empty_all_codes_ids": [
+      "magic__printer_FrontCloseUp__p5",
+      "magic__printer_FrontLeftMedium__p2",
+      "magic__printer_FrontRightCloseUp__p2",
+      "tassel__printer_FrontCloseUp__p5",
+      "tassel__printer_FrontLeftMedium__p1",
+      "tassel__printer_FrontRightCloseUp__p1",
+      "cashmere__laptop_BackRightCloseUp__p6",
+      "cashmere__laptop_FrontWide__p4",
+      "regression-userfail-row12-v13"
+    ],
+    "extended_nonempty": [
+      {
+        "id": "magic__printer_FrontCloseUp__p3",
+        "expected_issue_any": ["occupied_workstation"],
+        "all_codes": ["unmotivated_position"],
+        "broad_matched_expected": [],
+        "material_matched_expected": [],
+        "companion_codes_not_assessed": ["unmotivated_position"]
+      },
+      {
+        "id": "magic__printer_FrontLeftMedium__p5",
+        "expected_issue_any": ["incoherent_use_arrangement", "unmotivated_position"],
+        "all_codes": ["furniture_axis_conflict", "incoherent_use_arrangement", "occupied_workstation", "unmotivated_position"],
+        "broad_matched_expected": ["incoherent_use_arrangement", "unmotivated_position"],
+        "material_matched_expected": ["incoherent_use_arrangement", "unmotivated_position"],
+        "companion_codes_not_assessed": ["furniture_axis_conflict", "occupied_workstation"]
+      },
+      {
+        "id": "tassel__printer_FrontLeftMedium__p6",
+        "expected_issue_any": ["inappropriate_support", "incoherent_use_arrangement"],
+        "all_codes": ["inappropriate_support", "incoherent_use_arrangement", "unmotivated_position"],
+        "broad_matched_expected": ["inappropriate_support", "incoherent_use_arrangement"],
+        "material_matched_expected": ["inappropriate_support", "incoherent_use_arrangement"],
+        "companion_codes_not_assessed": ["unmotivated_position"]
+      },
+      {
+        "id": "tassel__printer_FrontRightCloseUp__p5",
+        "expected_issue_any": ["incoherent_use_arrangement"],
+        "all_codes": ["blocked_operating_side", "blocked_paper_or_lid_path", "furniture_axis_conflict", "incoherent_use_arrangement", "occupied_workstation", "unmotivated_position"],
+        "broad_matched_expected": ["incoherent_use_arrangement"],
+        "material_matched_expected": ["incoherent_use_arrangement"],
+        "companion_codes_not_assessed": ["blocked_operating_side", "blocked_paper_or_lid_path", "furniture_axis_conflict", "occupied_workstation", "unmotivated_position"]
+      }
+    ],
+    "extended_empty_all_codes_ids": [
+      "cashmere__laptop_BackRightCloseUp__p4",
+      "magic__printer_FrontWide__p1"
+    ]
+  },
+  "limitations": [
+    "This is posthoc development evaluation against comment-derived mappings, not a holdout or accuracy estimate.",
+    "Broad issue-any remains recall-like and ignores severity, confidence, visibility, and companion-code precision; the material metric is stricter but still does not assess companion-code correctness.",
+    "No real verifier response was low-confidence material, so the pass-to-review override has test coverage but no empirical case in this six-call sample.",
+    "Individual envelopes do not embed the merge-generator hash, but the final run-level audit records the exact merge_verified_v2.py path and SHA-256. That recorded generator reproduces all 84 outputs exactly.",
+    "verifier-v1 and verifier-v2 were HTTP-400 schema-rejection attempts with no valid assessments and are excluded from model-evidence counts."
+  ],
+  "verification": {
+    "verify_additions_tests": "5 passed",
+    "pytest_cache_disabled": true,
+    "independent_recomputation": true,
+    "failure_count": 0
+  }
+}

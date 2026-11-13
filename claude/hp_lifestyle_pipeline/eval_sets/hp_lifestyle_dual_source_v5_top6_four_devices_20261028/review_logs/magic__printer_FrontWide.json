@@ -1,0 +1,79 @@
+{
+  "version": "hp-lifestyle-dual-source-v5-top6-review-log-v1",
+  "case_id": "magic__printer_FrontWide",
+  "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/normalized_outputs/magic__printer_FrontWide__sample_001.json",
+  "normalized_output_sha256": "862effdfc80ffcc70353d68482b5d01ca3041259f98cfda7b1f84ed3bda43faa",
+  "reviewed_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/reviewed_outputs/magic__printer_FrontWide.json",
+  "reviewed_output_sha256": "dc2b9d9f3dd0e719295940e5a7a7998537b33690b8d33895597d31b28d369a23",
+  "reviewed_output_semantic_sha256": "c458a38579631352d7e36e6cb2255f3669d5a0011552a54e9e8c27ce1ee1c0d9",
+  "text_changed": true,
+  "edit_count": 10,
+  "edits": [
+    {
+      "path": "/prompts/p1/explanation",
+      "before": "Both documents support enterprise office workteams and business-critical documents; invoices and project papers survive visibly in the scene.",
+      "after": "Both documents support enterprise office teams and important documents; invoices and project papers remain visible in the scene.",
+      "reason": "Use plain language in the selected prompt explanation."
+    },
+    {
+      "path": "/prompts/p2/text",
+      "before": "A bright, modern corporate office featuring a small table with integrated shelving as the main focal point, positioned against a wall. The table and shelves form a single cohesive furniture unit, holding contracts, forms, and a cup of pens. Surrounding desks and plants create an open, professional yet lived-in atmosphere, enhanced by warm natural light.",
+      "after": "A bright, modern corporate office featuring a small table with integrated shelving as the main focal point. The table and shelves form a single cohesive furniture unit, holding contracts, forms, and a cup of pens. Surrounding desks and plants create an open, professional yet lived-in atmosphere, enhanced by warm natural light.",
+      "reason": "Remove the wall cue so the wide view has two background details."
+    },
+    {
+      "path": "/prompts/p9/text",
+      "before": "An open modern corporate office with a desk, clean shelving, plants, and framed artwork. Layered office furnishings create natural depth. Warm natural lighting creates a polished, inviting atmosphere.",
+      "after": "An open modern corporate office with a desk, clean shelving, and plants. The shelving and plants create natural depth. Warm natural lighting creates a polished, inviting atmosphere.",
+      "reason": "Limit the wide view to shelving and plants as its two background details."
+    },
+    {
+      "path": "/prompts/p9/visual_signature/background_details",
+      "before": [
+        "clean shelving",
+        "plants and framed artwork"
+      ],
+      "after": [
+        "clean shelving",
+        "plants"
+      ],
+      "reason": "Match the corrected prose."
+    },
+    {
+      "path": "/prompts/p20/text",
+      "before": "A stylish gaming room with a dark wood desk positioned against a textured wall. Floating shelves displaying collectibles and bold wall art sit around the space, while vibrant RGB lighting creates a dynamic yet organized atmosphere with warm neutral finishes.",
+      "after": "A stylish gaming room with a dark wood desk. Floating shelves displaying collectibles and bold wall art sit around the space, while vibrant RGB lighting creates a dynamic yet organized atmosphere with warm neutral finishes.",
+      "reason": "Remove the textured wall so the wide view has two background details."
+    },
+    {
+      "path": "/prompts/p5/subsetting",
+      "before": "administrative workgroup desk",
+      "after": "corporate office desk",
+      "reason": "Use an ordinary place name in the selected prompt metadata."
+    },
+    {
+      "path": "/prompts/p5/explanation",
+      "before": "The source identifies administrative and back-office workgroups and names forms and meeting packets as business-critical output.",
+      "after": "The source identifies administrative and back-office teams and names forms and meeting packets as important documents.",
+      "reason": "Use plain language in the selected prompt explanation."
+    },
+    {
+      "path": "/prompts/p6/subsetting",
+      "before": "shared office hub table",
+      "after": "shared office table",
+      "reason": "Use an ordinary place name in the selected prompt metadata."
+    },
+    {
+      "path": "/prompts/p6/ctech_explanation",
+      "before": "Same Office environment as CT13, adapted to a shared workteam paperwork moment.",
+      "after": "Same Office environment as CT13, adapted to a shared office paperwork moment.",
+      "reason": "Use plain language in the selected C-Tech explanation."
+    },
+    {
+      "path": "/prompts/p6/explanation",
+      "before": "Shared office hub language and named paperwork align with the source focus on shared workteams and common business documents.",
+      "after": "The shared office setting and named paperwork align with the source focus on office teams and common business documents.",
+      "reason": "Use plain language in the selected prompt explanation."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+visibility: public
+public:
+  files:
+  - types
+  deps:
+  - colligo.base
+  - pydantic
+has_build_module: true
+deps:
+- av
+- colligo.data
+- colligo.image
+- colligo.models.audio.common[public]
+- colligo.models.common.adapter_utils
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.diffusion.gen6_conv
+- colligo.models.firefly.imcoding.audio_vae[public]
+- colligo.models.firefly.imcoding.mori_vae[public]
+- colligo.models.qwen_vlm_encoder[public]
+- einops
+- numpy
+- scipy
+- soundfile
+- torch
+- torchaudio

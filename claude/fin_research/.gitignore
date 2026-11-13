@@ -1,0 +1,11 @@
+# Session transcripts contain personal data (portfolio holdings, dollar values,
+# immigration/family details). Do NOT publish conversation history to the git remote
+# (github.com/hshariati_adobe/hs_scripts). Matches the cutlog_claud_resume precedent.
+#
+# The transcript is moved between machines MANUALLY (scp / home-folder backup), NOT via git.
+# Only RESTORE_SESSION.sh, RESUME_README.md, and the research files/records are tracked.
+.session_history/
+*.jsonl
+
+# Local API-result caches / large derived data (reproducible from the scripts)
+data/cache/

@@ -1,0 +1,35 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.cai[public]
+  - colligo.models.filix3.common[public]
+  - colligo.models.firefly.pipelines.substance3d[public]
+  - colligo.models.substance3d.common[public]
+exclude:
+- examples
+- scripts
+- tests
+deps:
+- colligo.models.build
+- colligo.httpx
+- colligo.image
+- colligo.models.common.adapter_utils
+- colligo.models.dentro.model_zoo
+- colligo.models.dentro.pylib[public]
+- colligo.models.dentro.worker.models.internvl_3_8b[public]
+- colligo.models.filix3.common
+- colligo.models.filix3.workers.blip2[public]
+- colligo.models.filix3.workers.cvae[public]
+- colligo.models.filix3.workers.dit_img23d[public]
+- colligo.models.filix3.workers.t5[public]
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.nsfw_adobe_one[public]
+- colligo.models.firefly.pipelines.substance3d
+- colligo.models.prompt_forge.worker[public]
+- colligo.models.substance3d.lagrange_meshing[public]
+- colligo.models.substance3d.meshlrm[public]
+- colligo.models.substance3d.minlrm[public]
+- torch

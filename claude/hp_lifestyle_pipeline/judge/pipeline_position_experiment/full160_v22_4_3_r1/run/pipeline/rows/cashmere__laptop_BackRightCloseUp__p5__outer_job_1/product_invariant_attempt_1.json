@@ -1,0 +1,165 @@
+{
+  "guard_version": "full-affine-v1.5-unreliable-affine-alpha-fallback",
+  "fixed_position": true,
+  "thresholds": {
+    "min_inliers": 20,
+    "min_inlier_ratio": 0.55,
+    "singular_min": 0.98,
+    "singular_max": 1.02,
+    "max_anisotropy_ratio": 1.02,
+    "max_abs_rotation_deg": 1.0,
+    "max_column_shear_cos": 0.02,
+    "max_residual_median_px": 1.5,
+    "max_residual_p95_px": 3.5,
+    "min_source_span_x_fraction": 0.45,
+    "min_source_span_y_fraction": 0.4,
+    "min_source_quadrants": 3,
+    "min_source_hull_fraction": 0.12,
+    "max_fixed_translation_px": 8.0
+  },
+  "product_bounds_px": [
+    576,
+    536,
+    1996,
+    1402
+  ],
+  "matches": 4,
+  "inliers": 3,
+  "inlier_ratio": 0.75,
+  "full_affine_matrix": [
+    [
+      0.601863182135673,
+      1.5371687830422862,
+      -1729.1185667211805
+    ],
+    [
+      -0.1926919014563242,
+      1.7271006068944303,
+      -816.0440315492339
+    ]
+  ],
+  "partial_affine_matrix": [
+    [
+      1.0297072216804366,
+      -0.0012567763119952836,
+      -24.68827174945289
+    ],
+    [
+      0.0012567763119952836,
+      1.0297072216804366,
+      -43.39799349814062
+    ]
+  ],
+  "partial_inliers": 2,
+  "singular_values": [
+    2.327168971490725,
+    0.5739498331064694
+  ],
+  "anisotropy_ratio": 4.054655715979672,
+  "rotation_deg": -36.60348072414233,
+  "column_shear_cos": 0.40541379465863314,
+  "residual_median_px": 7.406241581930922e-12,
+  "residual_p95_px": 9.606360830585461e-12,
+  "source_span_x_fraction": 0.21096083521842957,
+  "source_span_y_fraction": 0.09224742650985718,
+  "source_quadrants": 1,
+  "source_hull_fraction": 0.0003171581035084327,
+  "transformed_product_corners_px": [
+    [
+      -558.5229061003674,
+      -1.308641492661991
+    ],
+    [
+      296.1228125322882,
+      -274.93114156064235
+    ],
+    [
+      1627.3109786469079,
+      1220.7379840099343
+    ],
+    [
+      772.6652600142522,
+      1494.3604840779149
+    ]
+  ],
+  "corners_in_frame": false,
+  "translation_x_px": -1729.1185667211805,
+  "translation_y_px": -816.0440315492339,
+  "checks": {
+    "inliers": false,
+    "inlier_ratio": true,
+    "singular_min": false,
+    "singular_max": false,
+    "anisotropy": false,
+    "rotation": false,
+    "shear": false,
+    "residual_median": true,
+    "residual_p95": true,
+    "span_x": false,
+    "span_y": false,
+    "quadrants": false,
+    "hull": false,
+    "corners": false,
+    "fixed_translation_x": false,
+    "fixed_translation_y": false
+  },
+  "reasons": [
+    "boundary"
+  ],
+  "verdict": "fail",
+  "primary_verdict": "fail",
+  "primary_reasons": [
+    "inliers",
+    "singular_min",
+    "singular_max",
+    "anisotropy",
+    "rotation",
+    "shear",
+    "span_x",
+    "span_y",
+    "quadrants",
+    "hull",
+    "corners",
+    "fixed_translation_x",
+    "fixed_translation_y"
+  ],
+  "fallback_dispatch_reason": "structurally_insufficient_affine_evidence",
+  "affine_evidence_reliability_checks": {
+    "inliers": false,
+    "span_x": false,
+    "span_y": false,
+    "quadrants": false,
+    "hull": false
+  },
+  "textureless_fallback": {
+    "method": "alpha_mask_fixed_position_fallback",
+    "thresholds": {
+      "max_translation_px": 8,
+      "min_boundary_edge_coverage_2px": 0.8,
+      "min_internal_edge_coverage_floor_2px": 0.2,
+      "min_internal_edge_coverage_2px": 0.8,
+      "min_highpass_ncc_override": 0.8,
+      "min_internal_edge_samples": 100
+    },
+    "translation_x_px": 1,
+    "translation_y_px": -2,
+    "boundary_edge_coverage_2px": 0.6676145685223669,
+    "boundary_distance_p90_px": 5.603600025177002,
+    "internal_edge_coverage_2px": 0.9585492227979274,
+    "internal_distance_p90_px": 1.909999966621399,
+    "highpass_ncc": 0.48080697655677795,
+    "source_boundary_samples": 9143,
+    "source_internal_edge_samples": 965,
+    "source_appearance_samples": 48128,
+    "checks": {
+      "boundary": false,
+      "internal_structure_floor": true,
+      "structure_or_appearance": true,
+      "internal_support": true
+    },
+    "reasons": [
+      "boundary"
+    ],
+    "verdict": "fail"
+  }
+}

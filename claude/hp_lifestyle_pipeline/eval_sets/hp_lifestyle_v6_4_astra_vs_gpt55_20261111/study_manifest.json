@@ -1,0 +1,47 @@
+{
+  "schema_version": 3,
+  "prompts_sha256": "25b15d251575537870031dcf23f2cef08c9d8c24ba5f90c773dec2b4a9f2dd05",
+  "planned_count": 160,
+  "expected_count": 80,
+  "catalog_sha256": "245aca0369ae5a8a431c88ba67dcd26f5fc8d539f42056e31fb470defacbb393",
+  "lineage": {
+    "label": "hp-pr4523-d1e5ae5323de-exact",
+    "endpoint_base_url": "http://127.0.0.1:8152",
+    "endpoint": "http://127.0.0.1:8152/api/generate",
+    "generator": "GPT Image 2.5 / single reference / no grading",
+    "rewriterVersion": "Adobe-Firefly/foundry#4523 / d1e5ae5323de / unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+    "pipelineVersion": "unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+    "source_commit": "d1e5ae5323dedebc3b06ed173a3731307bd0623a",
+    "patch_sha256": null,
+    "runtime_tree_sha256": "4da08388491b36f6435aeea29d40b780bdd02b06b81f1a35b86999b0b6e8694e",
+    "source_manifest_sha256": "c62f172f4dd08c6f4d229079c22e1b77751a6e008e13366dab2de14d3026542f",
+    "deployment_manifest_sha256": "8701a44a54e016a2837807926f5fe10c8bb6901286471f59b9ee83b4aba972e3",
+    "candidate_config_sha256": "b69086f3856f5a90c4fd0ebff1e142de90f3dc51c807e85ad8e00fea989f4faa",
+    "scene_contract": {
+      "textModel": "gpt-6-astra",
+      "imageModel": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "refCount": 1,
+      "imageCalls": 1,
+      "graded": false,
+      "imageMaskApplied": false,
+      "imageInputOrder": [
+        "hp16_geometry_guide.png"
+      ]
+    }
+  },
+  "writer_snapshot_sha256": "93b8c64df80f6704c066c92bb75fabee9d39ecbe827faca29aa15e92f4ff425e",
+  "policy": "Every accepted prompt once; zero image replacement/resampling; explicit terminal failures.",
+  "files": {
+    "image_study.py": "98bcf4a4a82a0dd8a76171fd7bf08060abc797c2b3783da708e50a3f1d1fcc15",
+    "scene_runner.py": "7bf6253d2cb502f0a19756a803b534e1da1092437f61399d81be8db3d4252595",
+    "report.py": "42a69b98fae6df24c48999b6a8a243725e60e75863274a8f6b1846bd2f3c9734",
+    "audit_image.py": "7cff2db9dd3ddbffcaf19ece077125448972291b4e7983710220259ac8927b8b",
+    "check_browser.py": "ab65745ca1966ffd234ce73bf4fc7bf9c795d9653df5df7a1bb985cbbb6a2442",
+    "public/gallery/index.html": "65fdaa89c018313601516e5eb58cbc34a7153014cd7a3151135a563154487732",
+    "public/gallery/main.js": "758c46a7fd6514c601a5f2ee66bcd1e7b49370987706282d6c0fe82b41981b95",
+    "public/gallery/style.css": "f8f75c310fdf306125799dc6ac7a578e1d24bf7d6dff388c2838cfb2d8a0b50b",
+    "public/gallery/imsauth.js": "269ec81678b5cffb043d80a1340aa05ca5d2c24ea96396f0f97d690ddb772a1a"
+  },
+  "run_sha256": "5ba3a7c70018633099ba0f626cb63a1aa7950f96837095c5ed1e58019e177411"
+}

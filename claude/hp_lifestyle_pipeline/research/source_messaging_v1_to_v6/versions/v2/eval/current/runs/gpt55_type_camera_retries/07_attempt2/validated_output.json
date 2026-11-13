@@ -1,0 +1,148 @@
+{
+  "prompts": [
+    {
+      "id": "p1",
+      "environment": "Office",
+      "text": "A clean meeting table in light wood with a compact stack of printed documents and a single pen. A softly blurred conference chair adds business context in natural daylight."
+    },
+    {
+      "id": "p2",
+      "environment": "Office",
+      "text": "A shared work surface in matte laminate with an open paper notebook and a ceramic cup, lit by soft daylight. A muted seating nook suggests a temporary workspace."
+    }
+  ],
+  "debug": {
+    "input_assessment": "The source includes useful mobile business, document, meeting, calls/content, shared-workspace, and beyond-office cues. Technical AI, security, processor, connectivity, and product-specific claims were not translated into visible scene requirements.",
+    "count_explanation": "Four numbered KSPs contain usable scene or activity cues, so up to four prompts were allowed. Two prompts were returned because the cues overlap around mobile professional work, meetings, and shared work settings, and the medium oblique view should stay local.",
+    "used_fallback": false,
+    "ksp_mappings": [
+      {
+        "ksp_id": "KSP1",
+        "eligible_for_additional_prompt": true,
+        "source_evidence": [
+          {
+            "path": "KSP1.long_message_best_sku",
+            "quote": "documents, meetings, and decisions with greater confidence"
+          }
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2"
+        ],
+        "explanation": "Used the documents and meetings cue for the meeting table, and the mobile work cue for a shared temporary work surface. Security and exact product references were omitted."
+      },
+      {
+        "ksp_id": "KSP2",
+        "eligible_for_additional_prompt": true,
+        "source_evidence": [
+          {
+            "path": "KSP2.long_message_best_sku",
+            "quote": "AI-assisted tasks, calls, and content work"
+          }
+        ],
+        "prompt_ids": [
+          "p2"
+        ],
+        "explanation": "Interpreted tasks and content work as a simple shared surface with a notebook. AI, processor, and conferencing technology specifics were omitted because they are not environmental details."
+      },
+      {
+        "ksp_id": "KSP3",
+        "eligible_for_additional_prompt": true,
+        "source_evidence": [
+          {
+            "path": "KSP3.long_message_best_sku",
+            "quote": "work beyond controlled office environments"
+          }
+        ],
+        "prompt_ids": [
+          "p2"
+        ],
+        "explanation": "Used the beyond-office cue as a temporary shared workspace. Security architecture and BIOS/browser claims were omitted as non-visual technical messaging."
+      },
+      {
+        "ksp_id": "KSP4",
+        "eligible_for_additional_prompt": true,
+        "source_evidence": [
+          {
+            "path": "KSP4.long_message_best_sku",
+            "quote": "office, shared workspace, or customer site"
+          }
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2"
+        ],
+        "explanation": "Used meeting and shared workspace cues while avoiding a full person, busy room, or explicit video-call setup."
+      }
+    ],
+    "value_proposition": {
+      "source_evidence": [
+        {
+          "path": "ValueProposition.short_message",
+          "quote": "productive work and polished collaboration anywhere"
+        }
+      ],
+      "prompt_ids": [
+        "p1",
+        "p2"
+      ],
+      "explanation": "Supported an office-oriented mobile collaboration context across both prompts without adding extra prompt count."
+    },
+    "creative_additions": [
+      {
+        "prompt_id": "p1",
+        "details": [
+          "light wood meeting table",
+          "compact stack of printed documents",
+          "single pen",
+          "softly blurred conference chair",
+          "natural daylight"
+        ]
+      },
+      {
+        "prompt_id": "p2",
+        "details": [
+          "matte laminate shared work surface",
+          "open paper notebook",
+          "ceramic cup",
+          "muted seating nook",
+          "soft daylight"
+        ]
+      }
+    ],
+    "ignored_fields": [
+      "_chatSession"
+    ],
+    "camera": {
+      "requested_tag": "laptop_FrontRightMedium",
+      "resolved_tag": "laptop_FrontRightMedium",
+      "profile_version": "camera-v2-draft-2026-10-22-r3",
+      "resolution": "exact",
+      "framing": "medium",
+      "elevation": "oblique",
+      "adjustments": [
+        {
+          "prompt_id": "p1",
+          "omitted_or_simplified": [
+            "full meeting room",
+            "people or group collaboration",
+            "AI, security, processor, and product-specific details",
+            "extra tabletop props"
+          ],
+          "explanation": "Retained the meeting and document cues with two nearby props and one subdued background chair, matching the medium oblique limit."
+        },
+        {
+          "prompt_id": "p2",
+          "omitted_or_simplified": [
+            "full customer site or large shared workspace",
+            "visible call setup",
+            "connectivity and security claims",
+            "additional office accessories"
+          ],
+          "explanation": "Retained the mobile shared-work setting with two simple props and one background seating detail, keeping the local surface clear for the fixed view."
+        }
+      ],
+      "device_type": "laptop"
+    }
+  }
+}

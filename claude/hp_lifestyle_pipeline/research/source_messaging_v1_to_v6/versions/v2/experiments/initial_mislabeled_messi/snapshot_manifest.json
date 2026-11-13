@@ -1,0 +1,91 @@
+{
+  "snapshot_version": 1,
+  "status": "superseded_input_taxonomy_with_3_audit_failures",
+  "created_at": "2026-10-22T23:01:09.986522+00:00",
+  "reason": "The completed evaluation treated Messi as a printer; the corrected input taxonomy identifies Messi as a mini PC.",
+  "source_active_eval_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v2/eval",
+  "archive_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v2/experiments/initial_mislabeled_messi",
+  "api_calls_during_archive": false,
+  "case_count": 22,
+  "record_count": 22,
+  "prompt_count": 35,
+  "manual_text_review": {
+    "status": "complete",
+    "case_count": 22,
+    "prompt_count": 35
+  },
+  "automated_validation": {
+    "passed": 19,
+    "failed": 3,
+    "failure_cases": [
+      {
+        "case_id": "06_actual_laptop_koki_front_closeup",
+        "failures": [
+          "Evidence is not a verbatim source substring: ValueProposition.long_message_best_sku"
+        ]
+      },
+      {
+        "case_id": "07_actual_laptop_koki_front_right_medium",
+        "failures": [
+          "Upstream metadata is not listed as ignored"
+        ]
+      },
+      {
+        "case_id": "08_actual_laptop_koki_front_right_wide",
+        "failures": [
+          "Upstream metadata is not listed as ignored"
+        ]
+      }
+    ]
+  },
+  "model": [
+    "gpt-5.5-2026-04-24"
+  ],
+  "system_prompt_sha256": "5e9996e88ab1bd6ef062c9eab9eec8a39bc45e5c918949a95b0455069500dc06",
+  "snapshots": {
+    "system_prompt.md": {
+      "sha256": "5e9996e88ab1bd6ef062c9eab9eec8a39bc45e5c918949a95b0455069500dc06",
+      "bytes": 27149
+    },
+    "system_prompt.template.md": {
+      "sha256": "34db97319dc6e65a8d9739052ff0c57dd24cb5d7420870bf367782769884729c",
+      "bytes": 11982
+    },
+    "input.schema.json": {
+      "sha256": "bfea8b17cd3c9125a5781c002b3e66dbc66868d7a770c042cfcb73490d227af0",
+      "bytes": 362
+    },
+    "output.schema.json": {
+      "sha256": "6e16825466cb6f4971060183132a227d19b7c395e16830ced7a4fae9f6d4e7b0",
+      "bytes": 7074
+    },
+    "camera_profiles.json": {
+      "sha256": "db77622a56357097b56a15e755e89b1ce1139f24e71d371b713f667ea42833c7",
+      "bytes": 87300
+    },
+    "build_system_prompt.py": {
+      "sha256": "9e951f221bf736b49cb7ed8168f54a3b632b5537fe685706e95f4e2752d441ca",
+      "bytes": 9598
+    },
+    "camera_profile_resolver.py": {
+      "sha256": "c5e0877bea62295e4c8f5781bbb0a1a8e06b35f1f6494cb0b4fe60479889b7c0",
+      "bytes": 11993
+    },
+    "build_sample_review.py": {
+      "sha256": "5de2cf30dc77cc011959dc6ce0f3629427febf0b445afb2b8258ac47bb02d491",
+      "bytes": 30388
+    },
+    "test_camera_profile_tools.py": {
+      "sha256": "97e04db1f5916ef2ec9234d0d81fb99d59eb1bd4458ec625497501d8fa3cfbd0",
+      "bytes": 8158
+    }
+  },
+  "eval_artifacts": {
+    "manifest_sha256": "a6750b3f3034a80926c0519f4651865f3c48c5544bb63e1a742aeb17f08ca9e1",
+    "validation_sha256": "261e40c6377a65625350ab94b7798edfaacc06e62a925d219c8755e48ab6b2b1",
+    "manual_review_sha256": "fd2a806c899a2fc080535d39c078f4053c759893ce541336cefb53e98ad46ea9",
+    "initial_16_run_summary_sha256": "94cb24c834880f6bfec04697d250b17ba98a3ff4f19a40f1308609c7af4bcf97",
+    "resumed_run_summary_sha256": "085a5d63df3b24c985d4c425fd52dc81483f314147a0bdc25427ba6c9b0187f2"
+  },
+  "hash_inventory": "SHA256SUMS"
+}

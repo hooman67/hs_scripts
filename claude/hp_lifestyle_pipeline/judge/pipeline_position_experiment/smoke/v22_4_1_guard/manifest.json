@@ -1,0 +1,1892 @@
+{
+  "schema_version": 1,
+  "experiment": "v22.4.1 calibrated alpha-mask textureless fallback full-eight gate",
+  "pr_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+  "pipeline_version": "unified-blue-scale-v22.4.1-calibrated-080-alpha-textureless-invariant-fallback-twin-camera-guide-only-no-edit-mask",
+  "source_hashes": {
+    "hp3p/prompts/system_3p.txt": "bb02ad09f86a9a4aa4bdeac7c023d1ece0356ecef298853436af4781fa595ddf",
+    "hp3p/prompts/system_3p_fixed_position.txt": "67e4d817a5a203912116bb99afbd6c4511d9a5c537b241cc6e980e34e75b1118",
+    "hp3p/pipeline.py": "b0730eb08d036a139f34a3a95f36829984857d963f09d84d0e6e859de5285467",
+    "hp3p/geometry.py": "f9d0f3a395624a150f9a9fed8c836394b66f041f6e212dc87c8b1a2322514a95",
+    "hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+    "hp3p/reference_blue.py": "f36098543e208029226ae3b04ffd22c39edf7e168ab49dd5868e2185bd90661d",
+    "hp3p/invariants.py": "a064e65cbedf2c3e3df92e78cebcce009bc3a4d6deb8ea57d2a26cc821d56b30",
+    "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3"
+  },
+  "fixtures": [
+    {
+      "slug": "cashmere__laptop_FrontCloseUp__p1__retained_control",
+      "base_slug": "cashmere__laptop_FrontCloseUp__p1",
+      "mode": "retained_control",
+      "device_id": "cashmere",
+      "camera_id": "Front_CloseUp",
+      "prompt": "A quiet office desk set up before a meeting, with an open unlabelled folder showing blank sheets on a pale work surface. A frosted glass partition behind the desk catches clean morning light, keeping the area composed and ready for focused work.",
+      "pipeline_version": "unified-blue-scale-v22.4.1-calibrated-080-alpha-textureless-invariant-fallback-twin-camera-guide-only-no-edit-mask",
+      "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+      "status": "ok",
+      "error": null,
+      "output_sha256": "7e58977e8358d2085921907bf28c732764e9140e148740c63cfcdf381b12b4ee",
+      "attempt_1_sha256": "347015993b47be7c7cb72175ee54dff1e2d5e6dde134415838bd4a866a826aa9",
+      "attempt_2_sha256": "7e58977e8358d2085921907bf28c732764e9140e148740c63cfcdf381b12b4ee",
+      "product_invariant_guard": {
+        "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+        "attempts": [
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": true,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              543,
+              432,
+              2069,
+              1464
+            ],
+            "matches": 109,
+            "inliers": 86,
+            "inlier_ratio": 0.7889908256880734,
+            "full_affine_matrix": [
+              [
+                0.9682400101821852,
+                0.0007390008286391001,
+                56.73946769852836
+              ],
+              [
+                0.003075698970543745,
+                0.9663749773153527,
+                13.501618256864607
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                0.9678513436332448,
+                -0.0024374124706219155,
+                60.76394750325986
+              ],
+              [
+                0.0024374124706219155,
+                0.9678513436332448,
+                12.687497235237124
+              ]
+            ],
+            "partial_inliers": 90,
+            "singular_values": [
+              0.9694313033223355,
+              0.9651850953490667
+            ],
+            "anisotropy_ratio": 1.0043993716787898,
+            "rotation_deg": 0.06920388670955377,
+            "column_shear_cos": 0.003941280681559925,
+            "residual_median_px": 0.9417494123364574,
+            "residual_p95_px": 2.729752441798184,
+            "source_span_x_fraction": 0.7552406787872314,
+            "source_span_y_fraction": 0.4917902946472168,
+            "source_quadrants": 3,
+            "source_hull_fraction": 0.24492258427460484,
+            "transformed_product_corners_px": [
+              [
+                582.8130415854271,
+                432.6457129981022
+              ],
+              [
+                2060.3472971234414,
+                437.339229627152
+              ],
+              [
+                2061.109945978597,
+                1434.6382062165958
+              ],
+              [
+                583.5756904405825,
+                1429.9446895875462
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": 56.73946769852836,
+            "translation_y_px": 13.501618256864607,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": false,
+              "singular_max": true,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true,
+              "fixed_translation_x": false,
+              "fixed_translation_y": false
+            },
+            "reasons": [
+              "singular_min",
+              "fixed_translation_x",
+              "fixed_translation_y"
+            ],
+            "verdict": "fail"
+          },
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": true,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              543,
+              432,
+              2069,
+              1464
+            ],
+            "matches": 146,
+            "inliers": 112,
+            "inlier_ratio": 0.7671232876712328,
+            "full_affine_matrix": [
+              [
+                0.9990383776926915,
+                0.0002274166454094193,
+                1.2513019170313089
+              ],
+              [
+                0.0009741824801374461,
+                0.9997624398023942,
+                -1.2808277055052584
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                0.9997595098548818,
+                -0.0006352677575458892,
+                1.3945346843042883
+              ],
+              [
+                0.0006352677575458892,
+                0.9997595098548818,
+                -0.9600402201759957
+              ]
+            ],
+            "partial_inliers": 117,
+            "singular_values": [
+              1.0001019245740244,
+              0.9986990324195016
+            ],
+            "anisotropy_ratio": 1.0014047196492462,
+            "rotation_deg": 0.02140609922171236,
+            "column_shear_cos": 0.0012025902579825647,
+            "residual_median_px": 0.8444254715147919,
+            "residual_p95_px": 2.201204436446391,
+            "source_span_x_fraction": 0.7552406787872314,
+            "source_span_y_fraction": 0.6614018678665161,
+            "source_quadrants": 4,
+            "source_hull_fraction": 0.29586519353378893,
+            "transformed_product_corners_px": [
+              [
+                543.8273849949798,
+                431.1455273758437
+              ],
+              [
+                2068.3599493540273,
+                432.6321298405334
+              ],
+              [
+                2068.5946433320896,
+                1464.3869677166042
+              ],
+              [
+                544.0620789730423,
+                1462.9003652519145
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": 1.2513019170313089,
+            "translation_y_px": -1.2808277055052584,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": true,
+              "singular_max": true,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true,
+              "fixed_translation_x": true,
+              "fixed_translation_y": true
+            },
+            "reasons": [],
+            "verdict": "pass"
+          }
+        ],
+        "selected_attempt": 2
+      },
+      "final_prompt_sha256": "a5c15989853d9f39a8b4dc2f9e5b0a5e6bde9f40908af0701bee765080e77c02",
+      "selected_prompt_sha256": "93f24ebeb378e3a5c4b8e239ea7717086c415d6cad299793cb6a737224545877",
+      "stage_b_attempts": [
+        {
+          "attempt": 1,
+          "system_sha256": "d4250ae2f53583f19651e4e3245417f47164eadce71137064d4499e8a6c30b35",
+          "text_sha256": "2b7e53807c6e177f398807bd74a7b70546765527456eadacbacce7cf1b217448",
+          "request_sha256": "726511c841bc3bc5a62ccab0a5d9293e1cbefdba880fb9ac0852168f15e44e6f",
+          "response_sha256": "a28c6bf6a77754fad2714bd5ce4f937a1fedf0e8d98592fd82fe934cfae108d3",
+          "executable_prompt_sha256": "a5c15989853d9f39a8b4dc2f9e5b0a5e6bde9f40908af0701bee765080e77c02"
+        }
+      ],
+      "image_calls": 2,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 987,
+            "prompt_tokens": 14126,
+            "total_tokens": 15113,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 111,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 13568,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+          "mask": false
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "cashmere__laptop_FrontCloseUp__p1__relocation_demand",
+      "base_slug": "cashmere__laptop_FrontCloseUp__p1",
+      "mode": "relocation_demand",
+      "device_id": "cashmere",
+      "camera_id": "Front_CloseUp",
+      "prompt": "A close modern office scene. Place the fully visible laptop substantially farther toward image left than its current position, as far as its unchanged pixel size safely allows, so a broad clear planning area sits to its right. Build a pale wood worktable beneath the laptop at that chosen position, with believable edge clearances and its working edge facing the keyboard. Align an upholstered chair with the laptop's keyboard and keep the approach completely clear. A ribbed glass partition and soft daylight complete the scene.",
+      "pipeline_version": "unified-blue-scale-v22.4.1-calibrated-080-alpha-textureless-invariant-fallback-twin-camera-guide-only-no-edit-mask",
+      "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+      "status": "ok",
+      "error": null,
+      "output_sha256": "31c7f07df701b04adfd0f6bd0af2c2c02475ac61d58759efa5f1ed99f5455026",
+      "attempt_1_sha256": "31c7f07df701b04adfd0f6bd0af2c2c02475ac61d58759efa5f1ed99f5455026",
+      "attempt_2_sha256": null,
+      "product_invariant_guard": {
+        "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+        "attempts": [
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": true,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              543,
+              432,
+              2069,
+              1464
+            ],
+            "matches": 118,
+            "inliers": 106,
+            "inlier_ratio": 0.8983050847457628,
+            "full_affine_matrix": [
+              [
+                1.0005156212014505,
+                -0.0010409584129080704,
+                0.6524362089665079
+              ],
+              [
+                0.0006104403220267672,
+                0.9990616204218852,
+                -0.4163924212746716
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                1.0000001554482363,
+                -0.0005739064845629843,
+                0.7833850374805291
+              ],
+              [
+                0.0005739064845629843,
+                1.0000001554482363,
+                -1.333141015276537
+              ]
+            ],
+            "partial_inliers": 107,
+            "singular_values": [
+              1.0005471609711014,
+              0.9990307625757078
+            ],
+            "anisotropy_ratio": 1.0015178695713873,
+            "rotation_deg": 0.047319080415319244,
+            "column_shear_cos": 0.0004318101014774898,
+            "residual_median_px": 0.8099335835074997,
+            "residual_p95_px": 2.1916973681387706,
+            "source_span_x_fraction": 0.9379565715789795,
+            "source_span_y_fraction": 0.7099456191062927,
+            "source_quadrants": 4,
+            "source_hull_fraction": 0.35251801241697445,
+            "transformed_product_corners_px": [
+              [
+                543.4827244869779,
+                431.50969669584026
+              ],
+              [
+                2070.269562440392,
+                432.4412286272531
+              ],
+              [
+                2069.1952933582706,
+                1463.4728209026387
+              ],
+              [
+                542.4084554048568,
+                1462.5412889712259
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": 0.6524362089665079,
+            "translation_y_px": -0.4163924212746716,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": true,
+              "singular_max": true,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true,
+              "fixed_translation_x": true,
+              "fixed_translation_y": true
+            },
+            "reasons": [],
+            "verdict": "pass"
+          }
+        ],
+        "selected_attempt": 1
+      },
+      "final_prompt_sha256": "6062f704f4755ca1a4771160daf1762e2ad9668754a4915252dab9ecae431878",
+      "selected_prompt_sha256": "6062f704f4755ca1a4771160daf1762e2ad9668754a4915252dab9ecae431878",
+      "stage_b_attempts": [
+        {
+          "attempt": 1,
+          "system_sha256": "d4250ae2f53583f19651e4e3245417f47164eadce71137064d4499e8a6c30b35",
+          "text_sha256": "a008d9058f4eaeeb159b354ffece879134385e2f9f4fd8e04f7d4b845344f183",
+          "request_sha256": "a13b49f2aac026a91bcb540e9f99f0deff529ea70b7bf07e3f53682cb97d10ff",
+          "response_sha256": "afe0d7fd5d6be2af497dd9c1ff41f7097e7caf5343bf59c2e4182fd8838c1fd5",
+          "executable_prompt_sha256": "6062f704f4755ca1a4771160daf1762e2ad9668754a4915252dab9ecae431878"
+        }
+      ],
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 949,
+            "prompt_tokens": 14174,
+            "total_tokens": 15123,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 65,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 13568,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "cashmere__laptop_FrontWide__p1__retained_control",
+      "base_slug": "cashmere__laptop_FrontWide__p1",
+      "mode": "retained_control",
+      "device_id": "cashmere",
+      "camera_id": "Front_Wide",
+      "prompt": "A glass-walled office planning area uses a sturdy table with two unlabelled architectural finish samples and a stone paperweight. A ribbed-glass divider and a freestanding felt privacy screen make the room feel prepared for a private discussion under cool, even light.",
+      "pipeline_version": "unified-blue-scale-v22.4.1-calibrated-080-alpha-textureless-invariant-fallback-twin-camera-guide-only-no-edit-mask",
+      "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "status": "ok",
+      "error": null,
+      "output_sha256": "7d8b01aa24ff6bf02e7684339d4fd2df07534d93a658b2e7d66bd1774268e57e",
+      "attempt_1_sha256": "7d8b01aa24ff6bf02e7684339d4fd2df07534d93a658b2e7d66bd1774268e57e",
+      "attempt_2_sha256": null,
+      "product_invariant_guard": {
+        "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+        "attempts": [
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": false,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              687,
+              737,
+              1344,
+              1224
+            ],
+            "matches": 53,
+            "inliers": 46,
+            "inlier_ratio": 0.8679245283018868,
+            "full_affine_matrix": [
+              [
+                1.0058119947492268,
+                -0.001360965179615933,
+                -5.012753647835125
+              ],
+              [
+                0.0014603570071818226,
+                1.0060301802713802,
+                -12.423578786149491
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                1.0056041279204968,
+                -0.00173978006390474,
+                -4.446024134930434
+              ],
+              [
+                0.00173978006390474,
+                1.0056041279204968,
+                -12.35350131986249
+              ]
+            ],
+            "partial_inliers": 47,
+            "singular_values": [
+              1.0060419553840785,
+              1.0058021978868772
+            ],
+            "anisotropy_ratio": 1.0002383744017511,
+            "rotation_deg": 0.08034911982166941,
+            "column_shear_cos": 9.911076305256902e-05,
+            "residual_median_px": 0.920935353947679,
+            "residual_p95_px": 2.0108640281651233,
+            "source_span_x_fraction": 0.749198853969574,
+            "source_span_y_fraction": 0.6716705560684204,
+            "source_quadrants": 4,
+            "source_hull_fraction": 0.2980717418094604,
+            "transformed_product_corners_px": [
+              [
+                684.9770554075068,
+                730.0239293377916
+              ],
+              [
+                1345.7955359577486,
+                730.9833838915101
+              ],
+              [
+                1345.1327459152758,
+                1220.9200816836724
+              ],
+              [
+                684.3142653650337,
+                1219.960627129954
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": -5.012753647835125,
+            "translation_y_px": -12.423578786149491,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": true,
+              "singular_max": true,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true
+            },
+            "reasons": [],
+            "verdict": "pass"
+          }
+        ],
+        "selected_attempt": 1
+      },
+      "final_prompt_sha256": "7403be437e5b4ce2eac87a287319bae3e0006a0210870599a64c40abc936cfdd",
+      "selected_prompt_sha256": "7403be437e5b4ce2eac87a287319bae3e0006a0210870599a64c40abc936cfdd",
+      "stage_b_attempts": [
+        {
+          "attempt": 1,
+          "system_sha256": "d4250ae2f53583f19651e4e3245417f47164eadce71137064d4499e8a6c30b35",
+          "text_sha256": "b210fffa9055357a27a4a5c2501978bbc80f59d451c8e77578f287a33339aa07",
+          "request_sha256": "0bbb8314300a0d9a506ac8258036011567be64a02ac6aafa35a1489f21561278",
+          "response_sha256": "c6f1425af812e201cbfff02a629fb2e6d9d149430657d0eac5daf79343dd9977",
+          "executable_prompt_sha256": "7403be437e5b4ce2eac87a287319bae3e0006a0210870599a64c40abc936cfdd"
+        }
+      ],
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 982,
+            "prompt_tokens": 14273,
+            "total_tokens": 15255,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 55,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 13696,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "cashmere__laptop_FrontWide__p1__relocation_demand",
+      "base_slug": "cashmere__laptop_FrontWide__p1",
+      "mode": "relocation_demand",
+      "device_id": "cashmere",
+      "camera_id": "Front_Wide",
+      "prompt": "A wide glass-walled office planning room. Move the fully visible laptop into a right-hand workstation, leaving a broad unobstructed aisle and open tabletop area on the left. Keep the laptop's exact view and pixel size. Compose a new sturdy worktable beneath it with a user-facing edge and a chair aligned directly with the keyboard. Add a felt privacy screen in the far background and cool even daylight.",
+      "pipeline_version": "unified-blue-scale-v22.4.1-calibrated-080-alpha-textureless-invariant-fallback-twin-camera-guide-only-no-edit-mask",
+      "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "status": "ok",
+      "error": null,
+      "output_sha256": "3ebed3d81d0327fd320f2ee65bcf8bf46543d1f94c79dbd649d83327cb2febfc",
+      "attempt_1_sha256": "85d3cddb05b4ca59cb7550d9e93029e859e498ec2460684135eb4434a0f3a18b",
+      "attempt_2_sha256": "3ebed3d81d0327fd320f2ee65bcf8bf46543d1f94c79dbd649d83327cb2febfc",
+      "product_invariant_guard": {
+        "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+        "attempts": [
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": false,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              687,
+              737,
+              1344,
+              1224
+            ],
+            "matches": 54,
+            "inliers": 48,
+            "inlier_ratio": 0.8888888888888888,
+            "full_affine_matrix": [
+              [
+                0.9654098659167739,
+                0.002076945717126573,
+                768.673003165107
+              ],
+              [
+                0.001600828435793847,
+                0.9653647633597658,
+                -197.87027511058753
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                0.9655201712965231,
+                -0.0003251138260959555,
+                770.9483092591433
+              ],
+              [
+                0.0003251138260959555,
+                0.9655201712965231,
+                -196.75365030291627
+              ]
+            ],
+            "partial_inliers": 47,
+            "singular_values": [
+              0.967226369340772,
+              0.9635483186395799
+            ],
+            "anisotropy_ratio": 1.0038171938345397,
+            "rotation_deg": -0.014128790490108827,
+            "column_shear_cos": 0.003809633349436848,
+            "residual_median_px": 0.7507415264901057,
+            "residual_p95_px": 2.3222532760479635,
+            "source_span_x_fraction": 0.7493281364440918,
+            "source_span_y_fraction": 0.5593830347061157,
+            "source_quadrants": 4,
+            "source_hull_fraction": 0.24304084074063395,
+            "transformed_product_corners_px": [
+              [
+                1433.440290043453,
+                514.7033246209503
+              ],
+              [
+                2067.7145719507735,
+                515.7550689032669
+              ],
+              [
+                2068.726044515014,
+                985.8877086594728
+              ],
+              [
+                1434.4517626076936,
+                984.8359643771562
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": 768.673003165107,
+            "translation_y_px": -197.87027511058753,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": false,
+              "singular_max": true,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true
+            },
+            "reasons": [
+              "singular_min"
+            ],
+            "verdict": "fail"
+          },
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": true,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              687,
+              737,
+              1344,
+              1224
+            ],
+            "matches": 55,
+            "inliers": 51,
+            "inlier_ratio": 0.9272727272727272,
+            "full_affine_matrix": [
+              [
+                0.9982916554176826,
+                -0.0002136796748874654,
+                1.2568443560544642
+              ],
+              [
+                0.0034230263213701397,
+                0.9969082930686297,
+                -0.5072545040091057
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                1.0013937216648696,
+                -0.0002469653605359336,
+                -1.7214948979817937
+              ],
+              [
+                0.0002469653605359336,
+                1.0013937216648696,
+                -1.6761352570883812
+              ]
+            ],
+            "partial_inliers": 46,
+            "singular_values": [
+              0.9993490292944254,
+              0.9958542335513145
+            ],
+            "anisotropy_ratio": 1.003509344666486,
+            "rotation_deg": 0.1044344825279085,
+            "column_shear_cos": 0.0032145227074410663,
+            "residual_median_px": 0.8358240010187244,
+            "residual_p95_px": 2.928525499219159,
+            "source_span_x_fraction": 0.702228307723999,
+            "source_span_y_fraction": 0.5258758068084717,
+            "source_quadrants": 4,
+            "source_hull_fraction": 0.224961800935862,
+            "transformed_product_corners_px": [
+              [
+                686.9257297076102,
+                736.5657765703523
+              ],
+              [
+                1342.8033473170278,
+                738.8147048634925
+              ],
+              [
+                1342.6992853153577,
+                1224.309043587915
+              ],
+              [
+                686.8216677059401,
+                1222.060115294775
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": 1.2568443560544642,
+            "translation_y_px": -0.5072545040091057,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": true,
+              "singular_max": true,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true,
+              "fixed_translation_x": true,
+              "fixed_translation_y": true
+            },
+            "reasons": [],
+            "verdict": "pass"
+          }
+        ],
+        "selected_attempt": 2
+      },
+      "final_prompt_sha256": "cf6fcc29863541c1e3e103c2ec904a1a1db1999bc78424a281d375655fd4480a",
+      "selected_prompt_sha256": "ed2991fe59142b8225eb597cb1d91099042510b074ebacbcdd119f10abf082d7",
+      "stage_b_attempts": [
+        {
+          "attempt": 1,
+          "system_sha256": "d4250ae2f53583f19651e4e3245417f47164eadce71137064d4499e8a6c30b35",
+          "text_sha256": "15b75b35a6662b23a9a5f9dd399f3f45d33262e9fe9b6c6d0fee4f52cc85caa0",
+          "request_sha256": "b743d93fd149798b7d4a544e8150c52aa73ed7ced57691121966ade39af4ce14",
+          "response_sha256": "4d8807aa78edf1bf33da18cab2b9c1654c62f988a0380f65306670b6556cb45e",
+          "executable_prompt_sha256": "cf6fcc29863541c1e3e103c2ec904a1a1db1999bc78424a281d375655fd4480a"
+        },
+        {
+          "attempt": 2,
+          "system_sha256": "c77f95f470590c602ebb96d08e555b4d17fc419009b12dab26212df62fb6e4e5",
+          "text_sha256": "581191d0d2e045a970d01e558c73cb4e48aa20bb93ec9f8e70f492fa6343fa37",
+          "request_sha256": "250ee4db934cb6fd9b8ac62a2503e170f5ad143f521e4638c83a75e3d5972f72",
+          "response_sha256": "008c86b2e1993d43c1795ca1627338476af41da3ff3d1b5c20ac467780590156",
+          "raw_response_sha256": "008c86b2e1993d43c1795ca1627338476af41da3ff3d1b5c20ac467780590156",
+          "meta_commentary_removed": false,
+          "executable_prompt_sha256": "ed2991fe59142b8225eb597cb1d91099042510b074ebacbcdd119f10abf082d7"
+        }
+      ],
+      "image_calls": 2,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 1007,
+            "prompt_tokens": 14301,
+            "total_tokens": 15308,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 88,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 13696,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+          "mask": false
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 871,
+            "prompt_tokens": 11686,
+            "total_tokens": 12557,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 93,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "magic__printer_FrontCloseUp__p1__retained_control",
+      "base_slug": "magic__printer_FrontCloseUp__p1",
+      "mode": "retained_control",
+      "device_id": "magic",
+      "camera_id": "Front_CloseUp",
+      "prompt": "A common office area with a dedicated output table in clear midday light, with an architectural letter tray holding a few plain papers with indistinct markings. The surrounding wall and work surface stay orderly, giving the area the practical rhythm of everyday document work.",
+      "pipeline_version": "unified-blue-scale-v22.4.1-calibrated-080-alpha-textureless-invariant-fallback-twin-camera-guide-only-no-edit-mask",
+      "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+      "status": "ok",
+      "error": null,
+      "output_sha256": "78690f634eb1ccef37974ace233788a6fe1a1d32c32a56fdc026a70631b813f1",
+      "attempt_1_sha256": "78690f634eb1ccef37974ace233788a6fe1a1d32c32a56fdc026a70631b813f1",
+      "attempt_2_sha256": null,
+      "product_invariant_guard": {
+        "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+        "attempts": [
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": true,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              497,
+              176,
+              1754,
+              1431
+            ],
+            "matches": 83,
+            "inliers": 62,
+            "inlier_ratio": 0.7469879518072289,
+            "full_affine_matrix": [
+              [
+                1.000940340536154,
+                -0.00033496123735260973,
+                -0.4085278906057188
+              ],
+              [
+                0.0009879546151405332,
+                0.9995315429146152,
+                -1.1893852693208784
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                1.0006876195285404,
+                -9.138821442871803e-05,
+                -0.2180740629742135
+              ],
+              [
+                9.138821442871803e-05,
+                1.0006876195285404,
+                -0.7083000719572046
+              ]
+            ],
+            "partial_inliers": 65,
+            "singular_values": [
+              1.001012548080225,
+              0.9994597727938783
+            ],
+            "anisotropy_ratio": 1.0015536145912167,
+            "rotation_deg": 0.037889802189472965,
+            "column_shear_cos": 0.0006519078941194798,
+            "residual_median_px": 0.7405772644196726,
+            "residual_p95_px": 1.627490376990575,
+            "source_span_x_fraction": 0.9370389580726624,
+            "source_span_y_fraction": 0.7848802208900452,
+            "source_quadrants": 3,
+            "source_hull_fraction": 0.3625636733335313,
+            "transformed_product_corners_px": [
+              [
+                496.9998681780888,
+                175.21917972737626
+              ],
+              [
+                1755.1818762320345,
+                176.4610386786079
+              ],
+              [
+                1754.761499879157,
+                1430.8731250364501
+              ],
+              [
+                496.5794918252113,
+                1429.6312660852184
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": -0.4085278906057188,
+            "translation_y_px": -1.1893852693208784,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": true,
+              "singular_max": true,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true,
+              "fixed_translation_x": true,
+              "fixed_translation_y": true
+            },
+            "reasons": [],
+            "verdict": "pass"
+          }
+        ],
+        "selected_attempt": 1
+      },
+      "final_prompt_sha256": "c2ecbc907c7763d57251369527d329e9e280c165e5d3d7473558fea10477a84f",
+      "selected_prompt_sha256": "c2ecbc907c7763d57251369527d329e9e280c165e5d3d7473558fea10477a84f",
+      "stage_b_attempts": [
+        {
+          "attempt": 1,
+          "system_sha256": "8b8c236baf906c572841aed4a31c94bc3d497073693e6c1c6e414400156eff90",
+          "text_sha256": "cca04df1067406dd02cbc215b82ec370a3a78deedf9f18dc1f7c8261aa953dfd",
+          "request_sha256": "1f3ee7b9edad81d56a77cd847d357ecb8b6923b350f1b6ff14d0d6f87e175f4b",
+          "response_sha256": "6f9d1322034f58e9e9930d3579083590a1667071f6b25fd33866204897a3461a",
+          "executable_prompt_sha256": "c2ecbc907c7763d57251369527d329e9e280c165e5d3d7473558fea10477a84f"
+        }
+      ],
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 1073,
+            "prompt_tokens": 14182,
+            "total_tokens": 15255,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 180,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 13568,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "magic__printer_FrontCloseUp__p1__relocation_demand",
+      "base_slug": "magic__printer_FrontCloseUp__p1",
+      "mode": "relocation_demand",
+      "device_id": "magic",
+      "camera_id": "Front_CloseUp",
+      "prompt": "A close office output station. Place the fully visible printer distinctly farther toward image right than its current position, preserving its exact view and pixel size, to leave a clear paper-sorting area on the left. Build a dedicated pale oak printer table beneath it with the complete base supported, the printer square to the table, clear standing access at the operating front, and the back of the station against a plain wall. Keep all objects beside rather than in front of the printer.",
+      "pipeline_version": "unified-blue-scale-v22.4.1-calibrated-080-alpha-textureless-invariant-fallback-twin-camera-guide-only-no-edit-mask",
+      "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+      "status": "ok",
+      "error": null,
+      "output_sha256": "7d3db83246feacd62c2d474061394f8aa2ccb98fee293b182fd7ffdde13feb94",
+      "attempt_1_sha256": "7d3db83246feacd62c2d474061394f8aa2ccb98fee293b182fd7ffdde13feb94",
+      "attempt_2_sha256": null,
+      "product_invariant_guard": {
+        "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+        "attempts": [
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": true,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              497,
+              176,
+              1754,
+              1431
+            ],
+            "matches": 74,
+            "inliers": 59,
+            "inlier_ratio": 0.7972972972972973,
+            "full_affine_matrix": [
+              [
+                0.9993032896977613,
+                0.0019638106894369306,
+                0.5951827777629081
+              ],
+              [
+                0.0013309467920951433,
+                0.9970589698591418,
+                0.721750879514125
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                0.9992693553391866,
+                0.0003447533333188225,
+                1.6564982399816646
+              ],
+              [
+                -0.0003447533333188225,
+                0.9992693553391866,
+                1.373314502531213
+              ]
+            ],
+            "partial_inliers": 57,
+            "singular_values": [
+              1.000174443489352,
+              0.9961879163791805
+            ],
+            "anisotropy_ratio": 1.0040017822386977,
+            "rotation_deg": -0.018163251151257987,
+            "column_shear_cos": 0.0033014687432220196,
+            "residual_median_px": 0.764563568595332,
+            "residual_p95_px": 2.5986515585911336,
+            "source_span_x_fraction": 0.8329030275344849,
+            "source_span_y_fraction": 0.8338404297828674,
+            "source_quadrants": 4,
+            "source_hull_fraction": 0.48773315382236315,
+            "transformed_product_corners_px": [
+              [
+                497.59454843889114,
+                176.86561013039437
+              ],
+              [
+                1753.718783588977,
+                178.53861024805798
+              ],
+              [
+                1756.1833660042203,
+                1429.8476174212808
+              ],
+              [
+                500.0591308541345,
+                1428.1746173036172
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": 0.5951827777629081,
+            "translation_y_px": 0.721750879514125,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": true,
+              "singular_max": true,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true,
+              "fixed_translation_x": true,
+              "fixed_translation_y": true
+            },
+            "reasons": [],
+            "verdict": "pass"
+          }
+        ],
+        "selected_attempt": 1
+      },
+      "final_prompt_sha256": "39150632dcbe5d1d74de45df8bb14f1020c522c7c6e7a6cbef8c5f9c88510a9d",
+      "selected_prompt_sha256": "39150632dcbe5d1d74de45df8bb14f1020c522c7c6e7a6cbef8c5f9c88510a9d",
+      "stage_b_attempts": [
+        {
+          "attempt": 1,
+          "system_sha256": "8b8c236baf906c572841aed4a31c94bc3d497073693e6c1c6e414400156eff90",
+          "text_sha256": "2ba6993aff69ef132d930deaa476e6cc1b5700149a70ca52f292c843bc665f55",
+          "request_sha256": "88fc26121743dcb7e248db9d7d3c03c380b591c87257dec13ce5abad6e619266",
+          "response_sha256": "91e4ac9d5e9e55a08c9d4dc5c9805100aad872f0a3bd6e3b7215b0a0940bec60",
+          "executable_prompt_sha256": "39150632dcbe5d1d74de45df8bb14f1020c522c7c6e7a6cbef8c5f9c88510a9d"
+        }
+      ],
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 942,
+            "prompt_tokens": 14227,
+            "total_tokens": 15169,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 58,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 13568,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "magic__printer_FrontWide__p1__retained_control",
+      "base_slug": "magic__printer_FrontWide__p1",
+      "mode": "retained_control",
+      "device_id": "magic",
+      "camera_id": "Front_Wide",
+      "prompt": "An open office area with a dedicated output table set against a pale brick wall. A stack of plain papers with indistinct markings rests beside an empty letter tray, while an upholstered office chair stands farther back in clear morning light for an orderly, busy work setting.",
+      "pipeline_version": "unified-blue-scale-v22.4.1-calibrated-080-alpha-textureless-invariant-fallback-twin-camera-guide-only-no-edit-mask",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "status": "ok",
+      "error": null,
+      "output_sha256": "8e7bcb7c93c6aadd4c14fdeebe9edf58c6a3286a354dcbeaabeb28c112ef931b",
+      "attempt_1_sha256": "8e7bcb7c93c6aadd4c14fdeebe9edf58c6a3286a354dcbeaabeb28c112ef931b",
+      "attempt_2_sha256": null,
+      "product_invariant_guard": {
+        "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+        "attempts": [
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": false,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              629,
+              633,
+              1203,
+              1206
+            ],
+            "matches": 45,
+            "inliers": 32,
+            "inlier_ratio": 0.7111111111111111,
+            "full_affine_matrix": [
+              [
+                0.9997899262698874,
+                -0.003257621892531745,
+                3.322419635735539
+              ],
+              [
+                -6.955625761750233e-05,
+                0.9959144757746111,
+                2.719077543220298
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                0.9977853767182262,
+                0.0003645792454124226,
+                2.369369939448325
+              ],
+              [
+                -0.0003645792454124226,
+                0.9977853767182262,
+                1.476009908069546
+              ]
+            ],
+            "partial_inliers": 32,
+            "singular_values": [
+              1.0004073551448687,
+              0.9952995933078047
+            ],
+            "anisotropy_ratio": 1.0051318837779173,
+            "rotation_deg": 0.09152785859768103,
+            "column_shear_cos": 0.0033405385771770363,
+            "residual_median_px": 0.4085084627490285,
+            "residual_p95_px": 0.8905277060477338,
+            "source_span_x_fraction": 0.9218695163726807,
+            "source_span_y_fraction": 0.7794076800346375,
+            "source_quadrants": 3,
+            "source_hull_fraction": 0.36717031211278994,
+            "transformed_product_corners_px": [
+              [
+                630.128208601522,
+                633.0891898225078
+              ],
+              [
+                1204.0076262804375,
+                633.0492645306354
+              ],
+              [
+                1202.1410089360168,
+                1203.7082591494875
+              ],
+              [
+                628.2615912571014,
+                1203.7481844413599
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": 3.322419635735539,
+            "translation_y_px": 2.719077543220298,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": true,
+              "singular_max": true,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true
+            },
+            "reasons": [],
+            "verdict": "pass"
+          }
+        ],
+        "selected_attempt": 1
+      },
+      "final_prompt_sha256": "11fcc369b8101dcedeecc0965bbe73b1a641352a0d1a524ac76bd992fa5cddf3",
+      "selected_prompt_sha256": "11fcc369b8101dcedeecc0965bbe73b1a641352a0d1a524ac76bd992fa5cddf3",
+      "stage_b_attempts": [
+        {
+          "attempt": 1,
+          "system_sha256": "8b8c236baf906c572841aed4a31c94bc3d497073693e6c1c6e414400156eff90",
+          "text_sha256": "3fcedbcf9f24bfcad3b5f0141db8fdb59d196593290e0efdd7e31e6ddde7d091",
+          "request_sha256": "1ebb0412020ecebff3435686f33d3cc9b819e47f0e0f8bb1b379122d05855a51",
+          "response_sha256": "3e26ee4462f5c7da9aef1d24f048ec6337cdf29588ffab8c4ef831fa574ab895",
+          "executable_prompt_sha256": "11fcc369b8101dcedeecc0965bbe73b1a641352a0d1a524ac76bd992fa5cddf3"
+        }
+      ],
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 997,
+            "prompt_tokens": 14229,
+            "total_tokens": 15226,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 77,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 13568,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "magic__printer_FrontWide__p1__relocation_demand",
+      "base_slug": "magic__printer_FrontWide__p1",
+      "mode": "relocation_demand",
+      "device_id": "magic",
+      "camera_id": "Front_Wide",
+      "prompt": "A wide open-office output area. Relocate the fully visible printer to a right-of-center dedicated output station, leaving the left side of the room open for paper sorting and circulation. Preserve the printer's exact view and pixel size. Compose a new pale oak support table beneath it, square to the fixed printer orientation, with believable edge clearances, wall alignment and unobstructed standing access at the front. Use soft clear daylight and an orderly office background.",
+      "pipeline_version": "unified-blue-scale-v22.4.1-calibrated-080-alpha-textureless-invariant-fallback-twin-camera-guide-only-no-edit-mask",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "status": "ok",
+      "error": null,
+      "output_sha256": "478be92f9139687305640c8ef1904c751cb35af651d31794b64c3c055d834f1d",
+      "attempt_1_sha256": "dbb4ce9df41be2b7e7063acbc88d3711a1aadbdfc513e82fca18aa3534f717e0",
+      "attempt_2_sha256": "478be92f9139687305640c8ef1904c751cb35af651d31794b64c3c055d834f1d",
+      "product_invariant_guard": {
+        "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+        "attempts": [
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": false,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              629,
+              633,
+              1203,
+              1206
+            ],
+            "matches": 45,
+            "inliers": 37,
+            "inlier_ratio": 0.8222222222222222,
+            "full_affine_matrix": [
+              [
+                1.044726312558708,
+                -0.014100389542842155,
+                719.3199484616864
+              ],
+              [
+                0.0019400190136549236,
+                1.0472176892534255,
+                -286.3008078233311
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                1.0394818203271015,
+                -0.006059866072354361,
+                718.162150905382
+              ],
+              [
+                0.006059866072354361,
+                1.0394818203271015,
+                -284.1481856320851
+              ]
+            ],
+            "partial_inliers": 33,
+            "singular_values": [
+              1.0522092285972444,
+              1.039796268867909
+            ],
+            "anisotropy_ratio": 1.011937876775467,
+            "rotation_deg": 0.4393185001075496,
+            "column_shear_cos": 0.011606585294262,
+            "residual_median_px": 0.8716547942137736,
+            "residual_p95_px": 1.7975970137771993,
+            "source_span_x_fraction": 0.8484070897102356,
+            "source_span_y_fraction": 0.7479166984558105,
+            "source_quadrants": 4,
+            "source_hull_fraction": 0.43669550003683383,
+            "transformed_product_corners_px": [
+              [
+                1367.5272524804946,
+                377.80826143367614
+              ],
+              [
+                1967.2001558891932,
+                378.9218323475141
+              ],
+              [
+                1959.1206326811446,
+                978.9775682897271
+              ],
+              [
+                1359.4477292724462,
+                977.8639973758891
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": 719.3199484616864,
+            "translation_y_px": -286.3008078233311,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": true,
+              "singular_max": false,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true
+            },
+            "reasons": [
+              "singular_max"
+            ],
+            "verdict": "fail"
+          },
+          {
+            "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+            "fixed_position": true,
+            "thresholds": {
+              "min_inliers": 20,
+              "min_inlier_ratio": 0.55,
+              "singular_min": 0.98,
+              "singular_max": 1.02,
+              "max_anisotropy_ratio": 1.02,
+              "max_abs_rotation_deg": 1.0,
+              "max_column_shear_cos": 0.02,
+              "max_residual_median_px": 1.5,
+              "max_residual_p95_px": 3.5,
+              "min_source_span_x_fraction": 0.45,
+              "min_source_span_y_fraction": 0.4,
+              "min_source_quadrants": 3,
+              "min_source_hull_fraction": 0.12,
+              "max_fixed_translation_px": 8.0
+            },
+            "product_bounds_px": [
+              629,
+              633,
+              1203,
+              1206
+            ],
+            "matches": 37,
+            "inliers": 30,
+            "inlier_ratio": 0.8108108108108109,
+            "full_affine_matrix": [
+              [
+                1.0001059265877825,
+                -0.002599792906975177,
+                2.146858529870653
+              ],
+              [
+                0.0016308158075141578,
+                0.9983602211180522,
+                -1.2280940942533112
+              ]
+            ],
+            "partial_affine_matrix": [
+              [
+                0.9994175009485272,
+                -0.0014841167901874707,
+                1.920416660755777
+              ],
+              [
+                0.0014841167901874707,
+                0.9994175009485272,
+                -1.9619209116144312
+              ]
+            ],
+            "partial_inliers": 30,
+            "singular_values": [
+              1.000233611903023,
+              0.9982370137445732
+            ],
+            "anisotropy_ratio": 1.0020001243501884,
+            "rotation_deg": 0.12129085213721567,
+            "column_shear_cos": 0.0009734153208370473,
+            "residual_median_px": 0.38384482564747635,
+            "residual_p95_px": 1.1947484335439953,
+            "source_span_x_fraction": 0.8806819319725037,
+            "source_span_y_fraction": 0.5597656965255737,
+            "source_quadrants": 4,
+            "source_hull_fraction": 0.368381919825215,
+            "transformed_product_corners_px": [
+              [
+                629.5678174434705,
+                631.7597090164002
+              ],
+              [
+                1203.6286193048577,
+                632.6957972899133
+              ],
+              [
+                1202.138937969161,
+                1204.7562039905572
+              ],
+              [
+                628.0781361077737,
+                1203.820115717044
+              ]
+            ],
+            "corners_in_frame": true,
+            "translation_x_px": 2.146858529870653,
+            "translation_y_px": -1.2280940942533112,
+            "checks": {
+              "inliers": true,
+              "inlier_ratio": true,
+              "singular_min": true,
+              "singular_max": true,
+              "anisotropy": true,
+              "rotation": true,
+              "shear": true,
+              "residual_median": true,
+              "residual_p95": true,
+              "span_x": true,
+              "span_y": true,
+              "quadrants": true,
+              "hull": true,
+              "corners": true,
+              "fixed_translation_x": true,
+              "fixed_translation_y": true
+            },
+            "reasons": [],
+            "verdict": "pass"
+          }
+        ],
+        "selected_attempt": 2
+      },
+      "final_prompt_sha256": "48f8400831cec571b5f785f94f7b491522697ed0b7bce596ae5266a679251a3f",
+      "selected_prompt_sha256": "8317711f821eadf6c967117ad29eb96676e1cba22d5fadda27698065234455e6",
+      "stage_b_attempts": [
+        {
+          "attempt": 1,
+          "system_sha256": "8b8c236baf906c572841aed4a31c94bc3d497073693e6c1c6e414400156eff90",
+          "text_sha256": "cbc839eda9bf9264484b5e12aa3bae1dcc5c5f0db9fc69a57620fcf1aa31971f",
+          "request_sha256": "a8e0c814a1fd641bfac6766a7745b13bf8f721f1eb063502307f7476229d597e",
+          "response_sha256": "1bc7b9b569ef8cca05acff60788feec3de9369a1d7ccbc7a47e2d6fd7ef733dc",
+          "executable_prompt_sha256": "48f8400831cec571b5f785f94f7b491522697ed0b7bce596ae5266a679251a3f"
+        },
+        {
+          "attempt": 2,
+          "system_sha256": "18d8d5beddfd90e6bad1185d69fc9df76ec898f898a25bb4ccd2ad16d7bfe2d9",
+          "text_sha256": "f2417422a3ef0bbc81ce03353b27feaf128767ed5396cb0e50ac6eeac60cfac4",
+          "request_sha256": "c8cd11d32c8851c8a4f885695a63b8fc40310ee77f6f94ede890623aed055387",
+          "response_sha256": "8f944775833124af3a6500ebae6c03e28fc2c4e0012812d19da0787cabc6b519",
+          "raw_response_sha256": "8f944775833124af3a6500ebae6c03e28fc2c4e0012812d19da0787cabc6b519",
+          "meta_commentary_removed": false,
+          "executable_prompt_sha256": "8317711f821eadf6c967117ad29eb96676e1cba22d5fadda27698065234455e6"
+        }
+      ],
+      "image_calls": 2,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 1014,
+            "prompt_tokens": 14268,
+            "total_tokens": 15282,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 86,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 13696,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+          "mask": false
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 853,
+            "prompt_tokens": 11638,
+            "total_tokens": 12491,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 91,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 11008,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+          "mask": false
+        }
+      ]
+    }
+  ],
+  "frozen_inputs": "V6.1 p1 products, style images, Stage-A geometry and byte-identical guides",
+  "api_retries": 0,
+  "bounded_guard_fallback_calls": 1,
+  "best_of": 1,
+  "manual_repair": false
+}

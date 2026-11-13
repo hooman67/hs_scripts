@@ -1,0 +1,47 @@
+visibility: public
+public:
+  files:
+  - endpoints
+  - types
+  deps:
+  - colligo.base
+  - colligo.models.cai[public]
+  - colligo.models.firefly.clio_common[public]
+  - colligo.models.lego_designs.diffusion[public]
+  - colligo.models.lego_designs.prompt_expansion[public]
+  - pydantic
+deps:
+- colligo.data
+- colligo.external_services.business_kit
+- colligo.image
+- colligo.models.build
+- colligo.models.cai
+- colligo.models.common.adapter_utils
+- colligo.models.common.metrics
+- colligo.models.dentro.model_zoo
+- colligo.models.dentro.pylib
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.diffusion.common[public]
+- colligo.models.firefly.nsfw_adobe_one[public]
+- colligo.models.firefly.pipelines.common
+- colligo.models.lego_designs.text_encoder[public]
+- colligo.models.lego_designs.vae[public]
+- colligo.models.prompt_forge.worker[public]
+- easyocr
+- numpy
+- omegaconf
+- opencv-contrib-python-headless
+- pillow
+- pyyaml
+- tenacity
+- torch
+- torchvision
+exclude:
+- scripts
+- "..."
+
+# This does not change behavior of the code
+# This is useful when for any rason the tar of deps uploaded to s3 or the cache of CI agents
+# being corrupted. Bump this to cause a new value and invalidate the cache.
+# "1" is added for this incident: https://adoberesearch.slack.com/archives/C050XP8QH98/p1738009670643249?thread_ts=1738008639.457959&cid=C050XP8QH98
+pyenv_cache_etag: "2"

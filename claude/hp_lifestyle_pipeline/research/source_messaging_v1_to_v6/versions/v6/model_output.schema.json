@@ -1,0 +1,269 @@
+{
+  "type": "object",
+  "properties": {
+    "prompts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "environment": {
+            "type": "string",
+            "enum": [
+              "Home",
+              "Office",
+              "Education",
+              "Gaming",
+              "Café",
+              "Creative Studio"
+            ]
+          },
+          "text": {
+            "type": "string"
+          },
+          "prop_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "score_components": {
+            "type": "object",
+            "properties": {
+              "smart_brief": {
+                "type": "object",
+                "properties": {
+                  "setting": {
+                    "type": "integer",
+                    "enum": [
+                      0,
+                      10,
+                      20,
+                      30
+                    ]
+                  },
+                  "activity": {
+                    "type": "integer",
+                    "enum": [
+                      0,
+                      10,
+                      20,
+                      30
+                    ]
+                  },
+                  "materials": {
+                    "type": "integer",
+                    "enum": [
+                      0,
+                      5,
+                      10,
+                      15,
+                      20
+                    ]
+                  },
+                  "use_context": {
+                    "type": "integer",
+                    "enum": [
+                      0,
+                      5,
+                      10,
+                      15,
+                      20
+                    ]
+                  }
+                },
+                "required": [
+                  "setting",
+                  "activity",
+                  "materials",
+                  "use_context"
+                ],
+                "additionalProperties": false
+              },
+              "source_messaging": {
+                "type": "object",
+                "properties": {
+                  "setting": {
+                    "type": "integer",
+                    "enum": [
+                      0,
+                      10,
+                      20,
+                      30
+                    ]
+                  },
+                  "activity": {
+                    "type": "integer",
+                    "enum": [
+                      0,
+                      10,
+                      20,
+                      30
+                    ]
+                  },
+                  "materials": {
+                    "type": "integer",
+                    "enum": [
+                      0,
+                      5,
+                      10,
+                      15,
+                      20
+                    ]
+                  },
+                  "use_context": {
+                    "type": "integer",
+                    "enum": [
+                      0,
+                      5,
+                      10,
+                      15,
+                      20
+                    ]
+                  }
+                },
+                "required": [
+                  "setting",
+                  "activity",
+                  "materials",
+                  "use_context"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "smart_brief",
+              "source_messaging"
+            ],
+            "additionalProperties": false
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "document": {
+                  "type": "string",
+                  "enum": [
+                    "smart_brief",
+                    "source_messaging"
+                  ]
+                },
+                "path": {
+                  "type": "string"
+                },
+                "quote": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "document",
+                "path",
+                "quote"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "source_grounded",
+              "source_adjacent",
+              "creative_departure"
+            ]
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "creative_departures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ctech_reference_id": {
+            "type": "string",
+            "enum": [
+              "CT01",
+              "CT02",
+              "CT03",
+              "CT04",
+              "CT05",
+              "CT06",
+              "CT07",
+              "CT08",
+              "CT09",
+              "CT10",
+              "CT11",
+              "CT12",
+              "CT13",
+              "CT14",
+              "CT15",
+              "CT16",
+              "CT17",
+              "CT18"
+            ]
+          },
+          "ctech_reference_score": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "ctech_explanation": {
+            "type": "string"
+          },
+          "camera_fit_explanation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "environment",
+          "text",
+          "prop_ids",
+          "score_components",
+          "evidence",
+          "relationship",
+          "explanation",
+          "creative_departures",
+          "ctech_reference_id",
+          "ctech_reference_score",
+          "ctech_explanation",
+          "camera_fit_explanation"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 10,
+      "maxItems": 10
+    },
+    "debug": {
+      "type": "object",
+      "properties": {
+        "source_conflicts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "environment_rationale": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_conflicts",
+        "limitations",
+        "environment_rationale"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "prompts",
+    "debug"
+  ],
+  "additionalProperties": false
+}

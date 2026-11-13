@@ -1,0 +1,644 @@
+{
+  "schema_version": "hp-placement-v4.4-gate-a-diagnostic-v1",
+  "claim_boundary": "reused labeled development cases; diagnostic only, not accuracy estimate",
+  "protocol_freeze_sha256": "56504eb067c93a0ea1bd6d6a96aee5e7137d46228cc8395f5822c841e884c7dd",
+  "progress_sha256": "4d9786bb357b5244abca39ac8b27096af397fcd28b29d7e00a155fd14d789b2b",
+  "all_results_scoreable": true,
+  "repeat_count": 18,
+  "case_count": 6,
+  "model_calls": 37,
+  "repair_calls": 1,
+  "labeled_verdict_correct": 6,
+  "labeled_verdict_total": 15,
+  "labeled_verdict_rate": 0.4,
+  "required_issue_detected": 4,
+  "required_issue_total": 21,
+  "issue_recall_like": 0.19047619047619047,
+  "predicted_issue_instances": 4,
+  "correct_predicted_issue_instances": 4,
+  "issue_precision_like": 1.0,
+  "material_fail_repeat_correct": 0,
+  "material_fail_repeat_total": 9,
+  "verdict_stable_cases": 5,
+  "issue_stable_cases": 5,
+  "case_count_for_stability": 6,
+  "forbidden_issue_hits": 0,
+  "majority_labeled_verdict_correct": 2,
+  "majority_labeled_verdict_total": 5,
+  "majority_required_issue_detected": 1,
+  "majority_required_issue_total": 7,
+  "v4_3_1_single_run_baseline": {
+    "labeled_verdict_correct": 2,
+    "labeled_verdict_total": 5,
+    "required_issue_detected": 2,
+    "required_issue_total": 7,
+    "source": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3_1/data/combined_six_evaluation_v1.json"
+  },
+  "v4_1_same_case_baseline": {
+    "labeled_verdict_correct": 0,
+    "labeled_verdict_total": 3,
+    "issue_any_matches": 0,
+    "issue_cases_total": 4,
+    "completed_case_count": 4,
+    "source": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3_1/data/combined_six_evaluation_v1.json"
+  },
+  "decision": "reject_v4_4_do_not_scale",
+  "decision_basis": "zero of nine material-fail repeats returned fail; majority issue recall is 1/7 and repeat issue recall is 4/21; stable outputs are predominantly stable false negatives",
+  "rows": [
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "repeat": 1,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/elitebook__laptop_FrontLeftMedium__p1/repeat_1/result.json",
+      "result_sha256": "61bd264f6adc4d77ac7f7932775bd0345d71027d9b3167a6c22670eabaf0d637",
+      "status": "ok",
+      "score": 88,
+      "verdict": "review",
+      "actual_issues": [
+        "chair_displacement"
+      ],
+      "expected_verdict": "review",
+      "required_issues": [
+        "chair_displacement"
+      ],
+      "detected_required": [
+        "chair_displacement"
+      ],
+      "detected_forbidden": [],
+      "verdict_match": true,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6EFEZ5mVHhyrf6OZIuHgDjpEPKP",
+        "chatcmpl-Eh6FE5tFeKYTpr19ekAO21109G43z"
+      ]
+    },
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "repeat": 2,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/elitebook__laptop_FrontLeftMedium__p1/repeat_2/result.json",
+      "result_sha256": "7a03cf6575cead06f57ecd25ddf6923514f16d5457a3377af9c266971f30b6f1",
+      "status": "ok",
+      "score": 88,
+      "verdict": "review",
+      "actual_issues": [
+        "chair_displacement"
+      ],
+      "expected_verdict": "review",
+      "required_issues": [
+        "chair_displacement"
+      ],
+      "detected_required": [
+        "chair_displacement"
+      ],
+      "detected_forbidden": [],
+      "verdict_match": true,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6Fa9uTP4CMaSP1hxNOzZsB3AHT0",
+        "chatcmpl-Eh6Gm07avjTiBLBTn5BBrGvKyqEYg"
+      ]
+    },
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "repeat": 3,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/elitebook__laptop_FrontLeftMedium__p1/repeat_3/result.json",
+      "result_sha256": "b0d9db98763c49cb83238c5c772885ed48117ae0818c6b874d99cd98099aa22c",
+      "status": "ok",
+      "score": 88,
+      "verdict": "review",
+      "actual_issues": [
+        "chair_displacement"
+      ],
+      "expected_verdict": "review",
+      "required_issues": [
+        "chair_displacement"
+      ],
+      "detected_required": [
+        "chair_displacement"
+      ],
+      "detected_forbidden": [],
+      "verdict_match": true,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6H8jUIu4itfXfQ6Txu9gbgulI5J",
+        "chatcmpl-Eh6IO6wLIcklz0OWYyAWhEhT6e8XP"
+      ]
+    },
+    {
+      "record_id": "tassel__printer_FrontWide__p1",
+      "repeat": 1,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/tassel__printer_FrontWide__p1/repeat_1/result.json",
+      "result_sha256": "1f2a060ea3da8cb7fa155df4bb623c3cbf70fd7d8d5cbb97c9538a3d73457807",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "malformed_support_furniture",
+        "misplaced_support_furniture"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": false,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6IpbkaJcR2PYWSzCEmMyHELEbPL",
+        "chatcmpl-Eh6JvDftcK4VOHm91Eqh0Y2qvARca"
+      ]
+    },
+    {
+      "record_id": "tassel__printer_FrontWide__p1",
+      "repeat": 2,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/tassel__printer_FrontWide__p1/repeat_2/result.json",
+      "result_sha256": "ebcc9a97348fb9866a83f66fb2bfaf98f92ef1d738d03382197dd5caf528ee4f",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "malformed_support_furniture",
+        "misplaced_support_furniture"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": false,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6K3d6DyR6uEBGyQMhEAPMzSpF7S",
+        "chatcmpl-Eh6KpclvrxIcFmHtwX3HI7ktBUMlW"
+      ]
+    },
+    {
+      "record_id": "tassel__printer_FrontWide__p1",
+      "repeat": 3,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/tassel__printer_FrontWide__p1/repeat_3/result.json",
+      "result_sha256": "6776d9daad6887f93dd9adb9cfdfd37cbfbce8736bf15243d9588306c10693dd",
+      "status": "ok",
+      "score": 88,
+      "verdict": "review",
+      "actual_issues": [
+        "misplaced_support_furniture"
+      ],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "malformed_support_furniture",
+        "misplaced_support_furniture"
+      ],
+      "detected_required": [
+        "misplaced_support_furniture"
+      ],
+      "detected_forbidden": [],
+      "verdict_match": false,
+      "calls": 3,
+      "response_ids": [
+        "chatcmpl-Eh6Kz6EhzvoCprUeOqIaxkAnFxyh2",
+        "chatcmpl-Eh6Lzh8NafhwIDczdCX7HxabtfHB2",
+        "chatcmpl-Eh6MLKOzfUNtJcJ3xdsuViCzoLQlw"
+      ]
+    },
+    {
+      "record_id": "magic__printer_FrontLeftMedium__p1",
+      "repeat": 1,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/magic__printer_FrontLeftMedium__p1/repeat_1/result.json",
+      "result_sha256": "72dfa971e354980d85f8a2e18969aa2ee35d69110bd1d0623e8d0cf679c0c83e",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "missing_required_support"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": false,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6MbW9rK1vY6Xc3BCvHvWRWKYWhb",
+        "chatcmpl-Eh6NVdUSUykn5rhEQDPrVgePy9sI4"
+      ]
+    },
+    {
+      "record_id": "magic__printer_FrontLeftMedium__p1",
+      "repeat": 2,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/magic__printer_FrontLeftMedium__p1/repeat_2/result.json",
+      "result_sha256": "d5d6c5e2b55b1c015727a35da0e5728c59fd54f979b914b57058e29d1f1610a1",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "missing_required_support"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": false,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6NfUAgx8wlD7PwEDd9u6Wani03j",
+        "chatcmpl-Eh6OXy9VjHtZbO6qgrdkWemviEJ9J"
+      ]
+    },
+    {
+      "record_id": "magic__printer_FrontLeftMedium__p1",
+      "repeat": 3,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/magic__printer_FrontLeftMedium__p1/repeat_3/result.json",
+      "result_sha256": "4a1a5e2c0511695e18f7aeab43d08009ac9033a1e5b692cab60df9e6d2a356ba",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "missing_required_support"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": false,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6Ogg6z4evU5h2YkA6pMmZBmcddN",
+        "chatcmpl-Eh6PXksrV2UGKveAsU4BU1LJCRsJ9"
+      ]
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p2",
+      "repeat": 1,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/tassel__printer_FrontCloseUp__p2/repeat_1/result.json",
+      "result_sha256": "f657a5ccd31fa4118a7b89c46305c96c2178aa1cb528637bb80321314edde471",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "device_support_axis_conflict",
+        "incoherent_prop_arrangement"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": false,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6Pf3ev9L1CxUFudWBQMHFy5QcBT",
+        "chatcmpl-Eh6QPB8zRwJbujTVI3YXczqSHix5S"
+      ]
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p2",
+      "repeat": 2,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/tassel__printer_FrontCloseUp__p2/repeat_2/result.json",
+      "result_sha256": "0acbebf9a340c2933000b35d30d037aab7261b1dfdc484653f3e86c285f9f9d3",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "device_support_axis_conflict",
+        "incoherent_prop_arrangement"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": false,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6QYARyGlpHijuIbbwF1VopkMdnR",
+        "chatcmpl-Eh6RBd4jscFCEwM1xRrDCLE80i5uv"
+      ]
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p2",
+      "repeat": 3,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/tassel__printer_FrontCloseUp__p2/repeat_3/result.json",
+      "result_sha256": "68f42efc6f1dc9c1313b329bb1155ef00dc1a1e3ce1e6d1fb333cb0e82aef9f6",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "device_support_axis_conflict",
+        "incoherent_prop_arrangement"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": false,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6RJCzSVG3OswZv7H2llEKAODXPt",
+        "chatcmpl-Eh6S2tbMZykJEAIXLJmK5YSs2Hp8Y"
+      ]
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p1",
+      "repeat": 1,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/tassel__printer_FrontRightCloseUp__p1/repeat_1/result.json",
+      "result_sha256": "299a5ef6419313886ac2676c54daf39bdc6d8e5b95f4a4c8b692cc767bad7e29",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": null,
+      "required_issues": [
+        "conflicting_perspective"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": null,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6SDKAYUePA2fonPllxaCBF6VahQ",
+        "chatcmpl-Eh6SqBFWuBj9KxKYdwZaSDgTVOkw4"
+      ]
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p1",
+      "repeat": 2,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/tassel__printer_FrontRightCloseUp__p1/repeat_2/result.json",
+      "result_sha256": "fe2cc9558f42302294011fc56a2f454905e1253141bccc88783a8a2becb045f5",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": null,
+      "required_issues": [
+        "conflicting_perspective"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": null,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6SzJq7mF1y7x3cVuUpJQYkypzul",
+        "chatcmpl-Eh6TtO6BAnKWTRJZTfwnWDPauf06X"
+      ]
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p1",
+      "repeat": 3,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/tassel__printer_FrontRightCloseUp__p1/repeat_3/result.json",
+      "result_sha256": "ba8ab924318b75fa6fcc5e1cfe8e96a5ae0cf75102872f2bc0c296db09e11a87",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": null,
+      "required_issues": [
+        "conflicting_perspective"
+      ],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": null,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6U3wTl4sNEsNocRii6bEheWvVac",
+        "chatcmpl-Eh6UfPUrNMnHXbgP7QFMwNMUkZnBO"
+      ]
+    },
+    {
+      "record_id": "magic__printer_FrontRightCloseUp__p2",
+      "repeat": 1,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/magic__printer_FrontRightCloseUp__p2/repeat_1/result.json",
+      "result_sha256": "b90b50648a84d9a6dc5b4005744f675a4b321bfb955a9d80f9cf4b2ba838c978",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "pass",
+      "required_issues": [],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": true,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6Uq726q7kAvH7fFu8J0mVlSFdss",
+        "chatcmpl-Eh6VTrJqVOjqYTPeqdJKCDf2dSOks"
+      ]
+    },
+    {
+      "record_id": "magic__printer_FrontRightCloseUp__p2",
+      "repeat": 2,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/magic__printer_FrontRightCloseUp__p2/repeat_2/result.json",
+      "result_sha256": "ead51b4772bb3e0029c0b035d44e64bc60a196e8a55da9330ed18d1bea04db9c",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "pass",
+      "required_issues": [],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": true,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6VdYA1XCuG33lq9Oob5IL5Y3SZL",
+        "chatcmpl-Eh6WAbIgNbqtwpovqkHH5QusNz952"
+      ]
+    },
+    {
+      "record_id": "magic__printer_FrontRightCloseUp__p2",
+      "repeat": 3,
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_4/runs/dev_6_gate_a_v1_gpt55/magic__printer_FrontRightCloseUp__p2/repeat_3/result.json",
+      "result_sha256": "68049471118a0d256b0f4d19759dc2c3de23d892681dd452e89384438a457f4f",
+      "status": "ok",
+      "score": 100,
+      "verdict": "pass",
+      "actual_issues": [],
+      "expected_verdict": "pass",
+      "required_issues": [],
+      "detected_required": [],
+      "detected_forbidden": [],
+      "verdict_match": true,
+      "calls": 2,
+      "response_ids": [
+        "chatcmpl-Eh6WKKsVre2DhSTBNhHLGhNOZGUdK",
+        "chatcmpl-Eh6Wr83imJlyeOwcc9T52zmxCtAGG"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "repeat_verdicts": [
+        "review",
+        "review",
+        "review"
+      ],
+      "repeat_scores": [
+        88,
+        88,
+        88
+      ],
+      "repeat_issue_sets": [
+        [
+          "chair_displacement"
+        ],
+        [
+          "chair_displacement"
+        ],
+        [
+          "chair_displacement"
+        ]
+      ],
+      "verdict_stable": true,
+      "issue_set_stable": true,
+      "majority_verdict": "review",
+      "majority_issues": [
+        "chair_displacement"
+      ],
+      "expected_verdict": "review",
+      "required_issues": [
+        "chair_displacement"
+      ],
+      "majority_verdict_match": true,
+      "majority_required_detected": [
+        "chair_displacement"
+      ]
+    },
+    {
+      "record_id": "tassel__printer_FrontWide__p1",
+      "repeat_verdicts": [
+        "pass",
+        "pass",
+        "review"
+      ],
+      "repeat_scores": [
+        100,
+        100,
+        88
+      ],
+      "repeat_issue_sets": [
+        [],
+        [],
+        [
+          "misplaced_support_furniture"
+        ]
+      ],
+      "verdict_stable": false,
+      "issue_set_stable": false,
+      "majority_verdict": "pass",
+      "majority_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "misplaced_support_furniture",
+        "malformed_support_furniture"
+      ],
+      "majority_verdict_match": false,
+      "majority_required_detected": []
+    },
+    {
+      "record_id": "magic__printer_FrontLeftMedium__p1",
+      "repeat_verdicts": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "repeat_scores": [
+        100,
+        100,
+        100
+      ],
+      "repeat_issue_sets": [
+        [],
+        [],
+        []
+      ],
+      "verdict_stable": true,
+      "issue_set_stable": true,
+      "majority_verdict": "pass",
+      "majority_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "missing_required_support"
+      ],
+      "majority_verdict_match": false,
+      "majority_required_detected": []
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p2",
+      "repeat_verdicts": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "repeat_scores": [
+        100,
+        100,
+        100
+      ],
+      "repeat_issue_sets": [
+        [],
+        [],
+        []
+      ],
+      "verdict_stable": true,
+      "issue_set_stable": true,
+      "majority_verdict": "pass",
+      "majority_issues": [],
+      "expected_verdict": "fail",
+      "required_issues": [
+        "device_support_axis_conflict",
+        "incoherent_prop_arrangement"
+      ],
+      "majority_verdict_match": false,
+      "majority_required_detected": []
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p1",
+      "repeat_verdicts": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "repeat_scores": [
+        100,
+        100,
+        100
+      ],
+      "repeat_issue_sets": [
+        [],
+        [],
+        []
+      ],
+      "verdict_stable": true,
+      "issue_set_stable": true,
+      "majority_verdict": "pass",
+      "majority_issues": [],
+      "expected_verdict": null,
+      "required_issues": [
+        "conflicting_perspective"
+      ],
+      "majority_verdict_match": null,
+      "majority_required_detected": []
+    },
+    {
+      "record_id": "magic__printer_FrontRightCloseUp__p2",
+      "repeat_verdicts": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "repeat_scores": [
+        100,
+        100,
+        100
+      ],
+      "repeat_issue_sets": [
+        [],
+        [],
+        []
+      ],
+      "verdict_stable": true,
+      "issue_set_stable": true,
+      "majority_verdict": "pass",
+      "majority_issues": [],
+      "expected_verdict": "pass",
+      "required_issues": [],
+      "majority_verdict_match": true,
+      "majority_required_detected": []
+    }
+  ]
+}

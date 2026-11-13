@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-10-20T20:33:49.453440+00:00",
+  "model": "gpt-6-astra",
+  "reasoning": {
+    "effort": "high"
+  },
+  "max_output_tokens": 8000,
+  "text_format": {
+    "type": "json_object"
+  },
+  "instructions": "Analyze visible evidence for a controlled image-editing experiment. Distinguish observations from hypotheses. The user approves the benchmark morphology and rejects the two failures. Identify the exact visual difference, rank plausible causes for the regression without claiming causality from stochastic single images, and assess the information value of comparing one-stage composition+relighting against two-stage relighting of the supplied neutral targets. Return JSON with observed_differences, hypotheses (each with rationale, confidence and falsifying_test), confounds, recommended_control_order, and prompt_language_risks. Do not call any arrangement example customer approved.",
+  "images": [
+    {
+      "label": "A — user-approved positive benchmark morphology",
+      "path": "/home/colligo/mixology_data/refraction_research_2026-10-19/runs/v3corrected_group_clean/output.png",
+      "sha256": "1a9d467398531b35f24dda74c281e5a872a77ce2b4a167aee7f8ef94efd22d60",
+      "bytes": 2341334,
+      "dimensions": [
+        1402,
+        1122
+      ]
+    },
+    {
+      "label": "B — rejected three-cup combined output",
+      "path": "/home/colligo/mixology_data/refraction_research_2026-10-19/combined/runs/v1_trio_orange_front/output.png",
+      "sha256": "b72a29e6fc3281f91b3c0f61055e9fb91df862f81553640f76a20445d51e37a2",
+      "bytes": 2230672,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "label": "C — rejected five-cup combined output",
+      "path": "/home/colligo/mixology_data/refraction_research_2026-10-19/combined/runs/v1_five_staggered/output.png",
+      "sha256": "78dbb9865c8bc5b582ee1548422cbc1bd4549de183d3a238c742439df5975324",
+      "bytes": 2405990,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "label": "D — neutral three-cup composition available as two-stage edit target",
+      "path": "/home/colligo/mixology_data/refraction_research_2026-10-19/composition/runs/v1small_trio_orange_front/output.png",
+      "sha256": "ac15920fa7c7331947a91004060a3c79b983d00fd4494d7ad7c43922b62de450",
+      "bytes": 2187275,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "label": "E — neutral five-cup composition available as two-stage edit target",
+      "path": "/home/colligo/mixology_data/refraction_research_2026-10-19/composition/runs/v1fal_staggered/output.png",
+      "sha256": "08384d118a22c501052294791d3206bbd062f42ab93ded33bf141b744877b2a8",
+      "bytes": 2187954,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
+  ]
+}

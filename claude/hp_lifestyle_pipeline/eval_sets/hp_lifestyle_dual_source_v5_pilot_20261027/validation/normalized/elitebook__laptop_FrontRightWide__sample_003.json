@@ -1,0 +1,148 @@
+{
+  "validator_version": "v5-host-validator-r2",
+  "passed": false,
+  "error_count": 2,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'shelving', 'wall']",
+      "candidate_id": "p20"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'shelving', 'wall'] but signature has 2 entries",
+      "candidate_id": "p20"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support audit text; inspect: ['e9']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 20,
+    "evidence": 11,
+    "environments": {
+      "Office": 4,
+      "Home": 4,
+      "Café": 4,
+      "Creative Studio": 3,
+      "Education": 3,
+      "Gaming": 2
+    },
+    "relationships": {
+      "source_grounded": 8,
+      "source_adjacent": 7,
+      "creative_departure": 5
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 4,
+      "Office": 4,
+      "Education": 3,
+      "Gaming": 2,
+      "Café": 4,
+      "Creative Studio": 3
+    },
+    "relationship_counts": {
+      "source_grounded": 8,
+      "source_adjacent": 7,
+      "creative_departure": 5
+    },
+    "ctech_relationship_counts": {
+      "close_adaptation": 6,
+      "minimal_camera_edit": 11,
+      "category_extension": 3
+    },
+    "ctech_reference_counts": {
+      "CT03": 2,
+      "CT04": 2,
+      "CT13": 2,
+      "CT18": 1,
+      "CT02": 1,
+      "CT17": 1,
+      "CT12": 1,
+      "CT09": 1,
+      "CT10": 2,
+      "CT16": 1,
+      "CT01": 1,
+      "CT07": 1,
+      "CT08": 1,
+      "CT11": 1,
+      "CT14": 1,
+      "CT15": 1
+    },
+    "ctech_score_range": [
+      63,
+      92
+    ],
+    "distinct_subsettings": 20,
+    "evidence_reverse_mappings": {
+      "smart_brief": {
+        "evidence_ids": [
+          "e1",
+          "e2",
+          "e3",
+          "e4",
+          "e5"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17"
+        ]
+      },
+      "source_messaging": {
+        "evidence_ids": [
+          "e6",
+          "e7",
+          "e8",
+          "e10",
+          "e11"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "29336f73bb772fd612ece96f620ab3fe2e00e1a040b49430023f95e7f5577094"
+}

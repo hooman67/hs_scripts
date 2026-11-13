@@ -1,0 +1,31 @@
+visibility: public
+public:
+  files:
+  - types/__init__.py
+
+  deps:
+  - colligo.base
+  - pydantic
+# Isolated pyenv to avoid conflicts with foundry_gr6 (used by gr6_uber)
+custom_pyenv: foundry_gr6_conv
+
+deps:
+- colligo.image
+  # temp storage / blob upload (storage_item_loader)
+- colligo.data
+- colligo.models.firefly.imcoding.mori_vae
+  # QwenVLEncoder (provides vendored foundation_exploration/models/vlm_encoders/qwen_vl)
+- colligo.models.qwen_vlm_encoder
+  # NSFW safety check
+- colligo.models.foundry.safety
+- einops
+- omegaconf
+- pillow
+- torch
+
+- genai_foundation
+- pyyaml
+- vae_core
+
+
+- colligo.models.firefly.diffusion.gen6_conv

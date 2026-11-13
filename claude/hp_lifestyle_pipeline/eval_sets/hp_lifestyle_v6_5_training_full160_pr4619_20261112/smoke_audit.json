@@ -1,0 +1,1021 @@
+{
+  "at_utc": "2026-11-12T17:59:43.655839+00:00",
+  "status": "passed",
+  "rows": 2,
+  "full_expected": 160,
+  "full160_complete": false,
+  "no_statistics_cases": 0,
+  "native_attempts": 2,
+  "terminal_outcomes": {
+    "ok": 2
+  },
+  "sdk_requests": {
+    "text": 10,
+    "image": 2
+  },
+  "sdk_completed_responses": {
+    "text": 10,
+    "image": 2
+  },
+  "attempts": [
+    {
+      "path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/cashmere__laptop_FrontCloseUp__p1/attempt_0001/terminal.json",
+      "sha256": "6687f9fbd3028814431fc29f6f292d7340b438ec29ebc33ccd4f6df5fbcdf3c1",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/magic__printer_FrontWide__p1/attempt_0001/terminal.json",
+      "sha256": "b15033c245d0fb789afcfcba4ed754b20d369f664fcdd6a32db3e08cd365e164",
+      "status": "ok",
+      "error": null
+    }
+  ],
+  "audits": [
+    {
+      "prompt_key": "cashmere__laptop_FrontCloseUp::p1",
+      "native_completion": {
+        "at_utc": "2026-11-12T17:59:22.699459+00:00",
+        "prompt_key": "cashmere__laptop_FrontCloseUp::p1",
+        "prompt_sha256": "716272ad6c872241c9676b2fae5e2f51fd690f9cbf04047da206209909273890",
+        "image_path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/cashmere__laptop_FrontCloseUp__p1/attempt_0001/native/rows/cashmere__laptop_FrontCloseUp__p1/ours.png",
+        "image_sha256": "85a665c4d2f79ca0660eed309147403080a18deb14cb9f8db1908c176eb3e8eb",
+        "result_path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/cashmere__laptop_FrontCloseUp__p1/attempt_0001/native/rows/cashmere__laptop_FrontCloseUp__p1/result.json",
+        "result_sha256": "eeb955837c10b9cad51e369afd64ebaba33240907adbff72dc21c23d004140ce",
+        "calls_path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/cashmere__laptop_FrontCloseUp__p1/attempt_0001/sdk/calls.json",
+        "calls_sha256": "38ec3b2710ba9c63e285dbb2081247fe23c340c98671bc97cb42ef0c60a6f963",
+        "attempt": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/cashmere__laptop_FrontCloseUp__p1/attempt_0001",
+        "attempt_number": 1,
+        "statistics_disabled": false
+      },
+      "statistics_disabled": false,
+      "statistics_context": {
+        "statistics_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/analysis/hp-lifestyle-statistics-printer-laptop-monitor-20261109/index.html",
+        "family": "Laptop",
+        "requested_environment": "Home workspace",
+        "matched_environment": "Home workspace",
+        "exact_environment_match": true,
+        "match_reason": "Direct environment wording in the original user request.",
+        "cohort_n": 76,
+        "cohort_original_n": 75,
+        "cohort_added_n": 1,
+        "evidence_source": "Original SCAP captions; these fields were not visually reclassified by GPT.",
+        "original_user_prompt": "A wooden home desk sits against a window wall where a plain Venetian window blind breaks the daylight into soft bands. A spindle-back study chair is pulled squarely to the working side, while an open paper notebook with blank pages, loose paper sheets with indistinct non-readable grid markings, a ceramic drinking cup, and a plain pen cup holding plain writing pens sit within easy reach. Wall-mounted wooden bookshelves above the desk hold reference books with unmarked spines and a potted leafy plant, and a plain adjustable task lamp rests at the far corner as practical room lighting.",
+        "environment_selection": {
+          "environment": "Home workspace",
+          "prompt_quote": "A wooden home desk sits against a window wall",
+          "reason": "The home desk, study chair, stationery and reference books establish a domestic workspace."
+        },
+        "fields": {
+          "type_open_set": {
+            "group": "type",
+            "patterns": [
+              {
+                "value": "photorealistic",
+                "n": 76,
+                "denominator": 76,
+                "pct": 100.0
+              },
+              {
+                "value": "lifestyle photography",
+                "n": 75,
+                "denominator": 76,
+                "pct": 98.68
+              },
+              {
+                "value": "interior design photography",
+                "n": 61,
+                "denominator": 76,
+                "pct": 80.26
+              },
+              {
+                "value": "product photography",
+                "n": 14,
+                "denominator": 76,
+                "pct": 18.42
+              },
+              {
+                "value": "3d render",
+                "n": 2,
+                "denominator": 76,
+                "pct": 2.63
+              },
+              {
+                "value": "product visualization",
+                "n": 1,
+                "denominator": 76,
+                "pct": 1.32
+              },
+              {
+                "value": "home workspace photography",
+                "n": 1,
+                "denominator": 76,
+                "pct": 1.32
+              }
+            ],
+            "repeated_phrases": [
+              {
+                "value": "lifestyle photography",
+                "n": 75,
+                "denominator": 76,
+                "pct": 98.68
+              },
+              {
+                "value": "interior design photography",
+                "n": 61,
+                "denominator": 76,
+                "pct": 80.26
+              },
+              {
+                "value": "product photography",
+                "n": 14,
+                "denominator": 76,
+                "pct": 18.42
+              },
+              {
+                "value": "d render",
+                "n": 2,
+                "denominator": 76,
+                "pct": 2.63
+              }
+            ]
+          },
+          "type_closed_set": {
+            "group": "type",
+            "patterns": [
+              {
+                "value": "photo",
+                "n": 75,
+                "denominator": 76,
+                "pct": 98.68
+              },
+              {
+                "value": "other",
+                "n": 1,
+                "denominator": 76,
+                "pct": 1.32
+              }
+            ],
+            "repeated_phrases": []
+          },
+          "lighting_open_set": {
+            "group": "lighting",
+            "patterns": [
+              {
+                "value": "Soft / diffuse",
+                "n": 76,
+                "denominator": 76,
+                "pct": 100.0
+              },
+              {
+                "value": "Natural daylight",
+                "n": 63,
+                "denominator": 76,
+                "pct": 82.89
+              },
+              {
+                "value": "Warm",
+                "n": 63,
+                "denominator": 76,
+                "pct": 82.89
+              },
+              {
+                "value": "Window source",
+                "n": 47,
+                "denominator": 76,
+                "pct": 61.84
+              },
+              {
+                "value": "Light from left",
+                "n": 27,
+                "denominator": 76,
+                "pct": 35.53
+              },
+              {
+                "value": "Light from right",
+                "n": 21,
+                "denominator": 76,
+                "pct": 27.63
+              },
+              {
+                "value": "Artificial / mixed source",
+                "n": 18,
+                "denominator": 76,
+                "pct": 23.68
+              },
+              {
+                "value": "Neutral",
+                "n": 15,
+                "denominator": 76,
+                "pct": 19.74
+              },
+              {
+                "value": "Even illumination",
+                "n": 12,
+                "denominator": 76,
+                "pct": 15.79
+              },
+              {
+                "value": "Cool",
+                "n": 12,
+                "denominator": 76,
+                "pct": 15.79
+              }
+            ],
+            "repeated_phrases": [
+              {
+                "value": "daylight from window",
+                "n": 37,
+                "denominator": 76,
+                "pct": 48.68
+              },
+              {
+                "value": "soft warm",
+                "n": 23,
+                "denominator": 76,
+                "pct": 30.26
+              },
+              {
+                "value": "warm ambient",
+                "n": 23,
+                "denominator": 76,
+                "pct": 30.26
+              },
+              {
+                "value": "gentle shadows",
+                "n": 22,
+                "denominator": 76,
+                "pct": 28.95
+              },
+              {
+                "value": "warm daylight",
+                "n": 22,
+                "denominator": 76,
+                "pct": 28.95
+              },
+              {
+                "value": "soft warm daylight",
+                "n": 20,
+                "denominator": 76,
+                "pct": 26.32
+              }
+            ]
+          },
+          "lighting_closed_set": {
+            "group": "lighting",
+            "patterns": [
+              {
+                "value": "soft_light",
+                "n": 52,
+                "denominator": 76,
+                "pct": 68.42
+              },
+              {
+                "value": "warm_light",
+                "n": 24,
+                "denominator": 76,
+                "pct": 31.58
+              }
+            ],
+            "repeated_phrases": [
+              {
+                "value": "soft light",
+                "n": 52,
+                "denominator": 76,
+                "pct": 68.42
+              },
+              {
+                "value": "warm light",
+                "n": 24,
+                "denominator": 76,
+                "pct": 31.58
+              }
+            ]
+          },
+          "background": {
+            "group": "background",
+            "patterns": [
+              {
+                "value": "Wood texture / paneling",
+                "n": 71,
+                "denominator": 76,
+                "pct": 93.42
+              },
+              {
+                "value": "Warm palette",
+                "n": 59,
+                "denominator": 76,
+                "pct": 77.63
+              },
+              {
+                "value": "Books / shelving",
+                "n": 50,
+                "denominator": 76,
+                "pct": 65.79
+              },
+              {
+                "value": "Neutral / gray palette",
+                "n": 48,
+                "denominator": 76,
+                "pct": 63.16
+              },
+              {
+                "value": "Windows / daylight opening",
+                "n": 41,
+                "denominator": 76,
+                "pct": 53.95
+              },
+              {
+                "value": "Art / wall decor",
+                "n": 34,
+                "denominator": 76,
+                "pct": 44.74
+              },
+              {
+                "value": "Blue / teal accents",
+                "n": 27,
+                "denominator": 76,
+                "pct": 35.53
+              },
+              {
+                "value": "Outdoor greenery",
+                "n": 25,
+                "denominator": 76,
+                "pct": 32.89
+              },
+              {
+                "value": "Curtains / blinds",
+                "n": 22,
+                "denominator": 76,
+                "pct": 28.95
+              },
+              {
+                "value": "Depth / blur",
+                "n": 17,
+                "denominator": 76,
+                "pct": 22.37
+              },
+              {
+                "value": "Cool palette",
+                "n": 13,
+                "denominator": 76,
+                "pct": 17.11
+              },
+              {
+                "value": "Industrial architecture",
+                "n": 3,
+                "denominator": 76,
+                "pct": 3.95
+              },
+              {
+                "value": "Glass partitions",
+                "n": 2,
+                "denominator": 76,
+                "pct": 2.63
+              }
+            ],
+            "repeated_phrases": [
+              {
+                "value": "warm wood",
+                "n": 51,
+                "denominator": 76,
+                "pct": 67.11
+              },
+              {
+                "value": "wood tones",
+                "n": 51,
+                "denominator": 76,
+                "pct": 67.11
+              },
+              {
+                "value": "warm wood tones",
+                "n": 48,
+                "denominator": 76,
+                "pct": 63.16
+              },
+              {
+                "value": "color grade",
+                "n": 20,
+                "denominator": 76,
+                "pct": 26.32
+              },
+              {
+                "value": "large window",
+                "n": 18,
+                "denominator": 76,
+                "pct": 23.68
+              },
+              {
+                "value": "shelving unit",
+                "n": 18,
+                "denominator": 76,
+                "pct": 23.68
+              }
+            ]
+          },
+          "entities": {
+            "group": "entities",
+            "patterns": [
+              {
+                "value": "Chair / seating",
+                "n": 52,
+                "denominator": 76,
+                "pct": 68.42
+              },
+              {
+                "value": "Shelving / bookcase",
+                "n": 39,
+                "denominator": 76,
+                "pct": 51.32
+              },
+              {
+                "value": "Cup / mug / saucer",
+                "n": 37,
+                "denominator": 76,
+                "pct": 48.68
+              },
+              {
+                "value": "Pens / stationery",
+                "n": 36,
+                "denominator": 76,
+                "pct": 47.37
+              },
+              {
+                "value": "Artwork / picture / poster",
+                "n": 30,
+                "denominator": 76,
+                "pct": 39.47
+              },
+              {
+                "value": "Notebook / sketchbook",
+                "n": 29,
+                "denominator": 76,
+                "pct": 38.16
+              },
+              {
+                "value": "Plants / flowers",
+                "n": 20,
+                "denominator": 76,
+                "pct": 26.32
+              },
+              {
+                "value": "Lamp / light fixture",
+                "n": 14,
+                "denominator": 76,
+                "pct": 18.42
+              },
+              {
+                "value": "Windows / glass partitions",
+                "n": 11,
+                "denominator": 76,
+                "pct": 14.47
+              },
+              {
+                "value": "Bed / bedding",
+                "n": 11,
+                "denominator": 76,
+                "pct": 14.47
+              },
+              {
+                "value": "Books / magazines",
+                "n": 10,
+                "denominator": 76,
+                "pct": 13.16
+              },
+              {
+                "value": "Jar / bottle / container",
+                "n": 8,
+                "denominator": 76,
+                "pct": 10.53
+              },
+              {
+                "value": "Printed papers / documents",
+                "n": 8,
+                "denominator": 76,
+                "pct": 10.53
+              },
+              {
+                "value": "Rug / mat",
+                "n": 4,
+                "denominator": 76,
+                "pct": 5.26
+              },
+              {
+                "value": "Curtains / blinds",
+                "n": 4,
+                "denominator": 76,
+                "pct": 5.26
+              },
+              {
+                "value": "Art / craft supplies",
+                "n": 4,
+                "denominator": 76,
+                "pct": 5.26
+              },
+              {
+                "value": "Stairs / ladder",
+                "n": 3,
+                "denominator": 76,
+                "pct": 3.95
+              },
+              {
+                "value": "Eyeglasses",
+                "n": 3,
+                "denominator": 76,
+                "pct": 3.95
+              },
+              {
+                "value": "Food / kitchenware",
+                "n": 3,
+                "denominator": 76,
+                "pct": 3.95
+              },
+              {
+                "value": "Clock / calendar",
+                "n": 2,
+                "denominator": 76,
+                "pct": 2.63
+              }
+            ],
+            "repeated_phrases": []
+          }
+        }
+      },
+      "text_responses": 5,
+      "image_edits": 1,
+      "product": {
+        "path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/cashmere__laptop_FrontCloseUp__p1/attempt_0001/native/rows/cashmere__laptop_FrontCloseUp__p1/input.png",
+        "sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c"
+      },
+      "reference": {
+        "path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/cashmere__laptop_FrontCloseUp__p1/attempt_0001/native/rows/cashmere__laptop_FrontCloseUp__p1/ref_2.webp",
+        "sha256": "319a988f622c75351cfa3f4a8dad3cb3aa30c728acabdf94395a1a3ce027adb0",
+        "id": "style_242"
+      },
+      "geometry_guide": {
+        "path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/cashmere__laptop_FrontCloseUp__p1/attempt_0001/native/rows/cashmere__laptop_FrontCloseUp__p1/geometry_guide.png",
+        "sha256": "8ab163d7d015cf46e97db4a943979173b6cd0a021dd07a6e2d8ded654ca4bf4b"
+      }
+    },
+    {
+      "prompt_key": "magic__printer_FrontWide::p1",
+      "native_completion": {
+        "at_utc": "2026-11-12T17:59:32.047584+00:00",
+        "prompt_key": "magic__printer_FrontWide::p1",
+        "prompt_sha256": "af3b6af13303e467640361a668d5236fdbe8c9e8f48df6f4c334b8a3f975ac86",
+        "image_path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/magic__printer_FrontWide__p1/attempt_0001/native/rows/magic__printer_FrontWide__p1/ours.png",
+        "image_sha256": "2d4bbbc83b4b9dbe0bbce32757b4eac35e476d7c82d403b0ba11ccb3fa958fd4",
+        "result_path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/magic__printer_FrontWide__p1/attempt_0001/native/rows/magic__printer_FrontWide__p1/result.json",
+        "result_sha256": "660718947e649274d7a0f05f8f12871126b36ac138d717eff01aa463bd051277",
+        "calls_path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/magic__printer_FrontWide__p1/attempt_0001/sdk/calls.json",
+        "calls_sha256": "8d40473fce642660faf5b6d4ec8388daaba5cdab6b7b1af535e278f615530b8f",
+        "attempt": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/magic__printer_FrontWide__p1/attempt_0001",
+        "attempt_number": 1,
+        "statistics_disabled": false
+      },
+      "statistics_disabled": false,
+      "statistics_context": {
+        "statistics_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/analysis/hp-lifestyle-statistics-printer-laptop-monitor-20261109/index.html",
+        "family": "Printer",
+        "requested_environment": "Office",
+        "matched_environment": "Office",
+        "exact_environment_match": true,
+        "match_reason": "Direct environment wording in the original user request.",
+        "cohort_n": 8,
+        "cohort_original_n": 4,
+        "cohort_added_n": 4,
+        "evidence_source": "Original SCAP captions; these fields were not visually reclassified by GPT.",
+        "original_user_prompt": "Fitted base cabinetry with a continuous countertop lines the open office wall, acting as a shared document station between work areas. A wire paper tray with loose paper sheets bearing indistinct non-readable markings sits at the counter's far end beside a closed unlabelled archive box. Deeper in the space, a separate work desk aligns with an ordinary upholstered office chair and an office drawer unit tucked outside the knee space; the desk has a paper notebook closed with an unmarked cover and a plain writing pen. A clear architectural partition, potted floor plants, and a pair of framed abstract prints without text or faces create depth without crowding the walking route.",
+        "environment_selection": {
+          "environment": "Office",
+          "prompt_quote": "the open office wall",
+          "reason": "The request explicitly describes an open office with a shared document station and a separate workstation."
+        },
+        "fields": {
+          "type_open_set": {
+            "group": "type",
+            "patterns": [
+              {
+                "value": "lifestyle photography",
+                "n": 8,
+                "denominator": 8,
+                "pct": 100.0
+              },
+              {
+                "value": "photorealistic",
+                "n": 8,
+                "denominator": 8,
+                "pct": 100.0
+              },
+              {
+                "value": "interior design photography",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "office workspace photography",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "office product photography",
+                "n": 1,
+                "denominator": 8,
+                "pct": 12.5
+              },
+              {
+                "value": "office photography",
+                "n": 1,
+                "denominator": 8,
+                "pct": 12.5
+              }
+            ],
+            "repeated_phrases": [
+              {
+                "value": "lifestyle photography",
+                "n": 8,
+                "denominator": 8,
+                "pct": 100.0
+              },
+              {
+                "value": "interior design photography",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "office workspace photography",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              }
+            ]
+          },
+          "type_closed_set": {
+            "group": "type",
+            "patterns": [
+              {
+                "value": "photo",
+                "n": 8,
+                "denominator": 8,
+                "pct": 100.0
+              }
+            ],
+            "repeated_phrases": []
+          },
+          "lighting_open_set": {
+            "group": "lighting",
+            "patterns": [
+              {
+                "value": "Soft / diffuse",
+                "n": 8,
+                "denominator": 8,
+                "pct": 100.0
+              },
+              {
+                "value": "Cool",
+                "n": 6,
+                "denominator": 8,
+                "pct": 75.0
+              },
+              {
+                "value": "Natural daylight",
+                "n": 5,
+                "denominator": 8,
+                "pct": 62.5
+              },
+              {
+                "value": "Even illumination",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Window source",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Neutral",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Artificial / mixed source",
+                "n": 3,
+                "denominator": 8,
+                "pct": 37.5
+              },
+              {
+                "value": "Light from left",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "Warm",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              }
+            ],
+            "repeated_phrases": [
+              {
+                "value": "daylight from large",
+                "n": 3,
+                "denominator": 8,
+                "pct": 37.5
+              },
+              {
+                "value": "soft natural",
+                "n": 3,
+                "denominator": 8,
+                "pct": 37.5
+              },
+              {
+                "value": "daylight from large windows",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "lighting mixed with cool",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "natural daylight from large",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "soft natural daylight",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              }
+            ]
+          },
+          "lighting_closed_set": {
+            "group": "lighting",
+            "patterns": [
+              {
+                "value": "soft_light",
+                "n": 5,
+                "denominator": 8,
+                "pct": 62.5
+              },
+              {
+                "value": "mixed_light",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "overhead_light",
+                "n": 1,
+                "denominator": 8,
+                "pct": 12.5
+              }
+            ],
+            "repeated_phrases": [
+              {
+                "value": "soft light",
+                "n": 5,
+                "denominator": 8,
+                "pct": 62.5
+              },
+              {
+                "value": "mixed light",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              }
+            ]
+          },
+          "background": {
+            "group": "background",
+            "patterns": [
+              {
+                "value": "Office workstations",
+                "n": 7,
+                "denominator": 8,
+                "pct": 87.5
+              },
+              {
+                "value": "Blue / teal accents",
+                "n": 5,
+                "denominator": 8,
+                "pct": 62.5
+              },
+              {
+                "value": "Glass partitions",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Windows / daylight opening",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Art / wall decor",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Wood texture / paneling",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Cool palette",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Neutral / gray palette",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Curtains / blinds",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Warm palette",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "Industrial architecture",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "Depth / blur",
+                "n": 1,
+                "denominator": 8,
+                "pct": 12.5
+              },
+              {
+                "value": "Outdoor greenery",
+                "n": 1,
+                "denominator": 8,
+                "pct": 12.5
+              }
+            ],
+            "repeated_phrases": [
+              {
+                "value": "additional desks",
+                "n": 3,
+                "denominator": 8,
+                "pct": 37.5
+              },
+              {
+                "value": "glass partitions",
+                "n": 3,
+                "denominator": 8,
+                "pct": 37.5
+              },
+              {
+                "value": "chairs visible through",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "desks and chairs",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "through the glass",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "warm wood tones",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              }
+            ]
+          },
+          "entities": {
+            "group": "entities",
+            "patterns": [
+              {
+                "value": "Chair / seating",
+                "n": 8,
+                "denominator": 8,
+                "pct": 100.0
+              },
+              {
+                "value": "Windows / glass partitions",
+                "n": 5,
+                "denominator": 8,
+                "pct": 62.5
+              },
+              {
+                "value": "Printed papers / documents",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Lamp / light fixture",
+                "n": 4,
+                "denominator": 8,
+                "pct": 50.0
+              },
+              {
+                "value": "Water bottle",
+                "n": 3,
+                "denominator": 8,
+                "pct": 37.5
+              },
+              {
+                "value": "Curtains / blinds",
+                "n": 3,
+                "denominator": 8,
+                "pct": 37.5
+              },
+              {
+                "value": "Cup / mug / saucer",
+                "n": 2,
+                "denominator": 8,
+                "pct": 25.0
+              },
+              {
+                "value": "Dock / external storage",
+                "n": 1,
+                "denominator": 8,
+                "pct": 12.5
+              },
+              {
+                "value": "Artwork / picture / poster",
+                "n": 1,
+                "denominator": 8,
+                "pct": 12.5
+              },
+              {
+                "value": "Pens / stationery",
+                "n": 1,
+                "denominator": 8,
+                "pct": 12.5
+              },
+              {
+                "value": "Plants / flowers",
+                "n": 1,
+                "denominator": 8,
+                "pct": 12.5
+              },
+              {
+                "value": "Desktop tower / mini PC",
+                "n": 1,
+                "denominator": 8,
+                "pct": 12.5
+              }
+            ],
+            "repeated_phrases": []
+          }
+        }
+      },
+      "text_responses": 5,
+      "image_edits": 1,
+      "product": {
+        "path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/magic__printer_FrontWide__p1/attempt_0001/native/rows/magic__printer_FrontWide__p1/input.png",
+        "sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970"
+      },
+      "reference": {
+        "path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/magic__printer_FrontWide__p1/attempt_0001/native/rows/magic__printer_FrontWide__p1/ref_2.webp",
+        "sha256": "f95ef19dc851913352a8cfbd489046ad3fd5ca7a934e18def3c32fea531e275e",
+        "id": "style_337"
+      },
+      "geometry_guide": {
+        "path": "/sensei-fs/users/hshariati/claude_backup/hp_lifestyle_v6_5_training_full160_pr4619_20261112_012fc8e856f7/attempts/magic__printer_FrontWide__p1/attempt_0001/native/rows/magic__printer_FrontWide__p1/geometry_guide.png",
+        "sha256": "75b028217dea618df255ce5095fb2cb903710c0280c5a78edf2a8bc8d2e621fa"
+      }
+    }
+  ],
+  "execution_manifest_sha256": "9f65552c27ddbdadc50ba6dcb9f049bd286aa16b067757d892237732d5c3ab75"
+}

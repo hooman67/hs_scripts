@@ -1,0 +1,165 @@
+{
+  "guard_version": "full-affine-v1.5-unreliable-affine-alpha-fallback",
+  "fixed_position": true,
+  "thresholds": {
+    "min_inliers": 20,
+    "min_inlier_ratio": 0.55,
+    "singular_min": 0.98,
+    "singular_max": 1.02,
+    "max_anisotropy_ratio": 1.02,
+    "max_abs_rotation_deg": 1.0,
+    "max_column_shear_cos": 0.02,
+    "max_residual_median_px": 1.5,
+    "max_residual_p95_px": 3.5,
+    "min_source_span_x_fraction": 0.45,
+    "min_source_span_y_fraction": 0.4,
+    "min_source_quadrants": 3,
+    "min_source_hull_fraction": 0.12,
+    "max_fixed_translation_px": 8.0
+  },
+  "product_bounds_px": [
+    576,
+    536,
+    1996,
+    1402
+  ],
+  "matches": 3,
+  "inliers": 3,
+  "inlier_ratio": 1.0,
+  "full_affine_matrix": [
+    [
+      3.955738600418117,
+      -14.725533212258414,
+      17290.10657240983
+    ],
+    [
+      1.3572514392891528,
+      -5.7722682650883,
+      7952.163541331111
+    ]
+  ],
+  "partial_affine_matrix": [
+    [
+      0.9903623159295106,
+      0.004195517018262624,
+      2.6840631544396922
+    ],
+    [
+      -0.004195517018262624,
+      0.9903623159295106,
+      15.258912822918907
+    ]
+  ],
+  "partial_inliers": 2,
+  "singular_values": [
+    16.35909883118338,
+    0.17405196159783684
+  ],
+  "anisotropy_ratio": 93.98974123016546,
+  "rotation_deg": -53.9568752011698,
+  "column_shear_cos": 0.9990730857634326,
+  "residual_median_px": 3.749942721349417e-12,
+  "residual_p95_px": 3.749942721349417e-12,
+  "source_span_x_fraction": 0.24937860667705536,
+  "source_span_y_fraction": 0.07854574918746948,
+  "source_quadrants": 1,
+  "source_hull_fraction": 0.0043068859750637675,
+  "transformed_product_corners_px": [
+    [
+      11675.726204480156,
+      5640.004580274334
+    ],
+    [
+      17292.875017073882,
+      7567.301624064931
+    ],
+    [
+      4540.5632552580955,
+      2568.5173064984638
+    ],
+    [
+      -1076.5855573356312,
+      641.2202627078668
+    ]
+  ],
+  "corners_in_frame": false,
+  "translation_x_px": 17290.10657240983,
+  "translation_y_px": 7952.163541331111,
+  "checks": {
+    "inliers": false,
+    "inlier_ratio": true,
+    "singular_min": false,
+    "singular_max": false,
+    "anisotropy": false,
+    "rotation": false,
+    "shear": false,
+    "residual_median": true,
+    "residual_p95": true,
+    "span_x": false,
+    "span_y": false,
+    "quadrants": false,
+    "hull": false,
+    "corners": false,
+    "fixed_translation_x": false,
+    "fixed_translation_y": false
+  },
+  "reasons": [
+    "boundary"
+  ],
+  "verdict": "fail",
+  "primary_verdict": "fail",
+  "primary_reasons": [
+    "inliers",
+    "singular_min",
+    "singular_max",
+    "anisotropy",
+    "rotation",
+    "shear",
+    "span_x",
+    "span_y",
+    "quadrants",
+    "hull",
+    "corners",
+    "fixed_translation_x",
+    "fixed_translation_y"
+  ],
+  "fallback_dispatch_reason": "structurally_insufficient_affine_evidence",
+  "affine_evidence_reliability_checks": {
+    "inliers": false,
+    "span_x": false,
+    "span_y": false,
+    "quadrants": false,
+    "hull": false
+  },
+  "textureless_fallback": {
+    "method": "alpha_mask_fixed_position_fallback",
+    "thresholds": {
+      "max_translation_px": 8,
+      "min_boundary_edge_coverage_2px": 0.8,
+      "min_internal_edge_coverage_floor_2px": 0.2,
+      "min_internal_edge_coverage_2px": 0.8,
+      "min_highpass_ncc_override": 0.8,
+      "min_internal_edge_samples": 100
+    },
+    "translation_x_px": 1,
+    "translation_y_px": 0,
+    "boundary_edge_coverage_2px": 0.6809581100295308,
+    "boundary_distance_p90_px": 5.730000019073486,
+    "internal_edge_coverage_2px": 0.9305699481865285,
+    "internal_distance_p90_px": 1.909999966621399,
+    "highpass_ncc": 0.4301980137825012,
+    "source_boundary_samples": 9143,
+    "source_internal_edge_samples": 965,
+    "source_appearance_samples": 48128,
+    "checks": {
+      "boundary": false,
+      "internal_structure_floor": true,
+      "structure_or_appearance": true,
+      "internal_support": true
+    },
+    "reasons": [
+      "boundary"
+    ],
+    "verdict": "fail"
+  }
+}

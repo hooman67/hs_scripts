@@ -1,0 +1,31 @@
+visibility: public
+custom_pyenv: cm_5_0_0
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.external_services.cme[public]
+  - colligo.models.firefly.clio_common[public]
+  - colligo.models.firefly.clio_tyom.common[public]
+  - colligo.models.firefly.diffusion.common[public]
+  - pydantic
+deps:
+- colligo.models.build
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.clio_tyom.common
+- colligo.models.firefly.clio_tyom.modules.denoisers.gen45
+- colligo.models.firefly.clio_tyom.modules.inference.cm5
+- colligo.models.firefly.clio_tyom.modules.types.cm5
+- colligo.models.firefly.diffusion.eps.aoti
+- colligo.models.firefly.diffusion.eps.torch
+- colligo.models.firefly.diffusion.eps.utils
+- omegaconf
+- pyyaml
+- torch
+exclude:
+- tests
+# The recording script under scripts/ runs in mori-venv (not in this package's
+# pyenv) — it imports foundation_exploration and boto3, which are not colligo
+# dependencies. See scripts/README.md.
+- scripts

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HP lifestyle diversity - V6.4 vs training-grounded V6.5</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading">Connecting to Adobe sign-in...</div>
+  <main id="content" class="hidden">
+    <header>
+      <h1>HP lifestyle diversity - V6.4 vs training-grounded V6.5</h1>
+      <p>16 inputs. Ten original prompts and generations per input, for each of 2 experiments.</p>
+      <p class="muted">V6.4 and V6.5 use the same structured source inputs. Groups align by device and camera;
+        ranks are not equivalent scenes or paired random seeds. V6.5 is the training-grounded replacement:30 reused images and130 new. No judge scores.</p>
+      <p><a id="sourceLink">Original detailed comparison and generation inputs</a></p>
+      <div class="controls">
+        <label>Input <select id="bank"><option value="">All 16 inputs</option></select></label>
+        <label>Experiment <select id="experiment"><option value="">All 2 experiments</option></select></label>
+        <label>Images per row <input id="columns" type="range" min="2" max="5" value="5"><output id="columnValue">5</output></label>
+        <label><input id="showPrompts" type="checkbox"> Expand source prompts</label>
+      </div>
+      <p id="status" role="status"></p>
+      <p id="error" role="alert"></p>
+      <nav id="bankNav" aria-label="Jump to input"></nav>
+    </header>
+    <div id="groups"></div>
+  </main>
+  <dialog id="lightbox">
+    <button id="closeImage" type="button">Close</button>
+    <p id="imageLabel"></p>
+    <img id="largeImage" alt="">
+    <p><a id="originalImage" target="_blank" rel="noopener">Open full-resolution PNG</a></p>
+  </dialog>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script>
+  <script src="./main.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => initializeIMS());</script>
+</body>
+</html>

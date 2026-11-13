@@ -1,0 +1,114 @@
+{
+  "validator_version": "v5-host-validator-r3",
+  "passed": true,
+  "error_count": 0,
+  "warning_count": 2,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support audit text; inspect: ['e9', 'e11', 'e12', 'e13']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 20,
+    "evidence": 13,
+    "environments": {
+      "Office": 9,
+      "Home": 3,
+      "Café": 2,
+      "Creative Studio": 2,
+      "Gaming": 2,
+      "Education": 2
+    },
+    "relationships": {
+      "source_grounded": 9,
+      "creative_departure": 11
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 3,
+      "Office": 9,
+      "Education": 2,
+      "Gaming": 2,
+      "Café": 2,
+      "Creative Studio": 2
+    },
+    "relationship_counts": {
+      "source_grounded": 9,
+      "source_adjacent": 0,
+      "creative_departure": 11
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 17,
+      "close_adaptation": 1,
+      "category_extension": 2
+    },
+    "ctech_reference_counts": {
+      "CT03": 5,
+      "CT01": 4,
+      "CT13": 1,
+      "CT06": 2,
+      "CT17": 1,
+      "CT12": 1,
+      "CT10": 1,
+      "CT18": 1,
+      "CT08": 1,
+      "CT14": 1,
+      "CT15": 1,
+      "CT09": 1
+    },
+    "ctech_score_range": [
+      64,
+      90
+    ],
+    "distinct_subsettings": 17,
+    "evidence_reverse_mappings": {
+      "smart_brief": {
+        "evidence_ids": [
+          "e1",
+          "e2",
+          "e3",
+          "e4"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9"
+        ]
+      },
+      "source_messaging": {
+        "evidence_ids": [
+          "e5",
+          "e6",
+          "e7",
+          "e8",
+          "e10"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "19ddf4d2852169569f1ce9073aa79f8e8925f07a413fa0b50a3ad29d52026d3d"
+}

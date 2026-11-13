@@ -1,0 +1,247 @@
+{
+ "title": "Makita Storyboards → Video (FFDY-7309)",
+ "subtitle": "Generating shots from the Makita brand/CPT hand-drawn storyboard sketches. No target video (pre-production samples) — pure storyboard→video.",
+ "sections": [
+  {
+   "kind": "divider",
+   "id": "deck00_divider",
+   "label": "00 · DECK — Makita Brand/CPT Storyboards (39pp)",
+   "note": "Hand-drawn storyboard SAMPLE spots for Makita power tools (THD preread, 2024). 9 spots. No corresponding produced video found (S3 has only Makita chainsaw product clips; these brand/CPT spots aren't public). We generate from the sketch frames directly. Taglines: 'Makita. Built to be the best.' / 'When it calls for the best, call on Makita.'"
+  },
+  {
+   "kind": "divider",
+   "id": "shot901_divider",
+   "label": "0001 · Shot 901 — Hit The Mark: circular saw (DONE)",
+   "note": "Pipeline: storyboard sketch → nano photoreal render → i2v. Blade spins, sawdust sprays, camera zooms in. No face (hands only). VO: 'BUILT TO HIT THE MARK.'"
+  },
+  {
+   "kind": "target",
+   "id": "shot901_io",
+   "label": "Inputs — sketch → photoreal keyframe",
+   "note": "Left: cleaned storyboard sketch (source, red arrows removed). Right: nano photoreal render used as the i2v first frame.",
+   "frames": [
+    "assets/shot901_sketch.jpg",
+    "assets/shot901_plate.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "shot901_r1",
+   "label": "Shot 901 result",
+   "params": "Seedance i2v · 1080p · 4s · nano photoreal keyframe",
+   "experiments": [
+    {
+     "id": "shot901",
+     "approach": "sketch → nano photoreal → i2v (saw cuts, sawdust, zoom-in)",
+     "status": "ok",
+     "note": "Strong result: photoreal Makita rear-handle saw cutting a board, spinning blade (motion blur), sawdust spray, slow zoom-in. No face.",
+     "refs": [
+      "assets/shot901_plate.jpg"
+     ],
+     "video": "assets/shot901.mp4",
+     "frames": [
+      "assets/shot901_f0.jpg",
+      "assets/shot901_f1.jpg"
+     ],
+     "prompt": "Animate @Image1 (image-to-video). @Image1 is a photoreal Makita 7-1/4\" rear-handle circular saw cutting along a board, held by a pro's two hands (hands and forearms only, NO face in frame). MOTION: the blade spins fast, the saw pushes steadily FORWARD along the cut line through the board, fine sawdust sprays out from the blade, and the CAMERA does a slow smooth ZOOM-IN / push toward the saw (per the 'MED ZOOM LENS' shot). Keep it photoreal and cinematic — warm workshop lighting, shallow depth of field, the teal-and-black Makita saw sharp. No on-screen text, no captions, no arrows, no added logos (only the tool's own MAKITA marking)."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "shot806_divider",
+   "label": "0002 · Shot 806 — The Most Demanding: grinder sparks (DONE)",
+   "note": "Sketch → nano photoreal render → i2v. Angle grinder cutting a steel weld, animated shower of sparks, spinning disc. Person-free (R3: the first render had a torso+gloves and R3-rejected; re-rendered person-free to pass). VO: 'BUILT FOR THE MOST DEMANDING JOBS.'"
+  },
+  {
+   "kind": "target",
+   "id": "shot806_io",
+   "label": "Inputs — sketch → photoreal keyframe (person-free)",
+   "note": "Left: cleaned storyboard sketch. Right: nano photoreal render (person removed so it passes the R3 filter as an i2v input).",
+   "frames": [
+    "assets/shot806_sketch.jpg",
+    "assets/shot806_plate.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "shot806_r1",
+   "label": "Shot 806 result",
+   "params": "Seedance i2v · 1080p · 4s · person-free photoreal keyframe",
+   "experiments": [
+    {
+     "id": "shot806",
+     "approach": "sketch → nano photoreal (person-free) → i2v (spinning disc, spark shower)",
+     "status": "ok",
+     "note": "Dynamic animated sparks + spinning disc, real teal/black Makita LXT grinder, dark cinematic. No people. LESSON: i2v keyframes with a visible torso/gloves can trip R3 even though 'hands only' passes — keep tool macros person-free.",
+     "refs": [
+      "assets/shot806_plate.jpg"
+     ],
+     "video": "assets/shot806.mp4",
+     "frames": [
+      "assets/shot806_f0.jpg",
+      "assets/shot806_f1.jpg"
+     ],
+     "prompt": "Animate @Image1 (image-to-video). A photoreal Makita 18V LXT angle grinder cutting a steel pipe/weld, gloved hands on it (hands only, NO face). MOTION: the round cutting disc SPINS fast and a continuous bright shower of orange SPARKS sprays outward toward the camera, flickering and glowing; the grinder holds against the metal with a slight vibration/shake; a thin curl of smoke. Dark cinematic lighting so the sparks glow, shallow depth of field, subtle motion blur on the sparks. Keep the teal-and-black Makita grinder sharp. No on-screen text, no captions, no arrows, no added logos (only the tool's own MAKITA/LXT markings)."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "spot1_divider",
+   "label": "Spot 1 · BRAND :30 — Bigger. Better. Best.",
+   "note": "BRAND :30s · shots 101-126 · trades: Staircase (fine woodwork), Commercial building frame (metal framing), Park patio (concrete) · tools: 36V LXT Plunge Saw+vac+track, 18V LXT Compact Router, 18V LXT 2pc Combo Kit, 36V LXT 9\" Power Cutter, 18V LXT 7/8\" SDS Rotary Hammer… · pros: CARLOS, VINCENT, ALEX"
+  },
+  {
+   "kind": "target",
+   "id": "spot1_board",
+   "label": "Storyboard pages (intro + boards) — Bigger. Better. Best.",
+   "note": "Intro page (narrative + VO + tools) then the 6-frame board pages. These sketch frames are the shot inputs.",
+   "frames": [
+    "assets/page_04.png",
+    "assets/page_05.png",
+    "assets/page_06.png",
+    "assets/page_07.png",
+    "assets/page_08.png",
+    "assets/page_09.png"
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "spot2_divider",
+   "label": "Spot 2 · BRAND :15 — Stay Sharp",
+   "note": "BRAND :15s · shots 201-212 · trades: Drywall cut / remodel · tools: 18V Cut-Out Saw, 12V max CXT Green Laser Level, 36V LXT Vacuum, MakTrak · pros: (unnamed remodeler)"
+  },
+  {
+   "kind": "target",
+   "id": "spot2_board",
+   "label": "Storyboard pages (intro + boards) — Stay Sharp",
+   "note": "Intro page (narrative + VO + tools) then the 6-frame board pages. These sketch frames are the shot inputs.",
+   "frames": [
+    "assets/page_11.png",
+    "assets/page_12.png",
+    "assets/page_13.png"
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "spot3_divider",
+   "label": "Spot 3 · BRAND :15 — Done Right",
+   "note": "BRAND :15s · shots 301-311 · trades: Concrete post install · tools: 18V LXT 7/8\" SDS Rotary Hammer, 18V LXT Impact Wrench, 18V LXT Blower, MakTrak · pros: CARLOS"
+  },
+  {
+   "kind": "target",
+   "id": "spot3_board",
+   "label": "Storyboard pages (intro + boards) — Done Right",
+   "note": "Intro page (narrative + VO + tools) then the 6-frame board pages. These sketch frames are the shot inputs.",
+   "frames": [
+    "assets/page_14.png",
+    "assets/page_15.png",
+    "assets/page_16.png"
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "spot4_divider",
+   "label": "Spot 4 · CPT :30 — Never Settle",
+   "note": "CPT :30s · shots 401-424 · trades: House frame (rough woodwork) · tools: 36V LXT 7-1/4\" Circular Saw, 18V LXT Compact One-Handed Recipro Saw, 18V LXT Recipro Saw, 18V 3-1/2\" Framing Nailer, 18V LXT 3-1/4\" Planer… · pros: LAUREN, DERIK, VINCENT"
+  },
+  {
+   "kind": "target",
+   "id": "spot4_board",
+   "label": "Storyboard pages (intro + boards) — Never Settle",
+   "note": "Intro page (narrative + VO + tools) then the 6-frame board pages. These sketch frames are the shot inputs.",
+   "frames": [
+    "assets/page_18.png",
+    "assets/page_19.png",
+    "assets/page_20.png",
+    "assets/page_21.png",
+    "assets/page_22.png",
+    "assets/page_23.png"
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "spot5_divider",
+   "label": "Spot 5 · CPT :15 — Never Settle (cut-down)",
+   "note": "CPT :15s · shots 501-518 · trades: House frame · tools: 36V LXT 7-1/4\" Circular Saw, 18V 3-1/2\" Framing Nailer, 18V LXT Blower, Job Site Radio, MakTrak · pros: LAUREN"
+  },
+  {
+   "kind": "target",
+   "id": "spot5_board",
+   "label": "Storyboard pages (intro + boards) — Never Settle (cut-down)",
+   "note": "Intro page (narrative + VO + tools) then the 6-frame board pages. These sketch frames are the shot inputs.",
+   "frames": [
+    "assets/page_25.png",
+    "assets/page_26.png",
+    "assets/page_27.png",
+    "assets/page_28.png"
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "spot6_divider",
+   "label": "Spot 6 · CPT :15 — All in the Details",
+   "note": "CPT :15s · shots 601-611 · trades: Shower tile (studio remodel) · tools: 18V LXT 2pc Combo Kit, 18V LXT Angle Grinder, 12V max CXT Green Laser Level, MakTrak · pros: (unnamed tile pro)"
+  },
+  {
+   "kind": "target",
+   "id": "spot6_board",
+   "label": "Storyboard pages (intro + boards) — All in the Details",
+   "note": "Intro page (narrative + VO + tools) then the 6-frame board pages. These sketch frames are the shot inputs.",
+   "frames": [
+    "assets/page_29.png",
+    "assets/page_30.png",
+    "assets/page_31.png"
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "spot7_divider",
+   "label": "Spot 7 · CPT :6 — Made For You",
+   "note": "CPT :6s · shots 701-706 · trades: Combo-kit versatility · tools: 18V LXT 2pc Combo Kit · pros: (unnamed pro)"
+  },
+  {
+   "kind": "target",
+   "id": "spot7_board",
+   "label": "Storyboard pages (intro + boards) — Made For You",
+   "note": "Intro page (narrative + VO + tools) then the 6-frame board pages. These sketch frames are the shot inputs.",
+   "frames": [
+    "assets/page_33.png",
+    "assets/page_34.png"
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "spot8_divider",
+   "label": "Spot 8 · CPT :6 — The Most Demanding",
+   "note": "CPT :6s · shots 801-807 · trades: Angle grinder (tile/metal/weld) · tools: 18V LXT Angle Grinder, MakTrak · pros: (unnamed pro)"
+  },
+  {
+   "kind": "target",
+   "id": "spot8_board",
+   "label": "Storyboard pages (intro + boards) — The Most Demanding",
+   "note": "Intro page (narrative + VO + tools) then the 6-frame board pages. These sketch frames are the shot inputs.",
+   "frames": [
+    "assets/page_35.png",
+    "assets/page_36.png"
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "spot9_divider",
+   "label": "Spot 9 · CPT :6 — Hit The Mark",
+   "note": "CPT :6s · shots 901-905 · trades: Concrete forms (circular saw) · tools: 36V LXT 7-1/4\" Rear Handle Circular Saw · pros: (unnamed pro)"
+  },
+  {
+   "kind": "target",
+   "id": "spot9_board",
+   "label": "Storyboard pages (intro + boards) — Hit The Mark",
+   "note": "Intro page (narrative + VO + tools) then the 6-frame board pages. These sketch frames are the shot inputs.",
+   "frames": [
+    "assets/page_37.png",
+    "assets/page_38.png"
+   ]
+  }
+ ]
+}

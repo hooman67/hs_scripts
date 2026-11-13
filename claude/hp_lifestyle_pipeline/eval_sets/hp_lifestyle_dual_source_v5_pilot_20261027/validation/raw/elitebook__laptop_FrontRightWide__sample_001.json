@@ -1,0 +1,207 @@
+{
+  "validator_version": "v5-host-validator-r1",
+  "passed": false,
+  "error_count": 14,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "ctech_score_band",
+      "detail": "close_adaptation cannot use score 86",
+      "candidate_id": "p3"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['desks', 'plants', 'shelving']",
+      "candidate_id": "p7"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['desks', 'plants', 'shelving'] but signature has 2 entries",
+      "candidate_id": "p7"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['chair', 'plants', 'soft textiles']",
+      "candidate_id": "p14"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['chair', 'plants', 'soft textiles'] but signature has 2 entries",
+      "candidate_id": "p14"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['couch', 'plants', 'simple furniture']",
+      "candidate_id": "p15"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['couch', 'plants', 'simple furniture'] but signature has 2 entries",
+      "candidate_id": "p15"
+    },
+    {
+      "code": "surface_not_literal",
+      "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+      "candidate_id": "p15"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'collectibles', 'shelving']",
+      "candidate_id": "p19"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'collectibles', 'shelving'] but signature has 2 entries",
+      "candidate_id": "p19"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'shelving', 'wall']",
+      "candidate_id": "p20"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'shelving', 'wall'] but signature has 2 entries",
+      "candidate_id": "p20"
+    },
+    {
+      "code": "ksp_mapping_coverage",
+      "detail": "expected []; got ['KSP 1: Flexible AI productivity in every work mode', 'KSP 2: Sharper collaboration for high-stakes hybrid work', 'KSP 3: Enterprise-ready protection with work-anywhere reliability', 'KSP 4: Dependable performance for multitasking and mobility']"
+    },
+    {
+      "code": "ignored_path_missing",
+      "detail": "source_messaging is a string but ignored_fields is nonempty"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support audit text; inspect: ['e5']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 20,
+    "evidence": 11,
+    "environments": {
+      "Office": 4,
+      "Home": 5,
+      "Creative Studio": 3,
+      "Café": 3,
+      "Education": 3,
+      "Gaming": 2
+    },
+    "relationships": {
+      "source_grounded": 7,
+      "source_adjacent": 8,
+      "creative_departure": 5
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 5,
+      "Office": 4,
+      "Education": 3,
+      "Gaming": 2,
+      "Café": 3,
+      "Creative Studio": 3
+    },
+    "relationship_counts": {
+      "source_grounded": 7,
+      "source_adjacent": 8,
+      "creative_departure": 5
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 15,
+      "close_adaptation": 2,
+      "category_extension": 3
+    },
+    "ctech_reference_counts": {
+      "CT13": 1,
+      "CT03": 2,
+      "CT01": 1,
+      "CT04": 2,
+      "CT18": 1,
+      "CT05": 1,
+      "CT02": 1,
+      "CT10": 3,
+      "CT09": 1,
+      "CT12": 1,
+      "CT07": 1,
+      "CT08": 1,
+      "CT17": 1,
+      "CT16": 1,
+      "CT14": 1,
+      "CT15": 1
+    },
+    "ctech_score_range": [
+      64,
+      90
+    ],
+    "distinct_subsettings": 20,
+    "evidence_reverse_mappings": {
+      "smart_brief": {
+        "evidence_ids": [
+          "e1",
+          "e2",
+          "e3",
+          "e4"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18"
+        ]
+      },
+      "source_messaging": {
+        "evidence_ids": [
+          "e6",
+          "e7",
+          "e8",
+          "e9",
+          "e10",
+          "e11"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "1d550898523bdf21f18fe13b9f67afe7137ce8f3da30c96dd962abc3dacdd169"
+}

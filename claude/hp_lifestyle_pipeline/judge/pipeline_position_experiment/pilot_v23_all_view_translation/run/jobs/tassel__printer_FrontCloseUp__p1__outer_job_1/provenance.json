@@ -1,0 +1,345 @@
+{
+  "schema_version": "hp-position-flex-row-provenance-v23-pilot",
+  "experiment_id": "hp-position-flex-v23-all-view-translation-four-row-pilot",
+  "row_slug": "tassel__printer_FrontCloseUp__p1",
+  "job_id": "tassel__printer_FrontCloseUp__p1__outer_job_1",
+  "outer_attempt": 1,
+  "submission_request": {
+    "rowSlug": "tassel__printer_FrontCloseUp__p1",
+    "outerAttempt": 1
+  },
+  "submission_request_sha256": "88b78aff62cbbf105a1032cca4e37840ad2ec185604daebde84f47ef31125fb2",
+  "row_id": "tassel__printer_FrontCloseUp::p1",
+  "record": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/tassel__printer_FrontCloseUp__p1.json",
+    "sha256": "b15d7ee88814123d27b3eb87001f771c689cf9c5ecb5cb2bda1fb076e1c68ecd"
+  },
+  "prompt_sha256": "a64c021c0ba0c748820ed3d4d0abaefc50fcae8bced21ca065daa020c9057b44",
+  "control_job_id": "20261105T202346Z_6da34b0b",
+  "input_artifacts": {
+    "product.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/tassel__printer_FrontCloseUp__p1/product.png",
+      "sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T202346Z_6da34b0b/artifacts/hp16_product.png"
+    },
+    "reference.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/tassel__printer_FrontCloseUp__p1/reference.png",
+      "sha256": "ffe474da67c7182f144df6557f792ea4d3ac6a7fd4d9ee911c552638a4019085",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T202346Z_6da34b0b/artifacts/hp16_reference.png"
+    },
+    "guide.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/tassel__printer_FrontCloseUp__p1/guide.png",
+      "sha256": "d2a28ce7804322a2c88cc3832aaf84aa3e9ffa7c455090038ed14b53df6006df",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T202346Z_6da34b0b/artifacts/hp16_geometry_guide.png"
+    }
+  },
+  "pipeline_version": "unified-blue-scale-v23-all-view-rigid-translation-twin-camera-guide-only-no-edit-mask",
+  "wrapper_version": "v23-four-row-pilot-stop-on-first-failure-v1",
+  "source_hashes": {
+    "hp3p/prompts/system_3p.txt": "324ce0e449804bc0d17ac0cf5ed10587716bc9d7e6ef72b9a91e439745b6aaec",
+    "hp3p/prompts/system_3p_fixed_position.txt": "67e4d817a5a203912116bb99afbd6c4511d9a5c537b241cc6e980e34e75b1118",
+    "hp3p/pipeline.py": "dde47ae75c6023a020ea26c405c5cf8e78183fe2de4e3219a5c279eb804b6ced",
+    "hp3p/invariants.py": "8c1a8204d27eeb3ba922d6d9519113da7beeff9368301bcc9f8c9a7ec2fb2665",
+    "hp3p/geometry.py": "f9d0f3a395624a150f9a9fed8c836394b66f041f6e212dc87c8b1a2322514a95",
+    "hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+    "hp3p/reference_blue.py": "f36098543e208029226ae3b04ffd22c39edf7e168ab49dd5868e2185bd90661d",
+    "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3"
+  },
+  "stage_b_attempts": [
+    {
+      "attempt": 1,
+      "system_sha256": "5b276a0297d9d240b36f77e61bdc4b0c87667998da46f5d47f003af171e7edfe",
+      "text_sha256": "64dd14888a9108e0204cb6931ddfe212f52e2003ca13a8aeb8c634b02ec6d98b",
+      "request_sha256": "be73095c3109ba4883df94eb148aaa167f63e685e19ee65dfe4cbfd341bba458",
+      "response_sha256": "daf3633d82e0bf9a701042ce6d41afbfe5372ce42841b2b8ba32790b18dbbe58",
+      "executable_prompt_sha256": "7f3abcff5707ad5dbb62d18ece98e2e2aa82245a065a4ef114f5b3cfb7a11bc6"
+    }
+  ],
+  "image_calls": 1,
+  "product_invariant_guard": {
+    "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+    "attempts": [
+      {
+        "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+        "fixed_position": false,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.5,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          489,
+          760,
+          1755,
+          1350
+        ],
+        "matches": 56,
+        "inliers": 43,
+        "inlier_ratio": 0.7678571428571429,
+        "full_affine_matrix": [
+          [
+            0.9999002770121042,
+            -0.0009749700251667719,
+            0.8246906429005524
+          ],
+          [
+            0.0004341941202197499,
+            0.9952686505455679,
+            3.8151757704138425
+          ]
+        ],
+        "partial_affine_matrix": [
+          [
+            0.9980115723312252,
+            0.00011849627112039634,
+            1.793289024036993
+          ],
+          [
+            -0.00011849627112039634,
+            0.9980115723312252,
+            1.4153057854827569
+          ]
+        ],
+        "partial_inliers": 43,
+        "singular_values": [
+          0.9999162572737932,
+          0.9952531679217764
+        ],
+        "anisotropy_ratio": 1.0046853298259315,
+        "rotation_deg": 0.040467322656864056,
+        "column_shear_cos": 0.0005453671414076542,
+        "residual_median_px": 0.5171890329387491,
+        "residual_p95_px": 1.456333492493707,
+        "translation_only_residual_median_px": 0.9642821550369263,
+        "translation_only_residual_p95_px": 1.742643117904663,
+        "source_span_x_fraction": 0.7497947812080383,
+        "source_span_y_fraction": 0.6763786673545837,
+        "source_quadrants": 4,
+        "source_hull_fraction": 0.30749307127236947,
+        "transformed_product_corners_px": [
+          [
+            489.03494888269273,
+            760.4316711098329
+          ],
+          [
+            1754.9086995800167,
+            760.9813608660311
+          ],
+          [
+            1754.3334672651683,
+            1348.189864687916
+          ],
+          [
+            488.45971656784434,
+            1347.6401749317179
+          ]
+        ],
+        "corners_in_frame": true,
+        "translation_x_px": -0.462158203125,
+        "translation_y_px": -1.16259765625,
+        "final_product_bounds_px": [
+          488.537841796875,
+          758.83740234375,
+          1754.537841796875,
+          1348.83740234375
+        ],
+        "rigid_transformed_product_corners_px": [
+          [
+            488.537841796875,
+            758.83740234375
+          ],
+          [
+            1754.537841796875,
+            758.83740234375
+          ],
+          [
+            1754.537841796875,
+            1348.83740234375
+          ],
+          [
+            488.537841796875,
+            1348.83740234375
+          ]
+        ],
+        "checks": {
+          "inliers": true,
+          "inlier_ratio": true,
+          "singular_min": true,
+          "singular_max": true,
+          "anisotropy": true,
+          "rotation": true,
+          "shear": true,
+          "residual_median": true,
+          "residual_p95": true,
+          "translation_only_residual_median": true,
+          "translation_only_residual_p95": true,
+          "span_x": true,
+          "span_y": true,
+          "quadrants": true,
+          "hull": true,
+          "corners": true
+        },
+        "reasons": [],
+        "verdict": "pass"
+      }
+    ],
+    "selected_attempt": 1,
+    "selected_localization": {
+      "translation_x_px": -0.462158203125,
+      "translation_y_px": -1.16259765625,
+      "final_product_bounds_px": [
+        488.537841796875,
+        758.83740234375,
+        1754.537841796875,
+        1348.83740234375
+      ]
+    }
+  },
+  "calls": [
+    {
+      "kind": "selection_replay",
+      "response_sha256": "ea9b0155d7c87e6b852132959019da36bbd62258a2bae47fb5998a969773281e"
+    },
+    {
+      "kind": "geometry_replay",
+      "response_sha256": "3f1a152f3eb5331b48e47132fe57e7b7539ae79e58d932fbd1c11ad22d5dc079"
+    },
+    {
+      "kind": "astra_write",
+      "attempt": 1,
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "system_sha256": "5b276a0297d9d240b36f77e61bdc4b0c87667998da46f5d47f003af171e7edfe",
+      "text_sha256": "64dd14888a9108e0204cb6931ddfe212f52e2003ca13a8aeb8c634b02ec6d98b",
+      "images_sha256": [
+        "d2a28ce7804322a2c88cc3832aaf84aa3e9ffa7c455090038ed14b53df6006df",
+        "ffe474da67c7182f144df6557f792ea4d3ac6a7fd4d9ee911c552638a4019085",
+        "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4"
+      ],
+      "schema_sha256": "7a7fc445f534baf5eec4798c34c54e14f83dd5b2197f4ccb115d8b8c68f0d93b",
+      "response_sha256": "daf3633d82e0bf9a701042ce6d41afbfe5372ce42841b2b8ba32790b18dbbe58",
+      "usage": {
+        "completion_tokens": 999,
+        "prompt_tokens": 13819,
+        "total_tokens": 14818,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 75,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "attempt": 1,
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "prompt_sha256": "7f3abcff5707ad5dbb62d18ece98e2e2aa82245a065a4ef114f5b3cfb7a11bc6",
+      "guide_sha256": "d2a28ce7804322a2c88cc3832aaf84aa3e9ffa7c455090038ed14b53df6006df",
+      "mask": false,
+      "output_sha256": "07569a0c13080e1e752f301dd1a80d03eec785b907f8c4ec16326366029f618b"
+    }
+  ],
+  "artifacts": {
+    "pipeline/geometry_guide.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/geometry_guide.png",
+      "sha256": "d2a28ce7804322a2c88cc3832aaf84aa3e9ffa7c455090038ed14b53df6006df",
+      "bytes": 539047
+    },
+    "pipeline/geometry_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/geometry_request.json",
+      "sha256": "7be41e712fda6d762cb9124fb42ff2d4194035b4fde16000b73397c115dd3f41",
+      "bytes": 27314
+    },
+    "pipeline/geometry_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/geometry_response.json",
+      "sha256": "d460d73d123c468095f85044011fd554f567651ce2da1f7ee2be9ec28c9e9288",
+      "bytes": 602
+    },
+    "pipeline/geometry_text.txt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/geometry_text.txt",
+      "sha256": "f347817ee9efedfed577d7bc0fc87bebf0f5b2385570018ca282d0ba04885691",
+      "bytes": 2140
+    },
+    "pipeline/gpt_1.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/gpt_1.png",
+      "sha256": "07569a0c13080e1e752f301dd1a80d03eec785b907f8c4ec16326366029f618b",
+      "bytes": 4715971
+    },
+    "pipeline/image_request_attempt_1.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/image_request_attempt_1.json",
+      "sha256": "d21e547b4fce9fad190831c7277760e073334967c924d49c967bbe9b6804b6a1",
+      "bytes": 11780
+    },
+    "pipeline/input.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/input.png",
+      "sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+      "bytes": 528360
+    },
+    "pipeline/mask.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/mask.png",
+      "sha256": "b29f077319ac89932e7669188712418f12d8ffd169551ed690144a67aa970676",
+      "bytes": 24861
+    },
+    "pipeline/ours.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/ours.png",
+      "sha256": "07569a0c13080e1e752f301dd1a80d03eec785b907f8c4ec16326366029f618b",
+      "bytes": 4715971
+    },
+    "pipeline/product_invariant_attempt_1.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/product_invariant_attempt_1.json",
+      "sha256": "ff54f5393daf2675d56be1e913445577d614f978afcfcecd9821c453ecb701dd",
+      "bytes": 3036
+    },
+    "pipeline/ref_2.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/ref_2.png",
+      "sha256": "ffe474da67c7182f144df6557f792ea4d3ac6a7fd4d9ee911c552638a4019085",
+      "bytes": 1037268
+    },
+    "pipeline/result.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/result.json",
+      "sha256": "6c5b9b62d0bf490126a74631ce9c865be1cb15141ec242b26074cc7aa13bfc4b",
+      "bytes": 24519
+    },
+    "pipeline/stage_b_attempt_1_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/stage_b_attempt_1_request.json",
+      "sha256": "4dcdd39e24bd0706cda2c0a0a3214d628a46ef83c18b0d77a745674568d44658",
+      "bytes": 32712
+    },
+    "pipeline/stage_b_attempt_1_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontCloseUp__p1__outer_job_1/stage_b_attempt_1_response.json",
+      "sha256": "bf5704408283e1aa48dd472db20783badb7c2432273e51ff20a9b48d1e92447e",
+      "bytes": 4723
+    },
+    "job/calls.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/jobs/tassel__printer_FrontCloseUp__p1__outer_job_1/calls.json",
+      "sha256": "f0cd5e33695b6c26004c85a2d69fee3971ba09dd9721b794859cc580ba984cb4",
+      "bytes": 1911
+    },
+    "job/submission_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/jobs/tassel__printer_FrontCloseUp__p1__outer_job_1/submission_request.json",
+      "sha256": "dbd2d643c78d7a76a078e73f223f8ae66783eed1388ac2c19c5e76004f0a5930",
+      "bytes": 73
+    }
+  }
+}

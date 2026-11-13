@@ -1,0 +1,54 @@
+{
+  "benchmark": "/home/colligo/mixology_data/refraction_research_2026-10-19/runs/v3corrected_group_clean/output.png",
+  "original_style": "/home/colligo/mixology_data/refraction_research_2026-10-19/assets/image_027_p10_xref1385.jpg",
+  "bad_examples": [
+    "/home/colligo/mixology_data/refraction_research_2026-10-19/combined/runs/v1_trio_orange_front/output.png",
+    "/home/colligo/mixology_data/refraction_research_2026-10-19/combined/runs/v1_five_staggered/output.png"
+  ],
+  "arrangements": {
+    "trio": {
+      "neutral_target": "/home/colligo/mixology_data/refraction_research_2026-10-19/composition/runs/v1small_trio_orange_front/output.png",
+      "source_images": [
+        "/home/colligo/mixology_data/refraction_research_2026-10-19/assets/ref_inputs/6b61ea2d3b3f46959c6a0403879f8299.png",
+        "/home/colligo/mixology_data/refraction_research_2026-10-19/assets/ref_inputs/TCCC–Crafted-Sept-2026.png",
+        "/home/colligo/mixology_data/refraction_research_2026-10-19/assets/ref_inputs/b82dd27cd8c4471ea84aa21f9878e980.png"
+      ],
+      "one_stage_user_prompt": "Arrange orange front-center, red back-left and amber back-right in a shallow staggered group. Add refractions.",
+      "two_stage_user_prompt": "Add refractions. Keep the existing three-cup arrangement exactly."
+    },
+    "five": {
+      "neutral_target": "/home/colligo/mixology_data/refraction_research_2026-10-19/composition/runs/v1fal_staggered/output.png",
+      "source_images": [
+        "/home/colligo/mixology_data/refraction_research_2026-10-19/assets/ref_inputs/315fb11e7cc94ecf8103ee2cf98227ae.png",
+        "/home/colligo/mixology_data/refraction_research_2026-10-19/assets/ref_inputs/6b61ea2d3b3f46959c6a0403879f8299.png",
+        "/home/colligo/mixology_data/refraction_research_2026-10-19/assets/ref_inputs/b82dd27cd8c4471ea84aa21f9878e980.png",
+        "/home/colligo/mixology_data/refraction_research_2026-10-19/assets/ref_inputs/edbf33f823b842df9cd34393caea6cca.png",
+        "/home/colligo/mixology_data/refraction_research_2026-10-19/assets/ref_inputs/TCCC–Crafted-Sept-2026.png"
+      ],
+      "one_stage_user_prompt": "Combine these five drinks in a compact shallow staggered group. Add refractions.",
+      "two_stage_user_prompt": "Add refractions. Keep the existing five-cup arrangement exactly."
+    }
+  },
+  "candidates": {
+    "i01_trio_one_stage_origstyle": {"arrangement": "trio", "pipeline": "one_stage", "style": "original", "system": "combined_v1"},
+    "i02_trio_two_stage_origstyle": {"arrangement": "trio", "pipeline": "two_stage", "style": "original", "system": "v3"},
+    "i03_five_one_stage_origstyle": {"arrangement": "five", "pipeline": "one_stage", "style": "original", "system": "combined_v1"},
+    "i04_five_two_stage_origstyle": {"arrangement": "five", "pipeline": "two_stage", "style": "original", "system": "v3"},
+    "i05_trio_two_stage_benchmark": {"arrangement": "trio", "pipeline": "two_stage", "style": "benchmark", "system": "v3"},
+    "i06_five_two_stage_benchmark": {"arrangement": "five", "pipeline": "two_stage", "style": "benchmark", "system": "v3"},
+    "i07_trio_two_stage_focusclause": {"arrangement": "trio", "pipeline": "two_stage", "style": "benchmark", "system": "v4_focus_clause"},
+    "i08_five_two_stage_focusclause": {"arrangement": "five", "pipeline": "two_stage", "style": "benchmark", "system": "v4_focus_clause"},
+    "i09_trio_floor_correction": {"arrangement": "trio", "pipeline": "correction", "style": "benchmark", "system": "floor_correction", "base_candidate": "i07_trio_two_stage_focusclause", "user_prompt": "Correct only the existing projected-light patterns on the support plane. Preserve everything else exactly."},
+    "i10_five_floor_correction": {"arrangement": "five", "pipeline": "correction", "style": "benchmark", "system": "floor_correction", "base_candidate": "i08_five_two_stage_focusclause", "user_prompt": "Correct only the existing projected-light patterns on the support plane. Preserve everything else exactly."},
+    "i11_five_global_focus": {"arrangement": "five", "pipeline": "correction", "style": "benchmark", "system": "five_global_focus", "base_candidate": "i10_five_floor_correction", "user_prompt": "Consolidate only the existing support-plane light into one dominant shared focus for the whole group. Preserve every cup and all other scene details exactly."},
+    "i12_five_global_focus_nostyle": {"arrangement": "five", "pipeline": "correction", "style": "none", "system": "five_global_focus_nostyle", "base_candidate": "i10_five_floor_correction", "user_prompt": "Consolidate only the existing support-plane light into one dominant shared focus for the whole group. Preserve every cup and all other scene details exactly."},
+    "i13_five_branch_reshape": {"arrangement": "five", "pipeline": "correction", "style": "none", "system": "five_branch_reshape", "base_candidate": "i12_five_global_focus_nostyle", "user_prompt": "Keep the central optical focus unchanged and reshape only its broad crossing light bands into irregular tapering branches. Preserve everything else exactly."},
+    "i14_five_faceted_branches": {"arrangement": "five", "pipeline": "correction", "style": "none", "system": "five_faceted_branches", "base_candidate": "i13_five_branch_reshape", "user_prompt": "Keep the central optical focus unchanged. Replace only the long smooth glowing arcs with sharp irregular forked paths of focused transmitted light. Preserve everything else exactly."},
+    "i15_five_benchmarked_branches": {"arrangement": "five", "pipeline": "correction", "style": "benchmark", "system": "five_benchmarked_branches", "base_candidate": "i12_five_global_focus_nostyle", "user_prompt": "Preserve the existing central focus and smooth fields. Use the reference only to reshape the broad bands into photographic irregular tapering branches. Preserve everything else exactly."},
+    "i16_five_fresh_global_focus": {"arrangement": "five", "pipeline": "two_stage", "style": "none", "system": "five_fresh_global_focus", "user_prompt": "Add focused transmitted light while keeping the existing five-cup composition exactly."},
+    "i17_five_floor_correction_repeat": {"arrangement": "five", "pipeline": "correction", "style": "benchmark", "system": "floor_correction", "base_candidate": "i08_five_two_stage_focusclause", "user_prompt": "Correct only the existing projected-light patterns on the support plane. Preserve everything else exactly.", "fixed_image_prompt_from": "i10_five_floor_correction"},
+    "i18_five_floor_correction_repeat2": {"arrangement": "five", "pipeline": "correction", "style": "benchmark", "system": "floor_correction", "base_candidate": "i08_five_two_stage_focusclause", "user_prompt": "Correct only the existing projected-light patterns on the support plane. Preserve everything else exactly.", "fixed_image_prompt_from": "i10_five_floor_correction"},
+    "i19_five_subtle_forks": {"arrangement": "five", "pipeline": "correction", "style": "none", "system": "five_subtle_forks", "base_candidate": "i12_five_global_focus_nostyle", "user_prompt": "Keep the existing central focus and broad path layout. Add only subtle irregular forks and stronger outward taper to the current support-plane light. Preserve everything else exactly."},
+    "i20_five_branch_bundles": {"arrangement": "five", "pipeline": "correction", "style": "none", "system": "five_branch_bundles", "base_candidate": "i12_five_global_focus_nostyle", "user_prompt": "Keep the existing central focus and quiet colored fields. Replace only the broad glowing paths with short photographic bundles of focused refractive ridges. Preserve everything else exactly."}
+  }
+}

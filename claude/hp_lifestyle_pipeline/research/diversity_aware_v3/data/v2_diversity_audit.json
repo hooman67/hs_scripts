@@ -1,0 +1,2381 @@
+{
+  "version": "v2-diversity-audit-v1",
+  "as_of_date": "2026-10-23",
+  "scope": {
+    "question": "How diverse are accepted camera-V2 environment prompts, how do their recurring settings/surfaces/props/language compare with established October mAIstro guidance and workbook column A, and what additional homogenization is visible in available downstream usedPrompt records?",
+    "included": [
+      "All 592 accepted prompt texts from 369 final camera-V2 cases.",
+      "The 10 scene examples and reusable template in the October mAIstro guidance extraction.",
+      "The 58 base scene prompts in column A of the workbook's Eval Set Prompts sheet; the Theme Styles column-A instruction is recorded separately and not counted as a scene.",
+      "A bounded snapshot of completed downstream records containing usedPrompt, with a deterministic stratified exact-text sample."
+    ],
+    "excluded": [
+      "Image-quality judgments and visual annotation.",
+      "Any claim that source-message weakness alone caused repetition.",
+      "Prompt redesign, generation calls, or edits to camera-V2 artifacts."
+    ]
+  },
+  "sources": [
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/accepted_prompt_cases.json",
+      "sha256": "47df63b3a465fa9b09f62e78b4066aebbfe4438e503d4650a1e601158ea33011",
+      "bytes": 2877528,
+      "role": "final accepted camera-V2 prompts",
+      "source_class": "derived primary evidence",
+      "retrieved_or_inspected_date": "2026-10-23"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/manifest.json",
+      "sha256": "840ab21adcaedef33973315a7f909f0b47af4375e18bb88bc599305470811409",
+      "bytes": 669891,
+      "role": "camera-V2 case/source/camera denominators",
+      "source_class": "derived primary evidence",
+      "retrieved_or_inspected_date": "2026-10-23"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/october_guidance.json",
+      "sha256": "e66e2008735407786cb2159b07c06131d1404dd117dad71444cd8329d8dd647d",
+      "bytes": 4970,
+      "role": "allowed-content extraction of October mAIstro guidance",
+      "source_class": "derived primary evidence",
+      "retrieved_or_inspected_date": "2026-10-23",
+      "original_artifact_sha256": "1f1605f034f581e03679d101fddd9cd52f00601b75ba2a9ec64783206fb78293"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/lifestyle_column_a.json",
+      "sha256": "b54d7cfb60c6ed2d614db794b51319cb888326ea950b4aadad8a20fa693119d2",
+      "bytes": 29349,
+      "role": "allowed extraction of workbook column A only",
+      "source_class": "derived primary evidence",
+      "retrieved_or_inspected_date": "2026-10-23",
+      "original_artifact_sha256": "7bf4c6ad2b6ce324fb3c9d1d9d52846411529e29f1b1765d1f4e8bff7ded980a"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/example_prompts/HP - mAIstro Prompt Guidance (Oct 2026).docx",
+      "sha256": "1f1605f034f581e03679d101fddd9cd52f00601b75ba2a9ec64783206fb78293",
+      "bytes": 24664,
+      "role": "original October mAIstro guidance artifact",
+      "source_class": "user-provided primary work artifact",
+      "retrieved_or_inspected_date": "2026-10-23"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/example_prompts/Eval-Set_Lifestyle-Photography_wSKUs.xlsx",
+      "sha256": "7bf4c6ad2b6ce324fb3c9d1d9d52846411529e29f1b1765d1f4e8bff7ded980a",
+      "bytes": 35120,
+      "role": "original workbook; audit reads column A extraction only",
+      "source_class": "user-provided primary work artifact",
+      "retrieved_or_inspected_date": "2026-10-23"
+    }
+  ],
+  "denominators": {
+    "v2_case_count": 369,
+    "v2_prompt_count": 592,
+    "v2_source_count": 9,
+    "v2_device_type_counts_prompts": {
+      "printer": 347,
+      "laptop": 245
+    },
+    "october_guidance_scene_example_count": 10,
+    "workbook_eval_set_column_a_scene_count": 58,
+    "workbook_theme_style_column_a_instruction_count": 1
+  },
+  "method": {
+    "environment": "Exact accepted schema field; mutually exclusive.",
+    "subsettings_surfaces_props_style": "Case-insensitive lexical indicators. Categories overlap and are not exhaustive semantic classifications. Regex definitions are preserved below.",
+    "similarity": "All-pairs Jaccard similarity over lowercased alphanumeric word sets after listed stopword removal.",
+    "ngrams": "Each n-gram counts at most once per prompt; distinct-source coverage is also reported.",
+    "downstream": "All parseable completed record files with nonempty usedPrompt at snapshot time; exact raw and structured rewrite fields are read from saved local records.",
+    "definitions": {
+      "subsetting_indicators": {
+        "office_workplace": "\\boffice\\b|shared[- ]workspace|\\bworkplace\\b|\\bcorporate\\b",
+        "education_library": "\\bschool\\b|classroom|education|learning|lesson|student|university|library",
+        "home_residential": "\\bhome\\b|household|residential|living room|kitchen|bedroom|sunroom",
+        "creative_studio": "creative|studio|design|sketch|storyboard|\\bart\\b|jewelry|craft",
+        "cafe_coffee_shop": "caf[eé]|coffee shop",
+        "customer_site_reception": "customer[- ]site|client[- ]site|reception",
+        "meeting_collaboration": "meeting|conference|collaborat|\\bteam\\b",
+        "it_operations_policy": "\\bit\\b|deployment|operations|policy",
+        "outdoor_urban": "outdoor|sidewalk|plaza|patio|\\bcity\\b|storefront|\\bdeck\\b",
+        "healthcare": "clinic|medical|hospital",
+        "gaming": "gaming|\\bgame\\b|gamer",
+        "retail_craft_shop": "bookstore|\\bshop\\b|retail|craft shop"
+      },
+      "surface_indicators": {
+        "wood_or_wood_species": "\\bwood(?:en)?\\b|\\boak\\b|\\bmaple\\b",
+        "laminate": "\\blaminate\\b",
+        "stone_or_marble": "\\bstone\\b|\\bmarble\\b",
+        "desk": "\\bdesk\\b",
+        "table_worktable_tabletop": "\\btable\\b|tabletop|worktable",
+        "counter_credenza": "counter|credenza",
+        "floor_lap_or_soft_seating": "\\bfloor\\b|\\blap\\b|sofa|couch|bench"
+      },
+      "prop_indicators": {
+        "documents_forms_paper": "\\bforms?\\b|\\bpapers?\\b|documents?|worksheets?|handouts?|reports?|records?|packets?|pages?|schedule|checklist",
+        "writing_instrument": "\\bpen\\b|pencil|marker",
+        "folder_binder_notebook": "folder|binder|notebook|notepad|sketchpad|planner",
+        "drinkware_or_coffee": "\\bmug\\b|\\bcup\\b|\\bglass\\b|coffee",
+        "chair_or_seating": "chair|seating",
+        "storage_shelving_or_tray": "cabinet|shelf|shelving|cubby|organizer|\\btray\\b",
+        "noticeboard_pinboard": "notice ?board|bulletin|corkboard|pinboard",
+        "plant_or_greenery": "plant|greenery|succulent",
+        "window": "\\bwindows?\\b",
+        "people": "\\bperson\\b|\\bpeople\\b|professional|student|teacher|\\bwoman\\b|\\bman\\b|colleague|coworker|family|\\bboy\\b|\\bgirl\\b",
+        "secondary_computing_hardware": "\\bphone\\b|smartphone|\\btablet\\b|monitor|\\bhardware\\b|\\bdevice\\b|\\bscreen\\b"
+      },
+      "style_language_indicators": {
+        "soft_or_diffuse_daylight": "soft(?:,)?(?: diffuse)? daylight|diffuse daylight",
+        "warm_light_or_atmosphere": "warm (?:natural )?(?:light|lighting|atmosphere)|warmly lit|warm ambient",
+        "plain_or_clean_neutral_backdrop": "(?:plain|clean|simple) neutral (?:backdrop|background|surround|tone)",
+        "softly_blurred": "softly blurred|softly out of focus|soft-focus",
+        "lived_in_authentic_imperfect": "lived-in|authentic|imperfection|imperfect",
+        "layered_or_natural_depth": "layered|natural depth"
+      },
+      "similarity_stopwords": [
+        "a",
+        "an",
+        "and",
+        "as",
+        "at",
+        "by",
+        "for",
+        "from",
+        "in",
+        "is",
+        "it",
+        "its",
+        "of",
+        "on",
+        "that",
+        "the",
+        "this",
+        "to",
+        "with"
+      ]
+    }
+  },
+  "v2_accepted_prompt_audit": {
+    "prompt_count": 592,
+    "unique_normalized_prompt_count": 589,
+    "exact_normalized_duplicate_group_count": 2,
+    "exact_normalized_duplicate_row_count": 5,
+    "duplicate_groups": [
+      {
+        "normalized_text": "a shared office work area with a clean laminate counter surface soft overhead light and a plain neutral backdrop",
+        "count": 3
+      },
+      {
+        "normalized_text": "a school preparation surface in lightly worn wood with the cropped edge of a worksheet in gentle daylight",
+        "count": 2
+      }
+    ],
+    "word_count": {
+      "mean": 27.41,
+      "median": 28.0,
+      "min": 13,
+      "max": 46
+    },
+    "subsetting_indicators_overlapping": {
+      "office_workplace": {
+        "count": 355,
+        "percent": 59.97
+      },
+      "education_library": {
+        "count": 81,
+        "percent": 13.68
+      },
+      "home_residential": {
+        "count": 17,
+        "percent": 2.87
+      },
+      "creative_studio": {
+        "count": 79,
+        "percent": 13.34
+      },
+      "cafe_coffee_shop": {
+        "count": 30,
+        "percent": 5.07
+      },
+      "customer_site_reception": {
+        "count": 26,
+        "percent": 4.39
+      },
+      "meeting_collaboration": {
+        "count": 169,
+        "percent": 28.55
+      },
+      "it_operations_policy": {
+        "count": 14,
+        "percent": 2.36
+      },
+      "outdoor_urban": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "healthcare": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "gaming": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "retail_craft_shop": {
+        "count": 0,
+        "percent": 0.0
+      }
+    },
+    "surface_indicators_overlapping": {
+      "wood_or_wood_species": {
+        "count": 308,
+        "percent": 52.03
+      },
+      "laminate": {
+        "count": 155,
+        "percent": 26.18
+      },
+      "stone_or_marble": {
+        "count": 1,
+        "percent": 0.17
+      },
+      "desk": {
+        "count": 17,
+        "percent": 2.87
+      },
+      "table_worktable_tabletop": {
+        "count": 284,
+        "percent": 47.97
+      },
+      "counter_credenza": {
+        "count": 175,
+        "percent": 29.56
+      },
+      "floor_lap_or_soft_seating": {
+        "count": 9,
+        "percent": 1.52
+      }
+    },
+    "prop_and_scene_element_indicators_overlapping": {
+      "documents_forms_paper": {
+        "count": 416,
+        "percent": 70.27
+      },
+      "writing_instrument": {
+        "count": 314,
+        "percent": 53.04
+      },
+      "folder_binder_notebook": {
+        "count": 175,
+        "percent": 29.56
+      },
+      "drinkware_or_coffee": {
+        "count": 90,
+        "percent": 15.2
+      },
+      "chair_or_seating": {
+        "count": 140,
+        "percent": 23.65
+      },
+      "storage_shelving_or_tray": {
+        "count": 90,
+        "percent": 15.2
+      },
+      "noticeboard_pinboard": {
+        "count": 68,
+        "percent": 11.49
+      },
+      "plant_or_greenery": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "window": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "people": {
+        "count": 10,
+        "percent": 1.69
+      },
+      "secondary_computing_hardware": {
+        "count": 0,
+        "percent": 0.0
+      }
+    },
+    "style_language_indicators_overlapping": {
+      "soft_or_diffuse_daylight": {
+        "count": 375,
+        "percent": 63.34
+      },
+      "warm_light_or_atmosphere": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "plain_or_clean_neutral_backdrop": {
+        "count": 75,
+        "percent": 12.67
+      },
+      "softly_blurred": {
+        "count": 134,
+        "percent": 22.64
+      },
+      "lived_in_authentic_imperfect": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "layered_or_natural_depth": {
+        "count": 0,
+        "percent": 0.0
+      }
+    },
+    "environment_counts": {
+      "Office": {
+        "count": 493,
+        "percent": 83.28
+      },
+      "Education": {
+        "count": 82,
+        "percent": 13.85
+      },
+      "Home": {
+        "count": 17,
+        "percent": 2.87
+      }
+    },
+    "by_source": {
+      "160db92655412f4d": {
+        "device_type": "printer",
+        "prompt_count": 46,
+        "environment_counts": {
+          "Office": 46
+        },
+        "subsetting_indicators_overlapping": {
+          "office_workplace": {
+            "count": 45,
+            "percent": 97.83
+          },
+          "education_library": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "home_residential": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "creative_studio": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "cafe_coffee_shop": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "customer_site_reception": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "meeting_collaboration": {
+            "count": 17,
+            "percent": 36.96
+          },
+          "it_operations_policy": {
+            "count": 7,
+            "percent": 15.22
+          },
+          "outdoor_urban": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "healthcare": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "gaming": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "retail_craft_shop": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "22fdbf19f03d1a31": {
+        "device_type": "laptop",
+        "prompt_count": 85,
+        "environment_counts": {
+          "Office": 85
+        },
+        "subsetting_indicators_overlapping": {
+          "office_workplace": {
+            "count": 41,
+            "percent": 48.24
+          },
+          "education_library": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "home_residential": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "creative_studio": {
+            "count": 12,
+            "percent": 14.12
+          },
+          "cafe_coffee_shop": {
+            "count": 1,
+            "percent": 1.18
+          },
+          "customer_site_reception": {
+            "count": 26,
+            "percent": 30.59
+          },
+          "meeting_collaboration": {
+            "count": 43,
+            "percent": 50.59
+          },
+          "it_operations_policy": {
+            "count": 1,
+            "percent": 1.18
+          },
+          "outdoor_urban": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "healthcare": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "gaming": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "retail_craft_shop": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "324b14a617dfedba": {
+        "device_type": "printer",
+        "prompt_count": 41,
+        "environment_counts": {
+          "Office": 41
+        },
+        "subsetting_indicators_overlapping": {
+          "office_workplace": {
+            "count": 41,
+            "percent": 100.0
+          },
+          "education_library": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "home_residential": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "creative_studio": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "cafe_coffee_shop": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "customer_site_reception": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "meeting_collaboration": {
+            "count": 16,
+            "percent": 39.02
+          },
+          "it_operations_policy": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "outdoor_urban": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "healthcare": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "gaming": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "retail_craft_shop": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "8189f3ad5af37a81": {
+        "device_type": "printer",
+        "prompt_count": 72,
+        "environment_counts": {
+          "Office": 41,
+          "Education": 31
+        },
+        "subsetting_indicators_overlapping": {
+          "office_workplace": {
+            "count": 40,
+            "percent": 55.56
+          },
+          "education_library": {
+            "count": 31,
+            "percent": 43.06
+          },
+          "home_residential": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "creative_studio": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "cafe_coffee_shop": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "customer_site_reception": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "meeting_collaboration": {
+            "count": 1,
+            "percent": 1.39
+          },
+          "it_operations_policy": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "outdoor_urban": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "healthcare": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "gaming": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "retail_craft_shop": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "8bbf8af1d8cbf4b2": {
+        "device_type": "printer",
+        "prompt_count": 42,
+        "environment_counts": {
+          "Office": 41,
+          "Home": 1
+        },
+        "subsetting_indicators_overlapping": {
+          "office_workplace": {
+            "count": 41,
+            "percent": 97.62
+          },
+          "education_library": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "home_residential": {
+            "count": 1,
+            "percent": 2.38
+          },
+          "creative_studio": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "cafe_coffee_shop": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "customer_site_reception": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "meeting_collaboration": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "it_operations_policy": {
+            "count": 3,
+            "percent": 7.14
+          },
+          "outdoor_urban": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "healthcare": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "gaming": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "retail_craft_shop": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "943faef0af11484f": {
+        "device_type": "printer",
+        "prompt_count": 76,
+        "environment_counts": {
+          "Office": 41,
+          "Education": 34,
+          "Home": 1
+        },
+        "subsetting_indicators_overlapping": {
+          "office_workplace": {
+            "count": 40,
+            "percent": 52.63
+          },
+          "education_library": {
+            "count": 34,
+            "percent": 44.74
+          },
+          "home_residential": {
+            "count": 1,
+            "percent": 1.32
+          },
+          "creative_studio": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "cafe_coffee_shop": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "customer_site_reception": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "meeting_collaboration": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "it_operations_policy": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "outdoor_urban": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "healthcare": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "gaming": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "retail_craft_shop": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "d60e13e4457fd44c": {
+        "device_type": "laptop",
+        "prompt_count": 78,
+        "environment_counts": {
+          "Office": 75,
+          "Home": 3
+        },
+        "subsetting_indicators_overlapping": {
+          "office_workplace": {
+            "count": 40,
+            "percent": 51.28
+          },
+          "education_library": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "home_residential": {
+            "count": 3,
+            "percent": 3.85
+          },
+          "creative_studio": {
+            "count": 34,
+            "percent": 43.59
+          },
+          "cafe_coffee_shop": {
+            "count": 10,
+            "percent": 12.82
+          },
+          "customer_site_reception": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "meeting_collaboration": {
+            "count": 46,
+            "percent": 58.97
+          },
+          "it_operations_policy": {
+            "count": 2,
+            "percent": 2.56
+          },
+          "outdoor_urban": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "healthcare": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "gaming": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "retail_craft_shop": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "ee810cf51bb82bb4": {
+        "device_type": "printer",
+        "prompt_count": 70,
+        "environment_counts": {
+          "Office": 41,
+          "Home": 12,
+          "Education": 17
+        },
+        "subsetting_indicators_overlapping": {
+          "office_workplace": {
+            "count": 40,
+            "percent": 57.14
+          },
+          "education_library": {
+            "count": 16,
+            "percent": 22.86
+          },
+          "home_residential": {
+            "count": 12,
+            "percent": 17.14
+          },
+          "creative_studio": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "cafe_coffee_shop": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "customer_site_reception": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "meeting_collaboration": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "it_operations_policy": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "outdoor_urban": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "healthcare": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "gaming": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "retail_craft_shop": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "fecec52a5c57c7bb": {
+        "device_type": "laptop",
+        "prompt_count": 82,
+        "environment_counts": {
+          "Office": 82
+        },
+        "subsetting_indicators_overlapping": {
+          "office_workplace": {
+            "count": 27,
+            "percent": 32.93
+          },
+          "education_library": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "home_residential": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "creative_studio": {
+            "count": 33,
+            "percent": 40.24
+          },
+          "cafe_coffee_shop": {
+            "count": 19,
+            "percent": 23.17
+          },
+          "customer_site_reception": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "meeting_collaboration": {
+            "count": 46,
+            "percent": 56.1
+          },
+          "it_operations_policy": {
+            "count": 1,
+            "percent": 1.22
+          },
+          "outdoor_urban": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "healthcare": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "gaming": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "retail_craft_shop": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      }
+    },
+    "by_framing": {
+      "medium": {
+        "prompt_count": 197,
+        "environment_counts": {
+          "Office": 161,
+          "Home": 6,
+          "Education": 30
+        },
+        "word_count_mean": 28.15,
+        "surface_indicators_overlapping": {
+          "wood_or_wood_species": {
+            "count": 109,
+            "percent": 55.33
+          },
+          "laminate": {
+            "count": 40,
+            "percent": 20.3
+          },
+          "stone_or_marble": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "desk": {
+            "count": 6,
+            "percent": 3.05
+          },
+          "table_worktable_tabletop": {
+            "count": 101,
+            "percent": 51.27
+          },
+          "counter_credenza": {
+            "count": 60,
+            "percent": 30.46
+          },
+          "floor_lap_or_soft_seating": {
+            "count": 2,
+            "percent": 1.02
+          }
+        },
+        "prop_and_scene_element_indicators_overlapping": {
+          "documents_forms_paper": {
+            "count": 159,
+            "percent": 80.71
+          },
+          "writing_instrument": {
+            "count": 133,
+            "percent": 67.51
+          },
+          "folder_binder_notebook": {
+            "count": 60,
+            "percent": 30.46
+          },
+          "drinkware_or_coffee": {
+            "count": 33,
+            "percent": 16.75
+          },
+          "chair_or_seating": {
+            "count": 33,
+            "percent": 16.75
+          },
+          "storage_shelving_or_tray": {
+            "count": 39,
+            "percent": 19.8
+          },
+          "noticeboard_pinboard": {
+            "count": 33,
+            "percent": 16.75
+          },
+          "plant_or_greenery": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "window": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "people": {
+            "count": 3,
+            "percent": 1.52
+          },
+          "secondary_computing_hardware": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "tight": {
+        "prompt_count": 173,
+        "environment_counts": {
+          "Office": 154,
+          "Education": 18,
+          "Home": 1
+        },
+        "word_count_mean": 20.45,
+        "surface_indicators_overlapping": {
+          "wood_or_wood_species": {
+            "count": 80,
+            "percent": 46.24
+          },
+          "laminate": {
+            "count": 67,
+            "percent": 38.73
+          },
+          "stone_or_marble": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "desk": {
+            "count": 2,
+            "percent": 1.16
+          },
+          "table_worktable_tabletop": {
+            "count": 50,
+            "percent": 28.9
+          },
+          "counter_credenza": {
+            "count": 68,
+            "percent": 39.31
+          },
+          "floor_lap_or_soft_seating": {
+            "count": 0,
+            "percent": 0.0
+          }
+        },
+        "prop_and_scene_element_indicators_overlapping": {
+          "documents_forms_paper": {
+            "count": 83,
+            "percent": 47.98
+          },
+          "writing_instrument": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "folder_binder_notebook": {
+            "count": 5,
+            "percent": 2.89
+          },
+          "drinkware_or_coffee": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "chair_or_seating": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "storage_shelving_or_tray": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "noticeboard_pinboard": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "plant_or_greenery": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "window": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "people": {
+            "count": 1,
+            "percent": 0.58
+          },
+          "secondary_computing_hardware": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "unknown": {
+        "prompt_count": 3,
+        "environment_counts": {
+          "Office": 3
+        },
+        "word_count_mean": 17.33,
+        "surface_indicators_overlapping": {
+          "wood_or_wood_species": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "laminate": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "stone_or_marble": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "desk": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "table_worktable_tabletop": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "counter_credenza": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "floor_lap_or_soft_seating": {
+            "count": 0,
+            "percent": 0.0
+          }
+        },
+        "prop_and_scene_element_indicators_overlapping": {
+          "documents_forms_paper": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "writing_instrument": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "folder_binder_notebook": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "drinkware_or_coffee": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "chair_or_seating": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "storage_shelving_or_tray": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "noticeboard_pinboard": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "plant_or_greenery": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "window": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "people": {
+            "count": 1,
+            "percent": 33.33
+          },
+          "secondary_computing_hardware": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      },
+      "wide": {
+        "prompt_count": 219,
+        "environment_counts": {
+          "Office": 175,
+          "Education": 34,
+          "Home": 10
+        },
+        "word_count_mean": 32.37,
+        "surface_indicators_overlapping": {
+          "wood_or_wood_species": {
+            "count": 119,
+            "percent": 54.34
+          },
+          "laminate": {
+            "count": 48,
+            "percent": 21.92
+          },
+          "stone_or_marble": {
+            "count": 1,
+            "percent": 0.46
+          },
+          "desk": {
+            "count": 9,
+            "percent": 4.11
+          },
+          "table_worktable_tabletop": {
+            "count": 133,
+            "percent": 60.73
+          },
+          "counter_credenza": {
+            "count": 47,
+            "percent": 21.46
+          },
+          "floor_lap_or_soft_seating": {
+            "count": 7,
+            "percent": 3.2
+          }
+        },
+        "prop_and_scene_element_indicators_overlapping": {
+          "documents_forms_paper": {
+            "count": 174,
+            "percent": 79.45
+          },
+          "writing_instrument": {
+            "count": 181,
+            "percent": 82.65
+          },
+          "folder_binder_notebook": {
+            "count": 110,
+            "percent": 50.23
+          },
+          "drinkware_or_coffee": {
+            "count": 57,
+            "percent": 26.03
+          },
+          "chair_or_seating": {
+            "count": 107,
+            "percent": 48.86
+          },
+          "storage_shelving_or_tray": {
+            "count": 51,
+            "percent": 23.29
+          },
+          "noticeboard_pinboard": {
+            "count": 35,
+            "percent": 15.98
+          },
+          "plant_or_greenery": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "window": {
+            "count": 0,
+            "percent": 0.0
+          },
+          "people": {
+            "count": 5,
+            "percent": 2.28
+          },
+          "secondary_computing_hardware": {
+            "count": 0,
+            "percent": 0.0
+          }
+        }
+      }
+    },
+    "common_four_grams_ranked_by_source_coverage_then_frequency": [
+      {
+        "phrase": "a compact stack of",
+        "prompt_count": 205,
+        "prompt_percent": 34.63,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "with a compact stack",
+        "prompt_count": 163,
+        "prompt_percent": 27.53,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "and a single pen",
+        "prompt_count": 130,
+        "prompt_percent": 21.96,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "a single pen a",
+        "prompt_count": 62,
+        "prompt_percent": 10.47,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "lit by diffuse daylight",
+        "prompt_count": 52,
+        "prompt_percent": 8.78,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "in matte laminate with",
+        "prompt_count": 52,
+        "prompt_percent": 8.78,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "soft daylight and a",
+        "prompt_count": 44,
+        "prompt_percent": 7.43,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "pen a softly blurred",
+        "prompt_count": 34,
+        "prompt_percent": 5.74,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "single pen a softly",
+        "prompt_count": 32,
+        "prompt_percent": 5.41,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "context in diffuse daylight",
+        "prompt_count": 28,
+        "prompt_percent": 4.73,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "softly in the background",
+        "prompt_count": 23,
+        "prompt_percent": 3.89,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "in the background under",
+        "prompt_count": 21,
+        "prompt_percent": 3.55,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "against a plain neutral",
+        "prompt_count": 18,
+        "prompt_percent": 3.04,
+        "distinct_source_count": 9
+      },
+      {
+        "phrase": "wood with a compact",
+        "prompt_count": 69,
+        "prompt_percent": 11.66,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "stack of forms and",
+        "prompt_count": 60,
+        "prompt_percent": 10.14,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "in pale wood with",
+        "prompt_count": 59,
+        "prompt_percent": 9.97,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "cropped edge of a",
+        "prompt_count": 56,
+        "prompt_percent": 9.46,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "the cropped edge of",
+        "prompt_count": 55,
+        "prompt_percent": 9.29,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "of forms and a",
+        "prompt_count": 53,
+        "prompt_percent": 8.95,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "light wood with a",
+        "prompt_count": 50,
+        "prompt_percent": 8.45,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "in light wood with",
+        "prompt_count": 50,
+        "prompt_percent": 8.45,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "stack of forms a",
+        "prompt_count": 48,
+        "prompt_percent": 8.11,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "with the cropped edge",
+        "prompt_count": 44,
+        "prompt_percent": 7.43,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "matte laminate with a",
+        "prompt_count": 44,
+        "prompt_percent": 7.43,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "a plain neutral backdrop",
+        "prompt_count": 44,
+        "prompt_percent": 7.43,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "lit by soft daylight",
+        "prompt_count": 43,
+        "prompt_percent": 7.26,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "pale wood with a",
+        "prompt_count": 42,
+        "prompt_percent": 7.09,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "office work surface in",
+        "prompt_count": 41,
+        "prompt_percent": 6.93,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "single pen lit by",
+        "prompt_count": 27,
+        "prompt_percent": 4.56,
+        "distinct_source_count": 8
+      },
+      {
+        "phrase": "pen lit by diffuse",
+        "prompt_count": 27,
+        "prompt_percent": 4.56,
+        "distinct_source_count": 8
+      }
+    ],
+    "all_pair_similarity": {
+      "different_device_type": {
+        "pair_count": 85015,
+        "mean_jaccard": 0.1099,
+        "median_jaccard": 0.1
+      },
+      "different_source_same_device_type": {
+        "pair_count": 69490,
+        "mean_jaccard": 0.1616,
+        "median_jaccard": 0.1351
+      },
+      "same_source": {
+        "pair_count": 20431,
+        "mean_jaccard": 0.1724,
+        "median_jaccard": 0.1429
+      },
+      "same_camera_tag_different_source_same_device_type": {
+        "pair_count": 1722,
+        "mean_jaccard": 0.218,
+        "median_jaccard": 0.1875
+      }
+    }
+  },
+  "comparison_corpora": {
+    "october_guidance": {
+      "prompt_count": 10,
+      "unique_normalized_prompt_count": 10,
+      "exact_normalized_duplicate_group_count": 0,
+      "exact_normalized_duplicate_row_count": 0,
+      "duplicate_groups": [],
+      "word_count": {
+        "mean": 45,
+        "median": 42.5,
+        "min": 31,
+        "max": 71
+      },
+      "subsetting_indicators_overlapping": {
+        "office_workplace": {
+          "count": 5,
+          "percent": 50.0
+        },
+        "education_library": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "home_residential": {
+          "count": 3,
+          "percent": 30.0
+        },
+        "creative_studio": {
+          "count": 2,
+          "percent": 20.0
+        },
+        "cafe_coffee_shop": {
+          "count": 2,
+          "percent": 20.0
+        },
+        "customer_site_reception": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "meeting_collaboration": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "it_operations_policy": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "outdoor_urban": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "healthcare": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "gaming": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "retail_craft_shop": {
+          "count": 1,
+          "percent": 10.0
+        }
+      },
+      "surface_indicators_overlapping": {
+        "wood_or_wood_species": {
+          "count": 4,
+          "percent": 40.0
+        },
+        "laminate": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "stone_or_marble": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "desk": {
+          "count": 3,
+          "percent": 30.0
+        },
+        "table_worktable_tabletop": {
+          "count": 3,
+          "percent": 30.0
+        },
+        "counter_credenza": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "floor_lap_or_soft_seating": {
+          "count": 1,
+          "percent": 10.0
+        }
+      },
+      "prop_and_scene_element_indicators_overlapping": {
+        "documents_forms_paper": {
+          "count": 6,
+          "percent": 60.0
+        },
+        "writing_instrument": {
+          "count": 4,
+          "percent": 40.0
+        },
+        "folder_binder_notebook": {
+          "count": 7,
+          "percent": 70.0
+        },
+        "drinkware_or_coffee": {
+          "count": 4,
+          "percent": 40.0
+        },
+        "chair_or_seating": {
+          "count": 4,
+          "percent": 40.0
+        },
+        "storage_shelving_or_tray": {
+          "count": 6,
+          "percent": 60.0
+        },
+        "noticeboard_pinboard": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "plant_or_greenery": {
+          "count": 9,
+          "percent": 90.0
+        },
+        "window": {
+          "count": 4,
+          "percent": 40.0
+        },
+        "people": {
+          "count": 1,
+          "percent": 10.0
+        },
+        "secondary_computing_hardware": {
+          "count": 2,
+          "percent": 20.0
+        }
+      },
+      "style_language_indicators_overlapping": {
+        "soft_or_diffuse_daylight": {
+          "count": 1,
+          "percent": 10.0
+        },
+        "warm_light_or_atmosphere": {
+          "count": 5,
+          "percent": 50.0
+        },
+        "plain_or_clean_neutral_backdrop": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "softly_blurred": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "lived_in_authentic_imperfect": {
+          "count": 5,
+          "percent": 50.0
+        },
+        "layered_or_natural_depth": {
+          "count": 4,
+          "percent": 40.0
+        }
+      },
+      "scene_paragraph_ids": [
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        14,
+        15,
+        17,
+        18
+      ],
+      "named_scene_families": {
+        "Corporate Office": 3,
+        "Home Workspace": 3,
+        "Coffee Shop": 2,
+        "Creative Studio": 2
+      },
+      "reusable_template_exact": "A [SETTING] with [FOCAL DESK/TABLE/WORKSTATIONS] featuring [TABLETOP PROPS]. [BACKGROUND ELEMENTS] create natural depth throughout the space. Lived-in and authentic, with [SIGNS OF USE / IMPERFECTIONS]. [LIGHTING] creates a warm, inviting atmosphere. ",
+      "representative_exact_snippets": [
+        {
+          "paragraph": 7,
+          "text": "Laptop: An open modern corporate office with multiple workstations extending deep into the space. Desks, clean shelving, plants, framed artwork, and refined workplace décor create a layered, active environment. Repeating workstations and architectural details emphasize depth and an expansive floor plan, with no hardware or devices visible. Warm natural lighting creates a polished, inviting atmosphere, with minimal blue accents through select décor details."
+        },
+        {
+          "paragraph": 11,
+          "text": "Laptop: A lived-in home workspace with a wooden desk holding an open notebook, spiral pad, loose papers, pens, and a half-finished coffee. Soft daylight filters through large windows and relaxed curtains, with a comfortable chair, slightly overgrown houseplants, full shelving, books, and familiar residential objects throughout the room. Warm, layered, and casually imperfect rather than styled or modern. Minimal blue accents appear naturally in a few small everyday details."
+        },
+        {
+          "paragraph": 14,
+          "text": "Laptop: A warm small wooden café table with a notebook, pen, and coffee cup rest on the tabletop. A modern neighborhood café extends into the background with artwork, shelving, plants, seating, and large windows. Minimal blue accents appear selectively through a few small objects and décor details."
+        },
+        {
+          "paragraph": 17,
+          "text": "Laptop: A modern creative office with a medium wooden table featuring a notebook, pen, and design materials. Framed artwork, a side cabinet, plants, bookshelves, windows, and layered furnishings create depth throughout the workspace. Minimal blue accents appear selectively through small décor details."
+        }
+      ]
+    },
+    "workbook_column_a": {
+      "prompt_count": 58,
+      "unique_normalized_prompt_count": 58,
+      "exact_normalized_duplicate_group_count": 0,
+      "exact_normalized_duplicate_row_count": 0,
+      "duplicate_groups": [],
+      "word_count": {
+        "mean": 66.88,
+        "median": 58.0,
+        "min": 39,
+        "max": 132
+      },
+      "subsetting_indicators_overlapping": {
+        "office_workplace": {
+          "count": 18,
+          "percent": 31.03
+        },
+        "education_library": {
+          "count": 3,
+          "percent": 5.17
+        },
+        "home_residential": {
+          "count": 14,
+          "percent": 24.14
+        },
+        "creative_studio": {
+          "count": 14,
+          "percent": 24.14
+        },
+        "cafe_coffee_shop": {
+          "count": 4,
+          "percent": 6.9
+        },
+        "customer_site_reception": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "meeting_collaboration": {
+          "count": 3,
+          "percent": 5.17
+        },
+        "it_operations_policy": {
+          "count": 1,
+          "percent": 1.72
+        },
+        "outdoor_urban": {
+          "count": 7,
+          "percent": 12.07
+        },
+        "healthcare": {
+          "count": 1,
+          "percent": 1.72
+        },
+        "gaming": {
+          "count": 3,
+          "percent": 5.17
+        },
+        "retail_craft_shop": {
+          "count": 3,
+          "percent": 5.17
+        }
+      },
+      "surface_indicators_overlapping": {
+        "wood_or_wood_species": {
+          "count": 35,
+          "percent": 60.34
+        },
+        "laminate": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "stone_or_marble": {
+          "count": 2,
+          "percent": 3.45
+        },
+        "desk": {
+          "count": 24,
+          "percent": 41.38
+        },
+        "table_worktable_tabletop": {
+          "count": 17,
+          "percent": 29.31
+        },
+        "counter_credenza": {
+          "count": 3,
+          "percent": 5.17
+        },
+        "floor_lap_or_soft_seating": {
+          "count": 10,
+          "percent": 17.24
+        }
+      },
+      "prop_and_scene_element_indicators_overlapping": {
+        "documents_forms_paper": {
+          "count": 11,
+          "percent": 18.97
+        },
+        "writing_instrument": {
+          "count": 5,
+          "percent": 8.62
+        },
+        "folder_binder_notebook": {
+          "count": 39,
+          "percent": 67.24
+        },
+        "drinkware_or_coffee": {
+          "count": 28,
+          "percent": 48.28
+        },
+        "chair_or_seating": {
+          "count": 3,
+          "percent": 5.17
+        },
+        "storage_shelving_or_tray": {
+          "count": 10,
+          "percent": 17.24
+        },
+        "noticeboard_pinboard": {
+          "count": 2,
+          "percent": 3.45
+        },
+        "plant_or_greenery": {
+          "count": 11,
+          "percent": 18.97
+        },
+        "window": {
+          "count": 22,
+          "percent": 37.93
+        },
+        "people": {
+          "count": 52,
+          "percent": 89.66
+        },
+        "secondary_computing_hardware": {
+          "count": 14,
+          "percent": 24.14
+        }
+      },
+      "style_language_indicators_overlapping": {
+        "soft_or_diffuse_daylight": {
+          "count": 1,
+          "percent": 1.72
+        },
+        "warm_light_or_atmosphere": {
+          "count": 5,
+          "percent": 8.62
+        },
+        "plain_or_clean_neutral_backdrop": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "softly_blurred": {
+          "count": 12,
+          "percent": 20.69
+        },
+        "lived_in_authentic_imperfect": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "layered_or_natural_depth": {
+          "count": 0,
+          "percent": 0.0
+        }
+      },
+      "sheet": "Eval Set Prompts",
+      "included_cells": "A2:A59",
+      "theme_style_instruction_exact": "Use blue deliberately in one physical scene element per image: wardrobe, wall/panel, furniture, exterior sky, or a minimal secondary prop, never a global color cast or lighting tint on skin. Blue covers roughly 35-45% of frame, concentrated in one carrier, placement varied across images. Skin stays warm, natural, dimensional against a cooler environment. Deliver medium-high to high commercial contrast, rich detailed blacks, clean bright highlights, moderate saturation with a rich blue accent, shallow-to-moderate depth of field, realistic lens compression, for a confident, punchy, premium campaign photography feel.",
+      "representative_exact_snippets": [
+        {
+          "cell": "A9",
+          "text": "A young professional walking confidently along a city sidewalk while carrying a closed NOTEBOOK-Viktor_OmnibookX_17_NB under her arm, in front of a modern building with large storefront windows. The NOTEBOOK-Viktor_OmnibookX_17_NB is closed and held at her side. The professional is wearing a camel-colored long coat over a navy blouse and red tailored trousers, and the environment has warm golden-hour sunlight reflecting off the glass storefronts. Capture the scene from an eye-level full-body shot with shallow depth of field, keeping the walking professional as the sharp visual anchor while the building facade, and reflections in the background are softly blurred. "
+        },
+        {
+          "cell": "A19",
+          "text": "Leaning over a dark, well-worn wooden workbench in a sunlit jewelry studio, a woman in a navy top and blue apron types on a NOTEBOOK-Cheddar_13_NB_ANI with one hand while reaching for a small gold ring nestled in a compartmented tray with the other, hand tools, calipers, and potted plants scattered across the cluttered desk."
+        },
+        {
+          "cell": "A22",
+          "text": "In a bright clinic lounge with a bold blue accent wall and a bulletin board of notices, a blonde woman in a white lab coat with a hanging ID badge sits in a plush navy velvet armchair, typing calmly on a NOTEBOOK-Cheddar_13_NB_ANI balanced on her lap, another white-coated colleague working on a NOTEBOOK-Cheddar_13_NB_ANI at a table in the blurred background."
+        },
+        {
+          "cell": "A34",
+          "text": "A woman with a short bob and a blue cardigan over a striped shirt browses tall bookshelves in a warm, wood-toned bookstore, a NOTEBOOK-Viktor_OmnibookX_17_NB tucked under her arm as she reaches for a stack of books. Warm overhead globe lights glow softly against dark wood. The blue cardigan is the single deliberate blue carrier; everything else stays neutral. Shallow depth of field, warm skin tones, cool wood environment, rich contrast, premium commercial photography feel, realistic lens compression."
+        },
+        {
+          "cell": "A53",
+          "text": "In a bright modern kitchen with a marble island and a bowl of fresh fruit, a smiling mother in a cream sweater watches her daughter in a light blue shirt hold up a freshly printed vacation photo, a PRINT-Magic_6501dn_6500dn producing more prints beside a stack of colorful photographs."
+        },
+        {
+          "cell": "A59",
+          "text": "A boy in a grey hoodie pulls a colorful printed drawing from a PRINT-Magic_6501dn_6500dn at a desk covered in markers and an open sketchbook, a corkboard of art pinned behind him. A subtle blue accent nearby is the primary carrier against warm wood and paper tones. Shallow depth of field, warm skin tones, cool accent balance, rich shadow depth, premium commercial photography feel, realistic lens compression."
+        }
+      ]
+    }
+  },
+  "downstream_used_prompt_snapshot": {
+    "snapshot_generated_at_utc": "2026-10-23T20:09:01.460201+00:00",
+    "records_directory": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records",
+    "all_record_file_count_at_snapshot": 564,
+    "completed_records_with_used_prompt_count": 563,
+    "completed_records_snapshot_sha256": "097177616cc403b49d6346b1ccf56198cd6506468a3e36b3a8b46eca05eb7235",
+    "parse_failures": [],
+    "device_type_counts": {
+      "laptop": 558,
+      "printer": 5
+    },
+    "camera_family_counts": {
+      "laptop:medium": 172,
+      "laptop:tight": 152,
+      "laptop:unknown_review": 1,
+      "laptop:wide": 233,
+      "printer:medium": 2,
+      "printer:tight": 2,
+      "printer:wide": 1
+    },
+    "distinct_case_count": 78,
+    "distinct_case_prompt_count": 146,
+    "raw_to_used_pattern_counts": {
+      "soft_cool_daylight": {
+        "raw_prompt_count": 0,
+        "raw_prompt_percent": 0.0,
+        "used_prompt_count": 445,
+        "used_prompt_percent": 79.04,
+        "used_but_absent_from_raw_count": 445,
+        "used_but_absent_from_raw_percent": 79.04
+      },
+      "teal_cyan_color_grade": {
+        "raw_prompt_count": 0,
+        "raw_prompt_percent": 0.0,
+        "used_prompt_count": 499,
+        "used_prompt_percent": 88.63,
+        "used_but_absent_from_raw_count": 499,
+        "used_but_absent_from_raw_percent": 88.63
+      },
+      "shallow_depth_of_field": {
+        "raw_prompt_count": 0,
+        "raw_prompt_percent": 0.0,
+        "used_prompt_count": 563,
+        "used_prompt_percent": 100.0,
+        "used_but_absent_from_raw_count": 563,
+        "used_but_absent_from_raw_percent": 100.0
+      },
+      "sitting_flush": {
+        "raw_prompt_count": 0,
+        "raw_prompt_percent": 0.0,
+        "used_prompt_count": 563,
+        "used_prompt_percent": 100.0,
+        "used_but_absent_from_raw_count": 563,
+        "used_but_absent_from_raw_percent": 100.0
+      },
+      "no_occlusions": {
+        "raw_prompt_count": 0,
+        "raw_prompt_percent": 0.0,
+        "used_prompt_count": 563,
+        "used_prompt_percent": 100.0,
+        "used_but_absent_from_raw_count": 563,
+        "used_but_absent_from_raw_percent": 100.0
+      },
+      "white_mug": {
+        "raw_prompt_count": 0,
+        "raw_prompt_percent": 0.0,
+        "used_prompt_count": 27,
+        "used_prompt_percent": 4.8,
+        "used_but_absent_from_raw_count": 27,
+        "used_but_absent_from_raw_percent": 4.8
+      },
+      "smartphone": {
+        "raw_prompt_count": 0,
+        "raw_prompt_percent": 0.0,
+        "used_prompt_count": 3,
+        "used_prompt_percent": 0.53,
+        "used_but_absent_from_raw_count": 3,
+        "used_but_absent_from_raw_percent": 0.53
+      },
+      "window": {
+        "raw_prompt_count": 0,
+        "raw_prompt_percent": 0.0,
+        "used_prompt_count": 417,
+        "used_prompt_percent": 74.07,
+        "used_but_absent_from_raw_count": 417,
+        "used_but_absent_from_raw_percent": 74.07
+      },
+      "partition": {
+        "raw_prompt_count": 84,
+        "raw_prompt_percent": 14.92,
+        "used_prompt_count": 201,
+        "used_prompt_percent": 35.7,
+        "used_but_absent_from_raw_count": 117,
+        "used_but_absent_from_raw_percent": 20.78
+      },
+      "chair": {
+        "raw_prompt_count": 119,
+        "raw_prompt_percent": 21.14,
+        "used_prompt_count": 146,
+        "used_prompt_percent": 25.93,
+        "used_but_absent_from_raw_count": 27,
+        "used_but_absent_from_raw_percent": 4.8
+      },
+      "plant_or_greenery": {
+        "raw_prompt_count": 0,
+        "raw_prompt_percent": 0.0,
+        "used_prompt_count": 10,
+        "used_prompt_percent": 1.78,
+        "used_but_absent_from_raw_count": 10,
+        "used_but_absent_from_raw_percent": 1.78
+      },
+      "notebook_or_notepad": {
+        "raw_prompt_count": 195,
+        "raw_prompt_percent": 34.64,
+        "used_prompt_count": 242,
+        "used_prompt_percent": 42.98,
+        "used_but_absent_from_raw_count": 47,
+        "used_but_absent_from_raw_percent": 8.35
+      },
+      "writing_instrument": {
+        "raw_prompt_count": 296,
+        "raw_prompt_percent": 52.58,
+        "used_prompt_count": 359,
+        "used_prompt_percent": 63.77,
+        "used_but_absent_from_raw_count": 63,
+        "used_but_absent_from_raw_percent": 11.19
+      },
+      "paperwork": {
+        "raw_prompt_count": 264,
+        "raw_prompt_percent": 46.89,
+        "used_prompt_count": 403,
+        "used_prompt_percent": 71.58,
+        "used_but_absent_from_raw_count": 139,
+        "used_but_absent_from_raw_percent": 24.69
+      }
+    },
+    "common_used_prompt_four_grams": [
+      {
+        "phrase": "the exact orientation position",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "shallow depth of field",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "scale it has in",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "position and scale it",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "orientation position and scale",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "keeping the exact orientation",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "it has in with",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "instruction generate a scene",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "in with no occlusions",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "has in with no",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "generate a scene where",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "exact orientation position and",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "and scale it has",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "a scene where the",
+        "prompt_count": 563,
+        "prompt_percent": 100.0,
+        "distinct_source_count": 6
+      },
+      {
+        "phrase": "type photorealistic lifestyle photography",
+        "prompt_count": 562,
+        "prompt_percent": 99.82,
+        "distinct_source_count": 6
+      }
+    ],
+    "stratified_sample_method": "One deterministic SHA-256-minimum row per available device_type × camera_family × accepted environment × source_id stratum.",
+    "stratified_sample_count": 13,
+    "stratified_sample": [
+      {
+        "stratum": {
+          "device_type": "laptop",
+          "camera_family": "medium",
+          "environment": "Office",
+          "source_id": "22fdbf19f03d1a31"
+        },
+        "row_id": "22fdbf19f03d1a31__laptop_FrontMediumHigh__laptop_koki_omnibook_eclipes_gray__front_mediumhigh__p3",
+        "source_id": "22fdbf19f03d1a31",
+        "camera_tag": "laptop_FrontMediumHigh",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/00027b8b30bb45996e3f__22fdbf19f03d1a31__laptop_FrontMediumHigh__laptop_koki_omnibook_eclipes_gray__front_mediumh.json",
+        "record_sha256": "3431255eef22b4b7a30976830e51eb6dd47f101a945e744109e8d31614f07fa5",
+        "raw_prompt_exact": "A creative studio worktable in natural wood, with a marked-up storyboard sheet and pencil for content planning. A muted pinboard remains softly defined in the background.",
+        "editing_instruction_exact": "Generate a scene where the laptop from Before_Image1 sits flush on a natural wood creative studio worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. Place a marked-up storyboard sheet and a pencil on the table to the left of the laptop. In the background, a muted pinboard hangs on the wall, softly blurred. Soft natural daylight illuminates the workspace from the right, keeping the laptop sharp and clearly legible.",
+        "entity_labels_exact": [
+          "silver HP laptop",
+          "natural wood worktable",
+          "storyboard sheet",
+          "pencil",
+          "pinboard"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "laptop",
+          "camera_family": "medium",
+          "environment": "Office",
+          "source_id": "d60e13e4457fd44c"
+        },
+        "row_id": "d60e13e4457fd44c__laptop_BackMedium__laptop_koki_omnibook_eclipes_gray__back_medium__p1",
+        "source_id": "d60e13e4457fd44c",
+        "camera_tag": "laptop_BackMedium",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/0a6429d7eb9b3ee85518__d60e13e4457fd44c__laptop_BackMedium__laptop_koki_omnibook_eclipes_gray__back_medium__p1.json",
+        "record_sha256": "6ed374d56a1d5d0efcbddccc1b14eef1effc3eb857dc4af8f9c64ee3d9fd7e25",
+        "raw_prompt_exact": "A clean office meeting table in pale wood, with a sketch-marked notebook and a single pen nearby. A softly blurred glass partition suggests a collaborative workspace in daylight.",
+        "editing_instruction_exact": "Generate a scene where the laptop from Before_Image1 sits on a clean, pale wood meeting table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. The laptop rests flush, its whole base fully in contact with the table surface. A sketch-marked notebook and a single pen lie on the table to the right of the laptop. In the background, a softly blurred glass partition recedes on the left, suggesting a modern collaborative workspace illuminated by natural daylight.",
+        "entity_labels_exact": [
+          "black HP laptop",
+          "pale wood meeting table",
+          "sketch-marked notebook",
+          "pen",
+          "glass partition"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "laptop",
+          "camera_family": "tight",
+          "environment": "Office",
+          "source_id": "22fdbf19f03d1a31"
+        },
+        "row_id": "22fdbf19f03d1a31__laptop_BackCloseUp__laptop_cashmere_elitebookx_14_atmospheric_blue__back_closeup__p1",
+        "source_id": "22fdbf19f03d1a31",
+        "camera_tag": "laptop_BackCloseUp",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/00bbec060ef7a7bebd62__22fdbf19f03d1a31__laptop_BackCloseUp__laptop_cashmere_elitebookx_14_atmospheric_blue__back.json",
+        "record_sha256": "96fbf62f5d84a0f479771c5e34d2134fd7b1ac6e8d834d26dfdb8d7bc81a9234",
+        "raw_prompt_exact": "A quiet shared-workspace surface in smooth pale wood, lit by soft daylight, with a clean neutral surround and no visible clutter.",
+        "editing_instruction_exact": "Generate a scene where the laptop from Before_Image1 sits flush on a smooth pale wood desk in a quiet shared workspace, its whole base fully in contact with the surface, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A white ceramic coffee cup rests on the desk to the right of the laptop; a frosted glass partition stands in the mid-ground behind the desk; a large window is visible in the far background on the left. Soft daylight illuminates the clean, uncluttered setting, with a shallow depth of field keeping the laptop sharply in focus.",
+        "entity_labels_exact": [
+          "black HP laptop",
+          "pale wood desk",
+          "white ceramic cup",
+          "frosted glass partition",
+          "large window"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "laptop",
+          "camera_family": "tight",
+          "environment": "Office",
+          "source_id": "d60e13e4457fd44c"
+        },
+        "row_id": "d60e13e4457fd44c__laptop_LeftCloseUp90__laptop_viktor_sahara_silver__left_closeup90__p1",
+        "source_id": "d60e13e4457fd44c",
+        "camera_tag": "laptop_LeftCloseUp90",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/05d6588e4fa7109419e7__d60e13e4457fd44c__laptop_LeftCloseUp90__laptop_viktor_sahara_silver__left_closeup90__p1.json",
+        "record_sha256": "e6432147c7cf66f34f6440e29e174559d31b87c282c1f57e352e6eca13e8ff53",
+        "raw_prompt_exact": "A quiet office work surface in pale wood, kept clear under soft daylight with a neutral close background.",
+        "editing_instruction_exact": "Generate a scene where the laptop from Before_Image1 sits flush on a pale wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. The desk surface is kept mostly clear, with a matte grey ceramic mug placed further back on the right. A neutral, softly textured acoustic wall panel stands close behind in the background. Soft daylight illuminates the scene from the left, maintaining a clean, minimalist aesthetic.",
+        "entity_labels_exact": [
+          "silver laptop",
+          "pale wooden desk",
+          "grey ceramic mug",
+          "acoustic wall panel"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "laptop",
+          "camera_family": "unknown_review",
+          "environment": "Office",
+          "source_id": "d60e13e4457fd44c"
+        },
+        "row_id": "d60e13e4457fd44c__laptop_CAMReview__laptop_viktor_sahara_silver__cam_review__p1",
+        "source_id": "d60e13e4457fd44c",
+        "camera_tag": "laptop_CAMReview",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/a4771fcf2f4e76754fbc__d60e13e4457fd44c__laptop_CAMReview__laptop_viktor_sahara_silver__cam_review__p1.json",
+        "record_sha256": "3685f1556e1d5d8955daed44dc4309922f576eb7be013cac02ce5036a37608d8",
+        "raw_prompt_exact": "A clean office work surface in soft daylight with a calm neutral backdrop, suggesting a focused work moment across locations.",
+        "editing_instruction_exact": "Generate a scene where the laptop from Before_Image1 sits flush on a clean, light-grey office desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A sleek white ceramic coffee mug rests on the desk to the right of the laptop, and a closed dark grey notebook sits to the left. In the background, a calm neutral office environment features a frosted glass partition on the left and a blurred potted plant on the right, illuminated by soft daylight.",
+        "entity_labels_exact": [
+          "silver HP laptop",
+          "light-grey desk",
+          "white ceramic mug",
+          "dark grey notebook",
+          "frosted glass partition",
+          "potted plant"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "laptop",
+          "camera_family": "wide",
+          "environment": "Home",
+          "source_id": "d60e13e4457fd44c"
+        },
+        "row_id": "d60e13e4457fd44c__laptop_FrontWideLow__laptop_cashmere_elitebookx_14_atmospheric_blue__front_widelow__p3",
+        "source_id": "d60e13e4457fd44c",
+        "camera_tag": "laptop_FrontWideLow",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/01aa8525422ded6d2e38__d60e13e4457fd44c__laptop_FrontWideLow__laptop_cashmere_elitebookx_14_atmospheric_blue__fro.json",
+        "record_sha256": "219f3bf751c200cbc6acdf230444338619a5dc6c64a3974f4f9f6a8507f36a80",
+        "raw_prompt_exact": "A compact home work surface in matte wood, with a closed notebook, a pen, and a travel mug. A simple chair and softly textured wall keep the setting practical for shifting work locations in gentle daylight.",
+        "editing_instruction_exact": "Generate a scene where the laptop from Before_Image1 sits resting flush on a compact matte wood home work surface, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the left of the laptop, place a closed notebook and a pen; position a travel mug further back on the right. In the background, a simple chair sits to the left against a softly textured wall, illuminated by gentle, cool daylight.",
+        "entity_labels_exact": [
+          "silver laptop",
+          "closed notebook",
+          "travel mug",
+          "matte wood desk",
+          "simple chair"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "laptop",
+          "camera_family": "wide",
+          "environment": "Office",
+          "source_id": "22fdbf19f03d1a31"
+        },
+        "row_id": "22fdbf19f03d1a31__laptop_BackLeftWide__laptop_viktor_sahara_silver__back_left_wide__p3",
+        "source_id": "22fdbf19f03d1a31",
+        "camera_tag": "laptop_BackLeftWide",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/0042578d3320c2dec4eb__22fdbf19f03d1a31__laptop_BackLeftWide__laptop_viktor_sahara_silver__back_left_wide__p3.json",
+        "record_sha256": "3e0741aa23c2dcb09c3051c67a20bc6bf7dc9e39efa1eeac4b4d4ee513520ce8",
+        "raw_prompt_exact": "A creative worktable in a quiet office studio, with low storyboard sheets, a marker, and a ceramic cup. A muted pinboard and cropped stool add context without crowding the surface.",
+        "editing_instruction_exact": "Generate a scene where the laptop from Before_Image1 sits flush on a light wooden creative worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the left of the laptop, place low storyboard sheets and a black marker on the table; to the right, place a matte ceramic cup. In the background, a muted pinboard hangs on the wall, and a cropped stool is visible tucked near the edge of the table. Natural light streams from a window on the left, keeping the laptop sharp against a softly blurred background.",
+        "entity_labels_exact": [
+          "dark grey laptop",
+          "storyboard sheets",
+          "black marker",
+          "ceramic cup",
+          "muted pinboard",
+          "wooden worktable"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "laptop",
+          "camera_family": "wide",
+          "environment": "Office",
+          "source_id": "d60e13e4457fd44c"
+        },
+        "row_id": "d60e13e4457fd44c__laptop_LeftWideHigh__laptop_viktor_sahara_silver__left_widehigh__p1",
+        "source_id": "d60e13e4457fd44c",
+        "camera_tag": "laptop_LeftWideHigh",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/01fc1c0d2b24aa5c519d__d60e13e4457fd44c__laptop_LeftWideHigh__laptop_viktor_sahara_silver__left_widehigh__p1.json",
+        "record_sha256": "02b1bacef2be1293504533e8addd44fd416f19a669a244d3d60860cefd03db6d",
+        "raw_prompt_exact": "A clean conference table in pale wood with a sketchpad, fine-tip pen, and compact stack of presentation handouts. A single softened meeting chair adds context in diffuse daylight.",
+        "editing_instruction_exact": "Generate a scene where the laptop from Before_Image1 sits flush on a clean pale wood conference table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the left of the laptop on the table, place a sketchpad, a fine-tip pen, and a compact stack of presentation handouts. In the background, position a single softened meeting chair slightly out of focus behind the table, with a glass wall receding on the right. Illuminate the scene with soft, diffused daylight from a window on the left, maintaining a clean, modern corporate aesthetic.",
+        "entity_labels_exact": [
+          "silver laptop",
+          "pale wood conference table",
+          "sketchpad and pen",
+          "presentation handouts",
+          "meeting chair",
+          "glass wall"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "printer",
+          "camera_family": "medium",
+          "environment": "Office",
+          "source_id": "324b14a617dfedba"
+        },
+        "row_id": "324b14a617dfedba__printer_FrontRightMedium__printer_magic_printers_6500_dn_cmf_atmosphere_blues__front_right_medium__p1",
+        "source_id": "324b14a617dfedba",
+        "camera_tag": "printer_FrontRightMedium",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/6e3f942a7161e60b6ccb__324b14a617dfedba__printer_FrontRightMedium__printer_magic_printers_6500_dn_cmf_atmosphere_.json",
+        "record_sha256": "ada4e31407ad83c0ab4116b48c1b8f68b239e7c37ad88df3135a2a9df6d19d50",
+        "raw_prompt_exact": "A shared office document counter in light laminate, with a compact stack of forms and a single pen. A softly blurred frosted partition suggests a busy team area in daylight.",
+        "editing_instruction_exact": "Generate a scene where the printer from Before_Image1 sits flush on a light laminate shared office document counter, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A compact stack of forms and a single pen rest on the counter to the left of the printer. In the background, a softly blurred frosted glass partition stands behind the counter, illuminated by natural daylight.",
+        "entity_labels_exact": [
+          "dark grey HP printer",
+          "light laminate counter",
+          "stack of forms",
+          "pen",
+          "frosted glass partition"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "printer",
+          "camera_family": "medium",
+          "environment": "Office",
+          "source_id": "8bbf8af1d8cbf4b2"
+        },
+        "row_id": "8bbf8af1d8cbf4b2__printer_FrontRightMedium__printer_magic_printers_6500_dn_cmf_atmosphere_blues__front_right_medium__p1",
+        "source_id": "8bbf8af1d8cbf4b2",
+        "camera_tag": "printer_FrontRightMedium",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/ff875234a1001bb43a52__8bbf8af1d8cbf4b2__printer_FrontRightMedium__printer_magic_printers_6500_dn_cmf_atmosphere_.json",
+        "record_sha256": "78a0b8db93c716bbd12e18c23bc89428552105454497d6df2d9cb06d1bc725fd",
+        "raw_prompt_exact": "An organized office work surface in pale wood, with a compact stack of forms and a single pen in soft daylight. A blurred file tray adds local admin context without crowding the surface.",
+        "editing_instruction_exact": "Generate a scene where the printer from Before_Image1 sits on an organized pale wood office work surface, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. The printer rests flush, its whole base fully in contact with the desk. A compact stack of forms and a single pen rest on the wood surface to the left of the printer, while a blurred file tray sits further back on the right. Soft daylight illuminates the clean, modern admin environment.",
+        "entity_labels_exact": [
+          "HP printer",
+          "stack of forms",
+          "file tray",
+          "pale wood surface"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "printer",
+          "camera_family": "tight",
+          "environment": "Office",
+          "source_id": "160db92655412f4d"
+        },
+        "row_id": "160db92655412f4d__printer_FrontCloseUp__printer_magic_printers_6500_dn_cmf_atmosphere_blues__front_closeup__p1",
+        "source_id": "160db92655412f4d",
+        "camera_tag": "printer_FrontCloseUp",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/8aaa5a3a5a90cd2cb33e__160db92655412f4d__printer_FrontCloseUp__printer_magic_printers_6500_dn_cmf_atmosphere_blue.json",
+        "record_sha256": "8f943bfff309df50e6a4524aa239bdf34ec524931d5eeb07e59970984d725a6b",
+        "raw_prompt_exact": "A shared office counter with a clean light-gray work surface, soft overhead daylight, and a plain neutral backdrop.",
+        "editing_instruction_exact": "Generate a scene where the printer from Before_Image1 sits on a clean light-gray shared office counter, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. The printer rests flush, its whole base fully in contact with the surface. A neat stack of white paper sits on the counter to the right of the printer, and a small potted succulent is placed to the left. The background features a plain neutral backdrop illuminated by soft overhead daylight, maintaining a modern, uncluttered workspace.",
+        "entity_labels_exact": [
+          "office printer",
+          "light-gray counter",
+          "paper stack",
+          "potted succulent"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "printer",
+          "camera_family": "tight",
+          "environment": "Office",
+          "source_id": "ee810cf51bb82bb4"
+        },
+        "row_id": "ee810cf51bb82bb4__printer_BackCloseUp__printer_magic_printers_6500_dn_cmf_atmosphere_blues__back_closeup__p1",
+        "source_id": "ee810cf51bb82bb4",
+        "camera_tag": "printer_BackCloseUp",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/e1a906cbf792d8129a55__ee810cf51bb82bb4__printer_BackCloseUp__printer_magic_printers_6500_dn_cmf_atmosphere_blues.json",
+        "record_sha256": "f2aa84a73fa12eb41715545fe999678436cee2328aaf8d989902ac68fce59a70",
+        "raw_prompt_exact": "A practical office document area with a small section of pale wooden work surface in soft daylight and a plain neutral backdrop.",
+        "editing_instruction_exact": "Generate a scene where the printer from Before_Image1 sits on a pale wooden work surface, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. Ensure the printer rests flush, its whole base fully in contact with the wood. Place a neat stack of white printer paper on the surface to the left of the printer, and a small potted succulent in a white ceramic pot to the right. The background features a plain neutral wall softly blurred in the soft daylight.",
+        "entity_labels_exact": [
+          "black printer",
+          "pale wooden surface",
+          "stack of paper",
+          "potted succulent",
+          "neutral wall"
+        ]
+      },
+      {
+        "stratum": {
+          "device_type": "printer",
+          "camera_family": "wide",
+          "environment": "Office",
+          "source_id": "160db92655412f4d"
+        },
+        "row_id": "160db92655412f4d__printer_TopFrontRightWide__printer_magic_printers_6500_dn_cmf_atmosphere_blues__top_front_right_wide__p1",
+        "source_id": "160db92655412f4d",
+        "camera_tag": "printer_TopFrontRightWide",
+        "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/33dcb5f2e0dbdc71dc57__160db92655412f4d__printer_TopFrontRightWide__printer_magic_printers_6500_dn_cmf_atmosphere.json",
+        "record_sha256": "f069652319b36e672ea47868477e1119fd1ba477765704dde8cafbcc321d6663",
+        "raw_prompt_exact": "A shared office work surface in light wood, with a compact stack of recurring forms, a marked schedule sheet, and a single pen, lit by diffuse daylight.",
+        "editing_instruction_exact": "Generate a scene where the printer from Before_Image1 sits on a light wood shared office work surface, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. The printer rests flush, its whole base fully in contact and fully on the desk, not lifted, not overhanging the edge, no shadow gap beneath it. A compact stack of recurring forms sits on the desk to the left of the printer; a marked schedule sheet and a single pen rest in the foreground to the lower left. The light wood surface extends across the frame, lit by diffuse daylight.",
+        "entity_labels_exact": [
+          "HP printer",
+          "stack of forms",
+          "schedule sheet",
+          "pen",
+          "work surface"
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "environment_concentration",
+      "confidence": "VERIFIED",
+      "claim": "Accepted V2 environment labels are concentrated in Office: 493/592 prompts (83.28%); Education is 82/592 (13.85%) and Home is 17/592 (2.87%).",
+      "scope": "All final accepted V2 prompt texts."
+    },
+    {
+      "id": "repeated_scene_materials",
+      "confidence": "VERIFIED",
+      "claim": "Lexical scene construction repeatedly uses documents/forms/paper (416/592), writing instruments (314/592), wood/species surfaces (308/592), table/worktable/tabletop (284/592), and laminate (155/592).",
+      "scope": "Overlapping lexical indicators; a prompt may count in several categories."
+    },
+    {
+      "id": "cross_source_repetition",
+      "confidence": "VERIFIED",
+      "claim": "The most repeated four-gram, 'a compact stack of', occurs in 205/592 prompts and all 9 sources. Multiple high-frequency phrases span all 9 sources, and same-camera/different-source mean Jaccard similarity exceeds the overall same-source mean. Repetition therefore is not isolated to one weak source.",
+      "scope": "All accepted V2 texts; lexical similarity does not establish causal attribution."
+    },
+    {
+      "id": "reference_breadth",
+      "confidence": "VERIFIED",
+      "claim": "The October guidance deliberately demonstrates four named setting families and its template asks for background depth, lived-in signs, imperfections, and lighting. Workbook column A contains additional outdoor/urban, healthcare, gaming, retail/craft, kitchen, bedroom, library, studio, café, and office examples. V2 has some café and creative-studio indicators but no outdoor/urban, healthcare, or gaming indicators in accepted text.",
+      "scope": "Lexical indicators over 10 guidance examples, 58 workbook scenes, and 592 V2 prompts; corpora serve different product/task constraints."
+    },
+    {
+      "id": "reference_element_gap",
+      "confidence": "VERIFIED",
+      "claim": "Plants/greenery and windows appear in 0/592 accepted V2 prompts, versus 9/10 and 4/10 October examples and 11/58 and 22/58 workbook scenes. This is a measured corpus difference, not by itself a recommendation to add those elements to tight camera prompts.",
+      "scope": "Lexical presence only."
+    },
+    {
+      "id": "downstream_homogenization",
+      "confidence": "VERIFIED",
+      "claim": "In the bounded downstream snapshot, the rewrite adds a common rendering scaffold to nearly every accessible row: shallow depth of field, flush placement, and no-occlusion language occur in every usedPrompt despite being absent from every raw accepted prompt; soft cool daylight and teal-cyan grading are also frequent additions.",
+      "scope": "Incomplete and laptop-heavy downstream snapshot; counts and exact sample are stored in downstream_used_prompt_snapshot."
+    }
+  ],
+  "design_relevant_evidence_not_prompt_authorship": [
+    "Measure diversity at the bank level as well as per prompt; individually valid prompts can still form a repetitive bank.",
+    "Keep camera-density constraints stratified in evaluation because tight, medium, and wide prompts have different legitimate scene-detail ceilings.",
+    "Track environment/subsetting, surface, prop bundle, lighting phrase, and opening construction separately; changing one dimension does not establish overall diversity.",
+    "Evaluate raw writer output separately from downstream usedPrompt because the endpoint adds its own repeated composition, lighting, background, and prop language.",
+    "Treat source relevance as a constraint and a stratum, not as a claim that all diversity limitations originate in source messaging."
+  ],
+  "caveats": [
+    "The lexical taxonomies are transparent indicators, not a human semantic annotation set. They can miss synonyms and count a term used in a negation.",
+    "October guidance and workbook scenes are broader creative references. Many include people, target products, secondary hardware, rich backgrounds, or explicit camera/style instructions that camera-V2 intentionally omits or restricts.",
+    "The 592-prompt denominator weights each generated prompt, so sources that yielded more prompts contribute more rows. Per-source counts are retained to expose that weighting.",
+    "Camera profiles deliberately constrain tight views; corpus-level plant/window absence and prop concentration should not be interpreted without the by-framing evidence.",
+    "Downstream generation was still active at snapshot time. The saved sample is strongly laptop-heavy and cannot establish printer rewrite prevalence.",
+    "Jaccard similarity is lexical and bag-of-words; it does not measure visual diversity or semantic equivalence.",
+    "No image pixels were reviewed in this bounded audit."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "candidate_protocol": "v3.2-p1-p2-r2",
+  "development_only": true,
+  "model": "gpt-6-astra",
+  "reasoning_effort": "high",
+  "model_change": "Explicit latest user requirement: Astra judges actual images and authors sensitive prompt changes. Compare against frozen GPT-5.5 incumbent/r1/r2; architecture and model effects are coupled.",
+  "source_stage": "e2e_comparison_output; not held-out scene-stage accuracy",
+  "calibration_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/calibration_manifest.json",
+  "calibration_sha256": "46b484b9dfb8388ab26d0994e7b5375d96a9fdb3a64afec43974e832be8a3e36",
+  "required_criteria": "All three C-Tech criterion labels retained: harmless-chair no placement failure; material Cashmere product/table conflict; EliteBook construction failure without orientation penalty.",
+  "controls": "No new material orientation/construction failures in the three frozen non-gold stability controls.",
+  "operational": "Zero semantic/validation failures in six calibration cases; successful completed comparison required before promotion.",
+  "promotion_scope": "Versioned research/review judge, not a human-calibrated autonomous acceptance gate or production endpoint deployment.",
+  "no_label_leakage": true,
+  "semantic_samples_per_candidate_revision_case": 1,
+  "evidence_disagreements": "EliteBook criterion unresolved by Astra but not waived; failure to meet it blocks promotion.",
+  "predecessor": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_2",
+    "freeze_sha256": "9894aabdefc802cbb26c61dcec944f250215e56281843cc506600f69fe2b0c97"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "placement-v4-astra-early-gate-v1",
+  "run_status": "parent_directed_early_stop",
+  "completed": 2,
+  "verdict_matches": 1,
+  "rows": [
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "expected_verdict": "review",
+      "predicted_verdict": "review",
+      "verdict_match": true,
+      "expected_issue_any": [
+        "chair_displacement"
+      ],
+      "observed_issue_codes": [],
+      "human_comment_exact": "Your comments are correct. But maybe someone stood up and moved the chair a bit. The chair doesn't need to be in absolute perfect working position. Because chairs move. But like if the chair was facing too far away it would be bad. THis should be a review (middle or lower) severity issue not a fail",
+      "score": 100,
+      "reason_codes": [
+        "low_coverage"
+      ],
+      "response_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/runs/development-15-v4-astra/elitebook__laptop_FrontLeftMedium__p1/response_1.json",
+      "result_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/runs/development-15-v4-astra/elitebook__laptop_FrontLeftMedium__p1/result.json"
+    },
+    {
+      "record_id": "tassel__printer_FrontWide__p1",
+      "expected_verdict": "fail",
+      "predicted_verdict": "review",
+      "verdict_match": false,
+      "expected_issue_any": [
+        "malformed_support_furniture",
+        "misplaced_support_furniture"
+      ],
+      "observed_issue_codes": [],
+      "human_comment_exact": "Should this not be a fail? it seems that the table is deformed. It's two side edges are not parallel. Also. Why would someone leave a rectangle table in the middle of the room like this? rectabngle / square tables are usually placed near walls at home. For middle of room we use round tables. The printer is placed correctly on the table tho. I agree with you.",
+      "score": 100,
+      "reason_codes": [
+        "low_coverage"
+      ],
+      "response_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/runs/development-15-v4-astra/tassel__printer_FrontWide__p1/response_1.json",
+      "result_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/runs/development-15-v4-astra/tassel__printer_FrontWide__p1/result.json"
+    }
+  ]
+}

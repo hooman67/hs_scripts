@@ -1,0 +1,102 @@
+phase start: real
+phase complete: real
+phase start: frozen_synthetic
+phase complete: frozen_synthetic
+phase start: added_synthetic
+phase complete: added_synthetic
+phase start: prior_artifacts
+phase prior_artifacts: 10/95
+phase prior_artifacts: 20/95
+phase prior_artifacts: 30/95
+phase prior_artifacts: 40/95
+phase prior_artifacts: 50/95
+phase prior_artifacts: 60/95
+phase prior_artifacts: 70/95
+phase prior_artifacts: 80/95
+phase prior_artifacts: 90/95
+phase complete: prior_artifacts
+{
+  "real_attempts": 31,
+  "real_labeled_attempts": 29,
+  "real_historical_proxy_false_accepts": 1,
+  "real_historical_proxy_false_rejects": 4,
+  "real_label_limitation": "Historical guard verdicts are regression proxies, not independent human truth",
+  "frozen_synthetic_mode_checks": 110,
+  "frozen_synthetic_false_accepts": 0,
+  "frozen_synthetic_false_rejects": 4,
+  "added_synthetic_checks": 82,
+  "added_synthetic_false_accepts": 0,
+  "added_synthetic_false_rejects": 10,
+  "full_resolution_added_checks": 81,
+  "high_fill_legal_motion_checks": 3,
+  "deterministic_repeat_equal": true,
+  "prior_rows": 95,
+  "prior_rows_with_observable_old_selection": 48,
+  "prior_selection_changes": 9,
+  "prior_incomparable_without_old_selection": 47,
+  "prior_skipped": 0,
+  "full_resolution_runtime": {
+    "count": 81,
+    "min_ms": 261.1564099788666,
+    "median_ms": 299.2918691597879,
+    "p95_ms": 310.86059799417853,
+    "max_ms": 315.29401894658804,
+    "total_ms": 23736.10054841265
+  },
+  "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+  "guard_source_sha256": "67cdf7608b6315792542ad95dadf15fafc5f41f879116a14463b5d6b11531ccb",
+  "changed_prior_selections": [
+    {
+      "row": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/cashmere__laptop_FrontWide__p1__relocation_demand/run/rows/cashmere__laptop_FrontWide__p1__relocation_demand",
+      "old": null,
+      "v23": 1
+    },
+    {
+      "row": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_1_guard/magic__printer_FrontWide__p1__relocation_demand/run/rows/magic__printer_FrontWide__p1__relocation_demand",
+      "old": 1,
+      "v23": null
+    },
+    {
+      "row": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_2_guard_failed_conflict/cashmere__laptop_FrontWide__p1__relocation_demand/run/rows/cashmere__laptop_FrontWide__p1__relocation_demand",
+      "old": 1,
+      "v23": null
+    },
+    {
+      "row": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/cashmere__laptop_FrontWide__p1__relocation_demand/run/rows/cashmere__laptop_FrontWide__p1__relocation_demand",
+      "old": 1,
+      "v23": null
+    },
+    {
+      "row": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_3_3_guard/magic__printer_FrontWide__p1__relocation_demand/run/rows/magic__printer_FrontWide__p1__relocation_demand",
+      "old": 1,
+      "v23": null
+    },
+    {
+      "row": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/smoke/v22_4_first_row_retry/run/rows/cashmere__laptop_BackRightCloseUp__p1",
+      "old": null,
+      "v23": 1
+    },
+    {
+      "row": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_3_3/run/pipeline/rows/cashmere__laptop_BackRightCloseUp__p1",
+      "old": null,
+      "v23": 1
+    },
+    {
+      "row": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_1/run/pipeline/rows/cashmere__laptop_BackRightCloseUp__p1",
+      "old": null,
+      "v23": 2
+    },
+    {
+      "row": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/pipeline/rows/cashmere__laptop_BackRightCloseUp__p4__outer_job_1",
+      "old": 1,
+      "v23": null
+    }
+  ],
+  "skipped": []
+}
+Traceback (most recent call last):
+  File "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/versions/v23_all_view_translation/calibration/replay_v23_calibration.py", line 637, in <module>
+    main()
+  File "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/versions/v23_all_view_translation/calibration/replay_v23_calibration.py", line 632, in main
+    assert not result["summary"]["added_synthetic_false_rejects"]
+AssertionError

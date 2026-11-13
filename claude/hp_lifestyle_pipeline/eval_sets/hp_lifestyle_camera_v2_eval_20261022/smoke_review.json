@@ -1,0 +1,41 @@
+{
+  "as_of": "2026-10-22",
+  "reviewer": "root research agent",
+  "smoke_pipeline_status": "accepted_for_full_evaluation",
+  "scene_quality_status": "observed_downstream_additions_retained_as_evaluation_evidence",
+  "rows": [
+    {
+      "row_id": "22fdbf19f03d1a31__laptop_FrontRightMedium__laptop_koki_omnibook_eclipes_gray__front_right_medium__p1",
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/965d0aa0e79428b3733e__22fdbf19f03d1a31__laptop_FrontRightMedium__laptop_koki_omnibook_eclipes_gray__front_right_.json",
+      "record_sha256": "2beadc00f7ae3e176fc4d73c860bd01a6fef45ace8b559f0f833c66ba77b301a",
+      "reference_binding_verified": true,
+      "returned_seed": 42,
+      "output_size": [
+        2560,
+        1440
+      ],
+      "root_visual_review": "Approximate reference view and identity retained in this inspected sample; not a quantitative geometry score.",
+      "downstream_additions": [
+        "Downstream rewrite adds a visible window beyond the source environment prompt."
+      ]
+    },
+    {
+      "row_id": "ee810cf51bb82bb4__printer_BackCloseUp__printer_magic_printers_6500_dn_cmf_atmosphere_blues__back_closeup__p1",
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/e1a906cbf792d8129a55__ee810cf51bb82bb4__printer_BackCloseUp__printer_magic_printers_6500_dn_cmf_atmosphere_blues.json",
+      "record_sha256": "f2aa84a73fa12eb41715545fe999678436cee2328aaf8d989902ac68fce59a70",
+      "reference_binding_verified": true,
+      "returned_seed": 42,
+      "output_size": [
+        2560,
+        1440
+      ],
+      "root_visual_review": "Approximate reference view and identity retained in this inspected sample; not a quantitative geometry score.",
+      "downstream_additions": [
+        "Paper stack and potted succulent explicitly added by downstream usedPrompt although environment prompt requests zero props."
+      ]
+    }
+  ],
+  "decision": "Proceed with the user-authorized fixed-prompt evaluation. Do not change environment instructions or endpoint settings mid-run in response to smoke style differences.",
+  "latency_interpretation": "Two smoke completions are consistent with serialized throughput about118seconds per image. Queued request latency is not inverse throughput; do not assume eight workers provide eightfold capacity.",
+  "new_image_run_expected_duration": "More than one day at observed serialized throughput; final row count depends on prompt multiplicity."
+}

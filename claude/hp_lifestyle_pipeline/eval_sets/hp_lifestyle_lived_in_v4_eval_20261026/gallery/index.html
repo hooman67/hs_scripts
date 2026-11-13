@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HP Lifestyle Lived-in V4 Evaluation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="ims"></div>
+    <div id="loading" class="loading-screen">Loading V4 lived-in evaluation…</div>
+    <main id="content" class="hidden">
+        <header class="header-bar">
+            <div>
+                <h1>HP Lifestyle Lived-in V4 Evaluation</h1>
+                <p id="subtitle" class="subtitle"></p>
+                <nav class="download-links" aria-label="Prompt exports">
+                    <a href="../generation_prompts.json" download>Download all 540 prompts</a>
+                    <a href="../generation_prompts_selected.json" download>Download selected 108 prompts</a>
+                </nav>
+            </div>
+            <details class="run-context">
+                <summary>Full model settings, rubric, manifests, and publication provenance</summary>
+                <pre id="runContext"></pre>
+            </details>
+            <div class="view-tabs" role="tablist" aria-label="Evaluation view">
+                <button id="candidateTab" class="view-tab" type="button" data-view="candidates">All 540 text candidates</button>
+                <button id="generationTab" class="view-tab active" type="button" data-view="generations">Generated images (108 selected rows)</button>
+            </div>
+            <div class="controls">
+                <label><span>Search</span><input id="searchInput" type="search" placeholder="Prompt, evidence, source, camera, label, or row"></label>
+                <label><span>Source</span><select id="sourceFilter"><option value="all">All sources</option></select></label>
+                <label><span>Device</span><select id="deviceFilter"><option value="all">All devices</option></select></label>
+                <label><span>Camera</span><select id="cameraFilter"><option value="all">All cameras</option></select></label>
+                <label><span>Environment</span><select id="environmentFilter"><option value="all">All environments</option></select></label>
+                <label><span>Relationship</span><select id="relationshipFilter"><option value="all">All relationships</option></select></label>
+                <label><span>Departure</span><select id="departureFilter"><option value="all">All departure labels</option></select></label>
+                <label><span>Rank stratum</span><select id="stratumFilter"><option value="all">All strata</option></select></label>
+                <label><span>Status</span><select id="statusFilter"><option value="all">All statuses</option></select></label>
+                <label><span>Minimum score</span><input id="scoreMin" class="score-input" type="number" min="0" max="100" value="0"></label>
+                <label><span>Maximum score</span><input id="scoreMax" class="score-input" type="number" min="0" max="100" value="100"></label>
+                <label><span>Rows per page</span><select id="pageSize"><option value="25" selected>25</option><option value="50">50</option><option value="100">100</option><option value="all">All</option></select></label>
+            </div>
+            <div id="resultSummary" class="result-summary"></div>
+        </header>
+
+        <section id="candidateView" class="table-shell hidden" aria-label="All ranked text candidates">
+            <table class="candidate-table">
+                <thead><tr>
+                    <th class="candidate-column">Ranked candidate</th>
+                    <th class="identity-column">Source and camera</th>
+                    <th class="score-column">Score and relationship</th>
+                    <th class="evidence-column">Evidence and explanation</th>
+                    <th class="visual-column">Visible scene and camera</th>
+                    <th class="audit-column">Selection and complete audit</th>
+                </tr></thead>
+                <tbody id="candidateRows"></tbody>
+            </table>
+        </section>
+
+        <section id="generationView" class="table-shell" aria-label="Selected generated-image rows">
+            <table class="generation-table">
+                <thead><tr>
+                    <th class="generation-prompt-column">Selected candidate</th>
+                    <th class="reference-column">Reference</th>
+                    <th class="source-column">Source messaging</th>
+                    <th class="generation-score-column">Score and evidence</th>
+                    <th class="output-column">Generated output</th>
+                    <th class="rewrite-column">usedPrompt</th>
+                    <th class="debug-column">Generation debug</th>
+                </tr></thead>
+                <tbody id="generationRows"></tbody>
+            </table>
+        </section>
+
+        <div id="emptyState" class="empty-state hidden">No matching rows.</div>
+        <nav class="pagination" aria-label="Evaluation rows">
+            <button id="prevPage" type="button">Previous</button><span id="pageStatus"></span><button id="nextPage" type="button">Next</button>
+        </nav>
+    </main>
+
+    <div id="assetModal" class="modal" role="dialog" aria-modal="true" aria-label="Image preview">
+        <button class="close-btn" type="button" aria-label="Close preview">&times;</button>
+        <img id="modalImage" src="" alt="Full-size preview">
+        <div id="modalInfo" class="modal-info"></div>
+    </div>
+
+    <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+    <script src="./imsauth.js"></script>
+    <script src="./data.js"></script>
+    <script src="./main.js"></script>
+    <script>document.addEventListener("DOMContentLoaded", () => initializeIMS());</script>
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+{
+  "version": "v3-edge-validation-v1",
+  "production_eval_member": false,
+  "raw_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v3/eval_edges/record.json",
+  "raw_record_sha256": "82286a2df1447ffd8a58b12eba936312ca846ecbab134644b49ec753a29f520a",
+  "host_validation": {
+    "validator_version": "v3-host-validator-r2",
+    "passed": false,
+    "error_count": 1,
+    "warning_count": 1,
+    "errors": [
+      {
+        "code": "camera_debug",
+        "detail": "expected {'requested_tag': 'futureType_NewView', 'resolved_tag': None, 'device_type': None, 'profile_version': 'camera-v2-draft-2026-10-22-r3', 'resolution': 'unknown', 'framing': 'unknown', 'elevation': 'unknown', 'max_local_props': 0, 'max_background_details': 0, 'people_policy': 'omit'}; got {'requested_tag': 'futureType_NewView', 'resolved_tag': None, 'device_type': None, 'profile_version': 'camera-v2-draft-2026-10-22-r3', 'resolution': 'unknown', 'framing': 'tight', 'elevation': 'unspecified', 'max_local_props': 0, 'max_background_details': 0, 'people_policy': 'omit'}"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 30,
+      "evidence": 0,
+      "environments": {
+        "Office": 8,
+        "Home": 8,
+        "Education": 7,
+        "Gaming": 7
+      },
+      "relationships": {
+        "creative_departure": 30
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 8,
+        "Office": 8,
+        "Education": 7,
+        "Gaming": 7
+      },
+      "relationship_counts": {
+        "source_grounded": 0,
+        "source_adjacent": 0,
+        "creative_departure": 30
+      },
+      "distinct_subsettings": 30,
+      "evidence_reverse_mappings": {
+        "KSP1": {
+          "evidence_ids": [],
+          "prompt_ids": []
+        },
+        "ValueProposition": {
+          "evidence_ids": [],
+          "prompt_ids": []
+        }
+      }
+    },
+    "output_semantic_sha256": "13c45a2f70d1ea9f37ddb436a799a3b479729fa312271b1ccb2376c78cc8bd70"
+  },
+  "edge_errors": [
+    "camera"
+  ],
+  "passed": false,
+  "normalized_output_semantic_sha256": "13c45a2f70d1ea9f37ddb436a799a3b479729fa312271b1ccb2376c78cc8bd70"
+}

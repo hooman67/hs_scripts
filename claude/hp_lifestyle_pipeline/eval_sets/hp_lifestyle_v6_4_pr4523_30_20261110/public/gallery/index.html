@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V6.4 / PR 4523 - V15.7 shapes</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading">Loading authenticated gallery...</div>
+  <main id="content" class="hidden">
+    <header>
+      <h1>V6.4 / PR 4523 - V15.7 shapes</h1>
+      <p id="status"></p>
+      <p>The same30 device/camera/bank-rank slots as the V6.3 study, using the new structured briefs and existing V6.4 texts. Rank matching is not semantic matching;14 environments differ. Native style-reference selection and stochastic outputs are not pair-controlled.</p>
+      <p>Unchanged PR4523 source and frozen product views. Expand each output for the full input documents, scene prompt, actual product/guide/reference images and generation provenance. No judge results are included.</p>
+      <nav>
+        <button id="refresh">Refresh</button>
+        <input id="search" aria-label="Filter rows" placeholder="Filter device, camera, environment, prompt...">
+      </nav>
+      <p>Download selected30: <a href="../data/selected_v6_4_30.json">JSON</a> /
+        <a href="../data/selected_v6_4_30.txt">TXT</a> |
+        <a href="../data/study_manifest.json">Study lineage</a> |
+        <a href="../asset_manifest.json">Asset checksums</a> |
+        <a href="../fe/viewer.html?ldap=hshariati">Clean FE viewer</a>
+      </p>
+    </header>
+    <div id="error" role="alert"></div>
+    <section id="rows"></section>
+  </main>
+  <dialog id="lightbox"><button id="closeImage">Close</button><img id="largeImage" alt="Full-size generation"></dialog>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script>
+  <script src="./main.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => initializeIMS());</script>
+</body>
+</html>

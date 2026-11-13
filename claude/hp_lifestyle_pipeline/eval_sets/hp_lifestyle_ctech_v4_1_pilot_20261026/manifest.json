@@ -1,0 +1,174 @@
+{
+  "version": "hp-lifestyle-ctech-v4.1-text-pilot-v1",
+  "as_of": "2026-10-26",
+  "status": "authorized_text_pilot_only",
+  "scope": {
+    "source_count": 2,
+    "case_count": 4,
+    "candidate_count": 120,
+    "candidates_per_case": 30,
+    "runtime_input_fields": [
+      "source_messaging",
+      "camera_tag"
+    ],
+    "environments": [
+      "Home",
+      "Office",
+      "Education",
+      "Gaming",
+      "Café",
+      "Creative Studio"
+    ],
+    "ranking": "descending_ctech_reference_score_then_source_relevance",
+    "text_generation_authorized": true,
+    "image_generation_authorized": false,
+    "image_generation_gate": "Hooman must review and approve the V4.1 text distribution report first"
+  },
+  "model": {
+    "deployment": "gpt-5.5",
+    "reasoning_effort": "medium",
+    "max_completion_tokens": 24000,
+    "temperature": null,
+    "strict_output_schema": true,
+    "max_concurrency": 2,
+    "max_transient_attempts": 100
+  },
+  "provenance": {
+    "system_prompt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v4.1/system_prompt.md",
+      "bytes": 49392,
+      "sha256": "986957bcc1a5e218daea3594c037036b9d6d25af79847efbe0a95c849591fb04"
+    },
+    "input_schema": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v4.1/input.schema.json",
+      "bytes": 246,
+      "sha256": "0e57edc9f963c225e32661f834d100e6b78daec0c7e7e74ab5388b29afb975dd"
+    },
+    "output_schema": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v4.1/output.schema.json",
+      "bytes": 9136,
+      "sha256": "03dba20d426fe151a0723a176858092101f4b0d05cd48fafcc9b4f7975d38a11"
+    },
+    "camera_profiles": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v4.1/camera_profiles.json",
+      "bytes": 117073,
+      "sha256": "59b5e2b322dcd74c21432e772f3dd11513f71c182f6114b99b15e009dbeea68b"
+    },
+    "reference_library": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v4.1/reference_library.json",
+      "bytes": 7046,
+      "sha256": "f730d8b3ce35a0efd841ad7ebabf9fb46f9c033e93d9ca9d8654aabcfe5353cd"
+    },
+    "october_ctech_docx": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/example_prompts/HP - mAIstro Prompt Guidance (Oct 2026).docx",
+      "bytes": 24664,
+      "sha256": "1f1605f034f581e03679d101fddd9cd52f00601b75ba2a9ec64783206fb78293"
+    },
+    "lifestyle_workbook": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/example_prompts/Eval-Set_Lifestyle-Photography_wSKUs.xlsx",
+      "bytes": 35120,
+      "sha256": "7bf4c6ad2b6ce324fb3c9d1d9d52846411529e29f1b1765d1f4e8bff7ded980a"
+    },
+    "parent_v4_system_prompt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v4/system_prompt.md",
+      "bytes": 54167,
+      "sha256": "83cc51a0b139f62a176982f60082070c1686fef3bd780a9e16cf95459178b349"
+    }
+  },
+  "authorized_text_case_ids": [
+    "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+    "22fdbf19f03d1a31__laptop_FrontRightWide",
+    "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+    "ee810cf51bb82bb4__printer_FrontRightWide"
+  ],
+  "cases": [
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+      "group_id": "22fdbf19f03d1a31__laptop_FrontRight",
+      "source_id": "22fdbf19f03d1a31",
+      "device_type": "laptop",
+      "view_role": "close_up",
+      "camera_tag": "laptop_FrontRightCloseUp",
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/inputs/22fdbf19f03d1a31__laptop_FrontRightCloseUp.json",
+      "input_sha256": "7890221e0402738fc7da03e55e07a2a2bbb9a8d9e8ebe45d47be900a527025b8",
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightCloseUp",
+        "resolved_tag": "laptop_FrontRightCloseUp",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "max_local_props": 0,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      }
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightWide",
+      "group_id": "22fdbf19f03d1a31__laptop_FrontRight",
+      "source_id": "22fdbf19f03d1a31",
+      "device_type": "laptop",
+      "view_role": "wide",
+      "camera_tag": "laptop_FrontRightWide",
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/inputs/22fdbf19f03d1a31__laptop_FrontRightWide.json",
+      "input_sha256": "36ff676c7113f1c8a5f9bdf1a5711d68933524c9cb11a024388a522933aebc98",
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightWide",
+        "resolved_tag": "laptop_FrontRightWide",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      }
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+      "group_id": "ee810cf51bb82bb4__printer_FrontRight",
+      "source_id": "ee810cf51bb82bb4",
+      "device_type": "printer",
+      "view_role": "close_up",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/inputs/ee810cf51bb82bb4__printer_FrontRightCloseUp.json",
+      "input_sha256": "353dac5ce10d1394dc0b8981c7f759b5a421038bdb0ede86dfb8d634242843b8",
+      "expected_camera": {
+        "requested_tag": "printer_FrontRightCloseUp",
+        "resolved_tag": "printer_FrontRightCloseUp",
+        "device_type": "printer",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "max_local_props": 1,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      }
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+      "group_id": "ee810cf51bb82bb4__printer_FrontRight",
+      "source_id": "ee810cf51bb82bb4",
+      "device_type": "printer",
+      "view_role": "wide",
+      "camera_tag": "printer_FrontRightWide",
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/inputs/ee810cf51bb82bb4__printer_FrontRightWide.json",
+      "input_sha256": "65df42ed03142e5cd838e8cf562dddc07d1b1e7bf545659eaca01f248c2e9d8b",
+      "expected_camera": {
+        "requested_tag": "printer_FrontRightWide",
+        "resolved_tag": "printer_FrontRightWide",
+        "device_type": "printer",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "version": "hp-diversity-v3-ui-validation-v2-display-environment",
+  "validated_at_utc": "2026-10-24T00:02:29.363390+00:00",
+  "artifacts": {
+    "index_html": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_diversity_v3_eval_20261023/gallery/index.html",
+      "sha256": "835fb73372ee65340ad0ad44385818ae02287fd6b4d67eae3666d8bc1f5e4848"
+    },
+    "main_js": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_diversity_v3_eval_20261023/gallery/main.js",
+      "sha256": "015d188999c0f314d101b229da9d43fd660306204764115b98791ec8ac1fd640"
+    },
+    "style_css": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_diversity_v3_eval_20261023/gallery/style.css",
+      "sha256": "1a32cf0f949ac65346dc0018956470be058d3035a51e56aaf8b56001a7b9e901"
+    }
+  },
+  "checks": {
+    "v8_compile_only": {
+      "passed": true,
+      "method": "functions.exec V8 new Function(source); compile only, no DOM execution"
+    },
+    "default_page_size": {
+      "passed": true,
+      "value": 25
+    },
+    "table_structure": {
+      "passed": true,
+      "table_count": 2,
+      "thead_count": 2,
+      "tbody_count": 2,
+      "thead_before_tbody": true
+    },
+    "lazy_json_details": {
+      "passed": true,
+      "behavior": "closed JSON details render only on first open"
+    },
+    "shared_imsauth_unchanged": true,
+    "browser_render_verified": false,
+    "authenticated_foundry_browser_verified": false,
+    "default_view": {
+      "passed": true,
+      "value": "Generated images (108 selected rows)",
+      "generated_output_column_visible": true
+    },
+    "completed_rows_before_missing": {
+      "passed": true,
+      "within_status_order": "canonical generation_rows order"
+    },
+    "prompt_export_links": {
+      "passed": true,
+      "all_540": "../generation_prompts.json",
+      "selected_108": "../generation_prompts_selected.json",
+      "display_environment_taxonomy": "../display_environment_taxonomy.json"
+    },
+    "display_environment": {
+      "passed": true,
+      "canonical_environment_preserved": true,
+      "candidate_key_join_count": 540,
+      "taxonomy_sha256": "b449a11eb4897c200646cadb0c4e348aed6b76ec33fe8a5688c70748cfdc08de",
+      "counts": {
+        "Office": 254,
+        "Café": 20,
+        "Creative Studio": 24,
+        "Home": 111,
+        "Education": 80,
+        "Gaming": 51
+      },
+      "filter_badge_search_and_collapsed_provenance_use_display_environment": true
+    }
+  },
+  "limitations": [
+    "JavaScript syntax used the Playwright-bundled Node binary; no headless browser execution was performed.",
+    "The Foundry URL timed out from the host network, so no authenticated browser-render claim is made."
+  ]
+}

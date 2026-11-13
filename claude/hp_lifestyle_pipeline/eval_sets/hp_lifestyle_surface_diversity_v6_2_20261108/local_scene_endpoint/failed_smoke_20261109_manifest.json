@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "attempt": "initial eight-row infrastructure smoke",
+  "candidate_config_sha256": "9ae1f16c2ace027ad6da157356e5025c1ae06722f6c4cb2955b15f0a959b4b08",
+  "deployment_manifest_sha256": "d81b3667b0fe76b790c41b691ebb88a0228ff34cf9e4a246d4aa94662c64d78f",
+  "terminal_job_count": 8,
+  "image_count": 0,
+  "provider_model_request_count": 0,
+  "failure_class": "ModuleNotFoundError",
+  "failure_message": "No module named 'types_boto3_bedrock_runtime'",
+  "sanitized_failure_path": [
+    "endpoint.execute",
+    "GatewayOpenAIClient.__init__",
+    "import foundry_aws_gateway.llm",
+    "missing optional runtime module types_boto3_bedrock_runtime"
+  ],
+  "root_cause": "The deployment installed foundry-aws-gateway core without its declared llm extra.",
+  "jobs": [
+    {
+      "job_id": "20261109T191031Z_40ae4f51dd55",
+      "job_sha256": "cec3af28c7bba0c54c4be2cb31786140bdec0119cfbb0278478121fcdba568c4",
+      "status_sha256": "19d74f60e368c9fc6cd18fc749e7acce89f75e324ff5af453070f7055b9b6416"
+    },
+    {
+      "job_id": "20261109T191031Z_be4611f9f710",
+      "job_sha256": "015ef25116f19d3ff61d8c57d4c64d984aac0627626f7b6d2d15b27cccc43b3c",
+      "status_sha256": "66dfd568ea3bc813c4afb4eb3553a06e72cd37c1045f28c09e71dcad45a0f70f"
+    },
+    {
+      "job_id": "20261109T191036Z_0a6a3d551843",
+      "job_sha256": "0f9cdadf8ac789a6a69666291d8603d3ac29c74215594612bf100dba506fb474",
+      "status_sha256": "9cc1eb06ee3b193e95a56bea3c57cfe0c2442876b8ea1b387a86db673e016cac"
+    },
+    {
+      "job_id": "20261109T191036Z_3f5e0db055bd",
+      "job_sha256": "fa6a7cfd09b11f383bb3423534e26e25a7d04018014114caf5351071dc5b6b1f",
+      "status_sha256": "7a9f3540e2f362e0be65c36a1501ce3e7221ba4134bf648630d79ca60d42b01f"
+    },
+    {
+      "job_id": "20261109T191041Z_5b419240b461",
+      "job_sha256": "5ce55c3cdaa0e3ab0bf7fbdc1176c67319174c8fe64038fa36b1129bd4ae84c6",
+      "status_sha256": "a85537f0676de367ebd4577196f64325797ff5f91326bdebbea244501a345aff"
+    },
+    {
+      "job_id": "20261109T191041Z_dd99e0e85ac7",
+      "job_sha256": "29694d625ed487114125cc5eecd493f097d650c271ab1cfcd711eefdc8038ad9",
+      "status_sha256": "5c48e83ce4aa401ec36d0d5cf3bb9c0b8c03ed64a8dbad3bcac5e98e3a76967a"
+    },
+    {
+      "job_id": "20261109T191041Z_e738f80abed5",
+      "job_sha256": "53a30c79ce903a367ae0e1e1ed7cb7030058447d5b930ef5d099a9c2937242b2",
+      "status_sha256": "88798c15ba03bcbf7361025c8351f7c1f6919c9140854dca8aaefeadc60af4bb"
+    },
+    {
+      "job_id": "20261109T191046Z_aaf76e81d889",
+      "job_sha256": "45c7765c52271374d21fa2f97c50c7065cc29bcb7442d0f43b8ec4d99c1e2b7d",
+      "status_sha256": "43a96daa55e82a2565a21b90c917c2d8bd6969f34f1bce10cd7aa1c0f88ecb82"
+    }
+  ]
+}

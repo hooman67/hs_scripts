@@ -1,0 +1,83 @@
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ELET3.SA"}}}
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ELET6.SA"}}}
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: EMBR3.SA"}}}
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BRFS3.SA"}}}
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MRFG3.SA"}}}
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ALFAA.MX"}}}
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: IOI.KL"}}}
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TEF"}}}
+Fetching expanded ex-US/EM fundamentals (yfinance, cached)...
+  25/740 fetched
+  50/740 fetched
+  75/740 fetched
+  100/740 fetched
+  125/740 fetched
+  150/740 fetched
+  175/740 fetched
+  200/740 fetched
+  225/740 fetched
+  250/740 fetched
+  275/740 fetched
+  300/740 fetched
+  325/740 fetched
+  350/740 fetched
+  375/740 fetched
+  400/740 fetched
+  425/740 fetched
+  450/740 fetched
+  475/740 fetched
+  500/740 fetched
+  525/740 fetched
+  550/740 fetched
+  575/740 fetched
+  600/740 fetched
+  625/740 fetched
+  650/740 fetched
+  675/740 fetched
+  700/740 fetched
+  725/740 fetched
+Wrote raw metrics: /home/colligo/hs_scripts/claude/fin_research/screens/quant_screen_exus_raw.csv  (740 names)
+
+Coverage by region:
+  region   n  reachable  usable  mean_key  reachable_pct  usable_pct
+DEV_EXUS 448        445     433      10.6           99.3        96.7
+      EM 292        276     275       9.8           94.5        94.2
+
+Dropped 32 yfinance-labelled financials/REITs before scoring.
+Wrote ranked: /home/colligo/hs_scripts/claude/fin_research/screens/quant_screen_exus_ranked.csv  (673 rankable)
+
+Top 15 DEV_EXUS (trap-gate PASS):
+ region_rank    ticker                            name   region              yf_sector  quality_score  cheapness_score  combined_score  roic_proxy     roe  ev_ebitda
+           1    FRES.L       FRESNILLO PLC ORD USD0.50 DEV_EXUS        Basic Materials           93.0             72.4            84.8    1.423837 0.52975      5.506
+           2      K.TO              KINROSS GOLD CORP. DEV_EXUS        Basic Materials           91.5             63.7            80.4    0.307643 0.36991      9.842
+           3     EDV.L ENDEAVOUR MINING PLC ORD USD0.0 DEV_EXUS        Basic Materials           82.7             73.6            79.1    0.767710 0.31336      4.085
+           4     SU.TO              SUNCOR ENERGY INC. DEV_EXUS                 Energy           77.6             80.7            78.8    0.233377 0.19251      5.904
+           5    ABX.TO      BARRICK MINING CORPORATION DEV_EXUS        Basic Materials           86.9             65.6            78.4    0.229203 0.27009      9.263
+           6    NHY.OL                     NORSK HYDRO DEV_EXUS        Basic Materials           74.1             81.7            77.1    0.373400 0.09432      3.973
+           7    NEM.AX           NEWMONT CDI 1:1 [NEM] DEV_EXUS        Basic Materials           87.7             54.2            74.3    0.230182 0.25905     11.200
+           8    FMG.AX             FORTESCUE FPO [FMG] DEV_EXUS        Basic Materials           71.2             74.5            72.5    0.134064 0.14229      6.771
+          10    AUTO.L     AUTOTRADER GROUP PLC ORD 1P DEV_EXUS Communication Services           82.9             54.2            71.4    0.530871 0.60195     11.476
+          11    AEM.TO      AGNICO EAGLE MINES LIMITED DEV_EXUS        Basic Materials           90.6             42.3            71.3    0.183702 0.22969     15.154
+          11    TEN.MI                         TENARIS DEV_EXUS                 Energy           71.7             70.8            71.3    0.129804 0.11584      7.825
+          13    4519.T        CHUGAI PHARMACEUTICAL CO DEV_EXUS             Healthcare           94.2             36.5            71.1    0.468775 0.23493     15.690
+          13    BEI.DE BEIERSDORF AG                 I DEV_EXUS     Consumer Defensive           76.5             62.9            71.1    0.186903 0.10887      9.360
+          13 TECK-B.TO     TECK RESOURCES LIMITED CL B DEV_EXUS        Basic Materials           73.4             67.6            71.1    0.155578 0.08717      8.129
+          16    4578.T             OTSUKA HLDGS CO LTD DEV_EXUS             Healthcare           79.2             58.0            70.7    0.143415 0.13421     10.575
+
+Top 15 EM (trap-gate PASS):
+ region_rank    ticker                            name region              yf_sector  quality_score  cheapness_score  combined_score  roic_proxy     roe  ev_ebitda
+           1   0883.HK                           CNOOC     EM                 Energy           89.2             87.9            88.7    0.184762 0.15348      3.984
+           2 000660.KS                        SK hynix     EM             Technology           94.1             76.6            87.1         NaN 0.92679      7.895
+           4 005930.KS                     SamsungElec     EM             Technology           90.0             78.1            85.2         NaN 0.30794      6.885
+           6       PDD               PDD Holdings Inc.     EM      Consumer Cyclical           84.6             84.3            84.5         NaN 0.22745     -3.311
+           7   2331.HK                         LI NING     EM      Consumer Cyclical           77.2             88.7            81.8    0.197920 0.10799      4.476
+           8      NTES                   NetEase, Inc.     EM Communication Services           88.4             70.6            81.3         NaN 0.20373      5.873
+           9       TSM Taiwan Semiconductor Manufactur     EM             Technology           89.2             62.6            78.6         NaN 0.39969      4.708
+          11   9999.HK                            NTES     EM Communication Services           88.4             61.4            77.6    1.160068 0.20373     11.068
+          12       TME Tencent Music Entertainment Gro     EM Communication Services           69.3             88.9            77.1         NaN 0.10974      0.303
+          14  LREN3.SA          LOJAS RENNERON      NM     EM      Consumer Cyclical           64.4             92.4            75.6    0.134216 0.14456      5.166
+          15       PBR Petroleo Brasileiro S.A. Petrob     EM                 Energy           63.1             93.1            75.1    0.477617 0.30274      1.764
+          16   INDF.JK      Indofood Sukses Makmur Tbk     EM     Consumer Defensive           61.0             95.0            74.6    0.200666 0.12137      4.480
+          17  PETR4.SA          PETROBRAS   PN  EDJ N2     EM                 Energy           60.7             95.0            74.4    0.235306 0.30274      3.484
+          18  PETR3.SA          PETROBRAS   ON  EDJ N2     EM                 Energy           60.9             93.9            74.1    0.243914 0.30274      3.729
+          19       SQM  Sociedad Quimica y Minera S.A.     EM        Basic Materials           76.6             70.1            74.0    0.356525 0.21820      8.640

@@ -1,0 +1,122 @@
+{
+  "validator_version": "v5-host-validator-r3",
+  "passed": false,
+  "error_count": 2,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "literal_background_budget",
+      "detail": "1>0: ['workplace decor']",
+      "candidate_id": "p6"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['workplace decor'] but signature has 0 entries",
+      "candidate_id": "p6"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support audit text; inspect: ['e3']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 20,
+    "evidence": 6,
+    "environments": {
+      "Home": 5,
+      "Office": 5,
+      "Café": 3,
+      "Creative Studio": 3,
+      "Gaming": 2,
+      "Education": 2
+    },
+    "relationships": {
+      "source_grounded": 8,
+      "source_adjacent": 8,
+      "creative_departure": 4
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 5,
+      "Office": 5,
+      "Education": 2,
+      "Gaming": 2,
+      "Café": 3,
+      "Creative Studio": 3
+    },
+    "relationship_counts": {
+      "source_grounded": 8,
+      "source_adjacent": 8,
+      "creative_departure": 4
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 17,
+      "close_adaptation": 1,
+      "category_extension": 2
+    },
+    "ctech_reference_counts": {
+      "CT18": 2,
+      "CT06": 2,
+      "CT03": 2,
+      "CT01": 1,
+      "CT13": 1,
+      "CT02": 1,
+      "CT04": 1,
+      "CT17": 1,
+      "CT16": 1,
+      "CT12": 1,
+      "CT07": 1,
+      "CT08": 1,
+      "CT10": 2,
+      "CT09": 1,
+      "CT15": 1,
+      "CT14": 1
+    },
+    "ctech_score_range": [
+      64,
+      89
+    ],
+    "distinct_subsettings": 18,
+    "evidence_reverse_mappings": {
+      "smart_brief": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "source_messaging": {
+        "evidence_ids": [
+          "e1",
+          "e2",
+          "e4",
+          "e5",
+          "e6"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "bc71b648d5dd99b07c4060c150597f75a4097f9e8d4c5ed52d53dd7f86bae65f"
+}

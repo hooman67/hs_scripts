@@ -1,0 +1,1699 @@
+{
+  "version": "hp-v6-downstream-prop-additions-audit-v2",
+  "created_at_utc": "2026-11-03T22:55:34.660130+00:00",
+  "scope": {
+    "rows_audited": 96,
+    "rows_with_confirmed_downstream_prop_or_furnishing_additions": 25,
+    "share": 0.260417,
+    "included": "Movable props, furnishings, boards, and explicit shelf contents present in the downstream usedPrompt but absent from the original V6 prompt.",
+    "excluded": "Primary device, support surface, fixed architecture such as windows/walls/glass partitions/meeting rooms, and restatements of the same upstream prop."
+  },
+  "summary": {
+    "rows_by_device": {
+      "cashmere": 6,
+      "elitebook": 5,
+      "tassel": 14
+    },
+    "added_family_occurrences": {
+      "shelving": 9,
+      "plant": 8,
+      "chair": 3,
+      "shelf_contents": 3,
+      "whiteboard": 3,
+      "sofa": 2,
+      "book": 1,
+      "brush_holder": 1,
+      "curtains": 1,
+      "drafting_board": 1,
+      "framed_art": 1,
+      "mood_board": 1,
+      "saucer": 1
+    },
+    "stack_of_papers_table_explanation": {
+      "declared_paper_documents_group_count": 14,
+      "explicit_input_semantic_pattern_count": 13,
+      "explicit_rewrite_semantic_pattern_count": 14,
+      "actual_rewrite_only_keys": [
+        "cashmere__laptop_FrontCloseUp::p3"
+      ],
+      "declared_paper_documents_but_not_stack_keys": [
+        "tassel__printer_FrontWide::p3"
+      ],
+      "input_phrase_examples": [
+        "stack of plain papers",
+        "stack of household papers"
+      ],
+      "interpretation": "Thirteen input prompts explicitly request a stack of papers and fourteen rewrites do. The rewrite-only case adds stacked paper to cashmere__laptop_FrontCloseUp::p3. The frozen paper_documents group has fourteen rows because tassel__printer_FrontWide::p3 declares worksheets rather than a stack. The former zero input count came from an overly literal regular expression and has been corrected."
+    },
+    "open_notebook_rewrite_only_count": 0,
+    "pencil_pen_cup_rewrite_only_count": 0
+  },
+  "inputs": {
+    "compact_preview_records": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v5_v6_top6_distribution_20261030/inputs/v6_preview_prop_records.json",
+    "generation_results": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_approved_props_v6_top6_four_devices_20261029_preview/downloads/results.jsonl",
+    "approved_catalog": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging_v1_to_v6/versions/v6/approved-20261029-r2.catalog.json",
+    "source_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/gallery/index.html"
+  },
+  "method": "Manual semantic comparison of all 96 raw prompts against editing_instruction, scene, background, entity labels/descriptions, and the assembled usedPrompt. Counts are prompt/debug evidence, not image annotations.",
+  "rows": [
+    {
+      "prompt_key": "cashmere__laptop_BackRightCloseUp::p2",
+      "row_id": "cashmere__laptop_BackRightCloseUp__p2",
+      "device_id": "cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_BackRightCloseUp",
+      "environment": "Office",
+      "added_items": [
+        {
+          "family": "plant",
+          "description": "potted plant"
+        }
+      ],
+      "evidence_summary": "In the background, a blurred modern corporate office environment recedes with glass partitions and a potted plant on the left.",
+      "upstream_declared_props": [
+        {
+          "id": "OFF-06",
+          "name": "Stack of papers",
+          "groups": [
+            "paper_documents"
+          ]
+        },
+        {
+          "id": "OFF-13",
+          "name": "Binder clips",
+          "groups": [
+            "binder_clips"
+          ]
+        }
+      ],
+      "original_prompt": "A bright modern corporate office desk holds a neat stack of plain papers with indistinct markings, gathered with binder clips for a meeting. Warm natural light falls across the work surface, giving the area a lived-in but tidy professional feel.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits flush on a light wooden desk slightly left of center, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A neat stack of plain papers gathered with binder clips rests on the desk to the right of the laptop. In the background, a blurred modern corporate office environment recedes with glass partitions and a potted plant on the left. Warm natural light falls across the work surface from a window on the right, keeping the laptop sharp against the softly blurred background.",
+      "rewritten_scene": "A closed dark blue HP laptop sits on a light wooden desk next to a neat stack of clipped papers in a bright modern corporate office.",
+      "rewritten_background": "a bright modern corporate office with glass partitions receding in the background and a blurred potted plant on the left; a warm-neutral color grade with golden daylight tones and soft shadows, maintaining a clean professional look",
+      "rewritten_entities": [
+        {
+          "description": "A closed dark blue HP laptop viewed from the top and rear, featuring a glossy ``hp`` logo in the center of the lid and visible ports along the left edge.",
+          "label": "dark blue HP laptop"
+        },
+        {
+          "description": "A neat stack of plain white papers gathered with black binder clips, resting on the desk to the right of the laptop.",
+          "label": "stack of papers"
+        },
+        {
+          "description": "A smooth light wooden desk surface illuminated by warm natural light.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "Blurred glass office partitions receding into the background, reflecting the bright workspace.",
+          "label": "glass partitions"
+        },
+        {
+          "description": "A softly blurred green potted plant in the background on the left side of the office.",
+          "label": "potted plant"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits flush on a light wooden desk slightly left of center, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A neat stack of plain papers gathered with binder clips rests on the desk to the right of the laptop. In the background, a blurred modern corporate office environment recedes with glass partitions and a potted plant on the left. Warm natural light falls across the work surface from a window on the right, keeping the laptop sharp against the softly blurred background. <scene> A closed dark blue HP laptop sits on a light wooden desk next to a neat stack of clipped papers in a bright modern corporate office. <type> photorealistic, lifestyle photography, corporate photography <lighting> soft_light, soft warm natural daylight from window screen-right, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base, logo clear space maintained <background> a bright modern corporate office with glass partitions receding in the background and a blurred potted plant on the left; a warm-neutral color grade with golden daylight tones and soft shadows, maintaining a clean professional look <camera> medium_shot, high angle <entities> <label> dark blue HP laptop <description> A closed dark blue HP laptop viewed from the top and rear, featuring a glossy ``hp`` logo in the center of the lid and visible ports along the left edge. <label> stack of papers <description> A neat stack of plain white papers gathered with black binder clips, resting on the desk to the right of the laptop. <label> wooden desk <description> A smooth light wooden desk surface illuminated by warm natural light. <label> glass partitions <description> Blurred glass office partitions receding into the background, reflecting the bright workspace. <label> potted plant <description> A softly blurred green potted plant in the background on the left side of the office.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/605c32d7b6837965f9ad__cashmere__laptop_BackRightCloseUp__p2.png"
+    },
+    {
+      "prompt_key": "cashmere__laptop_BackRightCloseUp::p5",
+      "row_id": "cashmere__laptop_BackRightCloseUp__p5",
+      "device_id": "cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_BackRightCloseUp",
+      "environment": "Creative Studio",
+      "added_items": [
+        {
+          "family": "drafting_board",
+          "description": "drafting board"
+        }
+      ],
+      "evidence_summary": "In the background, a bright creative studio space recedes with a window on the left and a drafting board against the back wall.",
+      "upstream_declared_props": [
+        {
+          "id": "STU-12",
+          "name": "Color swatches",
+          "groups": [
+            "color_swatches"
+          ]
+        },
+        {
+          "id": "STU-11",
+          "name": "Fabric swatches",
+          "groups": [
+            "fabric_swatches"
+          ]
+        },
+        {
+          "id": "STU-18",
+          "name": "Scissors",
+          "groups": [
+            "scissors"
+          ]
+        }
+      ],
+      "original_prompt": "A bright creative studio with a simple worktable in warm natural light. Unlabelled color swatches and unlabelled fabric swatches are arranged beside scissors, suggesting ideas being sorted before a design discussion.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits resting flush, its whole base fully in contact with a simple light wood worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the right of the laptop on the table, arrange unlabelled color swatches, fabric swatches, and a pair of metal scissors. In the background, a bright creative studio space recedes with a window on the left and a drafting board against the back wall. Warm natural light fills the room, keeping the laptop sharp against a softly blurred background.",
+      "rewritten_scene": "A closed dark blue HP laptop sits on a simple worktable in a bright creative studio alongside unlabelled color swatches, fabric swatches, and scissors.",
+      "rewritten_background": "A bright creative studio with a window on the left and a drafting board against the back wall; a warm-neutral color grade with soft golden daylight, natural wood tones, and clean modern surfaces.",
+      "rewritten_entities": [
+        {
+          "description": "A closed dark blue HP laptop viewed from the top and rear, featuring a glossy ``hp`` logo in the center of the lid, resting flat on the table.",
+          "label": "dark blue HP laptop"
+        },
+        {
+          "description": "A simple, smooth light wood worktable surface filling the foreground and mid-ground.",
+          "label": "worktable"
+        },
+        {
+          "description": "A fan of unlabelled paper color swatches in various warm and neutral tones, resting on the table to the right of the laptop.",
+          "label": "color swatches"
+        },
+        {
+          "description": "A small stack of unlabelled textured fabric swatches placed near the color swatches on the right side of the desk.",
+          "label": "fabric swatches"
+        },
+        {
+          "description": "A pair of metal fabric scissors lying on the table beside the swatches.",
+          "label": "scissors"
+        },
+        {
+          "description": "A wooden drafting board standing against the back wall in the softly blurred background.",
+          "label": "drafting board"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits resting flush, its whole base fully in contact with a simple light wood worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the right of the laptop on the table, arrange unlabelled color swatches, fabric swatches, and a pair of metal scissors. In the background, a bright creative studio space recedes with a window on the left and a drafting board against the back wall. Warm natural light fills the room, keeping the laptop sharp against a softly blurred background. <scene> A closed dark blue HP laptop sits on a simple worktable in a bright creative studio alongside unlabelled color swatches, fabric swatches, and scissors. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm natural daylight from window screen-left, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base, clear space maintained around the logo <background> A bright creative studio with a window on the left and a drafting board against the back wall; a warm-neutral color grade with soft golden daylight, natural wood tones, and clean modern surfaces. <camera> medium_shot, high angle <entities> <label> dark blue HP laptop <description> A closed dark blue HP laptop viewed from the top and rear, featuring a glossy ``hp`` logo in the center of the lid, resting flat on the table. <label> worktable <description> A simple, smooth light wood worktable surface filling the foreground and mid-ground. <label> color swatches <description> A fan of unlabelled paper color swatches in various warm and neutral tones, resting on the table to the right of the laptop. <label> fabric swatches <description> A small stack of unlabelled textured fabric swatches placed near the color swatches on the right side of the desk. <label> scissors <description> A pair of metal fabric scissors lying on the table beside the swatches. <label> drafting board <description> A wooden drafting board standing against the back wall in the softly blurred background.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/c5fa2f8c2177ff054bc9__cashmere__laptop_BackRightCloseUp__p5.png"
+    },
+    {
+      "prompt_key": "cashmere__laptop_FrontCloseUp::p2",
+      "row_id": "cashmere__laptop_FrontCloseUp__p2",
+      "device_id": "cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontCloseUp",
+      "environment": "Café",
+      "added_items": [
+        {
+          "family": "chair",
+          "description": "wooden chair"
+        },
+        {
+          "family": "saucer",
+          "description": "matching saucer"
+        }
+      ],
+      "evidence_summary": "A wooden chair is tucked under a distant table; the coffee-cup entity is described as resting on a matching saucer.",
+      "upstream_declared_props": [
+        {
+          "id": "CAF-01",
+          "name": "Ceramic coffee cup",
+          "groups": [
+            "cup_mug"
+          ]
+        },
+        {
+          "id": "CAF-22",
+          "name": "Paper notebook",
+          "groups": [
+            "notebook"
+          ]
+        }
+      ],
+      "original_prompt": "A warm small wooden café table near a window, with a ceramic coffee cup beside an open paper notebook showing blank pages. Soft daylight and warm wood finishes make it feel like a quick pause between appointments.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits flush on a warm small wooden café table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A matte white ceramic coffee cup sits on the table to the left of the laptop, and an open paper notebook with blank pages rests further back on the right. Soft daylight streams in from a window in the background on the left, illuminating the warm wood finishes of the modern café setting.",
+      "rewritten_scene": "An open dark blue laptop sits on a warm wooden café table next to a ceramic coffee cup and a blank open notebook in a cozy, sunlit café.",
+      "rewritten_background": "A blurred modern café interior featuring a large window with bright daylight on the left, and a wooden chair tucked under a distant table on the right; a warm-neutral color grade with soft golden daylight and rich wood tones, keeping the atmosphere clean and modern.",
+      "rewritten_entities": [
+        {
+          "description": "An open dark blue laptop with a visible keyboard and an active screen, featuring the text ``OMNIBOOK`` on the right palm rest, positioned centrally on the wooden table.",
+          "label": "dark blue laptop"
+        },
+        {
+          "description": "A small wooden café table with a warm, smooth finish, providing the main support surface for the laptop and props.",
+          "label": "wooden café table"
+        },
+        {
+          "description": "A matte white ceramic coffee cup resting on a matching saucer, positioned on the table to the left of the laptop.",
+          "label": "ceramic coffee cup"
+        },
+        {
+          "description": "An open paper notebook showing blank white pages, lying flat on the table further back to the right.",
+          "label": "open notebook"
+        },
+        {
+          "description": "A large window in the background on the left, letting in soft, diffused daylight.",
+          "label": "café window"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits flush on a warm small wooden café table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A matte white ceramic coffee cup sits on the table to the left of the laptop, and an open paper notebook with blank pages rests further back on the right. Soft daylight streams in from a window in the background on the left, illuminating the warm wood finishes of the modern café setting. <scene> An open dark blue laptop sits on a warm wooden café table next to a ceramic coffee cup and a blank open notebook in a cozy, sunlit café. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm daylight from a window screen-left, diffused, gentle shadows, soft negative fill on shadow side <composition> medium shot, shallow depth of field with the café background softly blurred, the laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base, logo clear space maintained <background> A blurred modern café interior featuring a large window with bright daylight on the left, and a wooden chair tucked under a distant table on the right; a warm-neutral color grade with soft golden daylight and rich wood tones, keeping the atmosphere clean and modern. <camera> medium_shot, eye level <entities> <label> dark blue laptop <description> An open dark blue laptop with a visible keyboard and an active screen, featuring the text ``OMNIBOOK`` on the right palm rest, positioned centrally on the wooden table. <label> wooden café table <description> A small wooden café table with a warm, smooth finish, providing the main support surface for the laptop and props. <label> ceramic coffee cup <description> A matte white ceramic coffee cup resting on a matching saucer, positioned on the table to the left of the laptop. <label> open notebook <description> An open paper notebook showing blank white pages, lying flat on the table further back to the right. <label> café window <description> A large window in the background on the left, letting in soft, diffused daylight.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/bbd5a6a65d0117db109b__cashmere__laptop_FrontCloseUp__p2.png"
+    },
+    {
+      "prompt_key": "cashmere__laptop_FrontCloseUp::p3",
+      "row_id": "cashmere__laptop_FrontCloseUp__p3",
+      "device_id": "cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontCloseUp",
+      "environment": "Creative Studio",
+      "added_items": [
+        {
+          "family": "brush_holder",
+          "description": "glass paintbrush jar"
+        },
+        {
+          "family": "shelving",
+          "description": "wooden shelving unit"
+        },
+        {
+          "family": "shelf_contents",
+          "description": "stacked paper and generic art supplies"
+        }
+      ],
+      "evidence_summary": "The rewrite asks for a jar of paintbrushes and a wooden shelving unit holding stacked paper and art supplies.",
+      "upstream_declared_props": [
+        {
+          "id": "STU-08",
+          "name": "Watercolor palette",
+          "groups": [
+            "watercolor_paints"
+          ]
+        },
+        {
+          "id": "STU-09",
+          "name": "Paintbrushes",
+          "groups": [
+            "paintbrush"
+          ]
+        },
+        {
+          "id": "STU-22",
+          "name": "Reference photographs",
+          "groups": [
+            "reference_photos"
+          ]
+        }
+      ],
+      "original_prompt": "A bright creative studio worktable with a watercolor palette, paintbrushes, and reference photographs of architectural details with no people or faces. Warm natural light and simple studio surfaces keep the materials casual and ready to use.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits flush on a bright, simple studio worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the left of the laptop on the table, place a white watercolor palette and a jar of paintbrushes; to the right, scatter a few reference photographs of architectural details. In the background, a clean studio wall with a window on the right lets in warm natural light, and a wooden shelving unit stands against the wall on the left, keeping the depth of field shallow so the laptop remains in sharp focus.",
+      "rewritten_scene": "An open dark blue HP laptop sits on a bright creative studio worktable surrounded by a watercolor palette, paintbrushes, and architectural reference photographs.",
+      "rewritten_background": "A bright, clean creative studio environment with a white wall in the background; a large window on the right letting in sunlight, and a wooden shelving unit against the wall on the left holding art supplies; a warm-neutral color grade with soft golden highlights and clean shadows, maintaining a modern and airy feel.",
+      "rewritten_entities": [
+        {
+          "description": "An open dark blue laptop with the word ``OMNIBOOK`` visible on the right palm rest, sitting flush on the worktable. The screen is active.",
+          "label": "dark blue HP laptop"
+        },
+        {
+          "description": "A bright, smooth, light-colored wooden worktable surface supporting the laptop and art supplies.",
+          "label": "studio worktable"
+        },
+        {
+          "description": "A white ceramic watercolor palette with various paint wells, resting on the table to the left of the laptop.",
+          "label": "watercolor palette"
+        },
+        {
+          "description": "A clear glass jar holding several wooden-handled paintbrushes, positioned behind the palette on the left side of the desk.",
+          "label": "paintbrush jar"
+        },
+        {
+          "description": "A few printed reference photographs showing architectural details, lying flat on the table to the right of the laptop.",
+          "label": "reference photographs"
+        },
+        {
+          "description": "A blurred light wood shelving unit against the studio wall in the far background on the left, holding stacked paper and supplies.",
+          "label": "wooden shelving unit"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits flush on a bright, simple studio worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the left of the laptop on the table, place a white watercolor palette and a jar of paintbrushes; to the right, scatter a few reference photographs of architectural details. In the background, a clean studio wall with a window on the right lets in warm natural light, and a wooden shelving unit stands against the wall on the left, keeping the depth of field shallow so the laptop remains in sharp focus. <scene> An open dark blue HP laptop sits on a bright creative studio worktable surrounded by a watercolor palette, paintbrushes, and architectural reference photographs. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm natural daylight from a window screen-right, diffused, gentle shadows, soft negative fill on shadow side <composition> medium shot, shallow depth of field with the studio background softly blurred, the laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base, clear near-mid-far layering with props grouped neatly beside the product. <background> A bright, clean creative studio environment with a white wall in the background; a large window on the right letting in sunlight, and a wooden shelving unit against the wall on the left holding art supplies; a warm-neutral color grade with soft golden highlights and clean shadows, maintaining a modern and airy feel. <camera> medium_shot, eye level <entities> <label> dark blue HP laptop <description> An open dark blue laptop with the word ``OMNIBOOK`` visible on the right palm rest, sitting flush on the worktable. The screen is active. <label> studio worktable <description> A bright, smooth, light-colored wooden worktable surface supporting the laptop and art supplies. <label> watercolor palette <description> A white ceramic watercolor palette with various paint wells, resting on the table to the left of the laptop. <label> paintbrush jar <description> A clear glass jar holding several wooden-handled paintbrushes, positioned behind the palette on the left side of the desk. <label> reference photographs <description> A few printed reference photographs showing architectural details, lying flat on the table to the right of the laptop. <label> wooden shelving unit <description> A blurred light wood shelving unit against the studio wall in the far background on the left, holding stacked paper and supplies.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/7bcb17c91025d590beab__cashmere__laptop_FrontCloseUp__p3.png"
+    },
+    {
+      "prompt_key": "cashmere__laptop_FrontCloseUp::p6",
+      "row_id": "cashmere__laptop_FrontCloseUp__p6",
+      "device_id": "cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontCloseUp",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "plant",
+          "description": "potted plant"
+        }
+      ],
+      "evidence_summary": "The rewritten background adds a blurred green potted plant on the left.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-02",
+          "name": "Magazine",
+          "groups": [
+            "magazine"
+          ]
+        },
+        {
+          "id": "HOM-08",
+          "name": "Reading glasses",
+          "groups": [
+            "eyeglasses"
+          ]
+        }
+      ],
+      "original_prompt": "A modern home workspace with a small work surface in warm natural light, a closed magazine with an abstract unmarked cover and reading glasses set aside after a short read. Simple residential finishes keep the space calm and lived-in.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits flush on a small, light wood desk, its whole base fully in contact with the surface, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A closed magazine with an abstract cover and a pair of reading glasses rest on the desk to the right of the laptop. In the background, a simple residential wall with a blurred potted plant on the left and a window on the right completes the calm, lived-in space. Warm natural light streams in from the window, keeping the laptop sharp against the softly blurred background.",
+      "rewritten_scene": "An open dark blue laptop sits on a small wooden desk in a modern, calm home workspace, accompanied by a closed magazine and reading glasses.",
+      "rewritten_background": "a simple residential setting with a light beige wall, a blurred green potted plant on the left, and a window on the right; a warm-neutral color grade with soft golden daylight and natural wood tones, clean and modern",
+      "rewritten_entities": [
+        {
+          "description": "An open dark blue laptop with an active screen, positioned centrally on the desk.",
+          "label": "dark blue laptop"
+        },
+        {
+          "description": "A closed magazine with an abstract unmarked cover, resting flat on the desk to the right of the laptop.",
+          "label": "magazine"
+        },
+        {
+          "description": "A pair of wire-rimmed reading glasses folded and resting on top of the closed magazine.",
+          "label": "reading glasses"
+        },
+        {
+          "description": "A small, light-colored wooden desk with a smooth, natural finish.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "A softly blurred green potted plant against the wall in the background on the left.",
+          "label": "potted plant"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits flush on a small, light wood desk, its whole base fully in contact with the surface, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A closed magazine with an abstract cover and a pair of reading glasses rest on the desk to the right of the laptop. In the background, a simple residential wall with a blurred potted plant on the left and a window on the right completes the calm, lived-in space. Warm natural light streams in from the window, keeping the laptop sharp against the softly blurred background. <scene> An open dark blue laptop sits on a small wooden desk in a modern, calm home workspace, accompanied by a closed magazine and reading glasses. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm daylight from a window screen-right, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base, clean and uncluttered arrangement <background> a simple residential setting with a light beige wall, a blurred green potted plant on the left, and a window on the right; a warm-neutral color grade with soft golden daylight and natural wood tones, clean and modern <camera> medium_shot, eye level <entities> <label> dark blue laptop <description> An open dark blue laptop with an active screen, positioned centrally on the desk. <label> magazine <description> A closed magazine with an abstract unmarked cover, resting flat on the desk to the right of the laptop. <label> reading glasses <description> A pair of wire-rimmed reading glasses folded and resting on top of the closed magazine. <label> wooden desk <description> A small, light-colored wooden desk with a smooth, natural finish. <label> potted plant <description> A softly blurred green potted plant against the wall in the background on the left.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/796fe44045ec88a3d928__cashmere__laptop_FrontCloseUp__p6.png"
+    },
+    {
+      "prompt_key": "cashmere__laptop_FrontLeftMedium::p2",
+      "row_id": "cashmere__laptop_FrontLeftMedium__p2",
+      "device_id": "cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontLeftMedium",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "framed_art",
+          "description": "framed print"
+        }
+      ],
+      "evidence_summary": "The rewritten background adds a blurred wall with a framed print in the far background.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-06",
+          "name": "Stack of household papers",
+          "groups": [
+            "paper_documents"
+          ]
+        },
+        {
+          "id": "HOM-36",
+          "name": "Soft curtains",
+          "groups": [
+            "curtains"
+          ]
+        },
+        {
+          "id": "HOM-22",
+          "name": "Ceramic ornament",
+          "groups": [
+            "ornament"
+          ]
+        }
+      ],
+      "original_prompt": "A lived-in home workspace with a wooden desk holding a small stack of household papers with indistinct markings. Soft curtains filter daylight across the desk, and a simple ceramic ornament adds a familiar residential touch.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits flush on a wooden desk in the center, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A small stack of household papers rests on the desk to the left of the laptop, and a simple ceramic ornament sits further back on the right. In the background, soft curtains hang against a window on the left, filtering natural daylight across the workspace.",
+      "rewritten_scene": "An open dark blue laptop sits on a wooden desk in a lived-in home workspace, accompanied by a stack of papers and a ceramic ornament.",
+      "rewritten_background": "A window with soft sheer curtains on the left, filtering daylight into the room; a blurred wall with a framed print in the far background; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, balancing the warm wood tones of the desk.",
+      "rewritten_entities": [
+        {
+          "description": "An open dark blue laptop with a dark screen bezel and keyboard, positioned in the center of the desk. The screen is active.",
+          "label": "dark blue laptop"
+        },
+        {
+          "description": "A small stack of household papers with indistinct markings, resting on the desk to the left of the laptop.",
+          "label": "stack of papers"
+        },
+        {
+          "description": "A simple, matte white ceramic ornament sitting on the desk further back to the right.",
+          "label": "ceramic ornament"
+        },
+        {
+          "description": "A wooden desk with a smooth, natural grain finish serving as the main workspace.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "Soft, sheer white curtains hanging in the background on the left, filtering the incoming daylight.",
+          "label": "sheer curtains"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits flush on a wooden desk in the center, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A small stack of household papers rests on the desk to the left of the laptop, and a simple ceramic ornament sits further back on the right. In the background, soft curtains hang against a window on the left, filtering natural daylight across the workspace. <scene> An open dark blue laptop sits on a wooden desk in a lived-in home workspace, accompanied by a stack of papers and a ceramic ornament. <type> photorealistic, lifestyle photography, interior design photography <lighting> soft_light, soft cool daylight from window screen-left, diffused through curtains, gentle shadows, soft negative fill on shadow side <composition> medium shot, shallow depth of field with background softly blurred, the laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base <background> A window with soft sheer curtains on the left, filtering daylight into the room; a blurred wall with a framed print in the far background; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, balancing the warm wood tones of the desk. <camera> medium_shot, high angle <entities> <label> dark blue laptop <description> An open dark blue laptop with a dark screen bezel and keyboard, positioned in the center of the desk. The screen is active. <label> stack of papers <description> A small stack of household papers with indistinct markings, resting on the desk to the left of the laptop. <label> ceramic ornament <description> A simple, matte white ceramic ornament sitting on the desk further back to the right. <label> wooden desk <description> A wooden desk with a smooth, natural grain finish serving as the main workspace. <label> sheer curtains <description> Soft, sheer white curtains hanging in the background on the left, filtering the incoming daylight.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/c7f6999224ef9100d0a2__cashmere__laptop_FrontLeftMedium__p2.png"
+    },
+    {
+      "prompt_key": "elitebook__laptop_BackRightCloseUp::p2",
+      "row_id": "elitebook__laptop_BackRightCloseUp__p2",
+      "device_id": "elitebook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_BackRightCloseUp",
+      "environment": "Office",
+      "added_items": [
+        {
+          "family": "whiteboard",
+          "description": "whiteboard"
+        }
+      ],
+      "evidence_summary": "The rewritten background adds a distant white whiteboard on the wall to the left.",
+      "upstream_declared_props": [
+        {
+          "id": "OFF-17",
+          "name": "Document storage box",
+          "groups": [
+            "document_box"
+          ]
+        },
+        {
+          "id": "OFF-16",
+          "name": "Letter tray",
+          "groups": [
+            "letter_tray"
+          ]
+        },
+        {
+          "id": "OFF-13",
+          "name": "Binder clips",
+          "groups": [
+            "binder_clips"
+          ]
+        }
+      ],
+      "original_prompt": "A modern corporate office desk with an unlabelled document storage box, an empty letter tray, and a few binder clips arranged beside it. The setup feels orderly and used, with warm daylight across the work surface.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits closed on a modern corporate office desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. The laptop rests flush, its whole base fully in contact with the desk surface, with no shadow gap beneath it. To the right of the laptop in the mid-ground sits an empty letter tray, with an unlabelled document storage box placed further back on the right. A few binder clips are arranged on the desk in the foreground to the left. Warm daylight streams across the work surface from a window on the left, illuminating the orderly setup.",
+      "rewritten_scene": "A closed silver HP laptop sits on a modern corporate office desk alongside an empty letter tray, a document storage box, and binder clips.",
+      "rewritten_background": "A modern corporate office environment with blurred glass partitions and a distant white whiteboard on the wall to the left; a warm-neutral color grade with soft warm shadows and bright highlights, maintaining a clean and orderly feel.",
+      "rewritten_entities": [
+        {
+          "description": "A closed silver HP laptop, viewed from the back with the circular ``hp`` logo centered on the lid, sitting flush on the desk.",
+          "label": "silver HP laptop"
+        },
+        {
+          "description": "An unlabelled document storage box resting on the desk in the background to the right.",
+          "label": "document storage box"
+        },
+        {
+          "description": "An empty letter tray positioned on the desk to the right of the laptop.",
+          "label": "letter tray"
+        },
+        {
+          "description": "A few black metal binder clips arranged on the desk surface in the foreground to the left.",
+          "label": "binder clips"
+        },
+        {
+          "description": "A modern corporate office desk with a smooth, clean surface reflecting the warm daylight.",
+          "label": "office desk"
+        },
+        {
+          "description": "Blurred glass office partitions receding into the background.",
+          "label": "glass partitions"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits closed on a modern corporate office desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. The laptop rests flush, its whole base fully in contact with the desk surface, with no shadow gap beneath it. To the right of the laptop in the mid-ground sits an empty letter tray, with an unlabelled document storage box placed further back on the right. A few binder clips are arranged on the desk in the foreground to the left. Warm daylight streams across the work surface from a window on the left, illuminating the orderly setup. <scene> A closed silver HP laptop sits on a modern corporate office desk alongside an empty letter tray, a document storage box, and binder clips. <type> photorealistic, lifestyle photography, corporate photography <lighting> soft_light, soft warm daylight from window screen-left, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base, logo clear space maintained <background> A modern corporate office environment with blurred glass partitions and a distant white whiteboard on the wall to the left; a warm-neutral color grade with soft warm shadows and bright highlights, maintaining a clean and orderly feel. <camera> medium_shot, eye level <entities> <label> silver HP laptop <description> A closed silver HP laptop, viewed from the back with the circular ``hp`` logo centered on the lid, sitting flush on the desk. <label> document storage box <description> An unlabelled document storage box resting on the desk in the background to the right. <label> letter tray <description> An empty letter tray positioned on the desk to the right of the laptop. <label> binder clips <description> A few black metal binder clips arranged on the desk surface in the foreground to the left. <label> office desk <description> A modern corporate office desk with a smooth, clean surface reflecting the warm daylight. <label> glass partitions <description> Blurred glass office partitions receding into the background.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/2cf73e4257f74616e762__elitebook__laptop_BackRightCloseUp__p2.png"
+    },
+    {
+      "prompt_key": "elitebook__laptop_BackRightCloseUp::p4",
+      "row_id": "elitebook__laptop_BackRightCloseUp__p4",
+      "device_id": "elitebook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_BackRightCloseUp",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "shelving",
+          "description": "bookshelf"
+        },
+        {
+          "family": "plant",
+          "description": "potted plant"
+        }
+      ],
+      "evidence_summary": "The rewrite explicitly adds a blurred bookshelf on the right and a potted plant on the left.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-11",
+          "name": "Ceramic mug",
+          "groups": [
+            "cup_mug"
+          ]
+        },
+        {
+          "id": "HOM-14",
+          "name": "Coaster",
+          "groups": [
+            "coaster"
+          ]
+        }
+      ],
+      "original_prompt": "A modern home workspace near soft window light, with a ceramic mug resting on a coaster during a small break between focused work and calls. The desk feels warm, neutral, and casually used.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits resting flush on a warm wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A ceramic mug on a coaster rests on the desk to the right of the laptop, while soft window light streams in from the left. In the background, a modern home workspace features a blurred bookshelf against the wall on the right and a potted plant on the left, creating a casually used, warm, and neutral environment.",
+      "rewritten_scene": "A closed silver HP laptop sits on a warm wooden desk in a modern home workspace, accompanied by a ceramic mug on a coaster.",
+      "rewritten_background": "a modern home workspace featuring a blurred bookshelf against the wall on the right and a potted plant near a window on the left; a warm-neutral color grade with soft golden daylight, natural wood tones, and a clean atmosphere",
+      "rewritten_entities": [
+        {
+          "description": "A closed silver HP laptop viewed from the rear, with the circular ``hp`` logo centered on the lid.",
+          "label": "silver HP laptop"
+        },
+        {
+          "description": "A matte neutral ceramic mug resting on a round coaster on the desk to the right of the laptop.",
+          "label": "ceramic mug"
+        },
+        {
+          "description": "A warm, natural wood desk surface holding the laptop and mug.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "A softly blurred wooden bookshelf against the wall in the background on the right.",
+          "label": "bookshelf"
+        },
+        {
+          "description": "A blurred green potted plant in the background on the left near the window.",
+          "label": "potted plant"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits resting flush on a warm wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A ceramic mug on a coaster rests on the desk to the right of the laptop, while soft window light streams in from the left. In the background, a modern home workspace features a blurred bookshelf against the wall on the right and a potted plant on the left, creating a casually used, warm, and neutral environment. <scene> A closed silver HP laptop sits on a warm wooden desk in a modern home workspace, accompanied by a ceramic mug on a coaster. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm daylight from window screen-left, diffused, gentle shadows, soft negative fill <composition> medium shot, shallow depth of field with background softly blurred, the closed laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base, logo clear space maintained <background> a modern home workspace featuring a blurred bookshelf against the wall on the right and a potted plant near a window on the left; a warm-neutral color grade with soft golden daylight, natural wood tones, and a clean atmosphere <camera> medium_shot, eye level <entities> <label> silver HP laptop <description> A closed silver HP laptop viewed from the rear, with the circular ``hp`` logo centered on the lid. <label> ceramic mug <description> A matte neutral ceramic mug resting on a round coaster on the desk to the right of the laptop. <label> wooden desk <description> A warm, natural wood desk surface holding the laptop and mug. <label> bookshelf <description> A softly blurred wooden bookshelf against the wall in the background on the right. <label> potted plant <description> A blurred green potted plant in the background on the left near the window.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/8c05ac51d1a40f60408d__elitebook__laptop_BackRightCloseUp__p4.png"
+    },
+    {
+      "prompt_key": "elitebook__laptop_BackRightCloseUp::p5",
+      "row_id": "elitebook__laptop_BackRightCloseUp__p5",
+      "device_id": "elitebook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_BackRightCloseUp",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "shelving",
+          "description": "bookshelf"
+        }
+      ],
+      "evidence_summary": "The rewrite explicitly adds a softly blurred bookshelf against the wall on the left.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-08",
+          "name": "Reading glasses",
+          "groups": [
+            "eyeglasses"
+          ]
+        },
+        {
+          "id": "HOM-09",
+          "name": "Glasses case",
+          "groups": [
+            "eyeglass_case"
+          ]
+        }
+      ],
+      "original_prompt": "A modern home workspace with reading glasses beside a closed plain eyeglass case on a wooden desk. Soft daylight and warm neutral tones make the area feel quiet and lived-in for focused reading between calls.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits flush on a light wooden desk in the center, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the right of the laptop on the desk, place a pair of reading glasses beside a closed plain eyeglass case. In the background, a softly blurred bookshelf stands against the wall on the left, and a window is visible on the right. Soft daylight illuminates the scene with warm neutral tones, creating a quiet, lived-in modern home workspace.",
+      "rewritten_scene": "A closed silver HP laptop sits on a wooden desk in a modern home workspace, accompanied by reading glasses and an eyeglass case.",
+      "rewritten_background": "A modern home workspace featuring a blurred wooden bookshelf against the wall on the left and a window in the far background on the right; a warm-neutral color grade with soft golden daylight, natural wood tones, and clean modern surfaces.",
+      "rewritten_entities": [
+        {
+          "description": "A closed silver HP laptop viewed from the rear, featuring the circular ``hp`` logo centered on the lid, sitting flush on the desk.",
+          "label": "silver HP laptop"
+        },
+        {
+          "description": "A pair of wire-rimmed reading glasses resting on the desk to the right of the laptop.",
+          "label": "reading glasses"
+        },
+        {
+          "description": "A closed, plain dark eyeglass case positioned beside the reading glasses on the right side of the desk.",
+          "label": "eyeglass case"
+        },
+        {
+          "description": "A smooth, light wooden desk surface filling the foreground and supporting the laptop and accessories.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "A softly blurred wooden bookshelf standing against the wall in the background on the left.",
+          "label": "bookshelf"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits flush on a light wooden desk in the center, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the right of the laptop on the desk, place a pair of reading glasses beside a closed plain eyeglass case. In the background, a softly blurred bookshelf stands against the wall on the left, and a window is visible on the right. Soft daylight illuminates the scene with warm neutral tones, creating a quiet, lived-in modern home workspace. <scene> A closed silver HP laptop sits on a wooden desk in a modern home workspace, accompanied by reading glasses and an eyeglass case. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm daylight from window screen-right, diffused, gentle shadows, soft negative fill on shadow side <composition> medium shot, shallow depth of field with background softly blurred, the laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base, logo clear space maintained <background> A modern home workspace featuring a blurred wooden bookshelf against the wall on the left and a window in the far background on the right; a warm-neutral color grade with soft golden daylight, natural wood tones, and clean modern surfaces. <camera> medium_shot, eye level <entities> <label> silver HP laptop <description> A closed silver HP laptop viewed from the rear, featuring the circular ``hp`` logo centered on the lid, sitting flush on the desk. <label> reading glasses <description> A pair of wire-rimmed reading glasses resting on the desk to the right of the laptop. <label> eyeglass case <description> A closed, plain dark eyeglass case positioned beside the reading glasses on the right side of the desk. <label> wooden desk <description> A smooth, light wooden desk surface filling the foreground and supporting the laptop and accessories. <label> bookshelf <description> A softly blurred wooden bookshelf standing against the wall in the background on the left.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/7d3a704d0afcecce5a76__elitebook__laptop_BackRightCloseUp__p5.png"
+    },
+    {
+      "prompt_key": "elitebook__laptop_FrontCloseUp::p1",
+      "row_id": "elitebook__laptop_FrontCloseUp__p1",
+      "device_id": "elitebook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontCloseUp",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "shelving",
+          "description": "bookshelf"
+        }
+      ],
+      "evidence_summary": "The rewrite explicitly adds a bookshelf against the wall on the left.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-03",
+          "name": "Paper notebook",
+          "groups": [
+            "notebook"
+          ]
+        },
+        {
+          "id": "HOM-11",
+          "name": "Ceramic mug",
+          "groups": [
+            "cup_mug"
+          ]
+        },
+        {
+          "id": "HOM-36",
+          "name": "Soft curtains",
+          "groups": [
+            "curtains"
+          ]
+        }
+      ],
+      "original_prompt": "A lived-in home workspace with a wooden desk holding an open paper notebook with blank, unmarked pages and a ceramic mug. Soft curtains filter daylight from a nearby window, creating a warm, casual place for focused work.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits resting flush on a warm wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open paper notebook with blank pages lies on the desk to the left of the laptop, and a matte cream ceramic mug sits to the right. In the background, soft curtains frame a window on the right, filtering warm natural daylight into the clean, lived-in home workspace, while a bookshelf stands against the wall on the left.",
+      "rewritten_scene": "An open silver HP laptop sits on a wooden desk in a warm, modern home workspace, accompanied by a blank notebook and a ceramic mug.",
+      "rewritten_background": "A clean, lived-in home office setting with soft curtains framing a window on the right, and a softly blurred bookshelf against the wall on the left; a warm-neutral color grade with cream and natural wood tones.",
+      "rewritten_entities": [
+        {
+          "description": "An open silver HP laptop with a dark screen and grey keyboard, featuring the ``hp`` logo on the bottom bezel, positioned centrally on the desk.",
+          "label": "silver HP laptop"
+        },
+        {
+          "description": "An open paper notebook with blank, unmarked pages, resting on the wooden desk to the left of the laptop.",
+          "label": "open notebook"
+        },
+        {
+          "description": "A matte cream ceramic mug sitting on the desk to the right of the laptop.",
+          "label": "ceramic mug"
+        },
+        {
+          "description": "A warm natural wooden desk surface holding the laptop and props.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "Soft, light-colored curtains framing a window in the background on the right, filtering natural light.",
+          "label": "soft curtains"
+        },
+        {
+          "description": "A softly blurred wooden bookshelf standing against the wall in the background on the left.",
+          "label": "bookshelf"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits resting flush on a warm wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open paper notebook with blank pages lies on the desk to the left of the laptop, and a matte cream ceramic mug sits to the right. In the background, soft curtains frame a window on the right, filtering warm natural daylight into the clean, lived-in home workspace, while a bookshelf stands against the wall on the left. <scene> An open silver HP laptop sits on a wooden desk in a warm, modern home workspace, accompanied by a blank notebook and a ceramic mug. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm daylight from window screen-right, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base <background> A clean, lived-in home office setting with soft curtains framing a window on the right, and a softly blurred bookshelf against the wall on the left; a warm-neutral color grade with cream and natural wood tones. <camera> medium_shot, eye level <entities> <label> silver HP laptop <description> An open silver HP laptop with a dark screen and grey keyboard, featuring the ``hp`` logo on the bottom bezel, positioned centrally on the desk. <label> open notebook <description> An open paper notebook with blank, unmarked pages, resting on the wooden desk to the left of the laptop. <label> ceramic mug <description> A matte cream ceramic mug sitting on the desk to the right of the laptop. <label> wooden desk <description> A warm natural wooden desk surface holding the laptop and props. <label> soft curtains <description> Soft, light-colored curtains framing a window in the background on the right, filtering natural light. <label> bookshelf <description> A softly blurred wooden bookshelf standing against the wall in the background on the left.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/434cc73c48a5f003d4d6__elitebook__laptop_FrontCloseUp__p1.png"
+    },
+    {
+      "prompt_key": "elitebook__laptop_FrontLeftMedium::p1",
+      "row_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "device_id": "elitebook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontLeftMedium",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "chair",
+          "description": "armchair"
+        }
+      ],
+      "evidence_summary": "The rewrite explicitly adds a simple modern armchair farther back on the right.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-03",
+          "name": "Paper notebook",
+          "groups": [
+            "notebook"
+          ]
+        },
+        {
+          "id": "HOM-14",
+          "name": "Coaster",
+          "groups": [
+            "coaster"
+          ]
+        },
+        {
+          "id": "HOM-36",
+          "name": "Soft curtains",
+          "groups": [
+            "curtains"
+          ]
+        }
+      ],
+      "original_prompt": "A lived-in home workspace with a wooden desk near soft curtains, holding an open paper notebook with blank pages and a coaster set to one side. Warm natural light and simple residential furnishings make the area feel calm and ready for focused work.",
+      "rewritten_instruction": "Generate a scene where the laptop from Before_Image1 sits flush on a wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the right of the laptop on the desk, place an open paper notebook with blank pages and a coaster set. In the background on the left, soft curtains hang by a window, while a simple modern armchair sits further back on the right. Warm natural light illuminates the calm workspace, maintaining a clean and focused residential feel.",
+      "rewritten_scene": "An open silver HP laptop sits on a wooden desk in a calm, lived-in home workspace alongside a blank notebook and a coaster set.",
+      "rewritten_background": "Soft translucent curtains hanging by a window against the wall on the left; a simple modern residential armchair in the far background on the right; a warm-neutral color grade with golden daylight tones, natural wood, and soft shadows, maintaining a clean and modern feel.",
+      "rewritten_entities": [
+        {
+          "description": "An open silver laptop with a black screen and grey keyboard, positioned centrally on the desk.",
+          "label": "silver HP laptop"
+        },
+        {
+          "description": "A smooth wooden desk surface providing a warm, natural base for the workspace.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "An open paper notebook with blank pages resting on the desk to the right of the laptop.",
+          "label": "open notebook"
+        },
+        {
+          "description": "A simple coaster set placed near the notebook on the right side of the desk.",
+          "label": "coaster set"
+        },
+        {
+          "description": "Soft, translucent curtains hanging by a window in the background on the left.",
+          "label": "soft curtains"
+        },
+        {
+          "description": "A simple, modern residential armchair positioned in the far background on the right.",
+          "label": "armchair"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the laptop from Before_Image1 sits flush on a wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the right of the laptop on the desk, place an open paper notebook with blank pages and a coaster set. In the background on the left, soft curtains hang by a window, while a simple modern armchair sits further back on the right. Warm natural light illuminates the calm workspace, maintaining a clean and focused residential feel. <scene> An open silver HP laptop sits on a wooden desk in a calm, lived-in home workspace alongside a blank notebook and a coaster set. <type> photorealistic, lifestyle photography, interior design photography <lighting> soft_light, soft warm natural daylight from a window screen-left, diffused, gentle shadows, soft negative fill on shadow side <composition> medium shot, shallow depth of field with background softly blurred, the laptop in sharp focus at its position, sitting flush with no gap or shadow beneath its base, logo clear space maintained <background> Soft translucent curtains hanging by a window against the wall on the left; a simple modern residential armchair in the far background on the right; a warm-neutral color grade with golden daylight tones, natural wood, and soft shadows, maintaining a clean and modern feel. <camera> medium_shot, high angle <entities> <label> silver HP laptop <description> An open silver laptop with a black screen and grey keyboard, positioned centrally on the desk. <label> wooden desk <description> A smooth wooden desk surface providing a warm, natural base for the workspace. <label> open notebook <description> An open paper notebook with blank pages resting on the desk to the right of the laptop. <label> coaster set <description> A simple coaster set placed near the notebook on the right side of the desk. <label> soft curtains <description> Soft, translucent curtains hanging by a window in the background on the left. <label> armchair <description> A simple, modern residential armchair positioned in the far background on the right.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/c0a0076fa425bef1744e__elitebook__laptop_FrontLeftMedium__p1.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontCloseUp::p1",
+      "row_id": "tassel__printer_FrontCloseUp__p1",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontCloseUp",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "shelving",
+          "description": "bookshelf"
+        }
+      ],
+      "evidence_summary": "The rewritten background adds a blurred bookshelf against a light wall.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-06",
+          "name": "Stack of household papers",
+          "groups": [
+            "paper_documents"
+          ]
+        }
+      ],
+      "original_prompt": "A lived-in home workspace with a wooden desk near a window, warm natural light, and a small stack of household papers set down for sorting. The papers show only indistinct markings, keeping the scene practical and familiar without readable details.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush, its whole base fully in contact with a wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the right of the printer on the desk, place a small stack of household papers. A window on the left lets in warm natural light, while a blurred bookshelf stands against the wall in the background to complete the lived-in home workspace.",
+      "rewritten_scene": "A white and blue HP printer sits on a wooden desk beside a stack of papers in a warm, lived-in home workspace.",
+      "rewritten_background": "a lived-in home workspace featuring a blurred bookshelf against a light wall in the background; a warm-neutral color grade with golden wood tones and soft shadows",
+      "rewritten_entities": [
+        {
+          "description": "A white HP printer with a light blue top panel and the ``hp`` logo, front-facing with its paper output tray extended.",
+          "label": "HP printer"
+        },
+        {
+          "description": "A smooth wooden desk surface with warm tones, supporting the printer and papers.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "A small stack of household papers with indistinct markings, resting on the desk to the right of the printer.",
+          "label": "stack of papers"
+        },
+        {
+          "description": "A softly blurred wooden bookshelf standing against the wall in the background.",
+          "label": "bookshelf"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush, its whole base fully in contact with a wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the right of the printer on the desk, place a small stack of household papers. A window on the left lets in warm natural light, while a blurred bookshelf stands against the wall in the background to complete the lived-in home workspace. <scene> A white and blue HP printer sits on a wooden desk beside a stack of papers in a warm, lived-in home workspace. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm natural daylight from window screen-left, diffused, gentle shadows <composition> medium shot, shallow depth of field with the background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base <background> a lived-in home workspace featuring a blurred bookshelf against a light wall in the background; a warm-neutral color grade with golden wood tones and soft shadows <camera> medium_shot, eye level <entities> <label> HP printer <description> A white HP printer with a light blue top panel and the ``hp`` logo, front-facing with its paper output tray extended. <label> wooden desk <description> A smooth wooden desk surface with warm tones, supporting the printer and papers. <label> stack of papers <description> A small stack of household papers with indistinct markings, resting on the desk to the right of the printer. <label> bookshelf <description> A softly blurred wooden bookshelf standing against the wall in the background.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/c6746e9d3f541a5b9b43__tassel__printer_FrontCloseUp__p1.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontCloseUp::p2",
+      "row_id": "tassel__printer_FrontCloseUp__p2",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontCloseUp",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "plant",
+          "description": "potted plant"
+        }
+      ],
+      "evidence_summary": "The rewritten background adds a potted plant in the far background on the right.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-03",
+          "name": "Paper notebook",
+          "groups": [
+            "notebook"
+          ]
+        },
+        {
+          "id": "HOM-04",
+          "name": "Pen",
+          "groups": [
+            "pen"
+          ]
+        }
+      ],
+      "original_prompt": "A modern home table in warm daylight with an open paper notebook and a pen placed beside it, the notebook pages blank and unmarked. The simple setup feels ready for schoolwork, a household list, or a small planning moment at home.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits resting flush, its whole base fully in contact with a modern light wood home table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open paper notebook with blank pages and a pen rest on the table to the right of the printer. In the background, a softly blurred modern home interior features a window on the left letting in warm daylight, creating a clean, inviting space.",
+      "rewritten_scene": "A white and blue HP printer sits on a modern home table next to an open blank notebook and a pen in a warm, sunlit room.",
+      "rewritten_background": "A softly blurred modern home interior with a window on the left and a potted plant in the far background on the right; a warm-neutral color grade with golden daylight and natural wood tones, clean and inviting.",
+      "rewritten_entities": [
+        {
+          "description": "A white HP printer with a light blue top and a visible ``hp`` logo, front-facing with its paper output tray extended.",
+          "label": "HP printer"
+        },
+        {
+          "description": "An open paper notebook with blank, unmarked pages lying flat on the table to the right of the printer.",
+          "label": "open notebook"
+        },
+        {
+          "description": "A sleek pen resting on top of the blank notebook pages.",
+          "label": "pen"
+        },
+        {
+          "description": "A modern light wood home table providing a clean, smooth workspace.",
+          "label": "home table"
+        },
+        {
+          "description": "A blurred green potted plant in the far background on the right side of the room.",
+          "label": "potted plant"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits resting flush, its whole base fully in contact with a modern light wood home table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open paper notebook with blank pages and a pen rest on the table to the right of the printer. In the background, a softly blurred modern home interior features a window on the left letting in warm daylight, creating a clean, inviting space. <scene> A white and blue HP printer sits on a modern home table next to an open blank notebook and a pen in a warm, sunlit room. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm daylight from window screen-left, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base, clean and uncluttered arrangement <background> A softly blurred modern home interior with a window on the left and a potted plant in the far background on the right; a warm-neutral color grade with golden daylight and natural wood tones, clean and inviting. <camera> medium_shot, eye level <entities> <label> HP printer <description> A white HP printer with a light blue top and a visible ``hp`` logo, front-facing with its paper output tray extended. <label> open notebook <description> An open paper notebook with blank, unmarked pages lying flat on the table to the right of the printer. <label> pen <description> A sleek pen resting on top of the blank notebook pages. <label> home table <description> A modern light wood home table providing a clean, smooth workspace. <label> potted plant <description> A blurred green potted plant in the far background on the right side of the room.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/c30534aee111a33a42aa__tassel__printer_FrontCloseUp__p2.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontCloseUp::p3",
+      "row_id": "tassel__printer_FrontCloseUp__p3",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontCloseUp",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "sofa",
+          "description": "sofa"
+        },
+        {
+          "family": "plant",
+          "description": "potted plant"
+        }
+      ],
+      "evidence_summary": "The rewritten background adds a neutral-toned sofa and a green potted plant.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-27",
+          "name": "Jigsaw puzzle",
+          "groups": [
+            "jigsaw_puzzle"
+          ]
+        }
+      ],
+      "original_prompt": "A modern home living-room table in warm natural light with a partially assembled jigsaw puzzle showing a quiet landscape and no people or faces. The relaxed setup feels like an everyday family activity left ready to continue.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush on a modern home living-room table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A partially assembled jigsaw puzzle of a quiet landscape rests on the table to the right of the printer, while a comfortable sofa and a potted plant are visible in the softly blurred background. Warm natural light fills the room from a window on the left, creating a relaxed, everyday family atmosphere.",
+      "rewritten_scene": "A white and blue HP printer sits next to a partially assembled jigsaw puzzle on a modern living-room table in a warm, relaxed home setting.",
+      "rewritten_background": "a comfortable living room setting with a blurred neutral-toned sofa in the mid-ground and a green potted plant against a light wall in the far background; a warm-neutral color grade with soft golden daylight tones, feeling clean and modern",
+      "rewritten_entities": [
+        {
+          "description": "A white HP printer with a light blue top panel and extended paper output tray, sitting flush on the living-room table. The blue ``hp`` logo is visible on the top lid.",
+          "label": "HP printer"
+        },
+        {
+          "description": "A partially assembled jigsaw puzzle depicting a quiet landscape, scattered with loose pieces, resting on the table to the right of the printer.",
+          "label": "jigsaw puzzle"
+        },
+        {
+          "description": "A modern, smooth-surfaced living-room table holding the printer and the puzzle.",
+          "label": "living-room table"
+        },
+        {
+          "description": "A comfortable, neutral-toned sofa softly blurred in the mid-ground behind the table.",
+          "label": "sofa"
+        },
+        {
+          "description": "A green potted houseplant standing against the wall in the far background.",
+          "label": "potted plant"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush on a modern home living-room table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A partially assembled jigsaw puzzle of a quiet landscape rests on the table to the right of the printer, while a comfortable sofa and a potted plant are visible in the softly blurred background. Warm natural light fills the room from a window on the left, creating a relaxed, everyday family atmosphere. <scene> A white and blue HP printer sits next to a partially assembled jigsaw puzzle on a modern living-room table in a warm, relaxed home setting. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm natural daylight from a window screen-left, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base <background> a comfortable living room setting with a blurred neutral-toned sofa in the mid-ground and a green potted plant against a light wall in the far background; a warm-neutral color grade with soft golden daylight tones, feeling clean and modern <camera> medium_shot, high angle <entities> <label> HP printer <description> A white HP printer with a light blue top panel and extended paper output tray, sitting flush on the living-room table. The blue ``hp`` logo is visible on the top lid. <label> jigsaw puzzle <description> A partially assembled jigsaw puzzle depicting a quiet landscape, scattered with loose pieces, resting on the table to the right of the printer. <label> living-room table <description> A modern, smooth-surfaced living-room table holding the printer and the puzzle. <label> sofa <description> A comfortable, neutral-toned sofa softly blurred in the mid-ground behind the table. <label> potted plant <description> A green potted houseplant standing against the wall in the far background.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/9e726ac4839fee00a678__tassel__printer_FrontCloseUp__p3.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontCloseUp::p5",
+      "row_id": "tassel__printer_FrontCloseUp__p5",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontCloseUp",
+      "environment": "Creative Studio",
+      "added_items": [
+        {
+          "family": "plant",
+          "description": "potted plant"
+        }
+      ],
+      "evidence_summary": "The rewritten background adds a blurred potted plant on the right.",
+      "upstream_declared_props": [
+        {
+          "id": "STU-11",
+          "name": "Fabric swatches",
+          "groups": [
+            "fabric_swatches"
+          ]
+        },
+        {
+          "id": "STU-12",
+          "name": "Color swatches",
+          "groups": [
+            "color_swatches"
+          ]
+        }
+      ],
+      "original_prompt": "A bright creative studio worktable with unlabelled fabric swatches and unlabelled color swatches laid out in a small, casual grouping. Warm natural light keeps the materials clear and tactile, suggesting a simple project in progress.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush on a bright creative studio worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the left of the printer on the table, place a small, casual grouping of unlabelled fabric swatches and color swatches. In the background on the right, place a blurred potted plant against a light wall, with a window further back on the left. Warm natural light streams in from the left, illuminating the tactile materials while keeping the printer sharp.",
+      "rewritten_scene": "A white and blue HP printer sits on a bright creative studio worktable alongside a casual grouping of fabric and color swatches.",
+      "rewritten_background": "A bright creative studio setting with a light wall; a blurred potted plant sits in the background on the right, and a window is visible further back on the left; a warm-neutral color grade with soft golden daylight and clean white tones.",
+      "rewritten_entities": [
+        {
+          "description": "A white and light blue HP printer with its paper output tray extended, sitting flush on the worktable. The blue ``hp`` logo is clearly visible on the top lid.",
+          "label": "HP printer"
+        },
+        {
+          "description": "A bright, smooth worktable surface providing a clean foundation for the printer and design materials.",
+          "label": "creative studio worktable"
+        },
+        {
+          "description": "A small, casual grouping of unlabelled, textured fabric swatches laid out on the table to the left of the printer.",
+          "label": "fabric swatches"
+        },
+        {
+          "description": "Several unlabelled paper color swatches scattered gently next to the fabric on the left side of the desk.",
+          "label": "color swatches"
+        },
+        {
+          "description": "A softly blurred green potted plant sitting against the light wall in the background on the right.",
+          "label": "potted plant"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush on a bright creative studio worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. To the left of the printer on the table, place a small, casual grouping of unlabelled fabric swatches and color swatches. In the background on the right, place a blurred potted plant against a light wall, with a window further back on the left. Warm natural light streams in from the left, illuminating the tactile materials while keeping the printer sharp. <scene> A white and blue HP printer sits on a bright creative studio worktable alongside a casual grouping of fabric and color swatches. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm natural daylight from window screen-left, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap beneath its base, logo clear space maintained <background> A bright creative studio setting with a light wall; a blurred potted plant sits in the background on the right, and a window is visible further back on the left; a warm-neutral color grade with soft golden daylight and clean white tones. <camera> medium_shot, high angle <entities> <label> HP printer <description> A white and light blue HP printer with its paper output tray extended, sitting flush on the worktable. The blue ``hp`` logo is clearly visible on the top lid. <label> creative studio worktable <description> A bright, smooth worktable surface providing a clean foundation for the printer and design materials. <label> fabric swatches <description> A small, casual grouping of unlabelled, textured fabric swatches laid out on the table to the left of the printer. <label> color swatches <description> Several unlabelled paper color swatches scattered gently next to the fabric on the left side of the desk. <label> potted plant <description> A softly blurred green potted plant sitting against the light wall in the background on the right.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/c66373a1ee2e06ad55e6__tassel__printer_FrontCloseUp__p5.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontLeftMedium::p1",
+      "row_id": "tassel__printer_FrontLeftMedium__p1",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontLeftMedium",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "plant",
+          "description": "potted plant"
+        }
+      ],
+      "evidence_summary": "The rewrite adds a blurred potted plant against the wall on the left.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-05",
+          "name": "Document folder",
+          "groups": [
+            "document_folder"
+          ]
+        },
+        {
+          "id": "HOM-06",
+          "name": "Stack of household papers",
+          "groups": [
+            "paper_documents"
+          ]
+        },
+        {
+          "id": "HOM-36",
+          "name": "Soft curtains",
+          "groups": [
+            "curtains"
+          ]
+        }
+      ],
+      "original_prompt": "A modern home workspace near a window, with an unlabelled folder open beside a small stack of plain household papers with indistinct markings. Soft curtains filter warm daylight across the desk surface, making the space feel practical, lived-in, and ready for everyday home organization.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush on a light wooden desk in a modern home workspace, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open unlabelled folder rests on the desk to the left of the printer, while a small stack of plain household papers sits to the right. In the background, a window with soft curtains on the right filters warm daylight into the room, with a blurred potted plant against the wall on the left.",
+      "rewritten_scene": "A white and blue HP printer sits on a light wooden desk in a modern home workspace, flanked by an open folder and a stack of household papers near a sunlit window.",
+      "rewritten_background": "a window with soft translucent curtains in the background on the right, and a blurred potted plant against a light beige wall on the left; a warm-neutral color grade with soft golden daylight and natural wood tones, maintaining a clean and modern feel",
+      "rewritten_entities": [
+        {
+          "description": "A compact white and light blue HP printer with its top lid closed, positioned in the center of the desk. The blue ``hp`` logo is visible on the top lid.",
+          "label": "HP printer"
+        },
+        {
+          "description": "An open, unlabelled manila folder resting on the desk surface to the left of the printer.",
+          "label": "open folder"
+        },
+        {
+          "description": "A small stack of plain white household papers with indistinct markings, sitting on the desk to the right of the printer.",
+          "label": "stack of papers"
+        },
+        {
+          "description": "A light wooden desk surface spanning the foreground, providing a clean and practical workspace.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "A window with soft, translucent white curtains in the background on the right, filtering warm daylight into the room.",
+          "label": "window and curtains"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush on a light wooden desk in a modern home workspace, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open unlabelled folder rests on the desk to the left of the printer, while a small stack of plain household papers sits to the right. In the background, a window with soft curtains on the right filters warm daylight into the room, with a blurred potted plant against the wall on the left. <scene> A white and blue HP printer sits on a light wooden desk in a modern home workspace, flanked by an open folder and a stack of household papers near a sunlit window. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm daylight from a window screen-right, diffused, gentle shadows <composition> medium shot, shallow depth of field with the background softly blurred, the printer in sharp focus at its position in the center, sitting flush on the desk with no gap or shadow beneath its base <background> a window with soft translucent curtains in the background on the right, and a blurred potted plant against a light beige wall on the left; a warm-neutral color grade with soft golden daylight and natural wood tones, maintaining a clean and modern feel <camera> medium_shot, high angle <entities> <label> HP printer <description> A compact white and light blue HP printer with its top lid closed, positioned in the center of the desk. The blue ``hp`` logo is visible on the top lid. <label> open folder <description> An open, unlabelled manila folder resting on the desk surface to the left of the printer. <label> stack of papers <description> A small stack of plain white household papers with indistinct markings, sitting on the desk to the right of the printer. <label> wooden desk <description> A light wooden desk surface spanning the foreground, providing a clean and practical workspace. <label> window and curtains <description> A window with soft, translucent white curtains in the background on the right, filtering warm daylight into the room.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/a00867a10fc2cbfa4225__tassel__printer_FrontLeftMedium__p1.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontLeftMedium::p2",
+      "row_id": "tassel__printer_FrontLeftMedium__p2",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontLeftMedium",
+      "environment": "Education",
+      "added_items": [
+        {
+          "family": "shelving",
+          "description": "library bookshelves"
+        },
+        {
+          "family": "book",
+          "description": "books on shelves"
+        }
+      ],
+      "evidence_summary": "The rewrite adds tall library bookshelves filled with neatly arranged books.",
+      "upstream_declared_props": [
+        {
+          "id": "EDU-02",
+          "name": "Exercise notebook",
+          "groups": [
+            "notebook"
+          ]
+        },
+        {
+          "id": "EDU-03",
+          "name": "Pencil",
+          "groups": [
+            "pencil"
+          ]
+        },
+        {
+          "id": "EDU-28",
+          "name": "Sand timer",
+          "groups": [
+            "hourglass"
+          ]
+        }
+      ],
+      "original_prompt": "A bright library study table is set up for a simple learning activity, with an exercise notebook open to blank pages, a few pencils, and a sand timer nearby. Natural light falls across the table, keeping the scene calm, tidy, and familiar.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush on a bright wooden library study table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open exercise notebook with blank pages and a few pencils rest on the table to the left of the printer, while a small sand timer sits to the right. In the background, tall library bookshelves stand against the wall on the left, and a large window is visible in the far background on the right, bathed in calm natural light.",
+      "rewritten_scene": "A white and blue HP printer sits on a bright wooden study table in a modern library, surrounded by an open notebook, pencils, and a sand timer.",
+      "rewritten_background": "tall wooden library bookshelves against the wall on the left, and a large window in the far background on the right; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, rich but balanced tones",
+      "rewritten_entities": [
+        {
+          "description": "A white and light blue HP printer with its paper tray slightly extended, sitting on the study table. The blue ``hp`` logo is visible on the top cover.",
+          "label": "HP printer"
+        },
+        {
+          "description": "An open exercise notebook with blank white pages, lying flat on the table to the left of the printer.",
+          "label": "exercise notebook"
+        },
+        {
+          "description": "A few yellow wooden pencils resting on the table next to the open notebook.",
+          "label": "pencils"
+        },
+        {
+          "description": "A small glass sand timer with light blue sand, positioned on the table to the right of the printer.",
+          "label": "sand timer"
+        },
+        {
+          "description": "A bright, smooth light-wood library study table providing a clean workspace.",
+          "label": "study table"
+        },
+        {
+          "description": "Tall wooden library bookshelves filled with neatly arranged books, softly blurred in the background on the left.",
+          "label": "library bookshelves"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush on a bright wooden library study table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open exercise notebook with blank pages and a few pencils rest on the table to the left of the printer, while a small sand timer sits to the right. In the background, tall library bookshelves stand against the wall on the left, and a large window is visible in the far background on the right, bathed in calm natural light. <scene> A white and blue HP printer sits on a bright wooden study table in a modern library, surrounded by an open notebook, pencils, and a sand timer. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft cool daylight from a large window screen-right, diffused, gentle shadows, soft negative fill on shadow side <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base, clean near-mid-far layering <background> tall wooden library bookshelves against the wall on the left, and a large window in the far background on the right; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, rich but balanced tones <camera> medium_shot, high angle <entities> <label> HP printer <description> A white and light blue HP printer with its paper tray slightly extended, sitting on the study table. The blue ``hp`` logo is visible on the top cover. <label> exercise notebook <description> An open exercise notebook with blank white pages, lying flat on the table to the left of the printer. <label> pencils <description> A few yellow wooden pencils resting on the table next to the open notebook. <label> sand timer <description> A small glass sand timer with light blue sand, positioned on the table to the right of the printer. <label> study table <description> A bright, smooth light-wood library study table providing a clean workspace. <label> library bookshelves <description> Tall wooden library bookshelves filled with neatly arranged books, softly blurred in the background on the left.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/8d9891caf28f18b9951f__tassel__printer_FrontLeftMedium__p2.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontLeftMedium::p6",
+      "row_id": "tassel__printer_FrontLeftMedium__p6",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontLeftMedium",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "curtains",
+          "description": "sheer curtains"
+        }
+      ],
+      "evidence_summary": "The rewritten background adds a window with sheer curtains.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-15",
+          "name": "Teapot",
+          "groups": [
+            "teapot"
+          ]
+        },
+        {
+          "id": "HOM-19",
+          "name": "Serving tray",
+          "groups": [
+            "serving_tray"
+          ]
+        },
+        {
+          "id": "HOM-20",
+          "name": "Folded cloth napkin",
+          "groups": [
+            "napkin"
+          ]
+        },
+        {
+          "id": "HOM-31",
+          "name": "Comfortable sofa",
+          "groups": [
+            "sofa"
+          ]
+        }
+      ],
+      "original_prompt": "A modern home living room has a serving tray on a side table with a teapot and a folded cloth napkin. A comfortable sofa sits behind it in warm natural light, creating a cozy, lived-in household setting.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush on a light wood console table in a modern living room, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions and no shadow gap beneath its base. To the left of the printer on the table rests a serving tray holding a teapot and a folded cloth napkin. In the background, a comfortable cream sofa sits softly out of focus, with warm natural light streaming from a window on the right.",
+      "rewritten_scene": "A white HP printer sits on a wooden console table next to a serving tray with a teapot in a cozy, modern home living room.",
+      "rewritten_background": "a comfortable modern cream sofa in the mid-ground behind the console table; a window with sheer curtains in the far background on the right; a warm-neutral color grade with cream, light wood, and soft golden daylight tones, maintaining a clean and modern aesthetic",
+      "rewritten_entities": [
+        {
+          "description": "A white and light blue HP printer with its paper tray extended, viewed from a slightly elevated front-left angle, featuring the ``hp`` logo on the top cover.",
+          "label": "HP printer"
+        },
+        {
+          "description": "A light wood console table providing a sturdy, flat surface for the printer and tray in the mid-ground.",
+          "label": "console table"
+        },
+        {
+          "description": "A wooden serving tray resting on the table to the left of the printer, holding a ceramic teapot and a folded cloth napkin.",
+          "label": "serving tray"
+        },
+        {
+          "description": "A matte white ceramic teapot sitting on the serving tray beside a neatly folded linen napkin.",
+          "label": "teapot"
+        },
+        {
+          "description": "A comfortable, modern cream-colored sofa positioned in the background behind the table, softly blurred.",
+          "label": "sofa"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush on a light wood console table in a modern living room, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions and no shadow gap beneath its base. To the left of the printer on the table rests a serving tray holding a teapot and a folded cloth napkin. In the background, a comfortable cream sofa sits softly out of focus, with warm natural light streaming from a window on the right. <scene> A white HP printer sits on a wooden console table next to a serving tray with a teapot in a cozy, modern home living room. <type> photorealistic, lifestyle photography, interior design photography <lighting> soft_light, soft warm daylight from a window screen-right, diffused, gentle shadows, soft negative fill on shadow side <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base, clear near-mid-far layering <background> a comfortable modern cream sofa in the mid-ground behind the console table; a window with sheer curtains in the far background on the right; a warm-neutral color grade with cream, light wood, and soft golden daylight tones, maintaining a clean and modern aesthetic <camera> medium_shot, high angle <entities> <label> HP printer <description> A white and light blue HP printer with its paper tray extended, viewed from a slightly elevated front-left angle, featuring the ``hp`` logo on the top cover. <label> console table <description> A light wood console table providing a sturdy, flat surface for the printer and tray in the mid-ground. <label> serving tray <description> A wooden serving tray resting on the table to the left of the printer, holding a ceramic teapot and a folded cloth napkin. <label> teapot <description> A matte white ceramic teapot sitting on the serving tray beside a neatly folded linen napkin. <label> sofa <description> A comfortable, modern cream-colored sofa positioned in the background behind the table, softly blurred.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/8d7ad735ae7b3d4fc8e8__tassel__printer_FrontLeftMedium__p6.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontRightCloseUp::p1",
+      "row_id": "tassel__printer_FrontRightCloseUp__p1",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "shelving",
+          "description": "bookshelf"
+        }
+      ],
+      "evidence_summary": "The rewrite adds a softly blurred wooden bookshelf against the wall on the left.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-05",
+          "name": "Document folder",
+          "groups": [
+            "document_folder"
+          ]
+        },
+        {
+          "id": "HOM-06",
+          "name": "Stack of household papers",
+          "groups": [
+            "paper_documents"
+          ]
+        }
+      ],
+      "original_prompt": "A lived-in home workspace with a wooden desk near a window, holding an open unlabelled folder and a small stack of household papers with indistinct markings. Warm natural light keeps the home task area tidy and practical.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush on a wooden desk in a lived-in home workspace, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open unlabelled folder rests on the desk to the left of the printer, and a small stack of household papers sits to the right. In the background, a window on the right lets in warm natural light, while a softly blurred bookshelf stands against the wall on the left.",
+      "rewritten_scene": "A white and blue HP printer sits on a wooden desk in a lived-in home workspace alongside an open folder and a stack of household papers.",
+      "rewritten_background": "A bright window on the right side and a softly blurred wooden bookshelf against the wall on the left; a warm-neutral color grade with golden wood tones and soft highlights, maintaining a clean and practical feel.",
+      "rewritten_entities": [
+        {
+          "description": "A compact white HP printer with a light blue top accent and a visible ``hp`` logo on the closed lid. The paper output tray is extended at the bottom front.",
+          "label": "HP printer"
+        },
+        {
+          "description": "A smooth, light wooden desk surface providing a practical workspace for the printer and papers.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "An open, unlabelled manila folder resting on the desk to the left of the printer.",
+          "label": "open folder"
+        },
+        {
+          "description": "A small, neat stack of household papers with indistinct markings sitting on the desk to the right of the printer.",
+          "label": "stack of papers"
+        },
+        {
+          "description": "A softly blurred wooden bookshelf standing against the wall in the background on the left.",
+          "label": "bookshelf"
+        },
+        {
+          "description": "A bright window in the background on the right, letting in warm natural light.",
+          "label": "window"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush on a wooden desk in a lived-in home workspace, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open unlabelled folder rests on the desk to the left of the printer, and a small stack of household papers sits to the right. In the background, a window on the right lets in warm natural light, while a softly blurred bookshelf stands against the wall on the left. <scene> A white and blue HP printer sits on a wooden desk in a lived-in home workspace alongside an open folder and a stack of household papers. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, warm natural daylight from window screen-right, diffused, gentle shadows <composition> The printer is in sharp focus at its position in the center, sitting flush on the desk with no gap beneath its base; shallow depth of field with the background window and bookshelf softly blurred, keeping the workspace uncluttered. <background> A bright window on the right side and a softly blurred wooden bookshelf against the wall on the left; a warm-neutral color grade with golden wood tones and soft highlights, maintaining a clean and practical feel. <camera> medium_shot, high angle <entities> <label> HP printer <description> A compact white HP printer with a light blue top accent and a visible ``hp`` logo on the closed lid. The paper output tray is extended at the bottom front. <label> wooden desk <description> A smooth, light wooden desk surface providing a practical workspace for the printer and papers. <label> open folder <description> An open, unlabelled manila folder resting on the desk to the left of the printer. <label> stack of papers <description> A small, neat stack of household papers with indistinct markings sitting on the desk to the right of the printer. <label> bookshelf <description> A softly blurred wooden bookshelf standing against the wall in the background on the left. <label> window <description> A bright window in the background on the right, letting in warm natural light.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/f54c501716a279478fe9__tassel__printer_FrontRightCloseUp__p1.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontRightCloseUp::p2",
+      "row_id": "tassel__printer_FrontRightCloseUp__p2",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "plant",
+          "description": "potted plant"
+        }
+      ],
+      "evidence_summary": "The rewrite adds a blurred potted plant on the right near a window.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-03",
+          "name": "Paper notebook",
+          "groups": [
+            "notebook"
+          ]
+        },
+        {
+          "id": "HOM-04",
+          "name": "Pen",
+          "groups": [
+            "pen"
+          ]
+        }
+      ],
+      "original_prompt": "A modern home workspace with a wooden desk in soft daylight, holding an open paper notebook with blank pages and a pen set beside it. The arrangement feels ready for a quick learning note or household list without looking staged.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush on a light wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open paper notebook with blank pages and a pen rest on the desk in the foreground to the left. In the background on the right, a blurred potted plant sits near a window letting in soft daylight. The setting feels like a modern, clean home workspace ready for quick notes.",
+      "rewritten_scene": "A white HP printer sits on a light wooden desk in a modern home workspace, accompanied by an open blank notebook and a pen.",
+      "rewritten_background": "A bright modern home workspace with a blurred potted plant on the right near a window; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, balanced by warm wood tones.",
+      "rewritten_entities": [
+        {
+          "description": "A compact white and light blue HP printer with a closed top cover, positioned on the desk, featuring the ``hp`` logo on the top panel.",
+          "label": "HP printer"
+        },
+        {
+          "description": "An open paper notebook with blank pages lying flat on the desk in the foreground to the left.",
+          "label": "open notebook"
+        },
+        {
+          "description": "A sleek pen resting beside the open notebook on the wooden desk.",
+          "label": "pen"
+        },
+        {
+          "description": "A light wooden desk surface with a smooth finish, providing a warm base for the workspace.",
+          "label": "wooden desk"
+        },
+        {
+          "description": "A softly blurred green potted plant in the background to the right, near the light source.",
+          "label": "potted plant"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush on a light wooden desk, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. An open paper notebook with blank pages and a pen rest on the desk in the foreground to the left. In the background on the right, a blurred potted plant sits near a window letting in soft daylight. The setting feels like a modern, clean home workspace ready for quick notes. <scene> A white HP printer sits on a light wooden desk in a modern home workspace, accompanied by an open blank notebook and a pen. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft cool daylight from a window screen-right, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base <background> A bright modern home workspace with a blurred potted plant on the right near a window; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, balanced by warm wood tones. <camera> medium_shot, high angle <entities> <label> HP printer <description> A compact white and light blue HP printer with a closed top cover, positioned on the desk, featuring the ``hp`` logo on the top panel. <label> open notebook <description> An open paper notebook with blank pages lying flat on the desk in the foreground to the left. <label> pen <description> A sleek pen resting beside the open notebook on the wooden desk. <label> wooden desk <description> A light wooden desk surface with a smooth finish, providing a warm base for the workspace. <label> potted plant <description> A softly blurred green potted plant in the background to the right, near the light source.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/e1b925b44d4e5ae1fbda__tassel__printer_FrontRightCloseUp__p2.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontRightCloseUp::p3",
+      "row_id": "tassel__printer_FrontRightCloseUp__p3",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "environment": "Creative Studio",
+      "added_items": [
+        {
+          "family": "shelving",
+          "description": "studio shelving"
+        },
+        {
+          "family": "shelf_contents",
+          "description": "generic craft supplies"
+        }
+      ],
+      "evidence_summary": "The rewrite adds studio shelving holding unspecified craft supplies.",
+      "upstream_declared_props": [
+        {
+          "id": "STU-19",
+          "name": "Craft cutting mat",
+          "groups": [
+            "craft_cutting_mat"
+          ]
+        },
+        {
+          "id": "STU-18",
+          "name": "Scissors",
+          "groups": [
+            "scissors"
+          ]
+        },
+        {
+          "id": "STU-20",
+          "name": "Masking tape",
+          "groups": [
+            "masking_tape"
+          ]
+        }
+      ],
+      "original_prompt": "A bright creative studio worktable with a craft cutting mat, scissors, and a roll of masking tape arranged as if a simple project has just started. Natural light keeps the materials clear and ordinary.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush on a bright creative studio worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A craft cutting mat lies on the table in the foreground to the left, holding a pair of scissors and a roll of masking tape. In the background, a blurred studio shelving unit stands against the wall on the right, while natural light streams from a window on the left.",
+      "rewritten_scene": "A white and blue HP printer sits on a bright creative studio worktable alongside a craft cutting mat, scissors, and masking tape.",
+      "rewritten_background": "a bright creative studio setting with a softly blurred white shelving unit holding craft supplies against the wall on the right, and a window on the left; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, rich but balanced tones",
+      "rewritten_entities": [
+        {
+          "description": "A compact white HP printer with a light blue top and an extended paper output tray, sitting closed on the worktable. The silver ``hp`` logo is visible on the center of the top lid.",
+          "label": "HP printer"
+        },
+        {
+          "description": "A bright, smooth white worktable surface providing a clean workspace for the printer and craft materials.",
+          "label": "worktable"
+        },
+        {
+          "description": "A teal grid-lined craft cutting mat resting flat on the table in the foreground to the left of the printer.",
+          "label": "craft cutting mat"
+        },
+        {
+          "description": "A pair of metal scissors with light grey handles lying flat on the cutting mat.",
+          "label": "scissors"
+        },
+        {
+          "description": "A roll of beige masking tape placed near the scissors on the cutting mat.",
+          "label": "masking tape"
+        },
+        {
+          "description": "A softly blurred white shelving unit in the background on the right, holding various studio supplies.",
+          "label": "studio shelving"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush on a bright creative studio worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A craft cutting mat lies on the table in the foreground to the left, holding a pair of scissors and a roll of masking tape. In the background, a blurred studio shelving unit stands against the wall on the right, while natural light streams from a window on the left. <scene> A white and blue HP printer sits on a bright creative studio worktable alongside a craft cutting mat, scissors, and masking tape. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft cool daylight from window screen-left, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base <background> a bright creative studio setting with a softly blurred white shelving unit holding craft supplies against the wall on the right, and a window on the left; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, rich but balanced tones <camera> medium_shot, high angle <entities> <label> HP printer <description> A compact white HP printer with a light blue top and an extended paper output tray, sitting closed on the worktable. The silver ``hp`` logo is visible on the center of the top lid. <label> worktable <description> A bright, smooth white worktable surface providing a clean workspace for the printer and craft materials. <label> craft cutting mat <description> A teal grid-lined craft cutting mat resting flat on the table in the foreground to the left of the printer. <label> scissors <description> A pair of metal scissors with light grey handles lying flat on the cutting mat. <label> masking tape <description> A roll of beige masking tape placed near the scissors on the cutting mat. <label> studio shelving <description> A softly blurred white shelving unit in the background on the right, holding various studio supplies.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/ff594f0acbc29e6b51ae__tassel__printer_FrontRightCloseUp__p3.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontRightCloseUp::p4",
+      "row_id": "tassel__printer_FrontRightCloseUp__p4",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "environment": "Education",
+      "added_items": [
+        {
+          "family": "shelving",
+          "description": "low bookshelf"
+        },
+        {
+          "family": "shelf_contents",
+          "description": "generic educational materials"
+        },
+        {
+          "family": "whiteboard",
+          "description": "whiteboard"
+        }
+      ],
+      "evidence_summary": "The rewrite adds a low bookshelf filled with educational materials and a whiteboard.",
+      "upstream_declared_props": [
+        {
+          "id": "EDU-24",
+          "name": "Counting blocks",
+          "groups": [
+            "counting_blocks"
+          ]
+        },
+        {
+          "id": "EDU-28",
+          "name": "Sand timer",
+          "groups": [
+            "hourglass"
+          ]
+        }
+      ],
+      "original_prompt": "A classroom table set for a quick learning activity, with counting blocks grouped loosely beside a sand timer. Warm daylight keeps the small setup clear and approachable.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush on a light wooden classroom table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A group of colorful counting blocks is loosely scattered on the table to the left of the printer, and a small sand timer sits beside them. In the background, a softly blurred classroom setting features a low bookshelf on the left and a whiteboard on the wall to the right. Warm daylight illuminates the setup from the left, keeping the small learning station clear and approachable.",
+      "rewritten_scene": "A white and blue HP printer sits on a wooden classroom table next to colorful counting blocks and a sand timer in a bright, modern learning environment.",
+      "rewritten_background": "a modern classroom setting with a low wooden bookshelf filled with educational materials on the left and a whiteboard on the wall to the right; a warm-neutral color grade with soft golden daylight and bright highlights, maintaining a clean and approachable feel",
+      "rewritten_entities": [
+        {
+          "description": "A white HP printer with a light blue top panel and an extended paper tray, sitting closed on the table. The blue ``hp`` logo is visible on the top cover.",
+          "label": "HP printer"
+        },
+        {
+          "description": "A loose cluster of colorful plastic counting blocks resting on the table to the left of the printer.",
+          "label": "counting blocks"
+        },
+        {
+          "description": "A small sand timer with blue sand, positioned on the table near the counting blocks.",
+          "label": "sand timer"
+        },
+        {
+          "description": "A light wooden table surface providing a clean workspace for the learning activity.",
+          "label": "classroom table"
+        },
+        {
+          "description": "A low wooden bookshelf in the background on the left, holding various colorful educational materials.",
+          "label": "bookshelf"
+        },
+        {
+          "description": "A white dry-erase board mounted on the wall in the background to the right.",
+          "label": "whiteboard"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush on a light wooden classroom table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A group of colorful counting blocks is loosely scattered on the table to the left of the printer, and a small sand timer sits beside them. In the background, a softly blurred classroom setting features a low bookshelf on the left and a whiteboard on the wall to the right. Warm daylight illuminates the setup from the left, keeping the small learning station clear and approachable. <scene> A white and blue HP printer sits on a wooden classroom table next to colorful counting blocks and a sand timer in a bright, modern learning environment. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm daylight from window screen-left, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base, clear near-mid-far layering <background> a modern classroom setting with a low wooden bookshelf filled with educational materials on the left and a whiteboard on the wall to the right; a warm-neutral color grade with soft golden daylight and bright highlights, maintaining a clean and approachable feel <camera> medium_shot, high angle <entities> <label> HP printer <description> A white HP printer with a light blue top panel and an extended paper tray, sitting closed on the table. The blue ``hp`` logo is visible on the top cover. <label> counting blocks <description> A loose cluster of colorful plastic counting blocks resting on the table to the left of the printer. <label> sand timer <description> A small sand timer with blue sand, positioned on the table near the counting blocks. <label> classroom table <description> A light wooden table surface providing a clean workspace for the learning activity. <label> bookshelf <description> A low wooden bookshelf in the background on the left, holding various colorful educational materials. <label> whiteboard <description> A white dry-erase board mounted on the wall in the background to the right.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/2e60714b40e281963c13__tassel__printer_FrontRightCloseUp__p4.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontRightCloseUp::p5",
+      "row_id": "tassel__printer_FrontRightCloseUp__p5",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "environment": "Creative Studio",
+      "added_items": [
+        {
+          "family": "mood_board",
+          "description": "mood board"
+        }
+      ],
+      "evidence_summary": "The rewrite adds a blurred mood board leaning against the wall.",
+      "upstream_declared_props": [
+        {
+          "id": "STU-11",
+          "name": "Fabric swatches",
+          "groups": [
+            "fabric_swatches"
+          ]
+        },
+        {
+          "id": "STU-12",
+          "name": "Color swatches",
+          "groups": [
+            "color_swatches"
+          ]
+        }
+      ],
+      "original_prompt": "A bright creative studio worktable with unlabelled fabric swatches and unlabelled color swatches fanned loosely in the natural light. The surface feels like a simple visual planning moment, tidy but in use.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits resting flush on a bright creative studio worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. Unlabelled fabric swatches and color swatches are fanned loosely on the table to the left and right of the device. In the background, a blurred mood board leans against a light wall on the left, while natural light streams in from a window on the right.",
+      "rewritten_scene": "A white and blue HP printer sits on a bright creative studio worktable surrounded by fanned fabric and color swatches in a modern workspace.",
+      "rewritten_background": "A bright creative studio setting with a blurred mood board leaning against a light wall on the left, and a window on the right; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, rich but balanced tones.",
+      "rewritten_entities": [
+        {
+          "description": "A white and blue HP printer with its paper tray extended, sitting on the worktable. The blue ``hp`` logo is visible on the top cover.",
+          "label": "HP printer"
+        },
+        {
+          "description": "A collection of unlabelled, textured fabric swatches fanned loosely on the table to the left of the printer.",
+          "label": "fabric swatches"
+        },
+        {
+          "description": "Several unlabelled paper color swatches arranged neatly on the table to the right of the printer.",
+          "label": "color swatches"
+        },
+        {
+          "description": "A bright, smooth worktable surface providing a clean workspace for visual planning.",
+          "label": "worktable"
+        },
+        {
+          "description": "A softly blurred mood board leaning against the wall in the background on the left.",
+          "label": "mood board"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits resting flush on a bright creative studio worktable, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. Unlabelled fabric swatches and color swatches are fanned loosely on the table to the left and right of the device. In the background, a blurred mood board leans against a light wall on the left, while natural light streams in from a window on the right. <scene> A white and blue HP printer sits on a bright creative studio worktable surrounded by fanned fabric and color swatches in a modern workspace. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft cool daylight from window screen-right, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base, swatches arranged neatly beside it <background> A bright creative studio setting with a blurred mood board leaning against a light wall on the left, and a window on the right; a cool teal-cyan color grade with soft cool shadows and bright cool highlights, rich but balanced tones. <camera> medium_shot, high angle <entities> <label> HP printer <description> A white and blue HP printer with its paper tray extended, sitting on the worktable. The blue ``hp`` logo is visible on the top cover. <label> fabric swatches <description> A collection of unlabelled, textured fabric swatches fanned loosely on the table to the left of the printer. <label> color swatches <description> Several unlabelled paper color swatches arranged neatly on the table to the right of the printer. <label> worktable <description> A bright, smooth worktable surface providing a clean workspace for visual planning. <label> mood board <description> A softly blurred mood board leaning against the wall in the background on the left.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/292840a65f2f314fe328__tassel__printer_FrontRightCloseUp__p5.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontRightCloseUp::p6",
+      "row_id": "tassel__printer_FrontRightCloseUp__p6",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "environment": "Education",
+      "added_items": [
+        {
+          "family": "chair",
+          "description": "classroom chairs"
+        },
+        {
+          "family": "whiteboard",
+          "description": "whiteboard"
+        }
+      ],
+      "evidence_summary": "The rewrite adds empty modern classroom chairs and a whiteboard.",
+      "upstream_declared_props": [
+        {
+          "id": "EDU-01",
+          "name": "Textbook",
+          "groups": [
+            "book"
+          ]
+        },
+        {
+          "id": "EDU-03",
+          "name": "Pencil",
+          "groups": [
+            "pencil"
+          ]
+        }
+      ],
+      "original_prompt": "A quiet classroom table in warm daylight, with a closed textbook in a plain unmarked cover and a pencil resting nearby. The setting feels calm and ready for a simple study task.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits flush on a light wooden classroom table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A closed textbook in a plain unmarked cover and a yellow pencil rest on the table to its left. In the background, empty modern classroom chairs and a whiteboard recede softly out of focus on the right. Warm natural daylight streams in from a window on the right, creating a calm and clean study environment.",
+      "rewritten_scene": "A white and blue HP printer sits on a light wooden classroom table next to a closed textbook and a pencil in a quiet, sunlit study space.",
+      "rewritten_background": "a quiet classroom setting with empty modern chairs and a whiteboard receding in the background on the right; a warm-neutral color grade with golden daylight tones and soft shadows, maintaining a clean and modern feel",
+      "rewritten_entities": [
+        {
+          "description": "A white HP printer with a light blue top panel and a visible ``hp`` logo, sitting closed and flush on the table.",
+          "label": "HP printer"
+        },
+        {
+          "description": "A closed textbook with a plain, unmarked cover resting flat on the table to the left of the printer.",
+          "label": "textbook"
+        },
+        {
+          "description": "A standard yellow wooden pencil lying on the table next to the textbook.",
+          "label": "pencil"
+        },
+        {
+          "description": "A light wooden table providing a clean, smooth surface for the study setup.",
+          "label": "classroom table"
+        },
+        {
+          "description": "Empty modern classroom chairs softly blurred in the background to the right.",
+          "label": "classroom chairs"
+        },
+        {
+          "description": "A clean white dry-erase board mounted on the wall in the far background.",
+          "label": "whiteboard"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits flush on a light wooden classroom table, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A closed textbook in a plain unmarked cover and a yellow pencil rest on the table to its left. In the background, empty modern classroom chairs and a whiteboard recede softly out of focus on the right. Warm natural daylight streams in from a window on the right, creating a calm and clean study environment. <scene> A white and blue HP printer sits on a light wooden classroom table next to a closed textbook and a pencil in a quiet, sunlit study space. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm daylight from window screen-right, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base, uncluttered arrangement <background> a quiet classroom setting with empty modern chairs and a whiteboard receding in the background on the right; a warm-neutral color grade with golden daylight tones and soft shadows, maintaining a clean and modern feel <camera> medium_shot, high angle <entities> <label> HP printer <description> A white HP printer with a light blue top panel and a visible ``hp`` logo, sitting closed and flush on the table. <label> textbook <description> A closed textbook with a plain, unmarked cover resting flat on the table to the left of the printer. <label> pencil <description> A standard yellow wooden pencil lying on the table next to the textbook. <label> classroom table <description> A light wooden table providing a clean, smooth surface for the study setup. <label> classroom chairs <description> Empty modern classroom chairs softly blurred in the background to the right. <label> whiteboard <description> A clean white dry-erase board mounted on the wall in the far background.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/d6b35723ea4a0b2c4607__tassel__printer_FrontRightCloseUp__p6.png"
+    },
+    {
+      "prompt_key": "tassel__printer_FrontWide::p2",
+      "row_id": "tassel__printer_FrontWide__p2",
+      "device_id": "tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontWide",
+      "environment": "Home",
+      "added_items": [
+        {
+          "family": "sofa",
+          "description": "sofa"
+        }
+      ],
+      "evidence_summary": "The rewritten background adds a light-colored sofa receding behind the rug and floor cushion.",
+      "upstream_declared_props": [
+        {
+          "id": "HOM-27",
+          "name": "Jigsaw puzzle",
+          "groups": [
+            "jigsaw_puzzle"
+          ]
+        },
+        {
+          "id": "HOM-23",
+          "name": "Small dish for keys",
+          "groups": [
+            "dish_tray"
+          ]
+        },
+        {
+          "id": "HOM-28",
+          "name": "Decorative candle",
+          "groups": [
+            "candle"
+          ]
+        },
+        {
+          "id": "HOM-34",
+          "name": "Cushion",
+          "groups": [
+            "cushion"
+          ]
+        },
+        {
+          "id": "HOM-35",
+          "name": "Woven rug",
+          "groups": [
+            "rug"
+          ]
+        }
+      ],
+      "original_prompt": "A modern home living room with a low table set up for a quiet family activity: a jigsaw puzzle showing a landscape scene, a small dish for keys near the edge, and a decorative candle. A cushion rests on a woven rug nearby, with warm natural light giving the room a cozy, lived-in atmosphere.",
+      "rewritten_instruction": "Generate a scene where the printer from Before_Image1 sits resting flush on a low wooden table in a modern living room, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A partially completed jigsaw puzzle of a landscape lies on the table to the right of the printer; a decorative candle and a small dish for keys sit near the front edge. In the background, a woven rug with a floor cushion rests on the floor, softly blurred. Warm natural light fills the cozy, lived-in space.",
+      "rewritten_scene": "A white and blue HP printer sits on a low wooden table next to a jigsaw puzzle and a decorative candle in a cozy, modern living room.",
+      "rewritten_background": "A cozy modern living room setting with a woven rug and a floor cushion on the floor in the mid-ground, and a light-colored sofa receding in the background; a warm-neutral color grade with soft golden daylight tones, clean and inviting.",
+      "rewritten_entities": [
+        {
+          "description": "A white HP printer with a blue top panel and a closed paper tray, featuring a visible ``hp`` logo on the top cover, sitting flush on the low table.",
+          "label": "HP printer"
+        },
+        {
+          "description": "A partially completed jigsaw puzzle depicting a landscape scene, spread out on the table to the right of the printer.",
+          "label": "jigsaw puzzle"
+        },
+        {
+          "description": "A thick, unlit white pillar candle sitting near the front edge of the table.",
+          "label": "decorative candle"
+        },
+        {
+          "description": "A small ceramic dish holding a few keys, placed near the candle on the table.",
+          "label": "key dish"
+        },
+        {
+          "description": "A low, light-wood living room table providing the main surface for the printer and activities.",
+          "label": "low table"
+        },
+        {
+          "description": "A textured floor cushion resting on a woven rug in the softly blurred background.",
+          "label": "floor cushion and rug"
+        }
+      ],
+      "used_prompt": "<instruction> Generate a scene where the printer from Before_Image1 sits resting flush on a low wooden table in a modern living room, keeping the exact orientation, position, and scale it has in Before_Image1, with no occlusions. A partially completed jigsaw puzzle of a landscape lies on the table to the right of the printer; a decorative candle and a small dish for keys sit near the front edge. In the background, a woven rug with a floor cushion rests on the floor, softly blurred. Warm natural light fills the cozy, lived-in space. <scene> A white and blue HP printer sits on a low wooden table next to a jigsaw puzzle and a decorative candle in a cozy, modern living room. <type> photorealistic, lifestyle photography, product photography <lighting> soft_light, soft warm natural daylight from window screen-left, diffused, gentle shadows <composition> medium shot, shallow depth of field with background softly blurred, the printer in sharp focus at its position, sitting flush with no gap or shadow beneath its base <background> A cozy modern living room setting with a woven rug and a floor cushion on the floor in the mid-ground, and a light-colored sofa receding in the background; a warm-neutral color grade with soft golden daylight tones, clean and inviting. <camera> medium_shot, high angle <entities> <label> HP printer <description> A white HP printer with a blue top panel and a closed paper tray, featuring a visible ``hp`` logo on the top cover, sitting flush on the low table. <label> jigsaw puzzle <description> A partially completed jigsaw puzzle depicting a landscape scene, spread out on the table to the right of the printer. <label> decorative candle <description> A thick, unlit white pillar candle sitting near the front edge of the table. <label> key dish <description> A small ceramic dish holding a few keys, placed near the candle on the table. <label> low table <description> A low, light-wood living room table providing the main surface for the printer and activities. <label> floor cushion and rug <description> A textured floor cushion resting on a woven rug in the softly blurred background.",
+      "generated_image_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/9f27807a84b46556ecad__tassel__printer_FrontWide__p2.png"
+    }
+  ]
+}

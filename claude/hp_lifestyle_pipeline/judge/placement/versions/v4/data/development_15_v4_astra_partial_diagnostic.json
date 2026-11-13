@@ -1,0 +1,307 @@
+{
+  "schema_version": "placement-v4-development-evaluation-v1",
+  "summary": {
+    "run_name": "development-15-v4-astra",
+    "records_expected": 15,
+    "records_ok": 4,
+    "records_missing_or_error": 11,
+    "explicit_verdict_cases_scored": 4,
+    "v4_verdict_matches": 2,
+    "v4_verdict_accuracy": 0.5,
+    "v3_verdict_matches_same_completed_cases": 0,
+    "v3_verdict_accuracy_same_completed_cases": 0.0,
+    "issue_cases_scored": 4,
+    "issue_any_matches": 0,
+    "prediction_distribution": {
+      "review": 4
+    },
+    "miss_clusters": {
+      "chair_calibration": {
+        "cases": 2,
+        "detected_any_expected": 0,
+        "record_ids": [
+          "elitebook__laptop_FrontLeftMedium__p1",
+          "cashmere__laptop_FrontLeftMedium__p1"
+        ]
+      },
+      "support_geometry_layout": {
+        "cases": 2,
+        "detected_any_expected": 0,
+        "record_ids": [
+          "tassel__printer_FrontWide__p1",
+          "tassel__printer_FrontCloseUp__p1"
+        ]
+      },
+      "device_position_orientation": {
+        "cases": 0,
+        "detected_any_expected": 0,
+        "record_ids": []
+      },
+      "prop_coherence": {
+        "cases": 0,
+        "detected_any_expected": 0,
+        "record_ids": []
+      },
+      "artifact_scope": {
+        "cases": 0,
+        "detected_any_expected": 0,
+        "record_ids": []
+      }
+    },
+    "unlabeled_verdict_cases_excluded": [
+      "tassel__printer_FrontRightCloseUp__p1",
+      "elitebook__laptop_BackRightCloseUp__p3"
+    ]
+  },
+  "rows": [
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "human_comment_exact": "Your comments are correct. But maybe someone stood up and moved the chair a bit. The chair doesn't need to be in absolute perfect working position. Because chairs move. But like if the chair was facing too far away it would be bad. THis should be a review (middle or lower) severity issue not a fail",
+      "verdict_labeled": true,
+      "expected_verdict": "review",
+      "expected_issue_any": [
+        "chair_displacement"
+      ],
+      "v3_predicted_verdict": "fail",
+      "v3_verdict_match": false,
+      "status": "ok",
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/runs/development-15-v4-astra/elitebook__laptop_FrontLeftMedium__p1/result.json",
+      "predicted_verdict": "review",
+      "score": 100,
+      "verdict_match": true,
+      "observed_issue_codes": [],
+      "issue_any_match": false,
+      "model_returned": "gpt-6-astra"
+    },
+    {
+      "record_id": "tassel__printer_FrontWide__p1",
+      "human_comment_exact": "Should this not be a fail? it seems that the table is deformed. It's two side edges are not parallel. Also. Why would someone leave a rectangle table in the middle of the room like this? rectabngle / square tables are usually placed near walls at home. For middle of room we use round tables. The printer is placed correctly on the table tho. I agree with you.",
+      "verdict_labeled": true,
+      "expected_verdict": "fail",
+      "expected_issue_any": [
+        "malformed_support_furniture",
+        "misplaced_support_furniture"
+      ],
+      "v3_predicted_verdict": "pass",
+      "v3_verdict_match": false,
+      "status": "ok",
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/runs/development-15-v4-astra/tassel__printer_FrontWide__p1/result.json",
+      "predicted_verdict": "review",
+      "score": 100,
+      "verdict_match": false,
+      "observed_issue_codes": [],
+      "issue_any_match": false,
+      "model_returned": "gpt-6-astra"
+    },
+    {
+      "record_id": "cashmere__laptop_FrontLeftMedium__p1",
+      "human_comment_exact": "Your comments are correct. But maybe someone stood up and moved the chair a bit. The chair doesn't need to be in absolute perfect working position. Because chairs move. But like if the chair was facing too far away it would be bad. THis should be a review (middle or lower) severity issue not a fail",
+      "verdict_labeled": true,
+      "expected_verdict": "review",
+      "expected_issue_any": [
+        "chair_displacement"
+      ],
+      "v3_predicted_verdict": "fail",
+      "v3_verdict_match": false,
+      "status": "ok",
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/runs/development-15-v4-astra/cashmere__laptop_FrontLeftMedium__p1/result.json",
+      "predicted_verdict": "review",
+      "score": 100,
+      "verdict_match": true,
+      "observed_issue_codes": [],
+      "issue_any_match": false,
+      "model_returned": "gpt-6-astra"
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p1",
+      "human_comment_exact": "Fail this because of my previous comment about rectangle vs round tables in terms of placement in rooms.",
+      "verdict_labeled": true,
+      "expected_verdict": "fail",
+      "expected_issue_any": [
+        "misplaced_support_furniture"
+      ],
+      "v3_predicted_verdict": "pass",
+      "v3_verdict_match": false,
+      "status": "ok",
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/runs/development-15-v4-astra/tassel__printer_FrontCloseUp__p1/result.json",
+      "predicted_verdict": "review",
+      "score": 100,
+      "verdict_match": false,
+      "observed_issue_codes": [],
+      "issue_any_match": false,
+      "model_returned": "gpt-6-astra"
+    },
+    {
+      "record_id": "elitebook__laptop_FrontCloseUp__p1",
+      "human_comment_exact": "I agree with your comments. But this is a warning. It is possible that there is a chair but we just don't see it because of closeup shot.",
+      "verdict_labeled": true,
+      "expected_verdict": "review",
+      "expected_issue_any": [],
+      "v3_predicted_verdict": "fail",
+      "v3_verdict_match": false,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p1",
+      "human_comment_exact": "Your comments are right. Also, there is something weird about the perspective of the wall. It seems that the table should not be touching the wall give how close it is to camera. This is evident because of the cabinet behind it. That cabinet is touching teh wall also.",
+      "verdict_labeled": false,
+      "expected_verdict": null,
+      "expected_issue_any": [
+        "conflicting_perspective"
+      ],
+      "v3_predicted_verdict": "fail",
+      "v3_verdict_match": null,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    },
+    {
+      "record_id": "magic__printer_FrontLeftMedium__p1",
+      "human_comment_exact": "The table is missing legs. This is a fail. Make sure we specifically check for the legs of furnature to make sure they are not missing.",
+      "verdict_labeled": true,
+      "expected_verdict": "fail",
+      "expected_issue_any": [
+        "missing_required_support"
+      ],
+      "v3_predicted_verdict": "pass",
+      "v3_verdict_match": false,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    },
+    {
+      "record_id": "tassel__printer_FrontLeftMedium__p2",
+      "human_comment_exact": "To me this is a fail there is too much gap between the wall and the printer. Even if we account for cables being connected.",
+      "verdict_labeled": true,
+      "expected_verdict": "fail",
+      "expected_issue_any": [
+        "unmotivated_device_position"
+      ],
+      "v3_predicted_verdict": "pass",
+      "v3_verdict_match": false,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    },
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p2",
+      "human_comment_exact": "I agree with your comments. But the chair is not the biggest issue. The table leg is missing also.",
+      "verdict_labeled": true,
+      "expected_verdict": "fail",
+      "expected_issue_any": [
+        "missing_required_support"
+      ],
+      "v3_predicted_verdict": "fail",
+      "v3_verdict_match": true,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    },
+    {
+      "record_id": "elitebook__laptop_FrontWide__p2",
+      "human_comment_exact": "don't be too strcit on the chair. This should be a pass. \nAlthough i agre ethat the angle of the table (the way it is placed in the room) is a bit weird. But this is a warning not a fail",
+      "verdict_labeled": true,
+      "expected_verdict": "pass",
+      "expected_issue_any": [
+        "furniture_layout_conflict"
+      ],
+      "v3_predicted_verdict": "fail",
+      "v3_verdict_match": false,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p2",
+      "human_comment_exact": "This is a fail. The printer looks slanted on the table and also there is a random puzzle under the table.",
+      "verdict_labeled": true,
+      "expected_verdict": "fail",
+      "expected_issue_any": [
+        "device_support_axis_conflict",
+        "incoherent_prop_arrangement"
+      ],
+      "v3_predicted_verdict": "pass",
+      "v3_verdict_match": false,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    },
+    {
+      "record_id": "magic__printer_FrontRightCloseUp__p2",
+      "human_comment_exact": "This is a warn because the glasses are disfiguree. Everything else is good. Maybe the table looks a bit too long.",
+      "verdict_labeled": true,
+      "expected_verdict": "pass",
+      "expected_issue_any": [
+        "unrelated_rendering_artifact"
+      ],
+      "v3_predicted_verdict": "pass",
+      "v3_verdict_match": true,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p2",
+      "human_comment_exact": "The placement of the table in the room is weird. Also random puzzle on the floor. This is a fail",
+      "verdict_labeled": true,
+      "expected_verdict": "fail",
+      "expected_issue_any": [
+        "misplaced_support_furniture",
+        "incoherent_prop_arrangement"
+      ],
+      "v3_predicted_verdict": "pass",
+      "v3_verdict_match": false,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    },
+    {
+      "record_id": "elitebook__laptop_BackRightCloseUp__p3",
+      "human_comment_exact": "Don't be too string on chair placmenet.",
+      "verdict_labeled": false,
+      "expected_verdict": null,
+      "expected_issue_any": [],
+      "v3_predicted_verdict": "fail",
+      "v3_verdict_match": null,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    },
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p3",
+      "human_comment_exact": "too string on chair. this is a pass.",
+      "verdict_labeled": true,
+      "expected_verdict": "pass",
+      "expected_issue_any": [],
+      "v3_predicted_verdict": "fail",
+      "v3_verdict_match": false,
+      "status": "missing",
+      "predicted_verdict": null,
+      "verdict_match": null,
+      "observed_issue_codes": [],
+      "issue_any_match": null
+    }
+  ]
+}

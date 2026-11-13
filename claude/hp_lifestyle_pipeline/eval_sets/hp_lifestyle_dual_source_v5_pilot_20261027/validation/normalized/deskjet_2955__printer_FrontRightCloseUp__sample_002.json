@@ -1,0 +1,158 @@
+{
+  "validator_version": "v5-host-validator-r2",
+  "passed": false,
+  "error_count": 4,
+  "warning_count": 3,
+  "errors": [
+    {
+      "code": "evidence_quote",
+      "detail": "e1 quote is not verbatim in smart_brief"
+    },
+    {
+      "code": "evidence_quote",
+      "detail": "e5 quote is not verbatim in smart_brief"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "1>0: ['simple furniture']",
+      "candidate_id": "p15"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['simple furniture'] but signature has 0 entries",
+      "candidate_id": "p15"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "ambiguous_ksp_mapping_id",
+      "detail": "Could not normalize KSP-number prefixes from string-input mappings: ['1', '2', '3', '4']"
+    },
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support audit text; inspect: ['e3']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 20,
+    "evidence": 10,
+    "environments": {
+      "Home": 7,
+      "Office": 3,
+      "Creative Studio": 3,
+      "Education": 3,
+      "Café": 2,
+      "Gaming": 2
+    },
+    "relationships": {
+      "source_grounded": 7,
+      "source_adjacent": 6,
+      "creative_departure": 7
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 7,
+      "Office": 3,
+      "Education": 3,
+      "Gaming": 2,
+      "Café": 2,
+      "Creative Studio": 3
+    },
+    "relationship_counts": {
+      "source_grounded": 7,
+      "source_adjacent": 6,
+      "creative_departure": 7
+    },
+    "ctech_relationship_counts": {
+      "close_adaptation": 17,
+      "category_extension": 3
+    },
+    "ctech_reference_counts": {
+      "CT18": 4,
+      "CT05": 2,
+      "CT06": 3,
+      "CT03": 3,
+      "CT01": 1,
+      "CT10": 2,
+      "CT09": 1,
+      "CT07": 1,
+      "CT14": 1,
+      "CT08": 1,
+      "CT15": 1
+    },
+    "ctech_score_range": [
+      62,
+      78
+    ],
+    "distinct_subsettings": 13,
+    "evidence_reverse_mappings": {
+      "smart_brief": {
+        "evidence_ids": [
+          "e1",
+          "e2",
+          "e4",
+          "e5",
+          "e10"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20"
+        ]
+      },
+      "source_messaging": {
+        "evidence_ids": [
+          "e6",
+          "e7",
+          "e8",
+          "e9"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "71652ca5ceb1ebe45341aa783ef87f02eb569f61d58d572b0cf98ab3311dd52f"
+}

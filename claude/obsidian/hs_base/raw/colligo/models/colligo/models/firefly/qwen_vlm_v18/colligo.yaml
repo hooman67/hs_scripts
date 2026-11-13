@@ -1,0 +1,19 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.firefly.vllm_serve[public]
+  - pydantic
+custom_pyenv: vllm_0_18_0
+
+deps:
+- deep-gemm
+- flashinfer-cubin
+- flashinfer-jit-cache
+- flashinfer-python
+- pillow
+- torch
+- vllm
+- xgrammar

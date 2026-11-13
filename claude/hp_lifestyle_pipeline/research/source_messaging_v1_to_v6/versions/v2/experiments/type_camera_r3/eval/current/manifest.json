@@ -1,0 +1,776 @@
+{
+  "version": "camera-aware-v2-type-camera-text-eval-2026-10-22-r3",
+  "case_count": 24,
+  "model": "gpt-5.5",
+  "settings": {
+    "reasoning_effort": "medium",
+    "max_completion_tokens": 8000,
+    "temperature": "omitted",
+    "strict_json_schema": true
+  },
+  "image_generation": false,
+  "input_schema_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v2/input.schema.json",
+  "input_schema_sha256": "9515b6aabcfce9a6d1ff43fcf9e861aa3bd5819bfce68a7a07960e8972588c24",
+  "camera_profiles_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v2/camera_profiles.json",
+  "camera_profiles_sha256": "59b5e2b322dcd74c21432e772f3dd11513f71c182f6114b99b15e009dbeea68b",
+  "source_manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_manifest.json",
+  "edge_manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_manifest.json",
+  "coverage": {
+    "actual_source_count": 9,
+    "rationale": "All nine distinct actual production source inputs are represented, with bounded type-camera and fallback coverage."
+  },
+  "cases": [
+    {
+      "case_id": "01_rich_source_printer_back_closeup",
+      "source_id": "ee810cf51bb82bb4",
+      "camera_tag": "printer_BackCloseUp",
+      "purpose": "Rich actual printer messaging under a tight level view.",
+      "input_path": "inputs/01_rich_source_printer_back_closeup.json",
+      "input_raw_sha256": "477c124099421fd530f762bf6b530766ba25f4104170757910e480e94e83a592",
+      "input_semantic_sha256": "622069510e5e9e13478608ce99e419165ee2d1165b61d2cd51f1ba86725cdef1",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "printer_BackCloseUp",
+        "resolved_tag": "printer_BackCloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "device_type": "printer"
+      }
+    },
+    {
+      "case_id": "02_rich_source_minipc_back_closeup",
+      "source_id": "ee810cf51bb82bb4",
+      "camera_tag": "miniPC_BackCloseUp",
+      "purpose": "Same source as case 01 under the independent miniPC type profile.",
+      "input_path": "inputs/02_rich_source_minipc_back_closeup.json",
+      "input_raw_sha256": "07e279272653ae6c0f4b682c7f0907fbedcb5356dbac53eb64068255249c156a",
+      "input_semantic_sha256": "4ee4d4cd136a9ad513a07434d4c8fb968ed39755df925d3b27329483072647e1",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "miniPC_BackCloseUp",
+        "resolved_tag": "miniPC_BackCloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "level",
+        "device_type": "miniPC"
+      }
+    },
+    {
+      "case_id": "03_rich_source_printer_front_right_medium",
+      "source_id": "ee810cf51bb82bb4",
+      "camera_tag": "printer_FrontRightMedium",
+      "purpose": "Same rich source under a medium oblique view.",
+      "input_path": "inputs/03_rich_source_printer_front_right_medium.json",
+      "input_raw_sha256": "c77b0266e30af623eb3f88ba4422237ceef662c0f5e545926584f82de7724996",
+      "input_semantic_sha256": "95881cdb74b63f66fd4877b5a593ecbd2408ec31a9045dfd0cf2da237e8f34a2",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "printer_FrontRightMedium",
+        "resolved_tag": "printer_FrontRightMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "device_type": "printer"
+      }
+    },
+    {
+      "case_id": "04_rich_source_printer_front_right_wide",
+      "source_id": "ee810cf51bb82bb4",
+      "camera_tag": "printer_FrontRightWide",
+      "purpose": "Same rich source under a wide oblique view.",
+      "input_path": "inputs/04_rich_source_printer_front_right_wide.json",
+      "input_raw_sha256": "65df42ed03142e5cd838e8cf562dddc07d1b1e7bf545659eaca01f248c2e9d8b",
+      "input_semantic_sha256": "a35785f72665cd734134e232a927d4346c89c06c79e125f891bd38f2d4149ac1",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "printer_FrontRightWide",
+        "resolved_tag": "printer_FrontRightWide",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "device_type": "printer"
+      }
+    },
+    {
+      "case_id": "05_rich_source_printer_top_front_closeup",
+      "source_id": "ee810cf51bb82bb4",
+      "camera_tag": "printer_TopFrontCloseUp",
+      "purpose": "Same rich source under a tight top-oblique view.",
+      "input_path": "inputs/05_rich_source_printer_top_front_closeup.json",
+      "input_raw_sha256": "e1f5f870713820092f97e4ecd98523481c7e3ea43503b248061d2e0b93014b10",
+      "input_semantic_sha256": "9e0fada9328fe8f6d5d7f8a555333b89afa531b34ee151fdbe345d24fdac3a6f",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "printer_TopFrontCloseUp",
+        "resolved_tag": "printer_TopFrontCloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "top_oblique",
+        "device_type": "printer"
+      }
+    },
+    {
+      "case_id": "06_actual_laptop_front_closeup",
+      "source_id": "22fdbf19f03d1a31",
+      "camera_tag": "laptop_FrontCloseUp",
+      "purpose": "Actual mobile-work and meeting cues under a tight level view.",
+      "input_path": "inputs/06_actual_laptop_front_closeup.json",
+      "input_raw_sha256": "8b913fd5990f75022a0cca287f9c89419edadeffd517e90728eb0e27796a2410",
+      "input_semantic_sha256": "1e433dda298622fdff08061a65c45fd541d62ef285fbfa66e5e4955893551b66",
+      "source_kind": "actual",
+      "source_semantic_sha256": "22fdbf19f03d1a31516a6638b1ba12df246cbe7ac63637d8e2e77e293f14eed4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2613589805017517007.zip",
+          "member": "Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "member": null,
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "laptop_FrontCloseUp",
+        "resolved_tag": "laptop_FrontCloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "device_type": "laptop"
+      }
+    },
+    {
+      "case_id": "07_actual_laptop_front_right_medium",
+      "source_id": "22fdbf19f03d1a31",
+      "camera_tag": "laptop_FrontRightMedium",
+      "purpose": "Same actual laptop source under a medium oblique view.",
+      "input_path": "inputs/07_actual_laptop_front_right_medium.json",
+      "input_raw_sha256": "11cdfb6711683744540c70c69e94b80e91de886b94819c00ff1f94caeb739665",
+      "input_semantic_sha256": "f5fe30726281d41e8fbc586168ddff5d3262b4e0326e76bf791166bfe0eda925",
+      "source_kind": "actual",
+      "source_semantic_sha256": "22fdbf19f03d1a31516a6638b1ba12df246cbe7ac63637d8e2e77e293f14eed4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2613589805017517007.zip",
+          "member": "Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "member": null,
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightMedium",
+        "resolved_tag": "laptop_FrontRightMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "device_type": "laptop"
+      }
+    },
+    {
+      "case_id": "08_actual_laptop_front_right_wide",
+      "source_id": "22fdbf19f03d1a31",
+      "camera_tag": "laptop_FrontRightWide",
+      "purpose": "Same actual laptop source under a wide oblique view.",
+      "input_path": "inputs/08_actual_laptop_front_right_wide.json",
+      "input_raw_sha256": "36ff676c7113f1c8a5f9bdf1a5711d68933524c9cb11a024388a522933aebc98",
+      "input_semantic_sha256": "d1bccd4b65cf144d4d333c1cb78c6ea06398f48ac749806089f38b98dd14f8f6",
+      "source_kind": "actual",
+      "source_semantic_sha256": "22fdbf19f03d1a31516a6638b1ba12df246cbe7ac63637d8e2e77e293f14eed4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2613589805017517007.zip",
+          "member": "Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "member": null,
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightWide",
+        "resolved_tag": "laptop_FrontRightWide",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "device_type": "laptop"
+      }
+    },
+    {
+      "case_id": "09_actual_laptop_top_front_medium",
+      "source_id": "22fdbf19f03d1a31",
+      "camera_tag": "laptop_TopFrontMedium",
+      "purpose": "Same actual laptop source under a medium top-oblique view.",
+      "input_path": "inputs/09_actual_laptop_top_front_medium.json",
+      "input_raw_sha256": "72be45b6d499311fcf7f756840121b0e30487ed07d59903f86e62deb88c25048",
+      "input_semantic_sha256": "6091315149eaf8f0e4ab9a69308c5a1f3bf2c3c625675a302d9a0e912b075c1e",
+      "source_kind": "actual",
+      "source_semantic_sha256": "22fdbf19f03d1a31516a6638b1ba12df246cbe7ac63637d8e2e77e293f14eed4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2613589805017517007.zip",
+          "member": "Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "member": null,
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "laptop_TopFrontMedium",
+        "resolved_tag": "laptop_TopFrontMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "top_oblique",
+        "device_type": "laptop"
+      }
+    },
+    {
+      "case_id": "10_actual_laptop_front_right_closeup",
+      "source_id": "22fdbf19f03d1a31",
+      "camera_tag": "laptop_FrontRightCloseUp",
+      "purpose": "Actual laptop source under the generic conservative type profile.",
+      "input_path": "inputs/10_actual_laptop_front_right_closeup.json",
+      "input_raw_sha256": "7890221e0402738fc7da03e55e07a2a2bbb9a8d9e8ebe45d47be900a527025b8",
+      "input_semantic_sha256": "ade517c447120f2865a854ef60782001d089e639b89596f42b8a24ec4866aa32",
+      "source_kind": "actual",
+      "source_semantic_sha256": "22fdbf19f03d1a31516a6638b1ba12df246cbe7ac63637d8e2e77e293f14eed4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2613589805017517007.zip",
+          "member": "Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "member": null,
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightCloseUp",
+        "resolved_tag": "laptop_FrontRightCloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "device_type": "laptop"
+      }
+    },
+    {
+      "case_id": "11_actual_printer_front_closeup",
+      "source_id": "160db92655412f4d",
+      "camera_tag": "printer_FrontCloseUp",
+      "purpose": "Second actual printer source under the type-level close view.",
+      "input_path": "inputs/11_actual_printer_front_closeup.json",
+      "input_raw_sha256": "8e33337dc9e378fa91e6b3ee9371c39e8cc9d7919c51ceba0e1645bb696620c4",
+      "input_semantic_sha256": "99475547be065bfaf6ab5391120aa3d6ee4461cf8dfee9a770d1dfce500d268d",
+      "source_kind": "actual",
+      "source_semantic_sha256": "160db92655412f4d41d349bbf6f930adc248c6485b804ff4cade8824355b5710",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/160db92655412f4d.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2299778737384020264.zip",
+          "member": "Source Messaging - 71bd2bda-ecc2-4841-bd21-30a6c05673a9.json",
+          "sha256": "afdf3ed48a702c2d4bb475ddd54274754fda7bebf6d542c6abb3c41624428943"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "printer_FrontCloseUp",
+        "resolved_tag": "printer_FrontCloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "device_type": "printer"
+      }
+    },
+    {
+      "case_id": "12_synthetic_gaming_laptop_front_right_wide",
+      "source_id": "048217039fd093b2",
+      "camera_tag": "laptop_FrontRightWide",
+      "purpose": "Synthetic grounded Gaming cues under a known wide laptop view.",
+      "input_path": "inputs/12_synthetic_gaming_laptop_front_right_wide.json",
+      "input_raw_sha256": "0e5cc60b9d56af7d0f5ff8bc1a756d072111ef7e9990fd5800165a7e09f5f218",
+      "input_semantic_sha256": "0ee97b553fca49a1e0a144c4f6b28a9965174a9a693c7413e4f6d94ab6900b92",
+      "source_kind": "synthetic",
+      "source_semantic_sha256": "048217039fd093b2ad6819c601d3e2293a8616e943eeb6b605d56e3063d9a56f",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/gaming.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/gaming.json",
+          "member": null,
+          "synthetic": true
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightWide",
+        "resolved_tag": "laptop_FrontRightWide",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "device_type": "laptop"
+      }
+    },
+    {
+      "case_id": "13_empty_source_unknown_camera",
+      "source_id": "44136fa355b3678a",
+      "camera_tag": "printer_UnregisteredView",
+      "purpose": "Empty source plus unknown camera must use the conservative minimal fallback.",
+      "input_path": "inputs/13_empty_source_unknown_camera.json",
+      "input_raw_sha256": "b8caf5da3c1c6cb66256b543b021ae7d754f5ab6565f8f7dcfcb9c14152d9702",
+      "input_semantic_sha256": "8c56f2de9959a8c5469a8713b47fe34e738d5605db748818f8fb65d17254286e",
+      "source_kind": "synthetic",
+      "source_semantic_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/empty.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/empty.json",
+          "member": null,
+          "synthetic": true
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "printer_UnregisteredView",
+        "resolved_tag": null,
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "unknown",
+        "framing": "unknown",
+        "elevation": "unknown",
+        "device_type": null
+      }
+    },
+    {
+      "case_id": "14_technical_only_known_tight_camera",
+      "source_id": "49aa979045b3b3d6",
+      "camera_tag": "laptop_BackCloseUp",
+      "purpose": "Technical-only source under a known tight camera must not invent a technical scene.",
+      "input_path": "inputs/14_technical_only_known_tight_camera.json",
+      "input_raw_sha256": "245d0595c0649a28dee8cd6c2dcc084ea2ed2e10edd812d73632d191da79c59a",
+      "input_semantic_sha256": "703912b4387a08e651318b2cf6ac7401312eb39c23858c3ca87b925091f8aecc",
+      "source_kind": "synthetic",
+      "source_semantic_sha256": "49aa979045b3b3d63ccf450a1267d24a849fe23da3777dcc2281b1f951911bdf",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/technical_only.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/technical_only.json",
+          "member": null,
+          "synthetic": true
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "laptop_BackCloseUp",
+        "resolved_tag": "laptop_BackCloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "device_type": "laptop"
+      }
+    },
+    {
+      "case_id": "15_printer_copy_minipc_camera",
+      "source_id": "ee810cf51bb82bb4",
+      "camera_tag": "miniPC_FrontRightMedium",
+      "purpose": "Printer-oriented source copy must not change the registered miniPC camera type.",
+      "input_path": "inputs/15_printer_copy_minipc_camera.json",
+      "input_raw_sha256": "3e3d5a78342b130becbd07b77f25650d87be60227cabab364da408e6e6c17b60",
+      "input_semantic_sha256": "2fc6b8f976637363b5de618d2cf1d4771757d344623cb32d3ddc179697d32737",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "miniPC_FrontRightMedium",
+        "resolved_tag": "miniPC_FrontRightMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "device_type": "miniPC"
+      }
+    },
+    {
+      "case_id": "16_explicit_legacy_minipc_alias",
+      "source_id": "ee810cf51bb82bb4",
+      "camera_tag": "miniPC_Back_CloseUp",
+      "purpose": "Explicit old underscore-separated tag must resolve only through its registry alias.",
+      "input_path": "inputs/16_explicit_legacy_minipc_alias.json",
+      "input_raw_sha256": "0008c96b304b23613e9dcafda85fcefa34e46bb9b06e817e896f28070efc620f",
+      "input_semantic_sha256": "0f048e5e84bfcb7885949b9e9ceea6c9a9cea48b6e41c8436c883316e6626094",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "miniPC_Back_CloseUp",
+        "resolved_tag": "miniPC_BackCloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "alias",
+        "framing": "medium",
+        "elevation": "level",
+        "device_type": "miniPC"
+      }
+    },
+    {
+      "case_id": "17_actual_laptop_convertible_front_right_medium",
+      "source_id": "d60e13e4457fd44c",
+      "camera_tag": "laptop_FrontRightMedium",
+      "purpose": "Previously uncovered actual convertible-laptop source under a medium oblique view.",
+      "input_path": "inputs/17_actual_laptop_convertible_front_right_medium.json",
+      "input_raw_sha256": "e703c8b90c5fc85b0986db7d3d03ba4a2822ed2d8799e19702b1469646768cd4",
+      "input_semantic_sha256": "da2cb25f4e8294d91c2a08006b489c3386ee492b664c8821c7d9059bea7132b4",
+      "source_kind": "actual",
+      "source_semantic_sha256": "d60e13e4457fd44cf5b7f89a6e754211bfe13d5dcd4c368f30d484ab85c65812",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/d60e13e4457fd44c.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2703900895627379394.zip",
+          "member": "Source Messaging - 8e56189b-2c04-4066-bd8c-08fb6359588d.json",
+          "sha256": "a61986ad16478088e9290cb1ebb44520e91e206c45b6b5e2cc11f12b3a354ca6"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 8e56189b-2c04-4066-bd8c-08fb6359588d.json",
+          "member": null,
+          "sha256": "a61986ad16478088e9290cb1ebb44520e91e206c45b6b5e2cc11f12b3a354ca6"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightMedium",
+        "resolved_tag": "laptop_FrontRightMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "device_type": "laptop"
+      }
+    },
+    {
+      "case_id": "18_actual_laptop_mobile_work_front_right_medium",
+      "source_id": "fecec52a5c57c7bb",
+      "camera_tag": "laptop_FrontRightMedium",
+      "purpose": "Previously uncovered actual mobile-work laptop source under a medium oblique view.",
+      "input_path": "inputs/18_actual_laptop_mobile_work_front_right_medium.json",
+      "input_raw_sha256": "7de7deef753e07942a9b9e0fa35da1aa3b7e3663eed5767f94c12e5ad1506941",
+      "input_semantic_sha256": "fd535469cb91a95f9352a8d9725d83859b6b16d0d60c80d192c7b9eeddb4bb14",
+      "source_kind": "actual",
+      "source_semantic_sha256": "fecec52a5c57c7bb45dedfc39771fa53a1af96e1abdde37fa8a1bb3420af2fb4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/fecec52a5c57c7bb.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2745132682490047977.zip",
+          "member": "Source Messaging - 44b611c4-b58f-4614-a9e0-81a3d669f1d3.json",
+          "sha256": "fd5ba38ec95e50344ac856198f7dccdb6ce43a6f946c5fcd8b3ae9bb2a32ccaa"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightMedium",
+        "resolved_tag": "laptop_FrontRightMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "device_type": "laptop"
+      }
+    },
+    {
+      "case_id": "19_actual_printer_admin_front_right_medium",
+      "source_id": "8bbf8af1d8cbf4b2",
+      "camera_tag": "printer_FrontRightMedium",
+      "purpose": "Previously uncovered actual ink-tank printer source under a medium oblique view.",
+      "input_path": "inputs/19_actual_printer_admin_front_right_medium.json",
+      "input_raw_sha256": "551d3bbc4d288749c482ca7008eae65d38b6a2ab3d8a216ff75a0524959bec5b",
+      "input_semantic_sha256": "343f312650c3994cd28836649a084c17e5190b085807420b3e7f8e401fec1141",
+      "source_kind": "actual",
+      "source_semantic_sha256": "8bbf8af1d8cbf4b2d70c755d9cec9030e658408f2076733d8407fbf710863935",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/8bbf8af1d8cbf4b2.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK4748855972432039582.zip",
+          "member": "Source Messaging - 8a8e84ff-69e1-4581-a1ca-8eb411354a2a.json",
+          "sha256": "fe8d1dc26056d55824e19fce50385c446f6a307feed7d72c0cc85916d07bb688"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "printer_FrontRightMedium",
+        "resolved_tag": "printer_FrontRightMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "device_type": "printer"
+      }
+    },
+    {
+      "case_id": "20_actual_printer_copy_minipc_front_right_medium",
+      "source_id": "8189f3ad5af37a81",
+      "camera_tag": "miniPC_FrontRightMedium",
+      "purpose": "Actual printer-oriented copy under a miniPC tag; copy must not change device type.",
+      "input_path": "inputs/20_actual_printer_copy_minipc_front_right_medium.json",
+      "input_raw_sha256": "be081238510dc16cc91e1ad35e1bd1ab7af2e6c9ba0fadfae7b24c253d7a8843",
+      "input_semantic_sha256": "6680ff1f0977c235e5e826dc58dad0714df7a9b818c71ede4f381fad707afeca",
+      "source_kind": "actual",
+      "source_semantic_sha256": "8189f3ad5af37a814b680c32ab1023a762aefbfc1c75d0f5d958ff4a6849dd2d",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/8189f3ad5af37a81.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK881963376314406021.zip",
+          "member": "Source Messaging - cb0d856e-5f4e-4928-bb04-1dd770c491d1.json",
+          "sha256": "3be81e2250494efef3678e51095f9356e52c32ce744c5659b6b05e3a3f5b8d06"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "miniPC_FrontRightMedium",
+        "resolved_tag": "miniPC_FrontRightMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "device_type": "miniPC"
+      }
+    },
+    {
+      "case_id": "21_actual_printer_enterprise_front_right_medium",
+      "source_id": "324b14a617dfedba",
+      "camera_tag": "printer_FrontRightMedium",
+      "purpose": "Previously uncovered actual enterprise-printer source under a medium oblique view.",
+      "input_path": "inputs/21_actual_printer_enterprise_front_right_medium.json",
+      "input_raw_sha256": "2807d58c02b769f6a00fb283943cd54ea9e14d2c2a874c7d8ff019384ddef79c",
+      "input_semantic_sha256": "2ae96765a7537ffb6f5dea6929ae122d8b51f667409c643b8c88183aad1b83e3",
+      "source_kind": "actual",
+      "source_semantic_sha256": "324b14a617dfedbaa74ed0f14b93d038737a01c1fa6180a9af37de60905f53a9",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/324b14a617dfedba.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK901460674462796743.zip",
+          "member": "Source Messaging - 27735f23-c479-4d5b-8951-cdf900133f0b.json",
+          "sha256": "8ba3311a2196b3f0059c6f703fc260dc14f0fce1889420fe80a99c4e4c0087f4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "printer_FrontRightMedium",
+        "resolved_tag": "printer_FrontRightMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "device_type": "printer"
+      }
+    },
+    {
+      "case_id": "22_actual_printer_copy_minipc_ink_tank_medium",
+      "source_id": "943faef0af11484f",
+      "camera_tag": "miniPC_FrontRightMedium",
+      "purpose": "Actual ink-tank copy under a miniPC tag; copy must not change device type.",
+      "input_path": "inputs/22_actual_printer_copy_minipc_ink_tank_medium.json",
+      "input_raw_sha256": "a115dcd32464c0fbb68043fbbafeabc19cc5570005c3990ca53075c328a282c8",
+      "input_semantic_sha256": "c2686ed8f9201d839a2d10778641d8817ee317a2e3eeae57789ae7bfa3b112c2",
+      "source_kind": "actual",
+      "source_semantic_sha256": "943faef0af11484f5bee2a60f6bb25ac7d70ee4ab00c220b2ff1e599e2eb58cf",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/943faef0af11484f.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK9166360275256369928.zip",
+          "member": "Source Messaging - 784a9ea4-d2b6-4465-a642-ea40c1f18408.json",
+          "sha256": "f2736e7d3a5802d1e78591be6f3c003446d458c22981b6ee3b990962920a91ac"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 784a9ea4-d2b6-4465-a642-ea40c1f18408 (1).json",
+          "member": null,
+          "sha256": "f2736e7d3a5802d1e78591be6f3c003446d458c22981b6ee3b990962920a91ac"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "miniPC_FrontRightMedium",
+        "resolved_tag": "miniPC_FrontRightMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "device_type": "miniPC"
+      }
+    },
+    {
+      "case_id": "23_rich_source_minipc_top_front_medium",
+      "source_id": "ee810cf51bb82bb4",
+      "camera_tag": "miniPC_TopFrontMedium",
+      "purpose": "Known miniPC top-oblique medium profile must omit background details.",
+      "input_path": "inputs/23_rich_source_minipc_top_front_medium.json",
+      "input_raw_sha256": "4151093a2624a065db5a054095f0202c06712b873e2c8f632b1dffaedb6d88fa",
+      "input_semantic_sha256": "b5e9af0ad27d64cd26ecb7fe854fdc0b9474d49d9d2231242eebcc337e8002ef",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "miniPC_TopFrontMedium",
+        "resolved_tag": "miniPC_TopFrontMedium",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "top_oblique",
+        "device_type": "miniPC"
+      }
+    },
+    {
+      "case_id": "24_rich_source_unknown_future_type",
+      "source_id": "ee810cf51bb82bb4",
+      "camera_tag": "projector_FrontRightMedium",
+      "purpose": "Unregistered future device type must use the conservative unknown fallback.",
+      "input_path": "inputs/24_rich_source_unknown_future_type.json",
+      "input_raw_sha256": "900dcc5ac1ae3acf79cd93794c8005eec06cf1ca9b9a1876027370c170d8b1f9",
+      "input_semantic_sha256": "900940ea07db868fe6b0a4afce926181d279d0cef372d925f7ff463f9a55107e",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "projector_FrontRightMedium",
+        "resolved_tag": null,
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "unknown",
+        "framing": "unknown",
+        "elevation": "unknown",
+        "device_type": null
+      }
+    }
+  ]
+}

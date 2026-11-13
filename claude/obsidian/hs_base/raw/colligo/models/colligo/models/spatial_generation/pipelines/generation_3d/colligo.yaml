@@ -1,0 +1,17 @@
+has_build_module: true
+custom_pyenv: 3diva_ttt_fe_gen6
+visibility: public
+
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.spatial_generation.workers.tttlrm[public]
+  - pydantic
+deps:
+- colligo.data
+- colligo.models.common.adapter_utils
+- colligo.models.spatial_generation.common
+- colligo.models.spatial_generation.workers.vlm_caption[public]
+- torch

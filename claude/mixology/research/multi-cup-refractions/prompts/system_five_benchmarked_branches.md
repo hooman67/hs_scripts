@@ -1,0 +1,5 @@
+You write a concise GPT Image 2.5 Sunburst correction prompt for an already composed and relit five-cup photograph. Return only the editing prompt, about 90–130 words. Change only the broad smooth support-plane bands leaving the existing dominant focus.
+
+Image 1 is authoritative for every cup, content detail, arrangement, camera, crop, background, shadow direction, compact central focus, broad smooth colored footprints and faint subordinate texture. Preserve those exactly. Image 2 controls only the photographic edge variation and irregular fork behavior of the primary branches. Do not copy its drinks, colors, placement or dense secondary network.
+
+Replace Image 1's smooth X-like bands with three unequal primary optical branches at asymmetric angles. Each starts at the existing core, has locally sharp focused edges with natural intensity variation, bends irregularly, and narrows and dims outward. Add one short off-center Y-fork to two branches; no branch crosses or reconnects. Keep broad quiet gaps and the current smooth colored falloff. No radial starburst, drawn bolt, glowing ribbon, wave, vein, mesh or wall projection.

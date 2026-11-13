@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HP V6.4 prompt writers - GPT-5.5 vs Astra</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading">Connecting to Adobe sign-in...</div>
+  <main id="content" class="hidden">
+    <header>
+      <h1>HP V6.4 prompt writers - GPT-5.5 vs Astra</h1>
+      <p>16 identical input banks. Ten ranked prompts per model, followed by the unchanged PR4523 scene pipeline.</p>
+      <p class="muted">GPT-5.5: frozen baseline, medium reasoning, 16k completion budget.
+        Astra: new best-effort run, high reasoning, 32k budget. This compares configurations, not model alone.
+        Ranks are not equivalent scenes or paired random seeds.</p>
+      <p class="muted">Both downstream pipelines use three Astra planning calls plus one GPT Image 2.5 image call.
+        No judge is run. Validation acceptance is not human/image-quality approval. Failures are shown, not resampled.</p>
+      <p class="muted">Only accepted Astra banks are rendered. Images therefore represent the validated subset;
+        failed banks have ten explicit error slots, not substitute prompts or images.</p>
+      <p class="muted">Historical printer source/twin labels are size/context aliases, not exact SKU matches.
+        Fictional-source qualifications remain in the original shared documents.</p>
+      <p><a id="sourceLink">Frozen GPT-5.5 baseline data and generation inputs</a></p>
+      <div class="controls">
+        <label>Input <select id="bank"><option value="">All 16 inputs</option></select></label>
+        <label>Writer <select id="experiment"><option value="">Both writers</option></select></label>
+        <label>Images per row <input id="columns" type="range" min="2" max="5" value="5"><output id="columnValue">5</output></label>
+        <label><input id="showPrompts" type="checkbox"> Expand source prompts</label>
+      </div>
+      <p id="status" role="status"></p>
+      <p id="error" role="alert"></p>
+      <nav id="bankNav" aria-label="Jump to input"></nav>
+    </header>
+    <div id="groups"></div>
+  </main>
+  <dialog id="lightbox">
+    <button id="closeImage" type="button">Close</button>
+    <p id="imageLabel"></p>
+    <img id="largeImage" alt="">
+    <p><a id="originalImage" target="_blank" rel="noopener">Open full-resolution PNG</a></p>
+  </dialog>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script>
+  <script src="./main.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => initializeIMS());</script>
+</body>
+</html>

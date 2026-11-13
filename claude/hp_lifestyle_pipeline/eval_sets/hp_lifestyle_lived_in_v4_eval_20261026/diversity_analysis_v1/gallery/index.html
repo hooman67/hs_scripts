@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HP V4 Prompt Distribution Analysis</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading" class="loading">Loading diversity analysis…</div>
+  <main id="content" class="hidden">
+    <header class="hero">
+      <div><p class="eyebrow">HP lifestyle writer · V4</p><h1>Prompt distribution and C-Tech reference proximity</h1><p class="lede">All 540 final accepted prompts compared with the ten sample prompts in <em>HP - mAIstro Prompt Guidance (Oct 2026)</em>.</p></div>
+      <nav class="downloads"><a href="../downloads/analysis.json">Analysis JSON</a><a href="../downloads/candidate_metrics.csv">540-row metrics CSV</a><a href="../downloads/lexical_audit.json">Lexical audit</a><a href="../downloads/reference_prompts.json">Reference prompts</a></nav>
+    </header>
+
+    <section id="kpis" class="kpi-grid" aria-label="Headline metrics"></section>
+    <section class="callout"><h2>What the data says</h2><div id="interpretation"></div></section>
+    <section class="taxonomy-note"><strong>Native environment:</strong> the report counts the six model-authored V4 environment values directly. The display-environment field is an identical compatibility alias; no prompt is relabeled by a classifier, lexical rule, or post-hoc mapping.</section>
+
+    <section class="panel wide">
+      <div class="panel-heading"><div><p class="eyebrow">Semantic map</p><h2>Where the 540 prompts sit relative to the references</h2></div><div class="controls"><label>Color by <select id="colorBy"><option value="display_environment">display environment</option><option value="relationship">relationship</option><option value="view_role">camera view</option></select></label><label>Show <select id="pointFilter"><option value="all">all prompts</option><option value="selected">108 selected</option><option value="env:Office">Office</option><option value="env:Café">Café</option><option value="env:Creative Studio">Creative Studio</option><option value="env:Home">Home</option><option value="env:Education">Education</option><option value="env:Gaming">Gaming</option><option value="close_up">close-up only</option><option value="wide">wide only</option></select></label></div></div>
+      <p class="note">PCA projection of frozen MiniLM semantic embeddings. Stars are C-Tech references; circles are V4 prompts. Hover for exact prompt and similarity. The first two axes preserve <span id="explained"></span> of embedding variance.</p>
+      <div id="scatter" class="chart scatter" role="img" aria-label="Semantic prompt map"></div><div id="legend" class="legend"></div>
+    </section>
+
+    <section class="grid two">
+      <article class="panel"><p class="eyebrow">Breadth</p><h2>Native environment distribution</h2><div id="environmentChart" class="chart"></div><p class="note">Exact counts over the six model-authored V4 environment values; no relabeling is applied.</p></article>
+      <article class="panel"><p class="eyebrow">Grounding</p><h2>Relationship to source messaging</h2><div id="relationshipChart" class="chart"></div><p class="note">Creative departure is expected in lower-ranked diversity candidates.</p></article>
+      <article class="panel"><p class="eyebrow">Ranking</p><h2>Source-relevance score distribution</h2><div id="scoreChart" class="chart"></div><p class="note">The 0–100 rubric measures source support, not prompt quality.</p></article>
+      <article class="panel"><p class="eyebrow">C-Tech proximity</p><h2>Nearest-reference semantic similarity</h2><div id="similarityChart" class="chart"></div><p class="note">Scope-adjusted cosine similarity. No calibrated pass threshold exists.</p></article>
+    </section>
+
+    <section class="panel wide"><p class="eyebrow">Stratified comparison</p><h2>Similarity to the nearest C-Tech reference</h2><p class="note">Environment grouping uses the six native V4 categories exactly as exported.</p><div id="groupTables" class="group-grid"></div></section>
+    <section class="panel wide"><p class="eyebrow">Reference coverage</p><h2>Which reference each prompt is closest to</h2><div id="referenceCoverage" class="chart tall"></div><div id="referenceList" class="reference-list"></div></section>
+
+    <section class="grid two">
+      <article class="panel"><p class="eyebrow">Recurring language</p><h2>Most frequent 3–5 word phrases</h2><div id="phrases"></div></article>
+      <article class="panel"><p class="eyebrow">Near repetitions</p><h2>Closest lexical prompt pairs</h2><div id="pairs"></div></article>
+    </section>
+
+    <section class="grid two">
+      <article class="panel"><p class="eyebrow">Closest examples</p><h2>Most similar to C-Tech references</h2><div id="closest"></div></article>
+      <article class="panel"><p class="eyebrow">Creative frontier</p><h2>Farthest from C-Tech references</h2><div id="farthest"></div></article>
+    </section>
+
+    <section class="panel wide"><p class="eyebrow">Reading the results</p><h2>Methods and limitations</h2><div id="methods"></div></section>
+  </main>
+  <div id="tooltip" class="tooltip hidden"></div>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script>
+  <script src="./data.js"></script>
+  <script src="./report.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>initializeIMS());</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HP Lifestyle V6.1 · GPT Image 2.5 scene generations</title>
+  <link rel="stylesheet" href="./style.css?v=2">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading" class="loading-screen">Loading the bank-organized V6.1 scene gallery…</div>
+  <main id="content" class="hidden">
+    <header class="header-bar">
+      <div class="title-row">
+        <div>
+          <h1>HP Lifestyle V6.1 · GPT Image 2.5 scene generations</h1>
+          <p id="subtitle" class="subtitle"></p>
+        </div>
+        <div id="progress" class="progress" aria-live="polite"></div>
+      </div>
+      <div id="downloads" class="downloads"></div>
+      <div class="scope-note"><strong>How to read this gallery:</strong> each bank is one device + Smart Brief/source pair + camera view. V6.1 authored 10 ranked prompts for every bank. All 10 have completed scene-generation images using GPT Image 2.5. Similar concepts across camera views are separate camera-specific candidates, not duplicate rows within one bank.</div>
+      <div class="controls">
+        <label><span>Device</span><select id="deviceFilter"><option value="all">All devices</option></select></label>
+        <label><span>Smart Brief / source pair</span><select id="sourcePairFilter"><option value="all">All source pairs</option></select></label>
+        <label><span>Camera</span><select id="cameraFilter"><option value="all">All cameras</option></select></label>
+        <label class="bank-select"><span>Prompt bank</span><select id="bankFilter"></select></label>
+        <label><span>Search within bank</span><input id="searchInput" type="search" placeholder="Prompt or rewritten prompt"></label>
+        <label><span>Environment within bank</span><select id="environmentFilter"><option value="all">All environments</option></select></label>
+        <label><span>Generation status</span><select id="statusFilter"><option value="all">All 10 prompts</option><option value="done">Generated</option><option value="prompt_only">Prompt only</option><option value="pending">Pending</option><option value="failed">Error</option></select></label>
+      </div>
+      <div id="resultSummary" class="result-summary"></div>
+    </header>
+    <section id="bankContext" class="bank-context" aria-label="Selected device, Smart Brief and source pair, and camera view"></section>
+    <section class="table-shell" aria-label="V6.1 prompts, corrected digital twins, source documents, and generated outputs">
+      <table>
+        <thead><tr>
+          <th class="prompt-column">Prompt + scores</th>
+          <th class="input-column">Corrected digital twin</th>
+          <th class="source-column">Smart Brief + source messaging</th>
+          <th class="explanation-column">Explanation + provenance</th>
+          <th class="output-column">Generated output</th>
+          <th class="rewrite-column">Rewritten prompt</th>
+          <th class="debug-column">Pipeline debug / provenance</th>
+        </tr></thead>
+        <tbody id="galleryRows"></tbody>
+      </table>
+      <div id="emptyState" class="empty-state hidden">No matching rows.</div>
+    </section>
+    <nav class="pagination" aria-label="Prompt banks"><button id="prevBank" type="button">Previous bank</button><span id="bankStatus"></span><button id="nextBank" type="button">Next bank</button></nav>
+  </main>
+  <div id="assetModal" class="modal" role="dialog" aria-modal="true" aria-label="Image preview"><button class="close-btn" type="button" aria-label="Close preview">&times;</button><img id="modalImage" src="" alt="Full-size preview"><div id="modalInfo" class="modal-info"></div></div>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script>
+  <script src="./data.js?v=2"></script>
+  <script src="./main.js?v=2"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => { initializeIMS(); });</script>
+</body>
+</html>

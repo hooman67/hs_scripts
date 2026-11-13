@@ -1,0 +1,117 @@
+{
+  "version": "v23.1-strong-low-inlier-affine-candidate",
+  "date": "2026-11-06",
+  "foundry_source_sha256": "8c1a8204d27eeb3ba922d6d9519113da7beeff9368301bcc9f8c9a7ec2fb2665",
+  "candidate_source_sha256": "808bde48be35ba6093dc01d0cc23808f0c7f4509b62e79dce64d1033674c19a6",
+  "rule": {
+    "ordinary_min_inliers": 20,
+    "exception_min_inliers": 17,
+    "exception_max_inliers": 19,
+    "exception_min_inlier_ratio": 0.7,
+    "exception_min_span_x": 0.7,
+    "exception_min_span_y": 0.6,
+    "exception_min_quadrants": 4,
+    "exception_min_hull": 0.25,
+    "all_non_count_invariants_required": true
+  },
+  "tassel": {
+    "selected_attempt": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "mode": "first_attempt_all_view",
+        "prior": "fail",
+        "candidate": "pass",
+        "inliers": 18,
+        "ratio": 0.782608695652174
+      },
+      {
+        "attempt": 2,
+        "mode": "fixed_recovery",
+        "prior": "unverifiable",
+        "candidate": "pass",
+        "inliers": 17,
+        "ratio": 0.7083333333333334
+      }
+    ]
+  },
+  "replay_summary": {
+    "real_attempts": 31,
+    "real_labeled_attempts": 29,
+    "real_historical_proxy_false_accepts": 1,
+    "real_historical_proxy_false_rejects": 4,
+    "real_label_limitation": "Historical guard verdicts are regression proxies, not independent human truth",
+    "frozen_synthetic_mode_checks": 110,
+    "frozen_synthetic_false_accepts": 0,
+    "frozen_synthetic_false_rejects": 0,
+    "added_synthetic_checks": 82,
+    "added_synthetic_false_accepts": 0,
+    "added_synthetic_false_rejects": 0,
+    "added_synthetic_outcome_mismatches": 0,
+    "full_resolution_added_checks": 81,
+    "high_fill_legal_motion_checks": 3,
+    "deterministic_repeat_equal": true,
+    "prior_rows": 95,
+    "prior_rows_with_observable_old_selection": 48,
+    "prior_selection_changes": 9,
+    "prior_incomparable_without_old_selection": 47,
+    "prior_skipped": 0,
+    "full_resolution_runtime": {
+      "count": 81,
+      "min_ms": 286.3331700209528,
+      "median_ms": 379.4768920633942,
+      "p95_ms": 448.77009000629187,
+      "max_ms": 462.60326099582016,
+      "total_ms": 29969.91763380356
+    }
+  },
+  "comparison_to_v23_run3": {
+    "comparison": "candidate decisions versus accepted V23 run 3",
+    "all_sections_identical": true,
+    "sections": {
+      "real": {
+        "run3_count": 31,
+        "candidate_count": 31,
+        "identical": true,
+        "changed": []
+      },
+      "frozen_synthetic": {
+        "run3_count": 110,
+        "candidate_count": 110,
+        "identical": true,
+        "changed": []
+      },
+      "added_synthetic": {
+        "run3_count": 82,
+        "candidate_count": 82,
+        "identical": true,
+        "changed": []
+      },
+      "prior_selections": {
+        "run3_count": 95,
+        "candidate_count": 95,
+        "identical": true,
+        "changed": []
+      },
+      "prior_attempts": {
+        "run3_count": 113,
+        "candidate_count": 113,
+        "identical": true,
+        "changed": []
+      }
+    }
+  },
+  "fixed_8px": {
+    "count": 5,
+    "all_pass": true
+  },
+  "fixed_9px": {
+    "count": 5,
+    "all_fail": true
+  },
+  "boundary_unobservable": {
+    "count": 20,
+    "all_unverifiable": true
+  },
+  "replay_wall_seconds": 640
+}

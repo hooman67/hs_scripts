@@ -1,0 +1,131 @@
+{
+  "validator_version": "v3-host-validator-r2",
+  "passed": true,
+  "error_count": 0,
+  "warning_count": 2,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support an omission explanation; inspect: ['e4']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 11,
+    "environments": {
+      "Office": 15,
+      "Home": 4,
+      "Education": 5,
+      "Gaming": 6
+    },
+    "relationships": {
+      "source_grounded": 10,
+      "source_adjacent": 8,
+      "creative_departure": 12
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 4,
+      "Office": 15,
+      "Education": 5,
+      "Gaming": 6
+    },
+    "relationship_counts": {
+      "source_grounded": 10,
+      "source_adjacent": 8,
+      "creative_departure": 12
+    },
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e1",
+          "e2",
+          "e3"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p7",
+          "p8",
+          "p11",
+          "p19",
+          "p20",
+          "p21",
+          "p24"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e5"
+        ],
+        "prompt_ids": [
+          "p6"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e6",
+          "e7"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p5",
+          "p9",
+          "p17",
+          "p18"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [
+          "e8",
+          "e9"
+        ],
+        "prompt_ids": [
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p22"
+        ]
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e10",
+          "e11"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p8",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p22",
+          "p23"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "540eab79ab75177c65ca20519bbb66c57d28685ee8a89d7e6f832335178acef6"
+}

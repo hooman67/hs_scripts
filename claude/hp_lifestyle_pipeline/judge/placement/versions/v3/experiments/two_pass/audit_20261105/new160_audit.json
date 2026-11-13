@@ -1,0 +1,149 @@
+{
+  "schema_version": "placement-new160-independent-audit-v1",
+  "audited_at_utc": "2026-11-05T23:51:08.668316+00:00",
+  "scope": "mechanical independent recomputation of NEW160 frozen verified results and local FE artifacts",
+  "status": "pass",
+  "sources": {
+    "manifest": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/new_v6_1_eval_20261105/manifest.json",
+      "sha256": "fd84149fa421c32602358c325b4fb14ed555d3e5033fb92bc2800ab37e6daefc"
+    },
+    "verified_run": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_v6_1/verified_runs/verified-160-v1",
+      "summary_sha256": "9366a3c07674bd81775ff68ab6bab4d283bd41187cb7b4c0f0dc9b3d38194936",
+      "evaluation_sha256": "f1aac67d311526b77d0ca5606d404ead2c37b16fd2791c93b382b7339bde1b3f",
+      "upstream_audit_sha256": "d39ec9adaa8bcb930cfd03c8c434464fbdde31c4271f32365f7e6c657e23b410"
+    },
+    "trigger_manifest_sha256": "9a87b591fd2e2dc5c520255fb835c487939eb22bfbaf499e9d920023fc915e71",
+    "protocol_freeze_sha256": "50d2cc25f63de44b302e7321c8e635b559fcce204a4699bda94aee30814c7df6",
+    "selected_protocol_sha256": "76458975bb76ffdb8a8f85801f703e99c395bfb051f4d6648fd775dc34bed7fd",
+    "selected_protocol_snapshot_manifest_sha256": "49a4fbc2bd85cf8394acf5adbedc66cc6c89b8c859459a3a2307d23154322cc5",
+    "evaluator_sha256": "14ef27116c4ae9f3f7ffc73ef6f06e72f7f5d9b9f0c4074ae583f3b7947158e9",
+    "fe_build_manifest": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/fe_reports/v6_1_20261105/build_manifest.json",
+      "sha256": "7ac49bb5352759b4d2097825acbda85ee4abe234c8b6e3974a517124c2d7086d",
+      "status": "local_build_validated_not_published"
+    }
+  },
+  "coverage": {
+    "manifest_unique_ids": 160,
+    "device_records": {"cashmere": 40, "elitebook": 40, "magic": 40, "tassel": 40},
+    "device_type_records": {"laptop": 80, "printer": 80},
+    "exact_id_sets": {
+      "baseline_v2": 160,
+      "compact_v3": 160,
+      "two_pass": 160,
+      "verified": 160,
+      "fe_combined": 160,
+      "fe_laptops": 80,
+      "fe_printers": 80
+    },
+    "prompt_text_and_sha256_verified": 160,
+    "generated_image_local_sha256_verified": 160,
+    "generated_image_unique_sha256": 160,
+    "twin_image_local_sha256_verified": 160,
+    "twin_image_unique_sha256": 16,
+    "stage_runtime_inputs_verified": 320,
+    "stage_artifact_hashes_verified": 960,
+    "manifest_dataset_role": "evaluation_target_unlabeled",
+    "label_provenance_all_false": true
+  },
+  "triggers_recomputed_from_predictions": {
+    "case_count": 4,
+    "component_count": 5,
+    "exact_match_to_trigger_manifest": true,
+    "comments_or_expectations_included": false,
+    "case_components": [
+      {"id": "cashmere__laptop_BackRightCloseUp__p9", "component": "access_usability"},
+      {"id": "elitebook__laptop_BackRightCloseUp__p7", "component": "orientation_alignment"},
+      {"id": "elitebook__laptop_BackRightCloseUp__p9", "component": "access_usability"},
+      {"id": "elitebook__laptop_BackRightCloseUp__p9", "component": "orientation_alignment"},
+      {"id": "magic__printer_FrontLeftMedium__p6", "component": "support_scenario"}
+    ]
+  },
+  "verifier_raw_bodies": {
+    "all_successful_on_attempt_1": true,
+    "raw_choice_content_exactly_matches_stored_assessment": true,
+    "raw_hashes_match_verified_overlays": true,
+    "sha256": {
+      "cashmere__laptop_BackRightCloseUp__p9": "d38c0082aa4a8621607a33254495094a25532f587955c6ff509221e968a0df64",
+      "elitebook__laptop_BackRightCloseUp__p7": "da28fe419b8dda9e9efad4d8aedb8ac65863f1162689626ce656e965fc31577b",
+      "elitebook__laptop_BackRightCloseUp__p9": "44e26a5ddb3f529fd983411e214638bb65b3b0de1d3f58506f71cf1255b6e120",
+      "magic__printer_FrontLeftMedium__p6": "77588898c32f27b761b79657bd06c82b3ad60a87e15234e0087741c9d7ff7995"
+    }
+  },
+  "deterministic_recomputation": {
+    "verified_compact_scores_equal": 160,
+    "component_merges_and_provenance_equal": 160,
+    "application_merged_scores_equal": 160,
+    "final_policy_decisions_equal": 160,
+    "verifier_overlays": 4,
+    "verifier_overlay_components": 5,
+    "final_verdict_overrides": 0,
+    "final_confidence_overrides": 0,
+    "frozen_merger_sha256": "11594dccc74ba3ed5e986d0b32be7f531b63205186df7abb86b7ef5bed336922",
+    "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+    "combiner_sha256": "87e5ac23a0ef9254f7c43b499197539abe2670db243f427a9d477ddc6cbfb1e1"
+  },
+  "verdict_counts_by_device": {
+    "baseline_v2": {
+      "cashmere": {"pass": 25, "review": 3, "fail": 12},
+      "elitebook": {"pass": 26, "review": 1, "fail": 13},
+      "magic": {"pass": 33, "review": 0, "fail": 7},
+      "tassel": {"pass": 34, "review": 0, "fail": 6}
+    },
+    "compact_v3": {
+      "cashmere": {"pass": 34, "review": 2, "fail": 4},
+      "elitebook": {"pass": 36, "review": 1, "fail": 3},
+      "magic": {"pass": 39, "review": 0, "fail": 1},
+      "tassel": {"pass": 39, "review": 0, "fail": 1}
+    },
+    "two_pass": {
+      "cashmere": {"pass": 25, "review": 3, "fail": 12},
+      "elitebook": {"pass": 25, "review": 1, "fail": 14},
+      "magic": {"pass": 33, "review": 0, "fail": 7},
+      "tassel": {"pass": 34, "review": 0, "fail": 6}
+    },
+    "verified": {
+      "cashmere": {"pass": 25, "review": 3, "fail": 12},
+      "elitebook": {"pass": 25, "review": 1, "fail": 14},
+      "magic": {"pass": 33, "review": 0, "fail": 7},
+      "tassel": {"pass": 34, "review": 0, "fail": 6}
+    }
+  },
+  "verdict_transitions": {
+    "baseline_v2_to_two_pass": {"changed": 1, "transition": "pass->fail", "ids": ["elitebook__laptop_BackRightCloseUp__p9"]},
+    "two_pass_to_verified": {"changed": 0, "ids": []},
+    "baseline_v2_to_verified": {"changed": 1, "transition": "pass->fail", "ids": ["elitebook__laptop_BackRightCloseUp__p9"]},
+    "interpretation": "Four cases received five verifier component assessments, but verification changed no final verdict. The only V2-to-final verdict change was already introduced by the deterministic two-pass merge."
+  },
+  "trigger_case_verdicts": {
+    "cashmere__laptop_BackRightCloseUp__p9": {"baseline_v2": "fail", "compact_v3": "fail", "two_pass": "fail", "verified": "fail"},
+    "elitebook__laptop_BackRightCloseUp__p7": {"baseline_v2": "fail", "compact_v3": "fail", "two_pass": "fail", "verified": "fail"},
+    "elitebook__laptop_BackRightCloseUp__p9": {"baseline_v2": "pass", "compact_v3": "fail", "two_pass": "fail", "verified": "fail"},
+    "magic__printer_FrontLeftMedium__p6": {"baseline_v2": "fail", "compact_v3": "fail", "two_pass": "fail", "verified": "fail"}
+  },
+  "fe_contract": {
+    "combined": {"rows": 160, "data_sha256": "e0354d96829ce5ded6949243835077bb8fdeea0d240cca0854604426118ab707", "viewer_sha256": "b10c91e5f939b555ce0332f7269baefd2e1ef1b0117c6ae9530188808cbbcc2a"},
+    "laptops": {"rows": 80, "data_sha256": "2851092b889b13ce8b081e743fcf3458e1283f0f6119c01d538c86ed51a3451f", "viewer_sha256": "b10c91e5f939b555ce0332f7269baefd2e1ef1b0117c6ae9530188808cbbcc2a"},
+    "printers": {"rows": 80, "data_sha256": "50c3ec96141519c1770ed24d3dae203edd870a0a2d844585a440de21f319b7a8", "viewer_sha256": "b10c91e5f939b555ce0332f7269baefd2e1ef1b0117c6ae9530188808cbbcc2a"},
+    "all_row_ids_exact": true,
+    "generated_scene_url_exactly_matches_manifest": 160,
+    "twin_url_matches_manifest_hash_and_filename": 160,
+    "shared_twin_asset_hashes_verified": 16,
+    "original_scene_prompt_exact": 160,
+    "score_and_final_verdict_exact": 160,
+    "device_product_candidate_camera_environment_metadata_exact": 160,
+    "judge_assessment_text_present": 160,
+    "global_metadata_reports_scene_generation_and_no_human_labels": true
+  },
+  "tests": {
+    "command": "python -m pytest -q judge/placement/versions/v3/test_build_fe_report.py judge/placement/versions/v3/experiments/two_pass/test_two_pass.py judge/placement/versions/v3/experiments/verify_additions/test_verify_additions.py",
+    "result": "16 passed in 4.40s"
+  },
+  "limitations": [
+    "The NEW160 set is unlabeled, so this audit verifies provenance, deterministic behavior, and presentation contracts rather than accuracy.",
+    "FE generated-scene URLs were matched to the manifest and their local source files were hash-verified; no network fetch or AWS write was performed.",
+    "The front-end build status is local_build_validated_not_published at audit time."
+  ]
+}

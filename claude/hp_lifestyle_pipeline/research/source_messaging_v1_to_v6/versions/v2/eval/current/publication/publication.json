@@ -1,0 +1,66 @@
+{
+  "version": "hp-camera-v2-text-review-publication-v1",
+  "status": "published_and_s3_bytes_verified",
+  "published_at_s3": "2026-10-23T00:26:17+00:00",
+  "skills": [
+    "/home/colligo/.codex/skills/aws-creds/SKILL.md",
+    "/home/colligo/.codex/skills/render-s3-gallery/SKILL.md"
+  ],
+  "credential_broker": {
+    "endpoint": "https://foundry-aws-pluto.adobe.io/iam/credentials/aws",
+    "credentials_recorded": false
+  },
+  "source_review": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v2/eval/current/review.html",
+    "bytes": 5586627,
+    "sha256": "8cc2e4212db596d868429054428dae7cfe3c9f3b59f2bd25847e53bc3c358b9c"
+  },
+  "served_review": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v2/eval/current/publication/index.html",
+    "bytes": 5587424,
+    "sha256": "39f0d152600d3908447c0db17bfb1122c528aed610fd56e2610b13a8b60c350f",
+    "transformation": [
+      "preserved the complete source review content",
+      "added the Adobe IMS library script tag",
+      "added the unchanged shared imsauth.js script tag",
+      "added IMS, loading, and content containers plus minimal auth styling",
+      "called initializeIMS on DOMContentLoaded"
+    ]
+  },
+  "ims_auth": {
+    "shared_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_prompt_digital_twin_eval_v1/gallery/imsauth.js",
+    "published_local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v2/eval/current/publication/imsauth.js",
+    "bytes": 4869,
+    "sha256": "269ec81678b5cffb043d80a1340aa05ca5d2c24ea96396f0f97d690ddb772a1a",
+    "modified": false
+  },
+  "publication": {
+    "bucket": "foundry-hp-enterprise-adobe-assets",
+    "prefix": "eval_sets/hp_lifestyle_camera_v2_text_review_20261022",
+    "index_key": "eval_sets/hp_lifestyle_camera_v2_text_review_20261022/gallery/index.html",
+    "ims_auth_key": "eval_sets/hp_lifestyle_camera_v2_text_review_20261022/gallery/imsauth.js",
+    "url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_camera_v2_text_review_20261022/gallery/index.html",
+    "prefix_was_empty_before_upload": true,
+    "uploaded_object_count": 2
+  },
+  "s3_verification": {
+    "index": {
+      "content_length": 5587424,
+      "content_type": "text/html",
+      "etag": "e3e1e4b38aa7583f478fb130ddb0bdd3",
+      "last_modified": "2026-10-23T00:26:17+00:00",
+      "downloaded_sha256": "39f0d152600d3908447c0db17bfb1122c528aed610fd56e2610b13a8b60c350f",
+      "downloaded_bytes_match_local": true
+    },
+    "ims_auth": {
+      "content_length": 4869,
+      "content_type": "application/javascript",
+      "etag": "b137276f37fc72883af7c5e3b2bc171f",
+      "last_modified": "2026-10-23T00:26:16+00:00",
+      "downloaded_sha256": "269ec81678b5cffb043d80a1340aa05ca5d2c24ea96396f0f97d690ddb772a1a",
+      "downloaded_bytes_match_local": true
+    }
+  },
+  "browser_render_verified": false,
+  "browser_render_note": "Publication was verified through S3 metadata and byte-for-byte downloads; an authenticated browser render was not performed."
+}

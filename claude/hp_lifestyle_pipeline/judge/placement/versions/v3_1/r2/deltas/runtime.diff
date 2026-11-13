@@ -1,0 +1,80 @@
+--- /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/run_judge.py
++++ /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/run_judge.py
+@@ -14,11 +14,13 @@
+ 
+ from jsonschema import Draft202012Validator
+ 
++import trace_contract as TRACE
++
+ ROOT = Path(__file__).resolve().parent
+-V3 = ROOT.parent / "v3"
++V3 = ROOT.parent.parent / "v3"
+ INPUT_KEYS = {"generated_image", "twin_image", "product_type", "scene_prompt", "image_stage"}
+ MODEL = "gpt-5.5"
+-PROTOCOL_VERSION = "placement-judge-v3.1-consensus-v1"
++PROTOCOL_VERSION = "placement-judge-v3.1-r2-consensus-v1"
+ 
+ 
+ def sha(path):
+@@ -38,7 +40,7 @@
+     return module
+ 
+ 
+-SCORING = load("v31_scoring", ROOT / "scoring.py") if (ROOT / "scoring.py").exists() else None
++SCORING = load("v31_scoring", ROOT.parent / "scoring.py") if (ROOT.parent / "scoring.py").exists() else None
+ COMBINE = load("v31_v3_combine", V3 / "experiments/two_pass/combine.py")
+ CONSENSUS = load("v31_v3_consensus", V3 / "experiments/consensus_policy/merge_consensus_v2.py")
+ 
+@@ -143,7 +145,8 @@
+ def call_stage(runtime_input, stage, output, client, names=None, proposals=None):
+     output.mkdir(parents=True, exist_ok=True)
+     prompt = (ROOT / "prompts" / f"{stage}.md").read_text()
+-    schema = component_schema(names) if names else SCORING.OBSERVATION_SCHEMA
++    base_schema = component_schema(names) if names else SCORING.OBSERVATION_SCHEMA
++    schema = TRACE.envelope_schema(base_schema)
+     images = {k: {"path": runtime_input[k], "sha256": sha(runtime_input[k])}
+               for k in ("generated_image", "twin_image")}
+     anchors, excluded = select_anchors(runtime_input) if stage == "baseline" else ([], [])
+@@ -161,6 +164,8 @@
+         "requested_components": names, "proposals": proposals,
+         "visual_anchors": anchors, "excluded_target_identical_anchor_ids": excluded,
+         "target_comments_or_expectations_passed": False,
++        "observation_payload_schema_sha256": json_sha(base_schema),
++        "evidence_envelope_version": TRACE.VERSION,
+     }
+     fingerprint = json_sha(request)
+     result_path = output / "result.json"
+@@ -171,12 +176,13 @@
+         raw = json.loads((output / "response.json").read_text())
+         if not identity_matches(raw.get("model")) or raw["choices"][0]["finish_reason"] != "stop":
+             raise RuntimeError("Cached raw model identity/completion mismatch")
+-        value = json.loads(raw["choices"][0]["message"]["content"])
++        evidence_envelope = json.loads(raw["choices"][0]["message"]["content"])
++        value = TRACE.validate(evidence_envelope, base_schema)
+         if names:
+-            validate_components(value, schema)
++            validate_components(value, base_schema)
+         else:
+             validate_new_observation(value)
+-        if value != old["observation"]:
++        if value != old["observation"] or evidence_envelope != old.get("evidence_envelope"):
+             raise RuntimeError("Cached raw response differs from saved observation")
+         return old
+     write_json(output / "request.json", {**request, "fingerprint": fingerprint})
+@@ -213,12 +219,14 @@
+         choice = response.choices[0]
+         if not identity_matches(response.model) or choice.finish_reason != "stop" or choice.message.refusal:
+             raise RuntimeError("Unexpected model, incomplete or refused response")
+-        observation = json.loads(choice.message.content)
++        evidence_envelope = json.loads(choice.message.content)
++        observation = TRACE.validate(evidence_envelope, base_schema)
+         if names:
+-            validate_components(observation, schema)
++            validate_components(observation, base_schema)
+         else:
+             validate_new_observation(observation)
+         result.update(ok=True, model_returned=response.model, observation=observation,
++                      evidence_envelope=evidence_envelope,
+                       usage=response.usage.model_dump() if response.usage else None)
+     except Exception as exc:
+         result.update(ok=False, error_type=type(exc).__name__,

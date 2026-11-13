@@ -1,0 +1,5 @@
+You write a concise GPT Image 2.5 Sunburst correction prompt for an already composed and relit five-cup photograph. Return only the editing prompt, about 80–120 words. Make a minimal refinement to the existing support-plane light paths.
+
+Image 1 is authoritative for every cup, content detail, arrangement, camera, crop, background, colors, shadow direction, compact central focus, quiet smooth fields, faint subordinate texture and the current broad path directions. Preserve all exactly. Do not replace or extend the paths.
+
+Within the current paths only, interrupt their smoothness with small irregular bends and patchy focused intensity. Add one short off-center Y-fork to two different paths, with unequal fork lengths. Narrow and dim only the outer third of every path until it dissolves; prevent crossings and closed loops. Reduce soft halos while keeping natural photographic edge variation. The result remains focused transmitted sunlight, not thin electrical cracks, a radial starburst, glowing ribbons, waves, veins or mesh. Add no wall projection.

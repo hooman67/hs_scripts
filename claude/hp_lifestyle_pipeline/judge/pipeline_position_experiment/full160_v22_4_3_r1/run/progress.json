@@ -1,0 +1,258 @@
+{
+  "schema_version": "hp-position-flex-v22.4.3-r1-qualitative-assembly-progress-v1",
+  "experiment_id": "hp-position-flex-v22.4.3-r1-qualitative-assembly-v6.1-full160",
+  "freeze_sha256": "58fc47a425fcf7ca927b3dc6d710cc3f492f4b673cb8f59bc1b0895bb101be02",
+  "endpoint_instance_id": "662074c7-658d-4c5f-8204-78abb25cb1a1",
+  "pipeline_version": "unified-blue-scale-v22.4.3-unreliable-affine-alpha-fallback-twin-camera-guide-only-no-edit-mask",
+  "wrapper_version": "v22.4.3-r1-bounded-outer-job-retry-1",
+  "source_hashes": {
+    "hp3p/prompts/system_3p.txt": "bb02ad09f86a9a4aa4bdeac7c023d1ece0356ecef298853436af4781fa595ddf",
+    "hp3p/prompts/system_3p_fixed_position.txt": "67e4d817a5a203912116bb99afbd6c4511d9a5c537b241cc6e980e34e75b1118",
+    "hp3p/pipeline.py": "9e0378b6fbe6e505fbe626a9d0fe1a3155c93389b9cedc8c5c42eef5d4f2fd31",
+    "hp3p/geometry.py": "f9d0f3a395624a150f9a9fed8c836394b66f041f6e212dc87c8b1a2322514a95",
+    "hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+    "hp3p/reference_blue.py": "f36098543e208029226ae3b04ffd22c39edf7e168ab49dd5868e2185bd90661d",
+    "hp3p/invariants.py": "4f833b0d0822d0d6e4dff1b41b39d46b2cb3cd9e3671e5b1339faf15ccbd810a",
+    "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3"
+  },
+  "protocol": {
+    "serial": true,
+    "max_outer_jobs_per_row": 2,
+    "retry_only_exact_error": "RuntimeError: pipeline error: ValueError: Product invariant guard rejected both image attempts; raw attempts and metrics kept.",
+    "interpretation": "Qualitative-assembly completion statistics; not native V22.4.3 per-job reliability."
+  },
+  "total": 160,
+  "done": [
+    "cashmere__laptop_BackRightCloseUp__p1",
+    "cashmere__laptop_BackRightCloseUp__p2",
+    "cashmere__laptop_BackRightCloseUp__p3",
+    "cashmere__laptop_BackRightCloseUp__p4",
+    "cashmere__laptop_BackRightCloseUp__p5",
+    "cashmere__laptop_BackRightCloseUp__p6",
+    "cashmere__laptop_BackRightCloseUp__p7"
+  ],
+  "rows": {
+    "cashmere__laptop_BackRightCloseUp__p1": {
+      "ordinal": 1,
+      "classification": "first_job_pass",
+      "selected_job_id": "cashmere__laptop_BackRightCloseUp__p1__outer_job_1",
+      "selected_raw_output_sha256": "b20c65a5002dc005d8f6de450fb381d3df154c56fb7835d52f253de8c27402a1",
+      "jobs": [
+        {
+          "job_id": "cashmere__laptop_BackRightCloseUp__p1__outer_job_1",
+          "outer_attempt": 1,
+          "outcome": "done",
+          "error": null,
+          "submission_request_sha256": "6d1a36cc5d5f286c78094687d1c2e379ef7217a0b900100e71d040bf87c282c2",
+          "status_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p1__outer_job_1/status.json",
+          "status_sha256": "a58b12a86b6ec1850d581bcdbc762ed6905131fad228804312e99b0654b86fce",
+          "artifact_manifest_sha256": "ac432dc3ca76273c32cce028db52bc07dd9dbd216d07f72af437cbe91bdac57f",
+          "provenance_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p1__outer_job_1/provenance.json",
+          "provenance_sha256": "2a2102199bae4bd447c8ba1bba7121d7b870f39abc348e5f6668dc74f5cdb0c0"
+        }
+      ],
+      "stage_b_attempts": 1,
+      "image_attempts": 2,
+      "guard_verdicts": [
+        "fail",
+        "pass"
+      ],
+      "selected_image_attempt": 2
+    },
+    "cashmere__laptop_BackRightCloseUp__p2": {
+      "ordinal": 2,
+      "classification": "recovered_on_retry",
+      "selected_job_id": "cashmere__laptop_BackRightCloseUp__p2__outer_job_2",
+      "selected_raw_output_sha256": "eba0233eb994ac647361d712e35f3a9a31f9d934ad48ef74425f78c4f3fa062c",
+      "jobs": [
+        {
+          "job_id": "cashmere__laptop_BackRightCloseUp__p2__outer_job_1",
+          "outer_attempt": 1,
+          "outcome": "error",
+          "error": "RuntimeError: pipeline error: ValueError: Product invariant guard rejected both image attempts; raw attempts and metrics kept.",
+          "submission_request_sha256": "b936a5ff74202471dfa9647a3f8c419599418061dfe5f4e1d05bc6564a4f89f4",
+          "status_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p2__outer_job_1/status.json",
+          "status_sha256": "768d6fff68f744d8864b2628e4d1d2e342b5a8e0b129fcf1852a6c8977d25ad9",
+          "artifact_manifest_sha256": "61a873682d159d544ff8416e729844f662bc996f9880484c4d96a405aebca557",
+          "failure_provenance_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p2__outer_job_1/failure_provenance.json",
+          "failure_provenance_sha256": "9dd5c2473f587f87178e80690466c88090e0f06ac7f9ea0897bf4a53e2f283b4"
+        },
+        {
+          "job_id": "cashmere__laptop_BackRightCloseUp__p2__outer_job_2",
+          "outer_attempt": 2,
+          "outcome": "done",
+          "error": null,
+          "submission_request_sha256": "967e2b6ea8ed0e4487e80b5ace63d0fb30574d75eda8a56dcf059259c7136887",
+          "status_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p2__outer_job_2/status.json",
+          "status_sha256": "5664bf857b5d67fd730d0f416630662f945c75d8ffc44cf650eeed06788bb60c",
+          "artifact_manifest_sha256": "53f941cc8eddea7b8ce96b2cf16094885edd3be144ea7ad2ef5b50ff704c4602",
+          "provenance_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p2__outer_job_2/provenance.json",
+          "provenance_sha256": "2ff3c59f309bd249762650e5c22784185facca4ec3fe97f3de4181407e8d4080"
+        }
+      ],
+      "stage_b_attempts": 1,
+      "image_attempts": 1,
+      "guard_verdicts": [
+        "pass"
+      ],
+      "selected_image_attempt": 1
+    },
+    "cashmere__laptop_BackRightCloseUp__p3": {
+      "ordinal": 3,
+      "classification": "first_job_pass",
+      "selected_job_id": "cashmere__laptop_BackRightCloseUp__p3__outer_job_1",
+      "selected_raw_output_sha256": "fc5c881d253a0cf63c5960cd9b236bac559272b1f10434cbbe3dc8bff10daebe",
+      "jobs": [
+        {
+          "job_id": "cashmere__laptop_BackRightCloseUp__p3__outer_job_1",
+          "outer_attempt": 1,
+          "outcome": "done",
+          "error": null,
+          "submission_request_sha256": "e43a4e7edb7ea2089aec5c738a2aec5408ab72b9cdcf6e18b506c6167406e3a2",
+          "status_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p3__outer_job_1/status.json",
+          "status_sha256": "9ea47e76a8ae312a34e368f740a3970b6b9b5a4553567559fb02e15a209e0de5",
+          "artifact_manifest_sha256": "e99252f0517901fe0f81b8f950335d06607cc9faeece1546b19e214dc10199db",
+          "provenance_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p3__outer_job_1/provenance.json",
+          "provenance_sha256": "ee74030fa30cc0482303585bfb6ab6b222a1c41a1a5a449b16036f71df634fdc"
+        }
+      ],
+      "stage_b_attempts": 1,
+      "image_attempts": 2,
+      "guard_verdicts": [
+        "fail",
+        "pass"
+      ],
+      "selected_image_attempt": 2
+    },
+    "cashmere__laptop_BackRightCloseUp__p4": {
+      "ordinal": 4,
+      "classification": "first_job_pass",
+      "selected_job_id": "cashmere__laptop_BackRightCloseUp__p4__outer_job_1",
+      "selected_raw_output_sha256": "f223bbd00f350eb36c2c2a231453ad64dbb7fe8e2aded09d30c11393f86cbdd4",
+      "jobs": [
+        {
+          "job_id": "cashmere__laptop_BackRightCloseUp__p4__outer_job_1",
+          "outer_attempt": 1,
+          "outcome": "done",
+          "error": null,
+          "submission_request_sha256": "8976f459951bd263a5839a65c99add7324a1ddce04da0d87f4456263048cad3e",
+          "status_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p4__outer_job_1/status.json",
+          "status_sha256": "b4eac828ab66b2f2e501a3fbbac6dd778a75d5b6d22a80af7b12c5b589458bcd",
+          "artifact_manifest_sha256": "bbda6b0124499cf4d3bc6fc4ffa57732899506d7beba6f02f896ba880bf1571b",
+          "provenance_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p4__outer_job_1/provenance.json",
+          "provenance_sha256": "73143cfad9559ecca0c272f6977067b607b1ad8da21bef649cb3ffb498690324"
+        }
+      ],
+      "stage_b_attempts": 1,
+      "image_attempts": 1,
+      "guard_verdicts": [
+        "pass"
+      ],
+      "selected_image_attempt": 1
+    },
+    "cashmere__laptop_BackRightCloseUp__p5": {
+      "ordinal": 5,
+      "classification": "first_job_pass",
+      "selected_job_id": "cashmere__laptop_BackRightCloseUp__p5__outer_job_1",
+      "selected_raw_output_sha256": "35099ddba6ed7d01a25eeb8f8a46a82fde8a4fe8ecde344b0e021faf34ceb915",
+      "jobs": [
+        {
+          "job_id": "cashmere__laptop_BackRightCloseUp__p5__outer_job_1",
+          "outer_attempt": 1,
+          "outcome": "done",
+          "error": null,
+          "submission_request_sha256": "dfa769f0812c2c8970e06c55c6c0c33882e69e2fe997228bcee60d74b2ca5aed",
+          "status_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p5__outer_job_1/status.json",
+          "status_sha256": "89ce1c105b759a7d941777f285edde1523f7e107d7e9fcbd1aa2a9b87b282258",
+          "artifact_manifest_sha256": "8a7a14135c16ff7101646adb866d993555c3d9dd00e44f5d90d5b9e3c00f50f8",
+          "provenance_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p5__outer_job_1/provenance.json",
+          "provenance_sha256": "1e9a211bcb05ca49a65c48a80f03a020de6c8f5417747731336777a7fe1849ba"
+        }
+      ],
+      "stage_b_attempts": 1,
+      "image_attempts": 2,
+      "guard_verdicts": [
+        "fail",
+        "pass"
+      ],
+      "selected_image_attempt": 2
+    },
+    "cashmere__laptop_BackRightCloseUp__p6": {
+      "ordinal": 6,
+      "classification": "first_job_pass",
+      "selected_job_id": "cashmere__laptop_BackRightCloseUp__p6__outer_job_1",
+      "selected_raw_output_sha256": "f668b67561c0251f6c7fc534a2af21f997d593ca8ea835d05ec92ab421c9bab5",
+      "jobs": [
+        {
+          "job_id": "cashmere__laptop_BackRightCloseUp__p6__outer_job_1",
+          "outer_attempt": 1,
+          "outcome": "done",
+          "error": null,
+          "submission_request_sha256": "e86f395a1de2e604d11d9f84575e25b07ae2184afbe847ea8daf9cb77b26b3c7",
+          "status_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p6__outer_job_1/status.json",
+          "status_sha256": "d0f8442798c136453ec0c33eaad1636e41a6e6b20f92ca25a8c90d01dc3cddfd",
+          "artifact_manifest_sha256": "2f750ff51f5ae0713280c95d17959c3ff0f619397d286d6b0be8e96d3a589d0d",
+          "provenance_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p6__outer_job_1/provenance.json",
+          "provenance_sha256": "d07f17ef95291228bd2fbb28b34828146b11fe91888a14d7d2750cc64e309c48"
+        }
+      ],
+      "stage_b_attempts": 1,
+      "image_attempts": 1,
+      "guard_verdicts": [
+        "pass"
+      ],
+      "selected_image_attempt": 1
+    },
+    "cashmere__laptop_BackRightCloseUp__p7": {
+      "ordinal": 7,
+      "classification": "recovered_on_retry",
+      "selected_job_id": "cashmere__laptop_BackRightCloseUp__p7__outer_job_2",
+      "selected_raw_output_sha256": "fec48dcf4218748b622f9698b95341e132f2604507b2951f3751b6ddcf80bb9a",
+      "jobs": [
+        {
+          "job_id": "cashmere__laptop_BackRightCloseUp__p7__outer_job_1",
+          "outer_attempt": 1,
+          "outcome": "error",
+          "error": "RuntimeError: pipeline error: ValueError: Product invariant guard rejected both image attempts; raw attempts and metrics kept.",
+          "submission_request_sha256": "0342587ff03d0f40a662ba78108924870f97cfdcc1c037a53cfee6fe33582013",
+          "status_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p7__outer_job_1/status.json",
+          "status_sha256": "b9133f7458125be240b4c4caa2af3c5bdc70a5e5f2d57271511a650cd505391f",
+          "artifact_manifest_sha256": "e880cbb568df71806d132739aa88274e856a7094b2d4fd72d7c569745b514e4f",
+          "failure_provenance_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p7__outer_job_1/failure_provenance.json",
+          "failure_provenance_sha256": "008c1a7a2da989c67aec92eb38f54e0bf61cc3d9033c1b3256d3a0c5b578cf33"
+        },
+        {
+          "job_id": "cashmere__laptop_BackRightCloseUp__p7__outer_job_2",
+          "outer_attempt": 2,
+          "outcome": "done",
+          "error": null,
+          "submission_request_sha256": "2808553bf440a55987e8d07d14a10ae6989890c4357e5c51a6e39d13bff51433",
+          "status_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p7__outer_job_2/status.json",
+          "status_sha256": "6a97c2ba1fb583c3a6187fdd6715233ba23b11bd9adfbb6316998447b48c8239",
+          "artifact_manifest_sha256": "866d66e6f1ce06dd42402ee0f6ee108fca7215e9226c6ec6bb3b79c068fcfc21",
+          "provenance_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_3_r1/run/jobs/cashmere__laptop_BackRightCloseUp__p7__outer_job_2/provenance.json",
+          "provenance_sha256": "6a669ee70e10eff739f7d4c21c8ca9329d74c42606cb87932cb98dfa5d08919f"
+        }
+      ],
+      "stage_b_attempts": 1,
+      "image_attempts": 1,
+      "guard_verdicts": [
+        "pass"
+      ],
+      "selected_image_attempt": 1
+    }
+  },
+  "counts": {
+    "first_job_pass": 5,
+    "recovered_on_retry": 2,
+    "terminal_failure": 0
+  },
+  "rates": {
+    "denominator_rows_attempted": 7,
+    "first_job_pass_rate": 0.7142857142857143,
+    "recovered_on_retry_rate": 0.2857142857142857,
+    "terminal_failure_rate": 0.0
+  },
+  "first_error": null,
+  "last_completed": "cashmere__laptop_BackRightCloseUp__p7"
+}

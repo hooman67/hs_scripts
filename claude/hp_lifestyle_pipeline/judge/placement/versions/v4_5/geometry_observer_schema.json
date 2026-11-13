@@ -1,0 +1,467 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage_status",
+    "unable_reason",
+    "support_inventory",
+    "edge_observations",
+    "relations",
+    "unrelated_artifacts"
+  ],
+  "properties": {
+    "stage_status": {
+      "type": "string",
+      "enum": [
+        "assessed",
+        "unable"
+      ]
+    },
+    "unable_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "unreadable_image",
+        "target_not_identifiable",
+        "product_type_conflict",
+        "fundamentally_unjudgeable_product_support"
+      ]
+    },
+    "support_inventory": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "visible_elements",
+            "exposed_required_regions",
+            "visible_breaks_or_negative_space"
+          ],
+          "properties": {
+            "visible_elements": {
+              "type": "array",
+              "maxItems": 24,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "region"
+                ],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "top",
+                      "leg",
+                      "panel",
+                      "pedestal",
+                      "rail",
+                      "bracket",
+                      "wall_attachment"
+                    ]
+                  },
+                  "region": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 360
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "exposed_required_regions": {
+              "type": "array",
+              "maxItems": 16,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "region",
+                  "connected_support_visible"
+                ],
+                "properties": {
+                  "region": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 360
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  },
+                  "connected_support_visible": {
+                    "type": [
+                      "boolean",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "visible_breaks_or_negative_space": {
+              "type": "array",
+              "maxItems": 16,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "region",
+                  "kind"
+                ],
+                "properties": {
+                  "region": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 360
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "gap",
+                      "disconnection",
+                      "unsupported_span",
+                      "impossible_junction",
+                      "negative_space"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "edge_observations": {
+      "anyOf": [
+        {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "owner",
+              "p0",
+              "p1",
+              "raw_pixel_evidence"
+            ],
+            "properties": {
+              "owner": {
+                "type": "string",
+                "enum": [
+                  "product_front",
+                  "product_depth",
+                  "support_front",
+                  "support_side",
+                  "wall",
+                  "floor",
+                  "cabinet",
+                  "neighboring_furniture"
+                ]
+              },
+              "p0": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "p1": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "raw_pixel_evidence": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 360
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "relations": {
+      "anyOf": [
+        {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "test_id",
+              "observability",
+              "state",
+              "subtype",
+              "direct_evidence",
+              "counterevidence",
+              "visibility_limit",
+              "region"
+            ],
+            "properties": {
+              "test_id": {
+                "type": "string",
+                "enum": [
+                  "device_support_axes",
+                  "furniture_room_axes",
+                  "product_scale",
+                  "load_path",
+                  "support_anatomy",
+                  "shared_perspective",
+                  "support_contact",
+                  "shadows_reflections"
+                ]
+              },
+              "observability": {
+                "type": "string",
+                "enum": [
+                  "visible",
+                  "partial",
+                  "hidden"
+                ]
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "coherent",
+                  "defect",
+                  "unresolved"
+                ]
+              },
+              "subtype": {
+                "type": "string",
+                "enum": [
+                  "aimed_toward_corner",
+                  "awkward_foreground_position",
+                  "blocked",
+                  "central_rectangular_home_printer_support_without_shared_use",
+                  "chair_offset",
+                  "coherent",
+                  "coherent_activity_zone",
+                  "coherent_axes",
+                  "coherent_bracket",
+                  "coherent_connected_furniture",
+                  "coherent_contact_light_transport",
+                  "coherent_geometry_and_depth",
+                  "coherent_leg",
+                  "coherent_panel",
+                  "coherent_pedestal",
+                  "coherent_room_placement",
+                  "coherent_shared_use",
+                  "coherent_wall_attachment",
+                  "coherent_wall_edge",
+                  "dedicated_equipment_support",
+                  "excessive_reach",
+                  "floating",
+                  "implausible_context_scale",
+                  "incoherent_visible_use_zone",
+                  "incompatible_geometry_or_depth",
+                  "incompatible_support",
+                  "inconsistent_contact_light_transport",
+                  "interpenetrating",
+                  "malformed_connected_furniture",
+                  "misplaced_support_in_room",
+                  "no_feasible_position",
+                  "not_applicable",
+                  "occupied_personal_workstation",
+                  "open",
+                  "overhanging",
+                  "plausible_context_scale",
+                  "prop_blocks_operation",
+                  "prop_contradicts_activity_zone",
+                  "sinking",
+                  "stranded_on_support",
+                  "supported",
+                  "too_far_from_usable_edge",
+                  "unresolved",
+                  "unsupported_base",
+                  "usable_laptop_work_surface",
+                  "usable_surface_position",
+                  "visible_axis_conflict",
+                  "visible_furniture_room_axis_conflict",
+                  "visible_missing_support"
+                ]
+              },
+              "direct_evidence": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 360
+              },
+              "counterevidence": {
+                "type": "string",
+                "maxLength": 360
+              },
+              "visibility_limit": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 360
+              },
+              "region": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/region"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "unrelated_artifacts": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "region",
+          "evidence"
+        ],
+        "properties": {
+          "region": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "box"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 360
+              },
+              "box": {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            }
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 360
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foundry.adobe.com/schemas/hp-placement-v4.5-geometry.json",
+  "title": "HP Placement V4.5 geometry observer",
+  "$defs": {
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "box"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 360
+        },
+        "box": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "version": "v5-raw-normalized-audit-v1",
+  "case_id": "deskjet_2955__printer_FrontRightWide",
+  "request_sha256": "ac9b0b9641832528bf390cbdbcb1f38882bdb6d1923dcf846ffb73940bfb6899",
+  "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/deskjet_2955__printer_FrontRightWide/sample_001.json",
+  "raw_record_sha256": "3a8ec981cd861441852d5ecc06f85f6f70608fc3ae57a05f4e656df475d2654a",
+  "raw_validation": {
+    "validator_version": "v5-host-validator-r2",
+    "passed": false,
+    "error_count": 7,
+    "warning_count": 1,
+    "errors": [
+      {
+        "code": "evidence_quote",
+        "detail": "e4 quote is not verbatim in smart_brief"
+      },
+      {
+        "code": "evidence_quote",
+        "detail": "e11 quote is not verbatim in source_messaging"
+      },
+      {
+        "code": "score_mean",
+        "detail": "50/50 document mean is 55, score is 57.5",
+        "candidate_id": "p8"
+      },
+      {
+        "code": "surface_not_literal",
+        "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+        "candidate_id": "p1"
+      },
+      {
+        "code": "surface_not_literal",
+        "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+        "candidate_id": "p5"
+      },
+      {
+        "code": "literal_background_budget",
+        "detail": "3>2: ['artwork', 'shelving', 'wall']",
+        "candidate_id": "p20"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['artwork', 'shelving', 'wall'] but signature has 2 entries",
+        "candidate_id": "p20"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 20,
+      "evidence": 11,
+      "environments": {
+        "Home": 7,
+        "Office": 3,
+        "Creative Studio": 3,
+        "Education": 3,
+        "Café": 2,
+        "Gaming": 2
+      },
+      "relationships": {
+        "source_grounded": 7,
+        "source_adjacent": 2,
+        "creative_departure": 11
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 7,
+        "Office": 3,
+        "Education": 3,
+        "Gaming": 2,
+        "Café": 2,
+        "Creative Studio": 3
+      },
+      "relationship_counts": {
+        "source_grounded": 7,
+        "source_adjacent": 2,
+        "creative_departure": 11
+      },
+      "ctech_relationship_counts": {
+        "close_adaptation": 11,
+        "category_extension": 3,
+        "minimal_camera_edit": 6
+      },
+      "ctech_reference_counts": {
+        "CT18": 3,
+        "CT04": 2,
+        "CT05": 1,
+        "CT06": 2,
+        "CT17": 1,
+        "CT13": 1,
+        "CT10": 1,
+        "CT03": 3,
+        "CT09": 2,
+        "CT07": 2,
+        "CT14": 1,
+        "CT15": 1
+      },
+      "ctech_score_range": [
+        64,
+        88
+      ],
+      "distinct_subsettings": 14,
+      "evidence_reverse_mappings": {
+        "smart_brief": {
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e5",
+            "e10"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        },
+        "source_messaging": {
+          "evidence_ids": [
+            "e6",
+            "e7",
+            "e8",
+            "e9",
+            "e11"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "1317c450eaba61afcbc0159f8b22ae0b80a95aca82324ee020c910cf1155a145"
+  },
+  "normalized_validation": {
+    "validator_version": "v5-host-validator-r2",
+    "passed": false,
+    "error_count": 6,
+    "warning_count": 1,
+    "errors": [
+      {
+        "code": "evidence_quote",
+        "detail": "e4 quote is not verbatim in smart_brief"
+      },
+      {
+        "code": "evidence_quote",
+        "detail": "e11 quote is not verbatim in source_messaging"
+      },
+      {
+        "code": "surface_not_literal",
+        "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+        "candidate_id": "p1"
+      },
+      {
+        "code": "surface_not_literal",
+        "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+        "candidate_id": "p5"
+      },
+      {
+        "code": "literal_background_budget",
+        "detail": "3>2: ['artwork', 'shelving', 'wall']",
+        "candidate_id": "p20"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['artwork', 'shelving', 'wall'] but signature has 2 entries",
+        "candidate_id": "p20"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 20,
+      "evidence": 11,
+      "environments": {
+        "Home": 7,
+        "Office": 3,
+        "Education": 3,
+        "Creative Studio": 3,
+        "Café": 2,
+        "Gaming": 2
+      },
+      "relationships": {
+        "source_grounded": 7,
+        "source_adjacent": 2,
+        "creative_departure": 11
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 7,
+        "Office": 3,
+        "Education": 3,
+        "Gaming": 2,
+        "Café": 2,
+        "Creative Studio": 3
+      },
+      "relationship_counts": {
+        "source_grounded": 7,
+        "source_adjacent": 2,
+        "creative_departure": 11
+      },
+      "ctech_relationship_counts": {
+        "close_adaptation": 11,
+        "category_extension": 3,
+        "minimal_camera_edit": 6
+      },
+      "ctech_reference_counts": {
+        "CT18": 3,
+        "CT04": 2,
+        "CT05": 1,
+        "CT06": 2,
+        "CT17": 1,
+        "CT13": 1,
+        "CT03": 3,
+        "CT10": 1,
+        "CT09": 2,
+        "CT07": 2,
+        "CT14": 1,
+        "CT15": 1
+      },
+      "ctech_score_range": [
+        64,
+        88
+      ],
+      "distinct_subsettings": 14,
+      "evidence_reverse_mappings": {
+        "smart_brief": {
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e5",
+            "e10"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        },
+        "source_messaging": {
+          "evidence_ids": [
+            "e6",
+            "e7",
+            "e8",
+            "e9",
+            "e11"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "371ea5099261b948dee8b6aa47b81521010f3c03163c55bd9124235d87b21d70"
+  },
+  "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/deskjet_2955__printer_FrontRightWide__sample_001.json",
+  "normalized_output_file_sha256": "ed2e4981fd202d2c7f0e325be9e6bf1d16f0c2925ded571b9193be343edbcaa0",
+  "normalized_output_semantic_sha256": "371ea5099261b948dee8b6aa47b81521010f3c03163c55bd9124235d87b21d70",
+  "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalization_logs/deskjet_2955__printer_FrontRightWide__sample_001.json",
+  "normalization_log_file_sha256": "6a835a03b979daa83590070e8ae41c928f9a59f8afdfba0a0f4168ffbe79b404",
+  "human_review_status": "pending",
+  "launchable": false
+}

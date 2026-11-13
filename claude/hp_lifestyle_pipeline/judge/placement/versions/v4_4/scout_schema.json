@@ -1,0 +1,308 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage_status",
+    "unable_reason",
+    "inventory",
+    "tests",
+    "general_artifact_warnings"
+  ],
+  "properties": {
+    "stage_status": {
+      "type": "string",
+      "enum": [
+        "assessed",
+        "unable"
+      ]
+    },
+    "unable_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "unreadable_image",
+        "target_not_identifiable",
+        "product_type_conflict",
+        "fundamentally_unjudgeable_product_support"
+      ]
+    },
+    "inventory": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "scene_extent",
+            "product_front_and_footprint",
+            "support_type_and_room_location",
+            "support_topology_and_edges",
+            "visible_load_path",
+            "furniture_wall_floor_perspective",
+            "operating_and_user_approach",
+            "props_and_activity_zone",
+            "contact_scale_shadows",
+            "support_role_class",
+            "support_room_class",
+            "operating_access_class",
+            "user_position_class",
+            "support_contact_class",
+            "light_transport_class"
+          ],
+          "properties": {
+            "scene_extent": {
+              "type": "string",
+              "enum": [
+                "tight",
+                "medium",
+                "wide",
+                "indeterminate"
+              ]
+            },
+            "product_front_and_footprint": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 360
+            },
+            "support_type_and_room_location": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 360
+            },
+            "support_topology_and_edges": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 360
+            },
+            "visible_load_path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 360
+            },
+            "furniture_wall_floor_perspective": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 360
+            },
+            "operating_and_user_approach": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 360
+            },
+            "props_and_activity_zone": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 360
+            },
+            "contact_scale_shadows": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 360
+            },
+            "support_role_class": {
+              "type": "string",
+              "enum": [
+                "compatible_support",
+                "occupied_personal_workstation",
+                "incompatible_support",
+                "unresolved"
+              ]
+            },
+            "support_room_class": {
+              "type": "string",
+              "enum": [
+                "coherent",
+                "misplaced_furniture",
+                "incoherent_use_zone",
+                "unresolved"
+              ]
+            },
+            "operating_access_class": {
+              "type": "string",
+              "enum": [
+                "open",
+                "blocked",
+                "excessive_reach",
+                "unresolved"
+              ]
+            },
+            "user_position_class": {
+              "type": "string",
+              "enum": [
+                "coherent",
+                "chair_displacement",
+                "no_feasible_user_position",
+                "unresolved"
+              ]
+            },
+            "support_contact_class": {
+              "type": "string",
+              "enum": [
+                "supported",
+                "unsupported",
+                "floating",
+                "sinking_or_intersection",
+                "unresolved"
+              ]
+            },
+            "light_transport_class": {
+              "type": "string",
+              "enum": [
+                "coherent",
+                "inconsistent_shadow",
+                "inconsistent_reflection",
+                "unresolved"
+              ]
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "tests": {
+      "anyOf": [
+        {
+          "type": "array",
+          "minItems": 14,
+          "maxItems": 14,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "test_id",
+              "defect",
+              "severity",
+              "visible_test",
+              "direct_evidence",
+              "counterevidence",
+              "visibility_limit",
+              "region"
+            ],
+            "properties": {
+              "test_id": {
+                "type": "string",
+                "enum": [
+                  "support_role",
+                  "support_room_placement",
+                  "device_surface_position",
+                  "prop_activity_relation",
+                  "operating_access",
+                  "user_position",
+                  "device_support_axes",
+                  "furniture_room_axes",
+                  "product_scale",
+                  "load_path",
+                  "support_anatomy",
+                  "shared_perspective",
+                  "support_contact",
+                  "shadows_reflections"
+                ]
+              },
+              "defect": {
+                "type": "string",
+                "enum": [
+                  "yes",
+                  "no",
+                  "unknown"
+                ]
+              },
+              "severity": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 3
+              },
+              "visible_test": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 180
+              },
+              "direct_evidence": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 360
+              },
+              "counterevidence": {
+                "type": "string",
+                "maxLength": 360
+              },
+              "visibility_limit": {
+                "type": "string",
+                "maxLength": 360
+              },
+              "region": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/region"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "general_artifact_warnings": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "evidence"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "const": "unrelated_rendering_artifact"
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 360
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foundry.adobe.com/schemas/hp-natural-placement-v4.4-scout.json",
+  "title": "HP Natural Placement V4.4 defect scout",
+  "$defs": {
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "box"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 360
+        },
+        "box": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  }
+}

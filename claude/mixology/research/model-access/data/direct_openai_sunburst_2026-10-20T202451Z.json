@@ -1,0 +1,103 @@
+{
+  "checked_at_utc": "2026-10-20T20:25:17Z",
+  "confidence": "VERIFIED by current broker, direct OpenAI API, decoded output, and direct visual inspection",
+  "scope": "One bounded synthetic mug edit through Foundry-vended direct OpenAI credentials; no customer data",
+  "result": "success",
+  "authorization": "User explicitly authorized one exact-model direct OpenAI access test",
+  "credential_vending": {
+    "sdk_helper": "foundry_aws_gateway.llm.get_openai()",
+    "gateway_host": "https://foundry-aws-pluto.adobe.io",
+    "route": "/iam/credentials/openai",
+    "result": "success",
+    "http_status": null,
+    "http_status_limitation": "The client helper returned valid credentials but does not expose the broker HTTP status on the returned client.",
+    "client_creation_seconds": 0.202,
+    "authentication": "Existing Pluto machine authentication",
+    "cache": "Fresh isolated /dev/shm XDG cache, automatically removed at process exit",
+    "credentials_printed_or_copied_to_evidence": false
+  },
+  "direct_openai_preflight": {
+    "base_url": "https://api.openai.com/v1/",
+    "models_route": "/v1/models",
+    "authenticated_model_count": 177,
+    "requested_model_present": true,
+    "relevant_model_ids": [
+      "gpt-image-2.5-sunburst",
+      "gpt-image-2.5-sunburst-2026-09-08"
+    ],
+    "model_list_seconds": 0.937
+  },
+  "inference": {
+    "transport": "Unmodified bundled imagegen CLI, edit subcommand",
+    "endpoint": "https://api.openai.com/v1/images/edits",
+    "requested_model": "gpt-image-2.5-sunburst",
+    "returned_model": null,
+    "returned_model_limitation": "The bundled CLI does not retain returned model metadata.",
+    "http_status": null,
+    "request_id": null,
+    "response_metadata_limitation": "The bundled CLI decodes the image but does not retain the raw response, HTTP status, or request ID.",
+    "cli_exit_code": 0,
+    "cli_reported_seconds": 12.9,
+    "process_elapsed_seconds": 13.05,
+    "retry_count": 0,
+    "model_substitution": false,
+    "settings": {
+      "quality": "low",
+      "size": "1024x1024",
+      "output_format": "png",
+      "n": 1,
+      "prompt_augmentation": false,
+      "input_fidelity": "omitted"
+    }
+  },
+  "prompt": "Restyle this illustration as a soft watercolor painting. Keep the single blue mug, its shape, handle on the right, composition, and pale background.",
+  "prompt_file": {
+    "path": "/home/colligo/hs_scripts/claude/mixology/research/model-access/data/edit_prompt.txt",
+    "bytes": 149,
+    "sha256": "a5ef1441a361d7117aec721fd2866a5f37f489901a66b9e9ec934134828b84c6"
+  },
+  "input": {
+    "role": "synthetic edit target",
+    "path": "/home/colligo/hs_scripts/claude/mixology/research/model-access/data/synthetic_reference.png",
+    "bytes": 8528,
+    "sha256": "bd50c0bd42b90eb0176a2106cbf351aabdd4daaf189e1e8419d073ca1a81060a",
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "format": "PNG",
+    "mode": "RGB",
+    "decode_verified": true
+  },
+  "output": {
+    "path": "/home/colligo/mixology_data/model_access_2026-10-20/direct_openai_20261020T202451Z/sunburst_direct_mug_edit.png",
+    "bytes": 1026904,
+    "sha256": "e4cf2e7ed849a11ca99d3f2721292e624c358cbef73fd09f994deed8554462ad",
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "format": "PNG",
+    "mode": "RGB",
+    "decode_verified": true,
+    "visual_review": "Watercolor texture and soft paint edges are clearly present. The image remains a single blue mug with the handle on the right, a pale background, a light rim, a left-side highlight, and a ground shadow. Broad shape and composition are preserved."
+  },
+  "software": {
+    "python": "3.12.11",
+    "foundry-aws-gateway": "2.0.0",
+    "openai": "3.35.1",
+    "pillow": "13.0.0",
+    "cli_path": "/home/colligo/.codex/skills/.system/imagegen/scripts/image_gen.py",
+    "cli_sha256": "b4345cf835e5b593b97df6bb2b70bda493b8a97eee4cabbc99b2fa57dba9b448"
+  },
+  "routes_not_used": [
+    "Azure OpenAI",
+    "fal.ai"
+  ],
+  "limitations": [
+    "This verifies current direct access and one exact-model inference, not general model quality or production readiness.",
+    "The synthetic mug is not customer data.",
+    "The bundled CLI does not preserve raw response metadata, so request ID, HTTP status, returned snapshot, usage, and cost are unavailable.",
+    "No second inference was made to recover unavailable response metadata."
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-11-05T01:57:28.365355+00:00",
+  "method": "Purposive case-level development and held-out pilot. Development includes already inspected rows1,2,5,11,25. Exact-variant labels represented on both sides using attribution metadata only; held-out images and comment text not inspected by prompt author before freeze. All versions of each case remain together. No duplicate product-input byte hashes across30 cases. Same product/model/camera may recur; no claim of SKU-held-out generalization.",
+  "development_rows": [
+    1,
+    2,
+    5,
+    8,
+    11,
+    21,
+    25
+  ],
+  "held_out_rows": [
+    9,
+    10,
+    12,
+    13,
+    26,
+    29
+  ],
+  "reserved_rows": [
+    3,
+    4,
+    6,
+    7,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    22,
+    23,
+    24,
+    27,
+    28,
+    30
+  ],
+  "stage_caveat": "V13 source-byte checks confirm scene provenance on sampled paths; V14 scene lineage supported by PR4256 code and report, but raw PNG stage chain absent. V14 metrics reported separately/provisional.",
+  "cases": [
+    {
+      "id": "comparison-row-01-v13",
+      "split": "development",
+      "row": 1,
+      "variant": "v13",
+      "device": "Laptop",
+      "image_sha256": "a64086f53f199fba35cbd6a51fbd7ba3fb7a13ab7e0eee02ba55fdc82c31d1fd",
+      "input_sha256": "1cf8298755569aec714a8b6d8cf9007611f2ad9e7851ab6acf839a3a9e3b8397"
+    },
+    {
+      "id": "comparison-row-01-v14",
+      "split": "development",
+      "row": 1,
+      "variant": "v14",
+      "device": "Laptop",
+      "image_sha256": "db1e06f548a2b5d5dc436f5334ebb9fa842010119cbbe8e3f015353685d3e92a",
+      "input_sha256": "1cf8298755569aec714a8b6d8cf9007611f2ad9e7851ab6acf839a3a9e3b8397"
+    },
+    {
+      "id": "comparison-row-02-v13",
+      "split": "development",
+      "row": 2,
+      "variant": "v13",
+      "device": "Laptop",
+      "image_sha256": "42e6ee7fee12cd8bb490087b21b0166645dba6cf2c56e7e9ac8a882ae581233d",
+      "input_sha256": "26678ebb450e9c8128bb2963ebe32e22d6d125da576d8fa80d08a6a14efbcd92"
+    },
+    {
+      "id": "comparison-row-02-v14",
+      "split": "development",
+      "row": 2,
+      "variant": "v14",
+      "device": "Laptop",
+      "image_sha256": "043e475a622c1ad87a00d97d45974926e60d8fd390930ef4fdf64f6d97817ce1",
+      "input_sha256": "26678ebb450e9c8128bb2963ebe32e22d6d125da576d8fa80d08a6a14efbcd92"
+    },
+    {
+      "id": "comparison-row-05-v13",
+      "split": "development",
+      "row": 5,
+      "variant": "v13",
+      "device": "Laptop",
+      "image_sha256": "15bf2313f91c9c21f2aa57e4dfe6368f8e0fe55ecc5d10514f9b171eadf3d50c",
+      "input_sha256": "5c20be5fef143f1109a85c64f18ab3086ccff40b9e0264e366bc96a1ee76ce3e"
+    },
+    {
+      "id": "comparison-row-05-v14",
+      "split": "development",
+      "row": 5,
+      "variant": "v14",
+      "device": "Laptop",
+      "image_sha256": "fa72cf9862389ef8ad4d6198b6fc35897a223f036e80854991a4273287448266",
+      "input_sha256": "5c20be5fef143f1109a85c64f18ab3086ccff40b9e0264e366bc96a1ee76ce3e"
+    },
+    {
+      "id": "comparison-row-08-v14",
+      "split": "development",
+      "row": 8,
+      "variant": "v14",
+      "device": "Laptop",
+      "image_sha256": "6b1c60973c2c45ce5376e26331939e1426be3a5a80b2e176b2db1b1437f1411d",
+      "input_sha256": "cf24f6bc09cad4966d595a28fb59566788502bff506ad80cc7654d4d153582d6"
+    },
+    {
+      "id": "comparison-row-09-v14",
+      "split": "held_out",
+      "row": 9,
+      "variant": "v14",
+      "device": "Laptop",
+      "image_sha256": "53618cc0df28274b5ae69596d09ba5f4f145b7e1e35f7d0e1c5164b4694b896b",
+      "input_sha256": "5aa2dcc51a36c3c95f0a209eda7aa89d8b5a25eb22349bdbbb574db505501692"
+    },
+    {
+      "id": "comparison-row-10-v14",
+      "split": "held_out",
+      "row": 10,
+      "variant": "v14",
+      "device": "Printer",
+      "image_sha256": "e3dab21621f6b273e649a907661088fc4c04a392410677236443f2ff782ceb44",
+      "input_sha256": "c63c47988b567c06486049e381e8e0e206dd0c78e5d6cd9ae88b7033ddfa7752"
+    },
+    {
+      "id": "comparison-row-11-v13",
+      "split": "development",
+      "row": 11,
+      "variant": "v13",
+      "device": "Printer",
+      "image_sha256": "0bb99fc9f4c9236d7178216d067c28304d4c2f3ea8bd0cf510dd94841d1c12c0",
+      "input_sha256": "bc8536ef9347f745b14366f149114b010b75a5fcf70b961c04081d1a70d32775"
+    },
+    {
+      "id": "comparison-row-11-v14",
+      "split": "development",
+      "row": 11,
+      "variant": "v14",
+      "device": "Printer",
+      "image_sha256": "e9f77deb85ae66595c0ae01702ebcef2184b782d3a9b8963fd6d60ad063de1d6",
+      "input_sha256": "bc8536ef9347f745b14366f149114b010b75a5fcf70b961c04081d1a70d32775"
+    },
+    {
+      "id": "comparison-row-12-v13",
+      "split": "held_out",
+      "row": 12,
+      "variant": "v13",
+      "device": "Printer",
+      "image_sha256": "bcd88892c5a5b416f5becca8e4102de1ebae1337462031e1a9d27a8b47100a98",
+      "input_sha256": "0403fc3b1aa3d4da61353b1020385e2c83f999e118e295eb20627ead3aa00497"
+    },
+    {
+      "id": "comparison-row-12-v14",
+      "split": "held_out",
+      "row": 12,
+      "variant": "v14",
+      "device": "Printer",
+      "image_sha256": "d3a05ac2a3fc6c7858468ed6a80de2fad10f674d5e867c131783083b01304a13",
+      "input_sha256": "0403fc3b1aa3d4da61353b1020385e2c83f999e118e295eb20627ead3aa00497"
+    },
+    {
+      "id": "comparison-row-13-v13",
+      "split": "held_out",
+      "row": 13,
+      "variant": "v13",
+      "device": "Laptop",
+      "image_sha256": "06908667366d7de3591b4445e6f1ff29bd9afe1f3298182612f8bb70cbe78553",
+      "input_sha256": "ba3538bedcd7c83411696e9c30383e540fda73b22717a5d5179f33f0f57b42bf"
+    },
+    {
+      "id": "comparison-row-13-v14",
+      "split": "held_out",
+      "row": 13,
+      "variant": "v14",
+      "device": "Laptop",
+      "image_sha256": "459653678373d655f242b7ccfe69024e146c30a1147bb011c4e92a765f68a0fd",
+      "input_sha256": "ba3538bedcd7c83411696e9c30383e540fda73b22717a5d5179f33f0f57b42bf"
+    },
+    {
+      "id": "comparison-row-21-v13",
+      "split": "development",
+      "row": 21,
+      "variant": "v13",
+      "device": "Laptop",
+      "image_sha256": "827f4461f364139fa03cf63cce66574dc5843f8ad429d294b2850fd762449d64",
+      "input_sha256": "a7ee0b7e2aaac63d475e96038d14d8138ef2bba7d276a56afc1feceaededcdcb"
+    },
+    {
+      "id": "comparison-row-21-v14",
+      "split": "development",
+      "row": 21,
+      "variant": "v14",
+      "device": "Laptop",
+      "image_sha256": "6e2761f741e5421089b15331be56f868e1a921241285ccde7794a28dfe0d61ea",
+      "input_sha256": "a7ee0b7e2aaac63d475e96038d14d8138ef2bba7d276a56afc1feceaededcdcb"
+    },
+    {
+      "id": "comparison-row-25-v13",
+      "split": "development",
+      "row": 25,
+      "variant": "v13",
+      "device": "Printer",
+      "image_sha256": "4c349f2230d99731e29240653087ef73d82df7af823c2008ffbe5ec410db93b0",
+      "input_sha256": "85ff3aec599bc7735f45915d85bdf3b955cead5be4d6dcecacdc393c3e189e36"
+    },
+    {
+      "id": "comparison-row-25-v14",
+      "split": "development",
+      "row": 25,
+      "variant": "v14",
+      "device": "Printer",
+      "image_sha256": "4ceb50f8a4605789bb2c5437de503899c1e11b7c0b81a85a8978e7764862c4b4",
+      "input_sha256": "85ff3aec599bc7735f45915d85bdf3b955cead5be4d6dcecacdc393c3e189e36"
+    },
+    {
+      "id": "comparison-row-26-v13",
+      "split": "held_out",
+      "row": 26,
+      "variant": "v13",
+      "device": "Printer",
+      "image_sha256": "e1c1b281eb2c06427060d31c23a61210ad41dd5fc8e671a82371a4e5c513dcff",
+      "input_sha256": "311d5dd4644edce91e9b77626aa3e95bc4c38b724cdd52c5b77f777a48f59710"
+    },
+    {
+      "id": "comparison-row-26-v14",
+      "split": "held_out",
+      "row": 26,
+      "variant": "v14",
+      "device": "Printer",
+      "image_sha256": "31335d36fb613bf6b6bf56e6b43580a7ccc64585d86179f23d551aaaaadb2b34",
+      "input_sha256": "311d5dd4644edce91e9b77626aa3e95bc4c38b724cdd52c5b77f777a48f59710"
+    },
+    {
+      "id": "comparison-row-29-v13",
+      "split": "held_out",
+      "row": 29,
+      "variant": "v13",
+      "device": "Laptop",
+      "image_sha256": "b465f94249d56d50fa5a2404fb925bb69d8ae559e2e264b2172881fa69d602eb",
+      "input_sha256": "9c17f78a19ca4dc65e60256b5989f385d0b70d3b0c555741ff1e6941059ede44"
+    },
+    {
+      "id": "comparison-row-29-v14",
+      "split": "held_out",
+      "row": 29,
+      "variant": "v14",
+      "device": "Laptop",
+      "image_sha256": "ece0f2e572cc6a953097e50b0da75ce01d060cabd40e2a37159f14274f890c00",
+      "input_sha256": "9c17f78a19ca4dc65e60256b5989f385d0b70d3b0c555741ff1e6941059ede44"
+    }
+  ]
+}

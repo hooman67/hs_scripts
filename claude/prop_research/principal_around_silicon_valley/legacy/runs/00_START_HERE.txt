@@ -1,0 +1,298 @@
+================================================================================
+PENINSULA BAY AREA 3BR MARKET RESEARCH — START HERE
+================================================================================
+
+Welcome! This directory contains complete research infrastructure for collecting
+2025-2026 median home prices for 8 Peninsula Bay Area towns.
+
+Purpose: Support your $2M property purchase decision-making
+Status: READY TO USE
+Time to complete: 20 minutes - 2 hours
+
+================================================================================
+READ THESE FIRST (in order)
+================================================================================
+
+1. QUICKSTART.txt (10 min read, this file's summary)
+   → Quick 5-minute overview of everything
+   → Best if you want to start collecting data immediately
+   
+2. README.md (10 min read)
+   → Full project overview
+   → File descriptions and navigation
+   → Integration with your property research plan
+   
+3. MARKET_RESEARCH_GUIDE.md (detailed reference)
+   → Complete how-to guide for data collection
+   → Where to find each data source
+   → Quality standards and troubleshooting
+   
+4. EXAMPLE_COMPLETED_RESEARCH.md (5 min read)
+   → Shows what finished research looks like
+   → San Carlos case study with 3 data sources
+   → Copy this format for other 7 towns
+
+================================================================================
+MAIN FILES YOU'LL USE
+================================================================================
+
+PRIMARY OUTPUT FILE (Fill this in):
+    peninsula_market_research_2025-2026.json
+    ↓
+    Main repository for all 8 towns' data
+    JSON format, ready for integration
+    Use EXAMPLE_COMPLETED_RESEARCH.md as template
+
+DATA ENTRY WORKSHEET:
+    market_data_collection_*.csv
+    ↓
+    Spreadsheet to track data as you collect it
+    Columns: Town, Zillow price/date, Redfin price/date, MLS price/date, final median
+    Fill this first, then transfer to JSON
+
+PRE-FORMATTED URLS:
+    market_urls/zillow_urls_*.txt
+    market_urls/redfin_urls_*.txt
+    ↓
+    Copy/paste directly into your web browser
+     All 8 town links ready to visit
+
+MLS AGENT CONTACTS:
+    market_urls/mls_contacts_*.txt
+    ↓
+    Email template for requesting market data
+    Use when expanding from Fast to Thorough option
+
+STEP-BY-STEP CHECKLIST:
+    COLLECTION_CHECKLIST_*.txt
+    ↓
+    Breaks down the entire process into phases
+    Track your progress through each phase
+
+================================================================================
+THE THREE OPTIONS
+================================================================================
+
+OPTION A: FAST (20-30 minutes)
+    Goal: Baseline data for 8 towns
+    Sources: Zillow + Redfin
+    Result: 2 sources per town, MEDIUM confidence
+    → Good for quick feasibility check
+    → Minimal time commitment
+    → Can expand later
+
+OPTION B: THOROUGH (1-2 hours) ← RECOMMENDED
+    Goal: Solid market baseline for decision-making
+    Sources: Zillow + Redfin + local MLS/agents
+    Result: 3+ sources per town, HIGH confidence
+    → Best for serious property purchase planning
+    → Moderate time commitment
+    → Ready for Step 2 neighborhood scoring
+
+OPTION C: COMPREHENSIVE (2-4 hours)
+    Goal: Deep market analysis with trend data
+    Sources: All of Option B + supplementary metrics
+    Result: Rich dataset with market dynamics
+    → For deep market understanding
+    → Higher time commitment
+    → Overkill for initial research (save for later)
+
+================================================================================
+5-MINUTE QUICK START
+================================================================================
+
+1. Read QUICKSTART.txt (this file, 5 min)
+
+2. Choose your option above (30 sec)
+   → If you're busy: OPTION A
+   → If you're serious: OPTION B ← do this
+   → If you're thorough: OPTION C
+
+3. Get your data sources (2 min)
+   → cat market_urls/zillow_urls_*.txt
+   → cat market_urls/redfin_urls_*.txt
+   → Open in your web browser
+
+4. Collect data (20-30 min for Option A, or 1-2 hours for Option B)
+   → Visit each URL in browser
+   → Screenshot or write down: [Town] - $[PRICE] - [DATE]
+   → Fill in market_data_collection_*.csv
+
+5. Populate results (5 min)
+   → Open peninsula_market_research_2025-2026.json
+   → Fill in all 8 towns using template format
+   → Follow EXAMPLE_COMPLETED_RESEARCH.md as guide
+
+DONE! Commit to git and ready for Step 2 neighborhood scoring.
+
+================================================================================
+YOUR 8 TARGET TOWNS
+================================================================================
+
+North to South (geographically):
+
+1. Daly City         ← SF border, most affordable
+2. Millbrae          ← Near SFO airport
+3. Burlingame        ← Peninsula mid-town
+4. San Carlos        ← Popular family area
+5. Foster City       ← Planned community
+6. Belmont           ← Quieter, less known
+7. Pacifica          ← Coastal, isolated
+8. Half Moon Bay     ← Coastal town
+
+For each: Find median 3BR price, assess what $2M can buy
+
+================================================================================
+WHAT YOU'LL PRODUCE
+================================================================================
+
+By the end, you'll have:
+
+✓ 8-town market analysis with median 3BR prices
+✓ Multiple authoritative sources per town
+✓ Confidence levels (HIGH/MEDIUM/LOW) for each
+✓ Assessment: "What does $2M buy here?"
+✓ JSON file ready for Step 2 neighborhood scoring
+✓ Solid foundation for $2M property decisions
+
+Example output (San Carlos):
+{
+  "town": "San Carlos",
+  "medianPrice": 1750000,
+  "source": "Redfin Q2 2026 + Zillow + San Mateo MLS",
+  "url": "https://www.redfin.com/CA/San-Carlos/homes-for-sale",
+  "date": "2026-06-22",
+  "confidence": "high",
+  "notes": "3 sources corroborate ~$1.75M median. $2M buys 4BR/2.5BA, 2300 sqft, 0.5-acre lot."
+}
+
+================================================================================
+KEY TOOLS
+================================================================================
+
+collect_market_data.sh
+    → Bash script that generates URL lists and templates
+    → Run again anytime: bash collect_market_data.sh
+    → Creates timestamped files so you don't overwrite previous data
+
+Files are timestamped (e.g., market_data_collection_20260622_070728.csv) so
+you can run the script multiple times without losing data.
+
+================================================================================
+WHERE THIS FITS IN YOUR PROJECT
+================================================================================
+
+Your 6-step property research plan:
+
+    Step 1: Macro Regional Screening
+    Step 2: Neighborhood Identification & Scoring  ← THIS RESEARCH IS FOUNDATION
+    Step 3: Deep Neighborhood Analysis
+    Step 4: Financial Analysis
+    Step 5: Final Ranking & Decision
+    Step 6: Deep Research on Finalists
+
+This market research directly supports Step 2:
+- Feeds into "Price & Value" criterion (10% weight in scoring)
+- Provides baseline for "What $2M buys" assessment
+- Critical for evaluating Peninsula region (Region 4) towns
+
+See: /home/colligo/hs_scripts/claude/prop_research/research-plan.md (full context)
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Q: Which option should I do?
+A: Start with OPTION A (20-30 min) to get baseline data. If you're serious
+   about this $2M purchase, expand to OPTION B to add MLS data (HIGH confidence).
+
+Q: Zillow showing "403 Forbidden"?
+A: Try incognito browser mode or clear cache. Or skip to Redfin + MLS.
+
+Q: How long does this take?
+A: OPTION A (Zillow+Redfin): 20-30 min | OPTION B (add MLS): 1-2 hours total
+
+Q: Do I have to do all 8 towns?
+A: Yes. This is foundational data for your entire Peninsula region analysis.
+
+Q: Can I use older data (2024)?
+A: Try to avoid. Use 2025-2026 only. If forced, mark clearly as "Prior Year."
+
+Q: What if agent doesn't respond?
+A: Try calling instead of emailing. Or try a different agent.
+
+More answers: See MARKET_RESEARCH_GUIDE.md
+
+================================================================================
+SUCCESS CRITERIA
+================================================================================
+
+You're done when:
+
+    ☑ All 8 towns have at least 1 data source
+    ☑ Data is recent (Q2 2026 or Q1 2026)
+    ☑ Confidence levels assigned (HIGH/MEDIUM/LOW)
+    ☑ No unexplained data conflicts >10%
+    ☑ For each town: Clear answer to "What $2M buys"
+    ☑ peninsula_market_research_2025-2026.json is populated
+    ☑ Results committed to git
+    ☑ Ready to use for Step 2 neighborhood scoring
+
+================================================================================
+NEXT STEPS AFTER COMPLETION
+================================================================================
+
+1. Use this market data for Step 2 Neighborhood Scoring
+   → Evaluate each Peninsula town on multiple criteria
+   → Use these medians for "Price & Value" criterion
+
+2. Deep dive on top neighborhoods (Step 3)
+   → Use "What $2M buys" as baseline
+
+3. Financial modeling (Step 4)
+   → Model purchase scenarios: $1.5M, $1.75M, $2.0M
+   → Based on market medians you just collected
+
+4. Quarterly refresh (Q3 2026)
+   → Market prices change; rerun this collection
+   → Use same scripts/templates for consistency
+
+================================================================================
+FILE LOCATIONS
+================================================================================
+
+Main directory:
+    /home/colligo/hs_scripts/claude/prop_research/runs/
+
+Key files:
+    • 00_START_HERE.txt ← You are here
+    • QUICKSTART.txt ← 5 min overview
+    • README.md ← Full overview
+    • MARKET_RESEARCH_GUIDE.md ← Detailed how-to
+    • EXAMPLE_COMPLETED_RESEARCH.md ← What success looks like
+    • peninsula_market_research_2025-2026.json ← Main output
+    • market_data_collection_*.csv ← Data entry worksheet
+    • market_urls/ ← Pre-formatted URLs
+
+Related:
+    • /home/colligo/hs_scripts/claude/prop_research/research-plan.md ← Full context
+    • /home/colligo/.claude/projects/…/prop_research_project.md ← Project memory
+
+================================================================================
+YOU'RE READY TO GO
+================================================================================
+
+Everything is set up. Choose your approach (Option A/B/C) and start collecting data.
+
+Questions? Read the guides:
+    1. QUICKSTART.txt (5 min)
+    2. README.md (10 min)
+    3. MARKET_RESEARCH_GUIDE.md (reference)
+    4. EXAMPLE_COMPLETED_RESEARCH.md (format guide)
+
+Time estimate: 20 min - 2 hours depending on depth
+Expected outcome: Solid market baseline for $2M Peninsula Bay Area property decisions
+
+Let's go!
+
+================================================================================

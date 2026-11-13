@@ -1,0 +1,394 @@
+{
+  "schema_version": "hp-placement-v2-reviewed-diagnostic-assets-v1",
+  "expected_count": 3,
+  "generated_at_utc": "2026-11-05T03:56:47.497665+00:00",
+  "evaluation_role": "reviewed_training_diagnostic_not_holdout",
+  "input_contract": {
+    "image_stage": "scene_generation",
+    "judge_inputs": [
+      "generated_image",
+      "twin_image",
+      "device_type",
+      "scene_prompt"
+    ],
+    "scene_prompt_policy": "Use the original report prompt; no rewritten prompt is included.",
+    "expectation_policy": "Exact reviewer quotes and interpreted issue dimensions are report-only diagnostic metadata, are not passed to the judge, and do not define a gold 0-100 score."
+  },
+  "source": {
+    "verification_status": "VERIFIED_LOCAL_FROZEN_ASSETS",
+    "assets_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/assets.json",
+    "assets_manifest_sha256": "98008065ecf6a7d13539ab181ee7126a81025f5a7ce6e10a27cdcd4dd8c1fa96",
+    "labels_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/pilot_labels.json",
+    "labels_manifest_sha256": "0072ee3e527648bb6e63c1b8ed939bdd38fef31cfa59cc266f0ee3293e7aff85",
+    "stage_provenance": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/stage_provenance.json",
+    "stage_provenance_sha256": "cf3ac63004e000f3bf6e92e8e88eb36569caec39d92272e2ec4202caa78a4862",
+    "source_report": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+    "source_report_s3_prefix": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer"
+  },
+  "counts": {
+    "records": 3,
+    "by_device_type": {
+      "laptop": 3
+    }
+  },
+  "validation": {
+    "all_local_files_present": true,
+    "all_local_sha256_match_source_records": true,
+    "all_png_dimensions_match_source_records": true,
+    "all_scene_prompts_match_source_records": true,
+    "all_labels_target_v14_exactly": true,
+    "all_cases_previously_reviewed": true,
+    "all_cases_marked_not_holdout": true,
+    "numeric_gold_scores_defined": false,
+    "rewritten_prompt_fields_present_in_records": false,
+    "diagnostic_expectations_passed_to_judge": false,
+    "v14_stage_lineage_status": "provisional_scene_generation_output",
+    "mismatches": []
+  },
+  "records": [
+    {
+      "id": "diagnostic-reviewed-row02-v14",
+      "source_case_id": "02_baseline-0008",
+      "source_asset_id": "comparison-row-02-v14",
+      "product": "Laptop",
+      "device": "comparison-row-02",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "unknown_legacy_report_view",
+        "source_camera_name": "unknown",
+        "view_role": "unknown"
+      },
+      "image_stage": "scene_generation",
+      "stage_provenance": {
+        "classification": "provisional_scene_generation_output",
+        "runtime_stage_value": "scene_generation",
+        "basis": "The report provenance names hp-repo-two-stage30-20261103T013935Z as its V14 run; report metadata labels every V14 asset 'Repo pipeline, PR #4256'; the run page labels its outputs 'Now: repo pipeline (PR #4256)'; and commit 4d685d95cb8790da4a464a659892b792a0c96d9c makes one images.edit call and saves the returned PNG bytes unchanged as gpt_1.png and ours.png.",
+        "reason_provisional": "The V14 S3 run prefix contains only JPEG before/guide/now renderings and index.html. It has no raw PNG, result.json, run manifest, job/stage record, or content hash that can byte-link the report's v14_final.png originals to ours.png. The stage interpretation is strongly supported by linked source code and report metadata, but exact raw-artifact lineage is not independently verifiable from the persisted run prefix.",
+        "source_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/stage_provenance.json",
+        "source_file_sha256": "cf3ac63004e000f3bf6e92e8e88eb36569caec39d92272e2ec4202caa78a4862"
+      },
+      "candidate_id": "v14",
+      "scene_prompt": "A contemporary café centers around a beautifully crafted wooden table positioned prominently in the foreground. Its textured surface holds a notebook, pen, and minimal ceramic coffee cup. Softly behind it, curved seating, a streamlined coffee bar, decorative shelving, plants, framed prints, and floor-to-ceiling windows create an inviting modern interior.",
+      "scene_prompt_sha256": "a037b218a9ab0eb9fbd1f9cb0e6349af4410b14a381c7c7b9b6b686dc7a0925b",
+      "scene_prompt_source": {
+        "kind": "original_report_prompt",
+        "prompt_key": "02_baseline-0008",
+        "source_revision": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "bank_rank": null,
+        "environment": null,
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "v14_final.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_02/v14_final.png",
+        "sha256": "043e475a622c1ad87a00d97d45974926e60d8fd390930ef4fdf64f6d97817ce1",
+        "bytes": 4698971,
+        "width": 2368,
+        "height": 1776,
+        "s3_etag": null,
+        "s3_last_modified": null,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/v14_final.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/v14_final.png"
+      },
+      "twin_image": {
+        "render_id": "comparison-row-02-product_input",
+        "filename": "product_input.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_02/product_input.png",
+        "sha256": "26678ebb450e9c8128bb2963ebe32e22d6d125da576d8fa80d08a6a14efbcd92",
+        "bytes": 145230,
+        "width": 2368,
+        "height": 1776,
+        "s3_etag": null,
+        "s3_last_modified": null,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/product_input.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/product_input.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/product_input.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/product_input.png"
+      },
+      "hashes": {
+        "generated_image_sha256": "043e475a622c1ad87a00d97d45974926e60d8fd390930ef4fdf64f6d97817ce1",
+        "twin_image_sha256": "26678ebb450e9c8128bb2963ebe32e22d6d125da576d8fa80d08a6a14efbcd92",
+        "scene_prompt_sha256": "a037b218a9ab0eb9fbd1f9cb0e6349af4410b14a381c7c7b9b6b686dc7a0925b"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/v14_final.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/product_input.png"
+      },
+      "evaluation_role": "reviewed_training_diagnostic_not_holdout",
+      "holdout": false,
+      "report_case_provenance": {
+        "report_id": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "report_s3_prefix": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "report_data_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/sources/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/data.json",
+        "reviewer": "zperkins",
+        "report_record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::02_baseline-0008",
+        "source_row": 2,
+        "source_case_id": "02_baseline-0008",
+        "target_variant": "V14 final",
+        "target_basis": "explicit_text",
+        "prior_dataset_split": "development",
+        "current_evaluation_role": "reviewed_training_diagnostic_not_holdout",
+        "source_asset_id": "comparison-row-02-v14",
+        "source_twin_asset_id": "comparison-row-02-product_input",
+        "generated_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/v14_final.png",
+        "twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/product_input.png",
+        "label_source_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/pilot_labels.json",
+        "label_source_file_sha256": "0072ee3e527648bb6e63c1b8ed939bdd38fef31cfa59cc266f0ee3293e7aff85"
+      },
+      "diagnostic_expectation": {
+        "exact_human_quote": "v14 - Scene should be oriented in the same angle as the placed product",
+        "expected_issue_codes": [
+          "furniture_axis_conflict"
+        ],
+        "acceptable_placement_dimensions": [
+          "orientation_alignment"
+        ],
+        "target_basis": "explicit_text",
+        "mapping_notes": "The explicit V14 reference supplies one exact target. Scene-versus-product angular mismatch maps to the furniture-axis orientation code.",
+        "numeric_gold_score": null,
+        "numeric_gold_status": "not_defined",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "diagnostic-reviewed-row08-v14",
+      "source_case_id": "08_baseline-0014",
+      "source_asset_id": "comparison-row-08-v14",
+      "product": "Laptop",
+      "device": "comparison-row-08",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "unknown_legacy_report_view",
+        "source_camera_name": "unknown",
+        "view_role": "unknown"
+      },
+      "image_stage": "scene_generation",
+      "stage_provenance": {
+        "classification": "provisional_scene_generation_output",
+        "runtime_stage_value": "scene_generation",
+        "basis": "The report provenance names hp-repo-two-stage30-20261103T013935Z as its V14 run; report metadata labels every V14 asset 'Repo pipeline, PR #4256'; the run page labels its outputs 'Now: repo pipeline (PR #4256)'; and commit 4d685d95cb8790da4a464a659892b792a0c96d9c makes one images.edit call and saves the returned PNG bytes unchanged as gpt_1.png and ours.png.",
+        "reason_provisional": "The V14 S3 run prefix contains only JPEG before/guide/now renderings and index.html. It has no raw PNG, result.json, run manifest, job/stage record, or content hash that can byte-link the report's v14_final.png originals to ours.png. The stage interpretation is strongly supported by linked source code and report metadata, but exact raw-artifact lineage is not independently verifiable from the persisted run prefix.",
+        "source_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/stage_provenance.json",
+        "source_file_sha256": "cf3ac63004e000f3bf6e92e8e88eb36569caec39d92272e2ec4202caa78a4862"
+      },
+      "candidate_id": "v14",
+      "scene_prompt": "A spacious, traditional conference room with a long wooden table as the central focus, arranged with a coffee mug, notebooks, loose papers, and a pen. Classic upholstered office chairs surround the table, while solid wood-paneled walls, framed artwork, built-in shelving, and traditional furnishings extend into the background. Warm ambient lighting and timeless architectural details create a professional, established atmosphere with natural depth.",
+      "scene_prompt_sha256": "823a045ff445b481fb8fef18fe90a41288e0103c863b5125c7750b628190c3d6",
+      "scene_prompt_source": {
+        "kind": "original_report_prompt",
+        "prompt_key": "08_baseline-0014",
+        "source_revision": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "bank_rank": null,
+        "environment": null,
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "v14_final.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_08/v14_final.png",
+        "sha256": "6b1c60973c2c45ce5376e26331939e1426be3a5a80b2e176b2db1b1437f1411d",
+        "bytes": 4337622,
+        "width": 2368,
+        "height": 1776,
+        "s3_etag": null,
+        "s3_last_modified": null,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/v14_final.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/v14_final.png"
+      },
+      "twin_image": {
+        "render_id": "comparison-row-08-product_input",
+        "filename": "product_input.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_08/product_input.png",
+        "sha256": "cf24f6bc09cad4966d595a28fb59566788502bff506ad80cc7654d4d153582d6",
+        "bytes": 374277,
+        "width": 2368,
+        "height": 1776,
+        "s3_etag": null,
+        "s3_last_modified": null,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/product_input.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/product_input.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/product_input.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/product_input.png"
+      },
+      "hashes": {
+        "generated_image_sha256": "6b1c60973c2c45ce5376e26331939e1426be3a5a80b2e176b2db1b1437f1411d",
+        "twin_image_sha256": "cf24f6bc09cad4966d595a28fb59566788502bff506ad80cc7654d4d153582d6",
+        "scene_prompt_sha256": "823a045ff445b481fb8fef18fe90a41288e0103c863b5125c7750b628190c3d6"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/v14_final.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/product_input.png"
+      },
+      "evaluation_role": "reviewed_training_diagnostic_not_holdout",
+      "holdout": false,
+      "report_case_provenance": {
+        "report_id": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "report_s3_prefix": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "report_data_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/sources/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/data.json",
+        "reviewer": "zperkins",
+        "report_record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::08_baseline-0014",
+        "source_row": 8,
+        "source_case_id": "08_baseline-0014",
+        "target_variant": "V14 final",
+        "target_basis": "only_displayed_output",
+        "prior_dataset_split": "development",
+        "current_evaluation_role": "reviewed_training_diagnostic_not_holdout",
+        "source_asset_id": "comparison-row-08-v14",
+        "source_twin_asset_id": "comparison-row-08-product_input",
+        "generated_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/v14_final.png",
+        "twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/product_input.png",
+        "label_source_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/pilot_labels.json",
+        "label_source_file_sha256": "0072ee3e527648bb6e63c1b8ed939bdd38fef31cfa59cc266f0ee3293e7aff85"
+      },
+      "diagnostic_expectation": {
+        "exact_human_quote": "Product needs to be closer to the table edge.",
+        "expected_issue_codes": [
+          "excessive_reach"
+        ],
+        "acceptable_placement_dimensions": [
+          "access_usability"
+        ],
+        "target_basis": "only_displayed_output",
+        "mapping_notes": "Only V14 was displayed, yielding one exact target. The requested move toward the table edge maps to reach/access. The props-and-work-environment segment is excluded.",
+        "numeric_gold_score": null,
+        "numeric_gold_status": "not_defined",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "diagnostic-reviewed-row13-v14",
+      "source_case_id": "13_baseline-0019",
+      "source_asset_id": "comparison-row-13-v14",
+      "product": "Laptop",
+      "device": "comparison-row-13",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "unknown_legacy_report_view",
+        "source_camera_name": "unknown",
+        "view_role": "unknown"
+      },
+      "image_stage": "scene_generation",
+      "stage_provenance": {
+        "classification": "provisional_scene_generation_output",
+        "runtime_stage_value": "scene_generation",
+        "basis": "The report provenance names hp-repo-two-stage30-20261103T013935Z as its V14 run; report metadata labels every V14 asset 'Repo pipeline, PR #4256'; the run page labels its outputs 'Now: repo pipeline (PR #4256)'; and commit 4d685d95cb8790da4a464a659892b792a0c96d9c makes one images.edit call and saves the returned PNG bytes unchanged as gpt_1.png and ours.png.",
+        "reason_provisional": "The V14 S3 run prefix contains only JPEG before/guide/now renderings and index.html. It has no raw PNG, result.json, run manifest, job/stage record, or content hash that can byte-link the report's v14_final.png originals to ours.png. The stage interpretation is strongly supported by linked source code and report metadata, but exact raw-artifact lineage is not independently verifiable from the persisted run prefix.",
+        "source_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/stage_provenance.json",
+        "source_file_sha256": "cf3ac63004e000f3bf6e92e8e88eb36569caec39d92272e2ec4202caa78a4862"
+      },
+      "candidate_id": "v14",
+      "scene_prompt": "A modern creative office with a wooden table in the foreground, featuring a notebook, pen, and design materials. Framed artwork, a side cabinet, plants, bookshelves, windows, and layered furnishings create depth throughout the workspace.",
+      "scene_prompt_sha256": "b28c27d3aef7c8a8446de78040b15141270a6622e5dcc57744a30374bd8c7aee",
+      "scene_prompt_source": {
+        "kind": "original_report_prompt",
+        "prompt_key": "13_baseline-0019",
+        "source_revision": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "bank_rank": null,
+        "environment": null,
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "v14_final.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_13/v14_final.png",
+        "sha256": "459653678373d655f242b7ccfe69024e146c30a1147bb011c4e92a765f68a0fd",
+        "bytes": 6387177,
+        "width": 2368,
+        "height": 1776,
+        "s3_etag": null,
+        "s3_last_modified": null,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/13/v14_final.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/13/v14_final.png"
+      },
+      "twin_image": {
+        "render_id": "comparison-row-13-product_input",
+        "filename": "product_input.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_13/product_input.png",
+        "sha256": "ba3538bedcd7c83411696e9c30383e540fda73b22717a5d5179f33f0f57b42bf",
+        "bytes": 243050,
+        "width": 2368,
+        "height": 1776,
+        "s3_etag": null,
+        "s3_last_modified": null,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/13/product_input.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/13/product_input.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/13/product_input.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/13/product_input.png"
+      },
+      "hashes": {
+        "generated_image_sha256": "459653678373d655f242b7ccfe69024e146c30a1147bb011c4e92a765f68a0fd",
+        "twin_image_sha256": "ba3538bedcd7c83411696e9c30383e540fda73b22717a5d5179f33f0f57b42bf",
+        "scene_prompt_sha256": "b28c27d3aef7c8a8446de78040b15141270a6622e5dcc57744a30374bd8c7aee"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/13/v14_final.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/13/product_input.png"
+      },
+      "evaluation_role": "reviewed_training_diagnostic_not_holdout",
+      "holdout": false,
+      "report_case_provenance": {
+        "report_id": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "report_s3_prefix": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "report_data_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/sources/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/data.json",
+        "reviewer": "zperkins",
+        "report_record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::13_baseline-0019",
+        "source_row": 13,
+        "source_case_id": "13_baseline-0019",
+        "target_variant": "V14 final",
+        "target_basis": "explicit_text",
+        "prior_dataset_split": "held_out",
+        "current_evaluation_role": "reviewed_training_diagnostic_not_holdout",
+        "source_asset_id": "comparison-row-13-v14",
+        "source_twin_asset_id": "comparison-row-13-product_input",
+        "generated_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/13/v14_final.png",
+        "twin_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/13/product_input.png",
+        "label_source_file": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/pilot_labels.json",
+        "label_source_file_sha256": "0072ee3e527648bb6e63c1b8ed939bdd38fef31cfa59cc266f0ee3293e7aff85"
+      },
+      "diagnostic_expectation": {
+        "exact_human_quote": "v14 - Product needs to be closer to the edge near the chair, and table angle should align with the product angle.",
+        "expected_issue_codes": [
+          "excessive_reach",
+          "furniture_axis_conflict"
+        ],
+        "acceptable_placement_dimensions": [
+          "access_usability",
+          "orientation_alignment"
+        ],
+        "target_basis": "explicit_text",
+        "mapping_notes": "The explicit V14 reference supplies one exact target. The edge-near-chair clause maps to reach/access, while the table-versus-product angle clause maps to furniture-axis orientation.",
+        "numeric_gold_score": null,
+        "numeric_gold_status": "not_defined",
+        "passed_to_judge": false
+      }
+    }
+  ]
+}

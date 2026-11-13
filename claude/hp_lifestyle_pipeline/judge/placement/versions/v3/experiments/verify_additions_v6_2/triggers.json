@@ -1,0 +1,277 @@
+{
+  "schema_version": "placement-addition-verifier-triggers-v1",
+  "trigger_policy": "compact observed/partial medium/high-confidence severity>=2 and either baseline unassessable/low-confidence or compact severity above baseline",
+  "source_runs": [
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_2-v1"
+  ],
+  "expected_count": 5,
+  "expected_component_count": 5,
+  "comments_or_expectations_included": false,
+  "records": [
+    {
+      "id": "cashmere__laptop_FrontLeftMedium__p7",
+      "source_dataset": "v6_2-v1",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated/cashmere__laptop_FrontLeftMedium__p7.png",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins/cashmere__Front_Left_Medium.png",
+        "product_type": "laptop",
+        "scene_prompt": "A home living-room work area uses a low table with a wooden serving tray and a fruit bowl kept to one side. A comfortable sofa sits beyond the table, and a small carved-wood relief on the wall adds quiet residential character in pale afternoon light.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated/cashmere__laptop_FrontLeftMedium__p7.png",
+          "sha256": "c561f0dbd5cea357b4508fb9ee30edbb93190d26f1d321ed3e0c0bc2374ce512"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins/cashmere__Front_Left_Medium.png",
+          "sha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075"
+        }
+      },
+      "proposed_components": {
+        "orientation_alignment": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "high",
+          "evidence": "The laptop is oriented away from the sofa that visually serves the coffee table; the screen back faces the sofa and the usable keyboard side faces the camera/foreground.",
+          "consequence": "The furniture grouping suggests sofa use, but the device orientation conflicts with that seat and would need rotation or a different user chair.",
+          "issue_codes": [
+            "chair_alignment_conflict"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_2-v1/cashmere__laptop_FrontLeftMedium__p7/result.json",
+        "combined_result_sha256": "4ea151a1a8453295c8edde66bb89611823585483a4e1ecb76c58382c5d19b547",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_2_compact_v3/cashmere__laptop_FrontLeftMedium__p7/response.json",
+          "sha256": "69251db6af65a2b1cfade45b9639cfa5a8d1e46fb79d5e30b424b59d42bd8d9d"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_2_compact_v3/cashmere__laptop_FrontLeftMedium__p7/result.json",
+          "sha256": "7eb65030c763aefb4fd4c54c6f26ed6565dffcffae51379a17a274883b755086"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_2_v2_baseline/cashmere__laptop_FrontLeftMedium__p7/response.json",
+          "sha256": "074ca46e524a61d65e1fdfc752476cb03cb7a3436864c5cd7dda2a6ee5f99f69"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_2_v2_baseline/cashmere__laptop_FrontLeftMedium__p7/result.json",
+          "sha256": "97fb0010944edaa6e78b78888f293f522e893027f643bc11973dfaf1a512e1a5"
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p2",
+      "source_dataset": "v6_2-v1",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated/elitebook__laptop_BackRightCloseUp__p2.png",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+        "product_type": "laptop",
+        "scene_prompt": "An office desk used for focused work, with a plain unlabelled document storage box and a compact potted plant kept to one side of the surface. A slim architectural wall sconce adds even light over the wall, keeping the area composed for protected work across locations.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated/elitebook__laptop_BackRightCloseUp__p2.png",
+          "sha256": "b4a71000bad6bfc463a45f2108b8ba5a0e9058e02d9f0f8c8516c388a2846579"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+          "sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925"
+        }
+      },
+      "proposed_components": {
+        "orientation_alignment": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "medium",
+          "evidence": "On a wall-backed desk, the laptop appears oriented away from the open room-side approach and toward the less accessible side of the workstation.",
+          "consequence": "The workstation reads more like a product display than a naturally usable laptop setup.",
+          "issue_codes": [
+            "furniture_layout_conflict"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_2-v1/elitebook__laptop_BackRightCloseUp__p2/result.json",
+        "combined_result_sha256": "49c4031da4e5a6fc2fceffae820a913ba4ae28436732eb19a6b42f5f05040de7",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_2_compact_v3/elitebook__laptop_BackRightCloseUp__p2/response.json",
+          "sha256": "76817f7305cd509fcce0a1f73858677eb005256d00fbd79c94019348b3e35ecd"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_2_compact_v3/elitebook__laptop_BackRightCloseUp__p2/result.json",
+          "sha256": "6ced6bff3653b5cce27720d966f9edac8392430df7e4462f79198755d289ae3d"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_2_v2_baseline/elitebook__laptop_BackRightCloseUp__p2/response.json",
+          "sha256": "fff20bd4d255073c671bd77145953f0a19ee454f2f452876135639a3550074a9"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_2_v2_baseline/elitebook__laptop_BackRightCloseUp__p2/result.json",
+          "sha256": "1de002e09b48f5cdd53f0d5c24a5a54ccb69210eb986281803d8b855982df16c"
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p4",
+      "source_dataset": "v6_2-v1",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated/elitebook__laptop_BackRightCloseUp__p4.png",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+        "product_type": "laptop",
+        "scene_prompt": "A creative studio worktable arranged for quick concept sorting, with unlabelled fabric swatches on a plain craft cutting mat and scissors placed safely off to the side. A material board with unlabeled color and texture samples hangs above the table, tying the small work surface to the room.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated/elitebook__laptop_BackRightCloseUp__p4.png",
+          "sha256": "5da36047a09f9d0787afdb6a7ac99da7fb5f08024d0ff15a0e05d72d9a500c18"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+          "sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925"
+        }
+      },
+      "proposed_components": {
+        "orientation_alignment": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "medium",
+          "evidence": "The laptop is not notably skewed on the tabletop, but its functional front is oriented opposite the table\u2019s apparent usable approach edge and toward the wall-side area.",
+          "consequence": "The placement reads backward for real laptop use at this workstation.",
+          "issue_codes": [
+            "furniture_layout_conflict"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_2-v1/elitebook__laptop_BackRightCloseUp__p4/result.json",
+        "combined_result_sha256": "6d1de807723c1462bbf353422fde6652c3cf3ebb004c6da0cf69ba6966891878",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_2_compact_v3/elitebook__laptop_BackRightCloseUp__p4/response.json",
+          "sha256": "6ea8a84242dd985f8d6dfe799567421af045a9062c16f906aa5271044534e4ee"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_2_compact_v3/elitebook__laptop_BackRightCloseUp__p4/result.json",
+          "sha256": "7f4176f46e3e8ef745ac445642efb50c21a9e3b0c3d28b169020ba1f36a527d6"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_2_v2_baseline/elitebook__laptop_BackRightCloseUp__p4/response.json",
+          "sha256": "69e43f5e4777ccf1826a6c6c3cedea7cf7792569ca57fcb804abb9448a0d62b9"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_2_v2_baseline/elitebook__laptop_BackRightCloseUp__p4/result.json",
+          "sha256": "77cbcebc1e949bf9dd90467521ba8d67b077da6a23ba4b263eeb49e9d8ddf9f9"
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p7",
+      "source_dataset": "v6_2-v1",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated/elitebook__laptop_BackRightCloseUp__p7.png",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+        "product_type": "laptop",
+        "scene_prompt": "A creative studio production table with a small abstract wire armature set at the table's outer edge. Cool studio daylight mixes with a studio task lamp, while a large abstract canvas without text, faces, or recognizable characters hangs on the wall behind the table.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated/elitebook__laptop_BackRightCloseUp__p7.png",
+          "sha256": "840f5a5c0f832a10cf517c58e3a2afef3aece77340845bdd3d8b9f5cd88c77f2"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+          "sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925"
+        }
+      },
+      "proposed_components": {
+        "access_usability": {
+          "visibility": "partial",
+          "severity": 2,
+          "confidence": "medium",
+          "evidence": "The back of the screen faces the open foreground, while the keyboard/screen side appears to face the wall-side of the table. No user seat or clear wall-side standing space is visible.",
+          "consequence": "The arrangement reads more like a product-facing display than a usable laptop workstation; a user position is not established.",
+          "issue_codes": [
+            "no_user_position"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_2-v1/elitebook__laptop_BackRightCloseUp__p7/result.json",
+        "combined_result_sha256": "3998daef91c6cc6016b7964565037bf079e6acaf48536261af83a16821aa173f",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_2_compact_v3/elitebook__laptop_BackRightCloseUp__p7/response.json",
+          "sha256": "14f755b83fd382b5e3d989138c7e8f4fc568992c1d36832c685bf98ed0a6d21b"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_2_compact_v3/elitebook__laptop_BackRightCloseUp__p7/result.json",
+          "sha256": "ab74f8992d7c6ce2d595c892d787c59fdbe512cb9a74658f00bec02a47d7cf8f"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_2_v2_baseline/elitebook__laptop_BackRightCloseUp__p7/response.json",
+          "sha256": "9b002855458811ce62bf427e6ae6af969ad00ebfb88700c35d6fcd958d086cc4"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_2_v2_baseline/elitebook__laptop_BackRightCloseUp__p7/result.json",
+          "sha256": "0cfd75faf831e0a3006af05f5018d2afcf1ed6aa6280779ef33e88f5d27ba4f4"
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontRightCloseUp__p2",
+      "source_dataset": "v6_2-v1",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated/tassel__printer_FrontRightCloseUp__p2.png",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins/tassel__Front_Right_CloseUp.png",
+        "product_type": "printer",
+        "scene_prompt": "A family home workspace has a dedicated home-workspace table set parallel to the wall, leaving open standing space in front. A sofa with a textured cushion and a woven fiber wall piece make the room feel like part of everyday household space under muted afternoon light.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated/tassel__printer_FrontRightCloseUp__p2.png",
+          "sha256": "4dc2d8983f2cd0115e4d2bd4af4299bf880cecd3822a7c8dd06cd4958c7747e3"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins/tassel__Front_Right_CloseUp.png",
+          "sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c"
+        }
+      },
+      "proposed_components": {
+        "support_scenario": {
+          "visibility": "observed",
+          "severity": 3,
+          "confidence": "high",
+          "evidence": "The printer is placed on a low wooden coffee table directly beside a sofa in a living-room seating zone.",
+          "consequence": "It reads as an appliance occupying a leisure table, not as a practical printer station; the device would need to be relocated to a proper desk, cabinet, or equipment table.",
+          "issue_codes": [
+            "inappropriate_support"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_2-v1/tassel__printer_FrontRightCloseUp__p2/result.json",
+        "combined_result_sha256": "e0d6abe2d11a81c6a927c93ec66d55b147a17102bb41e640e21593ccb95f7d64",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_2_compact_v3/tassel__printer_FrontRightCloseUp__p2/response.json",
+          "sha256": "542ed738ab02d672faa6a0d7105eb435bec527613f0300803c25eb9a6754355c"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_2_compact_v3/tassel__printer_FrontRightCloseUp__p2/result.json",
+          "sha256": "980e0c8a3265c31de578d1870e8ae486e66b159d2878fa499f16a1dbe199bde4"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_2_v2_baseline/tassel__printer_FrontRightCloseUp__p2/response.json",
+          "sha256": "30098818fe16dc53ac136dbb4e1682cc4150e2878a077332c5735ba28ec6fe8f"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_2_v2_baseline/tassel__printer_FrontRightCloseUp__p2/result.json",
+          "sha256": "61c809a641d3daeefbde1dfda1f6b43ca1ab65d66682f6b6a602c70022e57017"
+        }
+      }
+    }
+  ]
+}

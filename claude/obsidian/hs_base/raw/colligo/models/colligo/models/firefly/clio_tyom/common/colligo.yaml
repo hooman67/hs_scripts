@@ -1,0 +1,19 @@
+visibility: public
+public:
+  files:
+  - types
+  deps:
+  - colligo.base
+  - colligo.caplan_taxonomy
+  - colligo.models.external_services.cme[public]
+  - colligo.models.firefly.clio_common[public]
+deps:
+- colligo.data
+- colligo.httpx
+- colligo.models.firefly.clio_tyom.cache
+- colligo.models.firefly.diffusion.eps.utils
+- requests
+- torch
+- urllib3
+exclude:
+- tests

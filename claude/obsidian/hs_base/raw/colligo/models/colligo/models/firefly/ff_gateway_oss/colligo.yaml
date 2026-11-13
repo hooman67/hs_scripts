@@ -1,0 +1,20 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.firefly.vllm_serve[public]
+custom_pyenv: vllm_0_19_1
+deps:
+- deep_gemm
+- flashinfer-cubin
+- flashinfer-jit-cache
+- flashinfer-python
+- opentelemetry-propagator-b3
+- pillow
+- pydantic
+- torch
+- transformers
+- vllm[audio,video,fastsafetensors]
+- xgrammar

@@ -1,0 +1,21 @@
+visibility: public
+public:
+  files:
+  - types.py
+  - constants.py
+  deps:
+  - colligo.base
+  - colligo.models.audio.common[public]
+deps:
+- av
+- colligo.data
+- colligo.external_services.acmp
+- colligo.models.audio.common
+- colligo.models.audio.enhance_prompt
+- colligo.models.audio.transcribe[public]
+- colligo.models.prompt_suggestions.prompt_generator
+- colligo.rhode
+- numpy
+- opencv-contrib-python-headless
+- pillow
+- torch

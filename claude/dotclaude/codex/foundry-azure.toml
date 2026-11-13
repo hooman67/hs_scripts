@@ -1,0 +1,28 @@
+# Foundry Azure OpenAI for Codex — NO SECRET IN THIS FILE (safe to commit).
+# This is the box's DEFAULT provider: install as ~/.codex/config.toml (plain `codex` = Foundry prod).
+# The API key is supplied at RUNTIME from Vault (never stored here or in git):
+#   export VAULT_ADDR=https://vault-amer.adobe.net ; vault login -method=oidc   # once
+#   export AZURE_OPENAI_API_KEY="$(vault kv get -field=api_key dme_colligo/services/foundry/ethos/azure_key)"
+#   codex        # or the ~/.bashrc alias:  codex-foundry  (reads the key + launches)
+# NOTE (codex >=0.153): do NOT use a [profiles.foundry_azure] table — legacy/rejected. Make it the
+# top-level default (as below), or a separate ~/.codex/<name>.config.toml overlay file.
+# Endpoint/api-version pulled live from the Foundry Azure resource (AZR14080).
+
+# Deployments that work on AZR14080 (2026-10-13): gpt-6-astra (default), gpt-5.5, gpt-5. NOT gpt-6-sol /
+# gpt-6.1-sol / gpt-5.4 / gpt-5-mini (-> 404 DeploymentNotFound). Don't accept Codex's /model upgrade
+# prompt to a model not deployed here; it rewrites this line.
+model = "gpt-6-astra"
+model_provider = "foundry_azure"
+model_reasoning_effort = "high"
+
+[model_providers.foundry_azure]
+name = "Foundry Azure OpenAI"
+base_url = "https://camp-azr14080-rnig4.openai.azure.com/openai"
+env_key = "AZURE_OPENAI_API_KEY"
+wire_api = "responses"                # codex >=0.152 requires the Responses API
+query_params = { api-version = "2025-04-01-preview" }
+request_max_retries = 20              # more retries for transient Azure throttling
+stream_max_retries = 20
+
+[tui]
+alternate_screen = "never"            # same as `codex --no-alt-screen`; keeps terminal scrollback

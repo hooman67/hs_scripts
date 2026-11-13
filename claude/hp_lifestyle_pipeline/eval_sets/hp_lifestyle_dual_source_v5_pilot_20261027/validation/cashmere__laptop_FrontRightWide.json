@@ -1,0 +1,354 @@
+{
+  "version": "v5-raw-normalized-audit-v1",
+  "case_id": "cashmere__laptop_FrontRightWide",
+  "request_sha256": "529e1e0aa80e1bb5a92c76820a234599a6472f67a1a1a9f9c7a9942a6b554d21",
+  "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/cashmere__laptop_FrontRightWide/sample_001.json",
+  "raw_record_sha256": "5d1f7df826c1569df5bbb9414f6392744351749ae8a2c123898e36caaf4b63dc",
+  "raw_validation": {
+    "validator_version": "v5-host-validator-r2",
+    "passed": false,
+    "error_count": 6,
+    "warning_count": 2,
+    "errors": [
+      {
+        "code": "literal_background_budget",
+        "detail": "3>2: ['plants', 'shelving', 'workstations']",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['plants', 'shelving', 'workstations'] but signature has 2 entries",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "literal_background_budget",
+        "detail": "3>2: ['plants', 'shelving', 'simple furniture']",
+        "candidate_id": "p7"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['plants', 'shelving', 'simple furniture'] but signature has 2 entries",
+        "candidate_id": "p7"
+      },
+      {
+        "code": "literal_background_budget",
+        "detail": "3>2: ['artwork', 'shelving', 'wall']",
+        "candidate_id": "p20"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['artwork', 'shelving', 'wall'] but signature has 2 entries",
+        "candidate_id": "p20"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "unused_source_evidence",
+        "detail": "Unused evidence may support audit text; inspect: ['e5', 'e9', 'e13']"
+      },
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 20,
+      "evidence": 15,
+      "environments": {
+        "Office": 5,
+        "Home": 4,
+        "Creative Studio": 3,
+        "Café": 3,
+        "Education": 3,
+        "Gaming": 2
+      },
+      "relationships": {
+        "source_grounded": 9,
+        "source_adjacent": 6,
+        "creative_departure": 5
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 4,
+        "Office": 5,
+        "Education": 3,
+        "Gaming": 2,
+        "Café": 3,
+        "Creative Studio": 3
+      },
+      "relationship_counts": {
+        "source_grounded": 9,
+        "source_adjacent": 6,
+        "creative_departure": 5
+      },
+      "ctech_relationship_counts": {
+        "close_adaptation": 12,
+        "minimal_camera_edit": 5,
+        "category_extension": 3
+      },
+      "ctech_reference_counts": {
+        "CT03": 2,
+        "CT13": 1,
+        "CT01": 3,
+        "CT02": 1,
+        "CT04": 1,
+        "CT05": 1,
+        "CT18": 2,
+        "CT10": 2,
+        "CT09": 1,
+        "CT17": 1,
+        "CT08": 1,
+        "CT07": 1,
+        "CT12": 1,
+        "CT14": 1,
+        "CT15": 1
+      },
+      "ctech_score_range": [
+        64,
+        88
+      ],
+      "distinct_subsettings": 20,
+      "evidence_reverse_mappings": {
+        "smart_brief": {
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e6",
+            "e14"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        },
+        "source_messaging": {
+          "evidence_ids": [
+            "e7",
+            "e8",
+            "e10",
+            "e11",
+            "e12",
+            "e15"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "38a37cc612f91c814001b6f10667407623da987b35b2b0a3729a4cae67d9ce37"
+  },
+  "normalized_validation": {
+    "validator_version": "v5-host-validator-r2",
+    "passed": false,
+    "error_count": 6,
+    "warning_count": 2,
+    "errors": [
+      {
+        "code": "literal_background_budget",
+        "detail": "3>2: ['plants', 'shelving', 'workstations']",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['plants', 'shelving', 'workstations'] but signature has 2 entries",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "literal_background_budget",
+        "detail": "3>2: ['plants', 'shelving', 'simple furniture']",
+        "candidate_id": "p7"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['plants', 'shelving', 'simple furniture'] but signature has 2 entries",
+        "candidate_id": "p7"
+      },
+      {
+        "code": "literal_background_budget",
+        "detail": "3>2: ['artwork', 'shelving', 'wall']",
+        "candidate_id": "p20"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['artwork', 'shelving', 'wall'] but signature has 2 entries",
+        "candidate_id": "p20"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "unused_source_evidence",
+        "detail": "Unused evidence may support audit text; inspect: ['e5', 'e9', 'e13']"
+      },
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 20,
+      "evidence": 15,
+      "environments": {
+        "Office": 5,
+        "Home": 4,
+        "Creative Studio": 3,
+        "Café": 3,
+        "Education": 3,
+        "Gaming": 2
+      },
+      "relationships": {
+        "source_grounded": 9,
+        "source_adjacent": 6,
+        "creative_departure": 5
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 4,
+        "Office": 5,
+        "Education": 3,
+        "Gaming": 2,
+        "Café": 3,
+        "Creative Studio": 3
+      },
+      "relationship_counts": {
+        "source_grounded": 9,
+        "source_adjacent": 6,
+        "creative_departure": 5
+      },
+      "ctech_relationship_counts": {
+        "close_adaptation": 12,
+        "minimal_camera_edit": 5,
+        "category_extension": 3
+      },
+      "ctech_reference_counts": {
+        "CT03": 2,
+        "CT13": 1,
+        "CT01": 3,
+        "CT02": 1,
+        "CT04": 1,
+        "CT05": 1,
+        "CT18": 2,
+        "CT10": 2,
+        "CT09": 1,
+        "CT17": 1,
+        "CT08": 1,
+        "CT07": 1,
+        "CT12": 1,
+        "CT14": 1,
+        "CT15": 1
+      },
+      "ctech_score_range": [
+        64,
+        88
+      ],
+      "distinct_subsettings": 20,
+      "evidence_reverse_mappings": {
+        "smart_brief": {
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e6",
+            "e14"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        },
+        "source_messaging": {
+          "evidence_ids": [
+            "e7",
+            "e8",
+            "e10",
+            "e11",
+            "e12",
+            "e15"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "38a37cc612f91c814001b6f10667407623da987b35b2b0a3729a4cae67d9ce37"
+  },
+  "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/cashmere__laptop_FrontRightWide__sample_001.json",
+  "normalized_output_file_sha256": "d19961ee6508333cf84da6741de7fad061ac26e8bb2eee1fbbb4685928708fa3",
+  "normalized_output_semantic_sha256": "38a37cc612f91c814001b6f10667407623da987b35b2b0a3729a4cae67d9ce37",
+  "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalization_logs/cashmere__laptop_FrontRightWide__sample_001.json",
+  "normalization_log_file_sha256": "4c50bdca571f0bead13a99ae6e35ce6a04a536f9115c3cad501a8cfdab6d6dfb",
+  "human_review_status": "pending",
+  "launchable": false
+}

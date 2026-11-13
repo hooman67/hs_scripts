@@ -1,0 +1,53 @@
+{
+  "version": "hp-lived-in-v4-ui-validation-v1",
+  "checked_at_utc": "2026-10-26T19:29:09.634869+00:00",
+  "status": "passed",
+  "mode": "progressive",
+  "data": {
+    "candidate_count": 540,
+    "generation_row_count": 108,
+    "done_row_count": 0,
+    "environment_counts": {
+      "Office": 211,
+      "Home": 92,
+      "Education": 55,
+      "Café": 65,
+      "Creative Studio": 78,
+      "Gaming": 39
+    }
+  },
+  "browser": {
+    "status": "skipped",
+    "reason": "no supported Chromium binary is installed; static HTML and serialized data were validated, and JavaScript contract markers were inspected; the checks list records whether a standalone JavaScript syntax runtime was available"
+  },
+  "checks": [
+    "candidate headers match the six rendered cells",
+    "generation headers match the seven rendered cells",
+    "candidate headers precede candidate rows",
+    "generation headers precede generation rows",
+    "Generated images (108 selected rows) is the active default tab",
+    "540-candidate tab is inactive by default",
+    "generated-image table is visible by default",
+    "candidate table is hidden by default",
+    "JavaScript declares a fixed native environment taxonomy",
+    "environment filter contains Home, Office, Education, Gaming, Café, and Creative Studio",
+    "environment menu is populated from the fixed six-value taxonomy",
+    "generated-row explanation is rendered collapsed",
+    "candidate row renders one cell under each header",
+    "generation row renders one cell under each header",
+    "generated-row source, explanation, usedPrompt, and debug details have no open attribute",
+    "generation debug is behind a collapsed detail",
+    "usedPrompt is behind a collapsed detail",
+    "source messaging and runtime input are behind collapsed details",
+    "generated output has a dedicated image column header",
+    "done rows render the actual generated image in the output column",
+    "node --check skipped because node is unavailable",
+    "gallery data contains exactly 540 candidates",
+    "gallery data contains exactly 108 selected generation rows",
+    "gallery data natively covers all six environments",
+    "candidate environments use only the native six-value taxonomy",
+    "candidate keys are unique",
+    "generation row IDs are unique",
+    "every generation row resolves a selected candidate key"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-23",
+  "status": "plan_only_do_not_stop_until_v3_eval_ready",
+  "authorization": "Stopping V2 is authorized only when the V3 evaluation is ready; V2 was not stopped while producing this plan.",
+  "observed_state": {
+    "observed_at_utc": "2026-10-23T20:06:06.920461+00:00",
+    "supervisor_pid": 796626,
+    "process_group_id": 796622,
+    "supervisor_alive": true,
+    "accepted_prompt_cases_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/accepted_prompt_cases.json",
+    "accepted_prompt_cases_sha256": "47df63b3a465fa9b09f62e78b4066aebbfe4438e503d4650a1e601158ea33011",
+    "accepted_case_count": 369,
+    "accepted_prompt_count": 592,
+    "final_expanded_generation_row_count": 1318,
+    "manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/manifest.json",
+    "manifest_sha256": "840ab21adcaedef33973315a7f909f0b47af4375e18bb88bc599305470811409",
+    "run_root": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022",
+    "job_status_counts": {
+      "materialized": 561,
+      "submitted": 9
+    },
+    "record_status_counts": {
+      "done": 561,
+      "pending": 1
+    },
+    "submitting_job_count": 0,
+    "ambiguous_submission_count": 0,
+    "note": "This is an observed moving snapshot. The authoritative stop checkpoint must be regenerated after the process group is frozen."
+  },
+  "safe_stop_and_drain_protocol": [
+    {
+      "step": 1,
+      "action": "Wait until V3 manifest, accepted prompts, runner, output root, and smoke gate are ready. Do not stop V2 before this condition."
+    },
+    {
+      "step": 2,
+      "action": "Send SIGSTOP to the V2 process group, then inspect every jobs/*.json. If any job status is submitting, send SIGCONT, wait for it to become submitted or a specific terminal/ambiguous state, and repeat. Never terminate during a submitting window."
+    },
+    {
+      "step": 3,
+      "action": "While the process group is safely stopped with zero submitting jobs, write a durable local checkpoint containing accepted-map and manifest hashes; blob_bindings.json hash; sorted jobs and records path/size/SHA manifests; status counts; every submitted row_id/job_id/result_url; every ambiguous or safe-retry row; generated-image path/size/SHA manifest; supervisor PID/PGID; and UTC timestamp. Verify the checkpoint by rereading every listed file."
+    },
+    {
+      "step": 4,
+      "action": "Terminate the stopped V2 process group with SIGTERM followed by SIGCONT so termination is delivered. Confirm the uv wrapper, supervisor, and runner child are gone. Do not cancel endpoint jobs."
+    },
+    {
+      "step": 5,
+      "action": "Build the drain invocation from the checkpoint's submitted row IDs only. Invoke the existing V2 run_generation.py with one repeated --row-id argument per submitted row, the same V2 run root, workers no greater than 8, and upload-workers no greater than 8. Existing job journals make these rows resume their known result URLs without resubmission. Do not use --all or --all-accepted for the drain."
+    },
+    {
+      "step": 6,
+      "action": "After the drain exits, require zero submitted/submitting jobs for the drained set, require each drained row to have a done or specific failed record, rescan JSON/JSONL for presigned or authorization material, and write a post-drain checkpoint. Record remaining unsubmitted V2 rows as intentionally paused rather than complete."
+    }
+  ],
+  "checkpoint_required_fields": [
+    "checkpoint_version",
+    "created_at_utc",
+    "reason",
+    "manifest_path_and_sha256",
+    "accepted_prompt_cases_path_and_sha256",
+    "final_expected_generation_row_count",
+    "blob_bindings_path_size_sha256",
+    "jobs_sorted_path_size_sha256_and_status",
+    "records_sorted_path_size_sha256_and_status",
+    "submitted_row_id_job_id_result_url",
+    "ambiguous_and_safe_retry_rows",
+    "generated_images_sorted_path_size_sha256",
+    "done_failed_pending_missing_counts",
+    "supervisor_pid_process_group_id",
+    "sensitive_artifact_scan_result",
+    "exact_drain_command_argv",
+    "checkpoint_verification_result"
+  ],
+  "runner_reuse_assessment": {
+    "v2_runner_reusable_as_is_for_v3": false,
+    "recommendation": "Create a copied V3 adapter in a separate V3 eval root and output root, preserving the proven upload, job-journal, sanitization, retry, polling, and output-verification mechanisms.",
+    "reasons": [
+      "The V2 runner derives EVAL_ROOT from its own fixed filesystem location and hard-codes its manifest, accepted-map, and run-root paths.",
+      "V2 load_inputs requires exactly 202 included renders and exactly 41 excluded miniPC renders.",
+      "V2 build_rows requires the V2 source/case/render manifest contract and accepted_prompt_cases schema.",
+      "The V3 evaluation has four fixed reference renders, 108 budgeted image rows, four labeled diversity families, and a different prompt/ranking contract.",
+      "Editing the active V2 runner would risk the live V2 run and violate the isolation requirement."
+    ],
+    "mechanisms_safe_to_copy": [
+      "exact PNG byte/hash verification and image/png upload",
+      "stable blob bindings scoped to a new manifest and endpoint",
+      "seed, dimension, and request-payload provenance",
+      "pending async job journals and restart polling",
+      "bounded confirmed-no-job retries with ambiguous-submission hold",
+      "atomic records, summaries, and output downloads",
+      "presigned URL and authorization sanitization",
+      "native output dimension and checksum verification"
+    ]
+  }
+}

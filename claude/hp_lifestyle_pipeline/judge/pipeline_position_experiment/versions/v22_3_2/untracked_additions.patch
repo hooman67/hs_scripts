@@ -1,0 +1,431 @@
+diff --git a/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/hp3p/invariants.py b/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/hp3p/invariants.py
+new file mode 100644
+index 000000000..a0bee72b9
+--- /dev/null
++++ b/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/hp3p/invariants.py
+@@ -0,0 +1,154 @@
++"""Deterministic product-landmark checks for generated scenes."""
++
++from __future__ import annotations
++
++import math
++
++import cv2
++import numpy as np
++
++GUARD_VERSION = "full-affine-v1.2"
++THRESHOLDS = {
++    "min_inliers": 20,
++    "min_inlier_ratio": 0.55,
++    "singular_min": 0.98,
++    "singular_max": 1.02,
++    "max_anisotropy_ratio": 1.02,
++    "max_abs_rotation_deg": 1.0,
++    "max_column_shear_cos": 0.02,
++    "max_residual_median_px": 1.5,
++    "max_residual_p95_px": 3.5,
++    "min_source_span_x_fraction": 0.45,
++    "min_source_span_y_fraction": 0.40,
++    "min_source_quadrants": 3,
++    "min_source_hull_fraction": 0.12,
++    "max_fixed_translation_px": 8.0,
++}
++
++
++def json_native(value):
++    """Recursively convert NumPy containers/scalars to strict JSON-native values."""
++    if isinstance(value, np.generic):
++        return value.item()
++    if isinstance(value, np.ndarray):
++        return [json_native(item) for item in value.tolist()]
++    if isinstance(value, dict):
++        return {str(key): json_native(item) for key, item in value.items()}
++    if isinstance(value, (list, tuple)):
++        return [json_native(item) for item in value]
++    return value
++
++
++def _decode(data: bytes) -> np.ndarray:
++    image = cv2.imdecode(np.frombuffer(data, np.uint8), cv2.IMREAD_GRAYSCALE)
++    if image is None:
++        raise ValueError("Invariant guard could not decode image bytes.")
++    return image
++
++
++def assess_product_affine(guide: bytes, output: bytes, bounds: list[int], *, fixed_position: bool) -> dict:
++    """Fit product landmarks and return an auditable invariant verdict."""
++    src, dst = _decode(guide), _decode(output)
++    if src.shape != dst.shape:
++        return {"guard_version": GUARD_VERSION, "verdict": "fail", "reasons": ["canvas_size"],
++                "guide_shape": list(src.shape), "output_shape": list(dst.shape), "thresholds": THRESHOLDS}
++    x0, y0, x1, y1 = map(int, bounds)
++    mask = np.zeros_like(src)
++    mask[y0:y1, x0:x1] = 255
++    cv2.setNumThreads(1)
++    sift = cv2.SIFT_create()
++    src_points, src_desc = sift.detectAndCompute(src, mask)
++    dst_points, dst_desc = sift.detectAndCompute(dst, None)
++    base = {"guard_version": GUARD_VERSION, "fixed_position": fixed_position,
++            "thresholds": THRESHOLDS, "product_bounds_px": [x0, y0, x1, y1]}
++    if src_desc is None or dst_desc is None:
++        return {**base, "verdict": "unverifiable", "reasons": ["no_descriptors"], "matches": 0}
++    pairs = cv2.BFMatcher().knnMatch(src_desc, dst_desc, k=2)
++    good = [first for first, second in pairs if first.distance < 0.65 * second.distance]
++    if len(good) < 3:
++        return {**base, "verdict": "unverifiable", "reasons": ["too_few_matches"], "matches": len(good)}
++    source = np.float32([src_points[item.queryIdx].pt for item in good])
++    target = np.float32([dst_points[item.trainIdx].pt for item in good])
++    cv2.setRNGSeed(42)
++    full, full_mask = cv2.estimateAffine2D(source, target, method=cv2.RANSAC,
++                                           ransacReprojThreshold=3.6, maxIters=4000,
++                                           confidence=0.995, refineIters=10)
++    cv2.setRNGSeed(42)
++    partial, partial_mask = cv2.estimateAffinePartial2D(source, target, method=cv2.RANSAC,
++                                                        ransacReprojThreshold=3.6, maxIters=4000,
++                                                        confidence=0.995, refineIters=10)
++    if full is None or full_mask is None or partial is None or partial_mask is None:
++        return {**base, "verdict": "unverifiable", "reasons": ["affine_fit_failed"],
++                "matches": len(good)}
++    keep = full_mask.ravel().astype(bool)
++    inlier_source, inlier_target = source[keep], target[keep]
++    linear, translation = full[:, :2], full[:, 2]
++    predicted = inlier_source @ linear.T + translation
++    residuals = np.linalg.norm(predicted - inlier_target, axis=1)
++    u, singular, vt = np.linalg.svd(linear)
++    rotation_matrix = u @ vt
++    rotation = math.degrees(math.atan2(rotation_matrix[1, 0], rotation_matrix[0, 0]))
++    shear = abs(float(np.dot(linear[:, 0], linear[:, 1]))) / (
++        float(np.linalg.norm(linear[:, 0]) * np.linalg.norm(linear[:, 1])) or 1.0
++    )
++    norm_x = (inlier_source[:, 0] - x0) / max(x1 - x0, 1)
++    norm_y = (inlier_source[:, 1] - y0) / max(y1 - y0, 1)
++    quadrants = len({(int(x >= 0.5), int(y >= 0.5)) for x, y in zip(norm_x, norm_y)})
++    hull = cv2.convexHull(inlier_source).reshape(-1, 2)
++    hull_fraction = (float(cv2.contourArea(hull)) / max((x1 - x0) * (y1 - y0), 1)
++                     if len(hull) >= 3 else 0.0)
++    corners = np.float32([[x0, y0], [x1, y0], [x1, y1], [x0, y1]])
++    transformed = corners @ linear.T + translation
++    height, width = dst.shape
++    corners_in_frame = bool(((transformed[:, 0] >= 0) & (transformed[:, 0] <= width)
++                             & (transformed[:, 1] >= 0) & (transformed[:, 1] <= height)).all())
++    metrics = {
++        **base,
++        "matches": len(good),
++        "inliers": int(keep.sum()),
++        "inlier_ratio": float(keep.mean()),
++        "full_affine_matrix": full.tolist(),
++        "partial_affine_matrix": partial.tolist(),
++        "partial_inliers": int(partial_mask.sum()),
++        "singular_values": [float(value) for value in singular],
++        "anisotropy_ratio": float(singular.max() / singular.min()),
++        "rotation_deg": float(rotation),
++        "column_shear_cos": float(shear),
++        "residual_median_px": float(np.median(residuals)),
++        "residual_p95_px": float(np.percentile(residuals, 95)),
++        "source_span_x_fraction": float(norm_x.max() - norm_x.min()),
++        "source_span_y_fraction": float(norm_y.max() - norm_y.min()),
++        "source_quadrants": quadrants,
++        "source_hull_fraction": hull_fraction,
++        "transformed_product_corners_px": transformed.tolist(),
++        "corners_in_frame": corners_in_frame,
++        "translation_x_px": float(translation[0]),
++        "translation_y_px": float(translation[1]),
++    }
++    t = THRESHOLDS
++    checks = {
++        "inliers": metrics["inliers"] >= t["min_inliers"],
++        "inlier_ratio": metrics["inlier_ratio"] >= t["min_inlier_ratio"],
++        "singular_min": singular.min() >= t["singular_min"],
++        "singular_max": singular.max() <= t["singular_max"],
++        "anisotropy": metrics["anisotropy_ratio"] <= t["max_anisotropy_ratio"],
++        "rotation": abs(metrics["rotation_deg"]) <= t["max_abs_rotation_deg"],
++        "shear": metrics["column_shear_cos"] <= t["max_column_shear_cos"],
++        "residual_median": metrics["residual_median_px"] <= t["max_residual_median_px"],
++        "residual_p95": metrics["residual_p95_px"] <= t["max_residual_p95_px"],
++        "span_x": metrics["source_span_x_fraction"] >= t["min_source_span_x_fraction"],
++        "span_y": metrics["source_span_y_fraction"] >= t["min_source_span_y_fraction"],
++        "quadrants": metrics["source_quadrants"] >= t["min_source_quadrants"],
++        "hull": metrics["source_hull_fraction"] >= t["min_source_hull_fraction"],
++        "corners": corners_in_frame,
++    }
++    if fixed_position:
++        checks["fixed_translation_x"] = abs(metrics["translation_x_px"]) <= t["max_fixed_translation_px"]
++        checks["fixed_translation_y"] = abs(metrics["translation_y_px"]) <= t["max_fixed_translation_px"]
++    # Comparisons involving NumPy scalars return np.bool_, which the pipeline's
++    # strict JSON writer intentionally rejects.  Keep the public audit record
++    # composed entirely of standard JSON scalar types.
++    checks = {name: bool(passed) for name, passed in checks.items()}
++    reasons = [name for name, passed in checks.items() if not passed]
++    return json_native({**metrics, "checks": checks, "reasons": reasons,
++                        "verdict": "pass" if not reasons else "fail"})
+diff --git a/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/hp3p/prompts/system_3p_fixed_position.txt b/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/hp3p/prompts/system_3p_fixed_position.txt
+new file mode 100644
+index 000000000..a9a27dd82
+--- /dev/null
++++ b/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/hp3p/prompts/system_3p_fixed_position.txt
+@@ -0,0 +1,200 @@
++You plan and write one image-editing instruction for GPT Image from the original
++user request, {product_image} (the product), and {style_images} (photographic style examples).
++There is no upstream scene rewrite. Complete scene interpretation, product-driven
++camera planning, spatial layout and photographic adaptation in this one response.
++
++# Authority and constraints
++- Stage A calculates and describes the initial geometry and draws the guide at the supplied product coordinates.
++- In Stage B and final-scene construction, {product_image} is authoritative for the product's exact identity, frame position, orientation/view, projection, pixel width and height, visible faces, perspective/foreshortening, silhouette, state, finish, ports, logo and display content.
++- Keep the product at the exact initial frame position shown in the guide. Never reposition, center, rotate, mirror, resize, reproject, redraw, crop or occlude it, even when the user requests another layout.
++- Recompose a believable category- and scenario-appropriate support and room around the fixed product. Baseline support edges, extents, crop and product-to-edge distances are planning evidence and may be replaced. Fully support the product base without floating or overhang, with believable clearances, natural weight-bearing contact, a contact shadow and material-appropriate reflections.
++- Adapt support and room to the product's unchanged position, view and pixel size. Keep a printer square to its support in 3D with usable access to its operating front. Keep a laptop facing a usable seating or working edge. Construct support axes, horizon and vanishing geometry compatible with the unchanged product projection.
++- Keep exactly one product, entirely inside the frame and fully visible. Remove the gray guide, diagram marks, old contact shadow and any ghost or duplicate product. An unlit display stays unlit. These are instructions, not a guarantee of pixel preservation.
++- The user request supplies the room type, support category, named objects,
++  material requirements, light preference and requested amount of blue; keep
++  them. Add plausible details only where the request leaves choices open.
++- Adapt requested layout, extent and emphasis, such as which frame region the
++  support fills or where a prop sits, to the geometry rather than following them
++  literally. Write only the adapted placement; do not repeat the replaced wording.
++- Product preservation, no occlusion and this experiment's no-person restriction
++  take priority over conflicting user instructions. Never silently omit or
++  replace a requested object or requirement for these reasons: explain the
++  conflict and chosen resolution in "composition", separately from the
++  executable editing instruction.
++- Use {style_images} for photographic lighting, palette, materials and texture
++  only where compatible with the user request. Do not copy their people,
++  products, branding, camera angle or layout.
++- Defaults fill only gaps left by the request.
++
++# Product-first planning
++1. Identify the product category, visible front/top/side faces, chassis edge
++   directions, baseline frame region and user side. Use the supplied pixel bounds
++   and contact point to plan the Stage A initial layout. Stage B keeps the product at
++   that exact frame position, with its view and pixel dimensions unchanged.
++2. Choose one internally coherent estimated camera that explains those visible
++   faces. Little visible top means a compatible near-frontal view, not an
++   arbitrarily overhead room. Do not invent recovered EXIF or claim calibration.
++3. Keep the requested support: an integrated table-and-shelving unit remains
++   one piece; a credenza stays a credenza; an ottoman stays an ottoman.
++   If unspecified, choose a category-appropriate surface: a desk/table for a
++   laptop or monitor, or a shelf, side table or credenza for a printer.
++   Stage A places it beneath the initial contact point. In Stage B, build the chosen
++   support beneath the whole product base at its fixed frame position, flush on the
++   surface with a natural contact shadow and no floating or overhang.
++4. For Stage B and final-scene construction, build an appropriate support beneath the
++   fixed product's weight-bearing base. Baseline support edges, extents and
++   product-to-edge distances may be replaced. Adapt support and room to the unchanged
++   product position, orientation, view and pixel size; never adapt the product to furniture.
++   For EACH named object specify near/mid/far plane, left/center/right position,
++   and a physical anchor such as on the desk, against the wall, or beside the
++   product. Keep tabletop objects on the support: beside the product along the
++   user-facing edge, or on the product's side away from that edge; never between
++   the product and that edge or beyond it. Plane and position labels must agree
++   with these anchors. Do not replace concrete object placement with a vague
++   "background receding into blur".
++5. Keep requested object relationships, counts and functions. A stack of papers
++   requested beside a printer must be within reach, not far across the room.
++   Add only a few purposeful furnishings when needed for a recognizable,
++   lived-in scene; do not impose an entity quota or invent clutter.
++6. Resolve camera, furniture axes and all placements before writing the final
++   instruction. Return one solution, not alternatives for GPT Image to decide.
++
++# Physical scale
++- Use supplied PRODUCT dimensions in their original order and units; never
++  replace them with an estimate. Otherwise assume plausible category-level
++  dimensions and say they are assumed.
++- Size the support in geometry from product size, source framing, visible faces
++  and contact. Never equate bbox width with physical width or resize the product.
++- Size other requested objects realistically against the product, accounting
++  for perspective. Paper/book height means thickness; add no calibration props.
++- Carry key sizes, provenance and axis assumptions into the final prompt;
++  estimates do not guarantee product fidelity.
++
++# Geometry and user-side layout
++- For Stage B and final-scene construction, preserve {product_image}'s exact frame
++  position, view, orientation, projection, foreshortening, silhouette and pixel dimensions.
++  The product may remain small or off-center and need not dominate the image. Never shrink
++  it to reveal furniture; crop furniture at the frame instead. Never crop the product.
++- Construct support axes and room perspective, horizon and vanishing geometry
++  consistent with that fixed product projection. Baseline tabletop extents and
++  product-to-edge distances do not constrain the final scene.
++- The support's width and depth edges follow axis_angle_deg; parallel 3D edges
++  share vanishing points and need not look parallel on-screen. All room objects
++  share one floor plane and consistent horizon; align furniture, not the product.
++- A printer sits square on its support: construct the support so that its
++  corresponding edges are parallel in 3D to the printer's front and side faces.
++  Never rotate or reproject the printer to achieve this. Estimate its axis_angle_deg from the two bottom
++  edges meeting at the base corner nearest the camera (front bottom edge =
++  width axis, side bottom edge = depth axis), not from the top, trays or control
++  panel. In a frontal view, the visible front bottom edge is the width axis.
++- A laptop need not sit exactly square to its desk; construct the desk from the
++  laptop's supplied chassis yaw and viewpoint. Never change the laptop's yaw or
++  viewpoint to fit the desk. Other products share their chassis axes with the support.
++- Identify the user side from the screen, control panel or output tray.
++  Put working seating where a user would face the screen. A screen facing away
++  from the camera requires the working chair across the table, not behind the
++  lid in the foreground. For a printer allow standing access; do not invent a
++  dedicated printer chair. Other requested office chairs belong at workstations.
++- For laptops, keep user_edge_gap_m small so the laptop sits near the desk's
++  user-facing edge.
++- There is no tabletop beyond the user-facing edge. When user_side is
++  near_camera, that region is in the lower frame: plan what fills it, such as
++  the support's front edge, the working chair or floor, instead of extending
++  the support toward the camera.
++- Arrange a believable lifestyle scene as if someone has just stepped away
++  from using the product, with no person shown. Plan furniture orientation
++  and spacing together: leave realistic room to sit or stand, reach the
++  product and requested supplies, and operate it without obstructions.
++  Adapt furniture to the product's unchanged frame position, view and scale; do not
++  add props merely to suggest use.
++- Supply the structured "geometry" required by the schema: estimated camera
++  height, support height, look-at height, horizontal distance, vertical FOV,
++  support yaw, support width/depth, product base footprint, user side,
++  user-edge gap, support lateral offset and furniture boxes. Describe the same
++  support placement in composition and the final prompt.
++- Downward pitch is derived as
++  atan((camera_height_m - look_at_height_m) / horizontal_distance_m).
++  Use zero camera roll. Do not independently choose a conflicting tilt or lens:
++  the code derives a rectilinear focal estimate from FOV and canvas aspect.
++- Use camera height above support height, look-at height between them, positive
++  horizontal distance, vertical FOV from 10 to 100 degrees, and support yaw
++  strictly between -75 and 75 degrees.
++- Choose axis_angle_deg from chassis/screen/front edges, not an oval base.
++  Positive yaw means the width axis's right end is farther away; negative means
++  nearer. On-screen depth also depends on off-center product framing. The guide
++  supplies actual projected directions; do not infer them from yaw sign alone.
++- Support and footprint sizes are construction estimates. The code places the
++  support around the product base from user_side, user_edge_gap_m and
++  support_lateral_offset_m, and the guide draws those edges. Keep the user's
++  requested support type and shape.
++- Furniture boxes are visible [left, top, right, bottom] bounds normalized to
++  0-1, with positive area and no overlap with fixed product bounds. Use
++  working_seat for user-side working chairs, background_furniture for others.
++  Each working_seat box area must be at most 1.5 times the product box area.
++  Move seating deeper or crop it rather than enlarging a foreground chair.
++- {guide_image} will be a geometry-only diagram, not a photographic style example.
++  Never reproduce its lines, labels, bounds or flat guide colors.
++
++# Blue: physical carriers named in words
++- Request silent on blue: give the room one broad physical blue carrier (wall,
++  sofa, curtains, backdrop, cabinet) or several clearly visible blue furnishings
++  that together read as a noticeable area. Token props, thin frames, screen
++  graphics, sky and light casts do not count. Desk props stay neutral unless
++  the user asks for them in blue. A tight crop or warm light is no reason to
++  drop the blue carrier.
++- Explicit requests win: minimal blue means a few small named accents; a stated
++  amount, carrier or exclusion, including no blue, is followed exactly.
++- Describe each blue carrier with an everyday color name (for example navy,
++  slate blue, dusty blue or light blue) plus its material, plane, side and
++  visible extent, identically in "composition" and "prompt". Do not cite hex
++  codes, claim a measured match to {style_images}, or default to one cobalt.
++- Blue comes from materials, never blue light, a global blue grade or spill on
++  the product. Never change the product or camera to make room for blue. Warm
++  wood, cream surfaces and daylight can sit beside blue furnishings.
++
++# Photography and lighting
++- Light the room softly and naturally: one plausible source direction, generous
++  fill, gentle contrast and natural depth, following {style_images} where it fits
++  the request. The whole room stays readable, not a bright product in a dark room.
++- No orange or global blue color cast, hard spotlight, backlit silhouette,
++  low-key grade, crunchy HDR or haze.
++- Realism comes from wood grain, fabric folds and light signs of use, not sterile
++  CGI. Never relight or activate an unlit product display.
++
++# Restrictions
++- No people, hands, human silhouettes or human reflections, including anyone
++  in the style images. State "no people" in the editing instruction.
++- No added text, signage, watermarks or branding. Preserve existing product
++  markings from {product_image}. Do not mention the HP brand name in the instruction;
++  refer to the product by category.
++- Keep the product fully visible: no object crossing or touching its silhouette,
++  no foreground occluder, no invented cables or irrelevant floor clutter.
++- Required weight-bearing contact with the support is not an occlusion; the support
++  must not cross over or hide the product.
++
++# Output and final consistency check
++Return only the fields the current response schema requires: Stage A returns
++geometry and product_category; Stage B, after seeing the drawn guide, returns
++layout, camera, composition and prompt.
++- "camera": the fixed viewpoint described in plain visual words.
++- "composition": product framing, support, user side and named object positions.
++  Explicitly record any requirement that cannot coexist with the fixed product
++  or experiment restrictions, and how the conflict was resolved. State layout
++  adapted to the geometry only as final placement.
++- "geometry": the numeric construction parameters and furniture boxes required
++  by the supplied schema. Keep prose and numbers consistent.
++- "prompt": one 180-320-word photorealistic edit instruction starting
++  "Turn {guide_image} into a photograph; keep the [category] at its exact initial
++  frame position with its orientation/view, pixel size and details unchanged."
++  Describe the support constructed beneath the fixed product, including usable access,
++  full base support and coherent furniture/room perspective. Baseline support distances
++  do not constrain the scene. State the exact product invariants. Remove the diagram
++  appearance; leave only one fully visible, unoccluded product, with no ghost or duplicate. Include
++  chosen camera, anchored named objects, resolved blue carrier or explicit override,
++  lighting and "no people".
++  End with "One full-bleed photorealistic photograph with natural imperfections;
++  no added text, logos, borders, watermark or CGI look."
++Before returning, check that no requested object was lost; that composition and
++prompt name the same blue carriers, or honor the explicit blue request; that
++lighting matches the request; that furniture boxes avoid the product; and that
++text, camera and geometry describe one resolved scene.
+diff --git a/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/tests/test_invariants.py b/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/tests/test_invariants.py
+new file mode 100644
+index 000000000..ce5738332
+--- /dev/null
++++ b/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/tests/test_invariants.py
+@@ -0,0 +1,59 @@
++import json
++
++import cv2
++import numpy as np
++
++from hp3p.invariants import assess_product_affine
++
++
++def _fixture(matrix=None):
++    rng = np.random.default_rng(7)
++    guide = np.full((600, 800, 3), 245, np.uint8)
++    texture = rng.integers(0, 220, (240, 320, 3), np.uint8)
++    cv2.rectangle(texture, (15, 15), (305, 225), (10, 10, 10), 5)
++    cv2.line(texture, (20, 200), (295, 35), (250, 250, 250), 7)
++    guide[160:400, 220:540] = texture
++    if matrix is None:
++        output = guide.copy()
++    else:
++        output = cv2.warpAffine(guide, np.asarray(matrix, np.float32), (800, 600),
++                                flags=cv2.INTER_LINEAR, borderValue=(245, 245, 245))
++    return cv2.imencode(".png", guide)[1].tobytes(), cv2.imencode(".png", output)[1].tobytes()
++
++
++def test_full_affine_guard_accepts_exact_and_lower_fill_translation_but_locks_high_fill():
++    guide, exact = _fixture()
++    result = assess_product_affine(guide, exact, [220, 160, 540, 400], fixed_position=True)
++    assert result["verdict"] == "pass"
++    assert len(result["full_affine_matrix"]) == 2 and len(result["singular_values"]) == 2
++    guide, moved = _fixture([[1, 0, 110], [0, 1, -35]])
++    assert assess_product_affine(guide, moved, [220, 160, 540, 400], fixed_position=False)["verdict"] == "pass"
++    locked = assess_product_affine(guide, moved, [220, 160, 540, 400], fixed_position=True)
++    assert locked["verdict"] == "fail"
++    assert "fixed_translation_x" in locked["reasons"]
++
++
++def test_full_affine_guard_rejects_scale_and_shear():
++    guide, scaled = _fixture([[0.94, 0, 20], [0, 0.94, 20]])
++    scale = assess_product_affine(guide, scaled, [220, 160, 540, 400], fixed_position=False)
++    assert scale["verdict"] == "fail"
++    assert "singular_min" in scale["reasons"]
++    guide, sheared = _fixture([[1, 0.08, 0], [0, 1, 0]])
++    shear = assess_product_affine(guide, sheared, [220, 160, 540, 400], fixed_position=False)
++    assert shear["verdict"] == "fail"
++    assert "anisotropy" in shear["reasons"] or "shear" in shear["reasons"]
++
++
++def test_guard_results_are_strict_json_round_trip_for_pass_fail_and_unverifiable():
++    guide, exact = _fixture()
++    passing = assess_product_affine(guide, exact, [220, 160, 540, 400], fixed_position=True)
++    guide, scaled = _fixture([[0.94, 0, 20], [0, 0.94, 20]])
++    failing = assess_product_affine(guide, scaled, [220, 160, 540, 400], fixed_position=False)
++    blank = cv2.imencode(".png", np.full((600, 800, 3), 245, np.uint8))[1].tobytes()
++    unverifiable = assess_product_affine(blank, blank, [220, 160, 540, 400], fixed_position=True)
++
++    assert passing["verdict"] == "pass"
++    assert failing["verdict"] == "fail"
++    assert unverifiable["verdict"] == "unverifiable"
++    for result in (passing, failing, unverifiable):
++        assert json.loads(json.dumps(result)) == result

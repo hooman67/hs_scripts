@@ -1,0 +1,20 @@
+visibility: public
+public:
+  files:
+  - types
+  - endpoints
+  - constants.py
+  deps:
+  - colligo.base
+  - colligo.models.audio.common[public]
+  - pydantic
+deps:
+- colligo.caplan_taxonomy
+- colligo.data
+- colligo.external_services.business_kit
+- colligo.external_services.cai
+- colligo.models.audio.common
+- colligo.models.audio.soundlift[public]
+- colligo.models.cai
+- colligo.models.common.metrics
+- colligo.rhode

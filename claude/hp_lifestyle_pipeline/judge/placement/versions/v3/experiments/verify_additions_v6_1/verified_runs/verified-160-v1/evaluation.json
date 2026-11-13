@@ -1,0 +1,211 @@
+{
+  "schema_version": "placement-verified-additions-new160-evaluation-v1",
+  "generated_at_utc": "2026-11-05T23:44:44.368182+00:00",
+  "evaluator": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_v6_1/evaluate_new160.py",
+    "sha256": "14ef27116c4ae9f3f7ffc73ef6f06e72f7f5d9b9f0c4074ae583f3b7947158e9"
+  },
+  "development_status": "frozen_protocol_unlabeled_new_image_evaluation",
+  "policy_developed_on": "prior_comment_checks",
+  "labeled_accuracy_metrics": null,
+  "coverage": {
+    "manifest_records": 160,
+    "baseline_results": 160,
+    "compact_results": 160,
+    "two_pass_results": 160,
+    "verified_results": 160,
+    "trigger_cases": 4,
+    "trigger_components": 5,
+    "verifier_overlays": 4,
+    "verified_overlay_components": 5,
+    "stage_artifact_hashes_validated": 960,
+    "missing_records": 0
+  },
+  "api": {
+    "baseline_v2": {
+      "records": 160,
+      "successful_results": 160,
+      "failed_results": 0,
+      "successful_attempts": 160,
+      "failed_attempts": 0,
+      "retried_records": 0,
+      "returned_models": {
+        "gpt-5.5-2026-04-24": 160
+      },
+      "latency_seconds": {
+        "min": 20.75,
+        "median": 42.42,
+        "mean": 48.879062499999996,
+        "p95": 93.80749999999992,
+        "max": 118.66
+      },
+      "tokens": {
+        "prompt_tokens": 1946354,
+        "completion_tokens": 541359,
+        "total_tokens": 2487713
+      }
+    },
+    "compact_v3": {
+      "records": 160,
+      "successful_results": 160,
+      "failed_results": 0,
+      "successful_attempts": 160,
+      "failed_attempts": 0,
+      "retried_records": 0,
+      "returned_models": {
+        "gpt-5.5-2026-04-24": 160
+      },
+      "latency_seconds": {
+        "min": 16.26,
+        "median": 24.815,
+        "mean": 28.966874999999998,
+        "p95": 58.44999999999995,
+        "max": 81.86
+      },
+      "tokens": {
+        "prompt_tokens": 710674,
+        "completion_tokens": 359788,
+        "total_tokens": 1070462
+      }
+    },
+    "verifier": {
+      "records": 4,
+      "successful_results": 4,
+      "failed_results": 0,
+      "successful_attempts": 4,
+      "failed_attempts": 0,
+      "retried_records": 0,
+      "returned_models": {
+        "gpt-5.5-2026-04-24": 4
+      },
+      "latency_seconds": {
+        "min": 17.11,
+        "median": 22.07,
+        "mean": 26.475,
+        "p95": 41.60499999999999,
+        "max": 44.65
+      },
+      "tokens": {
+        "prompt_tokens": 11286,
+        "completion_tokens": 7436,
+        "total_tokens": 18722
+      }
+    }
+  },
+  "verdict_counts": {
+    "baseline": {
+      "pass": 118,
+      "fail": 38,
+      "review": 4
+    },
+    "compact": {
+      "pass": 148,
+      "fail": 9,
+      "review": 3
+    },
+    "two_pass": {
+      "pass": 117,
+      "fail": 39,
+      "review": 4
+    },
+    "verified": {
+      "pass": 117,
+      "review": 4,
+      "fail": 39
+    }
+  },
+  "verdict_transitions": {
+    "baseline_to_two_pass": {
+      "changed_count": 1,
+      "transitions": {
+        "pass->fail": 1
+      },
+      "record_ids": [
+        "elitebook__laptop_BackRightCloseUp__p9"
+      ]
+    },
+    "two_pass_to_verified": {
+      "changed_count": 0,
+      "transitions": {},
+      "record_ids": []
+    },
+    "baseline_to_verified": {
+      "changed_count": 1,
+      "transitions": {
+        "pass->fail": 1
+      },
+      "record_ids": [
+        "elitebook__laptop_BackRightCloseUp__p9"
+      ]
+    }
+  },
+  "verified_score": {
+    "min": 39.0,
+    "median": 100.0,
+    "mean": 89.209375,
+    "max": 100.0
+  },
+  "verifier_assessments": [
+    {
+      "id": "cashmere__laptop_BackRightCloseUp__p9",
+      "component": "access_usability",
+      "visibility": "observed",
+      "severity": 3,
+      "confidence": "high",
+      "issue_codes": [
+        "blocked_operating_side",
+        "no_user_position"
+      ]
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p7",
+      "component": "orientation_alignment",
+      "visibility": "observed",
+      "severity": 2,
+      "confidence": "high",
+      "issue_codes": [
+        "furniture_layout_conflict"
+      ]
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p9",
+      "component": "access_usability",
+      "visibility": "observed",
+      "severity": 3,
+      "confidence": "high",
+      "issue_codes": [
+        "blocked_operating_side",
+        "no_user_position"
+      ]
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p9",
+      "component": "orientation_alignment",
+      "visibility": "observed",
+      "severity": 2,
+      "confidence": "high",
+      "issue_codes": [
+        "chair_alignment_conflict",
+        "furniture_layout_conflict"
+      ]
+    },
+    {
+      "id": "magic__printer_FrontLeftMedium__p6",
+      "component": "support_scenario",
+      "visibility": "observed",
+      "severity": 2,
+      "confidence": "high",
+      "issue_codes": [
+        "inappropriate_support",
+        "incoherent_use_arrangement",
+        "unmotivated_position"
+      ]
+    }
+  ],
+  "final_override_counts": {
+    "none": 160
+  },
+  "final_confidence_override_counts": {
+    "none": 160
+  }
+}

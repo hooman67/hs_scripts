@@ -1,0 +1,197 @@
+{
+  "experiment": "v22.4 fresh first-row retry",
+  "base_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+  "pipeline_version": "unified-blue-scale-v22.4-alpha-textureless-invariant-fallback-twin-camera-guide-only-no-edit-mask",
+  "text_model": "gpt-6-astra",
+  "image_model": "gpt-image-2.5-sunburst-2026-09-08",
+  "record_sha256": "bc9c9bbb1767e38498cbb90273ad54c8416271f426ec421bef07f72b0f3d29fa",
+  "guide_sha256": "e40edb10c76206ec3a83cd9a72039af3ce3855bef156cc807ecb116a6c3ad10e",
+  "status": "error",
+  "error": "ValueError: Product invariant guard rejected both image attempts; raw attempts and metrics kept.",
+  "image_calls": 2,
+  "guard": {
+    "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+    "attempts": [
+      {
+        "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+        "fixed_position": true,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.5,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          576,
+          536,
+          1996,
+          1402
+        ],
+        "verdict": "fail",
+        "reasons": [
+          "boundary"
+        ],
+        "matches": 2,
+        "primary_verdict": "unverifiable",
+        "primary_reasons": [
+          "too_few_matches"
+        ],
+        "textureless_fallback": {
+          "method": "alpha_mask_fixed_position_fallback",
+          "thresholds": {
+            "max_translation_px": 8,
+            "min_boundary_edge_coverage_2px": 0.85,
+            "min_internal_edge_coverage_floor_2px": 0.2,
+            "min_internal_edge_coverage_2px": 0.8,
+            "min_highpass_ncc_override": 0.8,
+            "min_internal_edge_samples": 100
+          },
+          "translation_x_px": 1,
+          "translation_y_px": -1,
+          "boundary_edge_coverage_2px": 0.832330744832112,
+          "boundary_distance_p90_px": 2.865000009536743,
+          "internal_edge_coverage_2px": 0.8891191709844559,
+          "internal_distance_p90_px": 2.3243000507354736,
+          "highpass_ncc": 0.5023442506790161,
+          "source_boundary_samples": 9143,
+          "source_internal_edge_samples": 965,
+          "source_appearance_samples": 48128,
+          "checks": {
+            "boundary": false,
+            "internal_structure_floor": true,
+            "structure_or_appearance": true,
+            "internal_support": true
+          },
+          "reasons": [
+            "boundary"
+          ],
+          "verdict": "fail"
+        }
+      },
+      {
+        "guard_version": "full-affine-v1.3-alpha-textureless-fallback",
+        "fixed_position": true,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.5,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          576,
+          536,
+          1996,
+          1402
+        ],
+        "verdict": "fail",
+        "reasons": [
+          "boundary"
+        ],
+        "matches": 2,
+        "primary_verdict": "unverifiable",
+        "primary_reasons": [
+          "too_few_matches"
+        ],
+        "textureless_fallback": {
+          "method": "alpha_mask_fixed_position_fallback",
+          "thresholds": {
+            "max_translation_px": 8,
+            "min_boundary_edge_coverage_2px": 0.85,
+            "min_internal_edge_coverage_floor_2px": 0.2,
+            "min_internal_edge_coverage_2px": 0.8,
+            "min_highpass_ncc_override": 0.8,
+            "min_internal_edge_samples": 100
+          },
+          "translation_x_px": 0,
+          "translation_y_px": 0,
+          "boundary_edge_coverage_2px": 0.6552553866345838,
+          "boundary_distance_p90_px": 4.775000095367432,
+          "internal_edge_coverage_2px": 0.9564766839378238,
+          "internal_distance_p90_px": 1.909999966621399,
+          "highpass_ncc": 0.4031510055065155,
+          "source_boundary_samples": 9143,
+          "source_internal_edge_samples": 965,
+          "source_appearance_samples": 48128,
+          "checks": {
+            "boundary": false,
+            "internal_structure_floor": true,
+            "structure_or_appearance": true,
+            "internal_support": true
+          },
+          "reasons": [
+            "boundary"
+          ],
+          "verdict": "fail"
+        }
+      }
+    ],
+    "selected_attempt": null
+  },
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1034,
+        "prompt_tokens": 14261,
+        "total_tokens": 15295,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 123,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 13696,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "e40edb10c76206ec3a83cd9a72039af3ce3855bef156cc807ecb116a6c3ad10e",
+      "mask": false
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "e40edb10c76206ec3a83cd9a72039af3ce3855bef156cc807ecb116a6c3ad10e",
+      "mask": false
+    }
+  ],
+  "output_sha256": null
+}

@@ -1,0 +1,30 @@
+{
+  "release": "v1",
+  "release_date": "2026-10-15",
+  "git_tag": "hp-lifestyle-rewriter-v1",
+  "system_prompt_sha256": "d1c4dfe8af334ae5cb58d4414093ed7bfefd7dffbaabbd82b498e3dc88015074",
+  "output_schema_sha256": "d0f985249684b9072e2ba66546c2bf3c888799fec4a95e80c94257574d92cd2e",
+  "runtime": {
+    "requested_model": "gpt-5.5",
+    "observed_model": "gpt-5.5-2026-04-24",
+    "reasoning_effort": "medium",
+    "max_completion_tokens": 8000,
+    "temperature": null,
+    "structured_output": "strict JSON Schema"
+  },
+  "text_evaluation": {
+    "production_cases": 9,
+    "production_prompts": 14,
+    "synthetic_cases": 12,
+    "synthetic_prompts": 15,
+    "accepted_validation": "research/source_messaging/runs/v2_validation.json"
+  },
+  "image_evaluation": {
+    "rows": 192,
+    "successful_rows": 192,
+    "width": 2368,
+    "height": 1776,
+    "rewriter_model": "gemini-3.1-pro",
+    "num_inference_steps": 50
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "slug": "cashmere__laptop_FrontWide__p1__relocation_demand",
+  "base_slug": "cashmere__laptop_FrontWide__p1",
+  "mode": "relocation_demand",
+  "device_id": "cashmere",
+  "camera_id": "Front_Wide",
+  "prompt": "A wide glass-walled office planning room. Move the fully visible laptop into a right-hand workstation, leaving a broad unobstructed aisle and open tabletop area on the left. Keep the laptop's exact view and pixel size. Compose a new sturdy worktable beneath it with a user-facing edge and a chair aligned directly with the keyboard. Add a felt privacy screen in the far background and cool even daylight.",
+  "pipeline_version": "unified-blue-scale-v22.3.3-clean-fixed-rewrite-affine-guard-twin-camera-guide-only-no-mask",
+  "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+  "status": "ok",
+  "error": null,
+  "output_sha256": "6f015dfb05cb6fb505af006c6509a687c24aa0dbb40d76e9bdc75b296289bc2a",
+  "attempt_1_sha256": "6f015dfb05cb6fb505af006c6509a687c24aa0dbb40d76e9bdc75b296289bc2a",
+  "attempt_2_sha256": null,
+  "product_invariant_guard": {
+    "guard_version": "full-affine-v1.2",
+    "attempts": [
+      {
+        "guard_version": "full-affine-v1.2",
+        "fixed_position": false,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.5,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          687,
+          737,
+          1344,
+          1224
+        ],
+        "matches": 51,
+        "inliers": 37,
+        "inlier_ratio": 0.7254901960784313,
+        "full_affine_matrix": [
+          [
+            0.9971770586230286,
+            0.0012354396282903257,
+            776.4609422333457
+          ],
+          [
+            0.005327234808818795,
+            0.9894456335041991,
+            -21.62344357335906
+          ]
+        ],
+        "partial_affine_matrix": [
+          [
+            0.9942529111452515,
+            -0.003979604565501675,
+            784.0830997606946
+          ],
+          [
+            0.003979604565501675,
+            0.9942529111452515,
+            -25.20297245765611
+          ]
+        ],
+        "partial_inliers": 40,
+        "singular_values": [
+          0.9983840454268051,
+          0.9882428605781028
+        ],
+        "anisotropy_ratio": 1.0102618346696377,
+        "rotation_deg": 0.11801046262294511,
+        "column_shear_cos": 0.006590834664131217,
+        "residual_median_px": 0.842316097214427,
+        "residual_p95_px": 2.4736862591519944,
+        "source_span_x_fraction": 0.7354646921157837,
+        "source_span_y_fraction": 0.5489627122879028,
+        "source_quadrants": 4,
+        "source_hull_fraction": 0.24540137713279717,
+        "transformed_product_corners_px": [
+          [
+            1462.4321005134163,
+            711.2577986328943
+          ],
+          [
+            2117.577428028746,
+            714.7577919022882
+          ],
+          [
+            2118.1790871277235,
+            1196.617815418833
+          ],
+          [
+            1463.0337596123936,
+            1193.1178221494392
+          ]
+        ],
+        "corners_in_frame": true,
+        "translation_x_px": 776.4609422333457,
+        "translation_y_px": -21.62344357335906,
+        "checks": {
+          "inliers": true,
+          "inlier_ratio": true,
+          "singular_min": true,
+          "singular_max": true,
+          "anisotropy": true,
+          "rotation": true,
+          "shear": true,
+          "residual_median": true,
+          "residual_p95": true,
+          "span_x": true,
+          "span_y": true,
+          "quadrants": true,
+          "hull": true,
+          "corners": true
+        },
+        "reasons": [],
+        "verdict": "pass"
+      }
+    ],
+    "selected_attempt": 1
+  },
+  "final_prompt_sha256": "423bd3de8d72cb1b9dc8fd8d6ceb0d13e195675b80f500fcef0cbd4b556a9328",
+  "selected_prompt_sha256": "423bd3de8d72cb1b9dc8fd8d6ceb0d13e195675b80f500fcef0cbd4b556a9328",
+  "stage_b_attempts": [
+    {
+      "attempt": 1,
+      "system_sha256": "d4250ae2f53583f19651e4e3245417f47164eadce71137064d4499e8a6c30b35",
+      "text_sha256": "15b75b35a6662b23a9a5f9dd399f3f45d33262e9fe9b6c6d0fee4f52cc85caa0",
+      "request_sha256": "b743d93fd149798b7d4a544e8150c52aa73ed7ced57691121966ade39af4ce14",
+      "response_sha256": "de678c6edfb6059401030dc1a3b6365c11c645ed8c16e5dce5234eb9674ee71b",
+      "executable_prompt_sha256": "423bd3de8d72cb1b9dc8fd8d6ceb0d13e195675b80f500fcef0cbd4b556a9328"
+    }
+  ],
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1012,
+        "prompt_tokens": 14301,
+        "total_tokens": 15313,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 95,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 13696,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "mask": false
+    }
+  ]
+}

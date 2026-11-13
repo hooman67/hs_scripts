@@ -1,0 +1,79 @@
+{
+  "version": "v3_2",
+  "as_of_utc": "2026-11-11T03:26:14.928625+00:00",
+  "status": "NOT PROMOTED - required gates not met",
+  "selected_candidate": null,
+  "candidates": {
+    "p1": {
+      "promoted": false,
+      "status": "not_promoted_calibration_gate_failed",
+      "calibration_errors": [],
+      "unwaived_criterion_mismatches": [
+        {
+          "id": "13_elitebook_13_Front_Left_Medium_4",
+          "criteria": [
+            "orientation_alignment:no_material_defect",
+            "scale_perspective:material_malformed_support_furniture"
+          ]
+        }
+      ],
+      "expanded_evaluations": {
+        "historical": {
+          "expected": 128,
+          "completed": 0,
+          "errors": 0,
+          "all_complete": false
+        },
+        "refiner": {
+          "expected": 81,
+          "completed": 0,
+          "errors": 0,
+          "all_complete": false
+        }
+      }
+    },
+    "p2": {
+      "promoted": false,
+      "status": "not_promoted_calibration_gate_failed",
+      "calibration_errors": [],
+      "unwaived_criterion_mismatches": [
+        {
+          "id": "13_elitebook_13_Front_Left_Medium_4",
+          "criteria": [
+            "orientation_alignment:no_material_defect",
+            "scale_perspective:material_malformed_support_furniture"
+          ]
+        }
+      ],
+      "expanded_evaluations": {
+        "historical": {
+          "expected": 128,
+          "completed": 0,
+          "errors": 0,
+          "all_complete": false
+        },
+        "refiner": {
+          "expected": 81,
+          "completed": 0,
+          "errors": 0,
+          "all_complete": false
+        }
+      }
+    }
+  },
+  "model": "gpt-6-astra",
+  "reasoning_effort": "high",
+  "protocol_freeze_sha256": "9894aabdefc802cbb26c61dcec944f250215e56281843cc506600f69fe2b0c97",
+  "promotion_gates_sha256": "55202714287419d101ea1b60984c26b324b661799d0a4d38a821cc9043bb6da0",
+  "promotion_scope": "Versioned research/review use only; no production endpoint/default/PR deployment.",
+  "automatic_acceptance_authorized": false,
+  "held_out_accuracy": null,
+  "false_positive_rate": null,
+  "limitations": [
+    "All six historical examples and64 feedback cases informed design; not unseen holdout.",
+    "Historical anchors/128-image comparison are E2E diagnostics, not scene-stage accuracy.",
+    "64 refiner baselines have SHA-verified pre-relighting scene-stage lineage;17 edits are post-refiner diagnostics;47 exact passthroughs reuse predictions.",
+    "Human criterion labels are unchanged; an overall fail is not agreement if the criterion is wrong.",
+    "Unchanged score weights/thresholds remain provisional; high confidence is model-reported, not human acceptance."
+  ]
+}

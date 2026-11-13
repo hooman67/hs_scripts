@@ -1,0 +1,547 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "inventory",
+    "triggers",
+    "defect_candidates",
+    "stage_status",
+    "unable_reason",
+    "general_artifact_warnings"
+  ],
+  "properties": {
+    "inventory": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "scene_extent",
+            "support_and_room_landmarks_visible",
+            "support_type",
+            "room_location",
+            "product_footprint_and_front",
+            "surface_position",
+            "support_edges_and_corners",
+            "load_path",
+            "room_relations",
+            "operating_approach",
+            "associated_user_position",
+            "props_activity"
+          ],
+          "properties": {
+            "scene_extent": {
+              "type": "string",
+              "enum": [
+                "tight",
+                "medium",
+                "wide",
+                "indeterminate"
+              ]
+            },
+            "support_and_room_landmarks_visible": {
+              "type": "boolean"
+            },
+            "support_type": {
+              "$ref": "#/$defs/fact"
+            },
+            "room_location": {
+              "$ref": "#/$defs/fact"
+            },
+            "product_footprint_and_front": {
+              "$ref": "#/$defs/fact"
+            },
+            "surface_position": {
+              "$ref": "#/$defs/fact"
+            },
+            "support_edges_and_corners": {
+              "$ref": "#/$defs/fact"
+            },
+            "load_path": {
+              "$ref": "#/$defs/fact"
+            },
+            "room_relations": {
+              "$ref": "#/$defs/fact"
+            },
+            "operating_approach": {
+              "$ref": "#/$defs/fact"
+            },
+            "associated_user_position": {
+              "$ref": "#/$defs/fact"
+            },
+            "props_activity": {
+              "$ref": "#/$defs/fact"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "triggers": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "support_role",
+            "room_use_zone",
+            "device_surface_position",
+            "props_use_relation",
+            "operating_access",
+            "user_position",
+            "device_support_axes",
+            "furniture_room_axes",
+            "product_scale",
+            "support_load_path",
+            "support_shape",
+            "shared_perspective",
+            "support_contact",
+            "shadows_reflections"
+          ],
+          "properties": {
+            "support_role": {
+              "$ref": "#/$defs/trigger"
+            },
+            "room_use_zone": {
+              "$ref": "#/$defs/trigger"
+            },
+            "device_surface_position": {
+              "$ref": "#/$defs/trigger"
+            },
+            "props_use_relation": {
+              "$ref": "#/$defs/trigger"
+            },
+            "operating_access": {
+              "$ref": "#/$defs/trigger"
+            },
+            "user_position": {
+              "$ref": "#/$defs/trigger"
+            },
+            "device_support_axes": {
+              "$ref": "#/$defs/trigger"
+            },
+            "furniture_room_axes": {
+              "$ref": "#/$defs/trigger"
+            },
+            "product_scale": {
+              "$ref": "#/$defs/trigger"
+            },
+            "support_load_path": {
+              "$ref": "#/$defs/trigger"
+            },
+            "support_shape": {
+              "$ref": "#/$defs/trigger"
+            },
+            "shared_perspective": {
+              "$ref": "#/$defs/trigger"
+            },
+            "support_contact": {
+              "$ref": "#/$defs/trigger"
+            },
+            "shadows_reflections": {
+              "$ref": "#/$defs/trigger"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "defect_candidates": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 14,
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    },
+    "stage_status": {
+      "type": "string",
+      "enum": [
+        "assessed",
+        "unable"
+      ]
+    },
+    "unable_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "unreadable_image",
+        "target_not_identifiable",
+        "product_type_conflict",
+        "fundamentally_unjudgeable_product_support"
+      ]
+    },
+    "general_artifact_warnings": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "evidence"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "const": "unrelated_rendering_artifact"
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foundry.adobe.com/schemas/hp-natural-placement-v4.3-compact-assessment.json",
+  "title": "HP Natural Placement V4.3 compact assessment",
+  "$defs": {
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "image",
+        "label",
+        "box"
+      ],
+      "properties": {
+        "image": {
+          "type": "string",
+          "enum": [
+            "generated_scene",
+            "original_twin"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "box": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "visibility",
+        "observation",
+        "region",
+        "visibility_limit"
+      ],
+      "properties": {
+        "visibility": {
+          "type": "string",
+          "enum": [
+            "observed",
+            "partial",
+            "unobservable"
+          ]
+        },
+        "observation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "region": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/region"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "visibility_limit": {
+          "type": "string"
+        }
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "answer",
+        "visibility",
+        "evidence",
+        "fact_refs",
+        "candidate_id",
+        "visibility_limit"
+      ],
+      "properties": {
+        "answer": {
+          "type": "string",
+          "enum": [
+            "yes",
+            "no",
+            "unknown"
+          ]
+        },
+        "visibility": {
+          "type": "string",
+          "enum": [
+            "observed",
+            "partial",
+            "unobservable"
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fact_refs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "support_type",
+              "room_location",
+              "product_footprint_and_front",
+              "surface_position",
+              "support_edges_and_corners",
+              "load_path",
+              "room_relations",
+              "operating_approach",
+              "associated_user_position",
+              "props_activity"
+            ]
+          }
+        },
+        "candidate_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{0,47}$"
+        },
+        "visibility_limit": {
+          "type": "string"
+        }
+      }
+    },
+    "missing_support_test": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exposed_required_region",
+        "required_support_reason",
+        "visible_break_evidence",
+        "alternate_load_paths",
+        "hidden_limits"
+      ],
+      "properties": {
+        "exposed_required_region": {
+          "$ref": "#/$defs/region"
+        },
+        "required_support_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visible_break_evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alternate_load_paths": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hidden_limits": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "physical_relation",
+        "hypothesis",
+        "trigger_ids",
+        "owner_check",
+        "issue_code",
+        "disposition",
+        "evidence",
+        "benign_alternative",
+        "alternative_status",
+        "severity",
+        "confidence",
+        "warning_level",
+        "consequence",
+        "region",
+        "missing_support_test"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{0,47}$"
+        },
+        "physical_relation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hypothesis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trigger_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 14,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "support_role",
+              "room_use_zone",
+              "device_surface_position",
+              "props_use_relation",
+              "operating_access",
+              "user_position",
+              "device_support_axes",
+              "furniture_room_axes",
+              "product_scale",
+              "support_load_path",
+              "support_shape",
+              "shared_perspective",
+              "support_contact",
+              "shadows_reflections"
+            ]
+          }
+        },
+        "owner_check": {
+          "type": "string",
+          "enum": [
+            "support_role",
+            "room_use_zone",
+            "device_surface_position",
+            "props_use_relation",
+            "operating_access",
+            "user_position",
+            "device_support_axes",
+            "furniture_room_axes",
+            "product_scale",
+            "support_anatomy",
+            "shared_perspective",
+            "support_contact",
+            "shadows_reflections"
+          ]
+        },
+        "issue_code": {
+          "type": "string",
+          "enum": [
+            "inappropriate_support",
+            "occupied_workstation",
+            "misplaced_support_furniture",
+            "incoherent_use_zone",
+            "unmotivated_device_position",
+            "incoherent_prop_arrangement",
+            "blocked_operating_path",
+            "excessive_reach",
+            "no_feasible_user_position",
+            "chair_displacement",
+            "device_support_axis_conflict",
+            "furniture_layout_conflict",
+            "implausible_scale",
+            "missing_required_support",
+            "malformed_support_furniture",
+            "conflicting_perspective",
+            "unsupported_product",
+            "floating",
+            "sinking_or_intersection",
+            "inconsistent_shadow",
+            "inconsistent_reflection"
+          ]
+        },
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "retained",
+            "rejected"
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "benign_alternative": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alternative_status": {
+          "type": "string",
+          "enum": [
+            "excluded_by_visible_evidence",
+            "remains_substantial",
+            "not_assessable"
+          ]
+        },
+        "severity": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 4
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "warning_level": {
+          "type": "string",
+          "enum": [
+            "none",
+            "advisory",
+            "review"
+          ]
+        },
+        "consequence": {
+          "type": "string"
+        },
+        "region": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/region"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_support_test": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/missing_support_test"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

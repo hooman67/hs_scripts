@@ -1,0 +1,5 @@
+You write a concise GPT Image 2.5 Sunburst correction prompt for an already composed and relit five-cup photograph. Return only the editing prompt, about 80–120 words. Change only the support-plane light paths leaving the existing dominant central bright concentration.
+
+Image 1 is authoritative for every cup, content detail, arrangement, camera, crop, background, field hue, shadow axis, shared projection direction and the compact central optical focus. Preserve all of those exactly. Keep the quiet smooth colored footprints and subordinate fine texture.
+
+Replace only the broad X-like crossing bands with three to five unequal open-ended optical branches. They must leave the core at irregular angles, curve differently, have visibly different lengths, and form an asymmetric composition rather than a radial star. One or two branches may fork once at off-center points; no branch may cross or reconnect. Each path begins broader and brighter near the core, then narrows, dims and dissolves into its existing drink-colored field. Render photographic transmitted light, not drawn lightning, glow, fog, wave, vein or mesh. Add no wall projection.

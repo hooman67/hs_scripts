@@ -1,0 +1,283 @@
+{
+  "version": "v5-scoring-contract-smoke-audit-v1",
+  "case_id": "deskjet_brief__empty_source__printer_FrontRightCloseUp",
+  "request_sha256": "2501a74775928fbc232af139071daa3bf36bb5acc48b8163abeaaa47a75f5185",
+  "attempt_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/scoring_contract_smoke/records/attempts/deskjet_brief__empty_source__printer_FrontRightCloseUp/sample_001.json",
+  "attempt_sha256": "000e8f7f50c510241b48819a5e7d87a836553464b209a3de359729a2d0290c46",
+  "raw_validation": {
+    "validator_version": "v5-host-validator-r3",
+    "passed": false,
+    "error_count": 5,
+    "warning_count": 2,
+    "errors": [
+      {
+        "code": "score_order",
+        "detail": "source relevance, then C-Tech tie-breaker, are not descending",
+        "candidate_id": "p3"
+      },
+      {
+        "code": "ctech_extension_environment",
+        "detail": "category_extension must change the reference environment",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "ctech_extension_environment",
+        "detail": "category_extension must change the reference environment",
+        "candidate_id": "p7"
+      },
+      {
+        "code": "score_order",
+        "detail": "source relevance, then C-Tech tie-breaker, are not descending",
+        "candidate_id": "p10"
+      },
+      {
+        "code": "score_order",
+        "detail": "source relevance, then C-Tech tie-breaker, are not descending",
+        "candidate_id": "p16"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "unused_source_evidence",
+        "detail": "Unused evidence may support audit text; inspect: ['e9']"
+      },
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 20,
+      "evidence": 11,
+      "environments": {
+        "Home": 6,
+        "Office": 4,
+        "Education": 2,
+        "Creative Studio": 3,
+        "Café": 3,
+        "Gaming": 2
+      },
+      "relationships": {
+        "source_grounded": 7,
+        "creative_departure": 12,
+        "source_adjacent": 1
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 6,
+        "Office": 4,
+        "Education": 2,
+        "Gaming": 2,
+        "Café": 3,
+        "Creative Studio": 3
+      },
+      "relationship_counts": {
+        "source_grounded": 7,
+        "source_adjacent": 1,
+        "creative_departure": 12
+      },
+      "ctech_relationship_counts": {
+        "close_adaptation": 8,
+        "category_extension": 4,
+        "minimal_camera_edit": 8
+      },
+      "ctech_reference_counts": {
+        "CT04": 1,
+        "CT05": 1,
+        "CT18": 2,
+        "CT03": 3,
+        "CT06": 2,
+        "CT17": 2,
+        "CT10": 1,
+        "CT09": 2,
+        "CT12": 1,
+        "CT01": 1,
+        "CT11": 1,
+        "CT07": 1,
+        "CT14": 1,
+        "CT15": 1
+      },
+      "ctech_score_range": [
+        63,
+        88
+      ],
+      "distinct_subsettings": 12,
+      "evidence_reverse_mappings": {
+        "smart_brief": {
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e5",
+            "e6",
+            "e7",
+            "e8",
+            "e10",
+            "e11"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        },
+        "source_messaging": {
+          "evidence_ids": [],
+          "prompt_ids": []
+        }
+      }
+    },
+    "output_semantic_sha256": "063e8a0af1a0d77aa117364b5adb3405f832c9626c0b2443a6d79191f6abe26e"
+  },
+  "normalized_validation": {
+    "validator_version": "v5-host-validator-r3",
+    "passed": false,
+    "error_count": 2,
+    "warning_count": 2,
+    "errors": [
+      {
+        "code": "ctech_extension_environment",
+        "detail": "category_extension must change the reference environment",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "ctech_extension_environment",
+        "detail": "category_extension must change the reference environment",
+        "candidate_id": "p7"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "unused_source_evidence",
+        "detail": "Unused evidence may support audit text; inspect: ['e9']"
+      },
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 20,
+      "evidence": 11,
+      "environments": {
+        "Home": 6,
+        "Office": 4,
+        "Creative Studio": 3,
+        "Education": 2,
+        "Café": 3,
+        "Gaming": 2
+      },
+      "relationships": {
+        "source_grounded": 7,
+        "creative_departure": 12,
+        "source_adjacent": 1
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 6,
+        "Office": 4,
+        "Education": 2,
+        "Gaming": 2,
+        "Café": 3,
+        "Creative Studio": 3
+      },
+      "relationship_counts": {
+        "source_grounded": 7,
+        "source_adjacent": 1,
+        "creative_departure": 12
+      },
+      "ctech_relationship_counts": {
+        "close_adaptation": 8,
+        "category_extension": 4,
+        "minimal_camera_edit": 8
+      },
+      "ctech_reference_counts": {
+        "CT18": 2,
+        "CT04": 1,
+        "CT05": 1,
+        "CT03": 3,
+        "CT06": 2,
+        "CT17": 2,
+        "CT10": 1,
+        "CT09": 2,
+        "CT12": 1,
+        "CT11": 1,
+        "CT01": 1,
+        "CT07": 1,
+        "CT14": 1,
+        "CT15": 1
+      },
+      "ctech_score_range": [
+        63,
+        88
+      ],
+      "distinct_subsettings": 12,
+      "evidence_reverse_mappings": {
+        "smart_brief": {
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e5",
+            "e6",
+            "e7",
+            "e8",
+            "e10",
+            "e11"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        },
+        "source_messaging": {
+          "evidence_ids": [],
+          "prompt_ids": []
+        }
+      }
+    },
+    "output_semantic_sha256": "66e7b3076c88774b3f8ea3a34da328fa169540f59d674ba5b8ff1ed99644900c"
+  },
+  "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/scoring_contract_smoke/normalized_outputs/deskjet_brief__empty_source__printer_FrontRightCloseUp.json",
+  "normalized_output_file_sha256": "a8c74cbb5944bb0d56eef8f2968bafecf569a32df635e23bef1c6f552c5416da",
+  "normalized_output_semantic_sha256": "66e7b3076c88774b3f8ea3a34da328fa169540f59d674ba5b8ff1ed99644900c",
+  "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/scoring_contract_smoke/normalization_logs/deskjet_brief__empty_source__printer_FrontRightCloseUp.json",
+  "normalization_log_file_sha256": "b129ecbb4be25620449fad9b8f92efd3a2107b419b83f542ce22d32a86ae45d6",
+  "human_review_status": "pending",
+  "launchable": false
+}

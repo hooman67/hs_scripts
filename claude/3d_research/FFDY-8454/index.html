@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FFDY-8454 Laundry Sink Motion Rig v1</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; }
+    body { margin: 0; background: #151922; color: #eef2f7; }
+    main { max-width: 1280px; margin: auto; padding: 28px; }
+    h1 { margin-bottom: 4px; }
+    .muted { color: #aab5c4; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(330px,1fr)); gap: 18px; }
+    article { background: #202633; border: 1px solid #354052; border-radius: 12px; padding: 14px; }
+    video, img { width: 100%; border-radius: 8px; background: #0d1016; }
+    code { color: #b6d7ff; }
+    .notice { padding: 12px 14px; border-left: 4px solid #f1b44c; background: #27231d; }
+  </style>
+</head>
+<body><main>
+  <h1>FFDY-8454 — Laundry Sink Assembly Rigs</h1>
+  <p class="muted">Storyboard-derived, editable motion proxies for cabinet assembly.</p>
+  <p class="notice">This is not CAD and does not claim exact product geometry. It tests whether explicit 3D constraints can communicate the intended motion.</p>
+  <h2>V4: corrected from image 7 only</h2>
+  <p>The two legs belong to the central door/frame assembly. The upper-left top wall is plain; the side panels are above and below the center; the two unequal boards are at right.</p>
+  <img src="renders/v4_image7_corrected_layout_0001.png" alt="Corrected six-component layout based only on storyboard image 7">
+  <img src="renders/v4_front_frame_on_legs.png" alt="Central frame rigidly rotated upright on its two legs">
+  <p>Open <code>blender/laundry_sink_components_v4_image7_corrected.blend</code>. Instructions: <code>V4_IMAGE7_COMPONENTS.md</code>.</p>
+  <hr>
+  <h2>V3: components only</h2>
+  <p>Exactly six ordinary Blender mesh objects. No rig controls, sliders, drivers, constraints, pose guides, animation keys, or predefined assembly order.</p>
+  <img src="renders/v3_components_only_layout_0001.png" alt="V3 six components laid flat">
+  <p>Open <code>blender/laundry_sink_components_only_v3.blend</code>. Instructions: <code>V3_COMPONENTS_ONLY.md</code>.</p>
+  <p class="notice">The earlier v3 leg variants used an incorrect part mapping and are retained only as experiment history. Use v4 above.</p>
+  <hr>
+  <h2>V2: full six-piece cabinet assembly</h2>
+  <p>Every component has its own 0–1 endpoint control, free move/rotate handle, and independent timeline. The sequence below is only an editable demonstration.</p>
+  <video controls loop muted src="renders/full_cabinet_assembly_v2.mp4"></video>
+  <h3>V2 key states</h3>
+  <img src="renders/v2_keyframes_contact_sheet.png" alt="V2 full assembly key states">
+  <p>Start from <code>blender/laundry_sink_full_assembly_rig_v2_blank.blend</code>. Instructions: <code>V2_HOW_TO_EDIT.md</code>.</p>
+  <hr>
+  <h2>V1 archive: focused shots 5–7</h2>
+  <section class="grid">
+    <article><h2>Shot 5</h2><p>Only the perpendicular end panel lowers.</p><video controls loop muted src="renders/previews/shot05_end_panel_insert.mp4"></video></article>
+    <article><h2>Shot 6</h2><p>Sides open slightly, bottom proxy enters, sides close.</p><video controls loop muted src="renders/previews/shot06_open_insert_close.mp4"></video></article>
+    <article><h2>Shot 7</h2><p>Lower pivots fixed, tops spread, locking piece drops, tops close.</p><video controls loop muted src="renders/previews/shot07_spread_drop_lock.mp4"></video></article>
+  </section>
+  <h3>V1 key states</h3>
+  <img src="renders/keyframes_contact_sheet.png" alt="Contact sheet of rig key states">
+  <h3>V1 editable artifact</h3>
+  <p>Open <code>blender/laundry_sink_motion_rig_v1.blend</code> and select <code>CTRL_Master_Select_Me</code>. See <code>HOW_TO_EDIT.md</code>.</p>
+</main></body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "summary": "System V3 is unchanged. Five new finished drinks were processed through fal.ai using requested Astra and GPT Image 2.5 Sunburst; full prompts, original inputs and provider records appear below. Light is strong, but residual mesh and some unrequested subject-scale/position changes remain. Group-composition V1/V2 is a separate tab without added refractions. All 14 earlier refraction outputs remain; one-off input preparation stays outside the narrative.",
+  "recommended_run": null,
+  "versions": {
+    "v3fal": "V3 — five new drinks · fal provider batch",
+    "v3corrected": "V3 — corrected-input reruns · new for review",
+    "baseline": "Iteration 0 — customer page-5 prompt, direct to Sunburst",
+    "v1": "Iteration 1 — system prompt + target image only",
+    "v2": "Iteration 2 — revised system + fixed lighting-style reference",
+    "v2text": "Iteration 2 control — revised system, no style image",
+    "v3": "Iteration 3 — concise system + fixed lighting-style reference",
+    "v3reframe": "Iteration 3 diagnostic — explicitly requested wider framing"
+  },
+  "runs": {
+    "v3fal_new_clear_red": "Preserves the clear lower drink, red upper band, large ice and recognizable cream silhouette. Red-to-white caustics spread behind and left of the cup, with bright concentrations. A dense connected mesh and star-like intersections remain. Cup base/framing shifts slightly despite matching 848 × 1264 canvases; no pixel-exact preservation claim.",
+    "v3fal_new_red": "Red drink identity, ice pattern and cream remain recognizable. Strong leftward pink-red caustics and a coherent shadow are present, but the thin network is still fairly repetitive. The cup is somewhat smaller and shifted right, creating more receiving surface than the original; this is unrequested reframing, not strict crop/placement fidelity.",
+    "v3fal_new_amber": "Amber identity, central ice, cream and stepped base are retained recognizably, with close overall framing. Warm transmitted light and bright left-hand optical ridges appear; the main ice and lower drink become markedly more luminous. Some long streaks and network-like structure remain rather than a few dominant branching cores.",
+    "v3fal_new_cola": "Dark cola, winding red syrup, large ice and cream remain recognizable. Amber-red light projects left/back with concentrated bright regions, but mesh/star-like intersections persist. The subject is reduced and shifted down/right relative to its source. Matching canvas dimensions do not establish composition preservation.",
+    "v3fal_new_orange_ribbon": "Orange liquid and winding red syrup remain visually distinctive, with warm caustics behind/left and a clean white setting. The base ellipse and rim/view impression shift somewhat, and more bottom margin appears. Fine regular rays/mesh and bright point-like intersections persist. Promising appearance, but not unchanged cup geometry.",
+    "v3corrected_group_clean": "New V3 result from the corrected full-cup 027 input. All bases, the three drink identities, fruit/ice/foam and red/green/blue straws remain visible. Magenta, cyan and coral projections now have space to extend across the receiving surface, with bright branching focal regions. Secondary caustics are still a dense interconnected mesh, and the side projections spread in different directions. Source and output are both 1402 × 1122; matching dimensions do not imply pixel-exact drinks. Ready for Hooman’s review, not yet accepted.",
+    "v3corrected_overhead_clean": "New V3 result from the approved clean 013 input. Retains its wider three-cup layout and recognizable citrus, blueberries, foam, ice and green straws. Long pink/blue projections extend consistently toward lower left, with concentrated bright branching cores; some fine connected webbing remains, especially in the right pink field. The generated canvas is 1538 × 1023 versus the input's 1537 × 1023, so this is not pixel-exact preservation. Ready for Hooman’s review, not yet accepted.",
+    "baseline_overhead": "The exact customer prompt preserves the overhead layout well. Strong colored projections appear, but their directions converge and the caustics form a broad connected cellular mesh. No GPT rewrite was used.",
+    "v1_group": "The three drink identities and red/green/blue straws remain recognizable. Strong colored light is present; large connected cells dominate. The source's tight crop limits room for the dramatic full-cup light paths in the approved reference.",
+    "v1_overhead": "Preserves the source crop, overhead view, and ingredients. Colored beams still point inward from both sides despite a single-direction instruction. The bright structure is a regular network rather than localized fine branching.",
+    "v1_single": "Preserves the magenta-to-clear drink and green straw. The floor projection contains a coarse repeated net with star-like intersections; it is not yet the approved branching caustic treatment. The model chose a floor projection rather than the preferred example's backdrop projection.",
+    "v2_group": "Finer branching and more concentrated bright regions than v1, while drink colors and straw assignments are retained. Some regular mesh remains. The tight source crop still hides much of the front cup's projected light.",
+    "v2_overhead": "The strongest improvement so far: brighter localized caustics and consistent long projections toward lower left while retaining the source crop. It is visually closer to the approved overhead style, with some large intersections still prominent.",
+    "v2_single": "Backdrop projection now matches the approved single-cup direction more closely and leaves the target fruit/green-straw identity intact. Bright regions are distributed across a still partly regular network; the field could use more natural density variation.",
+    "v2text_group": "Text-only v2 increases the dramatic light, but also adds conspicuous specular stars on cup rims, fruit and straws. This is not clearly better than reference-conditioned v2.",
+    "v3_group": "Retains the recognizable drink contents and straw assignments. The optical patches contain stronger localized branching, but secondary lines still form a net. The front cup remains cropped by design, unlike the accepted wider-framed example.",
+    "v3_overhead": "A useful concise-prompt candidate, visually similar to v2: preserves the original overhead composition with consistent lower-left colored fields and concentrated bright branching. Some focal regions are still star-like. No evidence that it is statistically better than v2.",
+    "v3_single": "Keeps the magenta fruit, clear lower layer, green straw, and close framing. The backdrop carries a stronger bright focal region, but the surrounding thin crisscross mesh and diagonal rays remain too repetitive. Closer to the requested direction, not a solved single-cup result.",
+    "v3reframe_group": "The closest group-style match in this batch: all cup bases are visible, with long colored projections and bright branching focal regions. It used the explicitly longer prompt allowing full cups and the actual accepted group output as a style input. The framing changes, and unseen lower-cup geometry is generated; this is not evidence of pixel-exact preservation or text-only generalization."
+  },
+  "limitations": [
+    "The five new-drink runs use user-authorized fal.ai transport, exact requested Sunburst/Astra model IDs, and mandatory Astra reasoning=true. Backend model snapshot and reasoning effort are not exposed. They are not a controlled provider comparison with the older Foundry runs.",
+    "All five fal refraction outputs are 848 × 1264, matching their inputs, but some subject scales, positions and base ellipses changed. Canvas equality is not geometric fidelity. System V3 remains frozen at the user's request.",
+    "Inputs 012 and 023 were rejected by Hooman as too cropped. Historical runs retain their actual inputs; the new V3 corrected-input runs are separate results, not replacements written over them.",
+    "Corrected overhead and group inputs are derived from customer outputs 013 and 027. Their target comparisons are not independent customer before/after pairs or held-out tests.",
+    "Input-preparation experiments are intentionally absent from the HTML at Hooman’s request. Their provenance files remain preserved separately; every refraction generation still shows all of its actual model inputs and prompts.",
+    "One sample per prompt/case; visual changes are not a statistically isolated prompt effect.",
+    "The positive PDF pairs also change crop. Style match and composition preservation are evaluated separately.",
+    "Automatic scores are advisory. Hooman approved the cleaned overhead input, but has not accepted these new refraction results.",
+    "Style references are fixed backend presets, not extra images the end user must supply. View-to-preset selection was manual for these three cases; no automatic selector or production app is implemented.",
+    "The group and overhead styles come from the same scenes as their targets. The single-cup style uses a different drink, but there is no held-out customer set or repeatability test.",
+    "The wider-framing diagnostic uses an explicitly different test prompt. It does not change the default crop-preservation policy or imply user approval of reframing.",
+    "The critic's composition score measures similarity to the original crop, so the intentionally wider-framed diagnostic can score lower even when it follows its test prompt.",
+    "Three initial automatic-critic requests returned HTTP 400 because JSON mode required the word JSON in the input message. The harness was corrected and those critiques rerun; no image-generation request failed.",
+    "The bundled CLI does not expose image response usage, seed, request ID, or returned snapshot identity."
+  ]
+}

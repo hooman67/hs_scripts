@@ -1,0 +1,243 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 18,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "ctech_reference_environment",
+      "detail": "close_adaptation must preserve Café",
+      "candidate_id": "p20"
+    },
+    {
+      "code": "ctech_extension_environment",
+      "detail": "category_extension must change the reference environment",
+      "candidate_id": "p30"
+    },
+    {
+      "code": "surface_not_literal",
+      "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+      "candidate_id": "p2"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'collectibles', 'shelving']",
+      "candidate_id": "p7"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'collectibles', 'shelving'] but signature has 2 entries",
+      "candidate_id": "p7"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "4>2: ['artwork', 'collectibles', 'shelving', 'textured wall']",
+      "candidate_id": "p8"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'collectibles', 'shelving', 'textured wall'] but signature has 2 entries",
+      "candidate_id": "p8"
+    },
+    {
+      "code": "background_budget",
+      "detail": "3>2",
+      "candidate_id": "p9"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'plants', 'shelving']",
+      "candidate_id": "p9"
+    },
+    {
+      "code": "background_budget",
+      "detail": "3>2",
+      "candidate_id": "p10"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['accent chair', 'plants', 'soft textiles']",
+      "candidate_id": "p10"
+    },
+    {
+      "code": "surface_not_literal",
+      "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+      "candidate_id": "p11"
+    },
+    {
+      "code": "local_prop_budget",
+      "detail": "4>3",
+      "candidate_id": "p20"
+    },
+    {
+      "code": "local_prop_budget",
+      "detail": "4>3",
+      "candidate_id": "p23"
+    },
+    {
+      "code": "background_budget",
+      "detail": "3>2",
+      "candidate_id": "p24"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['accent chair', 'plants', 'soft textiles']",
+      "candidate_id": "p24"
+    },
+    {
+      "code": "background_budget",
+      "detail": "3>2",
+      "candidate_id": "p25"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['couch', 'plants', 'simple furniture']",
+      "candidate_id": "p25"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support an omission explanation; inspect: ['e5', 'e6']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 6,
+    "environments": {
+      "Office": 8,
+      "Home": 8,
+      "Café": 4,
+      "Creative Studio": 4,
+      "Gaming": 3,
+      "Education": 3
+    },
+    "relationships": {
+      "source_adjacent": 4,
+      "source_grounded": 12,
+      "creative_departure": 14
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 8,
+      "Office": 8,
+      "Education": 3,
+      "Gaming": 3,
+      "Café": 4,
+      "Creative Studio": 4
+    },
+    "relationship_counts": {
+      "source_grounded": 12,
+      "source_adjacent": 4,
+      "creative_departure": 14
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 10,
+      "close_adaptation": 16,
+      "category_extension": 4
+    },
+    "ctech_reference_counts": {
+      "CT03": 3,
+      "CT18": 2,
+      "CT13": 2,
+      "CT08": 3,
+      "CT07": 2,
+      "CT09": 2,
+      "CT14": 2,
+      "CT15": 1,
+      "CT01": 2,
+      "CT17": 2,
+      "CT04": 1,
+      "CT10": 2,
+      "CT02": 1,
+      "CT05": 1,
+      "CT06": 1,
+      "CT11": 1,
+      "CT12": 1,
+      "CT16": 1
+    },
+    "ctech_score_range": [
+      63,
+      87
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p6",
+          "p16",
+          "p21",
+          "p30"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e1"
+        ],
+        "prompt_ids": [
+          "p12",
+          "p14",
+          "p16",
+          "p17",
+          "p20",
+          "p21",
+          "p22",
+          "p23",
+          "p27",
+          "p28",
+          "p29",
+          "p30"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e2"
+        ],
+        "prompt_ids": [
+          "p11",
+          "p15",
+          "p23",
+          "p25"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p24",
+          "p25"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "a3b3bbcb016255ac99922679de5d353994159eed2fa88ddc0d30d9033f911314"
+}

@@ -1,0 +1,194 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 8,
+  "warning_count": 1,
+  "errors": [
+    {
+      "code": "ctech_score_band",
+      "detail": "minimal_camera_edit cannot use score 78",
+      "candidate_id": "p8"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "minimal_camera_edit cannot use score 77",
+      "candidate_id": "p9"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "minimal_camera_edit cannot use score 76",
+      "candidate_id": "p10"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "close_adaptation cannot use score 69",
+      "candidate_id": "p20"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "close_adaptation cannot use score 68",
+      "candidate_id": "p21"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "close_adaptation cannot use score 62",
+      "candidate_id": "p28"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "close_adaptation cannot use score 61",
+      "candidate_id": "p29"
+    },
+    {
+      "code": "ctech_extension_environment",
+      "detail": "category_extension must change the reference environment",
+      "candidate_id": "p30"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 6,
+    "environments": {
+      "Office": 9,
+      "Home": 5,
+      "Creative Studio": 5,
+      "Café": 5,
+      "Education": 3,
+      "Gaming": 3
+    },
+    "relationships": {
+      "source_grounded": 9,
+      "source_adjacent": 15,
+      "creative_departure": 6
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 5,
+      "Office": 9,
+      "Education": 3,
+      "Gaming": 3,
+      "Café": 5,
+      "Creative Studio": 5
+    },
+    "relationship_counts": {
+      "source_grounded": 9,
+      "source_adjacent": 15,
+      "creative_departure": 6
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 10,
+      "close_adaptation": 13,
+      "category_extension": 7
+    },
+    "ctech_reference_counts": {
+      "CT01": 4,
+      "CT02": 1,
+      "CT03": 5,
+      "CT05": 3,
+      "CT06": 4,
+      "CT10": 3,
+      "CT04": 1,
+      "CT09": 2,
+      "CT07": 4,
+      "CT08": 3
+    },
+    "ctech_score_range": [
+      60,
+      88
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e1",
+          "e2"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p7",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p28",
+          "p29"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p6",
+          "p8",
+          "p15",
+          "p20",
+          "p21",
+          "p30"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p4",
+          "p5",
+          "p7",
+          "p9",
+          "p10",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p29"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [
+          "e5"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p11",
+          "p12",
+          "p13",
+          "p15"
+        ]
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e6"
+        ],
+        "prompt_ids": [
+          "p6",
+          "p8",
+          "p20",
+          "p21",
+          "p30"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "4205a5467105652aeac80d732de77bbffa5e6ee1c45d9f4afe7b95b99f7eb39d"
+}

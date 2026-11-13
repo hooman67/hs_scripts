@@ -1,0 +1,144 @@
+{
+  "validator_version": "v5-host-validator-r1",
+  "passed": false,
+  "error_count": 3,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "ksp_mapping_coverage",
+      "detail": "expected []; got ['KSP 1 - Simple everyday printing from phone to page', 'KSP 2 - Practical output for home organization', 'KSP 3 - Accessible value with responsible-printing cues', 'KSP 4 - Learning and light creativity']"
+    },
+    {
+      "code": "ignored_path_missing",
+      "detail": "source_messaging is a string but ignored_fields is nonempty"
+    },
+    {
+      "code": "source_conflict_document_coverage",
+      "detail": "conflict 1 must cite both documents; got ['smart_brief']"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support audit text; inspect: ['e7']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 20,
+    "evidence": 12,
+    "environments": {
+      "Home": 7,
+      "Office": 3,
+      "Creative Studio": 3,
+      "Education": 3,
+      "Café": 2,
+      "Gaming": 2
+    },
+    "relationships": {
+      "source_grounded": 6,
+      "source_adjacent": 4,
+      "creative_departure": 10
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 7,
+      "Office": 3,
+      "Education": 3,
+      "Gaming": 2,
+      "Café": 2,
+      "Creative Studio": 3
+    },
+    "relationship_counts": {
+      "source_grounded": 6,
+      "source_adjacent": 4,
+      "creative_departure": 10
+    },
+    "ctech_relationship_counts": {
+      "close_adaptation": 9,
+      "minimal_camera_edit": 8,
+      "category_extension": 3
+    },
+    "ctech_reference_counts": {
+      "CT06": 2,
+      "CT05": 2,
+      "CT18": 1,
+      "CT04": 2,
+      "CT17": 1,
+      "CT01": 1,
+      "CT03": 3,
+      "CT10": 3,
+      "CT12": 2,
+      "CT14": 1,
+      "CT15": 1,
+      "CT08": 1
+    },
+    "ctech_score_range": [
+      63,
+      86
+    ],
+    "distinct_subsettings": 17,
+    "evidence_reverse_mappings": {
+      "smart_brief": {
+        "evidence_ids": [
+          "e1",
+          "e2",
+          "e3",
+          "e4",
+          "e5",
+          "e6"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16"
+        ]
+      },
+      "source_messaging": {
+        "evidence_ids": [
+          "e8",
+          "e9",
+          "e10",
+          "e11",
+          "e12"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "56dfaed767d0707af372f69a53de6e61cf68bffaee933616d09c4eed62f0a217"
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "hp-placement-v2-fe-browser-verification-v2",
+  "verified_at_utc": "2026-11-05T04:30:19Z",
+  "regression_verified_at_utc": "2026-11-05T04:01:10Z",
+  "repository_commit": "4707e2e9f506867625e51f448b23dda3b7df8aa0",
+  "status": "passed",
+  "scope": "Actual regression-v3 report plus final combined-96 and printers-48 reports",
+  "regression_manifest_sha256": "372cacf99c8d8bfa9011134114e4bb939f64c6636659eff2ee5bd1834b062bd9",
+  "browser": {
+    "engine": "Playwright Chromium",
+    "launch_args": [
+      "--no-sandbox"
+    ],
+    "headless": true,
+    "viewport": {
+      "width": 1720,
+      "height": 1200
+    }
+  },
+  "network_isolation": {
+    "report_origin": "Loopback HTTP server",
+    "image_policy": "The eight exact report image URLs were fulfilled from hash-verified local files.",
+    "other_external_gets_blocked": 2,
+    "non_get_requests_observed": 0,
+    "real_annotation_publish_attempted": false
+  },
+  "checks": {
+    "report_row_count": 4,
+    "row_4_rendered": true,
+    "row_4_id": "regression-userfail-row29-v13",
+    "row_4_generated_scene_label": "Generated scene — review this image",
+    "row_4_twin_label": "Digital twin — product reference only; do not rate",
+    "row_4_model_input_tiles": 1,
+    "row_4_image_natural_widths": [
+      2368,
+      2368
+    ],
+    "verdict_editable": true,
+    "question_comment_editable": true,
+    "row_comment_editable": true,
+    "draft_persisted_after_reload": true,
+    "persisted_verdict": "fail",
+    "persisted_row_state": "Flagged"
+  },
+  "artifacts": {
+    "screenshot": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v2_fe_browser/regression_v3_review.png",
+      "sha256": "98132f8dc865a572b43035e685d504b9d835e4ed2a42b45de5ae23dc15e975fc"
+    },
+    "raw_result": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v2_fe_browser/browser_test_result.json",
+      "sha256": "488dca4ab5b4a972a917206f17012fee9416ef76c41e097ec518dc4391586744"
+    },
+    "local_report_data": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v2_fe_browser/report/data.json",
+      "sha256": "c61b95acf527d94f550612f2d40fc4c0c038450e2e943832e80463181a059061"
+    },
+    "local_report_viewer": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v2_fe_browser/report/viewer.html",
+      "sha256": "b10c91e5f939b555ce0332f7269baefd2e1ef1b0117c6ae9530188808cbbcc2a"
+    }
+  },
+  "full_reports_verification": {
+    "status": "passed",
+    "verified_at_utc": "2026-11-05T04:30:19Z",
+    "v6_manifest_sha256": "d2842b15ead6a0c9af450292dea5a4b1c07e2ceb0d1bbafe94867685ecb423aa",
+    "viewer_sha256": "b10c91e5f939b555ce0332f7269baefd2e1ef1b0117c6ae9530188808cbbcc2a",
+    "network_isolation": {
+      "report_origin": "Loopback HTTP server",
+      "image_policy": "Requested report image URLs were fulfilled from SHA-verified local files declared by the V6 manifest.",
+      "unique_local_assets_served": 6,
+      "other_external_gets_blocked": 3,
+      "non_get_requests_observed": 0,
+      "real_annotation_publish_attempted": false
+    },
+    "combined": {
+      "report_row_count": 96,
+      "manifest_order_exact": true,
+      "first_row_id": "cashmere__laptop_BackRightCloseUp__p1",
+      "last_row_id": "tassel__printer_FrontWide__p6",
+      "first_and_last_generated_and_twin_images_loaded": true,
+      "image_dimensions": "2368x1776",
+      "first_and_last_score_captions_visible": true,
+      "matching_researcher_question_visible": true,
+      "product_type_filter": {
+        "value": "printer",
+        "rows": 48
+      },
+      "device_filter": {
+        "value": "cashmere",
+        "rows": 24
+      },
+      "data_json_sha256": "debed544e2cb17613e0b8aef5356c0ccd1a6a22831f1dc1f47edf6bfd6641a37"
+    },
+    "printers": {
+      "report_row_count": 48,
+      "manifest_subset_order_exact": true,
+      "first_row_id": "magic__printer_FrontCloseUp__p1",
+      "last_row_id": "tassel__printer_FrontWide__p6",
+      "first_and_last_generated_and_twin_images_loaded": true,
+      "image_dimensions": "2368x1776",
+      "first_and_last_score_captions_visible": true,
+      "verdict_editable": true,
+      "question_comment_editable": true,
+      "row_comment_editable": true,
+      "draft_persisted_after_reload": true,
+      "persisted_verdict": "review",
+      "persisted_row_state": "Reviewed",
+      "data_json_sha256": "3709058f740d5fdf2173792a5a6e6e630c57b724696e70a11808d5b798e95bd0"
+    },
+    "artifacts": {
+      "combined_screenshot": {
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v2_fe_browser/combined_96_last_row.png",
+        "sha256": "e3b604b74620168b4a4729a43dfcba1e12451c7e1c08d92e7a7c05a194286cce"
+      },
+      "printers_screenshot": {
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v2_fe_browser/printers_48_persisted_review.png",
+        "sha256": "c9515d3fcd602d1239ab469c3abae9784c8e29237ac03c76fe8e948d647c0560"
+      },
+      "raw_result": {
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v2_fe_browser/full_reports_browser_test_result.json",
+        "sha256": "738d72476eed06922f79352dc74a7edf970fb7cf85249028ed1411501095f5ee"
+      }
+    }
+  }
+}

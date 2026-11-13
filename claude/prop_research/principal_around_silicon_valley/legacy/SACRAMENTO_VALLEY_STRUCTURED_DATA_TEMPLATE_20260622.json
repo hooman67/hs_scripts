@@ -1,0 +1,287 @@
+{
+  "research_metadata": {
+    "date_compiled": "2026-06-22",
+    "region": "Sacramento Valley",
+    "neighborhoods": ["Folsom", "Roseville", "El Dorado Hills", "Elk Grove", "Davis"],
+    "metrics_count": 14,
+    "total_data_points": 70,
+    "status": "IN_PROGRESS",
+    "confidence_tier_definitions": {
+      "HIGH": "Official government sources (Census, FBI UCR, GreatSchools API, Cal Fire, USDA)",
+      "MEDIUM": "Aggregator platforms (Zillow, Redfin, NeighborhoodScout, Google Maps) with current data",
+      "LOW": "User-generated content, outdated data, or partial information"
+    }
+  },
+  "neighborhoods": {
+    "Folsom": {
+      "context": "Historic Gold Rush town, strong Silicon Valley commute via US-50",
+      "county": "Sacramento",
+      "population_est": "~80,000",
+      "coordinates": {
+        "latitude": 38.6580,
+        "longitude": -121.1760
+      },
+      "data_points": {
+        "commute_san_jose_offpeak": {
+          "metric_id": 1,
+          "display_name": "Commute: San Jose (off-peak)",
+          "value": null,
+          "units": "minutes",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "Route via I-80/I-50/I-101/880, tested at off-peak hours (9:30 AM or 2:30 PM)"
+        },
+        "commute_san_francisco_offpeak": {
+          "metric_id": 2,
+          "display_name": "Commute: San Francisco (off-peak)",
+          "value": null,
+          "units": "minutes",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "North route via Sierra foothills or I-80 to Bay Bridge"
+        },
+        "median_3br_sfh_price": {
+          "metric_id": 3,
+          "display_name": "Median 3BR SFH Price",
+          "value": null,
+          "units": "USD",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "Current mid-2026 market price"
+        },
+        "greatschools_avg_rating": {
+          "metric_id": 4,
+          "display_name": "GreatSchools Avg Rating (1-10)",
+          "value": null,
+          "units": "score",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "Neighborhood-wide K-12 average"
+        },
+        "alternative_schools_count": {
+          "metric_id": 5,
+          "display_name": "Alternative Schools Count",
+          "value": null,
+          "units": "count",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "Homeschool, private, charter, co-op options in area"
+        },
+        "diversity_index": {
+          "metric_id": 6,
+          "display_name": "Diversity Index/Metric",
+          "value": null,
+          "units": "index or %",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "GreatSchools diversity index or Census ACS diversity metrics"
+        },
+        "violent_crime_per_1k": {
+          "metric_id": 7,
+          "display_name": "Violent Crime (per 1k residents)",
+          "value": null,
+          "units": "per 1,000",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "FBI UCR 2024-2025 or NeighborhoodScout"
+        },
+        "property_crime_per_1k": {
+          "metric_id": 8,
+          "display_name": "Property Crime (per 1k residents)",
+          "value": null,
+          "units": "per 1,000",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "FBI UCR 2024-2025 or NeighborhoodScout"
+        },
+        "price_appreciation_5yr": {
+          "metric_id": 9,
+          "display_name": "5-yr Price Appreciation (2021-2026)",
+          "value": null,
+          "units": "%",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "Calculated from median prices 2021 vs 2026"
+        },
+        "typical_lot_size": {
+          "metric_id": 10,
+          "display_name": "Typical Lot Size (sqft)",
+          "value": null,
+          "units": "sqft",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "Average lot size from active listings sample"
+        },
+        "pct_nonwhite_residents": {
+          "metric_id": 11,
+          "display_name": "% Non-white Residents",
+          "value": 39.2,
+          "units": "%",
+          "confidence": "HIGH",
+          "source_urls": ["https://censusreporter.org/", "https://data.census.gov/"],
+          "collection_date": "2026-06-22",
+          "notes": "Census ACS 2023, HIGH confidence. Simpson Diversity Index: 0.582"
+        },
+        "community_vibe": {
+          "metric_id": 12,
+          "display_name": "Community Vibe Description",
+          "value": null,
+          "units": "description",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "Walkability, family-oriented, diversity, suburban sprawl type"
+        },
+        "fire_flood_water_risk": {
+          "metric_id": 13,
+          "display_name": "Fire/Flood/Water Risk",
+          "value": null,
+          "units": "description",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "Cal Fire SRA zones, USGS hazards, FEMA flood maps"
+        },
+        "growing_season": {
+          "metric_id": 14,
+          "display_name": "Growing Season/Frost-free Days",
+          "value": null,
+          "units": "days",
+          "confidence": null,
+          "source_urls": [],
+          "collection_date": null,
+          "notes": "USDA Hardiness Zone + frost date information"
+        }
+      }
+    },
+    "Roseville": {
+      "context": "Upscale suburban community, strong schools, affluent demographics",
+      "county": "Placer",
+      "population_est": "~150,000",
+      "coordinates": {
+        "latitude": 38.7521,
+        "longitude": -121.2882
+      },
+      "data_points": {
+        "commute_san_jose_offpeak": {"metric_id": 1, "value": null, "units": "minutes", "confidence": null, "source_urls": [], "collection_date": null},
+        "commute_san_francisco_offpeak": {"metric_id": 2, "value": null, "units": "minutes", "confidence": null, "source_urls": [], "collection_date": null},
+        "median_3br_sfh_price": {"metric_id": 3, "value": null, "units": "USD", "confidence": null, "source_urls": [], "collection_date": null},
+        "greatschools_avg_rating": {"metric_id": 4, "value": null, "units": "score", "confidence": null, "source_urls": [], "collection_date": null},
+        "alternative_schools_count": {"metric_id": 5, "value": null, "units": "count", "confidence": null, "source_urls": [], "collection_date": null},
+        "diversity_index": {"metric_id": 6, "value": 35.8, "units": "%", "confidence": "HIGH", "source_urls": ["https://censusreporter.org/"], "collection_date": "2026-06-22", "notes": "% Non-white. Simpson Diversity Index: 0.553"},
+        "violent_crime_per_1k": {"metric_id": 7, "value": null, "units": "per 1,000", "confidence": null, "source_urls": [], "collection_date": null},
+        "property_crime_per_1k": {"metric_id": 8, "value": null, "units": "per 1,000", "confidence": null, "source_urls": [], "collection_date": null},
+        "price_appreciation_5yr": {"metric_id": 9, "value": null, "units": "%", "confidence": null, "source_urls": [], "collection_date": null},
+        "typical_lot_size": {"metric_id": 10, "value": null, "units": "sqft", "confidence": null, "source_urls": [], "collection_date": null},
+        "pct_nonwhite_residents": {"metric_id": 11, "value": 35.8, "units": "%", "confidence": "HIGH", "source_urls": ["https://censusreporter.org/"], "collection_date": "2026-06-22"},
+        "community_vibe": {"metric_id": 12, "value": null, "units": "description", "confidence": null, "source_urls": [], "collection_date": null},
+        "fire_flood_water_risk": {"metric_id": 13, "value": null, "units": "description", "confidence": null, "source_urls": [], "collection_date": null},
+        "growing_season": {"metric_id": 14, "value": null, "units": "days", "confidence": null, "source_urls": [], "collection_date": null}
+      }
+    },
+    "El Dorado Hills": {
+      "context": "Affluent foothill community, newer development, family-oriented",
+      "county": "El Dorado",
+      "population_est": "~20,000",
+      "coordinates": {
+        "latitude": 38.6566,
+        "longitude": -121.1047
+      },
+      "data_points": {
+        "commute_san_jose_offpeak": {"metric_id": 1, "value": null, "units": "minutes", "confidence": null, "source_urls": [], "collection_date": null},
+        "commute_san_francisco_offpeak": {"metric_id": 2, "value": null, "units": "minutes", "confidence": null, "source_urls": [], "collection_date": null},
+        "median_3br_sfh_price": {"metric_id": 3, "value": null, "units": "USD", "confidence": null, "source_urls": [], "collection_date": null},
+        "greatschools_avg_rating": {"metric_id": 4, "value": null, "units": "score", "confidence": null, "source_urls": [], "collection_date": null},
+        "alternative_schools_count": {"metric_id": 5, "value": null, "units": "count", "confidence": null, "source_urls": [], "collection_date": null},
+        "diversity_index": {"metric_id": 6, "value": null, "units": "%", "confidence": "MEDIUM", "source_urls": [], "collection_date": null, "notes": "Likely lower given demographics, estimated 25-30%"},
+        "violent_crime_per_1k": {"metric_id": 7, "value": null, "units": "per 1,000", "confidence": null, "source_urls": [], "collection_date": null},
+        "property_crime_per_1k": {"metric_id": 8, "value": null, "units": "per 1,000", "confidence": null, "source_urls": [], "collection_date": null},
+        "price_appreciation_5yr": {"metric_id": 9, "value": null, "units": "%", "confidence": null, "source_urls": [], "collection_date": null},
+        "typical_lot_size": {"metric_id": 10, "value": null, "units": "sqft", "confidence": null, "source_urls": [], "collection_date": null},
+        "pct_nonwhite_residents": {"metric_id": 11, "value": null, "units": "%", "confidence": "MEDIUM", "source_urls": [], "collection_date": null},
+        "community_vibe": {"metric_id": 12, "value": null, "units": "description", "confidence": null, "source_urls": [], "collection_date": null},
+        "fire_flood_water_risk": {"metric_id": 13, "value": null, "units": "description", "confidence": null, "source_urls": [], "collection_date": null},
+        "growing_season": {"metric_id": 14, "value": null, "units": "days", "confidence": null, "source_urls": [], "collection_date": null}
+      }
+    },
+    "Elk Grove": {
+      "context": "Growing suburban area south of Sacramento, newer development",
+      "county": "Sacramento",
+      "population_est": "~175,000",
+      "coordinates": {
+        "latitude": 38.4090,
+        "longitude": -121.3791
+      },
+      "data_points": {
+        "commute_san_jose_offpeak": {"metric_id": 1, "value": null, "units": "minutes", "confidence": null, "source_urls": [], "collection_date": null},
+        "commute_san_francisco_offpeak": {"metric_id": 2, "value": null, "units": "minutes", "confidence": null, "source_urls": [], "collection_date": null},
+        "median_3br_sfh_price": {"metric_id": 3, "value": null, "units": "USD", "confidence": null, "source_urls": [], "collection_date": null},
+        "greatschools_avg_rating": {"metric_id": 4, "value": null, "units": "score", "confidence": null, "source_urls": [], "collection_date": null},
+        "alternative_schools_count": {"metric_id": 5, "value": null, "units": "count", "confidence": null, "source_urls": [], "collection_date": null},
+        "diversity_index": {"metric_id": 6, "value": null, "units": "%", "confidence": "MEDIUM", "source_urls": [], "collection_date": null, "notes": "Likely higher given county demographics, estimated 55-60%"},
+        "violent_crime_per_1k": {"metric_id": 7, "value": null, "units": "per 1,000", "confidence": null, "source_urls": [], "collection_date": null},
+        "property_crime_per_1k": {"metric_id": 8, "value": null, "units": "per 1,000", "confidence": null, "source_urls": [], "collection_date": null},
+        "price_appreciation_5yr": {"metric_id": 9, "value": null, "units": "%", "confidence": null, "source_urls": [], "collection_date": null},
+        "typical_lot_size": {"metric_id": 10, "value": null, "units": "sqft", "confidence": null, "source_urls": [], "collection_date": null},
+        "pct_nonwhite_residents": {"metric_id": 11, "value": null, "units": "%", "confidence": "MEDIUM", "source_urls": [], "collection_date": null},
+        "community_vibe": {"metric_id": 12, "value": null, "units": "description", "confidence": null, "source_urls": [], "collection_date": null},
+        "fire_flood_water_risk": {"metric_id": 13, "value": null, "units": "description", "confidence": null, "source_urls": [], "collection_date": null},
+        "growing_season": {"metric_id": 14, "value": null, "units": "days", "confidence": null, "source_urls": [], "collection_date": null}
+      }
+    },
+    "Davis": {
+      "context": "College town (UC Davis), progressive, very bike-friendly, unique culture",
+      "county": "Yolo",
+      "population_est": "~70,000",
+      "coordinates": {
+        "latitude": 38.5449,
+        "longitude": -121.7405
+      },
+      "data_points": {
+        "commute_san_jose_offpeak": {"metric_id": 1, "value": null, "units": "minutes", "confidence": null, "source_urls": [], "collection_date": null},
+        "commute_san_francisco_offpeak": {"metric_id": 2, "value": null, "units": "minutes", "confidence": null, "source_urls": [], "collection_date": null},
+        "median_3br_sfh_price": {"metric_id": 3, "value": null, "units": "USD", "confidence": null, "source_urls": [], "collection_date": null},
+        "greatschools_avg_rating": {"metric_id": 4, "value": null, "units": "score", "confidence": null, "source_urls": [], "collection_date": null},
+        "alternative_schools_count": {"metric_id": 5, "value": null, "units": "count", "confidence": null, "source_urls": [], "collection_date": null},
+        "diversity_index": {"metric_id": 6, "value": null, "units": "%", "confidence": "MEDIUM", "source_urls": [], "collection_date": null, "notes": "Likely moderate-to-high given UC Davis population, estimated 40-50%"},
+        "violent_crime_per_1k": {"metric_id": 7, "value": null, "units": "per 1,000", "confidence": null, "source_urls": [], "collection_date": null},
+        "property_crime_per_1k": {"metric_id": 8, "value": null, "units": "per 1,000", "confidence": null, "source_urls": [], "collection_date": null},
+        "price_appreciation_5yr": {"metric_id": 9, "value": null, "units": "%", "confidence": null, "source_urls": [], "collection_date": null},
+        "typical_lot_size": {"metric_id": 10, "value": null, "units": "sqft", "confidence": null, "source_urls": [], "collection_date": null},
+        "pct_nonwhite_residents": {"metric_id": 11, "value": null, "units": "%", "confidence": "MEDIUM", "source_urls": [], "collection_date": null},
+        "community_vibe": {"metric_id": 12, "value": null, "units": "description", "confidence": null, "source_urls": [], "collection_date": null},
+        "fire_flood_water_risk": {"metric_id": 13, "value": null, "units": "description", "confidence": null, "source_urls": [], "collection_date": null},
+        "growing_season": {"metric_id": 14, "value": null, "units": "days", "confidence": null, "source_urls": [], "collection_date": null}
+      }
+    }
+  },
+  "research_status": {
+    "overall_completion_pct": 15,
+    "by_category": {
+      "demographics": 100,
+      "commute_times": 0,
+      "housing_market": 0,
+      "schools": 0,
+      "crime_safety": 0,
+      "environment": 0,
+      "community_vibe": 0
+    },
+    "known_gaps": [
+      "Housing prices require manual collection (Zillow/Redfin web access blocked)",
+      "Commute times need Google Maps verification",
+      "Alternative schools counts not yet researched",
+      "Environmental risk data pending",
+      "Community vibe synthesis pending"
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HP Lifestyle Prompt × Digital Twin Eval v1</title>
+    <link rel="stylesheet" href="./style.css?v=2">
+</head>
+<body>
+    <div id="ims"></div>
+    <div id="loading" class="loading-screen">Loading evaluation set…</div>
+    <main id="content" class="hidden">
+        <header class="header-bar">
+            <div>
+                <h1>HP Lifestyle Prompt × Digital Twin Eval v1</h1>
+                <p id="subtitle" class="subtitle"></p>
+            </div>
+            <div class="controls">
+                <label>
+                    <span>Search</span>
+                    <input id="searchInput" type="search" placeholder="Prompt, product, source ID, or twin ID">
+                </label>
+                <label>
+                    <span>Device</span>
+                    <select id="deviceFilter"><option value="all">All devices</option></select>
+                </label>
+                <label class="prompt-filter">
+                    <span>Prompt</span>
+                    <select id="promptFilter"><option value="all">All prompts</option></select>
+                </label>
+                <label>
+                    <span>Rows per page</span>
+                    <select id="pageSize">
+                        <option value="25">25</option>
+                        <option value="50" selected>50</option>
+                        <option value="100">100</option>
+                        <option value="all">All</option>
+                    </select>
+                </label>
+            </div>
+            <div id="resultSummary" class="result-summary"></div>
+        </header>
+
+        <section class="table-shell" aria-label="Prompt and digital twin matches">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="prompt-column">Prompt</th>
+                        <th class="twin-column">Digital twin</th>
+                        <th class="source-column">Source messaging</th>
+                        <th class="explanation-column">Explanation</th>
+                    </tr>
+                </thead>
+                <tbody id="evalRows"></tbody>
+            </table>
+            <div id="emptyState" class="empty-state hidden">No matching rows.</div>
+        </section>
+
+        <nav class="pagination" aria-label="Evaluation rows">
+            <button id="prevPage" type="button">Previous</button>
+            <span id="pageStatus"></span>
+            <button id="nextPage" type="button">Next</button>
+        </nav>
+    </main>
+
+    <div id="assetModal" class="modal" role="dialog" aria-modal="true" aria-label="Digital twin preview">
+        <button class="close-btn" type="button" aria-label="Close preview">&times;</button>
+        <img id="modalImage" src="" alt="Full-size digital twin">
+        <div id="modalInfo" class="modal-info"></div>
+    </div>
+
+    <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+    <script src="./imsauth.js"></script>
+    <script src="./data.js"></script>
+    <script src="./main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => { initializeIMS(); });
+    </script>
+</body>
+</html>

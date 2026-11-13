@@ -1,0 +1,231 @@
+================================================================================
+PENINSULA BAY AREA 3BR MEDIAN HOME PRICE COLLECTION CHECKLIST
+2025-2026 Market Data for Property Purchase Research
+================================================================================
+
+RESEARCH GOAL: Collect current 3BR median home prices for 8 Peninsula towns
+TARGET BUDGET: $2,000,000 USD
+INTEGRATION: Step 2 - Neighborhood Identification & Scoring
+
+================================================================================
+COLLECTION PROCESS (Choose Option A, B, or C below)
+================================================================================
+
+OPTION A: QUICK (20-30 minutes) - MEDIUM Confidence
+---
+
+Step 1: Zillow Data (10 minutes)
+- [ ] Visit: https://www.zillow.com/homes/for_sale/San-Carlos-CA/
+  Record: Median price = _______ Date = _______
+- [ ] Visit: https://www.zillow.com/homes/for_sale/Belmont-CA/
+  Record: Median price = _______ Date = _______
+- [ ] Visit: https://www.zillow.com/homes/for_sale/Foster-City-CA/
+  Record: Median price = _______ Date = _______
+- [ ] Visit: https://www.zillow.com/homes/for_sale/Burlingame-CA/
+  Record: Median price = _______ Date = _______
+- [ ] Visit: https://www.zillow.com/homes/for_sale/Millbrae-CA/
+  Record: Median price = _______ Date = _______
+- [ ] Visit: https://www.zillow.com/homes/for_sale/Pacifica-CA/
+  Record: Median price = _______ Date = _______
+- [ ] Visit: https://www.zillow.com/homes/for_sale/Half-Moon-Bay-CA/
+  Record: Median price = _______ Date = _______
+- [ ] Visit: https://www.zillow.com/homes/for_sale/Daly-City-CA/
+  Record: Median price = _______ Date = _______
+
+Step 2: Redfin Data (10 minutes)
+- [ ] Visit: https://www.redfin.com/CA/San-Carlos/
+  Filter: Bedrooms = 3
+  Record: Median = _______ Average = _______ Date = _______
+- [ ] Visit: https://www.redfin.com/CA/Belmont/
+  Record: Median = _______ Average = _______ Date = _______
+- [ ] Visit: https://www.redfin.com/CA/Foster-City/
+  Record: Median = _______ Average = _______ Date = _______
+- [ ] Visit: https://www.redfin.com/CA/Burlingame/
+  Record: Median = _______ Average = _______ Date = _______
+- [ ] Visit: https://www.redfin.com/CA/Millbrae/
+  Record: Median = _______ Average = _______ Date = _______
+- [ ] Visit: https://www.redfin.com/CA/Pacifica/
+  Record: Median = _______ Average = _______ Date = _______
+- [ ] Visit: https://www.redfin.com/CA/Half-Moon-Bay/
+  Record: Median = _______ Average = _______ Date = _______
+- [ ] Visit: https://www.redfin.com/CA/Daly-City/
+  Record: Median = _______ Average = _______ Date = _______
+
+Step 3: Final Entry
+- [ ] Fill in peninsula_market_data_2025-2026.json with collected data
+- [ ] Average prices from multiple sources per town
+- [ ] Set confidence to "high" for well-supported data
+- [ ] Commit to git
+
+---
+
+OPTION B: THOROUGH (1-2 hours) - HIGH Confidence
+---
+
+Complete all of OPTION A, then add:
+
+Step 4: County Assessor & MLS Data (30-45 minutes)
+- [ ] Visit: https://www.smc-ca.gov/assessor
+  Search by zip code for each town (see peninsula_market_research_guide.md)
+  Record recent transaction prices
+
+- [ ] Contact 1-2 local real estate agents per town
+  Use template from peninsula_market_research_guide.md
+  Request MLS market reports with:
+    * Median list price
+    * Median sale price
+    * Days on market
+    * Market conditions
+  Agents to contact:
+    [ ] San Carlos agent email: _________________ Response: [ ]
+    [ ] Belmont agent email: _________________ Response: [ ]
+    [ ] Foster City agent email: _________________ Response: [ ]
+    [ ] Burlingame agent email: _________________ Response: [ ]
+    [ ] Millbrae agent email: _________________ Response: [ ]
+    [ ] Pacifica agent email: _________________ Response: [ ]
+    [ ] Half Moon Bay agent email: _________________ Response: [ ]
+    [ ] Daly City agent email: _________________ Response: [ ]
+
+Step 5: Data Validation
+- [ ] Compare Zillow, Redfin, and MLS prices for consistency
+- [ ] Flag any prices that differ >10% between sources
+- [ ] Verify data is from 2025-2026 (not 2024)
+- [ ] Check for seasonal variations (June = mid-market data)
+
+Step 6: Final Entry
+- [ ] Update peninsula_market_data_2025-2026.json with all sources
+- [ ] Set confidence to "high" or "very high" based on source agreement
+- [ ] Document any discrepancies in analysis.flags field
+- [ ] Commit to git with detailed notes
+
+---
+
+OPTION C: COMPREHENSIVE (2-4 hours) - VERY HIGH Confidence
+---
+
+Complete OPTION B, then add:
+
+Step 7: Phone/Direct Contact (30-45 minutes)
+- [ ] Call San Mateo County Assessor: (650) 364-4320
+  Get guidance on researching recent sales
+- [ ] Call San Mateo Board of Realtors: (650) 345-1000
+  Request official market statistics
+- [ ] Call SFRMLS: Ask about public data access
+- [ ] Contact top-rated agents in each town by phone
+  Discuss market conditions and 3BR pricing trends
+
+Step 8: Historical Trend Analysis (30-45 minutes)
+- [ ] Research 2024, 2023 prices for each town (to validate 2025-2026 trends)
+- [ ] Check year-over-year appreciation rates
+- [ ] Note market direction (appreciating vs. declining)
+- [ ] Assess market stability
+
+Step 9: News & Report Review (20-30 minutes)
+- [ ] Search: "[Town] real estate market 2025" on Google News
+- [ ] Check SF Chronicle real estate section
+- [ ] Review Bay Area Business Journal market reports
+- [ ] Note any major market events (rate changes, tech layoffs impact, etc.)
+
+Step 10: Final Confidence Assessment
+- [ ] All 8 towns have 3+ sources
+- [ ] Data is consistently from 2025-2026
+- [ ] No major discrepancies between sources
+- [ ] Set overall confidence to "very high"
+- [ ] Create summary report of key findings
+
+Step 11: Final Entry & Integration
+- [ ] Update JSON with all collected data (15+ data points per town)
+- [ ] Create summary analysis
+- [ ] Calculate price per sqft for each town
+- [ ] Identify best value towns relative to $2M budget
+- [ ] Commit to git with comprehensive notes
+- [ ] Ready for Step 2 integration
+
+================================================================================
+QUALITY ASSURANCE CHECKS
+================================================================================
+
+Before committing, verify:
+
+- [ ] All 8 towns have at least 2 data sources
+- [ ] Data dates are 2025-2026 (ideally within last 2 months)
+- [ ] Prices are in USD and clearly labeled
+- [ ] Confidence levels are justified by source recency
+- [ ] 3BR-specific data is noted (if not 3BR, overall median is noted)
+- [ ] Source URLs are included and working
+- [ ] No typos in town names or prices
+- [ ] JSON is valid (can be parsed by tool)
+- [ ] Analysis section is filled with insights
+- [ ] Next steps for Step 2 are clear
+
+================================================================================
+EXPECTED PRICE RANGES (Reference - to be replaced with actual data)
+================================================================================
+
+From 2024 historical data and trends:
+
+San Carlos:     $2.0M - $2.4M
+Belmont:        $1.8M - $2.2M
+Foster City:    $2.1M - $2.5M
+Burlingame:     $1.9M - $2.3M
+Millbrae:       $1.7M - $2.1M
+Pacifica:       $1.3M - $1.7M
+Half Moon Bay:  $1.2M - $1.6M
+Daly City:      $1.1M - $1.5M
+
+*These are estimates. Replace with actual 2025-2026 data.*
+
+================================================================================
+TIMELINE EXPECTATIONS
+================================================================================
+
+Option A (Quick):        20-30 minutes  - Same day possible
+Option B (Thorough):     1-2 hours      - May span 1-2 days (waiting for agent responses)
+Option C (Comprehensive):2-4 hours      - Will span 2-3 days (phone calls, agent responses)
+
+Recommended: Complete Option B for solid HIGH confidence data within 1-2 days
+
+================================================================================
+COLLECTION COORDINATOR NOTES
+================================================================================
+
+Date Started:  _______________
+Date Completed: _______________
+Option Selected: [ ] A  [ ] B  [ ] C
+Total Time Spent: _______________
+Key Findings:  _______________________________________________________________
+             ________________________________________________________________
+             ________________________________________________________________
+
+Issues Encountered: ________________________________________________________________
+                   ________________________________________________________________
+
+Next Integration Steps:
+- [ ] Move results to prop_research_project.md
+- [ ] Use for Step 2: Neighborhood Identification & Scoring
+- [ ] Input to financial modeling in Step 4
+- [ ] Compare against final property options in Step 5
+
+================================================================================
+FILE LOCATIONS
+================================================================================
+
+Main Research Guide:      /home/colligo/hs_scripts/claude/prop_research/peninsula_market_research_guide.md
+Data Collection Template: /home/colligo/hs_scripts/claude/prop_research/peninsula_market_data_2025-2026.json
+This Checklist:           /home/colligo/hs_scripts/claude/prop_research/COLLECTION_CHECKLIST.txt
+
+Project Memory:           /home/colligo/.claude/projects/-home-colligo-hs-scripts/memory/MEMORY.md
+Property Research Context:/home/colligo/.claude/projects/-home-colligo-hs-scripts/memory/prop_research_project.md
+
+================================================================================
+QUESTIONS OR ISSUES?
+================================================================================
+
+Refer to: peninsula_market_research_guide.md for detailed instructions
+Contact: Local real estate agents using provided email templates
+Data Issues: Check JSON format and date formats before committing
+
+================================================================================
+Document Created: June 22, 2026
+Last Updated: June 22, 2026
+================================================================================

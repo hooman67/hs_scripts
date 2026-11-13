@@ -1,0 +1,993 @@
+{
+  "version": "v4.1-bounded-repair-merge-v1",
+  "policy": {
+    "unflagged": "entire candidate copied from base",
+    "metadata_only": "copy only ctech_relationship, ctech_reference_score, ctech_changes, ctech_explanation",
+    "scene_edit": "copy proposed candidate except preserve base id and ctech_reference_id",
+    "debug": "copy base debug; no quote correction was authorized"
+  },
+  "base_semantic_sha256": "9558def8107a7f14bf644fc7aa3db020bf1d14ec3a04de52184e00bf2476f47c",
+  "proposed_semantic_sha256": "05e05b84895d3ecf861bbb503bc0b715c31448c4b8d69ba87879e39149c5fc50",
+  "merged_semantic_sha256": "05e05b84895d3ecf861bbb503bc0b715c31448c4b8d69ba87879e39149c5fc50",
+  "flagged_candidate_count": 24,
+  "scene_edit_candidate_count": 13,
+  "metadata_only_candidate_count": 11,
+  "unflagged_candidate_count": 6,
+  "unflagged_candidate_ids": [
+    "p23",
+    "p25",
+    "p26",
+    "p27",
+    "p29",
+    "p30"
+  ],
+  "accepted_field_change_count": 87,
+  "accepted_field_changes": [
+    {
+      "candidate_id": "p1",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the home workspace, warm natural light, book, notebook, and stack of papers.",
+        "Specified household administration papers from the source.",
+        "Omitted extra everyday objects to stay within the wide-view prop limit."
+      ],
+      "proposed": [
+        "Kept the home workspace, warm natural light, book, notebook, and stack of papers.",
+        "Made the desk explicit for the camera view.",
+        "Removed simple furniture and changed household administration papers to ordinary papers."
+      ]
+    },
+    {
+      "candidate_id": "p1",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "Very close to CT18 with only a source-relevant paper description and minor camera simplification.",
+      "proposed": "Same home workspace as CT18, with a focal desk made explicit and ordinary paper wording simplified."
+    },
+    {
+      "candidate_id": "p1",
+      "field": "ctech_reference_score",
+      "reason": "scene_edit_allowed",
+      "original": 96,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p1",
+      "field": "ctech_relationship",
+      "reason": "scene_edit_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p1",
+      "field": "explanation",
+      "reason": "scene_edit_allowed",
+      "original": "The scene directly expresses household administration with paperwork, forms, and records in a home workspace.",
+      "proposed": "The scene keeps a home workspace with ordinary papers, aligning broadly with household administration and paperwork."
+    },
+    {
+      "candidate_id": "p1",
+      "field": "score_components",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "setting": 30,
+        "activity": 30,
+        "materials": 20,
+        "use_context": 20
+      },
+      "proposed": {
+        "setting": 30,
+        "activity": 10,
+        "materials": 20,
+        "use_context": 20
+      }
+    },
+    {
+      "candidate_id": "p1",
+      "field": "source_relevance_score",
+      "reason": "scene_edit_allowed",
+      "original": 100,
+      "proposed": 80
+    },
+    {
+      "candidate_id": "p1",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A modern home workspace with warm natural light, simple furniture, a book, notebook, and a stack of household administration papers. Lived-in and authentic with subtle imperfections and a warm neutral tone.",
+      "proposed": "A modern home workspace with a desk in warm natural light, a book, notebook, and a stack of papers. Lived-in and authentic with subtle imperfections and a warm neutral tone."
+    },
+    {
+      "candidate_id": "p1",
+      "field": "visual_signature",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "surface": "modern home workspace desk",
+        "light": "warm natural light",
+        "local_props": [
+          "book",
+          "notebook",
+          "stack of household administration papers"
+        ],
+        "background_details": [],
+        "people": []
+      },
+      "proposed": {
+        "surface": "modern home workspace desk",
+        "light": "warm natural light",
+        "local_props": [
+          "book",
+          "notebook",
+          "stack of papers"
+        ],
+        "background_details": [],
+        "people": []
+      }
+    },
+    {
+      "candidate_id": "p2",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 95,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p2",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "A close CT04 camera edit, with extra room furnishings removed for the registered wide view.",
+      "proposed": "Same home workspace as CT04, with a source-relevant forms substitution and camera-driven room deletions."
+    },
+    {
+      "candidate_id": "p2",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p3",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 94,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p3",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "CT05 remains recognizable, with camera-driven deletion of extra props and furnishings.",
+      "proposed": "Same home workspace as CT05, with a household paper substitution and camera-driven deletion of extra props and furnishings."
+    },
+    {
+      "candidate_id": "p3",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p4",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the bright open corporate office, simple desks, ergonomic chairs, notebooks, papers, plants, and warm natural light.",
+        "Reduced workstation details to the allowed props and background elements.",
+        "Added color materials from the source."
+      ],
+      "proposed": [
+        "Kept the bright open corporate office, simple desk, ergonomic chairs, notebooks, papers, plants, and warm natural light.",
+        "Reduced workstation details to the allowed props and background elements.",
+        "Added color materials from the source."
+      ]
+    },
+    {
+      "candidate_id": "p4",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "A strong CT03 camera edit that preserves the office environment while trimming the room inventory.",
+      "proposed": "Same office environment as CT03, with a singular desk, source-relevant color materials, and camera trimming."
+    },
+    {
+      "candidate_id": "p4",
+      "field": "ctech_reference_score",
+      "reason": "scene_edit_allowed",
+      "original": 94,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p4",
+      "field": "ctech_relationship",
+      "reason": "scene_edit_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p4",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A bright, open modern corporate office with simple desks, ergonomic chairs, notebooks, papers, and color materials on the workstations. Plants add a tidy professional feel in warm natural light.",
+      "proposed": "A bright, open modern corporate office with a simple desk holding notebooks, papers, and color materials. Ergonomic chairs and plants add a tidy professional feel in warm natural light."
+    },
+    {
+      "candidate_id": "p4",
+      "field": "visual_signature",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "surface": "open office workstation desk",
+        "light": "warm natural light",
+        "local_props": [
+          "notebooks",
+          "papers",
+          "color materials"
+        ],
+        "background_details": [
+          "ergonomic chairs",
+          "plants"
+        ],
+        "people": []
+      },
+      "proposed": {
+        "surface": "simple corporate office desk",
+        "light": "warm natural light",
+        "local_props": [
+          "notebooks",
+          "papers",
+          "color materials"
+        ],
+        "background_details": [
+          "ergonomic chairs",
+          "plants"
+        ],
+        "people": []
+      }
+    },
+    {
+      "candidate_id": "p5",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 93,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p5",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Very close to CT13, simplified to three local props and two background elements.",
+      "proposed": "Same office environment as CT13, with forms substituted for papers and extra shelf contents removed for the camera."
+    },
+    {
+      "candidate_id": "p5",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p6",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the open corporate office, desk, clean shelving, plants, depth, and warm natural lighting.",
+        "Added notebook, pen, and stacked records as the allowed local props.",
+        "Omitted framed artwork and refined décor to meet background limits."
+      ],
+      "proposed": [
+        "Kept the open corporate office, desk, clean shelving, plants, and warm natural lighting.",
+        "Added notebook, pen, and stacked records as the allowed local props.",
+        "Omitted framed artwork, refined décor, and layered furnishings to meet background limits."
+      ]
+    },
+    {
+      "candidate_id": "p6",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "CT01 remains recognizable, with source-relevant desk materials added within the camera limits.",
+      "proposed": "Same office environment as CT01, with source-relevant desk materials added and extra room décor removed."
+    },
+    {
+      "candidate_id": "p6",
+      "field": "ctech_reference_score",
+      "reason": "scene_edit_allowed",
+      "original": 92,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p6",
+      "field": "ctech_relationship",
+      "reason": "scene_edit_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p6",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "An open modern corporate office with a desk, clean shelving, plants, a notebook, pen, and stacked records. Layered office furnishings create natural depth. Warm natural lighting creates a polished, inviting atmosphere.",
+      "proposed": "An open modern corporate office with a desk, clean shelving, plants, a notebook, pen, and stacked records. Warm natural lighting creates a polished, inviting atmosphere."
+    },
+    {
+      "candidate_id": "p7",
+      "field": "camera_omissions",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Omitted framed artwork, refined décor, and additional architectural details to stay within the background limit."
+      ],
+      "proposed": [
+        "Omitted framed artwork, refined décor, additional workstations, and architectural details to stay within the background limit."
+      ]
+    },
+    {
+      "candidate_id": "p7",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the open corporate office, multiple workstations, clean shelving, plants, depth, and warm natural lighting.",
+        "Added recurring document packets, color pages, and a notebook within the prop limit.",
+        "Omitted framed artwork and extra décor."
+      ],
+      "proposed": [
+        "Kept the open corporate office, clean shelving, plants, and warm natural lighting.",
+        "Changed multiple workstations to a singular workstation desk for the view.",
+        "Added recurring document packets, color pages, and a notebook within the prop limit."
+      ]
+    },
+    {
+      "candidate_id": "p7",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "A camera-trimmed CT02 adaptation with source-relevant paperwork on the workstations.",
+      "proposed": "Same office environment as CT02, simplified to a singular workstation desk with source-relevant paperwork."
+    },
+    {
+      "candidate_id": "p7",
+      "field": "ctech_reference_score",
+      "reason": "scene_edit_allowed",
+      "original": 91,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p7",
+      "field": "ctech_relationship",
+      "reason": "scene_edit_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p7",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "An open modern corporate office with multiple workstations extending deep into the space. Desks, clean shelving, plants, recurring document packets, color pages, and a notebook create a layered, active environment. Warm natural lighting creates a polished, inviting atmosphere.",
+      "proposed": "An open modern corporate office with a workstation desk holding recurring document packets, color pages, and a notebook. Clean shelving and plants create a layered, active environment in warm natural lighting."
+    },
+    {
+      "candidate_id": "p7",
+      "field": "visual_signature",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "surface": "office workstation desks",
+        "light": "warm natural lighting",
+        "local_props": [
+          "recurring document packets",
+          "color pages",
+          "notebook"
+        ],
+        "background_details": [
+          "clean shelving",
+          "plants"
+        ],
+        "people": []
+      },
+      "proposed": {
+        "surface": "office workstation desk",
+        "light": "warm natural lighting",
+        "local_props": [
+          "recurring document packets",
+          "color pages",
+          "notebook"
+        ],
+        "background_details": [
+          "clean shelving",
+          "plants"
+        ],
+        "people": []
+      }
+    },
+    {
+      "candidate_id": "p8",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the modern home workspace, warm natural light, simple furniture, notebooks, papers, plants, and lived-in tone.",
+        "Removed books and extra everyday objects for the camera.",
+        "Kept the paper materials broad rather than adding extra detail."
+      ],
+      "proposed": [
+        "Kept the modern home workspace, warm natural light, notebooks, papers, plants, and lived-in tone.",
+        "Made the desk explicit for the camera view.",
+        "Removed books, simple furniture, and extra everyday objects."
+      ]
+    },
+    {
+      "candidate_id": "p8",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "A concise CT06 camera edit with only minor deletion.",
+      "proposed": "Same home workspace as CT06, with an explicit desk and reduced everyday objects for the camera."
+    },
+    {
+      "candidate_id": "p8",
+      "field": "ctech_reference_score",
+      "reason": "scene_edit_allowed",
+      "original": 90,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p8",
+      "field": "ctech_relationship",
+      "reason": "scene_edit_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p8",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A modern home workspace with warm natural light, simple furniture, notebooks, papers, and plants. Lived-in and authentic with subtle imperfections, warm neutral tones.",
+      "proposed": "A modern home workspace with a desk in warm natural light, holding notebooks and papers. Plants add a lived-in, authentic feel with subtle imperfections and warm neutral tones."
+    },
+    {
+      "candidate_id": "p8",
+      "field": "visual_signature",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "surface": "modern home workspace",
+        "light": "warm natural light",
+        "local_props": [
+          "notebooks",
+          "papers",
+          "plants"
+        ],
+        "background_details": [],
+        "people": []
+      },
+      "proposed": {
+        "surface": "modern home workspace desk",
+        "light": "warm natural light",
+        "local_props": [
+          "notebooks",
+          "papers"
+        ],
+        "background_details": [
+          "plants"
+        ],
+        "people": []
+      }
+    },
+    {
+      "candidate_id": "p9",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the CT03 office, desks, chairs, notebooks, papers, personal touches, and tidy professional feel.",
+        "Removed plants and extra material detail to fit the view.",
+        "Shortened the wording for the wide camera."
+      ],
+      "proposed": [
+        "Kept the CT03 office, chairs, notebooks, papers, personal touches, and tidy professional feel.",
+        "Changed plural desks to a singular workstation desk for the camera view.",
+        "Removed plants and extra material detail to fit the view."
+      ]
+    },
+    {
+      "candidate_id": "p9",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "Same environment as CT03 with only camera-driven deletion and compression.",
+      "proposed": "Same environment as CT03 with camera-driven deletion and a singular-support adjustment."
+    },
+    {
+      "candidate_id": "p9",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A bright, open modern corporate office with simple desks, ergonomic chairs, notebooks, papers, and subtle personal touches on the workstations. Lived-in but tidy and professional.",
+      "proposed": "A bright, open modern corporate office with a simple workstation desk holding notebooks, papers, and subtle personal touches. Ergonomic chairs add a lived-in but tidy and professional feel."
+    },
+    {
+      "candidate_id": "p9",
+      "field": "visual_signature",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "surface": "open office workstation desks",
+        "light": "bright warm natural light",
+        "local_props": [
+          "notebooks",
+          "papers",
+          "subtle personal touches"
+        ],
+        "background_details": [
+          "ergonomic chairs"
+        ],
+        "people": []
+      },
+      "proposed": {
+        "surface": "simple workstation desk",
+        "light": "bright warm natural light",
+        "local_props": [
+          "notebooks",
+          "papers",
+          "subtle personal touches"
+        ],
+        "background_details": [
+          "ergonomic chairs"
+        ],
+        "people": []
+      }
+    },
+    {
+      "candidate_id": "p11",
+      "field": "camera_omissions",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Omitted collectibles, curated décor, sleek cabinetry, and extra neon details to fit the camera profile."
+      ],
+      "proposed": [
+        "Omitted textured wall, collectibles, curated décor, sleek cabinetry, and extra neon details to fit the camera profile."
+      ]
+    },
+    {
+      "candidate_id": "p11",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the stylish gaming room, dark wood desk, textured wall, floating shelves, bold wall art, RGB lighting, and warm neutral finishes.",
+        "Removed collectibles, curated décor, and cabinetry to meet the background limit."
+      ],
+      "proposed": [
+        "Kept the stylish gaming room, dark wood desk, floating shelves, bold wall art, RGB lighting, and warm neutral finishes.",
+        "Removed the textured wall, collectibles, curated décor, and cabinetry to meet the background limit."
+      ]
+    },
+    {
+      "candidate_id": "p11",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "A close CT15 camera edit in the same gaming environment.",
+      "proposed": "A same-environment CT15 camera edit that deletes extra background details."
+    },
+    {
+      "candidate_id": "p11",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A stylish gaming room with a dark wood desk positioned against a textured wall. Floating shelves and bold wall art surround the space, while vibrant RGB lighting creates a dynamic yet organized atmosphere with warm neutral finishes.",
+      "proposed": "A stylish gaming room with a dark wood desk surrounded by floating shelves. Bold wall art and vibrant RGB lighting create a dynamic yet organized atmosphere with warm neutral finishes."
+    },
+    {
+      "candidate_id": "p11",
+      "field": "visual_signature",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "surface": "dark wood gaming desk",
+        "light": "vibrant RGB lighting",
+        "local_props": [],
+        "background_details": [
+          "textured wall with floating shelves",
+          "bold wall art"
+        ],
+        "people": []
+      },
+      "proposed": {
+        "surface": "dark wood gaming desk",
+        "light": "vibrant RGB lighting",
+        "local_props": [],
+        "background_details": [
+          "floating shelves",
+          "bold wall art"
+        ],
+        "people": []
+      }
+    },
+    {
+      "candidate_id": "p12",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the bright creative office, warm natural light, simple desks, sketchbooks, papers, plants, and lived-in tone.",
+        "Replaced books with color materials from the source.",
+        "Reduced props and background details for the camera."
+      ],
+      "proposed": [
+        "Kept the bright creative office, warm natural light, sketchbooks, papers, plants, and lived-in tone.",
+        "Changed simple desks to a singular desk for the view.",
+        "Replaced books with color materials from the source."
+      ]
+    },
+    {
+      "candidate_id": "p12",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "Same creative-office environment as CT10 with minor prop substitution and camera simplification.",
+      "proposed": "Same creative-office environment as CT10, with a singular desk and source-relevant material substitution."
+    },
+    {
+      "candidate_id": "p12",
+      "field": "ctech_reference_score",
+      "reason": "scene_edit_allowed",
+      "original": 87,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p12",
+      "field": "ctech_relationship",
+      "reason": "scene_edit_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p12",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A bright, modern creative office with warm natural light, simple desks, sketchbooks, papers, and color materials. Plants create a casually arranged workspace, lived-in and authentic with subtle imperfections.",
+      "proposed": "A bright, modern creative office with warm natural light and a simple desk holding sketchbooks, papers, and color materials. Plants create a casually arranged workspace, lived-in and authentic with subtle imperfections."
+    },
+    {
+      "candidate_id": "p12",
+      "field": "visual_signature",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "surface": "simple creative office desks",
+        "light": "warm natural light",
+        "local_props": [
+          "sketchbooks",
+          "papers",
+          "color materials"
+        ],
+        "background_details": [
+          "plants"
+        ],
+        "people": []
+      },
+      "proposed": {
+        "surface": "simple creative office desk",
+        "light": "warm natural light",
+        "local_props": [
+          "sketchbooks",
+          "papers",
+          "color materials"
+        ],
+        "background_details": [
+          "plants"
+        ],
+        "people": []
+      }
+    },
+    {
+      "candidate_id": "p16",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 85,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p16",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "A CT11 camera edit with the same café tabletop and fewer props.",
+      "proposed": "Same café tabletop as CT11, with several props removed and soft natural light added."
+    },
+    {
+      "candidate_id": "p16",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p18",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 84,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p18",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "A camera-simplified CT13 prompt with a source-relevant record stack.",
+      "proposed": "Same office environment as CT13, with records substituted for papers and extra shelf contents removed."
+    },
+    {
+      "candidate_id": "p18",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p19",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 82,
+      "proposed": 79
+    },
+    {
+      "candidate_id": "p19",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "A CT08 camera edit with one source-relevant paper substitution.",
+      "proposed": "Same café tabletop as CT08, with a source-relevant forms substitution and camera deletions."
+    },
+    {
+      "candidate_id": "p19",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p20",
+      "field": "camera_omissions",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Omitted white cabinetry and organized display details beyond the background limit."
+      ],
+      "proposed": [
+        "Omitted collectibles, white cabinetry, and organized display details beyond the background limit."
+      ]
+    },
+    {
+      "candidate_id": "p20",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the modern gaming workspace, dark desk, illuminated display shelving, collectibles, wall art, RGB lighting, and neon tones.",
+        "Omitted white cabinetry and organized displays to fit two background details."
+      ],
+      "proposed": [
+        "Kept the modern gaming workspace, dark desk, illuminated display shelving, wall art, RGB lighting, and neon tones.",
+        "Omitted collectibles, white cabinetry, and organized displays to fit two background details."
+      ]
+    },
+    {
+      "candidate_id": "p20",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "Same gaming environment as CT14 with a larger camera deletion of extra background elements.",
+      "proposed": "Same gaming environment as CT14 with deletion of extra background elements."
+    },
+    {
+      "candidate_id": "p20",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A modern gaming workspace with a dark desk and illuminated display shelving. Collectibles and wall art fill the space, complemented by vibrant RGB lighting and layered neon tones.",
+      "proposed": "A modern gaming workspace with a dark desk and illuminated display shelving. Wall art, vibrant RGB lighting, and layered neon tones create an organized space."
+    },
+    {
+      "candidate_id": "p20",
+      "field": "visual_signature",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "surface": "dark gaming desk",
+        "light": "vibrant RGB lighting with layered neon tones",
+        "local_props": [],
+        "background_details": [
+          "illuminated display shelving with collectibles",
+          "wall art"
+        ],
+        "people": []
+      },
+      "proposed": {
+        "surface": "dark gaming desk",
+        "light": "vibrant RGB lighting with layered neon tones",
+        "local_props": [],
+        "background_details": [
+          "illuminated display shelving",
+          "wall art"
+        ],
+        "people": []
+      }
+    },
+    {
+      "candidate_id": "p21",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept CT10's bright creative office, warm natural light, simple desks, sketchbooks, papers, plants, and lived-in tone.",
+        "Omitted books and extra creative materials for the camera."
+      ],
+      "proposed": [
+        "Kept CT10's bright creative office, warm natural light, sketchbooks, papers, plants, and lived-in tone.",
+        "Changed simple desks to a singular desk for the camera view.",
+        "Omitted books and extra creative materials for the camera."
+      ]
+    },
+    {
+      "candidate_id": "p21",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "A same-environment CT10 camera edit with extra materials removed.",
+      "proposed": "A same-environment CT10 camera edit with a singular-support adjustment and extra materials removed."
+    },
+    {
+      "candidate_id": "p21",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A bright, modern creative office with warm natural light, simple desks, sketchbooks, papers, and plants. Lived-in and authentic with subtle imperfections.",
+      "proposed": "A bright, modern creative office with warm natural light and a simple desk holding sketchbooks and papers. Plants add a lived-in and authentic feel with subtle imperfections."
+    },
+    {
+      "candidate_id": "p21",
+      "field": "visual_signature",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "surface": "simple creative office desks",
+        "light": "warm natural light",
+        "local_props": [
+          "sketchbooks",
+          "papers",
+          "plants"
+        ],
+        "background_details": [],
+        "people": []
+      },
+      "proposed": {
+        "surface": "simple creative office desk",
+        "light": "warm natural light",
+        "local_props": [
+          "sketchbooks",
+          "papers"
+        ],
+        "background_details": [
+          "plants"
+        ],
+        "people": []
+      }
+    },
+    {
+      "candidate_id": "p22",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the home workspace, warm natural light, simple furniture, papers, and lived-in tone.",
+        "Swapped the book for a pen and specified recurring document papers.",
+        "Kept props within the wide-view limit."
+      ],
+      "proposed": [
+        "Kept the home workspace, warm natural light, papers, and lived-in tone.",
+        "Swapped the book for a pen and made the desk explicit.",
+        "Changed recurring document papers to ordinary papers."
+      ]
+    },
+    {
+      "candidate_id": "p22",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "Same home environment as CT18, with ordinary prop changes for source relevance.",
+      "proposed": "Same home environment as CT18, with ordinary prop changes and an explicit desk for the camera view."
+    },
+    {
+      "candidate_id": "p22",
+      "field": "evidence_ids",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "e3",
+        "e6"
+      ],
+      "proposed": [
+        "e3",
+        "e5"
+      ]
+    },
+    {
+      "candidate_id": "p22",
+      "field": "explanation",
+      "reason": "scene_edit_allowed",
+      "original": "The home workspace shows recurring document papers tied to household administration, though the activity is expressed without a person.",
+      "proposed": "The home workspace shows ordinary papers tied broadly to household administration, though the activity is expressed without a person."
+    },
+    {
+      "candidate_id": "p22",
+      "field": "score_components",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "setting": 30,
+        "activity": 20,
+        "materials": 20,
+        "use_context": 20
+      },
+      "proposed": {
+        "setting": 30,
+        "activity": 10,
+        "materials": 20,
+        "use_context": 20
+      }
+    },
+    {
+      "candidate_id": "p22",
+      "field": "source_relevance_score",
+      "reason": "scene_edit_allowed",
+      "original": 90,
+      "proposed": 80
+    },
+    {
+      "candidate_id": "p22",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A modern home workspace with warm natural light, simple furniture, a notebook, stack of recurring document papers, and a pen. Lived-in and authentic with subtle imperfections and warm neutral tones.",
+      "proposed": "A modern home workspace with a desk in warm natural light, a notebook, stack of papers, and a pen. Lived-in and authentic with subtle imperfections and warm neutral tones."
+    },
+    {
+      "candidate_id": "p22",
+      "field": "visual_signature",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "surface": "modern home workspace desk",
+        "light": "warm natural light",
+        "local_props": [
+          "notebook",
+          "stack of recurring document papers",
+          "pen"
+        ],
+        "background_details": [],
+        "people": []
+      },
+      "proposed": {
+        "surface": "modern home workspace desk",
+        "light": "warm natural light",
+        "local_props": [
+          "notebook",
+          "stack of papers",
+          "pen"
+        ],
+        "background_details": [],
+        "people": []
+      }
+    },
+    {
+      "candidate_id": "p24",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept CT01's open office, desk, shelving, plants, depth, warm natural lighting, and polished atmosphere.",
+        "Added a tidy stack of forms as the single local prop.",
+        "Removed framed artwork and décor."
+      ],
+      "proposed": [
+        "Kept CT01's open office, desk, shelving, plants, warm natural lighting, and polished atmosphere.",
+        "Added a tidy stack of forms as the single local prop.",
+        "Removed framed artwork, décor, and layered furnishings."
+      ]
+    },
+    {
+      "candidate_id": "p24",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "An open modern corporate office with a desk, clean shelving, plants, and a tidy stack of forms. Layered office furnishings create natural depth, with warm natural lighting and a polished, inviting atmosphere.",
+      "proposed": "An open modern corporate office with a desk, clean shelving, plants, and a tidy stack of forms. Warm natural lighting creates a polished, inviting atmosphere."
+    },
+    {
+      "candidate_id": "p28",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Adapted CT18's notebook, papers, warm natural light, simple furniture, and lived-in tone to a library study table.",
+        "Changed stack of papers to stack of forms.",
+        "Added bookshelves as the learning-space background."
+      ],
+      "proposed": [
+        "Adapted CT18's notebook, papers, warm natural light, and lived-in tone to a library study table.",
+        "Changed stack of papers to stack of forms.",
+        "Added bookshelves as the learning-space background."
+      ]
+    },
+    {
+      "candidate_id": "p28",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A library study table with a notebook, pen, and stack of forms. Bookshelves and warm natural light create a quiet, lived-in study atmosphere with simple furniture.",
+      "proposed": "A library study table with a notebook, pen, and stack of forms. Bookshelves and warm natural light create a quiet, lived-in study atmosphere."
+    }
+  ],
+  "discarded_unauthorized_change_count": 0,
+  "discarded_unauthorized_changes": []
+}

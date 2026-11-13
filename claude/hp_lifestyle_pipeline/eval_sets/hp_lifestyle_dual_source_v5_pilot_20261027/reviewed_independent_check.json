@@ -1,0 +1,97 @@
+{
+  "version": "v5-r3-equal-authority-reviewed-independent-check-v2",
+  "generated_at": "2026-10-27T15:18:06-07:00",
+  "status": "complete",
+  "launchable": false,
+  "scope": {
+    "method": "Bounded deterministic verification of the existing 160 reviewed scene texts after score reaggregation and reranking; no new creative review.",
+    "manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/manifest.json",
+    "manifest_sha256": "8ff485ef7078c6cb9ec950885bbdc0c1bd50a0ca4933fefca4d541c8857e3c8c",
+    "review_scoring_policy_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/review_scoring_policy.json",
+    "review_scoring_policy_sha256": "ebfb8b9caadc61d64f9ba0797d5f33543c65daa27e9caaa8c1d651ca865cf663",
+    "build_script_sha256": "4c7d16ce92899d8721bc2a282bfa8a6ce2677e3b3dbc902986eb851d3c5c0710",
+    "reviewed_prompt_cases_sha256": "1e87d601510865b2e4318942234b1eae3f4c9286cd3461892719f292b1d56ec5",
+    "reviewed_validation_sha256": "a2e75c4aca735ab1c11dc6dce867c297f77e7a5a88fbf893b086d1b2bcce2207",
+    "prior_independent_review_sha256": "e0b7cf9ebfb304192c5dde1116f2eec4cf89c0205b451799629eb134279d06b2",
+    "archived_50_50_reviewed_prompt_cases_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/experiments/r3_reviewed_50_50/reviewed_prompt_cases.json",
+    "archived_50_50_reviewed_prompt_cases_sha256": "2cba5d71706ff92e1cf940509cd3ecf7be8f50bdc000e95fa4c5156e8b6fa63c",
+    "archived_50_50_independent_check_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/experiments/r3_reviewed_50_50/reviewed_independent_check.json",
+    "archived_50_50_independent_check_sha256": "fa0d5e6f37d47a708d5416fc514f8e3ee41edb6873b83b38576783a592aa1377",
+    "model_calls_made": 0,
+    "reviewed_output_mutations_by_check": 0
+  },
+  "provenance": {
+    "scene_generation_model": "gpt-5.5",
+    "scene_generation_system_path_recorded_in_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/system_prompt.md",
+    "scene_generation_system_sha256": "45f20777724b4497abbeed9c7dd17544c43c1588d48ec04d87198c8ee181c90a",
+    "current_equal_authority_runtime_system_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/system_prompt.md",
+    "current_equal_authority_runtime_system_sha256": "9f070b31198c62a5a56e3fda1d2d7356af55569fdd818aa2aaa9addb9f2e3619",
+    "current_runtime_hash_observed": true,
+    "same_generation_and_runtime_prompt": false,
+    "statement": "The 160 scene texts were generated under the 45f20777 system. They were not regenerated under the 9f070b31 runtime; the current artifacts reaggregate existing independently justified document components with the confirmed equal-authority policy and rerank the same reviewed texts."
+  },
+  "summary": {
+    "case_count": 8,
+    "candidate_count": 160,
+    "archived_text_multiset_matches": 8,
+    "live_validator_passes": 8,
+    "live_validator_failures": 0,
+    "max_component_sum_arithmetic_passes": 160,
+    "rank_and_id_passes": 8,
+    "prior_findings_checked": 14,
+    "prior_findings_addressed": 14,
+    "blocking_errors": 0,
+    "conclusion": "The rebuilt equal-authority artifacts retain all 160 reviewed scene texts byte-exact within their original banks, apply and rank by the confirmed max-per-component score, pass the V5 validator, and preserve the corrections for all 14 original independent findings."
+  },
+  "checks": {
+    "scoring_policy": {
+      "version": "v5-equal-authority-scoring-v1",
+      "status": "user_confirmed",
+      "formula": "sum(max(smart_brief[component], source_messaging[component]) for component in [setting, activity, materials, use_context])",
+      "no_average": true,
+      "no_repeated_component_double_count": true,
+      "sparse_other_document_has_no_penalty": true
+    },
+    "live_validation": {
+      "passed": true,
+      "schema_and_semantic_errors": 0,
+      "source_relevance_arithmetic_exact_for_all_candidates": true,
+      "source_then_ctech_sort_exact_for_all_candidates": true,
+      "candidate_ids_exact_p1_through_p20_for_all_cases": true,
+      "camera_metadata_matches_registry_for_all_cases": true,
+      "evidence_paths_and_quotes_valid": true
+    },
+    "archived_text_comparison": {
+      "passed": true,
+      "comparison": "Counter equality over exact candidate text strings within each case; order and IDs intentionally excluded because scoring reranks candidates.",
+      "total_exact_strings": 160
+    }
+  },
+  "cases": {
+    "cashmere__laptop_FrontRightCloseUp": {"text_multiset_match": true, "text_multiset_sha256": "5c07e82d654473ce8d20903fc4516c3b44f905262ab14a0255e98ff445e84ba5", "validator_passed": true, "reviewed_output_sha256": "41961db7abacf07d3df04a8b9323f9c35e453a920fa8fb40e67a56345b389098"},
+    "cashmere__laptop_FrontRightWide": {"text_multiset_match": true, "text_multiset_sha256": "ff7168b75b129a1951c52d05a466b7d52c3cc3d4044cb4cddc6d062d8e7a8cbb", "validator_passed": true, "reviewed_output_sha256": "fa158d43dc2e5311fa9ba63713fa36f617789342466ceba1f6a90e57e6b2f1e5"},
+    "deskjet_2955__printer_FrontRightCloseUp": {"text_multiset_match": true, "text_multiset_sha256": "9ebb9afa21c00fc73a791a9c1e1debd0bd601900d8dc2c4ab3b1f86bebca1f65", "validator_passed": true, "reviewed_output_sha256": "9d1372ece61e8e78cba8c8439864a3d9955335845640edca3737a8786f87246f"},
+    "deskjet_2955__printer_FrontRightWide": {"text_multiset_match": true, "text_multiset_sha256": "b62d4cd2b4c7b4a3bf8957cc112038cc99833834258adddb3c69fd9788697334", "validator_passed": true, "reviewed_output_sha256": "4764d4b35d73bcc51887a6fdd77f81e5d8808e4cb506eee9652fcf221eb9b347"},
+    "elitebook__laptop_FrontRightCloseUp": {"text_multiset_match": true, "text_multiset_sha256": "9ddc41a8dbba4b5da813f69bac8a39c7b4aae8dcfd315392b3e602b58c6aa3fa", "validator_passed": true, "reviewed_output_sha256": "639c0548859d3891d464a1a4fdd7c6bddf6271c069163353e8f8ead3ad62dbc9"},
+    "elitebook__laptop_FrontRightWide": {"text_multiset_match": true, "text_multiset_sha256": "82221d75558df64b28087a1d4010571471f8a901350d3c6c199324d715df0837", "validator_passed": true, "reviewed_output_sha256": "6d370a773458d333a2617bf1dff0716f98f398f38349fd76a60d717566f7b328"},
+    "laserjet__printer_FrontRightCloseUp": {"text_multiset_match": true, "text_multiset_sha256": "106e192c4ab70dfe54052f4553dcf163cfe9dc6a3fff008d07e5235e788e54b3", "validator_passed": true, "reviewed_output_sha256": "72958c15bf906accfd4ca11eeefde6a69c3472098d1ef00af241abd53ab44b1c"},
+    "laserjet__printer_FrontRightWide": {"text_multiset_match": true, "text_multiset_sha256": "2cd86c83765607309d56130a47ebfc8b7c88c9ffdf3b487697f4fbb69f6b40ad", "validator_passed": true, "reviewed_output_sha256": "1be7cab583c27fc4918707c0e1b4d83e2fae46bdb9c5ea5ddc9a7270d51796d6"}
+  },
+  "prior_finding_resolution": [
+    {"finding_id": "elitebook-close-ctech-1", "old_to_new_ids": {"p7": "p8", "p16": "p16"}, "check": "close_adaptation/78", "addressed": true},
+    {"finding_id": "elitebook-wide-score-1", "old_to_new_ids": {"p4": "p4", "p5": "p6"}, "check": "corrected components retained; max-sum exact", "addressed": true},
+    {"finding_id": "elitebook-wide-ctech-1", "old_to_new_ids": {"p3": "p3", "p14": "p14", "p16": "p16"}, "check": "close_adaptation/78", "addressed": true},
+    {"finding_id": "deskjet-close-score-1", "old_to_new_ids": {"p8": "p8"}, "check": "corrected components retained; max-sum exact", "addressed": true},
+    {"finding_id": "deskjet-close-ctech-1", "old_to_new_ids": {"p14": "p14", "p16": "p18", "p19": "p19"}, "check": "close_adaptation/78", "addressed": true},
+    {"finding_id": "deskjet-wide-score-1", "old_to_new_ids": {"p9": "p13", "p10": "p14", "p11": "p17"}, "check": "invented setting/context remain zero; max-sum exact", "addressed": true},
+    {"finding_id": "deskjet-wide-ctech-1", "old_to_new_ids": {"p17": "p15"}, "check": "close_adaptation/78", "addressed": true},
+    {"finding_id": "laserjet-close-score-1", "old_to_new_ids": {"p5": "p7", "p7": "p6"}, "check": "corrected components retained; max-sum exact", "addressed": true},
+    {"finding_id": "laserjet-close-ctech-1", "old_to_new_ids": {"p8": "p8", "p18": "p19"}, "check": "close_adaptation/78", "addressed": true},
+    {"finding_id": "laserjet-wide-ctech-1", "old_to_new_ids": {"p19": "p19"}, "check": "close_adaptation/78", "addressed": true},
+    {"finding_id": "cashmere-close-score-1", "old_to_new_ids": {"p11": "p12", "p12": "p13", "p13": "p14"}, "check": "inferred venue/task/material components remain zero; max-sum exact", "addressed": true},
+    {"finding_id": "cashmere-close-ctech-1", "old_to_new_ids": {"p10": "p9", "p12": "p13", "p14": "p11"}, "check": "close_adaptation/78", "addressed": true},
+    {"finding_id": "cashmere-wide-provenance-1", "old_to_new_ids": {"p9": "p18", "p10": "p19", "p11": "p20"}, "check": "both component groups zero; score zero; no evidence; creative_departure", "addressed": true},
+    {"finding_id": "cashmere-wide-ctech-1", "old_to_new_ids": {"p13": "p10"}, "check": "close_adaptation/78", "addressed": true}
+  ],
+  "blocking_errors": []
+}

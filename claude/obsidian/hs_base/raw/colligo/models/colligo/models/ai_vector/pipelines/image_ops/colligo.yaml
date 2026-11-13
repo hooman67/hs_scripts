@@ -1,0 +1,39 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.ai_vector.pipelines.mosaic.common[public]
+  - colligo.models.firefly.clio[public]
+  - pydantic
+deps:
+- colligo.data
+- colligo.image
+- colligo.models.ai_vector.components
+- colligo.models.ai_vector.pipelines.mosaic.agents
+- colligo.models.ai_vector.pipelines.mosaic.common
+- colligo.models.common.adapter_utils
+- colligo.models.common.metrics
+- colligo.models.di_imaging.mfm_masking
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.pipelines.imaging_v3
+- colligo.tensorrt
+- numpy
+- opencv-contrib-python-headless
+- pillow
+- supermasking_py.ssv5
+- torch
+
+
+- colligo.models.di_imaging.common
+- colligo.models.di_imaging.supermasking
+
+- torchvision
+
+- colligo.models.ai_vector.common
+
+- colligo.caplan_taxonomy
+exclude:
+- scripts
+- "..."

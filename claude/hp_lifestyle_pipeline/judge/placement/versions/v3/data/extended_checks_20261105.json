@@ -1,0 +1,2976 @@
+{
+  "schema_version": "placement-v3-extended-comment-checks-v1",
+  "created_at_utc": "2026-11-05T22:25:02.366755+00:00",
+  "status": "baseline_frozen_before_any_extended-candidate_results",
+  "interpretation": {
+    "purpose": "Comment-derived development validation partition outside the existing 20 diagnostic cases.",
+    "limits": [
+      "These are development checks, not held-out gold accuracy.",
+      "Annotation pass/review/fail buttons and completion state are excluded entirely.",
+      "Agreement comments are relational checks against the frozen v2 output, not independent image labels.",
+      "Empty comments mean no concern was raised in that persisted row, not a numerical or verdict label.",
+      "Rows omitted from the annotation snapshot are not treated as reviewed rows.",
+      "Only exact-comment-supported verdicts appear in acceptable_verdicts."
+    ]
+  },
+  "sources": {
+    "comment_inventory": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+      "sha256": "7755a1c93520913b1ec8171395c77ab58510e29404782db4bdbde767c4a9e15f"
+    },
+    "existing_diagnostic_manifest": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/diagnostic_cases.json",
+      "sha256": "c18b747abd5059b071d5b2f317b00a811bb4c5c24ee4dae846378140aaf65aef"
+    }
+  },
+  "partition": {
+    "rule": "inventory row ID is absent from the existing 20-case diagnostic manifest",
+    "existing_diagnostic_manifest_cases": 20,
+    "existing_diagnostic_inventory_ids_excluded": 18,
+    "existing_diagnostic_noninventory_ids": [
+      "regression-userfail-row12-v13",
+      "regression-userfail-row25-v14"
+    ],
+    "excluded_inventory_ids": [
+      "cashmere__laptop_BackRightCloseUp__p6",
+      "cashmere__laptop_FrontLeftMedium__p6",
+      "cashmere__laptop_FrontWide__p4",
+      "elitebook__laptop_BackRightCloseUp__p5",
+      "elitebook__laptop_FrontLeftMedium__p5",
+      "elitebook__laptop_FrontLeftMedium__p6",
+      "magic__printer_FrontCloseUp__p2",
+      "magic__printer_FrontCloseUp__p5",
+      "magic__printer_FrontLeftMedium__p2",
+      "magic__printer_FrontLeftMedium__p3",
+      "magic__printer_FrontRightCloseUp__p2",
+      "magic__printer_FrontWide__p2",
+      "magic__printer_FrontWide__p5",
+      "tassel__printer_FrontCloseUp__p3",
+      "tassel__printer_FrontCloseUp__p5",
+      "tassel__printer_FrontLeftMedium__p1",
+      "tassel__printer_FrontLeftMedium__p5",
+      "tassel__printer_FrontRightCloseUp__p1"
+    ],
+    "candidate_ids": [
+      "cashmere__laptop_BackRightCloseUp__p1",
+      "cashmere__laptop_BackRightCloseUp__p2",
+      "cashmere__laptop_BackRightCloseUp__p3",
+      "cashmere__laptop_BackRightCloseUp__p4",
+      "cashmere__laptop_BackRightCloseUp__p5",
+      "cashmere__laptop_FrontCloseUp__p1",
+      "cashmere__laptop_FrontCloseUp__p2",
+      "cashmere__laptop_FrontCloseUp__p3",
+      "cashmere__laptop_FrontCloseUp__p4",
+      "cashmere__laptop_FrontCloseUp__p5",
+      "cashmere__laptop_FrontCloseUp__p6",
+      "cashmere__laptop_FrontLeftMedium__p1",
+      "cashmere__laptop_FrontLeftMedium__p2",
+      "cashmere__laptop_FrontLeftMedium__p3",
+      "cashmere__laptop_FrontLeftMedium__p4",
+      "cashmere__laptop_FrontLeftMedium__p5",
+      "cashmere__laptop_FrontWide__p1",
+      "cashmere__laptop_FrontWide__p2",
+      "cashmere__laptop_FrontWide__p3",
+      "cashmere__laptop_FrontWide__p5",
+      "elitebook__laptop_BackRightCloseUp__p1",
+      "elitebook__laptop_BackRightCloseUp__p6",
+      "elitebook__laptop_FrontCloseUp__p1",
+      "elitebook__laptop_FrontCloseUp__p2",
+      "elitebook__laptop_FrontCloseUp__p3",
+      "elitebook__laptop_FrontCloseUp__p4",
+      "elitebook__laptop_FrontCloseUp__p5",
+      "elitebook__laptop_FrontCloseUp__p6",
+      "elitebook__laptop_FrontLeftMedium__p1",
+      "elitebook__laptop_FrontLeftMedium__p2",
+      "elitebook__laptop_FrontLeftMedium__p3",
+      "elitebook__laptop_FrontLeftMedium__p4",
+      "elitebook__laptop_FrontWide__p1",
+      "elitebook__laptop_FrontWide__p2",
+      "elitebook__laptop_FrontWide__p3",
+      "elitebook__laptop_FrontWide__p4",
+      "elitebook__laptop_FrontWide__p5",
+      "elitebook__laptop_FrontWide__p6",
+      "magic__printer_FrontCloseUp__p1",
+      "magic__printer_FrontCloseUp__p3",
+      "magic__printer_FrontCloseUp__p4",
+      "magic__printer_FrontCloseUp__p6",
+      "magic__printer_FrontLeftMedium__p1",
+      "magic__printer_FrontLeftMedium__p4",
+      "magic__printer_FrontLeftMedium__p5",
+      "magic__printer_FrontLeftMedium__p6",
+      "magic__printer_FrontRightCloseUp__p1",
+      "magic__printer_FrontRightCloseUp__p3",
+      "magic__printer_FrontRightCloseUp__p4",
+      "magic__printer_FrontRightCloseUp__p5",
+      "magic__printer_FrontRightCloseUp__p6",
+      "magic__printer_FrontWide__p1",
+      "magic__printer_FrontWide__p3",
+      "magic__printer_FrontWide__p4",
+      "magic__printer_FrontWide__p6",
+      "tassel__printer_FrontCloseUp__p1",
+      "tassel__printer_FrontCloseUp__p2",
+      "tassel__printer_FrontCloseUp__p4",
+      "tassel__printer_FrontLeftMedium__p2",
+      "tassel__printer_FrontLeftMedium__p3",
+      "tassel__printer_FrontLeftMedium__p4",
+      "tassel__printer_FrontLeftMedium__p6",
+      "tassel__printer_FrontRightCloseUp__p2",
+      "tassel__printer_FrontRightCloseUp__p5",
+      "tassel__printer_FrontRightCloseUp__p6",
+      "tassel__printer_FrontWide__p1",
+      "tassel__printer_FrontWide__p2",
+      "tassel__printer_FrontWide__p3",
+      "tassel__printer_FrontWide__p4",
+      "tassel__printer_FrontWide__p5",
+      "tassel__printer_FrontWide__p6"
+    ]
+  },
+  "baseline_counts_before_new_candidate_results": {
+    "inventory_records": 89,
+    "inventory_nonempty_comments_reviewed": 84,
+    "inventory_v2_outputs_reviewed": 89,
+    "partition_records": 71,
+    "partition_nonempty_comments": 66,
+    "partition_empty_comments": 5,
+    "expectation_type_counts": {
+      "agreement_with_v2": 56,
+      "ambiguous": 6,
+      "explicit_verdict": 2,
+      "issue_only": 7
+    },
+    "explicit_verdict_records": 2,
+    "explicit_acceptable_verdict_value_counts": {
+      "pass": 2
+    },
+    "agreement_with_v2_records": 56,
+    "agreement_target_v2_verdict_counts": {
+      "fail": 34,
+      "pass": 22
+    },
+    "issue_code_expectation_records": 6,
+    "candidate_results_present": 0
+  },
+  "current_11_verdict_check_audit": {
+    "current_denominator": 11,
+    "strict_exact_comment_supported_denominator": 10,
+    "flagged_for_removal_without_additional_provenance": 1,
+    "records": [
+      {
+        "id": "magic__printer_FrontCloseUp__p2",
+        "exact_human_comment": "The position of the printer is very weird. It's too close to the edge (a bit \nof it is even hanging) and it's not aligned with the edges of the cabined. Also there is a desk right in front of the printer. and cabinet. This is not a natural placement.",
+        "current_acceptable_verdicts": [
+          "fail"
+        ],
+        "exact_comment_expectation_type": "explicit_verdict",
+        "keep_in_strict_exact_comment_verdict_denominator": true,
+        "audit_explanation": "The exact comment gives an absolute overall rejection of the placement as not natural, supporting fail."
+      },
+      {
+        "id": "magic__printer_FrontCloseUp__p5",
+        "exact_human_comment": "The printer is aligned to the edge of the dresser. But this should be a fail because no one puts a print\ner on their dressor like this. Very unatural. and out of place. The whole \"office credenza\" which actually looks like a dressor is misplaced. No one puts this furnature in the middle of the office like that. These usually are placed with their backs against a wall",
+        "current_acceptable_verdicts": [
+          "fail"
+        ],
+        "exact_comment_expectation_type": "explicit_verdict",
+        "keep_in_strict_exact_comment_verdict_denominator": true,
+        "audit_explanation": "The exact comment explicitly uses a pass/fail label (including borderline pass)."
+      },
+      {
+        "id": "magic__printer_FrontLeftMedium__p3",
+        "exact_human_comment": "This is great. maybe the printer would have been a bit push back so that its back edge is at the edge of the desk. A human would set it like that to maximize the space in the front of the pinters. In general humans place objects to maximize usable space.",
+        "current_acceptable_verdicts": [
+          "pass"
+        ],
+        "exact_comment_expectation_type": "explicit_verdict",
+        "keep_in_strict_exact_comment_verdict_denominator": true,
+        "audit_explanation": "The exact comment calls the placement great and frames the setback as an optional improvement, supporting pass."
+      },
+      {
+        "id": "magic__printer_FrontWide__p2",
+        "exact_human_comment": "this is a pass. but printer could be placed a bit more to the left and closer to the wall. But this is a pass",
+        "current_acceptable_verdicts": [
+          "pass"
+        ],
+        "exact_comment_expectation_type": "explicit_verdict",
+        "keep_in_strict_exact_comment_verdict_denominator": true,
+        "audit_explanation": "The exact comment explicitly uses a pass/fail label (including borderline pass)."
+      },
+      {
+        "id": "cashmere__laptop_BackRightCloseUp__p6",
+        "exact_human_comment": "This is a fail. The laptop should face the chairs not the other customers.",
+        "current_acceptable_verdicts": [
+          "fail"
+        ],
+        "exact_comment_expectation_type": "explicit_verdict",
+        "keep_in_strict_exact_comment_verdict_denominator": true,
+        "audit_explanation": "The exact comment explicitly uses a pass/fail label (including borderline pass)."
+      },
+      {
+        "id": "cashmere__laptop_FrontLeftMedium__p6",
+        "exact_human_comment": "Thsi si a fail. The laptop should be facing the chairs behind it. Those benches (with teal/blue cover) is where people would sit in a caffe",
+        "current_acceptable_verdicts": [
+          "fail"
+        ],
+        "exact_comment_expectation_type": "explicit_verdict",
+        "keep_in_strict_exact_comment_verdict_denominator": true,
+        "audit_explanation": "The exact comment explicitly uses a pass/fail label (including borderline pass)."
+      },
+      {
+        "id": "cashmere__laptop_FrontWide__p4",
+        "exact_human_comment": "fail. No one randomly abandons a laptop in a middle of the desk like this. I agree tha there is no chair visible. But the whole scene looks weird.",
+        "current_acceptable_verdicts": [
+          "fail"
+        ],
+        "exact_comment_expectation_type": "explicit_verdict",
+        "keep_in_strict_exact_comment_verdict_denominator": true,
+        "audit_explanation": "The exact comment explicitly uses a pass/fail label (including borderline pass)."
+      },
+      {
+        "id": "elitebook__laptop_FrontLeftMedium__p5",
+        "exact_human_comment": "This could go eitehr way. Maybe this is front of the deks. WE don't have enough clues to know that the laptop is facing the wrong direction. Id say this is an ambiguous case.",
+        "current_acceptable_verdicts": [
+          "review"
+        ],
+        "exact_comment_expectation_type": "ambiguous",
+        "keep_in_strict_exact_comment_verdict_denominator": true,
+        "audit_explanation": "The comment explicitly calls the case ambiguous, which supports the operational review verdict."
+      },
+      {
+        "id": "elitebook__laptop_FrontLeftMedium__p6",
+        "exact_human_comment": "I'd say this is border line pass. Would be more natural if laptop was facing the couch. Or if it was at least closer to the chair in front (and the chair was more visible)",
+        "current_acceptable_verdicts": [
+          "pass",
+          "review"
+        ],
+        "exact_comment_expectation_type": "explicit_verdict",
+        "keep_in_strict_exact_comment_verdict_denominator": true,
+        "audit_explanation": "The exact comment explicitly uses a pass/fail label (including borderline pass)."
+      },
+      {
+        "id": "regression-userfail-row25-v14",
+        "exact_human_comment": "This one the edge of the printer is not aligned with edge of the tables.",
+        "current_acceptable_verdicts": [
+          "fail"
+        ],
+        "exact_comment_expectation_type": "issue_only",
+        "keep_in_strict_exact_comment_verdict_denominator": false,
+        "audit_explanation": "The exact comment identifies edge/table misalignment but does not state an overall failure or its severity. The fail expectation needs separately frozen provenance for the earlier explicit-failure context; the exact comment alone does not support it."
+      },
+      {
+        "id": "regression-userfail-row12-v13",
+        "exact_human_comment": "Because a human would put this flush against the wall. And also not in the middle of the table it would be to a side. The placement is not natural.",
+        "current_acceptable_verdicts": [
+          "fail"
+        ],
+        "exact_comment_expectation_type": "explicit_verdict",
+        "keep_in_strict_exact_comment_verdict_denominator": true,
+        "audit_explanation": "The exact comment gives an absolute overall rejection of the placement as not natural, supporting fail."
+      }
+    ]
+  },
+  "records": [
+    {
+      "id": "cashmere__laptop_BackRightCloseUp__p1",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_BackRightCloseUp__p1/result.json",
+        "result_sha256": "e4ec4675e68a975ffac426d7a60296c5d82e55ca086366ed8d943d653ccaf72e",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "no_user_position",
+            "excessive_reach"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_BackRightCloseUp__p2",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_BackRightCloseUp__p2/result.json",
+        "result_sha256": "3ce3b577149e2a22d075a4a9e8377fff3b735f28fcab6218ed2587e4b7e509da",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_BackRightCloseUp__p3",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_BackRightCloseUp__p3/result.json",
+        "result_sha256": "9311dba9f1225e9158d148e79b7e14c8685619ec03855528133f4060ae26b576",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_BackRightCloseUp__p4",
+      "family": "laptops",
+      "exact_human_comment": "The laptoplooks like its facing the wall of the desk. Its unatural.",
+      "exact_human_comment_sha256": "4dedd0684f257766e6183a7355e826ede7a86c912261b2d72af20c65b2084f66",
+      "expectation_type": "issue_only",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [
+        "corner_facing"
+      ],
+      "agreement_target": null,
+      "classification_explanation": "The comment identifies the laptop as unnaturally facing the wall but gives no pass/review/fail label.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_BackRightCloseUp__p4/result.json",
+        "result_sha256": "a739adf5b6aa4a24f75c6436a56f375f1c827c7f0b28ec244cf8a6efe25301d6",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "review",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "coverage_below_pass_threshold",
+          "overall_confidence_low",
+          "core_component_low_confidence:access_usability"
+        ],
+        "coverage": 0.65,
+        "confidence": "low",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_BackRightCloseUp__p5",
+      "family": "laptops",
+      "exact_human_comment": "It just feels like this laptop is randomly placed in the centure of the desk. But it might be a weak pass.",
+      "exact_human_comment_sha256": "55a4e5f24184496e157d6eb73c101ce84eacb74f0b0c7fc727497bfd02b32ebf",
+      "expectation_type": "explicit_verdict",
+      "acceptable_verdicts": [
+        "pass"
+      ],
+      "expected_issue_any": [],
+      "agreement_target": null,
+      "classification_explanation": "The comment explicitly calls the image a weak pass; the weakness is preserved as a qualifier and does not create a second label.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_BackRightCloseUp__p5/result.json",
+        "result_sha256": "5d6fea941348ed4af03d630b7baf340f76e802950018c994085a285b26117716",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "verdict_qualifier": "weak"
+    },
+    {
+      "id": "cashmere__laptop_FrontCloseUp__p1",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontCloseUp__p1/result.json",
+        "result_sha256": "115e7622dc0df75205afdc25537cf700f276cc2ab9c13fcfec2883fa0aada5a7",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.75,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontCloseUp__p2",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontCloseUp__p2/result.json",
+        "result_sha256": "0cf156b154ceedfa4e9ba9ed6d7f7561d9a503a1918b5bcf34a49aad413f0b70",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontCloseUp__p3",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontCloseUp__p3/result.json",
+        "result_sha256": "d91b03123fc51e6ef829fd4bf3eac19d815947dd174a21e9a58d5e1f2d102c84",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontCloseUp__p4",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontCloseUp__p4/result.json",
+        "result_sha256": "7929e25cecb67a6f22eb155b6511f9f20a0820914cdf8a4118f47df30131708c",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontCloseUp__p5",
+      "family": "laptops",
+      "exact_human_comment": "ageed",
+      "exact_human_comment_sha256": "d7fd71e5da2e4a64912fc5b34d010efd1967906413999429e1c6de8a880ccfb9",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontCloseUp__p5/result.json",
+        "result_sha256": "3e0d09ccd1844bbdb9c97488969a29405cf055c1d12922a0ce26c7b83fd931fd",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontCloseUp__p6",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontCloseUp__p6/result.json",
+        "result_sha256": "a9a55794223460c01f0c87e2e2923fc8be9174716e142155587ce3d9744196a5",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.75,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontLeftMedium__p1",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontLeftMedium__p1/result.json",
+        "result_sha256": "5649b23ce9e1b6eabaf69a2efea33c1c90a2e2b64ec5c78a3ceb0208067f316d",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontLeftMedium__p2",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontLeftMedium__p2/result.json",
+        "result_sha256": "2b3c557a81f838c2cc5ad2ddeba23ce0d0e4ad90c6b760d1d0560d8fb9759351",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontLeftMedium__p3",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontLeftMedium__p3/result.json",
+        "result_sha256": "fc8e7d7ddfc58ec9b3b92779849168e68d4ed5416dd67da935dfe0016cce4a53",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "high",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "no_user_position",
+            "excessive_reach"
+          ],
+          "orientation_alignment": [
+            "chair_alignment_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontLeftMedium__p4",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontLeftMedium__p4/result.json",
+        "result_sha256": "a35c77f92319767c5968fa3e3f0dd524b7262da685bd304e82c0efc03eff6861",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontLeftMedium__p5",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontLeftMedium__p5/result.json",
+        "result_sha256": "b8fe46cb7500a59ce51036a37c96874a3995a1f002e147d11ddeb11aff6e0691",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [
+            "furniture_axis_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontWide__p1",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontWide__p1/result.json",
+        "result_sha256": "6cee6177a893bc34471898de4d65dc177657c536f3d76788a5f530ec00ec39f5",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "no_user_position",
+            "blocked_operating_side"
+          ],
+          "orientation_alignment": [
+            "chair_alignment_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontWide__p2",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontWide__p2/result.json",
+        "result_sha256": "936af6c7ab882b877442fcc89c385f715e6cc4355fe541a35aa981d4f1c3a1d4",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontWide__p3",
+      "family": "laptops",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontWide__p3/result.json",
+        "result_sha256": "14dbb89048af67b0762cd8ba2fffc3aaf2b781db94499c231cf4d721d08213a8",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "high",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement",
+            "unmotivated_position"
+          ],
+          "access_usability": [
+            "excessive_reach",
+            "blocked_user_workspace"
+          ],
+          "orientation_alignment": [
+            "chair_alignment_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontWide__p5",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontWide__p5/result.json",
+        "result_sha256": "259a168f1ae07de3ed8b645b80a85948feb98d4e9c3fb6fff5c5c533461ec0bc",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p1",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_BackRightCloseUp__p1/result.json",
+        "result_sha256": "278d9d9b0f3646cff7e1edd00a8026714784befab48de126d7e1e4429aa8ed73",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement",
+            "unmotivated_position"
+          ],
+          "access_usability": [
+            "excessive_reach",
+            "no_user_position"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p6",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_BackRightCloseUp__p6/result.json",
+        "result_sha256": "9dafd317c2843e938fad5a882d30863122c229f3a42a3d4746569a7653efd8e9",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.75,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "no_user_position"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontCloseUp__p1",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontCloseUp__p1/result.json",
+        "result_sha256": "7a78848f33f5864aad695e890b4a268d9eadf7ac9516b4368e4ed5fd6c56ad1c",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.75,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontCloseUp__p2",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontCloseUp__p2/result.json",
+        "result_sha256": "f7bdf8cb08070d94ee8fbea368bf47c3f6166b3a36ee65f0a6ed77915f98507b",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "no_user_position",
+            "excessive_reach"
+          ],
+          "orientation_alignment": [
+            "chair_alignment_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontCloseUp__p3",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontCloseUp__p3/result.json",
+        "result_sha256": "4180bd92d8931f19731c3d83b0b4d806ebb10ac7e2558a33e58a6cdb737939e5",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.75,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontCloseUp__p4",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontCloseUp__p4/result.json",
+        "result_sha256": "0ad0fa3f17ec68c0affb98300427e2134aa2731ae86329f0591f125c555268a1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontCloseUp__p5",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontCloseUp__p5/result.json",
+        "result_sha256": "8965db71a32e55fde200c288efcfb632142e421725e45e232ef852b95f2189e7",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontCloseUp__p6",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontCloseUp__p6/result.json",
+        "result_sha256": "f287139cf3d47d6ffe95231dfb3569c259595d8b25ed657153e7b33fae281113",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "implausible_scenario",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "no_user_position",
+            "excessive_reach"
+          ],
+          "orientation_alignment": [
+            "chair_alignment_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontLeftMedium__p1",
+      "family": "laptops",
+      "exact_human_comment": "agree. Laptop should be closer to the edge of the desk.",
+      "exact_human_comment_sha256": "9c588b6cdb13b81fa5393e023cb1c4a4d42e5c16b9bb052ba0262999e7879e72",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontLeftMedium__p1/result.json",
+        "result_sha256": "bc0ead809cd3e57a3bceb23409b71875537a02339fd96fbe2f8375acebeffdaa",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "high",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "excessive_reach"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontLeftMedium__p2",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontLeftMedium__p2/result.json",
+        "result_sha256": "fab94bdd9b539fe87fb1219b8bbc1c00938c718e56bfb05e9e014426c6e33829",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "high",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "excessive_reach",
+            "no_user_position"
+          ],
+          "orientation_alignment": [
+            "chair_alignment_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontLeftMedium__p3",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontLeftMedium__p3/result.json",
+        "result_sha256": "2a177e2dfc7a736597173aa8313e3a67547abd7b2ec7a063bd3e2469b676df2c",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.75,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontLeftMedium__p4",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontLeftMedium__p4/result.json",
+        "result_sha256": "bb9578560a2e0345c7b01a56b51b80c662fdef1a7b6182dd08dac87224fc0405",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontWide__p1",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontWide__p1/result.json",
+        "result_sha256": "d96986d0f9979c523a13ebaeb3447fe94a82710a230ca61d6b7488724edd243d",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "no_user_position",
+            "excessive_reach"
+          ],
+          "orientation_alignment": [
+            "chair_alignment_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontWide__p2",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontWide__p2/result.json",
+        "result_sha256": "b6ad2e8e6a09f77efdb54b4941bf30faa82e0fdf4faf09eab39ff3b99988a1d9",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "excessive_reach",
+            "blocked_user_workspace"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontWide__p3",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontWide__p3/result.json",
+        "result_sha256": "173b567daa74c40ff770f28feaa2948f6e8c0d5814158602b877989ff3256b4f",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [
+            "furniture_axis_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontWide__p4",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontWide__p4/result.json",
+        "result_sha256": "698589b2ccd2dac96d33ee682e76046aa186ee04bbf3f7e2aab693192133717e",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "excessive_reach"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontWide__p5",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontWide__p5/result.json",
+        "result_sha256": "90a9e3040fb7f4384a354beba975ed604c5692e42a30afa89c908a57111dcc2e",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "excessive_reach",
+            "no_user_position"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontWide__p6",
+      "family": "laptops",
+      "exact_human_comment": "agree",
+      "exact_human_comment_sha256": "94d5c9d96025716090f176f76e07c45b1296250fe9bfe1823f77f53881548690",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontWide__p6/result.json",
+        "result_sha256": "7d3dd05942f5d5475482656992e4c50b8e1151123b90956074e5b25abbb74fe7",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.85,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [
+            "furniture_axis_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontCloseUp__p1",
+      "family": "printers",
+      "exact_human_comment": "",
+      "exact_human_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectation_type": "ambiguous",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": null,
+      "classification_explanation": "Empty persisted comment means no concern was raised in this row, but it is not a numerical or verdict ground-truth label.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontCloseUp__p1/result.json",
+        "result_sha256": "82cef3d5f0d4d555ddb0f6ec66c0be2443a4cf8ca24578ba325c4573e4279aea",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "blocked_operating_side",
+            "furniture_collision"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontCloseUp__p3",
+      "family": "printers",
+      "exact_human_comment": "Placement of printer on the desk is good for the most part but it seems to be in someones active work area because there is a chair behind it.",
+      "exact_human_comment_sha256": "b8e5a737058d0cf1e74c6e34e49d21206aa9fcaa0da32ecaa98fc84fa6fb9943",
+      "expectation_type": "issue_only",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [
+        "occupied_workstation"
+      ],
+      "agreement_target": null,
+      "classification_explanation": "The comment says placement is mostly good but flags a chair-backed active work area; it does not resolve an overall verdict.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontCloseUp__p3/result.json",
+        "result_sha256": "19da01a37bbc5907f7619d28712a5520c2f1695bafded6c2e822a04205658037",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontCloseUp__p4",
+      "family": "printers",
+      "exact_human_comment": "This is a pass for the printer. But the paper tray to the left of the printer\n is slanted. It's not aligned with the printer. it should be rotated by a few digrees to the right. Also the board behind the printer is unatural. People usually don't put printers in front of the board. If the board wasn't there, then the printer should have been closer (alsmost touching) the wall.",
+      "exact_human_comment_sha256": "8c29995d4ad762cb286959e5261be99fc2c783b3ab6ead40356d9d5a1de32cf4",
+      "expectation_type": "explicit_verdict",
+      "acceptable_verdicts": [
+        "pass"
+      ],
+      "expected_issue_any": [],
+      "agreement_target": null,
+      "classification_explanation": "The comment explicitly says the printer placement is a pass, while separately criticizing nearby props and the board.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontCloseUp__p4/result.json",
+        "result_sha256": "130be89961e4919aae5d39e4bad2b6fe0b582a323c0abcbfed83986776162e3c",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 1.0,
+        "confidence": "high",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontCloseUp__p6",
+      "family": "printers",
+      "exact_human_comment": "The printer\nhould be closer to the wall. Even the table should be closer to the wall. But it's front is correctly aligned with the edge of the table.",
+      "exact_human_comment_sha256": "cd69d0b2f6152b5724dc850734ce002cdf31b578936c30f3b6ef9d19607a5f8e",
+      "expectation_type": "issue_only",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": null,
+      "classification_explanation": "The comment requests more setback toward the wall while affirming front alignment; the v3 taxonomy has no exact wall-setback code.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontCloseUp__p6/result.json",
+        "result_sha256": "6b979354ed377cc2f9be145e5dfe57a4cc8accc10750758359f856aa6a4d9375",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontLeftMedium__p1",
+      "family": "printers",
+      "exact_human_comment": "I agree w\nith your judgement here. The skewedness of printer on the surface is a problem (small problem)",
+      "exact_human_comment_sha256": "2292eab390b221a59a456ba74546d86f31a8aef121e684c367c3b60deef47e57",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontLeftMedium__p1/result.json",
+        "result_sha256": "81768d5c2afadc6d20fb6d6d0d62662cd95c512745d6548eb759b9210e55debc",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [
+            "furniture_axis_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontLeftMedium__p4",
+      "family": "printers",
+      "exact_human_comment": "The printer should stick to the wall in the back.",
+      "exact_human_comment_sha256": "1d0086a5cb357c31b9e2a81d08059d0d3235c0317036f83fb36c9f415c55baa3",
+      "expectation_type": "issue_only",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": null,
+      "classification_explanation": "The comment requests rear-wall placement but gives neither a severity nor an overall verdict, and the v3 taxonomy has no exact wall-setback code.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontLeftMedium__p4/result.json",
+        "result_sha256": "b4ed817d8f495503f4431776366200d39973a550e00ad31672192828d58ac700",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontLeftMedium__p5",
+      "family": "printers",
+      "exact_human_comment": "Printer would be all the way back so it's back edge is flush with the edge of the table, it would also be either fully to the left or to the right. But that being said the whole scene is weird. I cannot understand the narrative of what is going on here.",
+      "exact_human_comment_sha256": "5049ae53185b9c528a214fa11d240d44389b1da1d33a49c7846d87de4dd9c9b6",
+      "expectation_type": "issue_only",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [
+        "unmotivated_position",
+        "incoherent_use_arrangement"
+      ],
+      "agreement_target": null,
+      "classification_explanation": "The comment flags center/setback placement and an unintelligible scene narrative without assigning an overall verdict.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontLeftMedium__p5/result.json",
+        "result_sha256": "c35970b8a990da5ba18fc6d85eb68cbcd3816359685572b0000bc686c2091822",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation",
+            "unmotivated_position",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [
+            "furniture_axis_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontLeftMedium__p6",
+      "family": "printers",
+      "exact_human_comment": "Your feedback is correct. In addition you don't put a printer randomly on a cafe table like this. Like we are trying to generate realistic scenes. and this is not realistic.",
+      "exact_human_comment_sha256": "0cc5acb5fc4573732d9537ad8d571075543a1d78b6170018957fb6bb253682ab",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontLeftMedium__p6/result.json",
+        "result_sha256": "227322c0b6a1d285f6ca461403613087e1b0a7989bd3165129c540d7852ee71f",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "implausible_scenario",
+            "unmotivated_position"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontRightCloseUp__p1",
+      "family": "printers",
+      "exact_human_comment": "Your comments are all correct. This is unnatural placement. Not aligned with the edges, placed in the c\nentre. Also with a chair behind the printer. The whole scene makes no sense. The table also weirdly long.",
+      "exact_human_comment_sha256": "9e3b37f872b82b52581bf95e767721e462eb2fe699ef05176a0860df9a94def4",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontRightCloseUp__p1/result.json",
+        "result_sha256": "57fc1e2447c11b4bef9108f70b029927de4707a5c1ed8a590e25faae524e7e89",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation",
+            "inappropriate_support",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontRightCloseUp__p3",
+      "family": "printers",
+      "exact_human_comment": "",
+      "exact_human_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectation_type": "ambiguous",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": null,
+      "classification_explanation": "Empty persisted comment means no concern was raised in this row, but it is not a numerical or verdict ground-truth label.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontRightCloseUp__p3/result.json",
+        "result_sha256": "115ec5f44cf8eaede41a84dfe062e9073e36a680323b507a6d3d9995074b49fe",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontRightCloseUp__p4",
+      "family": "printers",
+      "exact_human_comment": "",
+      "exact_human_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectation_type": "ambiguous",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": null,
+      "classification_explanation": "Empty persisted comment means no concern was raised in this row, but it is not a numerical or verdict ground-truth label.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontRightCloseUp__p4/result.json",
+        "result_sha256": "3dc0c691cc38ee02ca53600cb119f251daf810a4577579c688e5cb1dbc77d82b",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 1.0,
+        "confidence": "high",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontRightCloseUp__p5",
+      "family": "printers",
+      "exact_human_comment": "",
+      "exact_human_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectation_type": "ambiguous",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": null,
+      "classification_explanation": "Empty persisted comment means no concern was raised in this row, but it is not a numerical or verdict ground-truth label.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontRightCloseUp__p5/result.json",
+        "result_sha256": "485ccdea6b9439c8d8ea89bb16fc03a312cb2be05eff672059568ead2c306729",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontRightCloseUp__p6",
+      "family": "printers",
+      "exact_human_comment": "agree with your judgment",
+      "exact_human_comment_sha256": "76133e435a027f4f1ab6e96d683d5d7ca55672d05db68a1c16436da2a73640af",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontRightCloseUp__p6/result.json",
+        "result_sha256": "9ebda1000302746925a7597d8a291d5910c79ed22b8d8f235565502d52c6932b",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.825,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "occupied_workstation",
+            "implausible_scenario"
+          ],
+          "access_usability": [
+            "blocked_operating_side"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontWide__p1",
+      "family": "printers",
+      "exact_human_comment": "overall good but printer should be pushed all the way against the wall. Also it's unatural that the printer is moved further from the right edge of the cabinet for the stack of papers to be tehre. Aslo the paper/car holder placement is unatural.",
+      "exact_human_comment_sha256": "0a5a227549547f65e3e8cb80a77d00b6ce3e240573a5c85114f371d9dfb47bac",
+      "expectation_type": "issue_only",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [
+        "unmotivated_position"
+      ],
+      "agreement_target": null,
+      "classification_explanation": "The comment starts with overall good but lists setback and prop-position concerns; it does not assign a pass/review/fail label.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontWide__p1/result.json",
+        "result_sha256": "40c02713c92477bb73e98725ec962edba959ed205f6a82309d390ad677b66d6a",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontWide__p3",
+      "family": "printers",
+      "exact_human_comment": "agree with your comments.",
+      "exact_human_comment_sha256": "1e703a492f6bf125fecf2765ec950b3a23d5b122c43dbc0a464fcef7e8285a9b",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontWide__p3/result.json",
+        "result_sha256": "2a6ce71e34e7e221c9b164ce2dc5ce7aac8044aa9525179d02cde3d812732b4f",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "occupied_workstation",
+            "unmotivated_position"
+          ],
+          "access_usability": [
+            "excessive_reach"
+          ],
+          "orientation_alignment": [
+            "furniture_axis_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontWide__p4",
+      "family": "printers",
+      "exact_human_comment": "",
+      "exact_human_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectation_type": "ambiguous",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": null,
+      "classification_explanation": "Empty persisted comment means no concern was raised in this row, but it is not a numerical or verdict ground-truth label.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontWide__p4/result.json",
+        "result_sha256": "86f964923a9967d8fb02e0f602f3842f75c11282f5aa253e0b5130d74e0e39e6",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontWide__p6",
+      "family": "printers",
+      "exact_human_comment": "agree with your comments. Also it seems there are to desks connected together. The props placements are weird (what is the hour glass doing there). How come the shelves on the right side are all empty?",
+      "exact_human_comment_sha256": "98b60cfc60ccdf553af219b9e8d1f1c02df452e9606ad776cbdb0da49f9edd15",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontWide__p6/result.json",
+        "result_sha256": "55d704d14fe065d18f1efa79b0b80d7242ef0a8ee2f6bae07d737e5d91017c18",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "unmotivated_position",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "excessive_reach"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontCloseUp__p1",
+      "family": "printers",
+      "exact_human_comment": "your comments are all accurate. It's just the scene is weird like what is this deks doing here.",
+      "exact_human_comment_sha256": "5aa0d79b1815b805a47d6dd38d4c1c1c91321e00a5c3e486ae2f41df6ec65471",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontCloseUp__p1/result.json",
+        "result_sha256": "d46023e6d70cb5efc10981c82aef85f9d5275c5956f7fb20b48f0debc9eee18c",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontCloseUp__p2",
+      "family": "printers",
+      "exact_human_comment": "your comments are all accurate. It's just the scene is weird like what is this deks doing here.",
+      "exact_human_comment_sha256": "5aa0d79b1815b805a47d6dd38d4c1c1c91321e00a5c3e486ae2f41df6ec65471",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontCloseUp__p2/result.json",
+        "result_sha256": "97464a187c0477ecf5661cdca8d1d098d32d941434c7d330257518d9bffaf0b5",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontCloseUp__p4",
+      "family": "printers",
+      "exact_human_comment": "agree with your comments. I would put the printer closer to the wall to maximuze the space in front of it.",
+      "exact_human_comment_sha256": "f7bf4a5f54852cf1f0d5be227016ab8f30653d081396b2b173323ea2272e8701",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "pass",
+        "v2_natural_placement_score": 100.0,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontCloseUp__p4/result.json",
+        "result_sha256": "828c303d09b4c62ce63554698826537ae8d0b2a2341a08cc864078136a8901b7",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 1.0,
+        "confidence": "high",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontLeftMedium__p2",
+      "family": "printers",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontLeftMedium__p2/result.json",
+        "result_sha256": "b2ceea3d841bfb3f2a1d461b9e81261258c776e81bac1e66319e0b7301b3d897",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "occupied_workstation",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontLeftMedium__p3",
+      "family": "printers",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontLeftMedium__p3/result.json",
+        "result_sha256": "82d8b8c96a07a7a4c6f63ec1ce7d9069847cdbe518784c0e1a6f35c950873b89",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "occupied_workstation",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontLeftMedium__p4",
+      "family": "printers",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontLeftMedium__p4/result.json",
+        "result_sha256": "b4435630efb3cd2965e3f2ff31ca80e94dd7273f3f8a409820aff8f8bc9196c4",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation",
+            "unmotivated_position",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "excessive_reach",
+            "blocked_operating_side"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontLeftMedium__p6",
+      "family": "printers",
+      "exact_human_comment": "What's weird is no one places a printer in their living room next to a tee pot and tray. I would've placed the printer on the left most side with its back touching the wall.",
+      "exact_human_comment_sha256": "b4eb2fd2fd60cd04689edf888a98b3a98747e817b4b1563be166afbde17ecd6e",
+      "expectation_type": "issue_only",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [
+        "inappropriate_support",
+        "incoherent_use_arrangement"
+      ],
+      "agreement_target": null,
+      "classification_explanation": "The comment objects to a printer beside tea service in a living room and suggests a wall-side location, without an overall verdict label.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontLeftMedium__p6/result.json",
+        "result_sha256": "02b8a03b89dfb05847b70679000729e5b9623b1309163007136528a35c132811",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "pass",
+        "natural_placement_score": 100.0,
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontRightCloseUp__p2",
+      "family": "printers",
+      "exact_human_comment": "agree. this whole scene is weird too",
+      "exact_human_comment_sha256": "9603f41c29e8cd340e718824ef5cce9beff3727d4236233e02b6ab0465c50d0f",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontRightCloseUp__p2/result.json",
+        "result_sha256": "405527de2a560abc74e1027b44048124dbef29c61fb6710f9c04f5f81e490ec4",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation",
+            "unmotivated_position",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontRightCloseUp__p5",
+      "family": "printers",
+      "exact_human_comment": "I thinks this one is fine. The printer could be more to the left and closer to the back edge. What's weird (as you said) is what those fabrics doing around the printer. The scene is not blievable.",
+      "exact_human_comment_sha256": "cbf5bc35963d9b9bb884021accbae421a4283a87a8185c7aa58efff140295409",
+      "expectation_type": "ambiguous",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [
+        "incoherent_use_arrangement"
+      ],
+      "agreement_target": null,
+      "classification_explanation": "The comment calls the printer placement fine but the fabric-filled scene unbelievable, so it does not support one overall verdict.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontRightCloseUp__p5/result.json",
+        "result_sha256": "42c15bf5d95a21fd63ccb0aef5908673cb141a1050ad793d5a7b120435ba8a40",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation",
+            "unmotivated_position",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "blocked_operating_side",
+            "blocked_paper_or_lid_path"
+          ],
+          "orientation_alignment": [
+            "furniture_axis_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontRightCloseUp__p6",
+      "family": "printers",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontRightCloseUp__p6/result.json",
+        "result_sha256": "0061400b3ee31bc353f96885afa00767998263fb7a4e858f385109415b397ce8",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "occupied_workstation",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontWide__p1",
+      "family": "printers",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontWide__p1/result.json",
+        "result_sha256": "8c5fa0a67a89bb4093d65e5a388c844ad02e39b62a3b31e8f2817fb5eece68b0",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.9,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation",
+            "unmotivated_position",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "blocked_operating_side",
+            "blocked_paper_or_lid_path"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontWide__p2",
+      "family": "printers",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontWide__p2/result.json",
+        "result_sha256": "9f850ebf87fb14e4d43a986abca4c8b588e3cb30db491eccbfe9072064db9bbf",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "incoherent_use_arrangement",
+            "implausible_scenario"
+          ],
+          "access_usability": [
+            "no_user_position",
+            "blocked_operating_side"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontWide__p3",
+      "family": "printers",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 39,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontWide__p3/result.json",
+        "result_sha256": "a82bbe9bbfd62d0999072589041d20ef8d154eed9b51f2fd7e512ab0463e2365",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 39,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 0.925,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "occupied_workstation",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "excessive_reach",
+            "blocked_operating_side",
+            "furniture_collision"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontWide__p4",
+      "family": "printers",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontWide__p4/result.json",
+        "result_sha256": "bd1ec87cd65239ad290ee8c846e33321c1b45b73958fd99dc5da44959f8afe08",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation",
+            "unmotivated_position",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontWide__p5",
+      "family": "printers",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontWide__p5/result.json",
+        "result_sha256": "ea8d1ddb18c4e8ba9a3d1fd9bc8e0d48bae9c12d8e29ac7cb1fbd2c15a4870ec",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "unmotivated_position",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "excessive_reach",
+            "blocked_operating_side"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontWide__p6",
+      "family": "printers",
+      "exact_human_comment": "agreed",
+      "exact_human_comment_sha256": "9eace41237dcecc2fd793cf88494b80062add70fac8358316003ac38866257da",
+      "expectation_type": "agreement_with_v2",
+      "acceptable_verdicts": [],
+      "expected_issue_any": [],
+      "agreement_target": {
+        "v2_verdict": "fail",
+        "v2_natural_placement_score": 59,
+        "relational_check_only": true,
+        "independent_human_verdict_label": false
+      },
+      "classification_explanation": "The comment agrees with the prior judgment/comments. It is preserved as a relational target and is not copied into acceptable_verdicts.",
+      "v2_actual_reference": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontWide__p6/result.json",
+        "result_sha256": "fd2030da394faa5cbd1b60e0196bcf94938b4510cb835b26a125c1c35038014b",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "verdict": "fail",
+        "natural_placement_score": 59,
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "coverage": 1.0,
+        "confidence": "medium",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "occupied_workstation",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      }
+    }
+  ]
+}

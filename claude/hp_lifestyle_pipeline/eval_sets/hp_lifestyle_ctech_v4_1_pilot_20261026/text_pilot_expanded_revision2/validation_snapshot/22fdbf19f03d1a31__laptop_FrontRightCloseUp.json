@@ -1,0 +1,411 @@
+{
+  "version": "v4.1-raw-normalized-audit-v1",
+  "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+  "request_sha256": "61264aa13afd7dffceb8312369300ae89550e9edbb53075399853e6572440344",
+  "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/records/attempts/22fdbf19f03d1a31__laptop_FrontRightCloseUp/sample_011.json",
+  "raw_record_sha256": "927d4d328ade7b590a9c3d7633a8ce775c5a960a927badd65026736527562c4b",
+  "raw_validation": {
+    "validator_version": "v4.1-host-validator-r1",
+    "passed": false,
+    "error_count": 12,
+    "warning_count": 1,
+    "errors": [
+      {
+        "code": "score_order",
+        "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+        "candidate_id": "p16"
+      },
+      {
+        "code": "ctech_score_band",
+        "detail": "minimal_camera_edit cannot use score 76",
+        "candidate_id": "p23"
+      },
+      {
+        "code": "ctech_score_band",
+        "detail": "minimal_camera_edit cannot use score 75",
+        "candidate_id": "p24"
+      },
+      {
+        "code": "score_order",
+        "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+        "candidate_id": "p28"
+      },
+      {
+        "code": "ctech_extension_environment",
+        "detail": "category_extension must change the reference environment",
+        "candidate_id": "p28"
+      },
+      {
+        "code": "score_order",
+        "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+        "candidate_id": "p29"
+      },
+      {
+        "code": "ctech_score_band",
+        "detail": "close_adaptation cannot use score 65",
+        "candidate_id": "p29"
+      },
+      {
+        "code": "ctech_score_band",
+        "detail": "close_adaptation cannot use score 64",
+        "candidate_id": "p30"
+      },
+      {
+        "code": "literal_background_budget",
+        "detail": "1>0: ['simple furniture']",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['simple furniture'] but signature has 0 entries",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "collection_used_as_surface",
+        "detail": "simple furniture",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "surface_not_literal",
+        "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+        "candidate_id": "p30"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 30,
+      "evidence": 6,
+      "environments": {
+        "Office": 7,
+        "Home": 7,
+        "Gaming": 3,
+        "Café": 6,
+        "Creative Studio": 4,
+        "Education": 3
+      },
+      "relationships": {
+        "source_grounded": 7,
+        "source_adjacent": 15,
+        "creative_departure": 8
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 7,
+        "Office": 7,
+        "Education": 3,
+        "Gaming": 3,
+        "Café": 6,
+        "Creative Studio": 4
+      },
+      "relationship_counts": {
+        "source_grounded": 7,
+        "source_adjacent": 15,
+        "creative_departure": 8
+      },
+      "ctech_relationship_counts": {
+        "minimal_camera_edit": 18,
+        "close_adaptation": 8,
+        "category_extension": 4
+      },
+      "ctech_reference_counts": {
+        "CT03": 3,
+        "CT01": 4,
+        "CT02": 1,
+        "CT06": 3,
+        "CT18": 1,
+        "CT14": 1,
+        "CT15": 2,
+        "CT05": 1,
+        "CT12": 2,
+        "CT10": 2,
+        "CT04": 1,
+        "CT07": 1,
+        "CT08": 2,
+        "CT11": 1,
+        "CT09": 2,
+        "CT13": 1,
+        "CT17": 1,
+        "CT16": 1
+      },
+      "ctech_score_range": [
+        64,
+        86
+      ],
+      "distinct_subsettings": 30,
+      "evidence_reverse_mappings": {
+        "KSP1": {
+          "evidence_ids": [
+            "e1",
+            "e2"
+          ],
+          "prompt_ids": [
+            "p4",
+            "p5",
+            "p8",
+            "p9",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p19",
+            "p20",
+            "p22",
+            "p23",
+            "p24",
+            "p29"
+          ]
+        },
+        "KSP2": {
+          "evidence_ids": [
+            "e3"
+          ],
+          "prompt_ids": [
+            "p10",
+            "p15",
+            "p21",
+            "p28"
+          ]
+        },
+        "KSP3": {
+          "evidence_ids": [
+            "e6"
+          ],
+          "prompt_ids": [
+            "p4",
+            "p5",
+            "p8",
+            "p9",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p19",
+            "p20",
+            "p29"
+          ]
+        },
+        "KSP4": {
+          "evidence_ids": [
+            "e4"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p16",
+            "p17",
+            "p18",
+            "p22"
+          ]
+        },
+        "ValueProposition": {
+          "evidence_ids": [
+            "e5"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "0820306b20ee40eb065b68087d6852cf62a7d4609adef94d1a6a6f34a10371a5"
+  },
+  "normalized_validation": {
+    "validator_version": "v4.1-host-validator-r1",
+    "passed": false,
+    "error_count": 5,
+    "warning_count": 1,
+    "errors": [
+      {
+        "code": "ctech_extension_environment",
+        "detail": "category_extension must change the reference environment",
+        "candidate_id": "p29"
+      },
+      {
+        "code": "literal_background_budget",
+        "detail": "1>0: ['simple furniture']",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['simple furniture'] but signature has 0 entries",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "collection_used_as_surface",
+        "detail": "simple furniture",
+        "candidate_id": "p4"
+      },
+      {
+        "code": "surface_not_literal",
+        "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+        "candidate_id": "p26"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 30,
+      "evidence": 6,
+      "environments": {
+        "Office": 7,
+        "Home": 7,
+        "Gaming": 3,
+        "Café": 6,
+        "Creative Studio": 4,
+        "Education": 3
+      },
+      "relationships": {
+        "source_grounded": 7,
+        "source_adjacent": 15,
+        "creative_departure": 8
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 7,
+        "Office": 7,
+        "Education": 3,
+        "Gaming": 3,
+        "Café": 6,
+        "Creative Studio": 4
+      },
+      "relationship_counts": {
+        "source_grounded": 7,
+        "source_adjacent": 15,
+        "creative_departure": 8
+      },
+      "ctech_relationship_counts": {
+        "minimal_camera_edit": 18,
+        "close_adaptation": 8,
+        "category_extension": 4
+      },
+      "ctech_reference_counts": {
+        "CT03": 3,
+        "CT01": 4,
+        "CT02": 1,
+        "CT06": 3,
+        "CT18": 1,
+        "CT14": 1,
+        "CT15": 2,
+        "CT05": 1,
+        "CT12": 2,
+        "CT10": 2,
+        "CT13": 1,
+        "CT04": 1,
+        "CT07": 1,
+        "CT08": 2,
+        "CT11": 1,
+        "CT09": 2,
+        "CT17": 1,
+        "CT16": 1
+      },
+      "ctech_score_range": [
+        65,
+        86
+      ],
+      "distinct_subsettings": 30,
+      "evidence_reverse_mappings": {
+        "KSP1": {
+          "evidence_ids": [
+            "e1",
+            "e2"
+          ],
+          "prompt_ids": [
+            "p4",
+            "p5",
+            "p8",
+            "p9",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p17",
+            "p18",
+            "p21",
+            "p22",
+            "p24",
+            "p25"
+          ]
+        },
+        "KSP2": {
+          "evidence_ids": [
+            "e3"
+          ],
+          "prompt_ids": [
+            "p10",
+            "p16",
+            "p23",
+            "p29"
+          ]
+        },
+        "KSP3": {
+          "evidence_ids": [
+            "e6"
+          ],
+          "prompt_ids": [
+            "p4",
+            "p5",
+            "p8",
+            "p9",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p21",
+            "p22",
+            "p25"
+          ]
+        },
+        "KSP4": {
+          "evidence_ids": [
+            "e4"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p11",
+            "p19",
+            "p20",
+            "p24"
+          ]
+        },
+        "ValueProposition": {
+          "evidence_ids": [
+            "e5"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p11",
+            "p19",
+            "p20"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "e61225366f9561f3589e0436a3f9c1cf86a2028db73f4188217ffdb7f2b8ff25"
+  },
+  "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/normalized_outputs/22fdbf19f03d1a31__laptop_FrontRightCloseUp__sample_011.json",
+  "normalized_output_file_sha256": "f66d07d5f286f1c6daab25126ed003bb524984723508e4d0b95571d5dcea7e1f",
+  "normalized_output_semantic_sha256": "e61225366f9561f3589e0436a3f9c1cf86a2028db73f4188217ffdb7f2b8ff25",
+  "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/normalization_logs/22fdbf19f03d1a31__laptop_FrontRightCloseUp__sample_011.json",
+  "normalization_log_file_sha256": "a69df7fd8a83fcda01a003e265b142484b78529c68a6a0fa334d45916741a072"
+}

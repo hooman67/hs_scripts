@@ -1,0 +1,21 @@
+visibility: public
+public:
+  files:
+  - types
+  deps:
+  - colligo.base
+  - colligo.models.cai[public]
+  - colligo.models.firefly.clio_common[public]
+  - colligo.models.firefly.diffusion.common[public]
+  - colligo.models.prompt_forge.worker[public]
+  - pydantic
+deps:
+- colligo.external_services.acp
+- colligo.fastapi
+- colligo.httpx
+- colligo.image
+- colligo.models.common.adapter_utils
+- colligo.models.firefly.clio_common
+exclude:
+- scripts
+- "..."

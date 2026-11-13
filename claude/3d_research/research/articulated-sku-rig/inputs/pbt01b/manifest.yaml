@@ -1,0 +1,51 @@
+as_of: "2026-09-22"
+status: candidate_exact_bank_identity_unverified
+product:
+  manufacturer: RYOBI
+  name: 18V ONE+ 7-1/4 in. Sliding Compound Miter Saw
+  model: PBT01B
+  omsid: "315111309"
+  upc: "033287189502"
+  official_url: https://www.ryobitools.com/products/33287189502
+bank:
+  product_id: ryobi_miter_saw
+  display_name: Compound Miter Saw
+  motion_labels: 18
+  unique_clip_paths: 17
+  source_file: /home/colligo/colligo/managed_services/services/firefly/foundry/standalone_apps/thd_video/seedance_rewriter/product_bank_v2_anonymized.yaml
+  source_revision: efd83ead99404f7ac7c7ba3500b43f2d3e2117e9
+identity_assessment:
+  confidence: high_visual_match_not_proven
+  reason: The incumbent reference strongly resembles official PBT01B imagery, but the bank contains no exact SKU provenance.
+known_manufacturer_features:
+  - 7-1/4-inch blade
+  - sliding compound miter saw
+  - adjustable bevel from 0 to 45 degrees left
+  - 10 precision miter detents
+  - dust bag and built-in dust collection
+  - adjustable work clamp
+  - 18V ONE+ battery interface
+images:
+  - file: source-images/incumbent-reference.png
+    sha256: c5cbe44ea67099974038a6536cde7f3365a019e0f016b2d5c167b015d4e52dc1
+    source: /home/colligo/eval-set-1-bookshelf/media/elements/miter-saw/58c3a078-45b7-43b9-b4d6-855dcb24938d.png
+    class: internal_primary_evaluation_input
+  - file: source-images/official-pbt01b-view-01.jpg
+    sha256: 07bc9fc9be047ca5fa92676955eab5ebc0609c8c760e74d415818ed23f1d451b
+    source: https://cdn.shopify.com/s/files/1/0651/3668/9323/files/PBT01B_5_Final_2000x2000.jpg?v=1770229393
+    class: manufacturer_product_image
+  - file: source-images/official-pbt01b-view-02.jpg
+    sha256: 9ae32e252de4e02e87de81eea279417d10e7c898b3aeab3c9fd67ed7980c80c5
+    source: https://cdn.shopify.com/s/files/1/0651/3668/9323/files/ryobi-miter-saws-pbt01b-40_600_2000x2000.jpg?v=1770229393
+    class: manufacturer_feature_image
+  - file: source-images/official-pbt01b-view-03.jpg
+    sha256: 0166db20c99e409ae1cdc64be45ec7cee2c4a2ecf7f80d033c1fe4983d91695e
+    source: https://cdn.shopify.com/s/files/1/0651/3668/9323/files/230390388ca744578409ed13cf334c43_2000x2000.jpg?v=1770229393
+    class: manufacturer_operation_image
+missing:
+  - exact componentized CAD and its license
+  - operator or service manual
+  - exploded parts diagram
+  - verified joint pivots, axes, limits, and interlocks
+  - exact confirmation that the bank reference is PBT01B
+  - locally retrieved motion clips and contact sheets

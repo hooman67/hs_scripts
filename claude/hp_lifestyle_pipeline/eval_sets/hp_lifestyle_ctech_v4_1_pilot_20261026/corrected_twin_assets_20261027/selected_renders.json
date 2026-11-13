@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-10-27T16:32:11Z",
+  "status": "verified",
+  "scope": {
+    "purpose": "Corrected digital-twin inputs for the bounded 120-image C-Tech V4.1 pilot",
+    "selected_render_count": 4,
+    "device_types": [
+      "laptop",
+      "printer"
+    ],
+    "camera_tags": [
+      "laptop_FrontRightCloseUp",
+      "laptop_FrontRightWide",
+      "printer_FrontRightCloseUp",
+      "printer_FrontRightWide"
+    ],
+    "excluded_device_types": [
+      "miniPC"
+    ]
+  },
+  "selection_basis": {
+    "method": "Select the exact viewer entry whose label matches the requested device and Front-Right CloseUp/Wide camera role; preserve the referenced PNG bytes unchanged.",
+    "catalogue_entry_uniqueness": "Each viewer contains exactly one matching CloseUp entry and exactly one matching Wide entry for its single declared device.",
+    "product_lineage": {
+      "laptop": {
+        "prior_pilot_product_label": "Koki-Omnibook_Eclipes-Gray",
+        "prior_pilot_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_lived_in_v4_eval_20261026/manifest.json",
+        "new_viewer_declared_source_asset": "camera_laptop.locator.usdz",
+        "qualification": "The new viewer does not expose the longer prior-pilot product label; the lineage mapping follows the requested prior-pilot product and device/camera-role correspondence."
+      },
+      "printer": {
+        "prior_pilot_product_label": "Magic_Printers-6500_dn_CMF-Atmosphere_Blues",
+        "prior_pilot_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_lived_in_v4_eval_20261026/manifest.json",
+        "new_viewer_declared_source_asset": "camera_printer.locator.usdz",
+        "qualification": "The new viewer does not expose the longer prior-pilot product label; the lineage mapping follows the requested prior-pilot product and device/camera-role correspondence."
+      }
+    }
+  },
+  "catalogues": [
+    {
+      "device_type": "laptop",
+      "declared_source_asset": "camera_laptop.locator.usdz",
+      "declared_title": "Laptop - original USDZ lighting - 40 camera views",
+      "viewer_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_laptop_native_lighting_all_20261026/white_gallery_20261026T224951Z/viewer.html",
+      "s3_prefix": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_laptop_native_lighting_all_20261026/white_gallery_20261026T224951Z/",
+      "entry_count": 40,
+      "local_viewer_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027/catalogues/laptop/viewer.html",
+      "viewer_sha256": "f38cc17b94349c7e2d96e1617b687bf3ede4af616dfeb0cc0204007cb97b0d61",
+      "viewer_bytes": 15483,
+      "inventory_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027/inventories/laptop_s3_inventory.json",
+      "data_json_status": "absent",
+      "data_json_evidence": "S3 HeadObject returned 404 and the complete 41-object prefix inventory contains 40 PNG files plus viewer.html."
+    },
+    {
+      "device_type": "printer",
+      "declared_source_asset": "camera_printer.locator.usdz",
+      "declared_title": "Printer - original USDZ lighting -1 EV - 40 camera views",
+      "viewer_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/viewer.html",
+      "s3_prefix": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/",
+      "entry_count": 40,
+      "local_viewer_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027/catalogues/printer/viewer.html",
+      "viewer_sha256": "b9b1265387525989048aa017d4874a80c218b729bf5f4f0a2cfc05d8af680fd3",
+      "viewer_bytes": 15491,
+      "inventory_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027/inventories/printer_s3_inventory.json",
+      "data_json_status": "absent",
+      "data_json_evidence": "S3 HeadObject returned 404 and the complete 41-object prefix inventory contains 40 PNG files plus viewer.html."
+    }
+  ],
+  "renders": [
+    {
+      "camera_tag": "laptop_FrontRightCloseUp",
+      "device_type": "laptop",
+      "view_role": "close_up",
+      "viewer_entry_label": "Front-Right_CloseUp",
+      "viewer_entry_position": 3,
+      "catalogue_filename": "03_Front-Right_CloseUp_white.png",
+      "prior_pilot_render_id": "laptop__camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop__close_up",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027/catalogues/laptop/03_Front-Right_CloseUp_white.png",
+      "s3_bucket": "foundry-hp-enterprise-adobe-assets",
+      "s3_key": "training_logs/camera_laptop_native_lighting_all_20261026/white_gallery_20261026T224951Z/03_Front-Right_CloseUp_white.png",
+      "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_laptop_native_lighting_all_20261026/white_gallery_20261026T224951Z/03_Front-Right_CloseUp_white.png",
+      "viewer_asset_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_laptop_native_lighting_all_20261026/white_gallery_20261026T224951Z/03_Front-Right_CloseUp_white.png",
+      "catalogue_viewer_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_laptop_native_lighting_all_20261026/white_gallery_20261026T224951Z/viewer.html",
+      "format": "PNG",
+      "media_type": "image/png",
+      "pixel_format": "8-bit RGB",
+      "width": 2368,
+      "height": 1776,
+      "bytes": 914506,
+      "sha256": "eaeb86ec0159a4dbe3796ed01c5237376f784b98ca001bb23ed410c0518b8d96",
+      "md5": "b6e1bbee3ba3d415eda17cf5fb9a8b59",
+      "s3_etag": "b6e1bbee3ba3d415eda17cf5fb9a8b59",
+      "s3_checksum_crc32_base64": "OBy/JA==",
+      "s3_version_id": "KXPXmJCCZz8ChKVgZtorJ4etaZ54bPpv",
+      "s3_last_modified": "2026-10-26T22:49:52Z",
+      "byte_integrity_verified": true
+    },
+    {
+      "camera_tag": "laptop_FrontRightWide",
+      "device_type": "laptop",
+      "view_role": "wide",
+      "viewer_entry_label": "Front-Right_Wide",
+      "viewer_entry_position": 4,
+      "catalogue_filename": "04_Front-Right_Wide_white.png",
+      "prior_pilot_render_id": "laptop__camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop__wide",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027/catalogues/laptop/04_Front-Right_Wide_white.png",
+      "s3_bucket": "foundry-hp-enterprise-adobe-assets",
+      "s3_key": "training_logs/camera_laptop_native_lighting_all_20261026/white_gallery_20261026T224951Z/04_Front-Right_Wide_white.png",
+      "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_laptop_native_lighting_all_20261026/white_gallery_20261026T224951Z/04_Front-Right_Wide_white.png",
+      "viewer_asset_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_laptop_native_lighting_all_20261026/white_gallery_20261026T224951Z/04_Front-Right_Wide_white.png",
+      "catalogue_viewer_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_laptop_native_lighting_all_20261026/white_gallery_20261026T224951Z/viewer.html",
+      "format": "PNG",
+      "media_type": "image/png",
+      "pixel_format": "8-bit RGB",
+      "width": 2368,
+      "height": 1776,
+      "bytes": 177159,
+      "sha256": "75d0443c3b33bdfb3743045ddee2074dd4f969d5fce6816a2ae9d1852407bf5a",
+      "md5": "c3104fe93fe1a5ab3ee1e46151a565bb",
+      "s3_etag": "c3104fe93fe1a5ab3ee1e46151a565bb",
+      "s3_checksum_crc32_base64": "DvKT0g==",
+      "s3_version_id": "bj2C0iaGjroFS.KXBO3yHgZTBH8_ePbi",
+      "s3_last_modified": "2026-10-26T22:49:52Z",
+      "byte_integrity_verified": true
+    },
+    {
+      "camera_tag": "printer_FrontRightCloseUp",
+      "device_type": "printer",
+      "view_role": "close_up",
+      "viewer_entry_label": "Front-Right_CloseUp",
+      "viewer_entry_position": 34,
+      "catalogue_filename": "34_Front-Right_CloseUp_white.png",
+      "prior_pilot_render_id": "printer__camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer__close_up",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027/catalogues/printer/34_Front-Right_CloseUp_white.png",
+      "s3_bucket": "foundry-hp-enterprise-adobe-assets",
+      "s3_key": "training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/34_Front-Right_CloseUp_white.png",
+      "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/34_Front-Right_CloseUp_white.png",
+      "viewer_asset_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/34_Front-Right_CloseUp_white.png",
+      "catalogue_viewer_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/viewer.html",
+      "format": "PNG",
+      "media_type": "image/png",
+      "pixel_format": "8-bit RGB",
+      "width": 2368,
+      "height": 1776,
+      "bytes": 1378227,
+      "sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+      "md5": "4aa3bdac98397c3d4a926814a5934032",
+      "s3_etag": "4aa3bdac98397c3d4a926814a5934032",
+      "s3_checksum_crc32_base64": "7Btipw==",
+      "s3_version_id": "Ig0ys4GY2Hs5kQCIbHPeoaJW5.D95hLV",
+      "s3_last_modified": "2026-10-26T23:20:41Z",
+      "byte_integrity_verified": true
+    },
+    {
+      "camera_tag": "printer_FrontRightWide",
+      "device_type": "printer",
+      "view_role": "wide",
+      "viewer_entry_label": "Front-Right_Wide",
+      "viewer_entry_position": 6,
+      "catalogue_filename": "06_Front-Right_Wide_white.png",
+      "prior_pilot_render_id": "printer__camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer__wide",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027/catalogues/printer/06_Front-Right_Wide_white.png",
+      "s3_bucket": "foundry-hp-enterprise-adobe-assets",
+      "s3_key": "training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/06_Front-Right_Wide_white.png",
+      "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/06_Front-Right_Wide_white.png",
+      "viewer_asset_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/06_Front-Right_Wide_white.png",
+      "catalogue_viewer_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/viewer.html",
+      "format": "PNG",
+      "media_type": "image/png",
+      "pixel_format": "8-bit RGB",
+      "width": 2368,
+      "height": 1776,
+      "bytes": 422648,
+      "sha256": "a1307d682bfb7eef2b60cb1b8882875c5bff866d4a8961b308da932e29a223c5",
+      "md5": "198f78fa6c4330e41d797f981c5ddbfe",
+      "s3_etag": "198f78fa6c4330e41d797f981c5ddbfe",
+      "s3_checksum_crc32_base64": "pZPohA==",
+      "s3_version_id": "FQ9xbq84pTwgLL8xn6CVtDRasJWa58yD",
+      "s3_last_modified": "2026-10-26T23:20:40Z",
+      "byte_integrity_verified": true
+    }
+  ],
+  "visual_audit": {
+    "contact_sheet_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027/selected_renders_contact_sheet.png",
+    "contact_sheet_sha256": "7e339a5f5545dd26901d68abab99494c6f68f7b78db8ea589d984f520194c706",
+    "assessment": "All four selected images visibly show the requested device type and consistent Front-Right close/wide twin framing."
+  }
+}

@@ -1,0 +1,1066 @@
+{
+  "algorithm_version": "hp-approved-props-160-to30-v1",
+  "target_proportion": 0.1875,
+  "source_document_sha256": "3f325ee35c00654c7e5e50e4389b8d22e259a1173ee6076f265bdd0c3859f6e7",
+  "source_hash_kind": "canonical-json-sha256",
+  "source_counts": {
+    "devices": 4,
+    "views_per_device": 4,
+    "banks": 16,
+    "candidates_per_bank": 10,
+    "prompts": 160
+  },
+  "source_selection_rule": "all ten source/CTech-ranked prompts in each of sixteen banks; no subset",
+  "source_snapshot": {
+    "snapshot_manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_2_v6_3_pr4523_pr4417_20261109/revisions/v6.3-hp-associations-20261110-r2-recognition/snapshot_manifest.json",
+    "snapshot_manifest_sha256": "5c0f92e53cb643d475fd3096f5155ac225e0769d33b1088394978c322b080f0c",
+    "metadata_location": "root"
+  },
+  "caveat": "Deterministic coverage heuristic, not an optimality guarantee or a probability sample. Exact device/view/rank matching is not semantic or environment equivalence.",
+  "method": "coverage-weighted coordinate descent on V6.3 only",
+  "seed": 42,
+  "restarts": 12,
+  "max_passes": 12,
+  "passes_per_restart": [
+    6,
+    5,
+    8,
+    4,
+    6,
+    5,
+    4,
+    3,
+    3,
+    4,
+    4,
+    4
+  ],
+  "bank_quotas": {
+    "cashmere": {
+      "laptop_BackRightCloseUp": 1,
+      "laptop_FrontCloseUp": 2,
+      "laptop_FrontLeftMedium": 2,
+      "laptop_FrontWide": 2
+    },
+    "elitebook": {
+      "laptop_BackRightCloseUp": 1,
+      "laptop_FrontCloseUp": 2,
+      "laptop_FrontLeftMedium": 2,
+      "laptop_FrontWide": 2
+    },
+    "magic": {
+      "printer_FrontCloseUp": 2,
+      "printer_FrontLeftMedium": 2,
+      "printer_FrontRightCloseUp": 2,
+      "printer_FrontWide": 2
+    },
+    "tassel": {
+      "printer_FrontCloseUp": 2,
+      "printer_FrontLeftMedium": 2,
+      "printer_FrontRightCloseUp": 2,
+      "printer_FrontWide": 2
+    }
+  },
+  "quota_rule": "Singleton at lexicographically first camera in each of the first two sorted devices; all other banks contribute two.",
+  "feature_weights": {
+    "environment": 6,
+    "device_environment": 2,
+    "reference": 2,
+    "source_relationship": 3,
+    "source_score_band": 1,
+    "reference_score_band": 1,
+    "prop_count": 2,
+    "approved_prop": 1,
+    "creative_departure": 1,
+    "rank": 0.5,
+    "bank_environment": 1
+  },
+  "objective": {
+    "weighted_absolute_deviation_divided_by_30": 4.941666666666666,
+    "within_bank_jaccard_divided_by_16": 0.11227733079322634,
+    "duplicate_texts": 0,
+    "missing_environments": 0,
+    "total": 5.053943997459893
+  },
+  "source_file_sha256": "c0e7553848c3226a0bc3a83c24f161e6ff601ff76f8f0e0557f5bb5b317448c8",
+  "sources": {
+    "v6_3": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_2_v6_3_pr4523_pr4417_20261109/revisions/v6.3-hp-associations-20261110-r2-recognition/exports/final/prompts_all_160.json",
+      "sha256": "c0e7553848c3226a0bc3a83c24f161e6ff601ff76f8f0e0557f5bb5b317448c8",
+      "canonical_json_sha256": "3f325ee35c00654c7e5e50e4389b8d22e259a1173ee6076f265bdd0c3859f6e7",
+      "snapshot": {
+        "snapshot_manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_2_v6_3_pr4523_pr4417_20261109/revisions/v6.3-hp-associations-20261110-r2-recognition/snapshot_manifest.json",
+        "snapshot_manifest_sha256": "5c0f92e53cb643d475fd3096f5155ac225e0769d33b1088394978c322b080f0c",
+        "metadata_location": "root",
+        "verified_manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_2_v6_3_pr4523_pr4417_20261109/revisions/v6.3-hp-associations-20261110-r2-recognition/snapshot_manifest.json"
+      }
+    },
+    "v6_2": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/exports/v6.2-surfaces-20261109-r5-final/prompts_all_160.json",
+      "sha256": "e661123648d8b64bf37b462e482a8015fc8e9219cf3798781271719b99929500",
+      "canonical_json_sha256": "64be609a517883d01d953eb849371b49209be7c10f26e04062f29b30aaf38c4a",
+      "snapshot": {
+        "snapshot_manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/revisions/v6.2-surfaces-20261109-r5-recognition/snapshot_manifest.json",
+        "snapshot_manifest_sha256": "49128d7fb8633f30e4eb4170886b2e288983c6e42bdc975eb9c04cb332e93157",
+        "metadata_location": "provenance.validation_snapshot",
+        "verified_manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/revisions/v6.2-surfaces-20261109-r5-recognition/snapshot_manifest.json"
+      }
+    }
+  },
+  "distributions": {
+    "v6_3": {
+      "all_160": {
+        "prompts": 160,
+        "devices": {
+          "cashmere": 40,
+          "elitebook": 40,
+          "magic": 40,
+          "tassel": 40
+        },
+        "banks": {
+          "cashmere": {
+            "laptop_BackRightCloseUp": 10,
+            "laptop_FrontCloseUp": 10,
+            "laptop_FrontLeftMedium": 10,
+            "laptop_FrontWide": 10
+          },
+          "elitebook": {
+            "laptop_BackRightCloseUp": 10,
+            "laptop_FrontCloseUp": 10,
+            "laptop_FrontLeftMedium": 10,
+            "laptop_FrontWide": 10
+          },
+          "magic": {
+            "printer_FrontCloseUp": 10,
+            "printer_FrontLeftMedium": 10,
+            "printer_FrontRightCloseUp": 10,
+            "printer_FrontWide": 10
+          },
+          "tassel": {
+            "printer_FrontCloseUp": 10,
+            "printer_FrontLeftMedium": 10,
+            "printer_FrontRightCloseUp": 10,
+            "printer_FrontWide": 10
+          }
+        },
+        "environments": {
+          "Café": 14,
+          "Creative Studio": 29,
+          "Education": 23,
+          "Gaming": 8,
+          "Home": 32,
+          "Office": 54
+        },
+        "references": {
+          "CT01": 32,
+          "CT02": 7,
+          "CT03": 19,
+          "CT04": 7,
+          "CT06": 18,
+          "CT07": 6,
+          "CT08": 1,
+          "CT09": 14,
+          "CT10": 15,
+          "CT12": 7,
+          "CT13": 8,
+          "CT15": 8,
+          "CT16": 4,
+          "CT17": 6,
+          "CT18": 8
+        },
+        "source_relationships": {
+          "creative_departure": 43,
+          "source_adjacent": 56,
+          "source_grounded": 61
+        },
+        "prop_ids": {
+          "V61-CAF-001": 8,
+          "V61-CAF-005": 4,
+          "V61-CAF-006": 5,
+          "V61-CAF-009": 2,
+          "V61-CAF-011": 5,
+          "V61-CAF-021": 8,
+          "V61-CAF-022": 2,
+          "V61-CAF-024": 2,
+          "V61-CAF-027": 2,
+          "V61-CAF-032": 1,
+          "V61-CAF-033": 2,
+          "V61-CAF-034": 1,
+          "V61-CAF-035": 6,
+          "V61-CAF-036": 2,
+          "V61-CAF-039": 1,
+          "V61-CAF-040": 1,
+          "V61-CAF-043": 1,
+          "V61-EDU-007": 2,
+          "V61-EDU-009": 4,
+          "V61-EDU-013": 4,
+          "V61-EDU-021": 2,
+          "V61-EDU-026": 7,
+          "V61-EDU-029": 2,
+          "V61-EDU-030": 1,
+          "V61-EDU-031": 1,
+          "V61-EDU-034": 1,
+          "V61-EDU-036": 5,
+          "V61-EDU-037": 4,
+          "V61-EDU-039": 7,
+          "V61-EDU-041": 5,
+          "V61-EDU-043": 1,
+          "V61-EDU-045": 1,
+          "V61-GAM-003": 8,
+          "V61-GAM-016": 1,
+          "V61-GAM-024": 1,
+          "V61-GAM-025": 2,
+          "V61-GAM-028": 1,
+          "V61-GAM-033": 8,
+          "V61-GAM-034": 1,
+          "V61-GAM-035": 1,
+          "V61-GAM-036": 3,
+          "V61-GAM-040": 2,
+          "V61-HOM-001": 5,
+          "V61-HOM-002": 4,
+          "V61-HOM-005": 1,
+          "V61-HOM-010": 1,
+          "V61-HOM-011": 1,
+          "V61-HOM-012": 2,
+          "V61-HOM-013": 1,
+          "V61-HOM-016": 1,
+          "V61-HOM-017": 2,
+          "V61-HOM-019": 3,
+          "V61-HOM-020": 5,
+          "V61-HOM-023": 6,
+          "V61-HOM-024": 9,
+          "V61-HOM-025": 2,
+          "V61-HOM-026": 4,
+          "V61-HOM-027": 10,
+          "V61-HOM-029": 6,
+          "V61-HOM-030": 8,
+          "V61-HOM-031": 3,
+          "V61-HOM-032": 7,
+          "V61-HOM-034": 5,
+          "V61-HOM-036": 1,
+          "V61-HOM-037": 2,
+          "V61-OFF-001": 10,
+          "V61-OFF-002": 2,
+          "V61-OFF-003": 1,
+          "V61-OFF-006": 8,
+          "V61-OFF-007": 11,
+          "V61-OFF-008": 2,
+          "V61-OFF-010": 8,
+          "V61-OFF-013": 5,
+          "V61-OFF-017": 1,
+          "V61-OFF-018": 3,
+          "V61-OFF-019": 4,
+          "V61-OFF-022": 5,
+          "V61-OFF-024": 1,
+          "V61-OFF-025": 2,
+          "V61-OFF-029": 2,
+          "V61-OFF-030": 4,
+          "V61-OFF-032": 7,
+          "V61-OFF-033": 13,
+          "V61-OFF-034": 3,
+          "V61-OFF-035": 3,
+          "V61-OFF-036": 3,
+          "V61-OFF-037": 4,
+          "V61-OFF-040": 3,
+          "V61-OFF-041": 3,
+          "V61-OFF-042": 7,
+          "V61-OFF-043": 9,
+          "V61-STU-001": 1,
+          "V61-STU-002": 1,
+          "V61-STU-003": 3,
+          "V61-STU-005": 2,
+          "V61-STU-008": 2,
+          "V61-STU-012": 5,
+          "V61-STU-013": 5,
+          "V61-STU-014": 3,
+          "V61-STU-016": 1,
+          "V61-STU-017": 1,
+          "V61-STU-018": 7,
+          "V61-STU-023": 3,
+          "V61-STU-025": 2,
+          "V61-STU-026": 2,
+          "V61-STU-027": 3,
+          "V61-STU-031": 5,
+          "V61-STU-034": 1,
+          "V61-STU-036": 4,
+          "V61-STU-037": 1,
+          "V61-STU-039": 1,
+          "V61-STU-040": 3,
+          "V61-STU-041": 5,
+          "V61-STU-043": 8,
+          "V61-STU-044": 4,
+          "V63-CAF-001": 2,
+          "V63-EDU-001": 6,
+          "V63-OFF-001": 16,
+          "V63-STU-002": 6
+        },
+        "source_relevance_score_mean": 46.375,
+        "ctech_reference_score_mean": 71.6125
+      },
+      "selected_30": {
+        "prompts": 30,
+        "devices": {
+          "cashmere": 7,
+          "elitebook": 7,
+          "magic": 8,
+          "tassel": 8
+        },
+        "banks": {
+          "cashmere": {
+            "laptop_BackRightCloseUp": 1,
+            "laptop_FrontCloseUp": 2,
+            "laptop_FrontLeftMedium": 2,
+            "laptop_FrontWide": 2
+          },
+          "elitebook": {
+            "laptop_BackRightCloseUp": 1,
+            "laptop_FrontCloseUp": 2,
+            "laptop_FrontLeftMedium": 2,
+            "laptop_FrontWide": 2
+          },
+          "magic": {
+            "printer_FrontCloseUp": 2,
+            "printer_FrontLeftMedium": 2,
+            "printer_FrontRightCloseUp": 2,
+            "printer_FrontWide": 2
+          },
+          "tassel": {
+            "printer_FrontCloseUp": 2,
+            "printer_FrontLeftMedium": 2,
+            "printer_FrontRightCloseUp": 2,
+            "printer_FrontWide": 2
+          }
+        },
+        "environments": {
+          "Café": 3,
+          "Creative Studio": 5,
+          "Education": 4,
+          "Gaming": 2,
+          "Home": 6,
+          "Office": 10
+        },
+        "references": {
+          "CT01": 6,
+          "CT02": 1,
+          "CT03": 4,
+          "CT04": 2,
+          "CT06": 3,
+          "CT07": 1,
+          "CT08": 1,
+          "CT09": 3,
+          "CT10": 2,
+          "CT12": 1,
+          "CT13": 2,
+          "CT15": 2,
+          "CT16": 1,
+          "CT17": 1
+        },
+        "source_relationships": {
+          "creative_departure": 8,
+          "source_adjacent": 10,
+          "source_grounded": 12
+        },
+        "prop_ids": {
+          "V61-CAF-001": 1,
+          "V61-CAF-005": 1,
+          "V61-CAF-006": 1,
+          "V61-CAF-009": 1,
+          "V61-CAF-011": 1,
+          "V61-CAF-021": 1,
+          "V61-CAF-022": 1,
+          "V61-CAF-024": 1,
+          "V61-CAF-033": 1,
+          "V61-CAF-035": 1,
+          "V61-CAF-039": 1,
+          "V61-EDU-013": 1,
+          "V61-EDU-021": 1,
+          "V61-EDU-026": 3,
+          "V61-EDU-036": 1,
+          "V61-EDU-037": 1,
+          "V61-EDU-039": 1,
+          "V61-EDU-041": 1,
+          "V61-GAM-003": 2,
+          "V61-GAM-016": 1,
+          "V61-GAM-033": 2,
+          "V61-GAM-040": 2,
+          "V61-HOM-001": 1,
+          "V61-HOM-002": 1,
+          "V61-HOM-017": 1,
+          "V61-HOM-023": 1,
+          "V61-HOM-024": 1,
+          "V61-HOM-025": 1,
+          "V61-HOM-027": 4,
+          "V61-HOM-029": 2,
+          "V61-HOM-030": 1,
+          "V61-HOM-031": 1,
+          "V61-HOM-032": 1,
+          "V61-HOM-034": 1,
+          "V61-OFF-001": 3,
+          "V61-OFF-006": 1,
+          "V61-OFF-007": 4,
+          "V61-OFF-010": 2,
+          "V61-OFF-018": 1,
+          "V61-OFF-022": 1,
+          "V61-OFF-025": 1,
+          "V61-OFF-032": 1,
+          "V61-OFF-033": 2,
+          "V61-OFF-035": 1,
+          "V61-OFF-036": 1,
+          "V61-OFF-037": 1,
+          "V61-OFF-040": 1,
+          "V61-OFF-043": 2,
+          "V61-STU-003": 1,
+          "V61-STU-012": 1,
+          "V61-STU-013": 1,
+          "V61-STU-014": 1,
+          "V61-STU-018": 2,
+          "V61-STU-023": 1,
+          "V61-STU-027": 1,
+          "V61-STU-036": 1,
+          "V61-STU-040": 2,
+          "V61-STU-043": 2,
+          "V63-OFF-001": 3
+        },
+        "source_relevance_score_mean": 47.0,
+        "ctech_reference_score_mean": 71.3
+      }
+    },
+    "v6_2": {
+      "all_160": {
+        "prompts": 160,
+        "devices": {
+          "cashmere": 40,
+          "elitebook": 40,
+          "magic": 40,
+          "tassel": 40
+        },
+        "banks": {
+          "cashmere": {
+            "laptop_BackRightCloseUp": 10,
+            "laptop_FrontCloseUp": 10,
+            "laptop_FrontLeftMedium": 10,
+            "laptop_FrontWide": 10
+          },
+          "elitebook": {
+            "laptop_BackRightCloseUp": 10,
+            "laptop_FrontCloseUp": 10,
+            "laptop_FrontLeftMedium": 10,
+            "laptop_FrontWide": 10
+          },
+          "magic": {
+            "printer_FrontCloseUp": 10,
+            "printer_FrontLeftMedium": 10,
+            "printer_FrontRightCloseUp": 10,
+            "printer_FrontWide": 10
+          },
+          "tassel": {
+            "printer_FrontCloseUp": 10,
+            "printer_FrontLeftMedium": 10,
+            "printer_FrontRightCloseUp": 10,
+            "printer_FrontWide": 10
+          }
+        },
+        "environments": {
+          "Café": 14,
+          "Creative Studio": 26,
+          "Education": 24,
+          "Gaming": 8,
+          "Home": 35,
+          "Office": 53
+        },
+        "references": {
+          "CT01": 32,
+          "CT02": 3,
+          "CT03": 26,
+          "CT04": 8,
+          "CT05": 1,
+          "CT06": 18,
+          "CT07": 6,
+          "CT09": 15,
+          "CT10": 12,
+          "CT12": 8,
+          "CT13": 2,
+          "CT14": 1,
+          "CT15": 7,
+          "CT16": 5,
+          "CT17": 9,
+          "CT18": 7
+        },
+        "source_relationships": {
+          "creative_departure": 40,
+          "source_adjacent": 50,
+          "source_grounded": 70
+        },
+        "prop_ids": {
+          "V61-CAF-001": 4,
+          "V61-CAF-005": 7,
+          "V61-CAF-006": 8,
+          "V61-CAF-007": 2,
+          "V61-CAF-009": 6,
+          "V61-CAF-011": 3,
+          "V61-CAF-013": 1,
+          "V61-CAF-014": 2,
+          "V61-CAF-021": 7,
+          "V61-CAF-022": 4,
+          "V61-CAF-024": 2,
+          "V61-CAF-030": 1,
+          "V61-CAF-033": 1,
+          "V61-CAF-035": 8,
+          "V61-CAF-036": 1,
+          "V61-CAF-040": 1,
+          "V61-CAF-042": 1,
+          "V61-CAF-043": 1,
+          "V61-EDU-009": 6,
+          "V61-EDU-011": 1,
+          "V61-EDU-013": 2,
+          "V61-EDU-014": 1,
+          "V61-EDU-021": 2,
+          "V61-EDU-030": 2,
+          "V61-EDU-031": 1,
+          "V61-EDU-032": 5,
+          "V61-EDU-034": 3,
+          "V61-EDU-036": 6,
+          "V61-EDU-037": 3,
+          "V61-EDU-039": 10,
+          "V61-EDU-041": 3,
+          "V61-EDU-042": 2,
+          "V61-EDU-043": 1,
+          "V61-GAM-003": 8,
+          "V61-GAM-024": 1,
+          "V61-GAM-025": 1,
+          "V61-GAM-028": 1,
+          "V61-GAM-033": 8,
+          "V61-GAM-035": 2,
+          "V61-GAM-038": 3,
+          "V61-GAM-040": 4,
+          "V61-GAM-042": 1,
+          "V61-HOM-001": 4,
+          "V61-HOM-002": 2,
+          "V61-HOM-003": 3,
+          "V61-HOM-005": 2,
+          "V61-HOM-006": 2,
+          "V61-HOM-012": 4,
+          "V61-HOM-013": 1,
+          "V61-HOM-015": 1,
+          "V61-HOM-017": 5,
+          "V61-HOM-019": 6,
+          "V61-HOM-020": 3,
+          "V61-HOM-024": 9,
+          "V61-HOM-025": 3,
+          "V61-HOM-026": 4,
+          "V61-HOM-027": 7,
+          "V61-HOM-028": 1,
+          "V61-HOM-029": 5,
+          "V61-HOM-030": 9,
+          "V61-HOM-031": 3,
+          "V61-HOM-032": 3,
+          "V61-HOM-034": 11,
+          "V61-HOM-036": 2,
+          "V61-HOM-038": 2,
+          "V61-OFF-001": 12,
+          "V61-OFF-004": 1,
+          "V61-OFF-006": 9,
+          "V61-OFF-007": 12,
+          "V61-OFF-008": 6,
+          "V61-OFF-009": 1,
+          "V61-OFF-010": 8,
+          "V61-OFF-013": 4,
+          "V61-OFF-018": 1,
+          "V61-OFF-019": 3,
+          "V61-OFF-021": 2,
+          "V61-OFF-022": 5,
+          "V61-OFF-024": 4,
+          "V61-OFF-025": 1,
+          "V61-OFF-026": 1,
+          "V61-OFF-029": 1,
+          "V61-OFF-030": 7,
+          "V61-OFF-031": 2,
+          "V61-OFF-032": 10,
+          "V61-OFF-033": 13,
+          "V61-OFF-034": 7,
+          "V61-OFF-036": 3,
+          "V61-OFF-037": 6,
+          "V61-OFF-040": 1,
+          "V61-OFF-041": 4,
+          "V61-OFF-042": 7,
+          "V61-OFF-043": 8,
+          "V61-STU-003": 7,
+          "V61-STU-005": 8,
+          "V61-STU-008": 3,
+          "V61-STU-009": 1,
+          "V61-STU-014": 2,
+          "V61-STU-015": 1,
+          "V61-STU-017": 2,
+          "V61-STU-018": 1,
+          "V61-STU-023": 3,
+          "V61-STU-024": 1,
+          "V61-STU-025": 1,
+          "V61-STU-026": 4,
+          "V61-STU-029": 1,
+          "V61-STU-030": 2,
+          "V61-STU-031": 1,
+          "V61-STU-035": 3,
+          "V61-STU-036": 4,
+          "V61-STU-037": 1,
+          "V61-STU-040": 6,
+          "V61-STU-041": 5,
+          "V61-STU-042": 1,
+          "V61-STU-043": 4,
+          "V61-STU-045": 1
+        },
+        "source_relevance_score_mean": 47.46875,
+        "ctech_reference_score_mean": 72.15
+      },
+      "selected_30": {
+        "prompts": 30,
+        "devices": {
+          "cashmere": 7,
+          "elitebook": 7,
+          "magic": 8,
+          "tassel": 8
+        },
+        "banks": {
+          "cashmere": {
+            "laptop_BackRightCloseUp": 1,
+            "laptop_FrontCloseUp": 2,
+            "laptop_FrontLeftMedium": 2,
+            "laptop_FrontWide": 2
+          },
+          "elitebook": {
+            "laptop_BackRightCloseUp": 1,
+            "laptop_FrontCloseUp": 2,
+            "laptop_FrontLeftMedium": 2,
+            "laptop_FrontWide": 2
+          },
+          "magic": {
+            "printer_FrontCloseUp": 2,
+            "printer_FrontLeftMedium": 2,
+            "printer_FrontRightCloseUp": 2,
+            "printer_FrontWide": 2
+          },
+          "tassel": {
+            "printer_FrontCloseUp": 2,
+            "printer_FrontLeftMedium": 2,
+            "printer_FrontRightCloseUp": 2,
+            "printer_FrontWide": 2
+          }
+        },
+        "environments": {
+          "Café": 4,
+          "Creative Studio": 3,
+          "Education": 5,
+          "Gaming": 2,
+          "Home": 5,
+          "Office": 11
+        },
+        "references": {
+          "CT01": 8,
+          "CT03": 3,
+          "CT04": 1,
+          "CT06": 5,
+          "CT07": 1,
+          "CT09": 3,
+          "CT12": 3,
+          "CT13": 1,
+          "CT14": 1,
+          "CT15": 1,
+          "CT17": 2,
+          "CT18": 1
+        },
+        "source_relationships": {
+          "creative_departure": 7,
+          "source_adjacent": 9,
+          "source_grounded": 14
+        },
+        "prop_ids": {
+          "V61-CAF-001": 2,
+          "V61-CAF-005": 3,
+          "V61-CAF-006": 3,
+          "V61-CAF-009": 2,
+          "V61-CAF-011": 1,
+          "V61-CAF-021": 2,
+          "V61-CAF-022": 1,
+          "V61-CAF-035": 2,
+          "V61-CAF-036": 1,
+          "V61-CAF-042": 1,
+          "V61-EDU-014": 1,
+          "V61-EDU-021": 1,
+          "V61-EDU-031": 1,
+          "V61-EDU-032": 2,
+          "V61-EDU-037": 1,
+          "V61-EDU-039": 1,
+          "V61-EDU-041": 1,
+          "V61-EDU-042": 2,
+          "V61-GAM-003": 2,
+          "V61-GAM-024": 1,
+          "V61-GAM-028": 1,
+          "V61-GAM-033": 2,
+          "V61-GAM-035": 1,
+          "V61-GAM-038": 1,
+          "V61-GAM-040": 1,
+          "V61-GAM-042": 1,
+          "V61-HOM-001": 1,
+          "V61-HOM-003": 1,
+          "V61-HOM-012": 1,
+          "V61-HOM-024": 1,
+          "V61-HOM-025": 1,
+          "V61-HOM-026": 1,
+          "V61-HOM-027": 1,
+          "V61-HOM-028": 1,
+          "V61-HOM-029": 3,
+          "V61-HOM-034": 2,
+          "V61-OFF-001": 2,
+          "V61-OFF-006": 1,
+          "V61-OFF-007": 4,
+          "V61-OFF-008": 1,
+          "V61-OFF-010": 2,
+          "V61-OFF-022": 1,
+          "V61-OFF-025": 1,
+          "V61-OFF-026": 1,
+          "V61-OFF-030": 1,
+          "V61-OFF-033": 4,
+          "V61-OFF-034": 2,
+          "V61-OFF-036": 2,
+          "V61-OFF-041": 1,
+          "V61-OFF-043": 2,
+          "V61-STU-003": 1,
+          "V61-STU-005": 1,
+          "V61-STU-026": 2,
+          "V61-STU-031": 1,
+          "V61-STU-043": 2
+        },
+        "source_relevance_score_mean": 48.833333333333336,
+        "ctech_reference_score_mean": 72.5
+      }
+    }
+  },
+  "coverage": {
+    "v6_3": {
+      "environments": {
+        "source_unique": 6,
+        "selected_unique": 6,
+        "fraction_covered": 1.0,
+        "missing": []
+      },
+      "prop_ids": {
+        "source_unique": 119,
+        "selected_unique": 59,
+        "fraction_covered": 0.4957983193277311,
+        "missing": [
+          "V61-CAF-027",
+          "V61-CAF-032",
+          "V61-CAF-034",
+          "V61-CAF-036",
+          "V61-CAF-040",
+          "V61-CAF-043",
+          "V61-EDU-007",
+          "V61-EDU-009",
+          "V61-EDU-029",
+          "V61-EDU-030",
+          "V61-EDU-031",
+          "V61-EDU-034",
+          "V61-EDU-043",
+          "V61-EDU-045",
+          "V61-GAM-024",
+          "V61-GAM-025",
+          "V61-GAM-028",
+          "V61-GAM-034",
+          "V61-GAM-035",
+          "V61-GAM-036",
+          "V61-HOM-005",
+          "V61-HOM-010",
+          "V61-HOM-011",
+          "V61-HOM-012",
+          "V61-HOM-013",
+          "V61-HOM-016",
+          "V61-HOM-019",
+          "V61-HOM-020",
+          "V61-HOM-026",
+          "V61-HOM-036",
+          "V61-HOM-037",
+          "V61-OFF-002",
+          "V61-OFF-003",
+          "V61-OFF-008",
+          "V61-OFF-013",
+          "V61-OFF-017",
+          "V61-OFF-019",
+          "V61-OFF-024",
+          "V61-OFF-029",
+          "V61-OFF-030",
+          "V61-OFF-034",
+          "V61-OFF-041",
+          "V61-OFF-042",
+          "V61-STU-001",
+          "V61-STU-002",
+          "V61-STU-005",
+          "V61-STU-008",
+          "V61-STU-016",
+          "V61-STU-017",
+          "V61-STU-025",
+          "V61-STU-026",
+          "V61-STU-031",
+          "V61-STU-034",
+          "V61-STU-037",
+          "V61-STU-039",
+          "V61-STU-041",
+          "V61-STU-044",
+          "V63-CAF-001",
+          "V63-EDU-001",
+          "V63-STU-002"
+        ]
+      },
+      "references": {
+        "source_unique": 15,
+        "selected_unique": 14,
+        "fraction_covered": 0.9333333333333333,
+        "missing": [
+          "CT18"
+        ]
+      }
+    },
+    "v6_2": {
+      "environments": {
+        "source_unique": 6,
+        "selected_unique": 6,
+        "fraction_covered": 1.0,
+        "missing": []
+      },
+      "prop_ids": {
+        "source_unique": 115,
+        "selected_unique": 55,
+        "fraction_covered": 0.4782608695652174,
+        "missing": [
+          "V61-CAF-007",
+          "V61-CAF-013",
+          "V61-CAF-014",
+          "V61-CAF-024",
+          "V61-CAF-030",
+          "V61-CAF-033",
+          "V61-CAF-040",
+          "V61-CAF-043",
+          "V61-EDU-009",
+          "V61-EDU-011",
+          "V61-EDU-013",
+          "V61-EDU-030",
+          "V61-EDU-034",
+          "V61-EDU-036",
+          "V61-EDU-043",
+          "V61-GAM-025",
+          "V61-HOM-002",
+          "V61-HOM-005",
+          "V61-HOM-006",
+          "V61-HOM-013",
+          "V61-HOM-015",
+          "V61-HOM-017",
+          "V61-HOM-019",
+          "V61-HOM-020",
+          "V61-HOM-030",
+          "V61-HOM-031",
+          "V61-HOM-032",
+          "V61-HOM-036",
+          "V61-HOM-038",
+          "V61-OFF-004",
+          "V61-OFF-009",
+          "V61-OFF-013",
+          "V61-OFF-018",
+          "V61-OFF-019",
+          "V61-OFF-021",
+          "V61-OFF-024",
+          "V61-OFF-029",
+          "V61-OFF-031",
+          "V61-OFF-032",
+          "V61-OFF-037",
+          "V61-OFF-040",
+          "V61-OFF-042",
+          "V61-STU-008",
+          "V61-STU-009",
+          "V61-STU-014",
+          "V61-STU-015",
+          "V61-STU-017",
+          "V61-STU-018",
+          "V61-STU-023",
+          "V61-STU-024",
+          "V61-STU-025",
+          "V61-STU-029",
+          "V61-STU-030",
+          "V61-STU-035",
+          "V61-STU-036",
+          "V61-STU-037",
+          "V61-STU-040",
+          "V61-STU-041",
+          "V61-STU-042",
+          "V61-STU-045"
+        ]
+      },
+      "references": {
+        "source_unique": 16,
+        "selected_unique": 12,
+        "fraction_covered": 0.75,
+        "missing": [
+          "CT02",
+          "CT05",
+          "CT10",
+          "CT16"
+        ]
+      }
+    }
+  },
+  "pair_keys": [
+    [
+      "cashmere",
+      "laptop_BackRightCloseUp",
+      8
+    ],
+    [
+      "cashmere",
+      "laptop_FrontCloseUp",
+      5
+    ],
+    [
+      "cashmere",
+      "laptop_FrontCloseUp",
+      6
+    ],
+    [
+      "cashmere",
+      "laptop_FrontLeftMedium",
+      3
+    ],
+    [
+      "cashmere",
+      "laptop_FrontLeftMedium",
+      4
+    ],
+    [
+      "cashmere",
+      "laptop_FrontWide",
+      9
+    ],
+    [
+      "cashmere",
+      "laptop_FrontWide",
+      10
+    ],
+    [
+      "elitebook",
+      "laptop_BackRightCloseUp",
+      2
+    ],
+    [
+      "elitebook",
+      "laptop_FrontCloseUp",
+      1
+    ],
+    [
+      "elitebook",
+      "laptop_FrontCloseUp",
+      8
+    ],
+    [
+      "elitebook",
+      "laptop_FrontLeftMedium",
+      1
+    ],
+    [
+      "elitebook",
+      "laptop_FrontLeftMedium",
+      8
+    ],
+    [
+      "elitebook",
+      "laptop_FrontWide",
+      7
+    ],
+    [
+      "elitebook",
+      "laptop_FrontWide",
+      10
+    ],
+    [
+      "magic",
+      "printer_FrontCloseUp",
+      2
+    ],
+    [
+      "magic",
+      "printer_FrontCloseUp",
+      9
+    ],
+    [
+      "magic",
+      "printer_FrontLeftMedium",
+      4
+    ],
+    [
+      "magic",
+      "printer_FrontLeftMedium",
+      7
+    ],
+    [
+      "magic",
+      "printer_FrontRightCloseUp",
+      1
+    ],
+    [
+      "magic",
+      "printer_FrontRightCloseUp",
+      5
+    ],
+    [
+      "magic",
+      "printer_FrontWide",
+      4
+    ],
+    [
+      "magic",
+      "printer_FrontWide",
+      9
+    ],
+    [
+      "tassel",
+      "printer_FrontCloseUp",
+      6
+    ],
+    [
+      "tassel",
+      "printer_FrontCloseUp",
+      7
+    ],
+    [
+      "tassel",
+      "printer_FrontLeftMedium",
+      1
+    ],
+    [
+      "tassel",
+      "printer_FrontLeftMedium",
+      6
+    ],
+    [
+      "tassel",
+      "printer_FrontRightCloseUp",
+      3
+    ],
+    [
+      "tassel",
+      "printer_FrontRightCloseUp",
+      7
+    ],
+    [
+      "tassel",
+      "printer_FrontWide",
+      2
+    ],
+    [
+      "tassel",
+      "printer_FrontWide",
+      7
+    ]
+  ],
+  "output_sha256": {
+    "selected_v6_3_30.json": "0a9b726ff218c83e973cfa931ddfaff8fb55c6bdad244da968108da28ba20af4",
+    "selected_v6_2_30.json": "a9f792fe793e9e2beaf2606aa16cf47bce1cf3779f56d1f2d7d4c1cdb5aa322d",
+    "selected_v6_3_30.txt": "42c922f1e7293e087dec413d09e5a42bd9899f4ca4fc971a6d09b4a4be70b1a3",
+    "selected_v6_2_30.txt": "a95f6ee4ebdf4e3e44ae356bb716729acd378fa03888e41b1e3ffa12744c2922"
+  }
+}

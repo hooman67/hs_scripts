@@ -1,0 +1,36 @@
+visibility: public
+public:
+  files:
+  - context.py
+  - circuit_breaker/types.py
+  - types.py
+  - generator_common/types.py
+  - preview_image_generator/types.py
+  - preview_prompt_expander/types.py
+  - image_layer_generator/types.py
+  - transcend_communication/types.py
+  deps:
+  - colligo.base
+  - colligo.models.agentic_design.graphical_processor[public]
+  - colligo.models.agentic_design.text_backing_shape_detection[public]
+  - colligo.models.agentic_design.text_extraction[public]
+  - colligo.models.agentic_design.text_processor[public]
+  - pydantic
+deps:
+- colligo.data
+- colligo.external_services.entitlements
+- colligo.external_services.ims
+- colligo.httpx
+- colligo.models.agentic_design.common
+- colligo.models.agentic_design.text_extraction
+- colligo.models.agentic_design.text_processor
+- colligo.models.ffent.multiedit.components
+- numpy
+- opencv-contrib-python-headless
+- pillow
+- pybreaker
+- pyyaml
+- requests-toolbelt
+- scikit-image
+exclude:
+- "..."

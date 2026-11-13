@@ -1,0 +1,345 @@
+{
+  "schema_version": "hp-position-flex-row-provenance-v23-pilot",
+  "experiment_id": "hp-position-flex-v23-all-view-translation-four-row-pilot",
+  "row_slug": "cashmere__laptop_FrontWide__p1",
+  "job_id": "cashmere__laptop_FrontWide__p1__outer_job_1",
+  "outer_attempt": 1,
+  "submission_request": {
+    "rowSlug": "cashmere__laptop_FrontWide__p1",
+    "outerAttempt": 1
+  },
+  "submission_request_sha256": "c73577e6592a8822bc96a5055875294b17834a30b8ffd911048d404af6c4b6ea",
+  "row_id": "cashmere__laptop_FrontWide::p1",
+  "record": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/cashmere__laptop_FrontWide__p1.json",
+    "sha256": "cd6ba1b708bf85b869eaf38c60f18576bf5bfe50ca91c36a083b9a5b565365c6"
+  },
+  "prompt_sha256": "2a9154658fbdb300262b94927d747407b35e959551112c68e29d6945f93a62af",
+  "control_job_id": "20261105T202456Z_a0aecc9d",
+  "input_artifacts": {
+    "product.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/cashmere__laptop_FrontWide__p1/product.png",
+      "sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T202456Z_a0aecc9d/artifacts/hp16_product.png"
+    },
+    "reference.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/cashmere__laptop_FrontWide__p1/reference.png",
+      "sha256": "d48c4c23b7fd48fd447001371be05fd1666d379da3a677db24be44be1db2e1fd",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T202456Z_a0aecc9d/artifacts/hp16_reference.png"
+    },
+    "guide.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/cashmere__laptop_FrontWide__p1/guide.png",
+      "sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T202456Z_a0aecc9d/artifacts/hp16_geometry_guide.png"
+    }
+  },
+  "pipeline_version": "unified-blue-scale-v23-all-view-rigid-translation-twin-camera-guide-only-no-edit-mask",
+  "wrapper_version": "v23-four-row-pilot-stop-on-first-failure-v1",
+  "source_hashes": {
+    "hp3p/prompts/system_3p.txt": "324ce0e449804bc0d17ac0cf5ed10587716bc9d7e6ef72b9a91e439745b6aaec",
+    "hp3p/prompts/system_3p_fixed_position.txt": "67e4d817a5a203912116bb99afbd6c4511d9a5c537b241cc6e980e34e75b1118",
+    "hp3p/pipeline.py": "dde47ae75c6023a020ea26c405c5cf8e78183fe2de4e3219a5c279eb804b6ced",
+    "hp3p/invariants.py": "8c1a8204d27eeb3ba922d6d9519113da7beeff9368301bcc9f8c9a7ec2fb2665",
+    "hp3p/geometry.py": "f9d0f3a395624a150f9a9fed8c836394b66f041f6e212dc87c8b1a2322514a95",
+    "hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+    "hp3p/reference_blue.py": "f36098543e208029226ae3b04ffd22c39edf7e168ab49dd5868e2185bd90661d",
+    "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3"
+  },
+  "stage_b_attempts": [
+    {
+      "attempt": 1,
+      "system_sha256": "50eda1a4609022f6f21fc8dd903cf9fe12e072060e45947525669a9b3f03c3b5",
+      "text_sha256": "17eb7bab62887a468c22d967e5207638d4542979a56ac3a178e28317fc6315a2",
+      "request_sha256": "47463b6020bb2c8478b6acd78140a9ba88ad2bb319006b8a9d10f4c0899e6a7b",
+      "response_sha256": "b6ba56f114392ca7731ef0cee5747f842690617766a83578bf6949139ed5f1ee",
+      "executable_prompt_sha256": "3de92f671ae564e57d3dd3aeb669ec27557f5f738f99002940c7db7882eaf8f2"
+    }
+  ],
+  "image_calls": 1,
+  "product_invariant_guard": {
+    "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+    "attempts": [
+      {
+        "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+        "fixed_position": false,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.5,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          687,
+          737,
+          1344,
+          1224
+        ],
+        "matches": 54,
+        "inliers": 45,
+        "inlier_ratio": 0.8333333333333334,
+        "full_affine_matrix": [
+          [
+            0.9962032700754837,
+            -0.006273723113614525,
+            9.549106709132367
+          ],
+          [
+            0.0014116297431172478,
+            1.006887087071523,
+            -8.275487015423312
+          ]
+        ],
+        "partial_affine_matrix": [
+          [
+            1.0000155514978797,
+            -0.0026959337381695127,
+            2.536736274951844
+          ],
+          [
+            0.0026959337381695127,
+            1.0000155514978797,
+            -2.8370126462537493
+          ]
+        ],
+        "partial_inliers": 48,
+        "singular_values": [
+          1.0074216195316552,
+          0.9956834809420706
+        ],
+        "anisotropy_ratio": 1.0117890261456166,
+        "rotation_deg": 0.21982838693278736,
+        "column_shear_cos": 0.00481370295632294,
+        "residual_median_px": 0.9993122098662599,
+        "residual_p95_px": 2.7642151347776873,
+        "translation_only_residual_median_px": 0.9907370209693909,
+        "translation_only_residual_p95_px": 3.351677656173706,
+        "source_span_x_fraction": 0.7854053974151611,
+        "source_span_y_fraction": 0.5506961345672607,
+        "source_quadrants": 4,
+        "source_hull_fraction": 0.25138118312232394,
+        "transformed_product_corners_px": [
+          [
+            689.3170193162558,
+            734.7700857898107
+          ],
+          [
+            1343.8225677558485,
+            735.6975265310386
+          ],
+          [
+            1340.7672645995183,
+            1226.0515379348703
+          ],
+          [
+            686.2617161599255,
+            1225.1240971936422
+          ]
+        ],
+        "corners_in_frame": true,
+        "translation_x_px": -0.242431640625,
+        "translation_y_px": -0.16717529296875,
+        "final_product_bounds_px": [
+          686.757568359375,
+          736.8328247070312,
+          1343.757568359375,
+          1223.832763671875
+        ],
+        "rigid_transformed_product_corners_px": [
+          [
+            686.757568359375,
+            736.8328247070312
+          ],
+          [
+            1343.757568359375,
+            736.8328247070312
+          ],
+          [
+            1343.757568359375,
+            1223.832763671875
+          ],
+          [
+            686.757568359375,
+            1223.832763671875
+          ]
+        ],
+        "checks": {
+          "inliers": true,
+          "inlier_ratio": true,
+          "singular_min": true,
+          "singular_max": true,
+          "anisotropy": true,
+          "rotation": true,
+          "shear": true,
+          "residual_median": true,
+          "residual_p95": true,
+          "translation_only_residual_median": true,
+          "translation_only_residual_p95": true,
+          "span_x": true,
+          "span_y": true,
+          "quadrants": true,
+          "hull": true,
+          "corners": true
+        },
+        "reasons": [],
+        "verdict": "pass"
+      }
+    ],
+    "selected_attempt": 1,
+    "selected_localization": {
+      "translation_x_px": -0.242431640625,
+      "translation_y_px": -0.16717529296875,
+      "final_product_bounds_px": [
+        686.757568359375,
+        736.8328247070312,
+        1343.757568359375,
+        1223.832763671875
+      ]
+    }
+  },
+  "calls": [
+    {
+      "kind": "selection_replay",
+      "response_sha256": "4db4aa76c49b70a403a55191105d595039a63ff6d786d80cd2a94f9523dbd7ba"
+    },
+    {
+      "kind": "geometry_replay",
+      "response_sha256": "93cde24d3e5671afa1881a1b3f32a5ee41e8f0a76a63824177a6ce7814cc9dbc"
+    },
+    {
+      "kind": "astra_write",
+      "attempt": 1,
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "system_sha256": "50eda1a4609022f6f21fc8dd903cf9fe12e072060e45947525669a9b3f03c3b5",
+      "text_sha256": "17eb7bab62887a468c22d967e5207638d4542979a56ac3a178e28317fc6315a2",
+      "images_sha256": [
+        "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+        "d48c4c23b7fd48fd447001371be05fd1666d379da3a677db24be44be1db2e1fd",
+        "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446"
+      ],
+      "schema_sha256": "7a7fc445f534baf5eec4798c34c54e14f83dd5b2197f4ccb115d8b8c68f0d93b",
+      "response_sha256": "2441992608c4e55666fcd99e20d5b176353526119810871990d81433bd775251",
+      "usage": {
+        "completion_tokens": 1046,
+        "prompt_tokens": 13910,
+        "total_tokens": 14956,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 58,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "attempt": 1,
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "prompt_sha256": "3de92f671ae564e57d3dd3aeb669ec27557f5f738f99002940c7db7882eaf8f2",
+      "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "mask": false,
+      "output_sha256": "ccd55cdbac0de006d4fd7ed5dd748b96ee135320747d6c47009cfec2e978c37b"
+    }
+  ],
+  "artifacts": {
+    "pipeline/geometry_guide.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/geometry_guide.png",
+      "sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "bytes": 290714
+    },
+    "pipeline/geometry_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/geometry_request.json",
+      "sha256": "ebd88cc45e47ad0a88662b109fa4e6a691083d628108a018df15ec54b6f307af",
+      "bytes": 27341
+    },
+    "pipeline/geometry_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/geometry_response.json",
+      "sha256": "e00c9aca32cfbc1f35b0e98007d48337976e56950dcb8e09ed68ee6cae4a6be6",
+      "bytes": 1032
+    },
+    "pipeline/geometry_text.txt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/geometry_text.txt",
+      "sha256": "ed0b63033f36242622f041560d1a88ee87741198bef9c02b47e05b0e5d266407",
+      "bytes": 2083
+    },
+    "pipeline/gpt_1.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/gpt_1.png",
+      "sha256": "ccd55cdbac0de006d4fd7ed5dd748b96ee135320747d6c47009cfec2e978c37b",
+      "bytes": 5062027
+    },
+    "pipeline/image_request_attempt_1.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/image_request_attempt_1.json",
+      "sha256": "14d6ecbe7172fcce210f5e9a84005f57ab21f9164a1ef9d14ee962ba85a87d09",
+      "bytes": 12001
+    },
+    "pipeline/input.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/input.png",
+      "sha256": "14c10ff4505bb3152945fb47d4681e96c9b9ff8d0c77637f788759beafec5446",
+      "bytes": 292691
+    },
+    "pipeline/mask.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/mask.png",
+      "sha256": "dff186a1a20a2da9043675e319db295e9f7ff1f79ad0de3c1bbc837408a58645",
+      "bytes": 18705
+    },
+    "pipeline/ours.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/ours.png",
+      "sha256": "ccd55cdbac0de006d4fd7ed5dd748b96ee135320747d6c47009cfec2e978c37b",
+      "bytes": 5062027
+    },
+    "pipeline/product_invariant_attempt_1.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/product_invariant_attempt_1.json",
+      "sha256": "e1ca5578f81409baa123cc188d8de2e87e76f4ff7c40fe78afa6e597c09cecbf",
+      "bytes": 3041
+    },
+    "pipeline/ref_2.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/ref_2.png",
+      "sha256": "d48c4c23b7fd48fd447001371be05fd1666d379da3a677db24be44be1db2e1fd",
+      "bytes": 1102270
+    },
+    "pipeline/result.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/result.json",
+      "sha256": "68a17ea65f43581bf3ec3382c28c25b220a311b40023d6d65bcec9b82b4596b3",
+      "bytes": 25251
+    },
+    "pipeline/stage_b_attempt_1_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/stage_b_attempt_1_request.json",
+      "sha256": "4b1f507f15ad77c6ce71c5810bacfc6072f5d00382ab4f3823c805e08ee3d536",
+      "bytes": 32932
+    },
+    "pipeline/stage_b_attempt_1_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontWide__p1__outer_job_1/stage_b_attempt_1_response.json",
+      "sha256": "258a363fbbc96c9dd5b3adb5385909570bab9b7e5d64355c8a39be9aa63fd9f9",
+      "bytes": 4941
+    },
+    "job/calls.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/jobs/cashmere__laptop_FrontWide__p1__outer_job_1/calls.json",
+      "sha256": "fbc0a8c2bb2285bb12be7f81c4ea026c05fd3a4279b1d3986b98053b78a3fc25",
+      "bytes": 1912
+    },
+    "job/submission_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/jobs/cashmere__laptop_FrontWide__p1__outer_job_1/submission_request.json",
+      "sha256": "da38e824e84147b3a4e66ef754bbecba81373e6ccced0c37c0580be26b80f801",
+      "bytes": 71
+    }
+  }
+}

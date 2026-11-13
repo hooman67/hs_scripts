@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HP V6.2 / V6.3 / V6.4 - exact PR 4417 / 4523 comparison</title>
+  <link rel="stylesheet" href="./style.v6_4_20261110.css">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading">Loading authenticated comparison...</div>
+  <main id="content" class="hidden">
+    <header>
+      <h1>HP V6.2 / V6.3 / V6.4: exact pipeline comparison</h1>
+      <p id="status"></p>
+      <p>30 rank-paired rows, five pipeline/writer columns (150 generated images). V6.4 / PR 4523 - V15.7 shapes is the new rightmost column, reusing the completed V6.4 study. The additional 30 old images are a <strong>historical V20 shape prototype, not PR 4523</strong>. Rank pairing is not semantic matching; this is a purposive sample, not a population-quality estimate.</p>
+      <p>Each output exposes its actual prepared product, geometry guide, Astra style reference and input evidence. Style references and stochastic outputs are not pair-controlled.</p>
+      <nav>
+        <button data-tab="comparison">Image comparison</button>
+        <button data-tab="prompts">All 160 V6.3 prompts</button>
+        <button data-tab="judges">Historical V3 / V3.1 judges</button>
+        <button id="refresh">Refresh results</button>
+        <input id="search" aria-label="Filter rows" placeholder="Filter device, camera, environment, prompt...">
+      </nav>
+      <p class="downloads">
+        Download: <a href="../data/prompts_all_v6_3_160.json">V6.3 all160 JSON</a> /
+        <a href="../data/prompts_all_v6_3_160.txt">TXT</a> |
+        <a href="../data/selected_v6_3_30.json">V6.3 selected30 JSON</a> /
+        <a href="../data/selected_v6_3_30.txt">TXT</a> |
+        <a href="../data/selected_v6_2_30.json">matched V6.2 selected30 JSON</a> /
+        <a href="../data/selected_v6_2_30.txt">TXT</a> |
+        <a href="../../hp_lifestyle_v6_4_pr4523_30_20261110/data/selected_v6_4_30.json">V6.4 selected30 JSON</a> /
+        <a href="../../hp_lifestyle_v6_4_pr4523_30_20261110/data/selected_v6_4_30.txt">TXT</a> |
+        <a href="../data/selection_report.json">Selection audit</a> |
+        <a href="../data/study_manifest.json">Immutable study lineage</a> |
+        <a href="../asset_manifest.json">Original asset checksums</a> |
+        <a href="../data/comparison_v6_4_20261110_assets.json">Five-column update checksums</a>
+      </p>
+    </header>
+    <div id="error" role="alert"></div>
+    <section id="comparison"></section>
+    <section id="prompts" class="hidden"></section>
+    <section id="judges" class="hidden"></section>
+  </main>
+  <dialog id="lightbox"><button id="closeImage">Close</button><img id="largeImage" alt="Full-size generation"></dialog>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script>
+  <script src="./main.v6_4_20261110.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => initializeIMS());</script>
+</body>
+</html>

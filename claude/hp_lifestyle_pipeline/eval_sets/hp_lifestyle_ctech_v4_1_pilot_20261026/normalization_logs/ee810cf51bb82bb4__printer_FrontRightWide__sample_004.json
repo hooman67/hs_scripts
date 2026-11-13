@@ -1,0 +1,622 @@
+{
+  "version": "v4.1-deterministic-finalizer-v1",
+  "algorithm": {
+    "empty_evidence": "zero all components and total; creative_departure",
+    "all_candidates": "total equals declared component sum",
+    "ctech_score": "clamp to the fixed band for the model-declared C-Tech relationship; never change relationship or text",
+    "ctech_changes": "replace clause-level diffs with one deterministic relationship summary; preserve ctech_explanation",
+    "ranking": "stable descending C-Tech reference score, then source relevance, then p1..p30",
+    "text_edits": "none",
+    "citation_edits": "repair a path only when its quote is verified in the declared source-message field"
+  },
+  "raw_output_semantic_sha256": "567561cecccb4fc673f897853d565cc6869f5c765cca676a317e57238906c799",
+  "normalized_output_semantic_sha256": "ff61977195d697ecfa703ed2b42dae1cd9226cc7e35811cc2f43ff630f0a9cf2",
+  "changed_candidate_count": 2,
+  "changes": [
+    {
+      "original_id": "p8",
+      "reasons": [
+        "ctech_score_clamped_to_declared_relationship_band"
+      ],
+      "original_fields": {
+        "ctech_reference_score": 80,
+        "source_relevance_score": 40,
+        "score_components": {
+          "setting": 20,
+          "activity": 10,
+          "materials": 5,
+          "use_context": 5
+        },
+        "relationship": "source_adjacent",
+        "explanation": "The office, papers, and tidy work context are compatible with business paperwork, though not specific enough for forms or records."
+      },
+      "normalized_fields": {
+        "ctech_reference_score": 79,
+        "source_relevance_score": 40,
+        "score_components": {
+          "setting": 20,
+          "activity": 10,
+          "materials": 5,
+          "use_context": 5
+        },
+        "relationship": "source_adjacent",
+        "explanation": "The office, papers, and tidy work context are compatible with business paperwork, though not specific enough for forms or records."
+      }
+    },
+    {
+      "original_id": "p26",
+      "reasons": [
+        "empty_evidence_forced_zero"
+      ],
+      "original_fields": {
+        "ctech_reference_score": 64,
+        "source_relevance_score": 5,
+        "score_components": {
+          "setting": 0,
+          "activity": 0,
+          "materials": 5,
+          "use_context": 0
+        },
+        "relationship": "creative_departure",
+        "explanation": "The scene is primarily a gaming departure; the notebook is only a generic work material and no source-specific task is visible."
+      },
+      "normalized_fields": {
+        "ctech_reference_score": 64,
+        "source_relevance_score": 0,
+        "score_components": {
+          "setting": 0,
+          "activity": 0,
+          "materials": 0,
+          "use_context": 0
+        },
+        "relationship": "creative_departure",
+        "explanation": "No cited source evidence: scored 0/100 by validation. The scene is primarily a gaming departure; the notebook is only a generic work material and no source-specific task is visible."
+      }
+    }
+  ],
+  "ctech_change_summary_count": 30,
+  "ctech_change_summaries": [
+    {
+      "original_id": "p1",
+      "original_ctech_changes": [
+        "Deleted: \"framed artwork, and refined workplace décor\".",
+        "Deleted: \"Layered office furnishings and architectural details create natural depth.\""
+      ],
+      "normalized_ctech_changes": [
+        "Camera-fit edit of CT01; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p2",
+      "original_ctech_changes": [
+        "Deleted: \"plants, seating, and large windows\"."
+      ],
+      "normalized_ctech_changes": [
+        "Camera-fit edit of CT07; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p3",
+      "original_ctech_changes": [
+        "Deleted: \"pen, glasses, small plate with pastry crumbs, and a water glass\"."
+      ],
+      "normalized_ctech_changes": [
+        "Camera-fit edit of CT08; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p4",
+      "original_ctech_changes": [
+        "Deleted: \"a side cabinet, plants, bookshelves, windows, and layered furnishings\".",
+        "Added: \"bookshelves\"."
+      ],
+      "normalized_ctech_changes": [
+        "Camera-fit edit of CT09; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p5",
+      "original_ctech_changes": [
+        "Deleted: \"pen\".",
+        "Deleted: \"coffee mug\".",
+        "Deleted: \"a comfortable chair, houseplants, shelving, and subtle residential furnishings\"."
+      ],
+      "normalized_ctech_changes": [
+        "Camera-fit edit of CT04; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p6",
+      "original_ctech_changes": [
+        "Deleted: \"spiral pad\".",
+        "Deleted: \"pens\".",
+        "Deleted: \"with a comfortable chair, slightly overgrown houseplants, full shelving, books, and familiar residential objects throughout the room\"."
+      ],
+      "normalized_ctech_changes": [
+        "Camera-fit edit of CT05; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p7",
+      "original_ctech_changes": [
+        "Deleted: \"Desks\".",
+        "Deleted: \"framed artwork, and refined workplace décor\".",
+        "Deleted: \"Repeating workstations and architectural details emphasize depth and an expansive floor plan.\""
+      ],
+      "normalized_ctech_changes": [
+        "Camera-fit edit of CT02; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p8",
+      "original_ctech_changes": [
+        "Deleted: \"multiple workstations\".",
+        "Substituted: \"simple desks\" -> \"a simple desk\".",
+        "Deleted: \"ergonomic chairs\".",
+        "Deleted: \"plants\".",
+        "Substituted: \"subtle personal touches on the workstations\" -> \"subtle personal touches on the work surface\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT03; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p9",
+      "original_ctech_changes": [
+        "Substituted: \"simple furniture\" -> \"a simple work surface\".",
+        "Deleted: \"plants\".",
+        "Deleted: \"casually arranged everyday objects\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT06; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p10",
+      "original_ctech_changes": [
+        "Substituted: \"simple desks\" -> \"a simple desk\".",
+        "Deleted: \"plants\".",
+        "Deleted: \"casually arranged creative materials\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT10; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p11",
+      "original_ctech_changes": [
+        "Deleted: \"multiple workstations\".",
+        "Substituted: \"simple desks\" -> \"a simple desk\".",
+        "Deleted: \"ergonomic chairs\".",
+        "Substituted: \"notebooks, papers\" -> \"forms, records\".",
+        "Deleted: \"plants\".",
+        "Substituted: \"subtle personal touches on the workstations\" -> \"subtle personal touches on the work surface\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT03; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p12",
+      "original_ctech_changes": [
+        "Substituted: \"a notebook, spiral pad, pen, stack of papers, and coffee mug\" -> \"household forms, records, and a stack of color documents\".",
+        "Deleted: \"a comfortable chair, houseplants, shelving, and subtle residential furnishings\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT04; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p13",
+      "original_ctech_changes": [
+        "Deleted: \"spiral pad\".",
+        "Substituted: \"loose papers\" -> \"household records, and loose forms\".",
+        "Deleted: \"pens\".",
+        "Deleted: \"and a half-finished coffee\".",
+        "Deleted: \"with a comfortable chair, slightly overgrown houseplants, full shelving, books, and familiar residential objects throughout the room\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT05; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p14",
+      "original_ctech_changes": [
+        "Substituted: \"multiple workstations extending deep into the space\" -> \"regular document queues on a desk\".",
+        "Deleted: \"Desks\".",
+        "Deleted: \"framed artwork, and refined workplace décor\".",
+        "Deleted: \"Repeating workstations and architectural details emphasize depth and an expansive floor plan.\""
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT02; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p15",
+      "original_ctech_changes": [
+        "Added: \"holding forms and records\".",
+        "Deleted: \"framed artwork, and refined workplace décor\".",
+        "Deleted: \"Layered office furnishings and architectural details create natural depth.\""
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT01; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p16",
+      "original_ctech_changes": [
+        "Substituted: \"notebook, loose papers\" -> \"loose forms, and color documents\".",
+        "Deleted: \"pen, glasses, small plate with pastry crumbs, and a water glass\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT08; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p17",
+      "original_ctech_changes": [
+        "Substituted: \"coffee cup\" -> \"color documents\".",
+        "Deleted: \"plants, seating, and large windows\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT07; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p18",
+      "original_ctech_changes": [
+        "Substituted: \"design materials\" -> \"color materials\".",
+        "Deleted: \"a side cabinet, plants, bookshelves, windows, and layered furnishings\".",
+        "Added: \"bookshelves\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT09; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p19",
+      "original_ctech_changes": [
+        "Substituted: \"simple desks\" -> \"a simple desk\".",
+        "Substituted: \"papers\" -> \"color documents\".",
+        "Deleted: \"plants\".",
+        "Deleted: \"casually arranged creative materials\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT10; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p20",
+      "original_ctech_changes": [
+        "Substituted: \"simple furniture\" -> \"a simple work surface\".",
+        "Deleted: \"books\".",
+        "Substituted: \"notebooks, papers\" -> \"everyday admin forms, records, and papers\".",
+        "Deleted: \"plants\".",
+        "Deleted: \"casually arranged everyday objects\"."
+      ],
+      "normalized_ctech_changes": [
+        "Close adaptation of CT06; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p21",
+      "original_ctech_changes": [
+        "Environment: \"Home\" -> \"Education\".",
+        "Substituted: \"A modern home workspace\" -> \"A modern classroom preparation area\".",
+        "Substituted: \"a wooden desk holding a notebook, spiral pad, pen, stack of papers, and coffee mug\" -> \"a wooden table holding a notebook, pen, and handouts\".",
+        "Substituted: \"Large windows, soft curtains, a comfortable chair, houseplants, shelving, and subtle residential furnishings extend throughout the room\" -> \"Shelving and pinned papers extend into the background with warm natural light\".",
+        "Added: \"warm natural light\"."
+      ],
+      "normalized_ctech_changes": [
+        "Extended CT04 into Education; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p22",
+      "original_ctech_changes": [
+        "Environment: \"Office\" -> \"Education\".",
+        "Substituted: \"A bright, open modern corporate office\" -> \"A bright library study area\".",
+        "Deleted: \"multiple workstations\".",
+        "Substituted: \"simple desks\" -> \"a simple table\".",
+        "Deleted: \"ergonomic chairs\".",
+        "Substituted: \"notebooks, papers\" -> \"handouts, records, and a notebook\".",
+        "Deleted: \"plants\".",
+        "Deleted: \"subtle personal touches on the workstations\"."
+      ],
+      "normalized_ctech_changes": [
+        "Extended CT03 into Education; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p23",
+      "original_ctech_changes": [
+        "Environment: \"Home\" -> \"Gaming\".",
+        "Substituted: \"A modern home workspace\" -> \"A modern home gaming nook\".",
+        "Substituted: \"simple furniture\" -> \"a simple table\".",
+        "Deleted: \"books\".",
+        "Substituted: \"notebooks, papers\" -> \"a game controller, notebook, and papers\".",
+        "Deleted: \"plants\".",
+        "Deleted: \"casually arranged everyday objects\"."
+      ],
+      "normalized_ctech_changes": [
+        "Extended CT06 into Gaming; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p24",
+      "original_ctech_changes": [
+        "Environment: \"Home\" -> \"Gaming\".",
+        "Substituted: \"A lived-in home workspace\" -> \"A lived-in home gaming nook\".",
+        "Substituted: \"a wooden desk holding an open notebook, spiral pad, loose papers, pens, and a half-finished coffee\" -> \"a wooden table holding a game controller, loose papers, and a half-finished coffee\".",
+        "Deleted: \"large windows and\".",
+        "Deleted: \"with a comfortable chair, slightly overgrown houseplants, full shelving, books, and familiar residential objects throughout the room\"."
+      ],
+      "normalized_ctech_changes": [
+        "Extended CT05 into Gaming; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p25",
+      "original_ctech_changes": [
+        "Environment: \"Creative Studio\" -> \"Education\".",
+        "Substituted: \"A bright, modern creative office\" -> \"A bright, modern classroom preparation area\".",
+        "Substituted: \"simple desks\" -> \"a simple table\".",
+        "Substituted: \"papers, books\" -> \"handouts, and color materials\".",
+        "Deleted: \"plants\".",
+        "Deleted: \"casually arranged creative materials\"."
+      ],
+      "normalized_ctech_changes": [
+        "Extended CT10 into Education; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p26",
+      "original_ctech_changes": [
+        "Environment: \"Café\" -> \"Gaming\".",
+        "Substituted: \"café table\" -> \"gaming table\".",
+        "Substituted: \"pen\" -> \"game controller\".",
+        "Substituted: \"A modern neighborhood café\" -> \"A relaxed home nook\".",
+        "Deleted: \"plants, seating, and large windows\"."
+      ],
+      "normalized_ctech_changes": [
+        "Extended CT07 into Gaming; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p27",
+      "original_ctech_changes": [
+        "Environment: \"Café\" -> \"Office\".",
+        "Substituted: \"coffee shop workspace\" -> \"office break workspace\".",
+        "Substituted: \"notebook, loose papers\" -> \"loose forms, and records\".",
+        "Deleted: \"pen, glasses, small plate with pastry crumbs, and a water glass\"."
+      ],
+      "normalized_ctech_changes": [
+        "Extended CT08 into Office; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p28",
+      "original_ctech_changes": [
+        "Environment: \"Creative Studio\" -> \"Home\".",
+        "Substituted: \"A modern creative office\" -> \"A modern home workspace\".",
+        "Substituted: \"design materials\" -> \"color documents\".",
+        "Substituted: \"Framed artwork, a side cabinet, plants, bookshelves, windows, and layered furnishings\" -> \"Shelving and houseplants\"."
+      ],
+      "normalized_ctech_changes": [
+        "Extended CT09 into Home; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p29",
+      "original_ctech_changes": [
+        "Environment: \"Café\" -> \"Education\".",
+        "Substituted: \"café table\" -> \"library table\".",
+        "Substituted: \"a notebook\" -> \"handouts\".",
+        "Substituted: \"coffee cup\" -> \"records\".",
+        "Substituted: \"A modern neighborhood café\" -> \"A quiet study area\".",
+        "Substituted: \"artwork\" -> \"pinned notices\".",
+        "Deleted: \"plants, seating, and large windows\"."
+      ],
+      "normalized_ctech_changes": [
+        "Extended CT07 into Education; see ctech_explanation."
+      ]
+    },
+    {
+      "original_id": "p30",
+      "original_ctech_changes": [
+        "Environment: \"Creative Studio\" -> \"Gaming\".",
+        "Substituted: \"A bright, modern creative office\" -> \"A bright, modern gaming hobby nook\".",
+        "Substituted: \"simple desks\" -> \"a simple table\".",
+        "Substituted: \"sketchbooks\" -> \"a game controller, sketchbook\".",
+        "Deleted: \"books\".",
+        "Deleted: \"plants\".",
+        "Deleted: \"casually arranged creative materials\"."
+      ],
+      "normalized_ctech_changes": [
+        "Extended CT10 into Gaming; see ctech_explanation."
+      ]
+    }
+  ],
+  "id_map": [
+    {
+      "original_id": "p1",
+      "normalized_id": "p1",
+      "original_rank": 1,
+      "normalized_rank": 1
+    },
+    {
+      "original_id": "p2",
+      "normalized_id": "p2",
+      "original_rank": 2,
+      "normalized_rank": 2
+    },
+    {
+      "original_id": "p3",
+      "normalized_id": "p3",
+      "original_rank": 3,
+      "normalized_rank": 3
+    },
+    {
+      "original_id": "p4",
+      "normalized_id": "p4",
+      "original_rank": 4,
+      "normalized_rank": 4
+    },
+    {
+      "original_id": "p5",
+      "normalized_id": "p5",
+      "original_rank": 5,
+      "normalized_rank": 5
+    },
+    {
+      "original_id": "p6",
+      "normalized_id": "p6",
+      "original_rank": 6,
+      "normalized_rank": 6
+    },
+    {
+      "original_id": "p7",
+      "normalized_id": "p7",
+      "original_rank": 7,
+      "normalized_rank": 7
+    },
+    {
+      "original_id": "p9",
+      "normalized_id": "p8",
+      "original_rank": 9,
+      "normalized_rank": 8
+    },
+    {
+      "original_id": "p8",
+      "normalized_id": "p9",
+      "original_rank": 8,
+      "normalized_rank": 9
+    },
+    {
+      "original_id": "p10",
+      "normalized_id": "p10",
+      "original_rank": 10,
+      "normalized_rank": 10
+    },
+    {
+      "original_id": "p12",
+      "normalized_id": "p11",
+      "original_rank": 12,
+      "normalized_rank": 11
+    },
+    {
+      "original_id": "p11",
+      "normalized_id": "p12",
+      "original_rank": 11,
+      "normalized_rank": 12
+    },
+    {
+      "original_id": "p13",
+      "normalized_id": "p13",
+      "original_rank": 13,
+      "normalized_rank": 13
+    },
+    {
+      "original_id": "p14",
+      "normalized_id": "p14",
+      "original_rank": 14,
+      "normalized_rank": 14
+    },
+    {
+      "original_id": "p15",
+      "normalized_id": "p15",
+      "original_rank": 15,
+      "normalized_rank": 15
+    },
+    {
+      "original_id": "p16",
+      "normalized_id": "p16",
+      "original_rank": 16,
+      "normalized_rank": 16
+    },
+    {
+      "original_id": "p17",
+      "normalized_id": "p17",
+      "original_rank": 17,
+      "normalized_rank": 17
+    },
+    {
+      "original_id": "p18",
+      "normalized_id": "p18",
+      "original_rank": 18,
+      "normalized_rank": 18
+    },
+    {
+      "original_id": "p20",
+      "normalized_id": "p19",
+      "original_rank": 20,
+      "normalized_rank": 19
+    },
+    {
+      "original_id": "p19",
+      "normalized_id": "p20",
+      "original_rank": 19,
+      "normalized_rank": 20
+    },
+    {
+      "original_id": "p21",
+      "normalized_id": "p21",
+      "original_rank": 21,
+      "normalized_rank": 21
+    },
+    {
+      "original_id": "p22",
+      "normalized_id": "p22",
+      "original_rank": 22,
+      "normalized_rank": 22
+    },
+    {
+      "original_id": "p23",
+      "normalized_id": "p23",
+      "original_rank": 23,
+      "normalized_rank": 23
+    },
+    {
+      "original_id": "p25",
+      "normalized_id": "p24",
+      "original_rank": 25,
+      "normalized_rank": 24
+    },
+    {
+      "original_id": "p24",
+      "normalized_id": "p25",
+      "original_rank": 24,
+      "normalized_rank": 25
+    },
+    {
+      "original_id": "p27",
+      "normalized_id": "p26",
+      "original_rank": 27,
+      "normalized_rank": 26
+    },
+    {
+      "original_id": "p26",
+      "normalized_id": "p27",
+      "original_rank": 26,
+      "normalized_rank": 27
+    },
+    {
+      "original_id": "p28",
+      "normalized_id": "p28",
+      "original_rank": 28,
+      "normalized_rank": 28
+    },
+    {
+      "original_id": "p29",
+      "normalized_id": "p29",
+      "original_rank": 29,
+      "normalized_rank": 29
+    },
+    {
+      "original_id": "p30",
+      "normalized_id": "p30",
+      "original_rank": 30,
+      "normalized_rank": 30
+    }
+  ]
+}

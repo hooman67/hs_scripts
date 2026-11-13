@@ -1,0 +1,36 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.external_services.cme[public]
+  - colligo.models.external_services.openai[public]
+  - colligo.models.firefly.clio_tyom.common[public]
+  - colligo.models.firefly.clio_tyom.workers.vae.cm5[public]
+  - pydantic
+deps:
+- anyio
+- colligo.caplan_taxonomy
+- colligo.data
+- colligo.fastapi
+- colligo.image
+- colligo.models.external_services.cme
+- colligo.models.external_services.melville
+- colligo.models.external_services.openai
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.clio_tyom.acp_upload[public]
+- colligo.models.firefly.clio_tyom.configs
+- colligo.models.firefly.clio_tyom.context_utils
+- colligo.models.firefly.clio_tyom.training.cm3[public]
+- colligo.models.firefly.clio_tyom.training.cm4_dreambooth[public]
+- colligo.models.firefly.clio_tyom.training.cm4_lora[public]
+- colligo.models.firefly.clio_tyom.training.cm4_lora_ddp[public]
+- colligo.models.firefly.clio_tyom.training.cm5[public]
+- colligo.models.firefly.clio_tyom.utils
+- colligo.models.firefly.clio_tyom.v3
+- colligo.models.prompt_forge.worker[public]
+- colligo.rhode
+- fastapi
+- nltk
+- spacy

@@ -1,0 +1,76 @@
+{
+  "package": "mixology_to_be_deployed_v1",
+  "created_on": "2026-10-20",
+  "package_root": "/home/colligo/hs_scripts/claude/mixology/to_be_deployed_v1",
+  "pipeline": [
+    "generate one uniform single drink",
+    "combine multiple single drinks into a neutral group",
+    "add refractions to the completed group"
+  ],
+  "recommended_models": {
+    "image": "gpt-image-2.5-sunburst",
+    "rewriter": "gpt-6-astra",
+    "rewriter_reasoning_effort": "high"
+  },
+  "artifacts": [
+    {
+      "path": "01_single_drink/system_v1.txt",
+      "sha256": "39f604bb1ecbddd49c8b932ca312ac61226f5546e763cafc5dba5565db7e5fe4",
+      "role": "Direct GPT Image prompt contract for fixed cup, camera and clean studio",
+      "source": "/home/colligo/hs_scripts/claude/mixology/research/recipe-to-image/data/system_v1.txt",
+      "evidence_status": "byte-identical research artifact; recipe plus fixed-master mode validated"
+    },
+    {
+      "path": "01_single_drink/neutral_master_v1.png",
+      "sha256": "3b4602db439efa2814fe1368038591011647c6f6c90980cd071ed6ce66ec0a44",
+      "role": "Fixed Image 1 edit target for every single-drink generation",
+      "source": "/home/colligo/mixology_data/refraction_research_2026-10-19/recipe-to-image/runs/master_neutral_v1/output.png",
+      "dimensions": [1024, 1536],
+      "evidence_status": "byte-identical research output; researcher-selected, not customer-approved"
+    },
+    {
+      "path": "01_single_drink/recipe_mode_clause.txt",
+      "sha256": "8764565ea57b7b8ad721a5a8f7f0a929d8607b7bb0705c6fa6780651c0e64f6e",
+      "role": "Fixed-master conditioning appended before recipe and appearance policy",
+      "source": "/home/colligo/hs_scripts/claude/mixology/research/recipe-to-image/scripts/run_recipe_tests.py",
+      "evidence_status": "exact tested clause"
+    },
+    {
+      "path": "01_single_drink/reference_image_mode_clause.txt",
+      "sha256": "13d1509d06857155d040f99ed5ddc37c6150694218e6b005499c5007e2c228f3",
+      "role": "Transfer beverage appearance from Image 2 while retaining Image 1 geometry",
+      "source": "deployment handoff derived from the fixed-master contract",
+      "evidence_status": "new extension; not directly validated in the research batch"
+    },
+    {
+      "path": "02_group_composition/system_v1.md",
+      "sha256": "5dc097c24838b83cdd8bb6de26f6ab73a76c3a1c0a5b1f17a614a8ffd303d68a",
+      "role": "GPT-6 Astra system prompt for writing a neutral group-composition edit prompt",
+      "source": "/home/colligo/hs_scripts/claude/mixology/research/group-composition/prompts/system_v1.md",
+      "evidence_status": "byte-identical research artifact; selected over V2"
+    },
+    {
+      "path": "03_add_refractions/system_v3_frozen.md",
+      "sha256": "652fd8895c132e7cf6d311052f55a823dbe7ea09b749077a32d82faa6948eb9e",
+      "role": "GPT-6 Astra system prompt for writing the final refraction edit prompt",
+      "source": "/home/colligo/hs_scripts/claude/mixology/research/multi-cup-refractions/prompts/system_v3_frozen.md",
+      "evidence_status": "byte-identical frozen V3; strict two-stage morphology limitations remain"
+    },
+    {
+      "path": "03_add_refractions/style_reference_image_027.jpg",
+      "sha256": "ae59600f3369d317a5a49442081a0e437c0625c2a3cb9e4aec4517148f277cb9",
+      "role": "Default Image 2 lighting-style reference for the frozen V3 refraction stage",
+      "source": "/home/colligo/mixology_data/refraction_research_2026-10-19/assets/image_027_p10_xref1385.jpg",
+      "source_url": "https://foundry-aws-corp.adobe.io/asset/foundry-tccc-enterprise-adobe-assets/mixology/refraction_research_2026-10-19/trio-two-stage-selection/assets/ae59600f3369_image_027_p10_xref1385.jpg",
+      "dimensions": [1402, 1122],
+      "evidence_status": "byte-identical iteration-2 style input; style only, not object or color authority"
+    },
+    {
+      "path": "SAMPLE_USER_PROMPTS.md",
+      "sha256": "d4ecbc5d7cf659613983fa02cc862a135741074ee870f5489e9839e7c3f1962a",
+      "role": "Copy-ready user-prompt examples for every deployment phase",
+      "source": "deployment handoff synthesized from the validated research requests",
+      "evidence_status": "examples only; system prompts, image roles and evaluation gates still apply"
+    }
+  ]
+}

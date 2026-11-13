@@ -1,0 +1,275 @@
+{
+  "version": "v4.1-root-editorial-prose-patch-v1",
+  "author": "root research agent",
+  "purpose": "Transparent pilot curation after one GPT-5.5 correction pass; not a runtime rewrite or unedited model-performance sample.",
+  "input_stage": "repair_pass_01 normalized_output.json; candidate IDs before subsequent reranking",
+  "scene_changed_candidates": 8,
+  "patches": [
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+      "candidate_id": "p5",
+      "field": "text",
+      "before": "A modern home living room end table in warm natural light, cozy and lived-in with warm neutral tones.",
+      "after": "An end table in a modern home living room in warm natural light, cozy and lived-in with warm neutral tones.",
+      "reason": "Replace noun stacking with ordinary location wording; same table and room."
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+      "candidate_id": "p11",
+      "field": "text",
+      "before": "A refined workplace table in a modern office, with warm natural light creating a focused, inviting atmosphere.",
+      "after": "A table in a modern office, with warm natural light creating a focused, inviting atmosphere.",
+      "reason": "Use the everyday furniture name instead of a vague compound."
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+      "candidate_id": "p11",
+      "field": "visual_signature",
+      "before": {
+        "surface": "refined workplace table",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "after": {
+        "surface": "office table",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "reason": "Align furniture name to edited prose."
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+      "candidate_id": "p11",
+      "field": "ctech_changes",
+      "before": [
+        "Changed CT01's office desk to a refined workplace table.",
+        "Removed clean shelving, plants, framed artwork, décor, and depth."
+      ],
+      "after": [
+        "Changed CT01's office desk to a table.",
+        "Removed clean shelving, plants, framed artwork, décor, and depth."
+      ],
+      "reason": "Align furniture name to edited prose."
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+      "candidate_id": "p11",
+      "field": "ctech_explanation",
+      "before": "Same office environment as CT01, with the support changed to a workplace table and room details removed.",
+      "after": "Same office environment as CT01, with the support changed to a table and room details removed.",
+      "reason": "Align furniture name to edited prose."
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+      "candidate_id": "p16",
+      "field": "text",
+      "before": "A modern creative office table with warm natural light and a casually arranged studio atmosphere.",
+      "after": "A modern creative office table with warm natural light and a relaxed, lived-in atmosphere.",
+      "reason": "An atmosphere cannot be casually arranged; use the reference lived-in tone."
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+      "candidate_id": "p16",
+      "field": "ctech_changes",
+      "before": [
+        "Added warm natural light and a casually arranged studio atmosphere to CT09's creative office table focus.",
+        "Removed notebook, pen, design materials, artwork, cabinet, plants, bookshelves, and windows."
+      ],
+      "after": [
+        "Added warm natural light and a relaxed, lived-in atmosphere to CT09's creative office table focus.",
+        "Removed notebook, pen, design materials, artwork, cabinet, plants, bookshelves, and windows."
+      ],
+      "reason": "An atmosphere cannot be casually arranged; use the reference lived-in tone."
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightWide",
+      "candidate_id": "p11",
+      "field": "text",
+      "before": "An open modern corporate office with a quiet desk holding a notebook, pen, and meeting notes. Clean shelving and plants create natural depth. Warm natural lighting creates a polished, inviting atmosphere.",
+      "after": "An open modern corporate office with a desk holding a notebook, pen, and meeting notes. Clean shelving and plants create natural depth. Warm natural lighting creates a polished, inviting atmosphere.",
+      "reason": "Remove an unnatural descriptor from an ordinary furniture noun."
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightWide",
+      "candidate_id": "p11",
+      "field": "visual_signature",
+      "before": {
+        "surface": "quiet office desk",
+        "light": "warm natural lighting",
+        "local_props": [
+          "notebook",
+          "pen",
+          "meeting notes"
+        ],
+        "background_details": [
+          "clean shelving",
+          "plants"
+        ],
+        "people": []
+      },
+      "after": {
+        "surface": "office desk",
+        "light": "warm natural lighting",
+        "local_props": [
+          "notebook",
+          "pen",
+          "meeting notes"
+        ],
+        "background_details": [
+          "clean shelving",
+          "plants"
+        ],
+        "people": []
+      },
+      "reason": "Align to literal desk wording."
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+      "candidate_id": "p12",
+      "field": "text",
+      "before": "A modern home workspace with a desk in warm natural light and a stack of papers for household administration. Lived-in and authentic with subtle imperfections and a warm neutral tone.",
+      "after": "A modern home workspace with a desk in warm natural light and a stack of household papers. Lived-in and authentic with subtle imperfections and a warm neutral tone.",
+      "reason": "Keep the source-relevant material using an ordinary object name."
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+      "candidate_id": "p13",
+      "field": "text",
+      "before": "A bright, open modern corporate office desk in warm natural light with neatly stacked papers for everyday business paperwork. Lived-in but tidy and professional.",
+      "after": "A bright, open modern corporate office desk in warm natural light with neatly stacked papers. Lived-in but tidy and professional.",
+      "reason": "Delete redundant task explanation from the scene; keep its papers."
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+      "candidate_id": "p14",
+      "field": "text",
+      "before": "A lived-in home workspace with a wooden desk holding loose papers for everyday admin work. Soft daylight creates a warm, casually imperfect atmosphere.",
+      "after": "A lived-in home workspace with a wooden desk holding loose papers. Soft daylight creates a warm, casually imperfect atmosphere.",
+      "reason": "Keep ordinary source-relevant papers without a workflow suffix."
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+      "candidate_id": "p18",
+      "field": "text",
+      "before": "An open modern corporate office with a workstation desk holding recurring document packets, color pages, and a notebook. Clean shelving and plants create a layered, active environment in warm natural lighting.",
+      "after": "An open modern corporate office with a workstation desk holding stacked documents, color pages, and a notebook. Clean shelving and plants create a layered, active environment in warm natural lighting.",
+      "reason": "Use the ordinary document name instead of an abstract workflow qualifier."
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+      "candidate_id": "p18",
+      "field": "visual_signature",
+      "before": {
+        "surface": "office workstation desk",
+        "light": "warm natural lighting",
+        "local_props": [
+          "recurring document packets",
+          "color pages",
+          "notebook"
+        ],
+        "background_details": [
+          "clean shelving",
+          "plants"
+        ],
+        "people": []
+      },
+      "after": {
+        "surface": "office workstation desk",
+        "light": "warm natural lighting",
+        "local_props": [
+          "stacked documents",
+          "color pages",
+          "notebook"
+        ],
+        "background_details": [
+          "clean shelving",
+          "plants"
+        ],
+        "people": []
+      },
+      "reason": "Use the ordinary document name instead of an abstract workflow qualifier."
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+      "candidate_id": "p18",
+      "field": "ctech_changes",
+      "before": [
+        "Kept the open corporate office, clean shelving, plants, and warm natural lighting.",
+        "Changed multiple workstations to a singular workstation desk for the view.",
+        "Added recurring document packets, color pages, and a notebook within the prop limit."
+      ],
+      "after": [
+        "Kept the open corporate office, clean shelving, plants, and warm natural lighting.",
+        "Changed multiple workstations to a singular workstation desk for the view.",
+        "Added stacked documents, color pages, and a notebook within the prop limit."
+      ],
+      "reason": "Use the ordinary document name instead of an abstract workflow qualifier."
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+      "candidate_id": "p18",
+      "field": "explanation",
+      "before": "Recurring documents and color pages are source-supported; the open office is a compatible business subsetting.",
+      "after": "Documents and color pages are source-supported; the open office is a compatible business subsetting.",
+      "reason": "Describe the edited object rather than asserting recurrence is visible."
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+      "candidate_id": "p13",
+      "field": "score_components",
+      "before": {
+        "setting": 20,
+        "activity": 30,
+        "materials": 20,
+        "use_context": 20
+      },
+      "after": {
+        "setting": 20,
+        "activity": 10,
+        "materials": 20,
+        "use_context": 20
+      },
+      "reason": "Ordinary papers alone show only a broad task context; finalizer recomputes total."
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+      "candidate_id": "p14",
+      "field": "score_components",
+      "before": {
+        "setting": 30,
+        "activity": 30,
+        "materials": 5,
+        "use_context": 20
+      },
+      "after": {
+        "setting": 30,
+        "activity": 10,
+        "materials": 5,
+        "use_context": 20
+      },
+      "reason": "Ordinary papers alone show only a broad task context; finalizer recomputes total."
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+      "candidate_id": "p18",
+      "field": "score_components",
+      "before": {
+        "setting": 20,
+        "activity": 20,
+        "materials": 20,
+        "use_context": 20
+      },
+      "after": {
+        "setting": 20,
+        "activity": 10,
+        "materials": 20,
+        "use_context": 20
+      },
+      "reason": "Ordinary papers alone show only a broad task context; finalizer recomputes total."
+    }
+  ]
+}

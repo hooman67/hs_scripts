@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "experiment": "PR4349 translation-only product relocation; fixed orientation/view/scale",
+  "pr_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+  "worktree": "/home/colligo/foundry-pr4349-position-exp",
+  "prompt_source_sha256": {
+    "experimental/adarabi/hp-3p-gpt25/hp3p/geometry.py": "d97d0a2c2b739d6659b16dc68b2558697ae23432abdf869d1a12acb41a9479a7",
+    "experimental/adarabi/hp-3p-gpt25/hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+    "experimental/adarabi/hp-3p-gpt25/hp3p/pipeline.py": "655dd194f6a4318edc897192191cd39044e9347a62ac4aa437131c5eebc00c45",
+    "experimental/adarabi/hp-3p-gpt25/hp3p/prompts/system_3p.txt": "a401c604d284ec5a59d82f992e234821defee23eed01a289d8e79166fa40aa25",
+    "experimental/adarabi/hp-3p-gpt25/hp3p/reference_blue.py": "f3c1a81c66b3c47c6734666343ed0273f6dad2f6610f5b47c523e8481baaeabe"
+  },
+  "fixtures": [
+    {
+      "slug": "cashmere__laptop_FrontCloseUp__p1",
+      "control_job_id": "20261105T201942Z_83c24f3f",
+      "device_id": "cashmere",
+      "camera_id": "Front_CloseUp",
+      "prompt": "A quiet office desk set up before a meeting, with an open unlabelled folder showing blank sheets on a pale work surface. A frosted glass partition behind the desk catches clean morning light, keeping the area composed and ready for focused work.",
+      "pr_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+      "pipeline_version": "unified-blue-scale-v21-translation-only-stage-b-placement-twin-camera-guide-only-no-mask",
+      "text_model": "gpt-6-astra",
+      "image_model": "gpt-image-2.5-sunburst-2026-09-08",
+      "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+      "control_output_sha256": "a05fe049075d174fb212099b5988f64d61eb4c6f5fab34382b25a09d15a17896",
+      "treatment_output_sha256": "76d06443cf1bdd681fcff270ed89402b2a132301f569b9dc131d6fba8ca43be9",
+      "final_prompt_sha256": "a5ef52846ffef5dde6ec48b88364066b34ae19fa79ecbac56d4dcacd4b2393cc",
+      "image_calls": 1,
+      "mask_applied": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 994,
+            "prompt_tokens": 12511,
+            "total_tokens": 13505,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 61,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "cashmere__laptop_FrontWide__p1",
+      "control_job_id": "20261105T202456Z_a0aecc9d",
+      "device_id": "cashmere",
+      "camera_id": "Front_Wide",
+      "prompt": "A glass-walled office planning area uses a sturdy table with two unlabelled architectural finish samples and a stone paperweight. A ribbed-glass divider and a freestanding felt privacy screen make the room feel prepared for a private discussion under cool, even light.",
+      "pr_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+      "pipeline_version": "unified-blue-scale-v21-translation-only-stage-b-placement-twin-camera-guide-only-no-mask",
+      "text_model": "gpt-6-astra",
+      "image_model": "gpt-image-2.5-sunburst-2026-09-08",
+      "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "control_output_sha256": "0fadecd95bcca35eab528a37b2e624416c55c58838f516a71a2e11e0318a024a",
+      "treatment_output_sha256": "dbd8150681a85f167ebe7581f59fc0e860dc9c2982cddf83bd884366128adec0",
+      "final_prompt_sha256": "e2f9de333ce099606a64f63623e8fd634a2ce493c5ed8cae5b7de3883dc54343",
+      "image_calls": 1,
+      "mask_applied": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 970,
+            "prompt_tokens": 12672,
+            "total_tokens": 13642,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "magic__printer_FrontCloseUp__p1",
+      "control_job_id": "20261105T202223Z_eb2c14d2",
+      "device_id": "magic",
+      "camera_id": "Front_CloseUp",
+      "prompt": "A common office area with a dedicated output table in clear midday light, with an architectural letter tray holding a few plain papers with indistinct markings. The surrounding wall and work surface stay orderly, giving the area the practical rhythm of everyday document work.",
+      "pr_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+      "pipeline_version": "unified-blue-scale-v21-translation-only-stage-b-placement-twin-camera-guide-only-no-mask",
+      "text_model": "gpt-6-astra",
+      "image_model": "gpt-image-2.5-sunburst-2026-09-08",
+      "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+      "control_output_sha256": "682a2fde5a4bbe83e9c6f35b6c4afeb8b4ae3dc16a5a9c31dd426efa334bdb28",
+      "treatment_output_sha256": "fcbd406538d5ab41f1f665bb8311758a1948d127de53ed47c4ee6e954b65d8ed",
+      "final_prompt_sha256": "f65594c7522cedaae6bffbf136391239194d556ebc14bf56563e65b4dc8691e3",
+      "image_calls": 1,
+      "mask_applied": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 981,
+            "prompt_tokens": 12566,
+            "total_tokens": 13547,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 81,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "magic__printer_FrontWide__p1",
+      "control_job_id": "20261105T201941Z_a6eb8409",
+      "device_id": "magic",
+      "camera_id": "Front_Wide",
+      "prompt": "An open office area with a dedicated output table set against a pale brick wall. A stack of plain papers with indistinct markings rests beside an empty letter tray, while an upholstered office chair stands farther back in clear morning light for an orderly, busy work setting.",
+      "pr_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+      "pipeline_version": "unified-blue-scale-v21-translation-only-stage-b-placement-twin-camera-guide-only-no-mask",
+      "text_model": "gpt-6-astra",
+      "image_model": "gpt-image-2.5-sunburst-2026-09-08",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "control_output_sha256": "bde7761cccc88806ff9f61ff95c938f599636fb297cd07e2d3ab9c3395dc0fbe",
+      "treatment_output_sha256": "58eaa60210999ba97b0e3e4a86362743724e225cd0dab5d101c0667970f98d29",
+      "final_prompt_sha256": "ae8ae6922e35c58c1992c217f81b40b68bce2a46cbf07c3137adc57788815c29",
+      "image_calls": 1,
+      "mask_applied": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 1127,
+            "prompt_tokens": 12627,
+            "total_tokens": 13754,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 152,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+          "mask": false
+        }
+      ]
+    }
+  ],
+  "controls": "Frozen endpoint PR4349 V6.1 outputs and byte-identical geometry guides",
+  "treatment": "Exact isolated PR4349 run_row with frozen selection, geometry and guide replay",
+  "api_retries": 0,
+  "best_of": 1
+}

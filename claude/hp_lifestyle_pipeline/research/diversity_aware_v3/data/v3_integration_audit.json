@@ -1,0 +1,435 @@
+{
+  "version": "hp-diversity-v3-integration-audit-v1",
+  "as_of_date": "2026-10-23",
+  "scope": {
+    "claim_status": "USER-CONFIRMED",
+    "evaluation": "Separate V3 diversity evaluation; preserve V2 unchanged.",
+    "candidate_count_per_source_camera": 30,
+    "score_range": {
+      "minimum": 0,
+      "maximum": 100,
+      "rubric": "fixed and versioned upstream"
+    },
+    "creative_departures": "Explicitly labeled per candidate.",
+    "runtime_identity": "Tag-only; no product name.",
+    "sample_equation": {
+      "source_count": 9,
+      "camera_framings_per_source": 2,
+      "selected_candidates_per_source_camera": 6,
+      "expected_generated_row_count": 108,
+      "equation": "9 sources × 2 camera tags (close + wide) × 6 selected candidates = 108"
+    },
+    "generation_performed_by_this_audit": false,
+    "v2_files_modified_by_this_audit": false
+  },
+  "observed_v2_contract": {
+    "claim_status": "VERIFIED",
+    "manifest": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/manifest.json",
+      "sha256": "840ab21adcaedef33973315a7f909f0b47af4375e18bb88bc599305470811409",
+      "version": "hp-lifestyle-camera-v2-eval-2026-10-22-v1",
+      "counts": {
+        "source_count": 9,
+        "source_counts_by_device_type": {
+          "laptop": 3,
+          "printer": 6
+        },
+        "included_render_count": 202,
+        "render_counts_by_device_type": {
+          "laptop": 161,
+          "printer": 41
+        },
+        "excluded_minipc_render_count": 41,
+        "unique_camera_tag_counts_by_device_type": {
+          "laptop": 41,
+          "printer": 41
+        },
+        "case_count": 369,
+        "source_render_pair_count": 729,
+        "unknown_fallback_case_count": 3
+      },
+      "join_contract": {
+        "source_key": "sources[].source_id",
+        "render_key": "renders[].render_id",
+        "case_key": "cases[].case_id",
+        "case_source_join": "cases[].source_id -> sources[].source_id",
+        "case_render_join": "cases[].render_ids[] -> renders[].render_id",
+        "case_output_join": "accepted_prompt_cases.cases[case_id]",
+        "source_render_pair_id": "{case_id}__{render_id}"
+      }
+    },
+    "accepted_prompt_cases": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/accepted_prompt_cases.json",
+      "sha256": "47df63b3a465fa9b09f62e78b4066aebbfe4438e503d4650a1e601158ea33011",
+      "version": "accepted-prompt-cases-v1",
+      "status": "complete",
+      "case_count": 369,
+      "accepted_case_count": 369,
+      "model": {
+        "deployment": "gpt-5.5",
+        "reasoning_effort": "medium",
+        "max_completion_tokens": 8000,
+        "temperature": null,
+        "strict_output_schema": true,
+        "max_concurrency": 2,
+        "max_transient_attempts": 100
+      }
+    },
+    "final_prompt_accounting": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/final_prompt_summary.json",
+      "sha256": "970a1452c68cf16a4d975a4bccddaf878e50363e1837629831b539013ac142e2",
+      "facts": {
+        "source_count": 9,
+        "case_count": 369,
+        "accepted_prompt_count": 592,
+        "available_generation_row_count": 1318,
+        "unknown_camera_fallback_case_count": 3
+      },
+      "note": "Counts taken from the completed final prompt summary; V2 generation summary snapshots may legitimately lag while the progressive runner is active."
+    },
+    "generation_runner": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/generation/run_generation.py",
+      "sha256": "19268fef3d7732857e35e6b3d88de4e9135e698c90bb415f41417fd432bbd6ef",
+      "record_status_enum": [
+        "done",
+        "pending",
+        "failed"
+      ],
+      "row_id_contract": "{case_id}__{render_id}__{prompt_id}",
+      "done_record_required_keys": [
+        "row_id",
+        "case_id",
+        "source_id",
+        "render_id",
+        "prompt_id",
+        "device_type",
+        "camera_tag",
+        "status",
+        "current_render",
+        "source_message",
+        "prompt",
+        "request_payload",
+        "provenance",
+        "reference_binding",
+        "job_id",
+        "request_id",
+        "job_path",
+        "raw_response_path",
+        "raw_response_sha256",
+        "returned_seed",
+        "returned_dimensions_raw",
+        "usedPrompt",
+        "debugData",
+        "generated_image",
+        "download_latency_ms",
+        "total_latency_ms",
+        "completed_at_utc"
+      ],
+      "sample_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/records/00027b8b30bb45996e3f__22fdbf19f03d1a31__laptop_FrontMediumHigh__laptop_koki_omnibook_eclipes_gray__front_mediumh.json",
+      "sample_record_sha256": "3431255eef22b4b7a30976830e51eb6dd47f101a945e744109e8d31614f07fa5",
+      "reference_integrity_fields": [
+        "current_render.sha256",
+        "reference_binding.original_png_sha256",
+        "reference_binding.blob_id",
+        "provenance.reference_binding_sha256"
+      ],
+      "output_integrity_fields": [
+        "generated_image.path",
+        "generated_image.sha256",
+        "generated_image.bytes",
+        "generated_image.native_width",
+        "generated_image.native_height",
+        "generated_image.content_type"
+      ],
+      "response_fields": [
+        "usedPrompt",
+        "debugData",
+        "raw_response_path",
+        "raw_response_sha256",
+        "returned_seed",
+        "returned_dimensions_raw",
+        "total_latency_ms"
+      ]
+    },
+    "gallery_builder": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/build_gallery.py",
+      "sha256": "c5ab4bb867dfac4d247cfed7f11c2ace089fe363cce37315b27bed9c6c596b6a",
+      "source_templates": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/gallery/index.html",
+          "sha256": "267bcb87408d9cb5bc3225650427f6539c03117fc8574e92030acc218182c3f6"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/gallery/main.js",
+          "sha256": "ce2431df07e874829ba914630bdaa240279029c8dec962b77bb7930075d58ce4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/gallery/style.css",
+          "sha256": "ca3085490c17cee34baa7c2f769b68e00b1dee7d0aa41d9d2154ba1827b0646e"
+        }
+      ],
+      "observed_columns": [
+        "Prompt",
+        "Digital twin",
+        "Source messaging",
+        "Explanation",
+        "Generated output",
+        "Rewritten prompt",
+        "Generation debug"
+      ],
+      "progress_rule": "Accepted prompts expand to expected rows; missing, pending, failed, and done remain visible; final mode rejects missing or pending rows.",
+      "emitted_data_contract": {
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_camera_v2_eval_20261022/gallery/data.js",
+        "sha256": "635b643e0b6b659f495dcd08fc2b714b3e07c544d310d71f5f69ff40dc3b370d",
+        "top_level_keys": [
+          "metadata",
+          "run_context",
+          "sources",
+          "renders",
+          "cases",
+          "prompts",
+          "rows"
+        ],
+        "counts": {
+          "sources": 9,
+          "renders": 202,
+          "cases": 369,
+          "prompts": 592,
+          "rows": 1318
+        },
+        "render_fields": [
+          "render_id",
+          "device_type",
+          "product_provenance",
+          "source_camera_name",
+          "camera_tag",
+          "path",
+          "sha256",
+          "bytes",
+          "width",
+          "height",
+          "output_width",
+          "output_height",
+          "preserve_aspect_ratio",
+          "reference_asset_filename"
+        ],
+        "case_fields": [
+          "manifest",
+          "input",
+          "source",
+          "accepted",
+          "prompt_status"
+        ],
+        "prompt_fields": [
+          "prompt_id",
+          "environment",
+          "text",
+          "text_sha256",
+          "case_id",
+          "source_id",
+          "device_type",
+          "camera_tag"
+        ],
+        "row_fields": [
+          "row_id",
+          "case_id",
+          "source_id",
+          "render_id",
+          "prompt_id",
+          "prompt_key",
+          "device_type",
+          "camera_tag",
+          "status",
+          "result"
+        ],
+        "join_rule": "rows reference deduplicated cases, prompts, renders, and sources by stable identifiers; result embeds the full generation record when present."
+      }
+    }
+  },
+  "minimal_separate_v3_contract": {
+    "isolation": {
+      "recommendation_status": "RECOMMENDED",
+      "eval_root": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_diversity_v3_eval_20261023",
+      "run_root": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_diversity_v3_eval_20261023",
+      "s3_prefix": "eval_sets/hp_lifestyle_diversity_v3_eval_20261023/generated_v3",
+      "rule": "No V2 manifest, accepted map, runner journal, gallery artifact, publication state, or S3 object is overwritten or reused as mutable state."
+    },
+    "candidate_adapter_input": {
+      "required_group_key": "{source_id}__{camera_tag}",
+      "group_count": 18,
+      "required_fields": [
+        "source_id",
+        "source_json_path",
+        "source_json_sha256",
+        "device_type",
+        "camera_tag",
+        "candidate_id",
+        "rank",
+        "candidate_text",
+        "candidate_text_sha256",
+        "score_total",
+        "rubric_version",
+        "rubric_components",
+        "score_reason",
+        "creative_departures",
+        "model_record_path",
+        "model_record_sha256"
+      ],
+      "creative_departure_item_fields": [
+        "label_id",
+        "label_version",
+        "description",
+        "source_support_status",
+        "reason"
+      ],
+      "validation": [
+        "Exactly 30 unique candidate_id values in each of 18 source-camera groups.",
+        "Ranks are exactly 1 through 30 once per group.",
+        "score_total is within 0–100 and equals the fixed rubric component sum.",
+        "Rubric component names and weights match one frozen rubric version across all 540 candidates.",
+        "Every creative departure uses a registered label; an empty list is explicit.",
+        "No runtime product-name field is accepted.",
+        "Full candidate model request, response, settings, schema, system-prompt hash, and transport-attempt accounting remain durable."
+      ]
+    },
+    "selection_manifest": {
+      "required_counts": {
+        "candidate_group_count": 18,
+        "candidate_inventory_count": 540,
+        "selected_per_group": 6,
+        "selected_candidate_count": 108
+      },
+      "required_fields": [
+        "selection_id",
+        "source_id",
+        "camera_tag",
+        "candidate_id",
+        "candidate_record_path",
+        "candidate_record_sha256",
+        "rank",
+        "score_total",
+        "selection_reason",
+        "reference_render_id"
+      ],
+      "validation": [
+        "Select exactly six accepted candidates per source-camera group.",
+        "Freeze the tie-break and selection policy before selection; the adapter must not infer it.",
+        "Bind exactly one explicit close or wide reference render per source-camera group to preserve the authorized total of 108 rows.",
+        "A rejected or superseded candidate remains linked with its reason; no silent replacement."
+      ]
+    },
+    "generation_adapter": {
+      "row_id": "{source_id}__{camera_tag}__{candidate_id}__{render_id}",
+      "expected_row_count": 108,
+      "reuse_from_v2": [
+        "Atomic per-row records and job journals.",
+        "Reference upload cache keyed by exact original PNG SHA-256.",
+        "Bounded safe submission retries; ambiguous submission never retries.",
+        "Sanitized response persistence with usedPrompt and complete debugData.",
+        "done|pending|failed status enum and explicit missing/pending/ambiguous/safe-retry accounting.",
+        "Exact generated-image hash, byte count, content type, and native dimensions."
+      ],
+      "v3_additions": [
+        "candidate_record_path and SHA-256",
+        "candidate_text SHA-256",
+        "candidate rank and fixed-rubric score",
+        "rubric version and component scores",
+        "score reason",
+        "creative-departure labels",
+        "selection-manifest path and SHA-256",
+        "V3 manifest path and SHA-256"
+      ],
+      "prohibitions": [
+        "Do not read V2 accepted prompts as V3 candidates.",
+        "Do not expand each candidate across every V2 compatible render; that would exceed 108 rows.",
+        "Do not supply product names to the candidate model or image request.",
+        "Do not omit failed or ambiguous rows from aggregates."
+      ]
+    },
+    "gallery_adapter": {
+      "required_columns": [
+        "Candidate prompt and rank",
+        "Reference image and exact identity",
+        "Source messaging (collapsed)",
+        "Camera tag and framing",
+        "Score (0–100), rubric components, and reason",
+        "Creative-departure labels",
+        "Generated output",
+        "usedPrompt (collapsed)",
+        "Generation debug (collapsed)"
+      ],
+      "required_filters": [
+        "source_id",
+        "device_type",
+        "camera_tag",
+        "close_or_wide",
+        "reference_render_id",
+        "rank",
+        "score range",
+        "creative-departure label",
+        "generation status"
+      ],
+      "presentation_rules": [
+        "Render one header only.",
+        "Preserve native reference and output aspect ratios.",
+        "Show candidate rank, total score, rubric version, and rationale together.",
+        "Visibly distinguish source-supported details from labeled creative departures.",
+        "Keep full candidate input/model settings and full generation record available in collapsed audit sections.",
+        "Show missing, pending, failed, ambiguous, and done rows; never show partial coverage as final."
+      ],
+      "publication_rules": [
+        "Use a new V3 S3 prefix.",
+        "Copy exact reference PNGs into V3-owned assets and publish their source/published SHA-256 manifest.",
+        "Use the unchanged shared IMS authentication asset required by the gallery skill.",
+        "Maintain progressive publication state and a strict final gate at exactly 108 terminal rows."
+      ]
+    },
+    "final_gates": [
+      "9 exact source identities: 3 laptop and 6 printer.",
+      "18 exact source-camera groups: one close and one wide tag per source.",
+      "540 scored and ranked candidates.",
+      "108 selected candidates and 108 generation rows.",
+      "Every generation row has one explicit reference_render_id and one candidate_id.",
+      "All scores reconcile to the frozen 0–100 rubric.",
+      "All departures are labeled, including explicit empty departure lists.",
+      "No miniPC and no runtime product-name field.",
+      "All missing, failed, retryable, and ambiguous states reconcile to the expected 108 rows.",
+      "Final gallery/data/publication hashes and S3 content types are verified."
+    ]
+  },
+  "required_upstream_freezes_before_implementation": [
+    {
+      "status": "UNRESOLVED",
+      "item": "Exact close and wide camera tags for laptop and printer; labels such as close/wide are insufficient join keys."
+    },
+    {
+      "status": "UNRESOLVED",
+      "item": "One explicit reference_render_id for each of the 18 source-camera groups; V2 has four compatible laptop renders for most tags."
+    },
+    {
+      "status": "UNRESOLVED",
+      "item": "Fixed rubric component names, weights, precision/rounding, and tie-break policy."
+    },
+    {
+      "status": "UNRESOLVED",
+      "item": "Creative-departure label registry and whether multiple labels per candidate are ordered or set-valued."
+    },
+    {
+      "status": "UNRESOLVED",
+      "item": "Selection rule for the six candidates per group, including treatment of score ties and diversity constraints."
+    },
+    {
+      "status": "UNRESOLVED",
+      "item": "Exact V3 candidate/model record schema and file paths supplied by the upstream V3 prompt stage."
+    }
+  ],
+  "style_reference_audit": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/diversity_aware/data/style_reference_audit.json",
+    "sha256": "5bc394f388d1bc9ef03d3029d684951bf3f4157d0d1365eee7976955f39e7b14",
+    "note": "Exact October guidance and compatible workbook column-A excerpts only; this does not define the V3 prompt or rubric."
+  },
+  "limitations": [
+    "This is a mechanical integration audit. It does not assess candidate quality, author a V3 prompt, define rubric semantics, or make generation calls.",
+    "The proposed 108-row contract depends on one selected reference render per source-camera group. Any multi-render expansion changes the authorized row count and requires a new manifest/count gate."
+  ]
+}

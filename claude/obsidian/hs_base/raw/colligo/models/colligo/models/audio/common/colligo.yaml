@@ -1,0 +1,34 @@
+visibility: public
+public:
+  files:
+  - types
+  - constants
+  deps:
+  - colligo.base
+  - colligo.models.audio.pipelines.audio_gensoundfx[public]
+  - colligo.models.audio.pipelines.enhance_speech[public]
+  - colligo.models.audio.pipelines.gen_music[public]
+  - colligo.models.audio.pipelines.separate_audio[public]
+  - colligo.models.audio.tts_bl[public]
+  - pydantic
+deps:
+- aiocache
+- av
+- colligo.data
+- colligo.external_services.acp
+- colligo.external_services.business_kit
+- colligo.external_services.cai
+- colligo.fastapi
+- colligo.models.audio.gensoundfx[public]
+- colligo.models.audio.soundlift[public]
+- colligo.models.cai
+- colligo.models.dentro.model_zoo
+- colligo.models.dentro.pylib
+- colligo.rhode
+- librosa
+- numpy
+- omegaconf
+- pillow
+- soundfile
+- torch
+- torchaudio

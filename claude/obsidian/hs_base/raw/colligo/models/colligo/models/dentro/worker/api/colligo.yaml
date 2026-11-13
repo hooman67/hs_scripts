@@ -1,0 +1,20 @@
+visibility: public
+deps:
+- colligo.data
+- colligo.models.common.adapter_utils
+- colligo.models.dentro.model_zoo
+- colligo.models.dentro.pylib
+- colligo.models.prompt_forge.worker[public]
+- httpx
+- opencv-contrib-python-headless
+- pillow
+- torch
+- torchvision
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.dentro.pylib[public]
+  - colligo.models.firefly.vllm_serve[public]
+  - pydantic

@@ -1,0 +1,376 @@
+{
+  "schema_version": "hp-placement-v2-regression-assets-v1",
+  "expected_count": 4,
+  "generated_at_utc": "2026-11-05T03:40:58.679245+00:00",
+  "input_contract": {
+    "image_stage": "scene_generation",
+    "judge_inputs": [
+      "generated_image",
+      "twin_image",
+      "device_type",
+      "scene_prompt"
+    ],
+    "scene_prompt_policy": "Use the original report prompt; no rewritten prompt is included.",
+    "annotation_policy": "Regression labels are evaluation metadata and are never passed to the judge."
+  },
+  "source": {
+    "verification_status": "VERIFIED",
+    "source_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/assets.json",
+    "source_manifest_sha256": "98008065ecf6a7d13539ab181ee7126a81025f5a7ce6e10a27cdcd4dd8c1fa96",
+    "source_report": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer"
+  },
+  "counts": {
+    "records": 4,
+    "by_device_type": {
+      "laptop": 2,
+      "printer": 2
+    }
+  },
+  "validation": {
+    "all_local_files_present": true,
+    "all_local_sha256_match_source_records": true,
+    "all_png_dimensions_match_source_records": true,
+    "all_scene_prompts_match_source_records": true,
+    "rewritten_prompt_fields_present_in_records": false,
+    "annotations_passed_to_judge": false,
+    "mismatches": []
+  },
+  "records": [
+    {
+      "id": "regression-userfail-row25-v14",
+      "source_case_id": "25_baseline-0043",
+      "source_asset_id": "comparison-row-25-v14",
+      "product": "Printer",
+      "device": "comparison-row-25",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "unknown_legacy_report_view",
+        "source_camera_name": "unknown",
+        "view_role": "unknown"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "v14",
+      "scene_prompt": "A modern home workspace centered around a side table positioned against a wall as the primary focal point of the scene. The side table is prominently framed and visually unobstructed, surrounded by subtle residential details and thoughtful décor. Nearby, a wooden desk holds a notebook, spiral pad, pen, stack of papers, and a coffee mug. Large windows with soft curtains bring natural light into the room, while a comfortable chair, houseplants, shelving, artwork, and understated furnishings extend into the background. The layered arrangement creates a bright, sophisticated, lived-in interior with natural depth, while keeping the side table against the wall as the dominant visual focus.",
+      "scene_prompt_sha256": "4bf4238b51955be6c0d4d7656098838a40671dece83bef9c181258d0380c4f64",
+      "scene_prompt_source": {
+        "kind": "original_report_prompt",
+        "prompt_key": "25_baseline-0043",
+        "source_revision": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "bank_rank": null,
+        "environment": null,
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "v14_final.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_25/v14_final.png",
+        "sha256": "4ceb50f8a4605789bb2c5437de503899c1e11b7c0b81a85a8978e7764862c4b4",
+        "bytes": 5910917,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/v14_final.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/v14_final.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "twin_image": {
+        "render_id": "comparison-row-25-product_input",
+        "filename": "product_input.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_25/product_input.png",
+        "sha256": "85ff3aec599bc7735f45915d85bdf3b955cead5be4d6dcecacdc393c3e189e36",
+        "bytes": 1045637,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/product_input.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/product_input.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/product_input.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/product_input.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "hashes": {
+        "generated_image_sha256": "4ceb50f8a4605789bb2c5437de503899c1e11b7c0b81a85a8978e7764862c4b4",
+        "twin_image_sha256": "85ff3aec599bc7735f45915d85bdf3b955cead5be4d6dcecacdc393c3e189e36",
+        "scene_prompt_sha256": "4bf4238b51955be6c0d4d7656098838a40671dece83bef9c181258d0380c4f64"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/v14_final.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/product_input.png"
+      },
+      "expected_verdict": "fail",
+      "human_feedback": "Product angle does not align with table angle.",
+      "expected_issue_codes": [
+        "furniture_axis_conflict"
+      ],
+      "regression_expectation": {
+        "human_verdict": "fail",
+        "human_comment": "Product angle does not align with table angle.",
+        "expected_issue_codes": [
+          "furniture_axis_conflict"
+        ],
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "regression-userfail-row12-v13",
+      "source_case_id": "12_baseline-0018",
+      "source_asset_id": "comparison-row-12-v13",
+      "product": "Printer",
+      "device": "comparison-row-12",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "unknown_legacy_report_view",
+        "source_camera_name": "unknown",
+        "view_role": "unknown"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "v13",
+      "scene_prompt": "A design-forward conference room centered visually on a sleek wooden side table positioned along a wall. The side table is large in the frame, clearly defined, and completely unobstructed, with ample open space across its top. A modern conference table and ergonomic chairs appear deeper in the room, complemented by glass walls, black metal accents, integrated lighting, and clean architectural finishes.",
+      "scene_prompt_sha256": "27d48ca94e6680d5ff80cc73f414d78f3b0801bf8c3be96feeb55be421e67781",
+      "scene_prompt_source": {
+        "kind": "original_report_prompt",
+        "prompt_key": "12_baseline-0018",
+        "source_revision": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "bank_rank": null,
+        "environment": null,
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "v13_final.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_12/v13_final.png",
+        "sha256": "bcd88892c5a5b416f5becca8e4102de1ebae1337462031e1a9d27a8b47100a98",
+        "bytes": 5691129,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/v13_final.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/v13_final.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "twin_image": {
+        "render_id": "comparison-row-12-product_input",
+        "filename": "product_input.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_12/product_input.png",
+        "sha256": "0403fc3b1aa3d4da61353b1020385e2c83f999e118e295eb20627ead3aa00497",
+        "bytes": 259894,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/product_input.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/product_input.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/product_input.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/product_input.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "hashes": {
+        "generated_image_sha256": "bcd88892c5a5b416f5becca8e4102de1ebae1337462031e1a9d27a8b47100a98",
+        "twin_image_sha256": "0403fc3b1aa3d4da61353b1020385e2c83f999e118e295eb20627ead3aa00497",
+        "scene_prompt_sha256": "27d48ca94e6680d5ff80cc73f414d78f3b0801bf8c3be96feeb55be421e67781"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/v13_final.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/product_input.png"
+      },
+      "expected_verdict": "fail",
+      "human_feedback": "scene alignment should match product angle",
+      "expected_issue_codes": [
+        "furniture_axis_conflict"
+      ],
+      "regression_expectation": {
+        "human_verdict": "fail",
+        "human_comment": "scene alignment should match product angle",
+        "expected_issue_codes": [
+          "furniture_axis_conflict"
+        ],
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "regression-userfail-row09-v14",
+      "source_case_id": "09_baseline-0015",
+      "source_asset_id": "comparison-row-09-v14",
+      "product": "Laptop",
+      "device": "comparison-row-09",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "unknown_legacy_report_view",
+        "source_camera_name": "unknown",
+        "view_role": "unknown"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "v14",
+      "scene_prompt": "A spacious contemporary conference room with a long wooden table as the central focus, arranged with a coffee mug, notebooks, loose papers, and a pen. Comfortable office chairs surround the table, while warm wood accents, textured walls, understated artwork, integrated shelving, and softly defined workspaces extend into the background. Large windows, clean architectural lines, and layered furnishings create a polished yet inviting professional atmosphere with natural depth.",
+      "scene_prompt_sha256": "2efeee24ca1dfea441b7fe5c2b6731a0b6ee3a5f5ce0ecc15591933b713b3e29",
+      "scene_prompt_source": {
+        "kind": "original_report_prompt",
+        "prompt_key": "09_baseline-0015",
+        "source_revision": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "bank_rank": null,
+        "environment": null,
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "v14_final.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_09/v14_final.png",
+        "sha256": "53618cc0df28274b5ae69596d09ba5f4f145b7e1e35f7d0e1c5164b4694b896b",
+        "bytes": 4377708,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/09/v14_final.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/09/v14_final.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "twin_image": {
+        "render_id": "comparison-row-09-product_input",
+        "filename": "product_input.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_09/product_input.png",
+        "sha256": "5aa2dcc51a36c3c95f0a209eda7aa89d8b5a25eb22349bdbbb574db505501692",
+        "bytes": 149430,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/09/product_input.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/09/product_input.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/09/product_input.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/09/product_input.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "hashes": {
+        "generated_image_sha256": "53618cc0df28274b5ae69596d09ba5f4f145b7e1e35f7d0e1c5164b4694b896b",
+        "twin_image_sha256": "5aa2dcc51a36c3c95f0a209eda7aa89d8b5a25eb22349bdbbb574db505501692",
+        "scene_prompt_sha256": "2efeee24ca1dfea441b7fe5c2b6731a0b6ee3a5f5ce0ecc15591933b713b3e29"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/09/v14_final.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/09/product_input.png"
+      },
+      "expected_verdict": "fail",
+      "human_feedback": "Product needs to be closer to the table edge.",
+      "expected_issue_codes": [
+        "excessive_reach"
+      ],
+      "regression_expectation": {
+        "human_verdict": "fail",
+        "human_comment": "Product needs to be closer to the table edge.",
+        "expected_issue_codes": [
+          "excessive_reach"
+        ],
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "regression-userfail-row29-v13",
+      "source_case_id": "29_baseline-0047",
+      "source_asset_id": "comparison-row-29-v13",
+      "product": "Laptop",
+      "device": "comparison-row-29",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "unknown_legacy_report_view",
+        "source_camera_name": "unknown",
+        "view_role": "unknown"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "v13",
+      "scene_prompt": "A modern home workspace with a large dark walnut desk holding an open notebook, pen, and coffee mug. Tall wood-and-metal bookshelves with books, plants, and minimal décor line the dark walls. A large black-framed window overlooks lush greenery and fills the room with soft natural light. Warm wood, comfortable seating, and simple residential details create a sophisticated, lived-in atmosphere with natural depth.",
+      "scene_prompt_sha256": "9c85d9a2fae14c9ce075034d8c48d30a722666e2f0dfc7001701f99726f302a5",
+      "scene_prompt_source": {
+        "kind": "original_report_prompt",
+        "prompt_key": "29_baseline-0047",
+        "source_revision": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "bank_rank": null,
+        "environment": null,
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "v13_final.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_29/v13_final.png",
+        "sha256": "b465f94249d56d50fa5a2404fb925bb69d8ae559e2e264b2172881fa69d602eb",
+        "bytes": 5381103,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/29/v13_final.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/29/v13_final.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "twin_image": {
+        "render_id": "comparison-row-29-product_input",
+        "filename": "product_input.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_29/product_input.png",
+        "sha256": "9c17f78a19ca4dc65e60256b5989f385d0b70d3b0c555741ff1e6941059ede44",
+        "bytes": 396135,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/29/product_input.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/29/product_input.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/29/product_input.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/29/product_input.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "hashes": {
+        "generated_image_sha256": "b465f94249d56d50fa5a2404fb925bb69d8ae559e2e264b2172881fa69d602eb",
+        "twin_image_sha256": "9c17f78a19ca4dc65e60256b5989f385d0b70d3b0c555741ff1e6941059ede44",
+        "scene_prompt_sha256": "9c85d9a2fae14c9ce075034d8c48d30a722666e2f0dfc7001701f99726f302a5"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/29/v13_final.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/29/product_input.png"
+      },
+      "expected_verdict": "fail",
+      "human_feedback": "v13 - product too far from the table edge closer to the chair.",
+      "expected_issue_codes": [
+        "excessive_reach"
+      ],
+      "regression_expectation": {
+        "human_verdict": "fail",
+        "human_comment": "v13 - product too far from the table edge closer to the chair.",
+        "expected_issue_codes": [
+          "excessive_reach"
+        ],
+        "passed_to_judge": false
+      }
+    }
+  ]
+}

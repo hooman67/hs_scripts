@@ -1,0 +1,16 @@
+visibility: public
+deps:
+- av
+- colligo.data
+- colligo.models.common.adapter_utils
+- colligo.models.dentro.model_zoo
+- colligo.models.dentro.pylib
+- httpx
+- torchvision
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.dentro.pylib[public]
+  - pydantic

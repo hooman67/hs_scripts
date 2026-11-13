@@ -1,0 +1,45 @@
+{
+  "version": "v4.1-pilot-final-text-review-v3",
+  "as_of": "2026-10-26",
+  "status": "root_reviewed_after_bounded_model_correction_and_editorial_edits",
+  "accepted_prompt_cases_sha256": "c1300c01f001dc57a1a00e380399473ed70e8b38dfc9dd3e17d45d420b8c8173",
+  "system_prompt_sha256": "986957bcc1a5e218daea3594c037036b9d6d25af79847efbe0a95c849591fb04",
+  "review_scope": {
+    "banks": 4,
+    "prompts": 120,
+    "source_messages": 2,
+    "reference_cores": 18,
+    "editorially_edited_scene_count": 8
+  },
+  "reviewers": [
+    "root research agent: prompt design, all scene texts, synthesis",
+    "gpt-5.6-sol high: independent prose/metadata/camera review and mechanical integrity"
+  ],
+  "first_draw_bank_passes": 0,
+  "first_draw_banks": 4,
+  "first_draw_validator_errors": 48,
+  "bounded_model_correction_bank_passes": 4,
+  "correction_calls": 4,
+  "correction_semantic_retries": 0,
+  "final_validator_passes": 4,
+  "final_validator_errors": 0,
+  "image_generation_authorized": false,
+  "prompt_run_limitations": [
+    "This is a reviewed pilot: four GPT-5.5 first-draw banks each needed one bounded correction pass; all four then passed automated checks. It is not evidence of single-call production reliability.",
+    "Root made small editorial scene edits to 8 of 120 corrected prompts and audited metadata edits before publication. Original responses, before/after patches and reranking provenance are retained; downloads identify each edited candidate.",
+    "C-Tech relationship and source scores are rubric annotations, not calibrated probabilities. Independent text-similarity metrics are shown separately.",
+    "The zero-prop laptop close-up cannot retain the reference rooms and accessory lists. Its diversity is necessarily concentrated in ordinary settings, support surfaces and lighting.",
+    "All six environments remain represented, but Education has no direct C-Tech reference. Its examples are labeled category extensions.",
+    "No V4.1 images have been generated. This text review cannot establish downstream camera preservation, visual diversity or C-Tech image acceptance."
+  ],
+  "review_findings": [
+    "No invented task/furniture compounds from the reported failure pattern remain in the reviewed prose.",
+    "No elaborated scratches, wipe streaks, hand-wear stories or document-routing micro-stories remain.",
+    "Familiar reference props and room cues are retained within fixed camera budgets.",
+    "Source departures remain explicit; evidence is not invented to justify variety."
+  ],
+  "patch_files": [
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/editorial_prose_patch.json",
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/editorial_metadata_patch.json"
+  ]
+}

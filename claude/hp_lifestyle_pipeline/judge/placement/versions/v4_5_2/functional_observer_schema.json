@@ -1,0 +1,1276 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage_status",
+    "unable_reason",
+    "product_front",
+    "visible_user_positions",
+    "relations",
+    "unrelated_artifacts"
+  ],
+  "properties": {
+    "stage_status": {
+      "type": "string",
+      "enum": [
+        "assessed",
+        "unable"
+      ]
+    },
+    "unable_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "unreadable_image",
+        "target_not_identifiable",
+        "product_type_conflict",
+        "fundamentally_unjudgeable_product_support"
+      ]
+    },
+    "product_front": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "state",
+            "region",
+            "evidence"
+          ],
+          "properties": {
+            "state": {
+              "type": "string",
+              "enum": [
+                "observed",
+                "partial",
+                "hidden"
+              ]
+            },
+            "region": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/region"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 360
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "visible_user_positions": {
+      "anyOf": [
+        {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "region"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "chair",
+                  "standing_zone"
+                ]
+              },
+              "region": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label",
+                  "box"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "box": {
+                    "type": "array",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "relations": {
+      "anyOf": [
+        {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "support_role"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "coherent"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "dedicated_equipment_support",
+                      "usable_laptop_work_surface"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "support_role"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "defect"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "incompatible_support",
+                      "occupied_personal_workstation"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "$ref": "#/$defs/region"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "support_role"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "partial",
+                      "hidden"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "support_room_placement"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "coherent"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "coherent_room_placement",
+                      "coherent_shared_use",
+                      "coherent_wall_edge"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "support_room_placement"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "defect"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "central_rectangular_home_printer_support_without_shared_use",
+                      "incoherent_visible_use_zone",
+                      "misplaced_support_in_room"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "$ref": "#/$defs/region"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "support_room_placement"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "partial",
+                      "hidden"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "device_surface_position"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "coherent"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "usable_surface_position"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "device_surface_position"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "defect"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "aimed_toward_corner",
+                      "awkward_foreground_position",
+                      "stranded_on_support",
+                      "too_far_from_usable_edge"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "$ref": "#/$defs/region"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "device_surface_position"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "partial",
+                      "hidden"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "prop_activity_relation"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "coherent"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "coherent_activity_zone",
+                      "not_applicable"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "prop_activity_relation"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "defect"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "prop_blocks_operation",
+                      "prop_contradicts_activity_zone"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "$ref": "#/$defs/region"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "prop_activity_relation"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "partial",
+                      "hidden"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "operating_access"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "coherent"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "open"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "operating_access"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "defect"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "blocked",
+                      "excessive_reach"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "$ref": "#/$defs/region"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "operating_access"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "partial",
+                      "hidden"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "user_position"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "coherent"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "coherent",
+                      "not_applicable"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "user_position"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "visible",
+                      "partial"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "defect"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "chair_offset",
+                      "no_feasible_position"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "$ref": "#/$defs/region"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "test_id",
+                  "observability",
+                  "state",
+                  "subtype",
+                  "direct_evidence",
+                  "counterevidence",
+                  "visibility_limit",
+                  "region"
+                ],
+                "properties": {
+                  "test_id": {
+                    "type": "string",
+                    "enum": [
+                      "user_position"
+                    ]
+                  },
+                  "observability": {
+                    "type": "string",
+                    "enum": [
+                      "partial",
+                      "hidden"
+                    ]
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "subtype": {
+                    "type": "string",
+                    "enum": [
+                      "unresolved"
+                    ]
+                  },
+                  "direct_evidence": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "counterevidence": {
+                    "type": "string",
+                    "maxLength": 360
+                  },
+                  "visibility_limit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 360
+                  },
+                  "region": {
+                    "type": "null"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "unrelated_artifacts": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "region",
+          "evidence"
+        ],
+        "properties": {
+          "region": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "box"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 360
+              },
+              "box": {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            }
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 360
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foundry.adobe.com/schemas/hp-placement-v4.5.2-functional.json",
+  "title": "HP Placement V4.5.2 functional observer",
+  "$defs": {
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "box"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 360
+        },
+        "box": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  }
+}

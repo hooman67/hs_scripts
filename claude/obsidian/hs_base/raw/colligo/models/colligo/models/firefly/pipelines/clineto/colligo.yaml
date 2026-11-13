@@ -1,0 +1,60 @@
+visibility: public
+deps:
+- adobe-c2pa-api
+- anyio
+- av
+- colligo.base
+- colligo.data
+- colligo.external_services.acp
+- colligo.external_services.business_kit
+- colligo.external_services.cai
+- colligo.external_services.common
+- colligo.fastapi
+- colligo.image
+- colligo.models.cai
+- colligo.models.common.adapter_utils
+- colligo.models.common.metrics
+- colligo.models.firefly.adobeone[public]
+- colligo.models.firefly.clio[public]
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.diffusion.clineto[public]
+- colligo.models.firefly.imcoding.camera_encoder[public]
+- colligo.models.firefly.imcoding.dual_vae[public]
+- colligo.models.firefly.imcoding.motion_brush[public]
+- colligo.models.firefly.imcoding.structure_encoder[public]
+- colligo.models.firefly.load_testing
+- colligo.models.firefly.pipelines.common
+- colligo.models.firefly.service_common.utils
+- colligo.models.firefly.t5[public]
+- colligo.models.firefly.video_ssr_light[public]
+- colligo.models.foundry.authz[public]
+- colligo.models.foundry.metrics
+- colligo.models.prompt_forge.worker[public]
+- colligo.rhode
+- einops
+- ffmpeg-python
+- genai_foundation
+- imageio
+- langcodes
+- numba
+- numpy
+- opencv-contrib-python-headless
+- pillow
+- prores-bindings
+- pydantic
+- pytest
+- pyyaml
+- torch
+- torchvision
+- typing-extensions
+exclude:
+- scripts
+- "..."
+- utils/quality_eval.py
+
+
+# This does not change behavior of the code
+# This is useful when for any rason the tar of deps uploaded to s3 or the cache of CI agents
+# being corrupted. Bump this to cause a new value and invalidate the cache.
+# "1" is added for this incident: https://adoberesearch.slack.com/archives/C050XP8QH98/p1738009670643249?thread_ts=1738008639.457959&cid=C050XP8QH98
+pyenv_cache_etag: "1"

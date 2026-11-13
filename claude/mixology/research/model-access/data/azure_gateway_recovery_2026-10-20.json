@@ -1,0 +1,81 @@
+{
+  "checked_utc": "2026-10-20T18:11:26Z",
+  "scope": "Foundry Azure credential recovery and one synthetic GPT Image 2.5 access probe; no customer data.",
+  "confidence": "VERIFIED by current gateway and Azure API responses",
+  "gateway_host": "https://foundry-aws-pluto.adobe.io",
+  "gateway_sdk_version": "2.0.0",
+  "openai_sdk_version": "3.35.1",
+  "azure_api_version": "2024-12-01-preview",
+  "credential_result": {
+    "route": "/iam/credentials/azure",
+    "status": 200,
+    "sdk_helper": "foundry_aws_gateway.llm.get_azure_openai()",
+    "client_creation_seconds": 0.021,
+    "acknowledgement_sent": true
+  },
+  "azure_model_catalog": {
+    "authenticated_model_count": 475,
+    "requested_model_present": true,
+    "relevant_model_ids": [
+      "gpt-6-astra",
+      "gpt-6-astra-2026-09-03",
+      "gpt-image-2.5-flare",
+      "gpt-image-2.5-flare-2026-09-08",
+      "gpt-image-2.5-sunburst",
+      "gpt-image-2.5-sunburst-2026-09-08"
+    ],
+    "sunburst_capabilities": {
+      "inference": true,
+      "lifecycle_status": "generally-available",
+      "status": "succeeded"
+    }
+  },
+  "gateway_deployments": {
+    "count": 12,
+    "image_deployments": [
+      {
+        "name": "gpt-image-1",
+        "model": "gpt-image-1"
+      },
+      {
+        "name": "gpt-image-1.5",
+        "model": "gpt-image-1.5"
+      }
+    ],
+    "gpt_image_2_5_sunburst_deployed": false,
+    "note": "The credential response contains a deployments list. Gateway SDK 2.0.0 uses the endpoint and token but does not expose this list on the returned AzureOpenAI client."
+  },
+  "inference_attempts": [
+    {
+      "route": "AzureOpenAI.images.generate deployment-style endpoint",
+      "requested_model_or_deployment": "gpt-image-2.5-sunburst",
+      "prompt_class": "synthetic blue-mug access probe",
+      "quality": "low",
+      "size": "1024x1024",
+      "seconds": 0.73,
+      "status": 404,
+      "error_code": "DeploymentNotFound",
+      "error_message": "The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.",
+      "record": "/home/colligo/mixology_data/model_access_2026-10-20/azure_sunburst_probe/record.json"
+    },
+    {
+      "route": "/openai/v1/images/generations",
+      "requested_model_or_deployment": "gpt-image-2.5-sunburst",
+      "prompt_class": "same synthetic blue-mug access probe",
+      "quality": "low",
+      "size": "1024x1024",
+      "seconds": 0.509,
+      "status": 404,
+      "error_code": "DeploymentNotFound",
+      "error_message": "The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.",
+      "record": "/home/colligo/mixology_data/model_access_2026-10-20/azure_v1_sunburst_probe/record.json"
+    }
+  ],
+  "result": "Ingress and Azure credential vending are fixed. GPT Image 2.5 Sunburst inference through this Azure resource remains unavailable because no Sunburst deployment is advertised; no image was returned.",
+  "not_tested": [
+    "The dev Pluto gateway, because the stage Pluto route succeeded.",
+    "gpt-image-1 or gpt-image-1.5 inference; switching models was not authorized.",
+    "A direct Foundry OpenAI credential call in this recovery batch."
+  ],
+  "secrets_persisted": false
+}

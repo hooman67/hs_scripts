@@ -1,0 +1,123 @@
+{
+  "prompts": [
+    {
+      "id": "p1",
+      "environment": "Office",
+      "text": "An organized office work surface in pale wood, with a compact stack of forms and a single pen in soft daylight. A blurred file tray adds local admin context without crowding the surface."
+    }
+  ],
+  "debug": {
+    "input_assessment": "Source messaging is product-feature heavy but includes usable office/admin document-work cues, especially multi-page forms, records, packets, copies, and recurring workflows. Technical supply, connectivity, and control claims were not translated into scene elements unless they supported ordinary document context.",
+    "count_explanation": "Three numbered KSPs contain some activity or document-work cues, but they overlap around frequent administrative workflows. A single medium-view Office prompt preserves the strongest compatible cue without exceeding the selected view's prop and background limits.",
+    "used_fallback": false,
+    "ksp_mappings": [
+      {
+        "ksp_id": "KSP1",
+        "eligible_for_additional_prompt": true,
+        "source_evidence": [
+          {
+            "path": "KSP1.long_message_best_sku",
+            "quote": "frequent document and color printing"
+          }
+        ],
+        "prompt_ids": [
+          "p1"
+        ],
+        "explanation": "The recurring document-output cue supports the stack of forms. Ink capacity, refill confidence, and all-in-one convenience were omitted as technical/product claims rather than environment details."
+      },
+      {
+        "ksp_id": "KSP2",
+        "eligible_for_additional_prompt": true,
+        "source_evidence": [
+          {
+            "path": "KSP2.long_message_best_sku",
+            "quote": "Multi-page forms, records, packets, and copies"
+          },
+          {
+            "path": "KSP2.long_message_best_sku",
+            "quote": "recurring admin work feels easier to manage"
+          }
+        ],
+        "prompt_ids": [
+          "p1"
+        ],
+        "explanation": "This is the main scene source. Multi-page forms and admin work were simplified into one compact stack of forms, a pen, and a small background file tray suitable for a medium oblique view."
+      },
+      {
+        "ksp_id": "KSP3",
+        "eligible_for_additional_prompt": false,
+        "source_evidence": [
+          {
+            "path": "KSP3.long_message_best_sku",
+            "quote": "devices and connections that fit your space"
+          }
+        ],
+        "prompt_ids": [],
+        "explanation": "Connectivity and supported device claims are abstract and product-dependent. They were not represented with phones, computers, cables, or network gear to avoid adding extra hardware or clutter."
+      },
+      {
+        "ksp_id": "KSP4",
+        "eligible_for_additional_prompt": true,
+        "source_evidence": [
+          {
+            "path": "KSP4.long_message_best_sku",
+            "quote": "Everyday setup, scanning, and repeat tasks"
+          }
+        ],
+        "prompt_ids": [
+          "p1"
+        ],
+        "explanation": "The repeat-task workflow overlaps with the admin-document setting in p1. Touchscreen, phone shortcuts, guided setup, and scanning specifics were omitted because they are product-control details rather than environmental cues."
+      }
+    ],
+    "value_proposition": {
+      "source_evidence": [
+        {
+          "path": "ValueProposition.long_message_best_sku",
+          "quote": "everyday print workflows stay organized"
+        },
+        {
+          "path": "ValueProposition.long_message_best_sku",
+          "quote": "recurring document and color output"
+        }
+      ],
+      "prompt_ids": [
+        "p1"
+      ],
+      "explanation": "The value proposition reinforces an organized frequent-workflow context, used as a tidy office work surface with restrained admin details."
+    },
+    "creative_additions": [
+      {
+        "prompt_id": "p1",
+        "details": [
+          "Pale wood work surface, soft daylight, a single pen, and a blurred file tray are plausible ordinary office details added to ground the document-work cue while staying within the medium-view limits."
+        ]
+      }
+    ],
+    "ignored_fields": [
+      "_chatSession"
+    ],
+    "camera": {
+      "requested_tag": "printer_FrontRightMedium",
+      "resolved_tag": "printer_FrontRightMedium",
+      "profile_version": "camera-v2-draft-2026-10-22-r3",
+      "resolution": "exact",
+      "framing": "medium",
+      "elevation": "oblique",
+      "adjustments": [
+        {
+          "prompt_id": "p1",
+          "omitted_or_simplified": [
+            "Ink-tank and refill details",
+            "Wireless, mobile, Ethernet, USB, and app claims",
+            "Touchscreen and guided setup specifics",
+            "People and larger office layout",
+            "Extra supplies beyond two nearby props"
+          ],
+          "explanation": "The resolved printer_FrontRightMedium profile allows a medium oblique local setting with at most two nearby props and one subordinate background detail. The prompt keeps a compact stack of forms and one pen as nearby props, with a single blurred file tray for office context."
+        }
+      ],
+      "device_type": "printer"
+    }
+  }
+}

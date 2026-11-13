@@ -1,0 +1,37 @@
+{
+  "schema_version": "placement-v3-spatial-crops-freeze-v1",
+  "protocol_version": "placement-v3-spatial-crops-request-v1",
+  "crop_policy": {
+    "method": "four_quadrants_each_extended_across_center_seams",
+    "overlap_fraction_of_full_dimension_per_quadrant": 0.1,
+    "encoding": "PNG",
+    "resize": false,
+    "pixel_policy": "decoded source pixels preserved exactly"
+  },
+  "request_policy": {
+    "model_default": "gpt-5.5",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 12000,
+    "max_api_attempts": 2,
+    "image_order": [
+      "B_original_digital_twin",
+      "A_full_scene",
+      "A_top_left_crop",
+      "A_top_right_crop",
+      "A_bottom_left_crop",
+      "A_bottom_right_crop"
+    ]
+  },
+  "hashes": {
+    "runner_sha256": "4d16baee064444fc20d5217375188bb6a9dfd97d5ddb2a9eee45644ad05287e9",
+    "batch_runner_sha256": "f53df2a5f67070e294ef25905ad87f99222b68ea0913fe311f633769a3410a55",
+    "root_v3_runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+    "root_v3_scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+    "root_v3_observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+    "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+    "root_v3_system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+    "experiment_instruction_sha256": "6129417633e174f049178b72b2ab7cdfb09d4ae91a4f6ddf97d9da590231f697",
+    "combined_system_prompt_sha256": "6129417633e174f049178b72b2ab7cdfb09d4ae91a4f6ddf97d9da590231f697"
+  },
+  "frozen_at_utc": "2026-11-05T22:44:30.862905+00:00"
+}

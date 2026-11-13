@@ -1,0 +1,158 @@
+{
+  "guard_version": "full-affine-v1.7-strong-low-inlier-exception",
+  "fixed_position": true,
+  "thresholds": {
+    "min_inliers": 20,
+    "min_inlier_ratio": 0.55,
+    "singular_min": 0.98,
+    "singular_max": 1.02,
+    "max_anisotropy_ratio": 1.02,
+    "max_abs_rotation_deg": 1.0,
+    "max_column_shear_cos": 0.02,
+    "max_residual_median_px": 1.5,
+    "max_residual_p95_px": 3.5,
+    "min_source_span_x_fraction": 0.45,
+    "min_source_span_y_fraction": 0.4,
+    "min_source_quadrants": 3,
+    "min_source_hull_fraction": 0.12,
+    "max_fixed_translation_px": 8.0
+  },
+  "product_bounds_px": [
+    497,
+    176,
+    1754,
+    1431
+  ],
+  "matches": 80,
+  "inliers": 65,
+  "inlier_ratio": 0.8125,
+  "full_affine_matrix": [
+    [
+      1.0000537144266861,
+      -3.0452440888203864e-05,
+      0.7839822005061731
+    ],
+    [
+      0.000687436012052942,
+      0.9994624607308862,
+      -0.7060101798209582
+    ]
+  ],
+  "partial_affine_matrix": [
+    [
+      0.9999791914811039,
+      -0.0003661807959528629,
+      1.0951665101358203
+    ],
+    [
+      0.0003661807959528629,
+      0.9999791914811039,
+      -0.6337242925006855
+    ]
+  ],
+  "partial_inliers": 65,
+  "singular_values": [
+    1.0002000819712853,
+    0.9993162220584162
+  ],
+  "anisotropy_ratio": 1.0008844646903146,
+  "rotation_deg": 0.020570964745568302,
+  "column_shear_cos": 0.0006569301142196402,
+  "residual_median_px": 0.7333386016935131,
+  "residual_p95_px": 1.8596923952723359,
+  "translation_only_residual_median_px": 0.7357484698295593,
+  "translation_only_residual_p95_px": 1.802450180053711,
+  "source_span_x_fraction": 0.8809713125228882,
+  "source_span_y_fraction": 0.7658936381340027,
+  "source_quadrants": 4,
+  "source_hull_fraction": 0.5025834969829971,
+  "transformed_product_corners_px": [
+    [
+      497.8053186409728,
+      175.54103860680533
+    ],
+    [
+      1754.8728376753172,
+      176.40514567395587
+    ],
+    [
+      1754.8346198620025,
+      1430.730533891218
+    ],
+    [
+      497.7671008276581,
+      1429.8664268240675
+    ]
+  ],
+  "corners_in_frame": true,
+  "translation_x_px": 0.774169921875,
+  "translation_y_px": -0.327423095703125,
+  "final_product_bounds_px": [
+    497.774169921875,
+    175.67257690429688,
+    1754.774169921875,
+    1430.672607421875
+  ],
+  "rigid_transformed_product_corners_px": [
+    [
+      497.774169921875,
+      175.67257690429688
+    ],
+    [
+      1754.774169921875,
+      175.67257690429688
+    ],
+    [
+      1754.774169921875,
+      1430.672607421875
+    ],
+    [
+      497.774169921875,
+      1430.672607421875
+    ]
+  ],
+  "checks": {
+    "inliers": true,
+    "inlier_ratio": true,
+    "singular_min": true,
+    "singular_max": true,
+    "anisotropy": true,
+    "rotation": true,
+    "shear": true,
+    "residual_median": true,
+    "residual_p95": true,
+    "translation_only_residual_median": true,
+    "translation_only_residual_p95": true,
+    "span_x": true,
+    "span_y": true,
+    "quadrants": true,
+    "hull": true,
+    "corners": true,
+    "fixed_translation_x": true,
+    "fixed_translation_y": true
+  },
+  "strong_low_inlier_evidence": {
+    "eligible": false,
+    "checks": {
+      "inlier_range": false,
+      "inlier_ratio": true,
+      "span_x": true,
+      "span_y": true,
+      "quadrants": true,
+      "hull": true,
+      "all_non_count_invariants": true
+    },
+    "thresholds": {
+      "min_inliers": 17,
+      "max_inliers": 19,
+      "min_inlier_ratio": 0.7,
+      "min_source_span_x_fraction": 0.7,
+      "min_source_span_y_fraction": 0.6,
+      "min_source_quadrants": 4,
+      "min_source_hull_fraction": 0.25
+    }
+  },
+  "accepted_inlier_evidence": true,
+  "reasons": [],
+  "verdict": "pass"
+}

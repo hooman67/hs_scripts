@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foundry.adobe.com/schemas/placement-observations-v1.json",
+  "title": "Natural placement model observations",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "product_match",
+    "product_match_note",
+    "components",
+    "summary",
+    "suggested_scene_changes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "placement-observations-v1"
+    },
+    "product_match": {
+      "type": "string",
+      "enum": ["match", "uncertain", "mismatch"]
+    },
+    "product_match_note": {
+      "type": "string"
+    },
+    "components": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support_scenario",
+        "access_usability",
+        "orientation_alignment",
+        "scale_perspective",
+        "contact_integration"
+      ],
+      "properties": {
+        "support_scenario": {
+          "$ref": "#/$defs/support_scenario"
+        },
+        "access_usability": {
+          "$ref": "#/$defs/access_usability"
+        },
+        "orientation_alignment": {
+          "$ref": "#/$defs/orientation_alignment"
+        },
+        "scale_perspective": {
+          "$ref": "#/$defs/scale_perspective"
+        },
+        "contact_integration": {
+          "$ref": "#/$defs/contact_integration"
+        }
+      }
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "suggested_scene_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "support_scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visibility", "severity", "confidence", "evidence", "consequence", "issue_codes"],
+      "properties": {
+        "visibility": {
+          "type": "string",
+          "enum": ["observed", "partial", "unobservable"]
+        },
+        "severity": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "maximum": 4
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consequence": {
+          "type": "string"
+        },
+        "issue_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "inappropriate_support",
+              "occupied_workstation",
+              "implausible_scenario",
+              "unsupported_base"
+            ]
+          }
+        }
+      }
+    },
+    "access_usability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visibility", "severity", "confidence", "evidence", "consequence", "issue_codes"],
+      "properties": {
+        "visibility": {
+          "type": "string",
+          "enum": ["observed", "partial", "unobservable"]
+        },
+        "severity": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "maximum": 4
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consequence": {
+          "type": "string"
+        },
+        "issue_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "excessive_reach",
+              "precarious_edge",
+              "blocked_operating_side",
+              "no_user_position",
+              "furniture_collision",
+              "blocked_paper_or_lid_path"
+            ]
+        }
+        }
+      }
+    },
+    "orientation_alignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visibility", "severity", "confidence", "evidence", "consequence", "issue_codes"],
+      "properties": {
+        "visibility": {
+          "type": "string",
+          "enum": ["observed", "partial", "unobservable"]
+        },
+        "severity": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "maximum": 4
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consequence": {
+          "type": "string"
+        },
+        "issue_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "corner_facing",
+              "furniture_axis_conflict",
+              "chair_alignment_conflict"
+            ]
+        }
+        }
+      }
+    },
+    "scale_perspective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visibility", "severity", "confidence", "evidence", "consequence", "issue_codes"],
+      "properties": {
+        "visibility": {
+          "type": "string",
+          "enum": ["observed", "partial", "unobservable"]
+        },
+        "severity": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "maximum": 4
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consequence": {
+          "type": "string"
+        },
+        "issue_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "implausible_scale",
+              "conflicting_perspective"
+            ]
+        }
+        }
+      }
+    },
+    "contact_integration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visibility", "severity", "confidence", "evidence", "consequence", "issue_codes"],
+      "properties": {
+        "visibility": {
+          "type": "string",
+          "enum": ["observed", "partial", "unobservable"]
+        },
+        "severity": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "maximum": 4
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consequence": {
+          "type": "string"
+        },
+        "issue_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "floating",
+              "sinking_or_intersection",
+              "inconsistent_shadow",
+              "inconsistent_reflection"
+            ]
+        }
+        }
+      }
+    }
+  }
+}

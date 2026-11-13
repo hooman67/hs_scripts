@@ -1,0 +1,112 @@
+{
+  "experiment": "FFDY-8454",
+  "rig": "/home/colligo/hs_scripts/claude/3d_research/FFDY-8454/blender/laundry_sink_full_assembly_rig_v2.blend",
+  "blender_version": "5.2.2 LTS",
+  "pass": true,
+  "checks": {
+    "exactly_six_component_roots": true,
+    "six_independent_progress_channels": true,
+    "six_visible_direct_handles": true,
+    "every_channel_has_constrained_progress": true,
+    "every_channel_has_own_action": true,
+    "every_direct_handle_has_own_action": true,
+    "all_parts_start_flat_or_thin_to_mat": true,
+    "one_progress_channel_moves_only_its_part": true,
+    "direct_handle_moves_target": true,
+    "direct_handle_does_not_move_other_parts": true,
+    "installed_pose_differs_from_layout_for_five_or_more_parts": true
+  },
+  "component_roots": [
+    "PART_01_FRONT_FRAME_DOORS",
+    "PART_02_LEFT_SIDE",
+    "PART_03_RIGHT_SIDE",
+    "PART_04_BOTTOM_PANEL",
+    "PART_05_WIDE_RAIL",
+    "PART_06_NARROW_RAIL"
+  ],
+  "progress_channels": [
+    "PROGRESS_01_FRONT_FRAME_DOORS",
+    "PROGRESS_02_LEFT_SIDE",
+    "PROGRESS_03_RIGHT_SIDE",
+    "PROGRESS_04_BOTTOM_PANEL",
+    "PROGRESS_05_WIDE_RAIL",
+    "PROGRESS_06_NARROW_RAIL"
+  ],
+  "direct_handles": [
+    "MOVE_ROTATE_01_FRONT_FRAME_DOORS",
+    "MOVE_ROTATE_02_LEFT_SIDE",
+    "MOVE_ROTATE_03_RIGHT_SIDE",
+    "MOVE_ROTATE_04_BOTTOM_PANEL",
+    "MOVE_ROTATE_05_WIDE_RAIL",
+    "MOVE_ROTATE_06_NARROW_RAIL"
+  ],
+  "independence_probe_moved": [
+    "PART_04_BOTTOM_PANEL"
+  ],
+  "layout_locations": {
+    "PART_01_FRONT_FRAME_DOORS": [
+      0.0,
+      -0.15000000596046448,
+      0.017500000074505806
+    ],
+    "PART_02_LEFT_SIDE": [
+      -1.0499999523162842,
+      0.2199999839067459,
+      0.017500000074505806
+    ],
+    "PART_03_RIGHT_SIDE": [
+      1.0499999523162842,
+      0.2199999839067459,
+      0.017500000074505806
+    ],
+    "PART_04_BOTTOM_PANEL": [
+      0.0,
+      1.0399999618530273,
+      0.017500000074505806
+    ],
+    "PART_05_WIDE_RAIL": [
+      1.3300000429153442,
+      -0.7200000286102295,
+      0.017500000074505806
+    ],
+    "PART_06_NARROW_RAIL": [
+      1.5800000429153442,
+      -0.7200000286102295,
+      0.017500000074505806
+    ]
+  },
+  "installed_locations": {
+    "PART_01_FRONT_FRAME_DOORS": [
+      0.0,
+      0.0,
+      0.017500000074505806
+    ],
+    "PART_02_LEFT_SIDE": [
+      -0.5824999809265137,
+      0.0,
+      0.3449999988079071
+    ],
+    "PART_03_RIGHT_SIDE": [
+      0.5824999809265137,
+      0.0,
+      0.3449999988079071
+    ],
+    "PART_04_BOTTOM_PANEL": [
+      0.0,
+      -0.39250001311302185,
+      0.31999996304512024
+    ],
+    "PART_05_WIDE_RAIL": [
+      0.0,
+      0.39250001311302185,
+      0.5199999809265137
+    ],
+    "PART_06_NARROW_RAIL": [
+      0.0,
+      0.39250001311302185,
+      0.12999999523162842
+    ]
+  },
+  "scope": "cabinet only; exactly six storyboard-inferred components",
+  "caveat": "component dimensions and exact joinery are not CAD-derived"
+}

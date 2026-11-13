@@ -1,0 +1,60 @@
+{
+  "confidence": "VERIFIED",
+  "scope": "one synthetic reference-image edit on this Pluto host",
+  "completed_at_utc_from_output_mtime": "2026-10-19T17:32:27.720685+00:00",
+  "ok": true,
+  "endpoint": "https://api.openai.com/v1/images/edits",
+  "requested_model": "gpt-image-2.5-sunburst",
+  "returned_model": null,
+  "request_id": null,
+  "usage": null,
+  "cost": null,
+  "metadata_limitation": "The bundled CLI does not retain the raw image API response or request ID.",
+  "auth": "foundry_aws_gateway.llm.get_openai via injected Pluto token",
+  "transport": "unchanged bundled imagegen CLI, edit subcommand",
+  "cli": "/home/colligo/.codex/skills/.system/imagegen/scripts/image_gen.py",
+  "cli_sha256": "b4345cf835e5b593b97df6bb2b70bda493b8a97eee4cabbc99b2fa57dba9b448",
+  "versions": {
+    "python": "3.12.11",
+    "foundry-aws-gateway": "2.0.0",
+    "openai": "3.35.1",
+    "pillow": "13.0.0"
+  },
+  "prompt": "Restyle this illustration as a soft watercolor painting. Keep the single blue mug, its shape, handle on the right, composition, and pale background.",
+  "prompt_file": "/home/colligo/hs_scripts/claude/mixology/research/model-access/data/edit_prompt.txt",
+  "prompt_file_sha256": "a5ef1441a361d7117aec721fd2866a5f37f489901a66b9e9ec934134828b84c6",
+  "input": {
+    "role": "synthetic edit target",
+    "path": "/home/colligo/hs_scripts/claude/mixology/research/model-access/data/synthetic_reference.png",
+    "sha256": "bd50c0bd42b90eb0176a2106cbf351aabdd4daaf189e1e8419d073ca1a81060a",
+    "bytes": 8528,
+    "dimensions": [1024, 1024],
+    "format": "PNG",
+    "mode": "RGB"
+  },
+  "settings": {
+    "quality": "low",
+    "size": "1024x1024",
+    "output_format": "png",
+    "n": 1,
+    "prompt_augmentation": false,
+    "input_fidelity": "omitted"
+  },
+  "output": {
+    "path": "/home/colligo/hs_scripts/claude/mixology/output/imagegen/sunburst_access_test_2026-10-19.png",
+    "sha256": "86632318d280e2df23a236e838f0fca05c4dcb530f242f9fb7ba2bd93c8c4cec",
+    "bytes": 1202435,
+    "dimensions": [1024, 1024],
+    "format": "PNG",
+    "mode": "RGB",
+    "decode_verified": true
+  },
+  "cli_elapsed_seconds": 11.4,
+  "cli_exit_code": 0,
+  "visual_observation": "Output has watercolor texture and paint edges. The single blue mug, right-side handle, broad silhouette/composition, pale background, and ground shadow remain recognizable.",
+  "limits": [
+    "One synthetic input; not a customer-style evaluation.",
+    "No claim of pixel-exact preservation.",
+    "No model substitution or post-generation enhancement."
+  ]
+}

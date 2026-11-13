@@ -1,0 +1,53 @@
+{
+  "slug": "magic__printer_FrontCloseUp__p1__retained_control",
+  "base_slug": "magic__printer_FrontCloseUp__p1",
+  "mode": "retained_control",
+  "device_id": "magic",
+  "camera_id": "Front_CloseUp",
+  "prompt": "A common office area with a dedicated output table in clear midday light, with an architectural letter tray holding a few plain papers with indistinct markings. The surrounding wall and work surface stay orderly, giving the area the practical rhythm of everyday document work.",
+  "pipeline_version": "unified-blue-scale-v22-recomposed-support-stage-b-placement-twin-camera-guide-only-no-mask",
+  "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+  "output_sha256": "1241706e56d1ffdc9982028615d4c2a211d8fc0db7d8f8517f59484bb740fc09",
+  "final_prompt_sha256": "fda9739d40f0dc1d54e0adefd7310c660dbfe2a4bb9b20b08c349eee76da916c",
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1144,
+        "prompt_tokens": 13387,
+        "total_tokens": 14531,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 246,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+      "mask": false
+    }
+  ]
+}

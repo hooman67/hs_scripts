@@ -1,0 +1,62 @@
+{
+  "actual_astra_receipt": {
+    "model_returned": "gpt-6-astra",
+    "finish_reason": "stop",
+    "response_id": "chatcmpl-Ej9BdkvQotoM47nhMf6u1yoFQEZbg",
+    "usage": {
+      "completion_tokens": 21259,
+      "prompt_tokens": 102819,
+      "total_tokens": 124078,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 2560,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    },
+    "started_utc": "2026-11-11T20:26:20.328840+00:00",
+    "finished_utc": "2026-11-11T20:34:27.983386+00:00",
+    "chunks_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_2/astra_appearance_revision/synthesis/attempt01/chunks.jsonl",
+    "chunks_sha256": "c6516041b5ad46807f2321fb16d441bc6b647d0f6b3b87f17c9c80a8e86375f8",
+    "transport_attempts": 1,
+    "post_completion_close_error": null
+  },
+  "prompt_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_2/astra_appearance_revision/synthesis/proposal.json",
+  "prompt_source_sha256": "6c1f017ccab7828bc3d79598ad5259c7d63d2dd7e48bba4849472ea889a94078",
+  "user_confirmed_standard": {
+    "judging_standard": "Visibly awkward or misaligned appearance, even if physically plausible",
+    "expected_disposition_for_localized_elitebook_concerns": "Explicit concerns and score penalties, not necessarily fail",
+    "additional_requirement": "ALso, the C-Tech put feedback in this HTML: https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_v6_4_pr4523_30_20261110/fe/viewer.html?src=data_source_prompts_20261110.json&ldap=hshariati&q=W10%3D\nMake sure judge addresses them (i.e catches them) if relevant."
+  },
+  "original_physical_gate_not_retroactively_met": true,
+  "change_hypothesis": {
+    "revision_basis": "Author an isolated successor under the explicitly authorized APPEARANCE-sensitive standard. The predecessor often treated absence of a material physical defect as sufficient for severity 0. The successor must separately assess whether a visible relationship looks awkward, misaligned, crowded or irregular, even when physically plausible. This is a prospective rubric change, not retrospective recovery of detections under the old gate.",
+    "transferable_mechanisms": [
+      "Separate visible appearance, inferred physical mechanism and confidence. A supported minor appearance concern receives severity 1 and an existing issue code; uncertainty about physical rotation, structural deformation or complete obstruction does not erase that concern.",
+      "Inspect local support contours, thickness relationships, terminations and assembly separately from product/support orientation. Report the affected furniture member rather than converting a chair irregularity into a table defect.",
+      "Reconstruct the functional front, approach edge and associated seating before assessing access or layout. Detect partial operating-side crowding and genuinely awkward workstation relationships without requiring impossible use.",
+      "Compare geometric relationships in context rather than requiring equal projected slopes or treating every slope difference as defective. Preserve material rigid-axis conflict detection while admitting lesser appearance misregistration at severity 1.",
+      "Inspect product–prop tangencies and nearby mounting-plane relationships. An awkward apparent intersection can be scored without claiming proven penetration, detachment or missing hardware.",
+      "Assess lived-in appearance contextually. A visibly display-like immediate workstation can receive a minor staging penalty without an access defect; clean dedicated stations, negative space and missing optional accessories are not automatically defective.",
+      "Keep each underlying defect under one primary scoring owner. Distinct manifestations may be described together, but related geometry, crowding or staging cues must not accumulate duplicate penalties.",
+      "Adjudicate feedback rather than reproduce its verdict. Preserve supported appearance subclaims, disputed stronger claims, uncertainty and scoring-scope gaps."
+    ],
+    "preserved_contracts": {
+      "schemas_and_scoring": "Keep the supplied schemas, five final components, active issue-code vocabulary, weights 20/30/20/15/15, deterministic scoring and medium/high-confidence severity-at-least-2 material-failure rule unchanged. Severity 1 is a scored concern, not an automatic FAIL. No numeric score conversion is invented.",
+      "p1": "Complementary full-observation primaries remain geometry-first and use-first. Proposal and independent verifiers return exactly the requested components.",
+      "p2": "Geometry and use specialists remain mutually blind, always-on discovery roles. The final reconciler checks both reports against the image and produces the sole scored observation.",
+      "seating_code_policy": "Do not reactivate chair_alignment_conflict. A demonstrated product–seating–table operating relationship can use furniture_layout_conflict; ordinary chair angle, lateral offset or imperfect centering cannot.",
+      "engineering_boundary": "The engineer implements, freezes, tests, runs and publishes the isolated successor. The reconciler-budget increase and streaming recovery are separate engineering changes, not evidence of improved visual sensitivity."
+    },
+    "successor_justified": true,
+    "performance_claim": "The supplied thirty development analyses justify testing these transferable policy changes. They establish neither successor accuracy nor promotion readiness."
+  }
+}

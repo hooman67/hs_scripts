@@ -1,0 +1,200 @@
+{
+  "version": "camera-v2-final-prompt-summary-v1",
+  "provenance": {
+    "manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/manifest.json",
+    "manifest_sha256": "840ab21adcaedef33973315a7f909f0b47af4375e18bb88bc599305470811409",
+    "accepted_prompt_cases_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/accepted_prompt_cases.json",
+    "accepted_prompt_cases_sha256": "47df63b3a465fa9b09f62e78b4066aebbfe4438e503d4650a1e601158ea33011",
+    "status_inventory_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/status_inventory.json",
+    "status_inventory_sha256": "0f543642be4fc4bd5bea0e93d0769c2922a7240a1f95e151b9628afd91f67596",
+    "system_prompt_sha256": "00912f74c3ef11dece81c7e3ba7792ffafdf9f3fb12a2330923dd16c75dbd65e",
+    "input_schema_sha256": "9515b6aabcfce9a6d1ff43fcf9e861aa3bd5819bfce68a7a07960e8972588c24",
+    "output_schema_sha256": "397ff3526546937a5e7416e9a5cf2ed45dc0600a65a361d1ffe7e0c7c363d9ca",
+    "model": {
+      "deployment": "gpt-5.5",
+      "reasoning_effort": "medium",
+      "max_completion_tokens": 8000,
+      "temperature": null,
+      "strict_output_schema": true,
+      "max_concurrency": 2,
+      "max_transient_attempts": 100
+    }
+  },
+  "final_status": {
+    "version": "camera-v2-prompt-status-v1",
+    "manifest_case_count": 369,
+    "manifest_source_render_pair_count": 729,
+    "accepted_case_count": 369,
+    "manual_review_case_count": 0,
+    "rejected_case_count": 0,
+    "unprocessed_case_count": 0,
+    "accepted_prompt_count": 592,
+    "launchable_generation_row_count": 1318,
+    "accepted_origin_counts": {
+      "api": 355,
+      "reused_exact": 14
+    }
+  },
+  "verified": {
+    "exact_manifest_case_join": true,
+    "accepted_record_hashes": 369,
+    "validated_output_hashes": 369,
+    "prompt_and_debug_projections": 369,
+    "final_validation_reports_accepted": 369,
+    "source_quote_camera_schema_props_and_device_boundary_failures": 0,
+    "origin_counts": {
+      "api": 355,
+      "reused_exact": 14
+    },
+    "unknown_camera_fallback_case_ids": [
+      "22fdbf19f03d1a31__laptop_CAMReview",
+      "d60e13e4457fd44c__laptop_CAMReview",
+      "fecec52a5c57c7bb__laptop_CAMReview"
+    ],
+    "citation_repair_case_ids": [
+      "22fdbf19f03d1a31__laptop_BackRightMedium"
+    ]
+  },
+  "api_accounting": {
+    "successful_response_attempts": {
+      "response_count": 367,
+      "latency_seconds_sum": 7909.091,
+      "latency_seconds_mean": 21.550657,
+      "latency_seconds_median": 20.454,
+      "latency_seconds_min": 11.735,
+      "latency_seconds_max": 55.323,
+      "prompt_tokens": 5736795,
+      "completion_tokens": 758443,
+      "total_tokens": 6495238,
+      "reasoning_tokens": 424277,
+      "cached_prompt_tokens": 5154304
+    },
+    "selected_new_api_responses": {
+      "response_count": 355,
+      "latency_seconds_sum": 7626.928,
+      "latency_seconds_mean": 21.484304,
+      "latency_seconds_median": 20.426,
+      "latency_seconds_min": 11.735,
+      "latency_seconds_max": 55.323,
+      "prompt_tokens": 5542607,
+      "completion_tokens": 731423,
+      "total_tokens": 6274030,
+      "reasoning_tokens": 409013,
+      "cached_prompt_tokens": 5042944
+    },
+    "rejected_successful_responses": {
+      "response_count": 12,
+      "latency_seconds_sum": 282.163,
+      "latency_seconds_mean": 23.513583,
+      "latency_seconds_median": 22.429,
+      "latency_seconds_min": 18.238,
+      "latency_seconds_max": 32.238,
+      "prompt_tokens": 194188,
+      "completion_tokens": 27020,
+      "total_tokens": 221208,
+      "reasoning_tokens": 15264,
+      "cached_prompt_tokens": 111360
+    },
+    "rejected_response_count": 12,
+    "rejected_case_count": 11,
+    "rejection_reason_counts": {
+      "Citation path guard failure at /debug/ksp_mappings/1/source_evidence/0/path: citation_quote_not_found_in_intended_message": 8,
+      "Evidence is not a verbatim source substring: KSP2.long_message_best_sku": 8,
+      "p1 contains generic or specific target-device wording: paper tray": 1,
+      "p1 contains generic or specific target-device wording: phone": 1,
+      "p1 contains generic or specific target-device wording: smartphone": 1,
+      "p2 contains generic or specific target-device wording: phone": 1
+    },
+    "recorded_transient_failed_transport_attempts": 1,
+    "recorded_transport_attempt_count": 368,
+    "possible_unrecorded_interrupted_transport_attempts_upper_bound": 2,
+    "transport_attempt_count_range_including_interruption_uncertainty": [
+      368,
+      370
+    ],
+    "interruption_audit_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/run_interruptions.json",
+    "interruption_audit_sha256": "e2c33f2afc593282b3bbf986acf673367cb1a2671c71d0547045ccf8be4c2fc9"
+  },
+  "review_batches": [
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_001.json",
+      "sha256": "cf40bed3abb8f6be99e4694fa7380353b9fa03f6541b76309ca7f266dfbe3d6c",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_002.json",
+      "sha256": "c555c2377e19eb748846ae248553e4691e60b0090357cac0172af09b19f1e8ee",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_003.json",
+      "sha256": "021ed4690e80de445b173ddbfbb0978d7fb4c66f19693e6621071c337c8ec7cc",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_004.json",
+      "sha256": "d2f794d8ad811adc4e35dc4d3d0199dc3a1b11a5b250641d52fb6a6f88fe7e75",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_005.json",
+      "sha256": "b6392eaa027fca7e03e323cd6f79166902d28127f9be954b0e535fd3c38aa96f",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_006.json",
+      "sha256": "edd072e80104ad4ec128c9d731037d9ac6c4be99feb47c75cd86bd0a84734bd1",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_007.json",
+      "sha256": "e3a0e5944f71f8ca90f22511f2c58dcb72c0b51e7e0612e2f6937ce725318720",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_008.json",
+      "sha256": "c0b68f6101c25ee38d7effee08f018ed449f03fca8b6e6dcc8a9aa33e0e7282f",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_009.json",
+      "sha256": "4553196785977d1c21e659f6d1b72bacf84d981e410a78de934eb8868832f551",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_010.json",
+      "sha256": "90cc0212905e631b6c3a62776f33e9b4b1b3c9443ccdf47b3bbf260973524391",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_011.json",
+      "sha256": "1c2b2fff5004797d4085eaa6cb5923b18a4b9112f1a536c3a55a36a187c40fbc",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_012.json",
+      "sha256": "b17d5bf5292b04d5c0af134a3203c7d77d5601f6ae5645e37e288b13436280ca",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_013.json",
+      "sha256": "0a15ebda18603a43fd6722ca627e8a3070efaf225fe695b110f030df3d23866d",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_014.json",
+      "sha256": "6f0c8daca768cac4fe9c7855cbc7e3a9ce15b4c2fb40c100652828e071e2c5dc",
+      "case_count": 25
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_015.json",
+      "sha256": "9dfe840d9b71998401ec3ce479f4aef3c1ccafc165deb1375b76c79bdb0980e5",
+      "case_count": 5
+    }
+  ],
+  "limitations": [
+    "The transport-attempt total has a +0..2 uncertainty because two requests may have been in flight during the documented controlled interruption; no response files exist for them.",
+    "The deterministic density audit is a conservative heuristic. Root review accepted all reviewed scene scopes, including the recorded FrontCloseUpHigh ambiguity advisory.",
+    "The three laptop_CAMReview cases intentionally use the conservative unknown-camera fallback because the tag is unregistered; no profile was invented."
+  ]
+}

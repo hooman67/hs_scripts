@@ -1,0 +1,19 @@
+visibility: public
+custom_pyenv: firefly_vision_sdk
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - pydantic
+deps:
+# einops, pycocotools, and psutil are referenced via utils/hidden_deps.py —
+# sam3 imports them at module load even though its pyproject lists them as
+# dev/optional extras.
+- einops
+- numpy
+- pillow
+- psutil
+- pycocotools
+- sam3
+- torch

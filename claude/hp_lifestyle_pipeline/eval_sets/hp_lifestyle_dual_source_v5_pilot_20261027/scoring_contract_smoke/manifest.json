@@ -1,0 +1,107 @@
+{
+  "version": "hp-lifestyle-v5-scoring-contract-smoke-v1",
+  "as_of": "2026-10-27",
+  "status": "authorized_two_case_isolated_scoring_contract_smoke",
+  "separate_from_main_review_set": true,
+  "main_manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/manifest.json",
+  "main_manifest_sha256": "8ff485ef7078c6cb9ec950885bbdc0c1bd50a0ca4933fefca4d541c8857e3c8c",
+  "scope": {
+    "case_count": 2,
+    "candidates_per_case": 20,
+    "candidate_count": 40,
+    "semantic_attempts_per_exact_request": 1,
+    "max_concurrency": 2,
+    "max_transport_attempts": 100,
+    "image_generation_authorized": false,
+    "modric_included": false
+  },
+  "model": {
+    "deployment": "gpt-5.5",
+    "reasoning_effort": "medium",
+    "max_completion_tokens": 24000,
+    "temperature": null,
+    "strict_output_schema": true,
+    "client_timeout_seconds": 120
+  },
+  "scoring_contract": {
+    "aggregation": "sum of per-component maximum across the two documents",
+    "components": [
+      "setting",
+      "activity",
+      "materials",
+      "use_context"
+    ],
+    "empty_document_components_must_be_zero": true,
+    "missing_document_penalty": false,
+    "full_score_from_either_document_possible": true
+  },
+  "provenance": {
+    "system_prompt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/system_prompt.md",
+      "bytes": 57791,
+      "sha256": "9f070b31198c62a5a56e3fda1d2d7356af55569fdd818aa2aaa9addb9f2e3619"
+    },
+    "input_schema": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/input.schema.json",
+      "bytes": 388,
+      "sha256": "5701b6b85b19191a18f730dafd1633e390bacae8690e541c1eabbc2ca2cce07c"
+    },
+    "output_schema": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/output.schema.json",
+      "bytes": 12815,
+      "sha256": "307811a5c24286c5a47987b6e3dc9c8c603d8519625bef6664507b66f4d15158"
+    },
+    "camera_profiles": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/camera_profiles.json",
+      "bytes": 117073,
+      "sha256": "59b5e2b322dcd74c21432e772f3dd11513f71c182f6114b99b15e009dbeea68b"
+    },
+    "reference_library": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/reference_library.json",
+      "bytes": 7046,
+      "sha256": "f730d8b3ce35a0efd841ad7ebabf9fb46f9c033e93d9ca9d8654aabcfe5353cd"
+    },
+    "finalizer": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/scripts/finalize_output.py",
+      "bytes": 7389,
+      "sha256": "d761398f978316dbea52bc21f952de3111746841640ce441cd751921daab965a"
+    },
+    "validator": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/scripts/validate_output.py",
+      "bytes": 26745,
+      "sha256": "60a44dafb2af1302773791b85462c0fdc6bea2d372cee67c258c11b2ef9c3eca"
+    }
+  },
+  "authorized_case_ids": [
+    "empty_brief__elitebook_source__laptop_FrontRightCloseUp",
+    "deskjet_brief__empty_source__printer_FrontRightCloseUp"
+  ],
+  "cases": [
+    {
+      "case_id": "empty_brief__elitebook_source__laptop_FrontRightCloseUp",
+      "camera_tag": "laptop_FrontRightCloseUp",
+      "empty_document": "smart_brief",
+      "nonempty_document": "source_messaging",
+      "source_wrapper_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/elitebook__laptop_FrontRightCloseUp.json",
+      "source_wrapper_sha256": "ad041affb68d886cecafd9216b5704926eb503fd133690102d2ffd7874150356",
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/scoring_contract_smoke/inputs/empty_brief__elitebook_source__laptop_FrontRightCloseUp.json",
+      "input_sha256": "6dbbecf55290574679f0a9b7d806ad04f67d6120d8ed9306c9fb38acf3264c4d",
+      "input_semantic_sha256": "6e6ad438a7c37a6cabeeb964a084f07cd6b5018451270002b7aac29d52980f6b",
+      "human_review_status": "pending",
+      "launchable": false
+    },
+    {
+      "case_id": "deskjet_brief__empty_source__printer_FrontRightCloseUp",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "empty_document": "source_messaging",
+      "nonempty_document": "smart_brief",
+      "source_wrapper_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/deskjet_2955__printer_FrontRightCloseUp.json",
+      "source_wrapper_sha256": "8dfb44e6d83b2d11c6358adb1c3e58f065eab31fa9d2c569d4ac6b42085c70d3",
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/scoring_contract_smoke/inputs/deskjet_brief__empty_source__printer_FrontRightCloseUp.json",
+      "input_sha256": "652d75e9c719e6bfc1c750a3f961663328c0ef80327ebe7a72e978768bd6ec3c",
+      "input_semantic_sha256": "bec79b93bb17c22fe58c914570a361317181513b4380a0f795c470a71b91ff57",
+      "human_review_status": "pending",
+      "launchable": false
+    }
+  ]
+}

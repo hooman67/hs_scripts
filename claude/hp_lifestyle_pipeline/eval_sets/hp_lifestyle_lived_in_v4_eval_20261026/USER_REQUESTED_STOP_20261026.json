@@ -1,0 +1,19 @@
+{
+  "version": "hp-lifestyle-v4-generation-user-stop-v1",
+  "date": "2026-10-26",
+  "reason": "Hooman requested that V4 image generation stop before V4.1 prompt work.",
+  "local_services": {
+    "generation_tmux": "stopped",
+    "generation_process": "stopped",
+    "publisher_tmux": "stopped",
+    "publisher_process": "stopped"
+  },
+  "checkpoint_at_stop": {
+    "completed": 60,
+    "pending_remote_job_records": 7,
+    "selected_missing_records": 48,
+    "ambiguous_submissions": 0
+  },
+  "interpretation": "No further local submissions, polling, collection, or gallery publication will occur unless explicitly resumed. Already submitted remote jobs may finish server-side; this stop does not claim that the endpoint cancelled them.",
+  "resume_command": "bash /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_lived_in_v4_eval_20261026/launch_generation_and_publisher.sh resume"
+}

@@ -1,0 +1,2825 @@
+{
+  "schema_version": "placement-v3-diagnostic-evaluation-v1",
+  "status": "complete",
+  "interpretation": "Comment-driven development expectation checks; not held-out data, gold labels, or an accuracy estimate. Empty expectation lists are not checks.",
+  "sources": {
+    "manifest": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/diagnostic_cases.json",
+      "sha256": "c18b747abd5059b071d5b2f317b00a811bb4c5c24ee4dae846378140aaf65aef",
+      "relative_protocol_path": "data/diagnostic_cases.json"
+    },
+    "protocol_freeze": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/terra_compact_freeze_v3.json",
+      "sha256": "d6cfb9e15a4982981c821ab31a820707d9d650745610b6dfd57504ecc42bb7c1",
+      "status": "Model-only comparison against compact candidate3: same20 cases, prompt/schema/scoring and no exemplars.",
+      "visual_anchors": false,
+      "verified_core_files": {
+        "system_prompt.md": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+        "observation_schema.json": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+        "scoring.py": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+        "run_judge.py": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+        "run_batch.py": "4898de84206311317cd75369f8449351a2c24ac510d129d22f03a6c306b53e86",
+        "data/visual_anchors.json": "1710f11ca65d493aeb307b71ea79de924398616159b69ed4c5b70c7de0e77a4d",
+        "data/diagnostic_cases.json": "c18b747abd5059b071d5b2f317b00a811bb4c5c24ee4dae846378140aaf65aef",
+        "data/comment_inventory.json": "7755a1c93520913b1ec8171395c77ab58510e29404782db4bdbde767c4a9e15f"
+      },
+      "verified_file_paths": {
+        "system_prompt.md": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/system_prompt.md",
+        "observation_schema.json": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/observation_schema.json",
+        "scoring.py": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/scoring.py",
+        "run_judge.py": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/run_judge.py",
+        "run_batch.py": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/run_batch.py",
+        "data/visual_anchors.json": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/visual_anchors.json",
+        "data/diagnostic_cases.json": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/diagnostic_cases.json",
+        "data/comment_inventory.json": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json"
+      }
+    },
+    "core_root": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3",
+    "progress": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/progress.json",
+      "sha256_at_evaluation": "26079b8725f9e5b77fe999e05d9ec570a24d9e5b2302beac64d8dc8ddaabc9e0",
+      "status": "complete",
+      "updated_at_utc": "2026-11-05T22:37:57.217517+00:00"
+    },
+    "run_dir": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3"
+  },
+  "counts": {
+    "manifest_cases": 20,
+    "evaluated_cases": 20,
+    "missing_or_incomplete_cases": 0,
+    "verdict_expectations_nonempty": {
+      "matched": 5,
+      "evaluated_denominator": 11,
+      "mapped_total_in_manifest": 11
+    },
+    "issue_any_expectations_nonempty": {
+      "matched": 5,
+      "evaluated_denominator": 15,
+      "mapped_total_in_manifest": 15
+    }
+  },
+  "missing_or_incomplete": [],
+  "cases": [
+    {
+      "id": "magic__printer_FrontCloseUp__p2",
+      "exact_human_comment": "The position of the printer is very weird. It's too close to the edge (a bit \nof it is even hanging) and it's not aligned with the edges of the cabined. Also there is a desk right in front of the printer. and cabinet. This is not a natural placement.",
+      "exact_human_comment_sha256": "d4707d92306e9832c0e1deee5f691cfd8a507c4f849f8986b61b05f3b16450a9",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "magic__printer_FrontCloseUp__p2"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "furniture_axis_conflict",
+          "precarious_edge",
+          "unsupported_base",
+          "blocked_operating_side"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Visible support margin, alignment, and desk blocking approach.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "fail",
+          "acceptable": [
+            "fail"
+          ],
+          "matched": true
+        },
+        "issue_any": {
+          "observed": [
+            "blocked_operating_side",
+            "furniture_collision"
+          ],
+          "expected_any": [
+            "furniture_axis_conflict",
+            "precarious_edge",
+            "unsupported_base",
+            "blocked_operating_side"
+          ],
+          "matched_values": [
+            "blocked_operating_side"
+          ],
+          "matched": true
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontCloseUp__p2/result.json",
+        "result_sha256": "45ae69a81ddd931982412c50b5f85b3bd522218d9aa139b3fab058225da32ea4",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 67.5,
+          "applied_score_cap": 39,
+          "natural_placement_score": 39,
+          "component_scores": {
+            "support_scenario": 50,
+            "access_usability": 25,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 0.925,
+          "confidence": "medium",
+          "verdict": "fail",
+          "verdict_reasons": [
+            "clear_placement_defect_veto"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [
+              "incoherent_use_arrangement"
+            ],
+            "access_usability": [
+              "blocked_operating_side",
+              "furniture_collision"
+            ],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 85.0,
+        "applied_score_cap": 59,
+        "natural_placement_score": 59,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 50,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 0.925,
+        "confidence": "medium",
+        "verdict": "fail",
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [
+            "blocked_operating_side",
+            "furniture_collision"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/158e0741bcbe6774d8ef__magic__printer_FrontCloseUp__p2.png",
+            "sha256": "35f29527bb3f5b911b14671790a1042ed979f862e8861da4fc768552d0ddda3f"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_CloseUp.png",
+            "sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a"
+          },
+          "scene_prompt_sha256": "40a48652da49a0d2da83102b8c3472cf4b18107334c38dc2aa0f2d3c3f769c2c"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontCloseUp__p2/request.json",
+        "request_sha256": "f0e3ae68664bf32b10aeda40a4a70d6e9cf3937894dadcda1a8718a9ba82c775",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontCloseUp__p2/response.json",
+        "raw_response_sha256": "97df6ccb5d78eb5df3be668c9ecac3d8e12631cac80e464326b56388e259cb78",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontCloseUp__p2/result.json",
+        "result_sha256": "e384358b3c6977f4f33c0ece6cdfa9c5d55df7b61340c77347a9d3ef073de8e7",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontCloseUp__p5",
+      "exact_human_comment": "The printer is aligned to the edge of the dresser. But this should be a fail because no one puts a print\ner on their dressor like this. Very unatural. and out of place. The whole \"office credenza\" which actually looks like a dressor is misplaced. No one puts this furnature in the middle of the office like that. These usually are placed with their backs against a wall",
+      "exact_human_comment_sha256": "836f878c30d702120a03b603784568daa6d709bffa295976af745f6e632d84e6",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "magic__printer_FrontCloseUp__p5"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "misplaced_support_furniture"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Explicit scene fail despite aligned printer.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "pass",
+          "acceptable": [
+            "fail"
+          ],
+          "matched": false
+        },
+        "issue_any": {
+          "observed": [],
+          "expected_any": [
+            "misplaced_support_furniture"
+          ],
+          "matched_values": [],
+          "matched": false
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontCloseUp__p5/result.json",
+        "result_sha256": "5751bf40df8bb469d1578efc560e516229db68ae36d7b590d27272a773d260cd",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "high",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/ac598808b9801e47f3ab__magic__printer_FrontCloseUp__p5.png",
+            "sha256": "dae0563361111a1d18b4c1c212601bd579b3f31135a9225f5d81f62bb2fbe4e4"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_CloseUp.png",
+            "sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a"
+          },
+          "scene_prompt_sha256": "2fbafb2bc916348c73822fbf3d3ae8b1f89f9c33d742c850aaad0f9de8f037f3"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontCloseUp__p5/request.json",
+        "request_sha256": "cac2d7f9d6e48cf95d0ad742224f21c427ef025ad7e011f18fe94f9547d34d3f",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontCloseUp__p5/response.json",
+        "raw_response_sha256": "31bff0d7c41fd5a60f767ced18a0c1e48d908bfe9f655c865b48a38a1af513e5",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontCloseUp__p5/result.json",
+        "result_sha256": "8b5b0ebb0252f545c7f3ae718c6808c3ba320d346c853097ef7f5f0d7d7c3e26",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontLeftMedium__p2",
+      "exact_human_comment": "The printer is placed correctly on the cabinet as you pointed out. But the cabined is in a very unatural place in the room. No one places cabines in the centre of the room like that. THey put them against the walls.",
+      "exact_human_comment_sha256": "175e81a31535150187fc47ce524c3ababfe71298d4609e775976c89b1beb76aa",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "magic__printer_FrontLeftMedium__p2"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "misplaced_support_furniture"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Cabinet position in room, rather than printer on cabinet.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": null,
+        "issue_any": {
+          "observed": [],
+          "expected_any": [
+            "misplaced_support_furniture"
+          ],
+          "matched_values": [],
+          "matched": false
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontLeftMedium__p2/result.json",
+        "result_sha256": "cbdb966bd8899bf8784f4a01da3ada1fc94711f32d1e79b78cc4df9600830f46",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "high",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/795924fc8df3316c9e0f__magic__printer_FrontLeftMedium__p2.png",
+            "sha256": "9f780331ecee1b24726cbd5744bbbb4f39dc31d6b3eb3a8145510177e4c5152c"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_Left_Medium.png",
+            "sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027"
+          },
+          "scene_prompt_sha256": "56a15ef699fc3eeadc41707af37c4475b5ebc5b711f95351e5dc747a4c5e0614"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontLeftMedium__p2/request.json",
+        "request_sha256": "20245b4f227b67c4b2be772af436605e71a7da114c29c82aa2d7d0cf6035d594",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontLeftMedium__p2/response.json",
+        "raw_response_sha256": "b65c00bdaa38664ff8da0d86f2fc99238fbc2daf1006f0d74c1230ae675223df",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontLeftMedium__p2/result.json",
+        "result_sha256": "7fc96cfeb41843f1f6aa8073e2ba082d03651cb515a223fca1ca92e3baa33d35",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontLeftMedium__p3",
+      "exact_human_comment": "This is great. maybe the printer would have been a bit push back so that its back edge is at the edge of the desk. A human would set it like that to maximize the space in the front of the pinters. In general humans place objects to maximize usable space.",
+      "exact_human_comment_sha256": "44e45efb88a1aed312b39f4e90345f9734fcc3c45989bd0e5523481946b9a26d",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "magic__printer_FrontLeftMedium__p3"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "pass"
+        ],
+        "expected_issue_any": [],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Explicit great placement with optional extra setback; avoid over-penalizing.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "fail",
+          "acceptable": [
+            "pass"
+          ],
+          "matched": false
+        },
+        "issue_any": null
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontLeftMedium__p3/result.json",
+        "result_sha256": "317783e5105cbce0c4d4a83d79b16294fecefed989308ef0bc75a032918ead64",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 0.9,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 90.0,
+        "applied_score_cap": 59,
+        "natural_placement_score": 59,
+        "component_scores": {
+          "support_scenario": 50,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "medium",
+        "verdict": "fail",
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/4c02320488c9b45e784c__magic__printer_FrontLeftMedium__p3.png",
+            "sha256": "fdffe668c7642cd9c1d4e887ef21bd9835ef94db78f51556115bfd7b2d595099"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_Left_Medium.png",
+            "sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027"
+          },
+          "scene_prompt_sha256": "c249606d9f9e6707d1d5e0158f79ef117bff7a681edf9224dcc19741b9047b1e"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontLeftMedium__p3/request.json",
+        "request_sha256": "856bd2c165e4917f206a15620ceab01dd359730a0ba1f0d66597af9f861abd09",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontLeftMedium__p3/response.json",
+        "raw_response_sha256": "b1da4644f8948700818c934f35a270ac81b5a58f3edf016d826a4f903a62daba",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontLeftMedium__p3/result.json",
+        "result_sha256": "8b1b358d900a165180934c5310554224c8d3eee048a9987c398bdbacbbc0b96a",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontRightCloseUp__p2",
+      "exact_human_comment": "The only issue here is that the shelves behind the printer are all empty. This of\nfice doesn't look like a lived in environment.",
+      "exact_human_comment_sha256": "5ca6305c8d8cec1da747f73bcc4fdef90f21f065f7107e3a26c923e78f4d6bf3",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "magic__printer_FrontRightCloseUp__p2"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "unpopulated_storage"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Only explicit concern is exposed empty shelving; do not infer image fail label.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": null,
+        "issue_any": {
+          "observed": [],
+          "expected_any": [
+            "unpopulated_storage"
+          ],
+          "matched_values": [],
+          "matched": false
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontRightCloseUp__p2/result.json",
+        "result_sha256": "ede28bcc3d26c21b10d192306f14e0d6c97dcf4596d5c5946d7a1ad06e1c657d",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "medium",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/02a9e7e626a8ebd9d7bb__magic__printer_FrontRightCloseUp__p2.png",
+            "sha256": "71f58e7b8a2be2dbcf8e71dd2828b7967b8b7c471e392d633597b766d13236e7"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_Right_CloseUp.png",
+            "sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077"
+          },
+          "scene_prompt_sha256": "5d2221f1de1435ef9f44f5e47c05a461c471436f4c7a83a448844558d6d28a91"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontRightCloseUp__p2/request.json",
+        "request_sha256": "5a4581bcea0129bf27318a18c68788d4b7a740bca7ce5477bd235a4ff30c48fb",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontRightCloseUp__p2/response.json",
+        "raw_response_sha256": "1eb39b021ffbefc66dd6fe5ac166bc4b736aa4538718a4eb618a56538239f332",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontRightCloseUp__p2/result.json",
+        "result_sha256": "f7168770d1b84708b788dcefe14b4af5c4c86e49900176727dcc49090813b90b",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontWide__p2",
+      "exact_human_comment": "this is a pass. but printer could be placed a bit more to the left and closer to the wall. But this is a pass",
+      "exact_human_comment_sha256": "8eb3b9989f06732fced1586054a0bf06feb4c4634a89c89ac2e56473c7118efc",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "magic__printer_FrontWide__p2"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "pass"
+        ],
+        "expected_issue_any": [],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Explicit pass despite optional left/back adjustment.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "pass",
+          "acceptable": [
+            "pass"
+          ],
+          "matched": true
+        },
+        "issue_any": null
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontWide__p2/result.json",
+        "result_sha256": "6402bea7f116ecca2e1cf45e2b8be73a0d0c89cd0f7d6fe48883102996d44dec",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "high",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/954178a920bf3d44c6e0__magic__printer_FrontWide__p2.png",
+            "sha256": "34d8639594009511693f6b8a5f65e7d09072a4a5fbf811db570fec11719581e4"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_Wide.png",
+            "sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970"
+          },
+          "scene_prompt_sha256": "2634a3e66689d0eb8ff22ff8c92a5d3b51b23b2af2e643fd226b2d959ab3572b"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontWide__p2/request.json",
+        "request_sha256": "c9619e7148520b39bc9793b73485b009257a2d348158ed763d612a41feabd7be",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontWide__p2/response.json",
+        "raw_response_sha256": "0fdc7fec8f791bbbe976615b6674e78eafc6b6073176fcfda1cd9061050d55ba",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontWide__p2/result.json",
+        "result_sha256": "15b8dfeb43da4f4546c0241e6d0af8c96d9a4af815bc29239c72e4ac68cb63d7",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontWide__p5",
+      "exact_human_comment": "agree with your comments. Also the table itself has issues. It's right leg is not aligned with the top portion of it.",
+      "exact_human_comment_sha256": "0c874c6f04993fe08164cd35493a741985ef6dd01face96784cc3c4533fcee7b",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "magic__printer_FrontWide__p5"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "malformed_support_furniture"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Additional right table leg/top alignment complaint.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": null,
+        "issue_any": {
+          "observed": [
+            "occupied_workstation"
+          ],
+          "expected_any": [
+            "malformed_support_furniture"
+          ],
+          "matched_values": [],
+          "matched": false
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/magic__printer_FrontWide__p5/result.json",
+        "result_sha256": "f2abb5ce22aaaec080a88b484fc81807a29db959d23c6c06e23dd83f7c1c88c9",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 90.0,
+          "applied_score_cap": 59,
+          "natural_placement_score": 59,
+          "component_scores": {
+            "support_scenario": 50,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 0.9,
+          "confidence": "medium",
+          "verdict": "fail",
+          "verdict_reasons": [
+            "clear_placement_defect_veto"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [
+              "occupied_workstation",
+              "incoherent_use_arrangement"
+            ],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 90.0,
+        "applied_score_cap": 59,
+        "natural_placement_score": 59,
+        "component_scores": {
+          "support_scenario": 50,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "high",
+        "verdict": "fail",
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/b0577f5760f4faeea8f7__magic__printer_FrontWide__p5.png",
+            "sha256": "8aa998b4fda692c049277a61a4e50e94958dffadb81dbd57054c107bc58f8e23"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_Wide.png",
+            "sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970"
+          },
+          "scene_prompt_sha256": "76ace476fea45713e38cffcddbdd6c007514e8625f20c3d1e18be722aff45dc2"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontWide__p5/request.json",
+        "request_sha256": "1abee7b99f3906f3b28ac7f6f5ec145c7ddcb3b96d13dcb1b998d0c1b4c34332",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontWide__p5/response.json",
+        "raw_response_sha256": "6765fceb5463f7d88a204591ffde896b8909a7f5c72ae2ef771544cc09ff6e2d",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/magic__printer_FrontWide__p5/result.json",
+        "result_sha256": "0b0cc00f18c90f06e32419ea7e82be9b70f47824639c7cd5a7b469dfbbdc8de8",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontCloseUp__p3",
+      "exact_human_comment": "agree with yoru comment. Additionally no one puts printer in their coffee table in the middle of the living room. Also what's the puzzel doing there? the puzzel belongs on the cofee table but has nothing to do with the printer.",
+      "exact_human_comment_sha256": "854defc5e441c5974cbc52fc2ba6f26def4fb9b1431382de476d922e1ec87457",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "tassel__printer_FrontCloseUp__p3"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "implausible_scenario",
+          "inappropriate_support",
+          "incoherent_use_arrangement"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Printer with puzzle on living-room coffee table.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": null,
+        "issue_any": {
+          "observed": [
+            "inappropriate_support",
+            "incoherent_use_arrangement",
+            "no_user_position",
+            "occupied_workstation"
+          ],
+          "expected_any": [
+            "implausible_scenario",
+            "inappropriate_support",
+            "incoherent_use_arrangement"
+          ],
+          "matched_values": [
+            "inappropriate_support",
+            "incoherent_use_arrangement"
+          ],
+          "matched": true
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontCloseUp__p3/result.json",
+        "result_sha256": "413ac60a6e650d20bdbad96d7d0b5b60f7219ada5b4f0caed22cdc35a3721dd6",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 70.0,
+          "applied_score_cap": 39,
+          "natural_placement_score": 39,
+          "component_scores": {
+            "support_scenario": 25,
+            "access_usability": 50,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "fail",
+          "verdict_reasons": [
+            "clear_placement_defect_veto"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [
+              "inappropriate_support",
+              "implausible_scenario",
+              "incoherent_use_arrangement"
+            ],
+            "access_usability": [
+              "no_user_position"
+            ],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 70.0,
+        "applied_score_cap": 39,
+        "natural_placement_score": 39,
+        "component_scores": {
+          "support_scenario": 25,
+          "access_usability": 50,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 0.85,
+        "confidence": "medium",
+        "verdict": "fail",
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "inappropriate_support",
+            "occupied_workstation",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [
+            "no_user_position"
+          ],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/9e726ac4839fee00a678__tassel__printer_FrontCloseUp__p3.png",
+            "sha256": "817e009420dcaca488a8eb2153d023637cf8dc1f584d398668b7358a398e854b"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/tassel__Front_CloseUp.png",
+            "sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4"
+          },
+          "scene_prompt_sha256": "e6d542f8bc2132d828a7f7db20d34c575b894067dc10dfc683ea440866f6c72a"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontCloseUp__p3/request.json",
+        "request_sha256": "b8e819573d2b75a5dee3021720176cfa11f7daae3c22c975ac9dd99569f4ce30",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontCloseUp__p3/response.json",
+        "raw_response_sha256": "e2c5f541d307d217615f38fb91c33fcbbbc1a1e96c9a9fbf23ed58419ec2176e",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontCloseUp__p3/result.json",
+        "result_sha256": "71f0d1c39a2b49c6e55186f06bef98ce46cc0e44d21f91c06e4286867c780fe0",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontCloseUp__p5",
+      "exact_human_comment": "The placement of printer on the table is fine. But the scene is unatural. The wall is very empty. Generally you should penalize empty walls and empty shelves. Also the fabric props have nothing to do with anything in the scene.",
+      "exact_human_comment_sha256": "bea95ed7ff32810fda8a8120f0ee382b5bbea27c7be2f1b8dead60c2d5428459",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "tassel__printer_FrontCloseUp__p5"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "incoherent_use_arrangement",
+          "bare_staged_setting"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Good product/table placement does not resolve empty, unrelated setting.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": null,
+        "issue_any": {
+          "observed": [
+            "incoherent_use_arrangement",
+            "occupied_workstation",
+            "unmotivated_position"
+          ],
+          "expected_any": [
+            "incoherent_use_arrangement",
+            "bare_staged_setting"
+          ],
+          "matched_values": [
+            "incoherent_use_arrangement"
+          ],
+          "matched": true
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontCloseUp__p5/result.json",
+        "result_sha256": "66ffddb2352b32d4db1ba3ec5596f936b9c3af2da5fa240e3b6ae6dff5bf4244",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 0.75,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 90.0,
+        "applied_score_cap": 59,
+        "natural_placement_score": 59,
+        "component_scores": {
+          "support_scenario": 50,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 0.75,
+        "confidence": "medium",
+        "verdict": "fail",
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation",
+            "unmotivated_position",
+            "incoherent_use_arrangement"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/c66373a1ee2e06ad55e6__tassel__printer_FrontCloseUp__p5.png",
+            "sha256": "9ec4541837f0ad45e5b34b79deb4c7ec7ad872383986715abf3880fe61585fdd"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/tassel__Front_CloseUp.png",
+            "sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4"
+          },
+          "scene_prompt_sha256": "b729de1ff820003da80d93c7c12e17034bfb6ceaf6724317975eba772c08f5a8"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontCloseUp__p5/request.json",
+        "request_sha256": "7e419f96659dafbf46fefb78570414812cef7eaa8c4d3d3c1184d72efb77f05b",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontCloseUp__p5/response.json",
+        "raw_response_sha256": "35d61b6d75869945f6f0ffcf0d1c19baf5a6b7a3862f471ecfcb126d947bc39d",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontCloseUp__p5/result.json",
+        "result_sha256": "90d33f96747da037ee474c7fa17fa931f9e4ade91386053b87af42e7d70e3ef3",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontLeftMedium__p1",
+      "exact_human_comment": "The printer should be pushed back on teh desk so that its back is flush against the edge of the desk (alsmost). It should also be to one side. But also the whole deks in this room makes no sense its placmeent is unatural.",
+      "exact_human_comment_sha256": "9d7f44241db5cb5ad38305b1729e0bf93de377af568b8935820e32c89671d4bb",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "tassel__printer_FrontLeftMedium__p1"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "misplaced_support_furniture",
+          "unmotivated_position"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Back/side device positioning plus table placement in room.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": null,
+        "issue_any": {
+          "observed": [],
+          "expected_any": [
+            "misplaced_support_furniture",
+            "unmotivated_position"
+          ],
+          "matched_values": [],
+          "matched": false
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontLeftMedium__p1/result.json",
+        "result_sha256": "f230253aea77d89f9610631b33974c6e99a497abaa14145ce7846c92137ec7a8",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "high",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 0.9,
+        "confidence": "medium",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/a00867a10fc2cbfa4225__tassel__printer_FrontLeftMedium__p1.png",
+            "sha256": "21e9a7cd2132b3a646049a877e5c104112ab4a10bff239f123eaeea679e56b25"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/tassel__Front_Left_Medium.png",
+            "sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b"
+          },
+          "scene_prompt_sha256": "8aa20fa0bf6936780ed8d13400001dd96bdc69188d96a463d5a6aa0bb370bfc7"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontLeftMedium__p1/request.json",
+        "request_sha256": "55258465239fb466b11fdaabe691cdd8bc063ff20a97712f5f598394527b384f",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontLeftMedium__p1/response.json",
+        "raw_response_sha256": "e9a86e08d28a8e9f4fcd9742b7cefc59347b3ceb965790a05d0fd9f713bb04cf",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontLeftMedium__p1/result.json",
+        "result_sha256": "f7b87cbf447d8635bcfcabf78e830f5db6896f09a20df6d305f71c289d454695",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontLeftMedium__p5",
+      "exact_human_comment": "The printer would probabaly be closer to the back edge of the table to maximize space in front of it. But also the scene is weird, the walls are all empty. Its not clear what the printer is doing in this scene. Feels like we just put random props together.",
+      "exact_human_comment_sha256": "dd5807e6eabe5621eb0155b08623340c0df9c84ff9aa7034f8e00c1364cfdae8",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "tassel__printer_FrontLeftMedium__p5"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "incoherent_use_arrangement",
+          "bare_staged_setting",
+          "unmotivated_position"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Token props and empty setting; printer forward on surface.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": null,
+        "issue_any": {
+          "observed": [
+            "occupied_workstation",
+            "unmotivated_position"
+          ],
+          "expected_any": [
+            "incoherent_use_arrangement",
+            "bare_staged_setting",
+            "unmotivated_position"
+          ],
+          "matched_values": [
+            "unmotivated_position"
+          ],
+          "matched": true
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontLeftMedium__p5/result.json",
+        "result_sha256": "68704365a39de07d5a1c70aa36cb2ee84b31bd649ab245a96efc5ed628d54f89",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 90.0,
+        "applied_score_cap": 59,
+        "natural_placement_score": 59,
+        "component_scores": {
+          "support_scenario": 50,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "medium",
+        "verdict": "fail",
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [
+            "occupied_workstation",
+            "unmotivated_position"
+          ],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/a28549ab696a767d70d5__tassel__printer_FrontLeftMedium__p5.png",
+            "sha256": "7867b55a05b736e89e88d973e022747c5ad5d7f69b0c99efeb0bffb0b36719fd"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/tassel__Front_Left_Medium.png",
+            "sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b"
+          },
+          "scene_prompt_sha256": "8865dfc95c5f2968d8a08b038e1fd08ba1fcf4c19d4b1b8bb1e36e9550878c13"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontLeftMedium__p5/request.json",
+        "request_sha256": "df675c1116d03d297ddd2d5111f20cb32a100063c8cd39eec2177451e1e49f81",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontLeftMedium__p5/response.json",
+        "raw_response_sha256": "ae7b6f1382c8e7fc0eea2a139b4a8a6180ceff5cfaf1c039e218c246afd20aee",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontLeftMedium__p5/result.json",
+        "result_sha256": "9c772d8958f9a50d28d913c06034f905b11ef5886ec68e03e8fdba90f223a7c6",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "tassel__printer_FrontRightCloseUp__p1",
+      "exact_human_comment": "It's unclear what is this desk doing in this office. It just looks very staged. But I agree with your comments, the postion of printer on the desk is correct. Its just he positiuon of the desk in the scene that's weird.",
+      "exact_human_comment_sha256": "48219feaf79e22955cf1bd315ddd2fbd7f83e86b21f177276029d695376f291b",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "tassel__printer_FrontRightCloseUp__p1"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "misplaced_support_furniture"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Product on table correct; table in office looks staged.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": null,
+        "issue_any": {
+          "observed": [],
+          "expected_any": [
+            "misplaced_support_furniture"
+          ],
+          "matched_values": [],
+          "matched": false
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/tassel__printer_FrontRightCloseUp__p1/result.json",
+        "result_sha256": "eefb9c454a1e5aeb74613eec389aebdde5ac55fb0adcbc78aa4ae658a857ab4d",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "high",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/f54c501716a279478fe9__tassel__printer_FrontRightCloseUp__p1.png",
+            "sha256": "d7608aebf60f241fc29dca79aecf44e54288e1e44583c02ed6f132179310a969"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/tassel__Front_Right_CloseUp.png",
+            "sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c"
+          },
+          "scene_prompt_sha256": "9edd8fc3774073ea07aaf98c4890d20b9c7a183da404b2baeb2c349b3024ba85"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontRightCloseUp__p1/request.json",
+        "request_sha256": "adc255d4e6082bdcdec6a8ecf2b8c7bf8a600f6d05d29eb2d04e977ca3c9ff35",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontRightCloseUp__p1/response.json",
+        "raw_response_sha256": "58bcfffa8254b1373eb61c00171303464b010da53e7c6583ba62090ac0e54ab2",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/tassel__printer_FrontRightCloseUp__p1/result.json",
+        "result_sha256": "de9a180ba51181ee2d8049b28e2e1c7182b1dd9cf1f67471997ec32c544530be",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_BackRightCloseUp__p6",
+      "exact_human_comment": "This is a fail. The laptop should face the chairs not the other customers.",
+      "exact_human_comment_sha256": "4ffcea2e97a37baa587f5f2f6bcf7aff201ff5590b59230518117079f18c06b9",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "cashmere__laptop_BackRightCloseUp__p6"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "chair_alignment_conflict",
+          "no_user_position"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Explicit fail for facing customers rather than seating.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "pass",
+          "acceptable": [
+            "fail"
+          ],
+          "matched": false
+        },
+        "issue_any": {
+          "observed": [],
+          "expected_any": [
+            "chair_alignment_conflict",
+            "no_user_position"
+          ],
+          "matched_values": [],
+          "matched": false
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_BackRightCloseUp__p6/result.json",
+        "result_sha256": "13aeda9ea91fcdc86832ba43cc2b5697d0fce9092e575e9928472e2197a093ae",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 0.925,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 0.85,
+        "confidence": "medium",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/af79a0af5395ee372bb5__cashmere__laptop_BackRightCloseUp__p6.png",
+            "sha256": "74199a614c7ec8519b725d37ea7181eaed0c7e33dc15a744e1e280d6d28f5265"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/cashmere__Back_Right_CloseUp.png",
+            "sha256": "a12dec7cf9f6816e95e88706cd4913d8fffc3811ea0795422714efa6740a3118"
+          },
+          "scene_prompt_sha256": "85a5a3ed1babfef242f2de10ae03d1eaf7cdc9ebc1920c934be33879529a3e40"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/cashmere__laptop_BackRightCloseUp__p6/request.json",
+        "request_sha256": "7185aef77274d1f49544cb895c851a369c30859916ac7cd57206d6c3d52a9112",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/cashmere__laptop_BackRightCloseUp__p6/response.json",
+        "raw_response_sha256": "8e876f8209917db75abae9abdeb62279091eeb0791153e2f80f17de22dd4b8ab",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/cashmere__laptop_BackRightCloseUp__p6/result.json",
+        "result_sha256": "3e5477ae177436b8aebd545e95f9526d158bb721a07924d204f4f6178c4587c1",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontLeftMedium__p6",
+      "exact_human_comment": "Thsi si a fail. The laptop should be facing the chairs behind it. Those benches (with teal/blue cover) is where people would sit in a caffe",
+      "exact_human_comment_sha256": "83f00fef3d6561f63c94fd15e0406e519e4e1b49fc279f3ce7a14b430daee132",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "cashmere__laptop_FrontLeftMedium__p6"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "chair_alignment_conflict",
+          "no_user_position"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Explicit fail for facing away from banquette.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "fail",
+          "acceptable": [
+            "fail"
+          ],
+          "matched": true
+        },
+        "issue_any": {
+          "observed": [
+            "chair_alignment_conflict",
+            "no_user_position"
+          ],
+          "expected_any": [
+            "chair_alignment_conflict",
+            "no_user_position"
+          ],
+          "matched_values": [
+            "chair_alignment_conflict",
+            "no_user_position"
+          ],
+          "matched": true
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontLeftMedium__p6/result.json",
+        "result_sha256": "e2b89629627dbbe99ad0f5e436aea832ee5dd274c221cf0182e717b316737739",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 75.0,
+        "applied_score_cap": 59,
+        "natural_placement_score": 59,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 50,
+          "orientation_alignment": 50,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 0.85,
+        "confidence": "medium",
+        "verdict": "fail",
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [
+            "no_user_position"
+          ],
+          "orientation_alignment": [
+            "chair_alignment_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/18613ec2b2f5f030f142__cashmere__laptop_FrontLeftMedium__p6.png",
+            "sha256": "3037a6278781f216e742291f390d07c97e56d46e387c91dc4f2a5c14cf993650"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/cashmere__Front_Left_Medium.png",
+            "sha256": "9e8e8db18f73af0a4806d32e9ed9edada43a43449f4846451db2e7770e41c290"
+          },
+          "scene_prompt_sha256": "6933c97f25fa1c8deef23065213a00be37b1c35e9f537bfa1bb7641f9128e75a"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/cashmere__laptop_FrontLeftMedium__p6/request.json",
+        "request_sha256": "9109629584d4d3118db39800add0727624a7d94a37e027230698418161de1d99",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/cashmere__laptop_FrontLeftMedium__p6/response.json",
+        "raw_response_sha256": "c3eceb9035c439498c7e1c162dfe30c36323e421713b2a7a77af20cc3a9c15d4",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/cashmere__laptop_FrontLeftMedium__p6/result.json",
+        "result_sha256": "440e75b68f16bd587e3355980206da17c1cfb470db7641ac670ee5b9e768c307",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontWide__p4",
+      "exact_human_comment": "fail. No one randomly abandons a laptop in a middle of the desk like this. I agree tha there is no chair visible. But the whole scene looks weird.",
+      "exact_human_comment_sha256": "b4955b956fa9e653bfd5e1ceb5bd16fe02cf47556fd5dcb791b040c14bf88ddf",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "cashmere__laptop_FrontWide__p4"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "unmotivated_position",
+          "incoherent_use_arrangement"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Unmotivated placement on broad surface despite absent chair.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "pass",
+          "acceptable": [
+            "fail"
+          ],
+          "matched": false
+        },
+        "issue_any": {
+          "observed": [],
+          "expected_any": [
+            "unmotivated_position",
+            "incoherent_use_arrangement"
+          ],
+          "matched_values": [],
+          "matched": false
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/cashmere__laptop_FrontWide__p4/result.json",
+        "result_sha256": "f09c1d856c9a438d8cd43e9cfb170e54717099979ec6629f724d93bf1a390394",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 0.75,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 0.85,
+        "confidence": "medium",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/e1bfe286da2bfa6cc263__cashmere__laptop_FrontWide__p4.png",
+            "sha256": "ae7fde47093b6170c20b9316bf7ab759b16359af3dcde87f5c8c09015fe84448"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/cashmere__Front_Wide.png",
+            "sha256": "8e361fe46f56561120bb0c2ffdf134dc02b8cd7a92b823a3cba2fae49f080243"
+          },
+          "scene_prompt_sha256": "083dbe97a8c55f61a5f169522afe2a6220b9fdf74074e101efcf74355d6ec8b6"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/cashmere__laptop_FrontWide__p4/request.json",
+        "request_sha256": "d3a52dd36b72e23fc5a3fba83acb61c0875b9c8865b560b8975e0674db20e2c2",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/cashmere__laptop_FrontWide__p4/response.json",
+        "raw_response_sha256": "c15a8468ccea6e86457d2f9c6260d9e0a17b604630f0dcbc49443372e330d590",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/cashmere__laptop_FrontWide__p4/result.json",
+        "result_sha256": "b29963a8398efce3dc7b6a335ee51998d3f8e0aaa69f319e524d51486793a669",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p5",
+      "exact_human_comment": "this is weak fail because tehre is also a chair in front of the laptop. So it could be either way.",
+      "exact_human_comment_sha256": "40882c7bd6f541e2923b06c671254015323757933608dabeda69028357db7845",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "elitebook__laptop_BackRightCloseUp__p5"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Weak fail/competing chair: preserve uncertainty, not hard-label as fail.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": null,
+        "issue_any": null
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_BackRightCloseUp__p5/result.json",
+        "result_sha256": "73d7e4cf8f8857bd351a14ed723c174bb950b6453fbca7e5051e1c0e9b6d393f",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 57.5,
+          "applied_score_cap": 39,
+          "natural_placement_score": 39,
+          "component_scores": {
+            "support_scenario": 50,
+            "access_usability": 25,
+            "orientation_alignment": 50,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "high",
+          "verdict": "fail",
+          "verdict_reasons": [
+            "clear_placement_defect_veto"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [
+              "incoherent_use_arrangement"
+            ],
+            "access_usability": [
+              "no_user_position",
+              "excessive_reach"
+            ],
+            "orientation_alignment": [
+              "chair_alignment_conflict"
+            ],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 0.85,
+        "confidence": "medium",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/7d3a704d0afcecce5a76__elitebook__laptop_BackRightCloseUp__p5.png",
+            "sha256": "b1999a979d2ebe7dab095d20fd0d3686968dc18e95bcbeee65f035699a0a6267"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+            "sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925"
+          },
+          "scene_prompt_sha256": "e5372a575f99c72f7e8de259e2b857f0cf590e0e6906e6d8001d55c2b8c5dd85"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/elitebook__laptop_BackRightCloseUp__p5/request.json",
+        "request_sha256": "154876d13014a3da8a56e0a00f228e87fb758f9d9779f75e8c8530689ff48bbf",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/elitebook__laptop_BackRightCloseUp__p5/response.json",
+        "raw_response_sha256": "abee156da6f8f332d40fcfe4295a29138f664fd1449aef088a51c7f470a8fa33",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/elitebook__laptop_BackRightCloseUp__p5/result.json",
+        "result_sha256": "802b793675417e8ff90f9451316845cb08dfad3fca729af61c6c280cb996a6dd",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontLeftMedium__p5",
+      "exact_human_comment": "This could go eitehr way. Maybe this is front of the deks. WE don't have enough clues to know that the laptop is facing the wrong direction. Id say this is an ambiguous case.",
+      "exact_human_comment_sha256": "e5b8a481b63262f2dd9938ef49edc74997cf5f51abd34715f906c9afd34b46bb",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "elitebook__laptop_FrontLeftMedium__p5"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "review"
+        ],
+        "expected_issue_any": [],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "User explicitly ambiguous working front; examine overconfident direction failure.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "fail",
+          "acceptable": [
+            "review"
+          ],
+          "matched": false
+        },
+        "issue_any": null
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontLeftMedium__p5/result.json",
+        "result_sha256": "db2dd4fcc5dabb8e99d390531a9bb3cfae5c3673ad8cd78503d62e3e2edffc78",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 57.5,
+          "applied_score_cap": 39,
+          "natural_placement_score": 39,
+          "component_scores": {
+            "support_scenario": 50,
+            "access_usability": 25,
+            "orientation_alignment": 50,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "fail",
+          "verdict_reasons": [
+            "clear_placement_defect_veto"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [
+              "incoherent_use_arrangement"
+            ],
+            "access_usability": [
+              "no_user_position",
+              "excessive_reach"
+            ],
+            "orientation_alignment": [
+              "chair_alignment_conflict"
+            ],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 75.0,
+        "applied_score_cap": 59,
+        "natural_placement_score": 59,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 50,
+          "orientation_alignment": 50,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "high",
+        "verdict": "fail",
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [
+            "no_user_position"
+          ],
+          "orientation_alignment": [
+            "chair_alignment_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/9b8db404ae09fc7bdb60__elitebook__laptop_FrontLeftMedium__p5.png",
+            "sha256": "daa8c4c7e2d8d3fa3c8140ec2245b31e168a0f80f5a24f683a9c9c7b9b3b7c53"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/elitebook__Front_Left_Medium.png",
+            "sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51"
+          },
+          "scene_prompt_sha256": "712a0961dea595ae1eb2a797078ddfa7a6e1613551d68a0adb8318ee5ce3a24a"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/elitebook__laptop_FrontLeftMedium__p5/request.json",
+        "request_sha256": "f88a673c9207ba98589416d13955224eccdce2019de99d2f38e207976ce98381",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/elitebook__laptop_FrontLeftMedium__p5/response.json",
+        "raw_response_sha256": "880e7d69e5d53b7dc1d8de417b4f73cc753d3479d115a1dc8de0bba524f42cf9",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/elitebook__laptop_FrontLeftMedium__p5/result.json",
+        "result_sha256": "3464768caa731d841c14ce34b168f9b33999383224da37221ec6e06eaa9e302d",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontLeftMedium__p6",
+      "exact_human_comment": "I'd say this is border line pass. Would be more natural if laptop was facing the couch. Or if it was at least closer to the chair in front (and the chair was more visible)",
+      "exact_human_comment_sha256": "b229e6d7ab9ec185779b8adaf5521b28e93a9350568fbdb907acb4b298566538",
+      "exact_human_comment_source": {
+        "kind": "exact_v3_comment_inventory_row",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/comment_inventory.json",
+        "inventory_record_id": "elitebook__laptop_FrontLeftMedium__p6"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "pass",
+          "review"
+        ],
+        "expected_issue_any": [],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Borderline pass with possible closer seating; no clear hard-fail label.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "pass",
+          "acceptable": [
+            "pass",
+            "review"
+          ],
+          "matched": true
+        },
+        "issue_any": null
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v6_batch_v1/elitebook__laptop_FrontLeftMedium__p6/result.json",
+        "result_sha256": "533ed21307973099e01ea7d9c2e1289a6fad77c7d854896610c6a1339463600e",
+        "source_batch": "v6_batch_v1",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 0.85,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 0.85,
+        "confidence": "medium",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/a9d79068881e6b16cc3f__elitebook__laptop_FrontLeftMedium__p6.png",
+            "sha256": "4ec1666f69f6bd7516dce0ac1db941daa329793a7ebe9e31a45e6dc69f68a084"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/elitebook__Front_Left_Medium.png",
+            "sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51"
+          },
+          "scene_prompt_sha256": "0467b438db7170091bf3a1862052ad66785cb7ff15f84fd61cbee124e62a00b6"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/elitebook__laptop_FrontLeftMedium__p6/request.json",
+        "request_sha256": "a4afe4cb2e80dbd806cf8842abf54cede6ee3657be6a0842373e610747da3144",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/elitebook__laptop_FrontLeftMedium__p6/response.json",
+        "raw_response_sha256": "1164769fc2fdab649721062a2fd8f4d5fd38fc2d4923653ba9b19ab5304f14ea",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/elitebook__laptop_FrontLeftMedium__p6/result.json",
+        "result_sha256": "77876c2db985920543caaba670eb3538b1bfe0868117851a1f86f44274ab9b55",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "regression-userfail-row25-v14",
+      "exact_human_comment": "This one the edge of the printer is not aligned with edge of the tables.",
+      "exact_human_comment_sha256": "d0ad62564cfa2fc0801b42be889a3e6c09e5fd9ec801e60c7e0f2967b8c83dae",
+      "exact_human_comment_source": {
+        "kind": "earlier_user_failure_feedback_frozen_in_diagnostic_manifest",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/diagnostic_cases.json"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "furniture_axis_conflict"
+        ],
+        "basis": "earlier user explicit failure feedback",
+        "question": "Retain old failure detection.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "pass",
+          "acceptable": [
+            "fail"
+          ],
+          "matched": false
+        },
+        "issue_any": {
+          "observed": [],
+          "expected_any": [
+            "furniture_axis_conflict"
+          ],
+          "matched_values": [],
+          "matched": false
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/userfail_regression_v3/regression-userfail-row25-v14/result.json",
+        "result_sha256": "b9c2ae40dc420c0b7f23efe3ed11ef02a7afa508b32e87e84650ee6fdfbeac53",
+        "source_batch": "userfail_regression_v3",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 90.0,
+          "applied_score_cap": 59,
+          "natural_placement_score": 59,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 50,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "fail",
+          "verdict_reasons": [
+            "clear_placement_defect_veto"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [
+              "furniture_axis_conflict"
+            ],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 100.0,
+        "applied_score_cap": null,
+        "natural_placement_score": 100.0,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 100,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "high",
+        "verdict": "pass",
+        "verdict_reasons": [
+          "pass_criteria_met"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_25/v14_final.png",
+            "sha256": "4ceb50f8a4605789bb2c5437de503899c1e11b7c0b81a85a8978e7764862c4b4"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_25/product_input.png",
+            "sha256": "85ff3aec599bc7735f45915d85bdf3b955cead5be4d6dcecacdc393c3e189e36"
+          },
+          "scene_prompt_sha256": "4bf4238b51955be6c0d4d7656098838a40671dece83bef9c181258d0380c4f64"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/regression-userfail-row25-v14/request.json",
+        "request_sha256": "e2713b475e29dd70d9a1dc7f6418f3eb4a18d9cf24b4818ee5ca103bfe5abe7c",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/regression-userfail-row25-v14/response.json",
+        "raw_response_sha256": "6da2f524e6697140401a68f1b94d324bf25d7f79768addb6e801f8cd09524121",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/regression-userfail-row25-v14/result.json",
+        "result_sha256": "64e491da3839e2500438cf52bf464849e3cfcf0eca0818b5107b036e163cf9ed",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    },
+    {
+      "id": "regression-userfail-row12-v13",
+      "exact_human_comment": "Because a human would put this flush against the wall. And also not in the middle of the table it would be to a side. The placement is not natural.",
+      "exact_human_comment_sha256": "940585b6b0dff9e0051f55dbdb51839ecb5f5d91d23316f630ccaf3bcd191753",
+      "exact_human_comment_source": {
+        "kind": "earlier_user_failure_feedback_frozen_in_diagnostic_manifest",
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/diagnostic_cases.json"
+      },
+      "mapped_expectations": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "unmotivated_position"
+        ],
+        "basis": "earlier user explicit failure feedback",
+        "question": "Retain old failure detection.",
+        "passed_to_judge": false
+      },
+      "expectation_checks": {
+        "verdict": {
+          "actual": "fail",
+          "acceptable": [
+            "fail"
+          ],
+          "matched": true
+        },
+        "issue_any": {
+          "observed": [
+            "furniture_axis_conflict"
+          ],
+          "expected_any": [
+            "unmotivated_position"
+          ],
+          "matched_values": [],
+          "matched": false
+        }
+      },
+      "v2_baseline": {
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/userfail_regression_v3/regression-userfail-row12-v13/result.json",
+        "result_sha256": "1f9242351a8b9fd7a65128a9d970be584c528d57f58e7232187129285cf0d27f",
+        "source_batch": "userfail_regression_v3",
+        "model_requested": "gpt-5.5",
+        "model_returned": "gpt-5.5-2026-04-24",
+        "scores": {
+          "weighted_component_score": 100.0,
+          "applied_score_cap": null,
+          "natural_placement_score": 100.0,
+          "component_scores": {
+            "support_scenario": 100,
+            "access_usability": 100,
+            "orientation_alignment": 100,
+            "scale_perspective": 100,
+            "contact_integration": 100
+          },
+          "coverage": 1.0,
+          "confidence": "medium",
+          "verdict": "pass",
+          "verdict_reasons": [
+            "pass_criteria_met"
+          ],
+          "threshold_status": "provisional_not_human_calibrated",
+          "policy_version": "placement-scoring-policy-v2",
+          "issue_codes_by_component": {
+            "support_scenario": [],
+            "access_usability": [],
+            "orientation_alignment": [],
+            "scale_perspective": [],
+            "contact_integration": []
+          }
+        }
+      },
+      "v3_scores": {
+        "weighted_component_score": 90.0,
+        "applied_score_cap": 59,
+        "natural_placement_score": 59,
+        "component_scores": {
+          "support_scenario": 100,
+          "access_usability": 100,
+          "orientation_alignment": 50,
+          "scale_perspective": 100,
+          "contact_integration": 100
+        },
+        "coverage": 1.0,
+        "confidence": "medium",
+        "verdict": "fail",
+        "verdict_reasons": [
+          "clear_placement_defect_veto"
+        ],
+        "threshold_status": "provisional_not_human_calibrated",
+        "policy_version": "placement-scoring-policy-v3",
+        "issue_codes_by_component": {
+          "support_scenario": [],
+          "access_usability": [],
+          "orientation_alignment": [
+            "furniture_axis_conflict"
+          ],
+          "scale_perspective": [],
+          "contact_integration": []
+        }
+      },
+      "audit": {
+        "source_bytes": {
+          "generated_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_12/v13_final.png",
+            "sha256": "bcd88892c5a5b416f5becca8e4102de1ebae1337462031e1a9d27a8b47100a98"
+          },
+          "twin_image": {
+            "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_12/product_input.png",
+            "sha256": "0403fc3b1aa3d4da61353b1020385e2c83f999e118e295eb20627ead3aa00497"
+          },
+          "scene_prompt_sha256": "27d48ca94e6680d5ff80cc73f414d78f3b0801bf8c3be96feeb55be421e67781"
+        },
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/regression-userfail-row12-v13/request.json",
+        "request_sha256": "a9834367187832de091e1b054565cb403582b4468ffe88529bec9ad45ba20bd8",
+        "raw_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/regression-userfail-row12-v13/response.json",
+        "raw_response_sha256": "40626bb098901dd7525b8fb5084717e6b81eaea604a9eeb8c2d292f70bdf862a",
+        "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/terra_compact_v3/regression-userfail-row12-v13/result.json",
+        "result_sha256": "6f9a2b98069c1713113bc0386e42fb41e11e26cf094b23577f46c93f0bb59b6b",
+        "raw_response_content_parsed_and_exact": true,
+        "v3_scores_recomputed_exact": true,
+        "model_identity_verified": true,
+        "model_requested": "gpt-5.6-terra",
+        "model_returned": "gpt-5.6-terra-2026-07-09",
+        "protocol_freeze_verified": true,
+        "protocol_hashes": {
+          "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+          "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+          "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+          "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+          "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+          "visual_anchor_manifest_sha256": null
+        },
+        "target_comment_absent_from_input": true,
+        "target_comment_absent_from_request_record": true,
+        "anchor_exclusion_assertions": {
+          "enabled": false,
+          "anchor_only_fields_absent": true
+        }
+      }
+    }
+  ]
+}

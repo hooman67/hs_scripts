@@ -1,0 +1,53 @@
+{
+  "slug": "cashmere__laptop_FrontCloseUp__p1__relocation_demand",
+  "base_slug": "cashmere__laptop_FrontCloseUp__p1",
+  "mode": "relocation_demand",
+  "device_id": "cashmere",
+  "camera_id": "Front_CloseUp",
+  "prompt": "A close modern office scene. Place the fully visible laptop substantially farther toward image left than its current position, as far as its unchanged pixel size safely allows, so a broad clear planning area sits to its right. Build a pale wood worktable beneath the laptop at that chosen position, with believable edge clearances and its working edge facing the keyboard. Align an upholstered chair with the laptop's keyboard and keep the approach completely clear. A ribbed glass partition and soft daylight complete the scene.",
+  "pipeline_version": "unified-blue-scale-v22.1-density-conditioned-position-twin-camera-guide-only-no-mask",
+  "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+  "output_sha256": "ac88a1a60a8a5500352bd70dda2781ce98c53c2abb83a449cae3ecbd2ed2691f",
+  "final_prompt_sha256": "110469491516909daebbaba3c4f8c5350ca9c694a192cd9cf0c072cc47696eef",
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1020,
+        "prompt_tokens": 13800,
+        "total_tokens": 14820,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 94,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+      "mask": false
+    }
+  ]
+}

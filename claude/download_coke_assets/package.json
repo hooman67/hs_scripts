@@ -1,0 +1,16 @@
+{
+  "name": "download-coke-assets",
+  "version": "1.0.0",
+  "description": "AEM → S3: Download Coca-Cola images from TCCC DAM to S3",
+  "scripts": {
+    "token": "node src/get_token.js",
+    "download": "node src/bulk_download.js",
+    "download:skip-crawl": "node src/bulk_download.js --skip-crawl"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.0.0",
+    "@aws-sdk/lib-storage": "^3.0.0",
+    "axios": "^1.0.0",
+    "jsonwebtoken": "^9.0.0"
+  }
+}

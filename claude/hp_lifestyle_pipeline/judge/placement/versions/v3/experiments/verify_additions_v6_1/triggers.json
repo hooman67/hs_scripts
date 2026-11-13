@@ -1,0 +1,239 @@
+{
+  "schema_version": "placement-addition-verifier-triggers-v1",
+  "trigger_policy": "compact observed/partial medium/high-confidence severity>=2 and either baseline unassessable/low-confidence or compact severity above baseline",
+  "source_runs": [
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_1-v1"
+  ],
+  "expected_count": 4,
+  "expected_component_count": 5,
+  "comments_or_expectations_included": false,
+  "records": [
+    {
+      "id": "cashmere__laptop_BackRightCloseUp__p9",
+      "source_dataset": "v6_1-v1",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/generated/cashmere__laptop_BackRightCloseUp__p9.png",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/twins/cashmere__Back_Right_CloseUp.png",
+        "product_type": "laptop",
+        "scene_prompt": "A gaming room desk with a solid-color geometric puzzle cube on the dark surface. A concealed RGB light strip washes the wall, and a dark perforated metal panel gives the corner an organized, after-hours energy.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/generated/cashmere__laptop_BackRightCloseUp__p9.png",
+          "sha256": "b56c6e47a0fe859d76db7235b160c927b9ea439ea2ace06e00f01573f12d038e"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/twins/cashmere__Back_Right_CloseUp.png",
+          "sha256": "3eab7a98c9915f892cfb811dce341730522b9c5ae70dcd75986553c51948ef7e"
+        }
+      },
+      "proposed_components": {
+        "access_usability": {
+          "visibility": "observed",
+          "severity": 3,
+          "confidence": "high",
+          "evidence": "The visible room-side approach faces the back of the display; the keyboard and screen side appear to face the wall, with no visible seat or approach space there.",
+          "consequence": "The laptop would not be naturally usable from the desk's apparent seating side without rotating it.",
+          "issue_codes": [
+            "blocked_operating_side",
+            "no_user_position"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_1-v1/cashmere__laptop_BackRightCloseUp__p9/result.json",
+        "combined_result_sha256": "14373620ae1e9fc7d01eccb2a81b8c29f46267072f16a1a28a21505edb81d9de",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_compact_v3/cashmere__laptop_BackRightCloseUp__p9/response.json",
+          "sha256": "2dcfd79b8e5263e4af84484cfe5c59d5d867cc4a102a7e959df17f09901c1708"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_compact_v3/cashmere__laptop_BackRightCloseUp__p9/result.json",
+          "sha256": "0953ab924716a57b5d311cb7e143d4c62dbc14654a9068ff48809301b1c2016b"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline/cashmere__laptop_BackRightCloseUp__p9/response.json",
+          "sha256": "e397304e964e7a09aee2146e7cf079e4cd44f4a7bb0d196d6d126f7896814b5c"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline/cashmere__laptop_BackRightCloseUp__p9/result.json",
+          "sha256": "3ad35f0415be14da119a97b6685cc74d9084a7ea3af16394f8c35582a0ff426f"
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p7",
+      "source_dataset": "v6_1-v1",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/generated/elitebook__laptop_BackRightCloseUp__p7.png",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+        "product_type": "laptop",
+        "scene_prompt": "A hands-on creative studio worktable holds two or three abstract clay forms ready for comparison. A studio task lamp and narrow hanging fabric strips add a practical workshop feel under angled studio light.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/generated/elitebook__laptop_BackRightCloseUp__p7.png",
+          "sha256": "78b1f44e4b123d63e7bb7801e0791693a2e4a0e5f0ea840798512e54b0ed204c"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+          "sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925"
+        }
+      },
+      "proposed_components": {
+        "orientation_alignment": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "high",
+          "evidence": "The laptop is broadly square to the tabletop, but its user-facing side is oriented toward the wall-side of the workstation instead of the open approach edge.",
+          "consequence": "The device reads as turned the wrong way for the visible furniture layout.",
+          "issue_codes": [
+            "furniture_layout_conflict"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_1-v1/elitebook__laptop_BackRightCloseUp__p7/result.json",
+        "combined_result_sha256": "f3f0976cf65a182064efa96176acb24d3734efefdc76076704f7a0b60b7a15ce",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_compact_v3/elitebook__laptop_BackRightCloseUp__p7/response.json",
+          "sha256": "ec99030a61af52fb3405c7a55f54f3b1727493f07ce59fe6c6dd92a320835e67"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_compact_v3/elitebook__laptop_BackRightCloseUp__p7/result.json",
+          "sha256": "99b323cce479e7bfc4c59cee83861db7282bf3c2ada7d44726aa846933e66ddc"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline/elitebook__laptop_BackRightCloseUp__p7/response.json",
+          "sha256": "ca80f5026a18ef42eaea15e36a1abcd9f9e65f723115080324551e2438074d69"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline/elitebook__laptop_BackRightCloseUp__p7/result.json",
+          "sha256": "9d25bc03b1c1f394a501440cfd1aa02cc174a95ddd6eace74012ea35e3d76422"
+        }
+      }
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p9",
+      "source_dataset": "v6_1-v1",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/generated/elitebook__laptop_BackRightCloseUp__p9.png",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+        "product_type": "laptop",
+        "scene_prompt": "A stylish gaming room uses a dark desk against a powder-coated perforated metal panel. A solid-color geometric puzzle cube sits on the surface, while a concealed RGB light strip gives the wall a low magenta-blue glow and keeps the setup organized.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/generated/elitebook__laptop_BackRightCloseUp__p9.png",
+          "sha256": "4e1c3d58820da9488083ca1f54333423f3d4903a29ff0f2a7255d470c8bfba50"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+          "sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925"
+        }
+      },
+      "proposed_components": {
+        "access_usability": {
+          "visibility": "observed",
+          "severity": 3,
+          "confidence": "high",
+          "evidence": "The back of the laptop screen faces the accessible foreground/visible chair side, while the keyboard/display side appears to face the wall panel. No usable seat or approach is shown on that operating side.",
+          "consequence": "A person at the visible chair could not naturally sit down and type; the laptop would need to be rotated or repositioned for real use.",
+          "issue_codes": [
+            "no_user_position",
+            "blocked_user_workspace"
+          ]
+        },
+        "orientation_alignment": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "high",
+          "evidence": "The laptop is aligned to the desk axes but reversed relative to the associated chair and room layout: the chair-side approach meets the back of the display instead of the keyboard side.",
+          "consequence": "The workstation reads as arranged for a photograph rather than for a seated user.",
+          "issue_codes": [
+            "chair_alignment_conflict",
+            "furniture_layout_conflict"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_1-v1/elitebook__laptop_BackRightCloseUp__p9/result.json",
+        "combined_result_sha256": "70b4373b08c8eb629fdb51c24ae2cb81bb66e85c1a457407061df15690034959",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_compact_v3/elitebook__laptop_BackRightCloseUp__p9/response.json",
+          "sha256": "7b6c17705c924dc9695bda921c13f2f2c3ddc290399fb1b99588c0eb3bad9b81"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_compact_v3/elitebook__laptop_BackRightCloseUp__p9/result.json",
+          "sha256": "bfbf8f5985827c5534840f77816d74e960b816938f6d6ef4157db1c41a7b4f84"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline/elitebook__laptop_BackRightCloseUp__p9/response.json",
+          "sha256": "14578a570c948a1f0ac1b6db51421c098db1b777540c021e22093a6970560523"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline/elitebook__laptop_BackRightCloseUp__p9/result.json",
+          "sha256": "9034056bcd3c8349d2c85fb5eaf5cf792f970360fffb1789bcbcb0e5877b59e1"
+        }
+      }
+    },
+    {
+      "id": "magic__printer_FrontLeftMedium__p6",
+      "source_dataset": "v6_1-v1",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/generated/magic__printer_FrontLeftMedium__p6.png",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/twins/magic__Front_Left_Medium.png",
+        "product_type": "printer",
+        "scene_prompt": "A dedicated home-workspace table sits in a calm residential room, with folded reading glasses resting to the side. A comfortable sofa, translucent sheers, a plain pillar candle, and a woven fiber wall piece bring quiet household warmth into the room.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/generated/magic__printer_FrontLeftMedium__p6.png",
+          "sha256": "b44e0c2e2ac11d1fefbdad2a184af2233a8efb30aa4e12da2f8bd2f112412661"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_1_placement_assets/twins/magic__Front_Left_Medium.png",
+          "sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027"
+        }
+      },
+      "proposed_components": {
+        "support_scenario": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "high",
+          "evidence": "A large printer is placed on a living-room wooden table beside a sofa with candle and reading glasses, rather than on a printer cabinet, office table, or equipment station.",
+          "consequence": "The printer looks misplaced in a leisure seating arrangement and would need to be moved to a more appropriate printer/workstation support.",
+          "issue_codes": [
+            "inappropriate_support",
+            "incoherent_use_arrangement",
+            "unmotivated_position"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_1-v1/magic__printer_FrontLeftMedium__p6/result.json",
+        "combined_result_sha256": "07ce1dba7c786df0b0a2494a3a58d9aaa305a0df7aa3b2bca7e4aa6493ce31f5",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_compact_v3/magic__printer_FrontLeftMedium__p6/response.json",
+          "sha256": "b2299adfadc77dfbde1235fbfd798a1c8c8b2deffd0d3bee88cafb7d4774ebc8"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_compact_v3/magic__printer_FrontLeftMedium__p6/result.json",
+          "sha256": "eb26ac0aec8f77f59de3950daec4f4f46b5a3d79154535f3ffd04d42e551642d"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline/magic__printer_FrontLeftMedium__p6/response.json",
+          "sha256": "b1cff15956404d36ec5de3ec2273197782370d5e68e5aa5b8657f3a61b049347"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline/magic__printer_FrontLeftMedium__p6/result.json",
+          "sha256": "ad7dd7d0ab29762c26d579c5b4674be26d67e9cd64e50a2687e57140f6ffd4eb"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+has_build_module: true
+custom_pyenv: 3diva_ttt_fe_gen6
+visibility: public
+
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.spatial_generation.common[public]
+  - pydantic
+deps:
+- aiohttp
+- colligo.aiohttp
+- colligo.caplan_taxonomy
+- colligo.data
+- colligo.external_services.ims
+- colligo.models.common.adapter_utils
+- colligo.models.spatial_generation.common

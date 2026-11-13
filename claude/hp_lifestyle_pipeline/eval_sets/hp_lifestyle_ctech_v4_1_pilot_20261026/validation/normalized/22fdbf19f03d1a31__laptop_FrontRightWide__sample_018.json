@@ -1,0 +1,229 @@
+{
+  "validator_version": "v4.1-host-validator-r2",
+  "passed": false,
+  "error_count": 14,
+  "warning_count": 1,
+  "errors": [
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['desks', 'plants', 'wall']",
+      "candidate_id": "p3"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['desks', 'plants', 'wall'] but signature has 2 entries",
+      "candidate_id": "p3"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['curtains', 'plants', 'windows']",
+      "candidate_id": "p4"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['curtains', 'plants', 'windows'] but signature has 2 entries",
+      "candidate_id": "p4"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['curtains', 'shelving', 'windows']",
+      "candidate_id": "p6"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['curtains', 'shelving', 'windows'] but signature has 2 entries",
+      "candidate_id": "p6"
+    },
+    {
+      "code": "surface_not_literal",
+      "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+      "candidate_id": "p7"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'shelving', 'wall']",
+      "candidate_id": "p15"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'shelving', 'wall'] but signature has 2 entries",
+      "candidate_id": "p15"
+    },
+    {
+      "code": "surface_not_literal",
+      "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+      "candidate_id": "p16"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'collectibles', 'shelving']",
+      "candidate_id": "p17"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'collectibles', 'shelving'] but signature has 2 entries",
+      "candidate_id": "p17"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['couch', 'plants', 'soft textiles']",
+      "candidate_id": "p25"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['couch', 'plants', 'soft textiles'] but signature has 2 entries",
+      "candidate_id": "p25"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 6,
+    "environments": {
+      "Office": 7,
+      "Home": 6,
+      "Creative Studio": 4,
+      "Café": 5,
+      "Gaming": 3,
+      "Education": 5
+    },
+    "relationships": {
+      "source_grounded": 7,
+      "source_adjacent": 15,
+      "creative_departure": 8
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 6,
+      "Office": 7,
+      "Education": 5,
+      "Gaming": 3,
+      "Café": 5,
+      "Creative Studio": 4
+    },
+    "relationship_counts": {
+      "source_grounded": 7,
+      "source_adjacent": 15,
+      "creative_departure": 8
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 17,
+      "close_adaptation": 8,
+      "category_extension": 5
+    },
+    "ctech_reference_counts": {
+      "CT03": 3,
+      "CT02": 1,
+      "CT13": 3,
+      "CT04": 1,
+      "CT01": 2,
+      "CT05": 1,
+      "CT18": 2,
+      "CT09": 2,
+      "CT07": 2,
+      "CT14": 2,
+      "CT10": 3,
+      "CT08": 1,
+      "CT11": 1,
+      "CT12": 2,
+      "CT15": 1,
+      "CT06": 1,
+      "CT17": 1,
+      "CT16": 1
+    },
+    "ctech_score_range": [
+      65,
+      90
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e1"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p18",
+          "p19",
+          "p20"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e2"
+        ],
+        "prompt_ids": [
+          "p8",
+          "p11",
+          "p21",
+          "p22"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p4",
+          "p6",
+          "p7",
+          "p9",
+          "p12",
+          "p13",
+          "p14",
+          "p16",
+          "p23",
+          "p24",
+          "p25"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [
+          "e4",
+          "e6"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p5",
+          "p18",
+          "p19",
+          "p20"
+        ]
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e5"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p4",
+          "p6",
+          "p7",
+          "p9",
+          "p12",
+          "p13",
+          "p14",
+          "p16",
+          "p23",
+          "p24",
+          "p25"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "99eded72860b906694a58585da933dad1b0420fc8d3a32b7a93d18cf054c4768"
+}

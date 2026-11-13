@@ -1,0 +1,696 @@
+{
+ "title": "Glacier Bay Laundry Sink — Storyboard → Video (FFDY-7304)",
+ "subtitle": "Turning the Glacier Bay Drop-In Laundry Sink + ClickReady RTA cabinet storyboard (real shoot stills) into a generated ~:60 spot. Method: use the customer stills directly (i2v / cover_body), face-free product macros first.",
+ "sections": [
+  {
+   "kind": "divider",
+   "id": "shot0000_stitch_divider",
+   "label": "0000 · FINAL STITCH (review) — harmony + character check",
+   "note": "Chosen clips in the requested order: Shot 1 (first 1.8s) → 2 (assemble) → 3 (connector) → 4 (opposite side) → 5 (perpendicular) → [skip 6,7] → 8 (stand up) → 9 (place basin) → 17 (hero). Straight cuts, no transitions yet, no VO/SUPERs. 42s."
+  },
+  {
+   "kind": "target",
+   "id": "final_stitch",
+   "label": "Stitched review cut (42s)",
+   "note": "Watch for: (a) the couple staying consistent across the person shots (2,4,5,8,9,17) — dark-haired woman in cream sweater + grey-haired man in light-blue polo; (b) whether the hard cuts feel jarring where we skipped 6/7 (assemble → stand up) — that's the spot most likely to need a B-roll/transition.",
+   "video": "assets/final_stitch.mp4"
+  },
+  {
+   "kind": "divider",
+   "id": "shot000_finalv2_divider",
+   "label": "000 · FINAL v2 — recut to TARGET order + pacing (~45s)",
+   "note": "All-shot recut in the real spot's order. This version preserves the existing fast-cut trims and adds the gallery's chosen Shot 6 and Shot 7 results between Shot 5 and Shot 8. Also includes S01 establishing/final holds, S17 drain macro, and S18 White Oak color variant. Compare to the REFERENCE tab. Still no VO/SUPERs/end-card (post)."
+  },
+  {
+   "kind": "target",
+   "id": "final_spot_v2",
+   "label": "All-shot recut (target order + fast cut)",
+   "note": "63.53s, 18 ordered segments including the chosen Shot 6 and Shot 7 outputs. Assembled by assemble_all_shots_v3.py with straight cuts and no audio.",
+   "video": "assets/final_spot_all_shots_v3.mp4"
+  },
+  {
+   "kind": "divider",
+   "id": "shotS01_cmp_divider",
+   "label": "Shot 1 · S01 — establishing hero (storyboard image1)",
+   "note": "GAP found in v1: push-in too strong → ended on a tight faucet CU. FIX: locked-off tripod, hold the wide framing."
+  },
+  {
+   "kind": "target",
+   "id": "S01_cmp",
+   "label": "COMPARE — target (left) vs ours (right) + input",
+   "note": "Left = the REAL THD shot (for comparison only, never used as a generation input). Middle = our generated result. Right = the storyboard input we DID use.",
+   "frames": [
+    "assets/S01_target.jpg",
+    "assets/S01_ours.jpg",
+    "assets/S01_input.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "shotS01_r1",
+   "label": "S01 result",
+   "params": "gen_shot.py (storyboard asset only)",
+   "experiments": [
+    {
+     "id": "S01",
+     "approach": "S01 — establishing hero (storyboard image1)",
+     "status": "ok",
+     "note": "v2 holds the wide establishing framing; composition/subject/lighting match the target. Minor: ours slightly tighter (image1 crop).",
+     "refs": [
+      "assets/S01_input.jpg"
+     ],
+     "video": "assets/S01.mp4",
+     "prompt": "Locked-off tripod product beauty shot of a finished white laundry-sink cabinet with a stainless steel drop-in sink and brushed-nickel pull-down faucet on the left, a dark front-load washer and dryer on the right, in a bright styled modern laundry room. The CAMERA DOES NOT MOVE — no push-in, no zoom, no pan; hold the full wide establishing framing so the whole cabinet, sink, faucet and washer/dryer stay fully in frame the entire time. The scene is calm and still with only the faintest life — soft daylight and a gentle shimmer on the stainless steel. Photoreal, clean and crisp, no people, no on-screen text, no captions, no logos."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "shot00_reference_divider",
+   "label": "00 · REFERENCE — the ACTUAL THD-produced spot (67s)",
+   "note": "The real marketing video from the product page (Brightcove 6384961806112, 67s), pulled for comparison. KEY LEARNINGS: (1) the final production RECAST the talent — a red-haired woman + a younger dark-haired man, NOT the storyboard stills' couple, so our invented couple is fine. (2) It's a FAST-CUT ~22-shot montage (intro/title 0-12s, assembly montage 12-37s, feature CUs 37-55s, hero+endcard 55-67s) — much quicker cutting than our 5s/shot pacing. (3) On-screen SUPERs + the product-title overlay + the GLACIER BAY/CLICKREADY end-card are baked in (our post-production layer). (4) Same room/set as the storyboard stills."
+  },
+  {
+   "kind": "target",
+   "id": "reference_thd",
+   "label": "Actual THD spot (product page)",
+   "note": "Brightcove 6384961806112 · 67s · 720p. Compare against our generated FINAL cut in the next tab. Frames: establishing/title, couple placing the basin (SUPER), end-card.",
+   "video": "assets/reference_thd.mp4",
+   "frames": [
+    "assets/ref_t10.jpg",
+    "assets/ref_t30.jpg",
+    "assets/ref_t64.jpg"
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "shot3A_divider",
+   "label": "Shot 3 · 3A — CLICKREADY connector engaging (macro)",
+   "note": "First face-free product macro (the hero selling point: tool-free 'push, click, connect'). No people → no R3 handling. Beat 3A ECU from slide 4; VO: \"...no tools, glue, or screws required. Just push, click, and connect.\""
+  },
+  {
+   "kind": "target",
+   "id": "target3A",
+   "label": "TARGET — customer storyboard stills (3A ECU)",
+   "note": "The customer's real shoot photos of the orange CLICKREADY cam-lock connectors on the white RTA panel edges. These ARE our keyframes (no sketch step needed). Storyboard calls for an extreme close-up of the click technology connecting.",
+   "frames": [
+    "assets/3A_ref_a.jpg",
+    "assets/3A_ref_b.jpg",
+    "assets/3A_ref_c.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "shot3A_r1",
+   "label": "ROUND 1 — i2v from one macro still (connector seats/clicks)",
+   "params": "Seedance 2.5 i2v · 1080p · 4s · single still as first frame + motion prompt · gen_shot.py",
+   "shared_prompt_note": "No source video exists (stills only), so each shot is driven by gen_shot.py: one still as the i2v first frame + a motion prompt describing the click. Two references A/B'd.",
+   "experiments": [
+    {
+     "id": "3A_v1",
+     "approach": "i2v from image13 (connector + peg + hole clearly visible) — BEST",
+     "status": "ok",
+     "note": "Best of the two. Panels seat together and the orange connectors sink into the seam — reads as the click locking. Photoreal, no people, no text. Minor: slight white-on-white drift; the click is subtle. Good first proof of the face-free macro path.",
+     "refs": [
+      "assets/3A_v1_input.jpg"
+     ],
+     "video": "assets/3A_v1.mp4",
+     "frames": [
+      "assets/3A_v1_f0.jpg",
+      "assets/3A_v1_f1.jpg",
+      "assets/3A_v1_f2.jpg"
+     ],
+     "prompt": "Extreme close-up product macro of a matte-white RTA cabinet panel edge on a light studio floor. Two white melamine cabinet panels push firmly together; the bright ORANGE CLICKREADY cam-lock connector rotates and seats as its orange peg slides down into the round hole, locking the joint tight — tool-free, no screws. Only the panels and the orange connector move as they come together and lock; keep it a tight, nearly static macro with shallow depth of field and clean bright studio light, very little camera motion. Photoreal close-up. No hands, no people, no on-screen text, no captions, no logos."
+    },
+    {
+     "id": "3A_v2",
+     "approach": "i2v from image12 (single orange clip + peg, panel meeting base)",
+     "status": "ok",
+     "note": "Alt reference. Slower push; the orange connector stays visible at the seam (less of a clear 'seat'). Some white-on-white warping at the very start. Weaker than v1.",
+     "refs": [
+      "assets/3A_v2_input.jpg"
+     ],
+     "video": "assets/3A_v2.mp4",
+     "frames": [
+      "assets/3A_v2_f0.jpg",
+      "assets/3A_v2_f1.jpg",
+      "assets/3A_v2_f2.jpg"
+     ],
+     "prompt": "Extreme close-up product macro: a white melamine cabinet panel lowers onto a white base panel and the bright ORANGE CLICKREADY cam-lock connector snaps into its slot while the orange peg seats into its hole — a firm tool-free click, no screws or glue. Only the panel and the orange connector move together and lock; tight static macro, shallow depth of field, clean bright studio light, minimal camera movement. Photoreal. No hands, no people, no on-screen text, no captions, no logos."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "shot1A_divider",
+   "label": "Shot 2 · 1A — Couple assembling the cabinet (first person beat)",
+   "note": "PERSON beats need an invented, CONSISTENT couple (couple_bible.md). KEY FINDING: Seedance's R3 filter rejects ANY photoreal human in a reference — even a SYNTHETIC couple we generated (content_policy_violation). So the working recipe = paint the real talent OUT (person-free plate) and GENERATE our couple from the continuity text (ref mode). Identity rides on the reused description."
+  },
+  {
+   "kind": "target",
+   "id": "target1A",
+   "label": "TARGET — storyboard still (1A) + method inputs",
+   "note": "Left→right: the customer's shoot still (real talent); the synthetic couple we swapped in with nano-banana (looks right, but Seedance R3-REJECTED it as a video reference); the person-free plate we actually used (real people painted out).",
+   "frames": [
+    "assets/1A_ref.jpg",
+    "assets/1A_swapped.jpg",
+    "assets/1A_plate.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "shot1A_r1",
+   "label": "ROUND 1 — paint-out plate + generated couple (R3-safe)",
+   "params": "Seedance 2.5 ref · 1080p · 5s · person-free plate @Image1 + couple continuity text · gen_shot.py",
+   "shared_prompt_note": "nano-banana painted the real couple out -> clean scene plate; ref-mode generates OUR invented couple (bible) doing the beat. Passes R3; the couple matches the bible and should stay consistent across beats via the reused description.",
+   "experiments": [
+    {
+     "id": "1A_v2",
+     "approach": "ORDERED KEYFRAMES image7(flat) → image5(lifted) → image6(standing) — approved",
+     "status": "ok",
+     "note": "v5 (approved via WIP): progression now reads flat → lifted → standing. @Image1=image7 all pieces flat; @Image2=image5 a side panel LIFTED/tilted up; @Image3=image6 the panel STANDING upright being aligned. Couple generated + consistent; pieces stay separate; no assembled box. People + washer-glass reflections painted out (R3).",
+     "refs": [
+      "assets/1A_kf1.jpg",
+      "assets/1A_kf2.jpg",
+      "assets/1A_kf3.jpg"
+     ],
+     "video": "assets/1A.mp4",
+     "frames": [
+      "assets/1A_f0.jpg",
+      "assets/1A_f1.jpg",
+      "assets/1A_f2.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order.\nUse @Image1 as the first frame — a high overhead shot looking down at ALL the flat cabinet pieces laid out SEPARATELY on a dark work mat: the flat white panels, and the stainless steel sink basin holding the faucet and drain-kit parts. No people yet.\n@Image2 defines the second keyframe — the camera has craned down to a lower three-quarter angle; a couple kneel at the mat and LIFT one white side panel, tilting it UP off the floor to begin assembly.\nUse @Image3 as the last frame — the couple hold that side panel STANDING UPRIGHT on the mat, aligning it against the base panel and pressing the orange click connectors together; the other pieces remain laid out flat around them.\nThe cabinet is being assembled from flat panels — the panels PROGRESS from lying flat, to being lifted, to standing upright; do NOT show a fully-assembled finished box, and do NOT lay the raised panel back down. The two people: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Photoreal, smooth natural camera crane and motion, bright modern laundry room, plain clothing with no text or logos. No on-screen text, no captions, no logos."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "shot4A_divider",
+   "label": "Shot 8 · 4A — Standing the cabinet up",
+   "note": "4A MS from slide 5. Person beat."
+  },
+  {
+   "kind": "target",
+   "id": "target4A",
+   "label": "TARGET — storyboard still + person-free plate (4A)",
+   "note": "Left: the customer's shoot still (real talent). Right: the person-free plate (people painted out) that we generate our couple onto.",
+   "frames": [
+    "assets/4A_ref.jpg",
+    "assets/4A_plate.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "shot4A_r1",
+   "label": "ROUND 1 — 4A (paint-out plate + generated couple)",
+   "params": "Seedance 2.5 ref · 1080p · person-free plate @Image1 + couple continuity text · gen_shot.py",
+   "experiments": [
+    {
+     "id": "4A_v1",
+     "approach": "paint-out plate + generated couple — couple lift the assembled cabinet upright into place between the washer/dryer",
+     "status": "ok",
+     "note": "The couple lift/position the finished white cabinet+sink upright against the wall. Couple consistent, room correct. Good.",
+     "refs": [
+      "assets/4A_plate.jpg"
+     ],
+     "video": "assets/4A.mp4",
+     "frames": [
+      "assets/4A_f0.jpg",
+      "assets/4A_f1.jpg",
+      "assets/4A_f2.jpg"
+     ],
+     "prompt": "Use @Image1 as the scene. Add the couple standing and together lifting the assembled white laundry-sink cabinet upright, setting it into place on the floor against the wall between the dark front-load washer and dryer. The two people are the SAME throughout: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Plain clothing with no text or logos. No on-screen text, no captions, no logos. Keep the room exactly as in @Image1. Photoreal medium shot, natural cooperative motion."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "shot4B_divider",
+   "label": "Shot 9 · 4B — Placing the sink basin",
+   "note": "4B MS from slide 5. Person beat."
+  },
+  {
+   "kind": "target",
+   "id": "target4B",
+   "label": "TARGET — storyboard still + person-free plate (4B)",
+   "note": "Left: the customer's shoot still (real talent). Right: the person-free plate (people painted out) that we generate our couple onto.",
+   "frames": [
+    "assets/4B_ref.jpg",
+    "assets/4B_plate.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "shot4B_r1",
+   "label": "ROUND 1 — 4B (paint-out plate + generated couple)",
+   "params": "Seedance 2.5 ref · 1080p · person-free plate @Image1 + couple continuity text · gen_shot.py",
+   "experiments": [
+    {
+     "id": "4B_v1",
+     "approach": "paint-out plate + generated couple — couple lower the stainless basin into the cabinet top",
+     "status": "ok",
+     "note": "The couple carefully lower the rectangular stainless sink basin into the white cabinet top and seat it. Couple consistent. On-action.",
+     "refs": [
+      "assets/4B_plate.jpg"
+     ],
+     "video": "assets/4B.mp4",
+     "frames": [
+      "assets/4B_f0.jpg",
+      "assets/4B_f1.jpg",
+      "assets/4B_f2.jpg"
+     ],
+     "prompt": "Use @Image1 as the scene. Add the couple together carefully lowering a rectangular stainless steel sink basin down into the top opening of the white cabinet and seating it. The two people are the SAME throughout: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Plain clothing with no text or logos. No on-screen text, no captions, no logos. Keep the room and cabinet exactly as in @Image1. Photoreal medium shot, careful natural motion."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "shot8A_divider",
+   "label": "Shot 10 · 8A — Turning on the faucet",
+   "note": "8A from slide 8. VO: \"Transform your laundry room into something you'll love.\" Woman only."
+  },
+  {
+   "kind": "target",
+   "id": "target8A",
+   "label": "TARGET — storyboard still + person-free plate (8A)",
+   "note": "Left: the customer's shoot still (real talent). Right: the person-free plate (people painted out) that we generate our couple onto.",
+   "frames": [
+    "assets/8A_ref.jpg",
+    "assets/8A_plate.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "shot8A_r1",
+   "label": "ROUND 1 — 8A (paint-out plate + generated couple)",
+   "params": "Seedance 2.5 ref · 1080p · person-free plate @Image1 + couple continuity text · gen_shot.py",
+   "experiments": [
+    {
+     "id": "8A_v1",
+     "approach": "paint-out plate + generated couple — the woman turns on the pull-down faucet; water runs",
+     "status": "ok",
+     "note": "The woman turns on the pull-down faucet and water runs into the finished stainless sink. Matches the bible; clean finished-room hero. Good.",
+     "refs": [
+      "assets/8A_plate.jpg"
+     ],
+     "video": "assets/8A.mp4",
+     "frames": [
+      "assets/8A_f0.jpg",
+      "assets/8A_f1.jpg",
+      "assets/8A_f2.jpg"
+     ],
+     "prompt": "Use @Image1 as the scene: a finished white laundry-sink cabinet with a stainless sink and pull-down faucet, dark washer and dryer beside it in a bright modern laundry room. Add the woman stepping to the sink and turning on the pull-down faucet with her hand; water begins to run. The woman is in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, no logos. Keep the room exactly as in @Image1. Photoreal, natural motion, no on-screen text or logos."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "shot8B_divider",
+   "label": "Shot 11 · 8B — Hero / couple admiring",
+   "note": "8B from slide 8. VO: \"...fast, easy and available only at the Home Depot.\" Hero."
+  },
+  {
+   "kind": "target",
+   "id": "target8B",
+   "label": "TARGET — storyboard still + person-free plate (8B)",
+   "note": "Left: the customer's shoot still (real talent). Right: the person-free plate (people painted out) that we generate our couple onto.",
+   "frames": [
+    "assets/8B_ref.jpg",
+    "assets/8B_plate.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "shot8B_r1",
+   "label": "ROUND 1 — 8B (paint-out plate + generated couple)",
+   "params": "Seedance 2.5 ref · 1080p · person-free plate @Image1 + couple continuity text · gen_shot.py",
+   "experiments": [
+    {
+     "id": "8B_v1",
+     "approach": "paint-out plate + generated couple — couple stand together admiring the finished sink, warm moment",
+     "status": "ok",
+     "note": "Warm hero: the couple stand together by the finished laundry sink, the man's hand on her shoulder. Couple consistent across the whole spot. Strong closer.",
+     "refs": [
+      "assets/8B_plate.jpg"
+     ],
+     "video": "assets/8B.mp4",
+     "frames": [
+      "assets/8B_f0.jpg",
+      "assets/8B_f1.jpg",
+      "assets/8B_f2.jpg"
+     ],
+     "prompt": "Use @Image1 as the scene: a finished white laundry-sink cabinet with stainless sink and faucet in a bright modern laundry room. Add the couple standing together beside the finished sink, admiring it in a warm hero moment, then the woman turns to leave the room. The two people are the SAME throughout: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Plain clothing with no text or logos. No on-screen text, no captions, no logos. Keep the room exactly as in @Image1. Photoreal wide shot, gentle natural motion, no on-screen text or logos."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "opp_divider",
+   "label": "Shot 4 · Opposite side connected (image8)",
+   "note": "NEW assembly beat: the couple connect the OPPOSITE (second) long side panel — one wall already up at the back, they raise the second side to form the open box. Single keyframe (image8 plate); image9 dropped (didn't survive paint-out). Approved via WIP."
+  },
+  {
+   "kind": "target",
+   "id": "target_opp",
+   "label": "Keyframe input (opp)",
+   "note": "@Image1 (couple painted out; couple generated). Single reference.",
+   "frames": [
+    "assets/opp_kf.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "opp_r1",
+   "label": "opp result",
+   "params": "Seedance 2.5 ref · 1080p · 6s · single keyframe + couple generated · gen_shot.py",
+   "experiments": [
+    {
+     "id": "opp",
+     "approach": "single keyframe + generated couple",
+     "status": "ok",
+     "note": "Couple raise the 2nd/opposite side panel onto the base (one wall already up). Open box throughout, couple consistent, no warping. Distinct from Shot 2 (there the FIRST side went up).",
+     "refs": [
+      "assets/opp_kf.jpg"
+     ],
+     "video": "assets/opp.mp4",
+     "frames": [
+      "assets/opp_f0.jpg",
+      "assets/opp_f1.jpg",
+      "assets/opp_f2.jpg"
+     ],
+     "prompt": "Use @Image1 as the scene: an overhead view of a partially-assembled white cabinet on the laundry-room floor — a flat base panel with door panels and hinges, ONE side wall already standing up at the back, and a long white side panel standing in front with orange click connectors on its edge. Add a couple kneeling on either side, connecting the OPPOSITE (second) long side panel: they lift it, align its orange click connectors to the base, and press it down until it clicks into place so a second wall now stands up. The two people: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Keep the room and existing panels as in @Image1; the cabinet is still an open box (walls up, no top yet). Photoreal, overhead easing to a three-quarter angle, natural motion, plain clothing with no text or logos. No on-screen text, no captions, no logos."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "perp_divider",
+   "label": "Shot 5 · Perpendicular side / box takes shape (image11)",
+   "note": "NEW assembly beat: the couple connect the last PERPENDICULAR side wall so the box goes from a U-shape to a fully-walled open-top box. Single keyframe (image11 plate). Approved via WIP."
+  },
+  {
+   "kind": "target",
+   "id": "target_perp",
+   "label": "Keyframe input (perp)",
+   "note": "@Image1 (couple painted out; couple generated). Single reference.",
+   "frames": [
+    "assets/perp_kf.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "perp_r1",
+   "label": "Shot 5 result (Approach B — approved)",
+   "params": "Seedance 2.5 ref · 1080p · 6s · image11 = last frame; long walls fixed",
+   "experiments": [
+    {
+     "id": "shot5B",
+     "approach": "single keyframe = image11 as LAST frame; model generates lead-in — APPROVED",
+     "status": "ok",
+     "note": "Cleaner: stays overhead throughout, couple seat the perpendicular end panel, ENDS on image11's configuration. Consistent framing, long walls hold.",
+     "refs": [
+      "assets/perp5B_kf1.jpg"
+     ],
+     "video": "assets/perp5B.mp4",
+     "frames": [
+      "assets/perp5B_f0.jpg",
+      "assets/perp5B_f1.jpg",
+      "assets/perp5B_f2.jpg"
+     ],
+     "prompt": "Use @Image1 as the LAST frame — the exact state the video ENDS on. @Image1 is an overhead view of the white cabinet box with two long side walls up and the shorter PERPENDICULAR end panel installed so the box is a fully-walled open-top box; the assembly manual inside, the stainless sink at the edge. The shot builds up to this: a couple (a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans) lower and seat the shorter perpendicular end panel DOWN into place between the two long side walls, and the video ENDS exactly on @Image1's configuration with the panel seated. CRITICAL: the two long side walls stay COMPLETELY FIXED throughout; ONLY the perpendicular end panel moves. Photoreal overhead, natural downward seating motion, plain clothing with no text or logos. No on-screen text, no captions, no logos."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "shot6a_divider",
+   "label": "Shot 6 · Box completion — push sides together (sketch)",
+   "note": "SKETCH method: @Image1-3 = sketches of the customer's box-completion screenshots (push left→right→final), @Image4 = a Shot 5 frame as the photoreal style ref (our couple). Frames from the reference video, sketchified to drop chrome/SUPER/wrong-couple; R3-safe."
+  },
+  {
+   "kind": "target",
+   "id": "target_shot6a",
+   "label": "Sketch keyframes + style ref (Shot 6a)",
+   "note": "@Image1-3 = structure sketches (push left, push right, final). @Image4 (last) = photoreal style ref = our couple from Shot 5.",
+   "frames": [
+    "assets/shot6a_sk1.jpg",
+    "assets/shot6a_sk2.jpg",
+    "assets/shot6a_sk3.jpg",
+    "assets/wip_s6a_style.jpg"
+   ]
+  },
+  {
+   "kind": "round",
+   "id": "shot6a_r1",
+   "label": "Shot 6a result",
+   "params": "Seedance 2.5 ref · 1080p · 6s · 3 sketches + photoreal style ref",
+   "experiments": [
+    {
+     "id": "shot6a_orig",
+     "approach": "ORIGINAL full 6a (sketch v1, untrimmed, 6.04s)",
+     "status": "ok",
+     "note": "The full original sketch-method 6a before any trim — likely the version you remembered as better. All Shot 6 versions are now here: this original, the trimmed one, and the v2 motion-fix. Tell me which to keep as Shot 6.",
+     "refs": [
+      "assets/shot6a_sk1.jpg",
+      "assets/shot6a_sk2.jpg",
+      "assets/shot6a_sk3.jpg",
+      "assets/wip_s6a_style.jpg"
+     ],
+     "video": "assets/shot6a_orig.mp4",
+     "frames": [
+      "assets/shot6a_orig_f0.jpg",
+      "assets/shot6a_orig_f1.jpg",
+      "assets/shot6a_orig_f2.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order. @Image1, @Image2 and @Image3 are line-drawing SKETCHES that define the exact composition and the couple's hand/arm positions as they COMPLETE the white cabinet box — reproduce each precisely. Use @Image1 as the first frame — the couple push the two side walls of the box inward together. @Image2 defines the second keyframe — they press the front/second side panel into place. Use @Image3 as the last frame — the box squared and complete as an open-top box. @Image4 is a PHOTOREAL appearance reference: render the ENTIRE video photorealistically in its style, lighting, materials and PEOPLE — use the couple's appearance and the room from @Image4; do NOT adopt the line-drawing/sketch look of @Image1-@Image3 (they are only structure/pose guides). The couple are the SAME as @Image4: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Photoreal overhead, natural cooperative pushing-together motion, plain clothing with no text or logos. No on-screen text, no captions, no logos."
+    },
+    {
+     "id": "shot6a_prevtrim",
+     "approach": "★ CHOSEN — previous 6a (sketch v1), trimmed from 1.2s",
+     "status": "ok",
+     "note": "Hooman preferred the FIRST 6a over the v2 motion-fix. This is that previous 6a, with the first 1.2s cut off (4.83s). The v2 version is kept below for reference.",
+     "refs": [
+      "assets/shot6a_sk1.jpg",
+      "assets/shot6a_sk2.jpg",
+      "assets/shot6a_sk3.jpg",
+      "assets/wip_s6a_style.jpg"
+     ],
+     "video": "assets/shot6a_prevtrim.mp4",
+     "frames": [
+      "assets/shot6a_prevtrim_f0.jpg",
+      "assets/shot6a_prevtrim_f2.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order. @Image1, @Image2 and @Image3 are line-drawing SKETCHES that define the exact composition and the couple's hand/arm positions as they COMPLETE the white cabinet box — reproduce each precisely. Use @Image1 as the first frame — the couple push the two side walls of the box inward together. @Image2 defines the second keyframe — they press the front/second side panel into place. Use @Image3 as the last frame — the box squared and complete as an open-top box. @Image4 is a PHOTOREAL appearance reference: render the ENTIRE video photorealistically in its style, lighting, materials and PEOPLE — use the couple's appearance and the room from @Image4; do NOT adopt the line-drawing/sketch look of @Image1-@Image3 (they are only structure/pose guides). The couple are the SAME as @Image4: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Photoreal overhead, natural cooperative pushing-together motion, plain clothing with no text or logos. No on-screen text, no captions, no logos."
+    },
+    {
+     "id": "shot6a",
+     "approach": "(rejected) v2 motion-fix — exaggerated",
+     "status": "ok",
+     "note": "v2 MOTION FIX: the woman opens a tiny gap (left hand on left side, right hand on right side), slides the bottom piece into the middle, then pushes the sides back together to lock it — long sides stay put (no exaggerated expand/collapse).",
+     "refs": [
+      "assets/shot6a_sk1.jpg",
+      "assets/shot6a_sk2.jpg",
+      "assets/shot6a_sk3.jpg",
+      "assets/wip_s6a_style.jpg"
+     ],
+     "video": "assets/shot6a.mp4",
+     "frames": [
+      "assets/shot6a_f0.jpg",
+      "assets/shot6a_f1.jpg",
+      "assets/shot6a_f2.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order. @Image1, @Image2 and @Image3 are line-drawing SKETCHES defining the exact composition and the couple's positions as they lock the bottom piece into the white cabinet box — reproduce each precisely. Use @Image1 as the first frame — the box with its two LONG side walls standing up; the woman is at the near edge with one hand on each long side. @Image2 defines the second keyframe — the bottom piece being placed between the two long sides. Use @Image3 as the last frame — the box squared and complete with the bottom piece locked in. PRECISE MOTION (this is the whole action): the woman uses BOTH hands — her LEFT hand on the LEFT long side wall and her RIGHT hand on the RIGHT long side wall — to open only a VERY SMALL gap between the two sides, slides the bottom piece into the MIDDLE between them, and then pushes the two long sides back TOGETHER (closing the small gap she just made) to lock the bottom piece in place. That tiny open-then-close at the near edge is the ONLY movement. The two long side walls do NOT swing wide, expand outward, or collapse; NO exaggerated movement, nothing slides away. @Image4 is a PHOTOREAL appearance reference: render the ENTIRE video photorealistically in its style, lighting, materials and PEOPLE — use the couple and room from @Image4; do NOT adopt the line-drawing look of @Image1-@Image3. The couple are the SAME as @Image4: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Photoreal overhead, small controlled motion, plain clothing with no text or logos. No on-screen text, no captions, no logos."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "shot6b_divider",
+   "label": "Shot 7 · Box completion, zoom-in (sketch)",
+   "note": "Continues from 6a and zooms in on the couple finalizing. @Image1 = Shot 6a's last frame (first frame + photoreal style/couple), @Image2 = one end-state sketch. Gap-closing motion driven by the prompt."
+  },
+  {
+   "kind": "round",
+   "id": "shot6b_r1",
+   "label": "Shot 6b result",
+   "params": "Seedance 2.5 ref · 1080p · 6s · @Image1 shot6a-last (first+style) + @Image2 end sketch",
+   "experiments": [
+    {
+     "id": "shot7v3edit",
+     "approach": "★ CHOSEN — v3 motion + annotation marks EDITED OUT (video edit)",
+     "status": "ok",
+     "note": "Took the v3 result (good annotated motion, but the green/red marks had rendered in) and ran it through Seedance's VIDEO-EDIT route (reference-to-video + video_urls) with a prompt to erase only the green arrows/lines and red circles. The marks are gone; the couple, box, motion, room all preserved. NOTE: the video-edit route did NOT trip R3 despite the photoreal couple — useful for cleanups like this.",
+     "refs": [
+      "assets/shot7v3_f1.jpg"
+     ],
+     "video": "assets/shot7v3edit.mp4",
+     "frames": [
+      "assets/shot7v3edit_f0.jpg",
+      "assets/shot7v3edit_f1.jpg",
+      "assets/shot7v3edit_f2.jpg"
+     ],
+     "prompt": "[video edit] input = shot7_v3.mp4; prompt = 'Remove the bright GREEN arrows/lines and RED circle marks overlaid on the cabinet; keep everything else identical (same people, cabinet, motion, room, lighting).'"
+    },
+    {
+     "id": "shot7v3",
+     "approach": "v3 annotated (corrected prompt) — ⚠ marks got RENDERED",
+     "status": "rejected",
+     "note": "The corrected 'honor the marks' prompt made Seedance DRAW the green arrows + red circles into the video (visible mid-shot). Motion is closer but the on-screen marks are a defect. FIX next: remove the colored marks from the sketch (clean structure) and carry the exact motion in the PROMPT text (plain words, no color references) so nothing gets drawn.",
+     "refs": [
+      "assets/shot7ann_kf1.jpg",
+      "assets/shot7ann_kf2.jpg"
+     ],
+     "video": "assets/shot7v3.mp4",
+     "frames": [
+      "assets/shot7v3_f0.jpg",
+      "assets/shot7v3_f1.jpg",
+      "assets/shot7v3_f2.jpg"
+     ],
+     "prompt": "Use @Image1 as the FIRST frame AND the photoreal appearance/style reference — the shot begins exactly on @Image1 and renders the ENTIRE video in its style, lighting, materials, room and PEOPLE (the same couple as @Image1). @Image2 is a line-drawing SKETCH of the box that includes COLORED MOTION-GUIDE marks (circles, an arrow, and small parallel lines). HONOR these marks — they tell you exactly how things move — but do NOT draw or render the colored marks themselves in the video. Read them as follows: the BLUE circles mark the TOP ends of the two side walls the man is holding — he gently pulls these two sides APART with a small HORIZONTAL motion so the distance between the blue-circled points increases only SLIGHTLY (no noticeable gap); the RED circles mark the BASE/bottom ends of the two side walls — these stay completely STATIONARY and do not move; the GREEN circles, the GREEN downward ARROW and the GREEN parallel marks show the piece that then slides straight DOWN into its position BETWEEN the two side walls and seats into place. So the motion, in order: (1) the man widens the top of the two sides a little (blue apart, horizontal) while the base stays fixed (red); (2) the green-marked piece slides straight down between the two sides into place; (3) the top eases back together to lock it. The box stays put on the mat — it does NOT slide, tip, or move into the bench/background. Do NOT adopt the line-drawing look of @Image2 (render everything photoreal). The couple are the SAME as @Image1: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Close view of the man's hands at the top of the box. Photoreal, small controlled widen-then-drop-in motion, plain clothing with no text or logos. No on-screen text, no captions, no logos."
+    },
+    {
+     "id": "shot7ann",
+     "approach": "★ NEW — annotated sketch (your motion annotations)",
+     "status": "ok",
+     "note": "@Image1 = Shot 6a last frame (first + style). @Image2 = your ANNOTATED sketch (sketch_ann.png). Prompt describes the exact motion: man widens the TOP ends of the two sides slightly (blue apart, horizontal), base ends stay stationary (red), then the top piece (green) slides DOWN into place between them. Colored marks were told to be ignored (not drawn). Verify the motion. Prior v2 kept below.",
+     "refs": [
+      "assets/shot7ann_kf1.jpg",
+      "assets/shot7ann_kf2.jpg"
+     ],
+     "video": "assets/shot7ann.mp4",
+     "frames": [
+      "assets/shot7ann_f0.jpg",
+      "assets/shot7ann_f1.jpg",
+      "assets/shot7ann_f2.jpg"
+     ],
+     "prompt": "Use @Image1 as the FIRST frame AND the photoreal appearance/style reference — the shot begins exactly on @Image1 and renders the ENTIRE video in its style, lighting, materials, room and PEOPLE (the same couple as @Image1). @Image2 is a line-drawing SKETCH of the box with colored motion-annotation marks. IGNORE the colored marks (green, blue and red circles, the arrow and the small parallel lines) — they only indicate the motion and must NOT be drawn in the video. PRECISE MOTION (a close view of the man's hands at the top of the box): FIRST, the man gently pulls the TOP ends of the two side walls slightly APART with a small HORIZONTAL motion — the top of the box widens just a little (NO noticeable gap). The BOTTOM / base ends of the two side walls stay completely STATIONARY and fixed. THEN the top piece the man is holding slides straight DOWN into its position between the two side walls and seats into place, and the top eases back together. The box stays put on the mat — it does NOT slide, tip, or move into the bench/background. Do NOT adopt the line-drawing look of @Image2. The couple are the SAME as @Image1: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Photoreal, small controlled widen-then-drop-in motion, plain clothing with no text or logos. No on-screen text, no captions, no logos."
+    },
+    {
+     "id": "shot6b",
+     "approach": "(prior) v2 — man pushes sides (both-hands)",
+     "status": "ok",
+     "note": "v2 MOTION FIX: zoom in as the man pushes the left side (left hand) and right side (right hand) together to lock the bottom piece in — box stays in place (no longer slides into the bench).",
+     "refs": [
+      "assets/shot6b_kf1.jpg",
+      "assets/shot6b_kf2.jpg"
+     ],
+     "video": "assets/shot6b.mp4",
+     "frames": [
+      "assets/shot6b_f0.jpg",
+      "assets/shot6b_f1.jpg",
+      "assets/shot6b_f2.jpg"
+     ],
+     "prompt": "Use @Image1 as the FIRST frame AND the photoreal appearance/style reference — the shot begins exactly on @Image1 and renders the ENTIRE video in its style, lighting, materials, room and PEOPLE (the same couple as @Image1). @Image2 is a line-drawing SKETCH of the LAST-frame structure only: the white cabinet box complete with the bottom piece locked in between the two side walls. PRECISE MOTION (this is the whole action): the camera pushes IN (zooms) toward the box; the MAN uses BOTH hands — his LEFT hand on the LEFT side wall and his RIGHT hand on the RIGHT side wall — pushing the two sides together to lock the bottom piece in place between them. The two sides move only SLIGHTLY to click the piece in. The box stays in place on the mat — it does NOT slide, tip, or move into the bench or background, and the side walls do NOT collapse inward or expand in any exaggerated way. Do NOT adopt the line-drawing look of @Image2. The couple are the SAME as @Image1: a woman in her early 30s with shoulder-length dark-brown hair in a plain cream knit sweater and blue jeans, and a man in his early 50s with short salt-and-pepper grey hair in a plain light-blue polo and blue jeans. Photoreal, small controlled pressing-together motion, plain clothing with no text or logos. No on-screen text, no captions, no logos."
+    }
+   ]
+  },
+  {
+   "kind": "divider",
+   "id": "blockout_v1_divider",
+   "label": "BLENDER BLOCKOUT — motion → Seedance",
+   "note": "The detailed blockout experiment has moved to a dedicated shot-by-shot report containing every video input, every image input, complete prompts, fal request parameters, raw submitted payloads, combined output, inferred cuts, and isolated-shot controls.",
+   "link": "./3d_blockout_combined_v1/index.html",
+   "link_label": "Open the complete Blender → Seedance report",
+   "hide_following": true
+  },
+  {
+   "kind": "target",
+   "id": "blockout_v1_combined",
+   "label": "COMBINED AUTO-EDIT — all ordered references in one Seedance request",
+   "note": "22.04s. Seedance inferred eight visual shots and seven cuts without boundary timestamps: first side lift → connector macro → opposite side → perpendicular wall → wall press → large narrow board → small narrow board → stand-up. This is promising but is one sample; watch for cabinet topology drift and temporary extra-looking panels at cuts.",
+   "video": "assets/3d_blockout_v1/seedance_all_references_auto_edit.mp4",
+   "frames": [
+    "assets/3d_blockout_v1/combined_detected_shots_contact_sheet.png",
+    "assets/3d_blockout_v1/all_shots_start_end_contact_sheet.png"
+   ]
+  },
+  {
+   "kind": "target",
+   "id": "blockout_v1_shot02",
+   "label": "Shot 2 / 1A — first broad side-panel lift",
+   "note": "Motion direction is followed, but the result ends with the panel raised/held rather than conclusively seated. Left: exact Blender motion specification. Right: Seedance output.",
+   "reference_video": "assets/3d_blockout_v1/blender_shot02_1A.mp4",
+   "reference_video_label": "Blender motion specification · frames 1–48",
+   "video": "assets/3d_blockout_v1/seedance_shot02_1A.mp4",
+   "video_label": "Seedance 2.5 result · 4.04s",
+   "frames": ["assets/3d_blockout_v1/shot02_1A_generated_strip.png"]
+  },
+  {
+   "kind": "target",
+   "id": "blockout_v1_shot04",
+   "label": "Shot 4 — opposite broad side-panel lift",
+   "note": "Clear lift ending with the two broad walls upright. The generated hands contact the moving panel plausibly.",
+   "reference_video": "assets/3d_blockout_v1/blender_shot04.mp4",
+   "reference_video_label": "Blender motion specification · frames 48–96",
+   "video": "assets/3d_blockout_v1/seedance_shot04.mp4",
+   "video_label": "Seedance 2.5 result · 4.04s",
+   "frames": ["assets/3d_blockout_v1/shot04_generated_strip.png"]
+  },
+  {
+   "kind": "target",
+   "id": "blockout_v1_shot05",
+   "label": "Shot 5 — perpendicular cabinet wall installation",
+   "note": "The woman installs the perpendicular wall while the man relocates the two loose narrow boards. Overall action follows the authored motion, with some part-state simplification.",
+   "reference_video": "assets/3d_blockout_v1/blender_shot05.mp4",
+   "reference_video_label": "Blender motion specification · frames 96–192",
+   "video": "assets/3d_blockout_v1/seedance_shot05.mp4",
+   "video_label": "Seedance 2.5 result · 4.04s",
+   "frames": ["assets/3d_blockout_v1/shot05_generated_strip.png"]
+  },
+  {
+   "kind": "target",
+   "id": "blockout_v1_shot06",
+   "label": "Shot 6 — small wall press / connection",
+   "note": "Weakest diagnostic result: the authored Blender displacement is extremely small, so both the reference and generation appear nearly static. A follow-up should exaggerate and slow this displacement before testing again.",
+   "reference_video": "assets/3d_blockout_v1/blender_shot06.mp4",
+   "reference_video_label": "Blender motion specification · frames 192–216",
+   "video": "assets/3d_blockout_v1/seedance_shot06.mp4",
+   "video_label": "Seedance 2.5 result · 4.04s",
+   "frames": ["assets/3d_blockout_v1/shot06_generated_strip.png"]
+  },
+  {
+   "kind": "target",
+   "id": "blockout_v1_shot07a",
+   "label": "Shot 7A — larger narrow-board installation",
+   "note": "The first of the two narrow-board placements is clear and includes plausible hand interaction.",
+   "reference_video": "assets/3d_blockout_v1/blender_shot07A.mp4",
+   "reference_video_label": "Blender motion specification · frames 216–278",
+   "video": "assets/3d_blockout_v1/seedance_shot07A.mp4",
+   "video_label": "Seedance 2.5 result · 4.04s",
+   "frames": ["assets/3d_blockout_v1/shot07A_generated_strip.png"]
+  },
+  {
+   "kind": "target",
+   "id": "blockout_v1_shot07b",
+   "label": "Shot 7B — smaller narrow-board installation",
+   "note": "Seedance distinguishes this second placement from Shot 7A and carries the board across the cabinet into position.",
+   "reference_video": "assets/3d_blockout_v1/blender_shot07B.mp4",
+   "reference_video_label": "Blender motion specification · frames 278–324",
+   "video": "assets/3d_blockout_v1/seedance_shot07B.mp4",
+   "video_label": "Seedance 2.5 result · 4.04s",
+   "frames": ["assets/3d_blockout_v1/shot07B_generated_strip.png"]
+  },
+  {
+   "kind": "target",
+   "id": "blockout_v1_shot08",
+   "label": "Shot 8 — stand up the completed cabinet",
+   "note": "Strongest result. The assembled cabinet behaves as one rigid unit, the stand-up action is easy to read, and both people make plausible hand contact.",
+   "reference_video": "assets/3d_blockout_v1/blender_shot08.mp4",
+   "reference_video_label": "Blender motion specification · frames 324–348",
+   "video": "assets/3d_blockout_v1/seedance_shot08.mp4",
+   "video_label": "Seedance 2.5 result · 4.04s",
+   "frames": ["assets/3d_blockout_v1/shot08_generated_strip.png"]
+  },
+  {
+   "kind": "target",
+   "id": "blockout_v1_summary",
+   "label": "Experiment summary",
+   "note": "Preliminary recommendation: author one continuous Blender motion, try a combined Seedance auto-edit first, and regenerate only failed segments as controlled per-shot calls. The combined run got the intended eight-stage edit structure in this single trial, while isolated generation remains better for precise retries. Estimated spend for all eight calls: $24.21 (preflight estimate, not invoice).",
+   "frames": [
+    "assets/3d_blockout_v1/per_shot_contact_sheet.png",
+    "assets/3d_blockout_v1/generated_start_end_contact_sheet.png"
+   ]
+  }
+ ]
+}

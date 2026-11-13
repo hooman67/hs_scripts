@@ -1,0 +1,477 @@
+{
+  "version": "v4.1-bounded-repair-accounting-v1",
+  "status": "complete",
+  "completed_at": "2026-10-27T00:31:30.276466+00:00",
+  "scope": {
+    "requested_cases": 4,
+    "successful_completion_responses": 4,
+    "semantic_retries": 0,
+    "transport_attempts": 4,
+    "transport_retries": 0
+  },
+  "provenance": {
+    "system_prompt_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v4.1/system_prompt.md",
+    "system_prompt_sha256": "986957bcc1a5e218daea3594c037036b9d6d25af79847efbe0a95c849591fb04",
+    "repair_instruction_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_instruction.md",
+    "repair_instruction_sha256": "5f1d91442c3abfaf8ee4fead48efa40fea5b85807a6407ee17d4c654a327d17f",
+    "repair_queue_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_review_queue.json",
+    "repair_queue_sha256": "078446d7cc3ab891f3000cecef6ce3695da0181c779a46c1cc75f8d4d2796de7",
+    "output_schema_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v4.1/output.schema.json",
+    "output_schema_sha256": "03dba20d426fe151a0723a176858092101f4b0d05cd48fafcc9b4f7975d38a11"
+  },
+  "counts": {
+    "normalized_validator_passed": 4,
+    "normalized_validator_rejected": 0,
+    "processing_or_transport_failures": 0
+  },
+  "cases": [
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+      "status": "normalized_validator_passed_pending_human_review",
+      "base": {
+        "raw_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/records/attempts/22fdbf19f03d1a31__laptop_FrontRightCloseUp/sample_017.json",
+        "raw_record_sha256": "d4999644b8cc5f343d4e7c7e5a6f4ebe4097d3f5c180e644697f17c0c507b7d7",
+        "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/normalized_outputs/22fdbf19f03d1a31__laptop_FrontRightCloseUp__sample_017.json",
+        "normalized_output_file_sha256": "e570770ec819cdddc1bc054d7af989e89557f6e0b18009dc34ac280e01a8ab71",
+        "validation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/validation/22fdbf19f03d1a31__laptop_FrontRightCloseUp.json",
+        "validation_file_sha256": "4851b1c7e3d376b4b042ef7c25ffc3eed57c131b7dd58923cfd429dac0dc3b39",
+        "normalized_validation_passed": false,
+        "normalized_error_count": 1,
+        "normalized_errors": [
+          {
+            "code": "ctech_extension_environment",
+            "detail": "category_extension must change the reference environment",
+            "candidate_id": "p26"
+          }
+        ]
+      },
+      "correction": {
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightCloseUp/request.json",
+        "request_file_sha256": "8970201fcd92ddfd31db551b31e8353f09d6486aec81a0aeaf9562bff64c0bfa",
+        "request_sha256": "cfe1a58fdc5d082d1fbb0f85ac3b372b7b17e1fa5387a4aa88d9cde546076025",
+        "response_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightCloseUp/response_record.json",
+        "response_record_file_sha256": "a06807b91ee656a82e80f71ca605c4b020c5b0cf3e70e9682aa1f13689ae813f",
+        "transport_attempts": 1,
+        "retry_events": [],
+        "model": "gpt-5.5-2026-04-24",
+        "finish_reason": "stop",
+        "provider_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightCloseUp/provider_response.json",
+        "provider_response_sha256": "073a278b571bb908e694f34e861a83a6152187e9350b997bfbf6035e88be1189",
+        "proposed_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightCloseUp/proposed_output.json",
+        "proposed_output_file_sha256": "462272f81084053d61e771b502fe4f4f829a3677a0e818888e469373a369e7d1",
+        "merged_before_finalizer_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightCloseUp/merged_before_finalizer.json",
+        "merged_before_finalizer_file_sha256": "424f7aaedb5d395f0c6a13e9ad54d5d734cc8aa26fc35f7069d8ef8d1216536d",
+        "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightCloseUp/normalized_output.json",
+        "normalized_output_file_sha256": "050039c73dd38a99d333c9b1b8b43b9cb5805e6c009361d89d6c8dbaf5fa5ba8",
+        "validation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightCloseUp/validation.json",
+        "validation_file_sha256": "6e063dc8894e8fabe1e6d9c6314bf919c5d5454e4e89a30019b262da55292d1a",
+        "normalized_validation_passed": true,
+        "normalized_error_count": 0,
+        "normalized_errors": [],
+        "normalized_warning_count": 2,
+        "normalized_warnings": [
+          {
+            "code": "unused_source_evidence",
+            "detail": "Unused evidence may support an omission explanation; inspect: ['e1', 'e7']"
+          },
+          {
+            "code": "human_scene_review_required",
+            "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+          }
+        ],
+        "accepted_field_change_count": 100,
+        "discarded_unauthorized_change_count": 1
+      }
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightWide",
+      "status": "normalized_validator_passed_pending_human_review",
+      "base": {
+        "raw_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/records/attempts/22fdbf19f03d1a31__laptop_FrontRightWide/sample_018.json",
+        "raw_record_sha256": "94effa93ffa2a8708020651e4cdab47b4670811e408e517ed7b2083f0d11da88",
+        "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/normalized_outputs/22fdbf19f03d1a31__laptop_FrontRightWide__sample_018.json",
+        "normalized_output_file_sha256": "9862df75427b30109564b414d2d1ebe8bef62e08f445714009d3b909541a71c0",
+        "validation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/validation/22fdbf19f03d1a31__laptop_FrontRightWide.json",
+        "validation_file_sha256": "8ad93be519915bb26a0cf7013bc1c435b33a10dac187bda217ecc6c9b29e2d47",
+        "normalized_validation_passed": false,
+        "normalized_error_count": 14,
+        "normalized_errors": [
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['desks', 'plants', 'wall']",
+            "candidate_id": "p3"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['desks', 'plants', 'wall'] but signature has 2 entries",
+            "candidate_id": "p3"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['curtains', 'plants', 'windows']",
+            "candidate_id": "p4"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['curtains', 'plants', 'windows'] but signature has 2 entries",
+            "candidate_id": "p4"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['curtains', 'shelving', 'windows']",
+            "candidate_id": "p6"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['curtains', 'shelving', 'windows'] but signature has 2 entries",
+            "candidate_id": "p6"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p7"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['artwork', 'shelving', 'wall']",
+            "candidate_id": "p15"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['artwork', 'shelving', 'wall'] but signature has 2 entries",
+            "candidate_id": "p15"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p16"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['artwork', 'collectibles', 'shelving']",
+            "candidate_id": "p17"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['artwork', 'collectibles', 'shelving'] but signature has 2 entries",
+            "candidate_id": "p17"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['couch', 'plants', 'soft textiles']",
+            "candidate_id": "p25"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['couch', 'plants', 'soft textiles'] but signature has 2 entries",
+            "candidate_id": "p25"
+          }
+        ]
+      },
+      "correction": {
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightWide/request.json",
+        "request_file_sha256": "d1e9d6a88cc8c0702d99f6fa881988910d598c07484adcd1c4b6a48d218d64db",
+        "request_sha256": "334668c17c635eecd15e83086745311653e9dee8af617f0365641ddd48167efb",
+        "response_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightWide/response_record.json",
+        "response_record_file_sha256": "524ce70147acc8a75e9e4fb721aa62f108896a1b512689a804c8fda95511fab3",
+        "transport_attempts": 1,
+        "retry_events": [],
+        "model": "gpt-5.5-2026-04-24",
+        "finish_reason": "stop",
+        "provider_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightWide/provider_response.json",
+        "provider_response_sha256": "32e989c0d6c0c8923d12a009d42313a595193c2a051dc70221a3b6e770f3ec75",
+        "proposed_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightWide/proposed_output.json",
+        "proposed_output_file_sha256": "9baf15364dc9a573dd5a31d5903f4863577e853af7e27010ccf376570a054c49",
+        "merged_before_finalizer_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightWide/merged_before_finalizer.json",
+        "merged_before_finalizer_file_sha256": "9baf15364dc9a573dd5a31d5903f4863577e853af7e27010ccf376570a054c49",
+        "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightWide/normalized_output.json",
+        "normalized_output_file_sha256": "56c98df4a17da4612d0ff4e8731bcf3dcb078e24f737287a1edbd63e440ce525",
+        "validation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/22fdbf19f03d1a31__laptop_FrontRightWide/validation.json",
+        "validation_file_sha256": "1fb85091739bea44613a5a172be0b6555df250313d832863e1fcd665013335e5",
+        "normalized_validation_passed": true,
+        "normalized_error_count": 0,
+        "normalized_errors": [],
+        "normalized_warning_count": 1,
+        "normalized_warnings": [
+          {
+            "code": "human_scene_review_required",
+            "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+          }
+        ],
+        "accepted_field_change_count": 68,
+        "discarded_unauthorized_change_count": 0
+      }
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+      "status": "normalized_validator_passed_pending_human_review",
+      "base": {
+        "raw_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/records/attempts/ee810cf51bb82bb4__printer_FrontRightCloseUp/sample_016.json",
+        "raw_record_sha256": "1961e859f879c2078762a1e2c8dbf110241fbfea093423fde5b21bc4669df906",
+        "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/normalized_outputs/ee810cf51bb82bb4__printer_FrontRightCloseUp__sample_016.json",
+        "normalized_output_file_sha256": "0ab02ff30b95b97ae0f2e00258238cd621d0cbf0e50886b28666d37b72ce6d70",
+        "validation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/validation/ee810cf51bb82bb4__printer_FrontRightCloseUp.json",
+        "validation_file_sha256": "f7987c4db7c378d31293707fdd146a3a3e0f731f21df1681348b1e44da09d9cc",
+        "normalized_validation_passed": false,
+        "normalized_error_count": 2,
+        "normalized_errors": [
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p1"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p5"
+          }
+        ]
+      },
+      "correction": {
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightCloseUp/request.json",
+        "request_file_sha256": "c88f9e945eeb4fe209e10f4594cf8b910a9e69a4393f97ea87b87160289fffa3",
+        "request_sha256": "4991faf3a1671e75cf94a8f83dc3b4ad4f4ac5bb345dc45a63309059355f7332",
+        "response_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightCloseUp/response_record.json",
+        "response_record_file_sha256": "678d26751c69f726da325e9dad752b684c2f6dbb7760858169901d2a7e42e675",
+        "transport_attempts": 1,
+        "retry_events": [],
+        "model": "gpt-5.5-2026-04-24",
+        "finish_reason": "stop",
+        "provider_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightCloseUp/provider_response.json",
+        "provider_response_sha256": "550f63e391cee9a683f82f5e3f1fb6bb9dfe0213af1cb851b1423d917a168cde",
+        "proposed_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightCloseUp/proposed_output.json",
+        "proposed_output_file_sha256": "4a44d28476e27770ecf5aac276f4572a9622e36698c688fe25ca07741026c8be",
+        "merged_before_finalizer_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightCloseUp/merged_before_finalizer.json",
+        "merged_before_finalizer_file_sha256": "4a44d28476e27770ecf5aac276f4572a9622e36698c688fe25ca07741026c8be",
+        "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightCloseUp/normalized_output.json",
+        "normalized_output_file_sha256": "0fa597ee07e04f52658cd3a17bf55c2fdc43343a3c1b58066e3544e5c5fcfbd0",
+        "validation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightCloseUp/validation.json",
+        "validation_file_sha256": "b9200658cf46e25bb8f5ac42beaf2a6e3985354a0f08aaef87fe18dd5a12543b",
+        "normalized_validation_passed": true,
+        "normalized_error_count": 0,
+        "normalized_errors": [],
+        "normalized_warning_count": 2,
+        "normalized_warnings": [
+          {
+            "code": "unused_source_evidence",
+            "detail": "Unused evidence may support an omission explanation; inspect: ['e4', 'e5']"
+          },
+          {
+            "code": "human_scene_review_required",
+            "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+          }
+        ],
+        "accepted_field_change_count": 56,
+        "discarded_unauthorized_change_count": 0
+      }
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+      "status": "normalized_validator_passed_pending_human_review",
+      "base": {
+        "raw_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/records/attempts/ee810cf51bb82bb4__printer_FrontRightWide/sample_021.json",
+        "raw_record_sha256": "bf5de6c5b985ae016ada2361749e1f1b2995c417bff3c8d5fcb0e73ee9c1ccb2",
+        "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/normalized_outputs/ee810cf51bb82bb4__printer_FrontRightWide__sample_021.json",
+        "normalized_output_file_sha256": "27baf98cb212a0dd6c65369a46faed143fbc7e832681859a80a95dde5b3282a4",
+        "validation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/validation/ee810cf51bb82bb4__printer_FrontRightWide.json",
+        "validation_file_sha256": "d4895b347acd7c2842a77b3f91289a605c109e641e47ebe1e03f0de498eedcaf",
+        "normalized_validation_passed": false,
+        "normalized_error_count": 31,
+        "normalized_errors": [
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['simple furniture'] but signature has 0 entries",
+            "candidate_id": "p1"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p1"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['chair', 'desks', 'plants']",
+            "candidate_id": "p4"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['chair', 'desks', 'plants'] but signature has 2 entries",
+            "candidate_id": "p4"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p4"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['furnishings', 'plants', 'shelving']",
+            "candidate_id": "p6"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['furnishings', 'plants', 'shelving'] but signature has 2 entries",
+            "candidate_id": "p6"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "4>2: ['desks', 'plants', 'shelving', 'workstations']",
+            "candidate_id": "p7"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['desks', 'plants', 'shelving', 'workstations'] but signature has 2 entries",
+            "candidate_id": "p7"
+          },
+          {
+            "code": "collection_used_as_surface",
+            "detail": "desks",
+            "candidate_id": "p7"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p7"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['plants', 'simple furniture'] but signature has 0 entries",
+            "candidate_id": "p8"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p8"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['chair', 'desks'] but signature has 1 entries",
+            "candidate_id": "p9"
+          },
+          {
+            "code": "collection_used_as_surface",
+            "detail": "desks",
+            "candidate_id": "p9"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p9"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['artwork', 'shelving', 'wall']",
+            "candidate_id": "p11"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['artwork', 'shelving', 'wall'] but signature has 2 entries",
+            "candidate_id": "p11"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['desks', 'plants'] but signature has 1 entries",
+            "candidate_id": "p12"
+          },
+          {
+            "code": "collection_used_as_surface",
+            "detail": "desks",
+            "candidate_id": "p12"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p12"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['artwork', 'collectibles', 'shelving']",
+            "candidate_id": "p20"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['artwork', 'collectibles', 'shelving'] but signature has 2 entries",
+            "candidate_id": "p20"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['desks', 'plants'] but signature has 0 entries",
+            "candidate_id": "p21"
+          },
+          {
+            "code": "collection_used_as_surface",
+            "detail": "desks",
+            "candidate_id": "p21"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p21"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['simple furniture'] but signature has 0 entries",
+            "candidate_id": "p22"
+          },
+          {
+            "code": "surface_not_literal",
+            "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+            "candidate_id": "p22"
+          },
+          {
+            "code": "literal_background_budget",
+            "detail": "3>2: ['furnishings', 'plants', 'shelving']",
+            "candidate_id": "p24"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['furnishings', 'plants', 'shelving'] but signature has 2 entries",
+            "candidate_id": "p24"
+          },
+          {
+            "code": "background_signature_undercount",
+            "detail": "prose names ['shelving', 'simple furniture'] but signature has 1 entries",
+            "candidate_id": "p28"
+          }
+        ]
+      },
+      "correction": {
+        "request_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightWide/request.json",
+        "request_file_sha256": "fb2c3ab2bb58e0bc6b949de6d36e06ed523dbf56348cc1495e90cc9c5a12c023",
+        "request_sha256": "29e31f4fd148b9a4c3205daa7d2c5f4dff75f7b563afc51c25cc883855469f85",
+        "response_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightWide/response_record.json",
+        "response_record_file_sha256": "09e6f9245d78434bb6dfcd7499f1a915744fda40e6f2a742425f43b81aed53f4",
+        "transport_attempts": 1,
+        "retry_events": [],
+        "model": "gpt-5.5-2026-04-24",
+        "finish_reason": "stop",
+        "provider_response_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightWide/provider_response.json",
+        "provider_response_sha256": "3a6ea65b448594391ebd57453ed3fc9aa7d19b754c93da76257feef97b5dcb57",
+        "proposed_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightWide/proposed_output.json",
+        "proposed_output_file_sha256": "784a7ae259c70bd0459ce444ad81f6f6a7c21603e39f8f7dc4eca6b73919d638",
+        "merged_before_finalizer_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightWide/merged_before_finalizer.json",
+        "merged_before_finalizer_file_sha256": "784a7ae259c70bd0459ce444ad81f6f6a7c21603e39f8f7dc4eca6b73919d638",
+        "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightWide/normalized_output.json",
+        "normalized_output_file_sha256": "94d65b9d012f958d1267104a6caaec21676920d5544e7685d6d39a55715d1af2",
+        "validation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/repair_pass_01/ee810cf51bb82bb4__printer_FrontRightWide/validation.json",
+        "validation_file_sha256": "409a01d9a7bc681f42a3a5e74b692a5a57aeac51f15a4ff0011e2b98d684f176",
+        "normalized_validation_passed": true,
+        "normalized_error_count": 0,
+        "normalized_errors": [],
+        "normalized_warning_count": 2,
+        "normalized_warnings": [
+          {
+            "code": "unused_source_evidence",
+            "detail": "Unused evidence may support an omission explanation; inspect: ['e4', 'e8']"
+          },
+          {
+            "code": "human_scene_review_required",
+            "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+          }
+        ],
+        "accepted_field_change_count": 87,
+        "discarded_unauthorized_change_count": 0
+      }
+    }
+  ]
+}

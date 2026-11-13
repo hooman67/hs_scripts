@@ -1,0 +1,151 @@
+{
+  "schema_version": "hp-v6.2-surface-generation-parity-audit-v1",
+  "as_of_date": "2026-11-09",
+  "scope": "Read-only comparison of accepted V6.1/V6.2 generation, the surface-shape candidate, wrapper, and reusable judge/report tooling. No endpoint, image, judge, or publication call was made.",
+  "checkout": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline",
+  "baseline_runs": {
+    "v6_1": {
+      "manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/run_manifest.json",
+      "records": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records",
+      "done": 160
+    },
+    "v6_2": {
+      "manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/run_manifest.json",
+      "records": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/records",
+      "done": 160
+    },
+    "shared_contract": {
+      "endpoint_payload_fields": [
+        "digitalTwinId",
+        "cameraId",
+        "prompt"
+      ],
+      "generator": "GPT Image 2.5 / single reference / no grading",
+      "image_model": "gpt-image-2.5-sunburst-2026-09-08",
+      "text_model": "gpt-6-astra",
+      "output_dimensions": "2368x1776",
+      "reference_count": 1,
+      "image_calls_per_row": 1,
+      "quality": "high",
+      "image_count": 1,
+      "output_format": "png",
+      "background": "opaque",
+      "graded": false,
+      "image_edit_mask_applied": false,
+      "image_model_inputs": [
+        "geometry guide only"
+      ],
+      "planning_inputs": [
+        "product",
+        "one photographic reference"
+      ],
+      "writing_inputs": [
+        "geometry guide",
+        "one photographic reference",
+        "product"
+      ],
+      "view_filter": {
+        "cashmere": [
+          "Front_CloseUp",
+          "Back_Right_CloseUp",
+          "Front_Left_Medium",
+          "Front_Wide"
+        ],
+        "elitebook": [
+          "Front_CloseUp",
+          "Back_Right_CloseUp",
+          "Front_Left_Medium",
+          "Front_Wide"
+        ],
+        "tassel": [
+          "Front_CloseUp",
+          "Front_Right_CloseUp",
+          "Front_Left_Medium",
+          "Front_Wide"
+        ],
+        "magic": [
+          "Front_CloseUp",
+          "Front_Right_CloseUp",
+          "Front_Left_Medium",
+          "Front_Wide"
+        ]
+      }
+    }
+  },
+  "candidate_and_wrapper": {
+    "runtime": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/local_scene_endpoint/runtime",
+    "candidate_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/local_scene_endpoint/runtime_surface_shape_r1_manifest.json",
+    "candidate_patch": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/local_scene_endpoint/runtime_surface_shape_r1.patch",
+    "runner": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/run_generation.py",
+    "launcher": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/launch_surface_shape_candidate.sh",
+    "request_contract_matches_baselines": true,
+    "model_dimensions_quality_count_mask_match_baselines": true,
+    "device_camera_filter_matches_baselines": true,
+    "twin_bytes": {
+      "count": 16,
+      "all_sha256_equal_across_v6_1_v6_2_and_new_preflight": true,
+      "new_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/runs/text_review_20261109/twin_manifest.json"
+    },
+    "reference_assets": {
+      "styles_json": {
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/local_scene_endpoint/runtime/assets/styles.json",
+        "sha256": "d1e87ce902b7ad62d9dd7e8287326a0225270ad065a4efeba9dd167dc0b12771",
+        "bytes": 39706171
+      },
+      "captions_json": {
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/local_scene_endpoint/runtime/hp3p/data/ref_captions.json",
+        "sha256": "c92fd69684a64d0e6e1f4771c3d29a66ac07ba6f729c3843f83f59c7f16e3085",
+        "bytes": 1999715
+      },
+      "assessment": "The candidate restores the pinned reference catalog and captions. Per-row reference IDs need not equal older runs because prompts differ and selection is model-authored; selected bytes must come from this pinned catalog."
+    },
+    "blue_handling": {
+      "unintended_change_found": false,
+      "basis": "Candidate verification records byte-identical non-geometry system sections and unchanged non-replaced pipeline AST. The authorized support-shape/support-category constants are the only prompt-flow changes found.",
+      "cache_boundary": "ReferenceBlue.VERSION remains old. The intended endpoint path uses the new default PIPELINE_VERSION unified-blue-scale-v20-surface-shape-r1. Do not use reference-blue cache mode for this run without a separately versioned decision."
+    },
+    "mask_semantics": "The supplied matte is still created and used for product anchoring/guide construction; it is not sent as an image-edit mask. This matches both accepted baselines.",
+    "authorized_source_changes": [
+      "hp3p/geometry.py: support_top_shape schema, ellipse construction/projection, and category-neutral geometry description",
+      "hp3p/pipeline.py: support shape/category instructions and PIPELINE_VERSION",
+      "hp3p/prompts/system_3p.txt: reviewed geometry/support wording",
+      "corresponding tests"
+    ]
+  },
+  "findings": [
+    {
+      "severity": "resolved_before_launch",
+      "finding": "The candidate manifest's runtime_tree_sha256 631fe047e7b82c6c690f038effda1155b0ffde5ecdbf8be745164db649a80de5 covers the 41-file code tree. Four reference artifacts were restored afterward; the current all-file runtime digest by the documented algorithm is dcddb85dbbb3dcb3faccba48b3427abf1d6806d04f1cef0880a7259c689c979e.",
+      "resolution": "The guide agent agreed to relabel 631fe047... as the code-tree digest and create a separate deployment manifest pinning all four reference artifacts, the 16-view bundle, and wrapper files. The runner should record that deployment-manifest hash."
+    },
+    {
+      "severity": "guardrail",
+      "finding": "ReferenceBlue.VERSION is intentionally unchanged and could reuse old reference-blue cache rows.",
+      "resolution": "Use the default PIPELINE_VERSION surface-shape-r1 branch for this run."
+    }
+  ],
+  "judge_and_report_reuse": {
+    "accepted_v6_2_target_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/new_v6_2_eval_20261107/manifest.json",
+    "accepted_v6_2_consensus_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/fe_reports/v6_2_consensus_v2_20261107/build_manifest.json",
+    "baseline_v2_runner": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/run_judge.py",
+    "baseline_v2_batch": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/run_batch.py",
+    "compact_v3_runner": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/run_judge.py",
+    "compact_v3_batch": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/run_batch.py",
+    "two_pass_combiner": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/combine.py",
+    "consensus_merge": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/consensus_policy/merge_consensus_v2.py",
+    "consensus_evaluator": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/consensus_policy/evaluate_consensus_v2.py",
+    "current_surface_report_builder": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/build_grouped_report.py",
+    "accepted_judge_config": {
+      "model": "gpt-5.5",
+      "reasoning_effort": "high",
+      "image_detail": "high",
+      "image_transform": "none; original bytes",
+      "max_completion_tokens": 12000,
+      "baseline_calls": 160,
+      "compact_calls": 160,
+      "conditional_consensus_overlay_calls_in_old_v6_2": 10
+    },
+    "usable_without_old_judgments": "Yes, after collecting a fresh source manifest bound to the new generated-image bytes, unchanged twin bytes, new scene-prompt hashes, product types, and scene_generation stage. Run baseline V2 and compact V3 into new output directories, then recompute two-pass/consensus results. The old result files are input-hash-bound and must not be copied. The current surface report builder independently enforces source_prompts_sha256 and can render zero judgments as pending or accept a newly converted matching-source judgment document. The accepted V3 collectors/merge scripts contain old path assumptions, so this is reusable protocol and code, not a zero-configuration command against the new run directory."
+  },
+  "release_assessment": "No unintentional generation-contract change was found beyond the approved support geometry/category wording. Launch is parity-safe once the new deployment manifest pins the restored reference assets and the runner records that manifest hash."
+}

@@ -1,0 +1,602 @@
+{
+  "version": "hp-diversity-style-reference-audit-v1",
+  "as_of_date": "2026-10-23",
+  "claim_status": "VERIFIED",
+  "scope": {
+    "purpose": "Exact style-reference evidence for the separate V3 diversity evaluation.",
+    "authorized_device_families": [
+      "laptop",
+      "printer"
+    ],
+    "authorized_source_counts": {
+      "laptop": 3,
+      "printer": 6
+    },
+    "runtime_identity_rule": "Tag-only; product names in historical excerpts are provenance text and are not runtime inputs."
+  },
+  "sources": {
+    "october_guidance_docx": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/example_prompts/HP - mAIstro Prompt Guidance (Oct 2026).docx",
+      "sha256": "1f1605f034f581e03679d101fddd9cd52f00601b75ba2a9ec64783206fb78293",
+      "bytes": 24664,
+      "source_class": "primary internal artifact",
+      "document_title": "HP - mAIstro Prompt Guidance (Oct 2026)",
+      "document_period": "October 2026"
+    },
+    "verified_october_extraction": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/october_guidance.json",
+      "sha256": "e66e2008735407786cb2159b07c06131d1404dd117dad71444cd8329d8dd647d",
+      "verification": "Paragraph list exactly matches direct DOCX XML extraction."
+    },
+    "lifestyle_workbook": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/example_prompts/Eval-Set_Lifestyle-Photography_wSKUs.xlsx",
+      "sha256": "7bf4c6ad2b6ce324fb3c9d1d9d52846411529e29f1b1765d1f4e8bff7ded980a",
+      "bytes": 35120,
+      "source_class": "primary internal artifact",
+      "worksheet": "Eval Set Prompts",
+      "text_column": "A only",
+      "header_cell": "A1",
+      "header_text": "BASE PROMPTS – NO VISUAL STYLE MENTIONS"
+    }
+  },
+  "october_guidance": {
+    "reusable_template": {
+      "paragraph": 3,
+      "text": "A [SETTING] with [FOCAL DESK/TABLE/WORKSTATIONS] featuring [TABLETOP PROPS]. [BACKGROUND ELEMENTS] create natural depth throughout the space. Lived-in and authentic, with [SIGNS OF USE / IMPERFECTIONS]. [LIGHTING] creates a warm, inviting atmosphere. ",
+      "text_sha256": "2a385baf15b611d5f1b5d2686fb077f216972fb337d8e4c1f8e72cf625cb134e"
+    },
+    "optional_blue_carrier_modifier": {
+      "paragraph": 4,
+      "text": "To increase “carriers of blue” append to prompt: Minimal blue accents appear selectively through small décor details.",
+      "text_sha256": "fac35bcbb1e5eef1415eac22036c5c9861ce5b03a058f7db50354d7284188cb0",
+      "interpretation": "The source introduces this with 'To increase'; it is optional rather than a universal requirement."
+    },
+    "compatible_allowed_subsettings": [
+      {
+        "subsetting_id": "corporate_office",
+        "heading_paragraph": 5,
+        "heading_text": "Corporate Office – Sample Prompts",
+        "compatible_device_families": [
+          "laptop"
+        ],
+        "example_paragraphs": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "subsetting_id": "home_workspace",
+        "heading_paragraph": 9,
+        "heading_text": "Home Workspace – Sample Prompts",
+        "compatible_device_families": [
+          "laptop",
+          "printer"
+        ],
+        "example_paragraphs": [
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "subsetting_id": "coffee_shop",
+        "heading_paragraph": 13,
+        "heading_text": "Coffee Shop – Sample Prompts",
+        "compatible_device_families": [
+          "laptop"
+        ],
+        "example_paragraphs": [
+          14,
+          15
+        ]
+      },
+      {
+        "subsetting_id": "creative_studio",
+        "heading_paragraph": 16,
+        "heading_text": "Creative Studio – Sample Prompts",
+        "compatible_device_families": [
+          "laptop"
+        ],
+        "example_paragraphs": [
+          17,
+          18
+        ]
+      }
+    ],
+    "sample_prompts": [
+      {
+        "subsetting_id": "corporate_office",
+        "paragraph": 6,
+        "device_family": "laptop",
+        "text": "Laptop: A open modern corporate office with a desk, clean shelving, plants, framed artwork, and refined workplace décor. Layered office furnishings and architectural details create natural depth, with no additional hardware or devices visible. Warm natural lighting creates a polished, inviting atmosphere, with minimal blue accents appearing selectively through small décor details.",
+        "text_sha256": "796ac37dd4c67913477a15981bafaa02485d7299c28c85c692e4f40b56ca4769"
+      },
+      {
+        "subsetting_id": "corporate_office",
+        "paragraph": 7,
+        "device_family": "laptop",
+        "text": "Laptop: An open modern corporate office with multiple workstations extending deep into the space. Desks, clean shelving, plants, framed artwork, and refined workplace décor create a layered, active environment. Repeating workstations and architectural details emphasize depth and an expansive floor plan, with no hardware or devices visible. Warm natural lighting creates a polished, inviting atmosphere, with minimal blue accents through select décor details.",
+        "text_sha256": "ec1a17c007bb95d022b32c49936650e8912236f36d5ed1a0f22669af771a6cb3"
+      },
+      {
+        "subsetting_id": "corporate_office",
+        "paragraph": 8,
+        "device_family": "laptop",
+        "text": "Laptop: A bright, open modern corporate office with multiple workstations, warm natural light, simple desks, ergonomic chairs, notebooks, papers, plants, and subtle personal touches on the workstations. Lived-in but tidy and professional, with minimal accents of blue.",
+        "text_sha256": "60e799496576e6589f9c948f96d04c7fca1fe837558164c85b8e683ad11f339d"
+      },
+      {
+        "subsetting_id": "home_workspace",
+        "paragraph": 10,
+        "device_family": "laptop",
+        "text": "Laptop: A modern home workspace with a wooden desk holding a notebook, spiral pad, pen, stack of papers, and coffee mug. Large windows, soft curtains, a comfortable chair, houseplants, shelving, and subtle residential furnishings extend throughout the room. Minimal blue accents appear selectively through small décor details.",
+        "text_sha256": "fa062656d3b8ca98951f9628fdbef7f9253e9c1c66f7d5a16e644c46785a236a"
+      },
+      {
+        "subsetting_id": "home_workspace",
+        "paragraph": 11,
+        "device_family": "laptop",
+        "text": "Laptop: A lived-in home workspace with a wooden desk holding an open notebook, spiral pad, loose papers, pens, and a half-finished coffee. Soft daylight filters through large windows and relaxed curtains, with a comfortable chair, slightly overgrown houseplants, full shelving, books, and familiar residential objects throughout the room. Warm, layered, and casually imperfect rather than styled or modern. Minimal blue accents appear naturally in a few small everyday details.",
+        "text_sha256": "b59b8f7de6e7811d6c5d1a95b02704b49c35ebeb9947f3ed26ca641432cd3d7d"
+      },
+      {
+        "subsetting_id": "home_workspace",
+        "paragraph": 12,
+        "device_family": "printer",
+        "text": "Printer: A modern home workspace with warm natural light, simple furniture, books, notebooks, papers, plants, and casually arranged everyday objects. Lived-in and authentic with subtle imperfections, warm neutral tones, and minimal touches of blue.",
+        "text_sha256": "a7883886371fc7ec9764616d34fb2f7c6b523f89140b5866b016f2f4e86fce9a"
+      },
+      {
+        "subsetting_id": "coffee_shop",
+        "paragraph": 14,
+        "device_family": "laptop",
+        "text": "Laptop: A warm small wooden café table with a notebook, pen, and coffee cup rest on the tabletop. A modern neighborhood café extends into the background with artwork, shelving, plants, seating, and large windows. Minimal blue accents appear selectively through a few small objects and décor details.",
+        "text_sha256": "399f84d5ac36a36b6f07347e31aecb94a1b2d37cba70052f7cac11a5ac9ed206"
+      },
+      {
+        "subsetting_id": "coffee_shop",
+        "paragraph": 15,
+        "device_family": "laptop",
+        "text": "Laptop: A modern coffee shop workspace focused on a lived-in table, with a ceramic coffee cup, notebook, loose papers, pen, glasses, small plate with pastry crumbs, and a water glass.",
+        "text_sha256": "64f59810e6ee65cfc37de5c178cd03a8cef3a04ec02ec417150e7f3312fbf762"
+      },
+      {
+        "subsetting_id": "creative_studio",
+        "paragraph": 17,
+        "device_family": "laptop",
+        "text": "Laptop: A modern creative office with a medium wooden table featuring a notebook, pen, and design materials. Framed artwork, a side cabinet, plants, bookshelves, windows, and layered furnishings create depth throughout the workspace. Minimal blue accents appear selectively through small décor details.",
+        "text_sha256": "156943859ab7e25a8b461496ef9fb97bd2cf5a1642acefbeb36e632f33bfd5aa"
+      },
+      {
+        "subsetting_id": "creative_studio",
+        "paragraph": 18,
+        "device_family": "laptop",
+        "text": "Laptop: A bright, modern creative office with warm natural light, simple desks, sketchbooks, papers, books, plants, and casually arranged creative materials. Lived-in and authentic with subtle imperfections and minimal touches of blue.",
+        "text_sha256": "0e40381bf44f92067b10c81141609bbf1e57599ccd36453128e255f2af38a6e9"
+      }
+    ],
+    "sample_prompt_count": 10
+  },
+  "workbook_column_a": {
+    "extraction_rule": "Only exact cell text from column A of worksheet 'Eval Set Prompts'; columns B through F and worksheet 'Theme Styles' are not excerpt sources.",
+    "compatible_excerpt_count": 53,
+    "compatible_excerpt_counts_by_device_family": {
+      "laptop": 38,
+      "printer": 15
+    },
+    "compatible_excerpts": [
+      {
+        "cell": "A7",
+        "row": 7,
+        "device_family": "laptop",
+        "text": "A professional designer sitting at a clean wooden desk while reviewing work on their NOTEBOOK-Cheddar_13_NB_ANI in a bright, modern studio. The NOTEBOOK-Cheddar_13_NB_ANI is open and facing the designer. The designer is wearing a casual navy sweater, and the environment has soft cool daylight from a nearby window. Capture the scene from an eye-level medium shot with shallow depth of field, keeping the NOTEBOOK-Cheddar_13_NB_ANI as the sharp visual anchor while the studio background is softly blurred. ",
+        "text_sha256": "cb080a4b677d0665b16e210307d3ee44837b0e1b7525a7ef67560ae388d188cc"
+      },
+      {
+        "cell": "A8",
+        "row": 8,
+        "device_family": "laptop",
+        "text": "A professional businesswoman sitting at a rustic wooden café table while reviewing work on her NOTEBOOK-Koki_Omnibook_X_16_NB in a warm, modern coffee shop. The NOTEBOOK-Koki_Omnibook_X_16_NB is open and facing the businesswoman, with a coffee cup, water glass, and small vase of flowers arranged nearby on the table. The businesswoman is wearing a mustard-yellow blazer over a white patterned blouse, and the environment has warm ambient light from wooden ceiling beams and large windows in the background. Capture the scene from an eye-level medium shot with shallow depth of field, keeping the NOTEBOOK-Koki_Omnibook_X_16_NB and businesswoman as the sharp visual anchor while the café's wooden interior, staircase, and blurred patrons in the background are softly out of focus. ",
+        "text_sha256": "b63293022ff037c2a3d461ad5911982929c6abf31cc61af1605f915a183c1f7e"
+      },
+      {
+        "cell": "A9",
+        "row": 9,
+        "device_family": "laptop",
+        "text": "A young professional walking confidently along a city sidewalk while carrying a closed NOTEBOOK-Viktor_OmnibookX_17_NB under her arm, in front of a modern building with large storefront windows. The NOTEBOOK-Viktor_OmnibookX_17_NB is closed and held at her side. The professional is wearing a camel-colored long coat over a navy blouse and red tailored trousers, and the environment has warm golden-hour sunlight reflecting off the glass storefronts. Capture the scene from an eye-level full-body shot with shallow depth of field, keeping the walking professional as the sharp visual anchor while the building facade, and reflections in the background are softly blurred. ",
+        "text_sha256": "83279a3219fa7854e0596c968cfabbcdc7c3c2ae8c4c90c2699a8d8cd54be799"
+      },
+      {
+        "cell": "A10",
+        "row": 10,
+        "device_family": "laptop",
+        "text": "A young professional sitting on a bench balancing her NOTEBOOK-Cheddar_13_NB_ANI on her knee while browsing through work outdoors within a sunlit city plaza. The NOTEBOOK-Cheddar_13_NB_ANI is open and facing the professional. The professional is wearing a camel-colored blazer over a navy top and red trousers, and the environment has warm golden-hour sunlight. Capture the scene from an eye-level side profile medium shot with shallow depth of field, keeping the NOTEBOOK-Cheddar_13_NB_ANI as the sharp visual anchor while the plaza and building facade in the background are softly blurred. ",
+        "text_sha256": "811b54818c05289cdf72c3c104e895bb9a425ac25c0354fbe8df15b7ee6403cb"
+      },
+      {
+        "cell": "A11",
+        "row": 11,
+        "device_family": "laptop",
+        "text": "A business professional sitting at a rich wooden desk while participating in a video conference call on a large monitor, with an open NOTEBOOK-Koki_Omnibook_X_16_NB displaying a dashboard beside him, in a moody, dimly lit home office. The monitor is showing a grid of remote colleagues, while he gestures mid-conversation. The professional is wearing a casual denim shirt, and the environment has a warm, low ambient light from a small desk lamp and a decorative shelf light in the background. Capture the scene from an eye-level side profile medium shot with shallow depth of field, keeping the monitor and professional as the sharp visual anchor while the bookshelf, mug, and background office decor are softly blurred. ",
+        "text_sha256": "bd801147ae84a2f8e71a2c5e208ee846e3b4a75ae4083234d121a5f4a0793342"
+      },
+      {
+        "cell": "A12",
+        "row": 12,
+        "device_family": "laptop",
+        "text": "Two business professionals sitting at a round wooden table while participating in a video conference on a wall-mounted screen, in a bright, minimalist meeting room with floor-to-ceiling windows. An Open NOTEBOOK-Viktor_OmnibookX_17_NB faces one of the professionals on the table, and the wall-mounted screen is on, displaying a grid of four remote colleagues. One professional is wearing a mustard floral-print blouse and the other a brown blazer over a white top, and the environment has soft natural daylight from the large glass windows overlooking trees outside. Capture the scene from an eye-level side profile medium shot with shallow depth of field, keeping the two professionals and the NOTEBOOK-Viktor_OmnibookX_17_NB as the sharp visual anchor while the wall-mounted screen and window backdrop are softly blurred. ",
+        "text_sha256": "1358d54f5780017df8c936b878b38c5eb0c9ea7ff0268be9f19cddfae2560c43"
+      },
+      {
+        "cell": "A13",
+        "row": 13,
+        "device_family": "laptop",
+        "text": "Three business professionals standing around a wooden desk while engaged in an animated discussion, holding printed documents and gesturing mid-conversation, in a bright, modern office with large windows. A closed NOTEBOOK-Cheddar_13_NB_ANI sits on the desk between them, and papers, a water glass, and notebooks are scattered across the surface. The professionals are dressed in a mix of a grey sweater, a light blue button-down shirt, and a white ruffled blouse, and the environment has soft natural daylight streaming through the office windows, with a city skyline visible outside. Capture the scene from an eye-level medium group shot with shallow depth of field, keeping the three professionals as the sharp visual anchor while the desk and window backdrop are softly blurred. ",
+        "text_sha256": "913d363b68ea2c9e067b342e2c3a902af45308ba1d63c5992dc3c26047dc5d34"
+      },
+      {
+        "cell": "A14",
+        "row": 14,
+        "device_family": "laptop",
+        "text": "A young student sitting at a wooden table while writing notes in a notebook beside his open NOTEBOOK-Koki_Omnibook_X_16_NB, in a school library with tall arched windows and towering bookshelves. The NOTEBOOK-Koki_Omnibook_X_16_NB is open and facing the student. The student is wearing a red hoodie with headphones resting around his neck, and the environment has soft natural daylight streaming through the large windows. Capture the scene from an eye-level medium shot with shallow depth of field, keeping the student and NOTEBOOK-Koki_Omnibook_X_16_NB as the sharp visual anchor while the library ceiling, rows of bookshelves, and desk lamps in the background are softly blurred. ",
+        "text_sha256": "61541d6f9ce2de4ccc43b424f0015abb7eeb23dc700d0469d01e643865b07e69"
+      },
+      {
+        "cell": "A15",
+        "row": 15,
+        "device_family": "laptop",
+        "text": "On a sunlit wooden desk near a window, a NOTEBOOK-Viktor_OmnibookX_17_NB stands open showing an email inbox with a highlighted event invitation, a calendar sidebar, and a to-do list, a small desk calendar visible in the background alongside a terracotta mug and a tiny potted succulent catching the warm afternoon light.",
+        "text_sha256": "c826712c54e6afa8c71305bcf4921c2750b46feeaa1323b1cf031ae09a60b276"
+      },
+      {
+        "cell": "A16",
+        "row": 16,
+        "device_family": "laptop",
+        "text": "In a plant-filled, sunlit living room with tall arched windows and a wall of bookshelves, a woman in a brown corduroy jacket sits cross-legged on a linen couch scattered with blue velvet pillows, typing on a NOTEBOOK-Cheddar_13_NB_ANI balanced on a light blue cushion, an art table cluttered with sketches and pencils nearby.",
+        "text_sha256": "81c5a9d7ad442e5837db4b2ea8e1dc8532317576c33f0470a719c9f0e09e6cbc"
+      },
+      {
+        "cell": "A17",
+        "row": 17,
+        "device_family": "laptop",
+        "text": "In a dim, warmly lit café lounge with textured concrete walls and vertical wood paneling, a young man in a light zip-up hoodie sits at a round table on a blue banquette, intently typing on his NOTEBOOK-Koki_Omnibook_X_16_NB, with a small ceramic cup resting beside the keyboard.",
+        "text_sha256": "1229a6f1bcb3f1cc5cd503be93381e3d2848834f960e03b3cff644f1b41cad23"
+      },
+      {
+        "cell": "A18",
+        "row": 18,
+        "device_family": "laptop",
+        "text": "Kneeling on an ornate red-and-blue patterned rug in a rustic wood-paneled living room, a young man wearing a cream guitar strap holds an electric guitar with one hand while reaching to tap his NOTEBOOK-Viktor_OmnibookX_17_NB keyboard with the other, a floor speaker and wood stove visible behind the low round coffee table.",
+        "text_sha256": "56b22180012a32c0d6c03962513e749e1cb0c4539c703fb103a753ca0f41a67a"
+      },
+      {
+        "cell": "A19",
+        "row": 19,
+        "device_family": "laptop",
+        "text": "Leaning over a dark, well-worn wooden workbench in a sunlit jewelry studio, a woman in a navy top and blue apron types on a NOTEBOOK-Cheddar_13_NB_ANI with one hand while reaching for a small gold ring nestled in a compartmented tray with the other, hand tools, calipers, and potted plants scattered across the cluttered desk.",
+        "text_sha256": "5790bca17fd18065bb46c4dd244d07f27bb92968549b7f5bdd296b5d4f6f7a1b"
+      },
+      {
+        "cell": "A20",
+        "row": 20,
+        "device_family": "laptop",
+        "text": "At a wooden desk lit by soft window light, a young woman with her hair in a bun and gold hoop earrings sits typing on a NOTEBOOK-Koki_Omnibook_X_16_NB, its screen showing a photo-editing program open to a vivid purple-and-green aurora borealis image, a pink ceramic mug and pastel notebook resting nearby.",
+        "text_sha256": "07530da982e16c3e065490f76381b49492837cadd8578c2a628ca752de34e979"
+      },
+      {
+        "cell": "A21",
+        "row": 21,
+        "device_family": "laptop",
+        "text": "At a round white table in a sunlit modern library nook with wood-slat ceiling accents, a young woman in a graphic tee rests her chin on her hand studying an open NOTEBOOK-Viktor_OmnibookX_17_NB, while a young man in a brown jacket gestures with a pen, both leaning in over a shared blue spiral notebook and papers.",
+        "text_sha256": "e056eca15125271cae8836da8160ca5027da758fd68d065794e11a15f9737ffe"
+      },
+      {
+        "cell": "A22",
+        "row": 22,
+        "device_family": "laptop",
+        "text": "In a bright clinic lounge with a bold blue accent wall and a bulletin board of notices, a blonde woman in a white lab coat with a hanging ID badge sits in a plush navy velvet armchair, typing calmly on a NOTEBOOK-Cheddar_13_NB_ANI balanced on her lap, another white-coated colleague working on a NOTEBOOK-Cheddar_13_NB_ANI at a table in the blurred background.",
+        "text_sha256": "c70406e69c02e346704c16c283c31c8d66330530911ca124ac0796e36b13132f"
+      },
+      {
+        "cell": "A23",
+        "row": 23,
+        "device_family": "laptop",
+        "text": "In a warm, softly lit home studio decorated with acoustic foam panels, a young man with an earring leans over his silver NOTEBOOK-Cheddar_13_NB_ANI, one hand poised over the trackpad, absorbed in editing vivid orange-and-blue coral reef footage displayed in a professional video timeline, a ceramic mug resting beside him.",
+        "text_sha256": "1b10fc8fe99a8547097489c073bb152537722411b94c525071a45bfc7cfc3ef4"
+      },
+      {
+        "cell": "A24",
+        "row": 24,
+        "device_family": "laptop",
+        "text": "In a modern university library with tall windows and wooden bookshelves, a young man in a gray hooded jacket sits at a table, fingers on the keyboard of his NOTEBOOK-Koki_Omnibook_X_16_NB showing code, a dark reusable water bottle and notebook placed neatly beside the machine.",
+        "text_sha256": "cba3d611d3fef2bee5c4dbda806225a1bee98f2250b57a8dc0ef36fe2b90a4cf"
+      },
+      {
+        "cell": "A25",
+        "row": 25,
+        "device_family": "laptop",
+        "text": "In a sleek glass-walled office lobby with modern lounge seating, a businessman in a tailored gray suit carefully lifts his NOTEBOOK-Viktor_OmnibookX_17_NB off a black leather bag before departing, mid-motion as he zips the bag closed on a glass table.",
+        "text_sha256": "1ee30504f2bcfd7791d9489334cb7d95b7402a3b8c7d3040d40a7b3ddce1b9f9"
+      },
+      {
+        "cell": "A26",
+        "row": 26,
+        "device_family": "laptop",
+        "text": "In a bright loft workspace with a mood board of fabric swatches pinned to the wall, a young man in a beige sweater rests his arms on a wooden desk, gazing thoughtfully at his open navy NOTEBOOK-Cheddar_13_NB_ANI beside a ceramic mug and scattered sketches.",
+        "text_sha256": "eea29ec541392d66fcc49cbb6f510fb0b6f598685a83ba6f266d1c73a4d0627d"
+      },
+      {
+        "cell": "A27",
+        "row": 27,
+        "device_family": "laptop",
+        "text": "In a sunlit café with large glass windows and hanging greenery, a young man in a light blue shirt sits at a wooden table, typing on his silver NOTEBOOK-Koki_Omnibook_X_16_NB with a steaming gray mug beside him, a notebook resting nearby.",
+        "text_sha256": "fc0d0eb42d20eabc7b2cc0fe9d00352a45de2e3b6763bee407610ac428208d6b"
+      },
+      {
+        "cell": "A28",
+        "row": 28,
+        "device_family": "laptop",
+        "text": "In a warmly lit living room with a framed art print on the wall, a young man in an olive sweater sits at a wooden desk, smiling as he grips a white game controller in front of his open navy NOTEBOOK-Cheddar_13_NB_ANI, a mug of coffee placed to one side.",
+        "text_sha256": "99ecf094978d525dd243f2d96a3f47c18639a3a13653f41752febb7254115e5a"
+      },
+      {
+        "cell": "A29",
+        "row": 29,
+        "device_family": "laptop",
+        "text": "In a modern glass-enclosed office with sticky notes on a whiteboard, a man in a light gray dress shirt gestures animatedly with one hand while speaking during a video call on his NOTEBOOK-Koki_Omnibook_X_16_NB, a coffee mug and notebook resting on the glass desk beside him.",
+        "text_sha256": "f142e63e677132c7009a699e735b94e6bb45b94e54c6de6e30aaa644bc1a3498"
+      },
+      {
+        "cell": "A30",
+        "row": 30,
+        "device_family": "laptop",
+        "text": "On a sunlit stone plaza lined with ornamental bollards, a woman in a camel-colored coat and red trousers sits on a bench, one hand tapping the trackpad of her navy NOTEBOOK-Viktor_OmnibookX_17_NB as she browses a photo gallery interface displayed on the screen.",
+        "text_sha256": "5768b17828063eadd513aa10e81d2b2d3728ff5fcd825551c73ede1e602fa0bd"
+      },
+      {
+        "cell": "A31",
+        "row": 31,
+        "device_family": "laptop",
+        "text": "Along a city sidewalk beneath a striped awning and tall glass storefronts, a woman in a camel coat and red trousers strolls confidently while holding her closed navy NOTEBOOK-Viktor_OmnibookX_17_NB against her side, city reflections visible in the windows behind her.",
+        "text_sha256": "092779668339f0afbd28ea615c5cb8488d70415dac42de9bcb08e50f8e623069"
+      },
+      {
+        "cell": "A32",
+        "row": 32,
+        "device_family": "laptop",
+        "text": "In a bright sunroom surrounded by lush greenery and sheer green curtains, a woman with curly hair and visible tattoos sits comfortably on a gray sofa, resting her chin on her hand as she gazes out the window with a NOTEBOOK-Cheddar_13_NB_ANI open on her lap, a mug and notebooks on the coffee table.",
+        "text_sha256": "e8587b88b2421e15b1539f36085ae93c2389b3583f9056bebbfc99cd99a9cb80"
+      },
+      {
+        "cell": "A33",
+        "row": 33,
+        "device_family": "laptop",
+        "text": "On a sunny outdoor patio surrounded by potted palms and concrete pillars, a woman with curly hair in a rust-colored top gestures mid-sentence during a video call, her NOTEBOOK-Koki_Omnibook_X_16_NB propped on a small round table beside a cup of coffee, chatting with colleagues visible on screen.",
+        "text_sha256": "7d138de20e4249f72ca1d79164c6e8e53ecfb676653bbfb09bab9228943d3148"
+      },
+      {
+        "cell": "A34",
+        "row": 34,
+        "device_family": "laptop",
+        "text": "A woman with a short bob and a blue cardigan over a striped shirt browses tall bookshelves in a warm, wood-toned bookstore, a NOTEBOOK-Viktor_OmnibookX_17_NB tucked under her arm as she reaches for a stack of books. Warm overhead globe lights glow softly against dark wood. The blue cardigan is the single deliberate blue carrier; everything else stays neutral. Shallow depth of field, warm skin tones, cool wood environment, rich contrast, premium commercial photography feel, realistic lens compression.",
+        "text_sha256": "7c7e7350674204c096a19c2cb1933915bae6b49acd3e82c58b2f3bc911796c49"
+      },
+      {
+        "cell": "A35",
+        "row": 35,
+        "device_family": "laptop",
+        "text": "A woman in a grey sweater and cool blue trousers leans over a desk reviewing an architectural render on dual monitors connected to a compact desktop tower, greenery visible through the window behind her; another woman works at a NOTEBOOK-Cheddar_13_NB_ANI nearby. Blue trousers are the sole blue carrier in an otherwise neutral wood-and-white workspace. Shallow depth of field, warm skin tones against a cool environment, rich blacks, controlled highlights, premium commercial photography feel.",
+        "text_sha256": "10392eae548caddbd95ec56ffe3d2b9da16a8e0a8fd310f53a6893566de80a07"
+      },
+      {
+        "cell": "A36",
+        "row": 36,
+        "device_family": "laptop",
+        "text": "A man in a denim shirt gestures mid-conversation during a video call displayed on a monitor, a NOTEBOOK-Koki_Omnibook_X_16_NB open beside him showing charts, in a home office with a leafy window view. The denim shirt is the primary blue carrier, kept understated against warm wood furniture and neutral shelving. Shallow depth of field, warm dimensional skin tones, cool ambient light, medium-high commercial contrast, realistic lens compression.",
+        "text_sha256": "36c7c25f8f4cde4cdebeb2298dd5c11e399a73944a75fcf778d299c1eb63941e"
+      },
+      {
+        "cell": "A37",
+        "row": 37,
+        "device_family": "laptop",
+        "text": "A bearded man in a dark navy sweater types on a NOTEBOOK-Viktor_OmnibookX_17_NB at a cluttered art desk filled with paint tubes, brushes, and a hand-painted sketchbook, warm afternoon light spilling through a stained-glass window. The navy sweater serves as the single blue carrier against warm wood and earthy art supplies. Shallow depth of field, warm glowing skin tones, cool shadow structure, rich blacks, punchy commercial contrast, realistic lens compression.",
+        "text_sha256": "837648d07def1aa372e60eb90fc974fb5d9380616b47f678d748a93f21f98fcc"
+      },
+      {
+        "cell": "A38",
+        "row": 38,
+        "device_family": "laptop",
+        "text": "A woman in a denim jacket types on a NOTEBOOK-Cheddar_13_NB_ANI at a café counter beside a small espresso cup, sunlight streaming through wooden blinds and a teal tiled wall behind her. The denim jacket is the deliberate blue carrier; the teal wall stays secondary and muted. Shallow depth of field, warm sunlit skin tones, cool ambient blue accents, clean bright highlights, premium commercial photography feel, realistic lens compression.",
+        "text_sha256": "84c4fc18e2783fb32a853ef1caa0b3d67a83c105b5f86c19345ba391efd70c2a"
+      },
+      {
+        "cell": "A39",
+        "row": 39,
+        "device_family": "laptop",
+        "text": "A woman in a soft blue knit top and matching trousers walks on an outdoor deck, cradling a closed NOTEBOOK-Koki_Omnibook_X_16_NB, past a potted cactus and lush greenery beside a pastel pink wall. Her blue outfit is the single, deliberate blue carrier in an otherwise neutral, sunlit outdoor scene. Shallow depth of field, warm sunlit skin tones, cool wardrobe accent, clean crisp highlights, realistic lens compression, premium commercial photography feel.",
+        "text_sha256": "67480224033986bf09038eca8924fb6822df03ec8b2126e1bad5aa1721947ffd"
+      },
+      {
+        "cell": "A40",
+        "row": 40,
+        "device_family": "laptop",
+        "text": "Two men study a floral generative-art render on dual monitors and a NOTEBOOK-Viktor_OmnibookX_17_NB at a white desk; one wears a vivid blue sweater, the other a plaid shirt, while a woman stands on a staircase in the industrial loft office behind them. The blue sweater is the sole deliberate blue carrier against neutral concrete, white desks, and warm wood shelving. Shallow depth of field, warm skin tones, rich blacks, punchy commercial contrast, realistic lens compression.",
+        "text_sha256": "0492258d4d4b0edcc7c0d82e0723afdd9627a09d37fbb4811f1411a8bd13373d"
+      },
+      {
+        "cell": "A41",
+        "row": 41,
+        "device_family": "laptop",
+        "text": "A woman in a lavender sweater and warm khaki trousers sits on a deep blue velvet couch, gesturing while holding a green ceramic teacup during a video call on a NOTEBOOK-Cheddar_13_NB_ANI, lush greenery visible through floor-to-ceiling windows. The blue couch is the primary blue carrier; wardrobe and props stay warm and neutral. Shallow depth of field, warm dimensional skin tones, cool furnishings, rich shadow depth, premium commercial photography feel.",
+        "text_sha256": "e2b4200cdafc42ee0b46bfcb94233f9c6ac48d569bd0e1f6a3d890a6e18c0904"
+      },
+      {
+        "cell": "A42",
+        "row": 42,
+        "device_family": "laptop",
+        "text": "A close-up of a woman with curly red hair in a blue sweater typing intently on a NOTEBOOK-Koki_Omnibook_X_16_NB, pastel geometric artwork blurred in the background of a bright modern office. The blue sweater is the single blue carrier against soft neutral prints and wood desk tones. Shallow to moderate depth of field, warm freckled skin tones, cool background accents, clean controlled highlights, realistic 85mm lens compression, punchy commercial contrast.",
+        "text_sha256": "f8d4215b903fd620d90c6fbbeb43201b7f9eddbd3c820b5d5e268083497d2a81"
+      },
+      {
+        "cell": "A43",
+        "row": 43,
+        "device_family": "laptop",
+        "text": "A man with locs and green-tinted glasses in a burnt-orange jacket studies concept art on dual monitors and a NOTEBOOK-Viktor_OmnibookX_17_NB, neon blue accent lighting glowing across a creative studio filled with reference sketches and a coffee mug. Cool blue lighting from the monitors and studio serves as the carrier, kept off his skin. Shallow depth of field, warm skin tones, rich blacks, moody but clean highlights, premium commercial photography feel.",
+        "text_sha256": "1e92bf21811bd0c994a397e6454df414c2be3c628c9b9d456cb42fc9b7d8d1a3"
+      },
+      {
+        "cell": "A44",
+        "row": 44,
+        "device_family": "laptop",
+        "text": "A man with a bun and glasses in a blue-and-white striped shirt types intently on a NOTEBOOK-Cheddar_13_NB_ANI displaying a spreadsheet with charts, a blurred colleague visible at a desk behind him in a warm wood-toned office. His striped shirt is the deliberate blue carrier against neutral wood and glass. Shallow depth of field, warm focused skin tones, cool background light, rich controlled blacks, premium commercial photography feel, realistic lens compression.",
+        "text_sha256": "34b0e11f3d330d291806af1213018bcd635dc7d6c100ac46923df5e6a6bc3651"
+      },
+      {
+        "cell": "A45",
+        "row": 45,
+        "device_family": "printer",
+        "text": "Three professional colleagues collaborating around a wooden table with a printer nearby on a side table in a bright, modern office with white brick walls. A woman in a mustard sweater and a woman in a lavender sweater stand reviewing printed design proofs near the PRINT-Magic_6501dn_6500dn, while a man in a burnt-orange shirt sits at the table in the foreground sorting through documents. There are sketches, papers, water glasses, and a notebook scattered across the table. The environment has soft natural daylight from large windows, with green potted plants and framed art in the background. Capture the scene from an eye-level medium group shot with shallow depth of field, keeping the standing colleagues and printer as the sharp visual anchor while the foreground figure and background office are softly blurred. ",
+        "text_sha256": "28f281924073bc3671acb691615383f66db6cc477f97722ecfd659419b5a1732"
+      },
+      {
+        "cell": "A46",
+        "row": 46,
+        "device_family": "printer",
+        "text": "On a warm wooden desk against a pale blue wall, a PRINT-Tass feeds out a colorful robot-themed maze activity sheet mid-print, while a scattering of printed kids' worksheets, a floral pattern page, a rain-measuring chart, and cut-out animal and earth stickers cover the desk around it in bright, even daylight.",
+        "text_sha256": "0a240a1ac2bfbeb4e4bfd9e522090c3d5e44c48af982890c70e12e4536f3821b"
+      },
+      {
+        "cell": "A47",
+        "row": 47,
+        "device_family": "printer",
+        "text": "In a bright entryway with an arched door and sheer curtains, a PRINT-Magic_6501dn_6500dn sits neatly on a light wood dresser beside a tall potted dracaena plant and a brass-and-gray table lamp, with a framed blue-toned floral illustration hanging on the soft white wall above, afternoon light casting gentle leaf shadows.",
+        "text_sha256": "f394b5ba6cd2b7e6b985e2c00b2e6364dc2d718dfd824b1d5223aa476dac17ae"
+      },
+      {
+        "cell": "A48",
+        "row": 48,
+        "device_family": "printer",
+        "text": "In an industrial-style open office with tall arched windows, a woman in a navy blouse and a man in a gray sweater stand at a wooden cabinet. She pulls a freshly printed color swatch sheet from a PRINT-Tass while he holds an open brochure of design samples, both studying the colors closely under soft daylight.",
+        "text_sha256": "51044f5a0b9fa4440f087b1595be70ad92429bf73f4c79fd9fe2e061fa75966b"
+      },
+      {
+        "cell": "A49",
+        "row": 49,
+        "device_family": "printer",
+        "text": "In a cheerful home office filled with children's books, toys, and colorful storage bins, a smiling woman in a yellow cardigan leans over a wooden desk, placing a bright printed activity worksheet next to a PRINT-Magic_6501dn_6500dn with visible rainbow ink tanks and a cup of colored pencils.",
+        "text_sha256": "865b7e42783a5d55790ed52e493b93574e3ec1c7bad5bd370f8e55ec7f91e964"
+      },
+      {
+        "cell": "A50",
+        "row": 50,
+        "device_family": "printer",
+        "text": "In a cozy home office with a colorful children's bookshelf and a stuffed animal display, a smiling woman in a light gray cardigan retrieves a printed page from a PRINT-Tass on a white desk, a cup of colored pencils and stack of printed worksheets nearby.",
+        "text_sha256": "b0b4a1220f03c249347a93abde8c33383b783b6a67b77013a498caa5f0d7fbf4"
+      },
+      {
+        "cell": "A51",
+        "row": 51,
+        "device_family": "printer",
+        "text": "In a bright loft-style office with exposed brick and a potted plant, a man in a denim shirt and a woman in a cream sweater stand at a wooden cabinet reviewing freshly printed pages together beside a PRINT-Magic_6501dn_6500dn, papers stacked neatly on the counter.",
+        "text_sha256": "b885b385de59b9a2d09aff7288678ea56d52cc2b43ea5769d3f22064a886d417"
+      },
+      {
+        "cell": "A52",
+        "row": 52,
+        "device_family": "printer",
+        "text": "In a modern wood-paneled office with a shelf of books in the background, a young woman in a cream sweater and a young man in a light blue shirt stand at a table comparing two printed pages, a PRINT-Tass beside them mid-print.",
+        "text_sha256": "bd4a3274d08118a6b216414e0e16f301a46386eb0c14bc0b6707989466f52463"
+      },
+      {
+        "cell": "A53",
+        "row": 53,
+        "device_family": "printer",
+        "text": "In a bright modern kitchen with a marble island and a bowl of fresh fruit, a smiling mother in a cream sweater watches her daughter in a light blue shirt hold up a freshly printed vacation photo, a PRINT-Magic_6501dn_6500dn producing more prints beside a stack of colorful photographs.",
+        "text_sha256": "3b32d7caedc0d175fb6190211971448ccbc6143ad705b5681d53e7c7a04288ee"
+      },
+      {
+        "cell": "A54",
+        "row": 54,
+        "device_family": "printer",
+        "text": "In a rustic craft shop lined with shelves of glass jars and fabric rolls, a woman in a gray apron carefully pulls a small printed label from a PRINT-Tass on a wooden counter, surrounded by ribbon spools and handmade paper goods.",
+        "text_sha256": "6e5a29a4271c265ab2f1893075eb06ddbb090d0294549d9628c6c52c678796e8"
+      },
+      {
+        "cell": "A55",
+        "row": 55,
+        "device_family": "printer",
+        "text": "In a cozy bedroom with mustard and blush pillows and a warm desk lamp, a young woman with long braids sits cross-legged on a patterned rug, reaching for a freshly printed photo beside a PRINT-Magic_6501dn_6500dn, scattered vacation snapshots and scissors on the floor around her.",
+        "text_sha256": "7ee89ae7842b8f76732c777bb0d80e039dc722f3524cb53e194ed284fb3f7e23"
+      },
+      {
+        "cell": "A56",
+        "row": 56,
+        "device_family": "printer",
+        "text": "A bearded man in a light blue button-down shirt loads paper into a PRINT-Tass, in a sunlit loft office with a bookshelf and stained-glass window. His blue shirt is the deliberate blue carrier in an otherwise neutral scene. Shallow depth of field, warm skin tones, cool window light, rich controlled blacks, premium commercial photography feel, realistic lens compression.",
+        "text_sha256": "d6437e8af5f109d6218b78e56cc9be590b42e8e32199501b97cc5cdb5227a3cc"
+      },
+      {
+        "cell": "A57",
+        "row": 57,
+        "device_family": "printer",
+        "text": "A man in a grey suit stands at a PRINT-Magic_6501dn_6500dn in a glass-walled office, a blue abstract painting on the wall behind him. The painting is the deliberate blue carrier while his suit stays neutral charcoal. Shallow depth of field, warm skin tones, cool glass and blue accents, clean highlights, medium-high commercial contrast, realistic lens compression, premium campaign feel.",
+        "text_sha256": "886963add92b76b312c6cdf156c13e8f6472abbefcea90ca46bda969fbfd7a6b"
+      },
+      {
+        "cell": "A58",
+        "row": 58,
+        "device_family": "printer",
+        "text": "A smiling family, mother in a blue sweater, father, and young daughter, gathers around a PRINT-Tass in a bright kitchen, admiring a freshly printed vacation photo. The mother's sweater is the deliberate blue carrier, kept minimal elsewhere. Shallow depth of field, warm joyful skin tones, cool kitchen surfaces, clean bright highlights, punchy commercial contrast, realistic lens compression.",
+        "text_sha256": "302187b8cc667e9661cb76ee64e0b926612e490fdd2d7018cb2d641def7ccec4"
+      },
+      {
+        "cell": "A59",
+        "row": 59,
+        "device_family": "printer",
+        "text": "A boy in a grey hoodie pulls a colorful printed drawing from a PRINT-Magic_6501dn_6500dn at a desk covered in markers and an open sketchbook, a corkboard of art pinned behind him. A subtle blue accent nearby is the primary carrier against warm wood and paper tones. Shallow depth of field, warm skin tones, cool accent balance, rich shadow depth, premium commercial photography feel, realistic lens compression.",
+        "text_sha256": "5ed9580816e1ff32d191042e2573eab945ad30131ead0df62c739639efc8e25e"
+      }
+    ],
+    "excluded_cells": [
+      {
+        "cell": "A2",
+        "detected_device_family": "desktop",
+        "reason": "Outside the authorized laptop/printer V3 source families."
+      },
+      {
+        "cell": "A3",
+        "detected_device_family": "desktop",
+        "reason": "Outside the authorized laptop/printer V3 source families."
+      },
+      {
+        "cell": "A4",
+        "detected_device_family": "desktop",
+        "reason": "Outside the authorized laptop/printer V3 source families."
+      },
+      {
+        "cell": "A5",
+        "detected_device_family": "desktop",
+        "reason": "Outside the authorized laptop/printer V3 source families."
+      },
+      {
+        "cell": "A6",
+        "detected_device_family": "desktop",
+        "reason": "Outside the authorized laptop/printer V3 source families."
+      }
+    ],
+    "observed_source_qualification": "Some included column-A cells contain explicit visual-style language even though A1 says 'NO VISUAL STYLE MENTIONS'; exact source text is preserved without normalizing that inconsistency."
+  },
+  "usage_constraints": [
+    "Use these snippets as reference evidence, not as a runtime product-identity source.",
+    "The requested camera tag remains authoritative; do not copy a historical shot or angle instruction that conflicts with the selected V3 tag.",
+    "Preserve creative departures as explicit labels instead of presenting them as source-supported facts.",
+    "Do not automatically apply the optional blue-carrier modifier to every candidate.",
+    "Do not import workbook columns D through F or the Theme Styles worksheet through this audit artifact."
+  ],
+  "limitations": [
+    "Workbook excerpt compatibility is limited to device-family tokens present in column A: NOTEBOOK- maps to laptop and PRINT- maps to printer.",
+    "The excerpts retain historical product tokens and human descriptions verbatim; downstream V3 runtime inputs remain tag-only.",
+    "This artifact does not define the V3 prompt, ranking rubric, or candidate-selection policy."
+  ]
+}

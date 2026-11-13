@@ -1,0 +1,297 @@
+{
+  "version": "hp-lifestyle-dual-source-v5-text-pilot-v1",
+  "as_of": "2026-10-27",
+  "status": "ready_for_bounded_actual_gpt5_5_text_pilot_human_review_pending",
+  "launchable": false,
+  "scope": {
+    "pair_count": 4,
+    "case_count": 8,
+    "candidates_per_case": 20,
+    "candidate_count": 160,
+    "runtime_input_fields": [
+      "smart_brief",
+      "source_messaging",
+      "camera_tag"
+    ],
+    "included_pairs": [
+      "elitebook",
+      "deskjet_2955",
+      "laserjet",
+      "cashmere"
+    ],
+    "excluded_pairs": [
+      "modric"
+    ],
+    "cashmere_product_identity_conflict": true,
+    "text_generation_authorized": true,
+    "image_generation_authorized": false,
+    "human_review_status": "pending"
+  },
+  "model": {
+    "deployment": "gpt-5.5",
+    "reasoning_effort": "medium",
+    "max_completion_tokens": 24000,
+    "temperature": null,
+    "strict_output_schema": true,
+    "max_concurrency": 2,
+    "max_transport_attempts": 100,
+    "semantic_attempts_per_case": 1
+  },
+  "provenance": {
+    "system_prompt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/system_prompt.md",
+      "bytes": 54277,
+      "sha256": "81476434cc53dca29abcdbe38b0d749674e3a5b9d1f4e7dc885a78497527f90e"
+    },
+    "input_schema": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/input.schema.json",
+      "bytes": 388,
+      "sha256": "5701b6b85b19191a18f730dafd1633e390bacae8690e541c1eabbc2ca2cce07c"
+    },
+    "output_schema": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/output.schema.json",
+      "bytes": 12815,
+      "sha256": "307811a5c24286c5a47987b6e3dc9c8c603d8519625bef6664507b66f4d15158"
+    },
+    "camera_profiles": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/camera_profiles.json",
+      "bytes": 117073,
+      "sha256": "59b5e2b322dcd74c21432e772f3dd11513f71c182f6114b99b15e009dbeea68b"
+    },
+    "reference_library": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v5/reference_library.json",
+      "bytes": 7046,
+      "sha256": "f730d8b3ce35a0efd841ad7ebabf9fb46f9c033e93d9ca9d8654aabcfe5353cd"
+    },
+    "normalized_extraction_manifest": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/dual_source_v5/inputs/normalized/extraction_manifest.json",
+      "bytes": 16521,
+      "sha256": "f566723135a1eea245e302c9f23620e1bea6a93f77038448da38b01e2f996096"
+    },
+    "input_projection_manifest": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/input_projection_manifest.json",
+      "bytes": 494005,
+      "sha256": "bf91d7d9cec25f554209a0aac72a3863e00bb8218f114b050fba0389176a1234"
+    }
+  },
+  "authorized_text_case_ids": [
+    "elitebook__laptop_FrontRightCloseUp",
+    "elitebook__laptop_FrontRightWide",
+    "deskjet_2955__printer_FrontRightCloseUp",
+    "deskjet_2955__printer_FrontRightWide",
+    "laserjet__printer_FrontRightCloseUp",
+    "laserjet__printer_FrontRightWide",
+    "cashmere__laptop_FrontRightCloseUp",
+    "cashmere__laptop_FrontRightWide"
+  ],
+  "cases": [
+    {
+      "case_id": "elitebook__laptop_FrontRightCloseUp",
+      "group_id": "elitebook__laptop_FrontRight",
+      "pair_id": "elitebook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontRightCloseUp",
+      "view_role": "close_up",
+      "product_identity_conflict": false,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/elitebook__laptop_FrontRightCloseUp.json",
+      "input_sha256": "ad041affb68d886cecafd9216b5704926eb503fd133690102d2ffd7874150356",
+      "input_semantic_sha256": "a8ad56e4079d6b997f920415abeb73dd17307c8b1a4e888c564fb016b69ec39b",
+      "human_review_status": "pending",
+      "launchable": false,
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightCloseUp",
+        "resolved_tag": "laptop_FrontRightCloseUp",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "max_local_props": 0,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      }
+    },
+    {
+      "case_id": "elitebook__laptop_FrontRightWide",
+      "group_id": "elitebook__laptop_FrontRight",
+      "pair_id": "elitebook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontRightWide",
+      "view_role": "wide",
+      "product_identity_conflict": false,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/elitebook__laptop_FrontRightWide.json",
+      "input_sha256": "03afbf574d678dde6043bf21ce8a287b916d08f288cc9dee9f430d1f4626927e",
+      "input_semantic_sha256": "04d3fd882199751203f3f31abf48b4ca25d336b959bd5367070291b8c2f9f9d6",
+      "human_review_status": "pending",
+      "launchable": false,
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightWide",
+        "resolved_tag": "laptop_FrontRightWide",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      }
+    },
+    {
+      "case_id": "deskjet_2955__printer_FrontRightCloseUp",
+      "group_id": "deskjet_2955__printer_FrontRight",
+      "pair_id": "deskjet_2955",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "view_role": "close_up",
+      "product_identity_conflict": false,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/deskjet_2955__printer_FrontRightCloseUp.json",
+      "input_sha256": "8dfb44e6d83b2d11c6358adb1c3e58f065eab31fa9d2c569d4ac6b42085c70d3",
+      "input_semantic_sha256": "baf332572a70cdbe54425e08ec690a465fc39ca68f96d9e291f4c01ad51e0f72",
+      "human_review_status": "pending",
+      "launchable": false,
+      "expected_camera": {
+        "requested_tag": "printer_FrontRightCloseUp",
+        "resolved_tag": "printer_FrontRightCloseUp",
+        "device_type": "printer",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "max_local_props": 1,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      }
+    },
+    {
+      "case_id": "deskjet_2955__printer_FrontRightWide",
+      "group_id": "deskjet_2955__printer_FrontRight",
+      "pair_id": "deskjet_2955",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightWide",
+      "view_role": "wide",
+      "product_identity_conflict": false,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/deskjet_2955__printer_FrontRightWide.json",
+      "input_sha256": "53831091be87e2639933b0cdfbf9ecc746ea49de6bbddb0b16455d47073df303",
+      "input_semantic_sha256": "fe1eb97575766df5ff30553bd44732efd1e87085fed4542efc97eccf84f6261c",
+      "human_review_status": "pending",
+      "launchable": false,
+      "expected_camera": {
+        "requested_tag": "printer_FrontRightWide",
+        "resolved_tag": "printer_FrontRightWide",
+        "device_type": "printer",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      }
+    },
+    {
+      "case_id": "laserjet__printer_FrontRightCloseUp",
+      "group_id": "laserjet__printer_FrontRight",
+      "pair_id": "laserjet",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "view_role": "close_up",
+      "product_identity_conflict": false,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/laserjet__printer_FrontRightCloseUp.json",
+      "input_sha256": "116e6ff206c5d9fa52ff0b39fc4a7fef702a09a3b68c04c8ee57a60164d55930",
+      "input_semantic_sha256": "eba87185ebef9c1cb9ae493fed11d566a21426c8b04bd07496cd1568c7d2edbc",
+      "human_review_status": "pending",
+      "launchable": false,
+      "expected_camera": {
+        "requested_tag": "printer_FrontRightCloseUp",
+        "resolved_tag": "printer_FrontRightCloseUp",
+        "device_type": "printer",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "max_local_props": 1,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      }
+    },
+    {
+      "case_id": "laserjet__printer_FrontRightWide",
+      "group_id": "laserjet__printer_FrontRight",
+      "pair_id": "laserjet",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightWide",
+      "view_role": "wide",
+      "product_identity_conflict": false,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/laserjet__printer_FrontRightWide.json",
+      "input_sha256": "dc34fd03a4cf259287dfa719958ef9680f1a1f44b70995c99eb3ebfc1141ef3f",
+      "input_semantic_sha256": "66e82ebb07acf81b5a9c618445e9da7d6c5f6310fc4cb54af726f0d6a213946a",
+      "human_review_status": "pending",
+      "launchable": false,
+      "expected_camera": {
+        "requested_tag": "printer_FrontRightWide",
+        "resolved_tag": "printer_FrontRightWide",
+        "device_type": "printer",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      }
+    },
+    {
+      "case_id": "cashmere__laptop_FrontRightCloseUp",
+      "group_id": "cashmere__laptop_FrontRight",
+      "pair_id": "cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontRightCloseUp",
+      "view_role": "close_up",
+      "product_identity_conflict": true,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/cashmere__laptop_FrontRightCloseUp.json",
+      "input_sha256": "cc5e575ad5ce579fdf6046e4dc9aa4ebd3d1fd400cc2029f6cb821fc5b231c6f",
+      "input_semantic_sha256": "262b231ff9183c50d4bfbe2ebacd6706b433b6fb7a5a69fc1abe1fc4e236e150",
+      "human_review_status": "pending",
+      "launchable": false,
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightCloseUp",
+        "resolved_tag": "laptop_FrontRightCloseUp",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "max_local_props": 0,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      }
+    },
+    {
+      "case_id": "cashmere__laptop_FrontRightWide",
+      "group_id": "cashmere__laptop_FrontRight",
+      "pair_id": "cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontRightWide",
+      "view_role": "wide",
+      "product_identity_conflict": true,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/cashmere__laptop_FrontRightWide.json",
+      "input_sha256": "3a17039f6a6ab18ed6852e56fec4887da36728cc246d202196ea4950ffd084db",
+      "input_semantic_sha256": "592dd821119ba7f5a863f186ebf1734afa07adf7fe660dc782626898511f9532",
+      "human_review_status": "pending",
+      "launchable": false,
+      "expected_camera": {
+        "requested_tag": "laptop_FrontRightWide",
+        "resolved_tag": "laptop_FrontRightWide",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      }
+    }
+  ]
+}

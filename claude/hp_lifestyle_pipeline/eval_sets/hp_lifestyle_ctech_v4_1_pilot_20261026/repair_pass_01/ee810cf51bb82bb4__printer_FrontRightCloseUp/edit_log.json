@@ -1,0 +1,501 @@
+{
+  "version": "v4.1-bounded-repair-merge-v1",
+  "policy": {
+    "unflagged": "entire candidate copied from base",
+    "metadata_only": "copy only ctech_relationship, ctech_reference_score, ctech_changes, ctech_explanation",
+    "scene_edit": "copy proposed candidate except preserve base id and ctech_reference_id",
+    "debug": "copy base debug; no quote correction was authorized"
+  },
+  "base_semantic_sha256": "d03df2b3eb0debb6af3d14d77991fb875257c407fa3d2d169f7fcbb50896cd05",
+  "proposed_semantic_sha256": "5a37f0a1cc2290762c9d24dddc338421492be1f94fa8a4c5ebc5ccf055271609",
+  "merged_semantic_sha256": "5a37f0a1cc2290762c9d24dddc338421492be1f94fa8a4c5ebc5ccf055271609",
+  "flagged_candidate_count": 24,
+  "scene_edit_candidate_count": 3,
+  "metadata_only_candidate_count": 21,
+  "unflagged_candidate_count": 6,
+  "unflagged_candidate_ids": [
+    "p25",
+    "p26",
+    "p27",
+    "p28",
+    "p29",
+    "p30"
+  ],
+  "accepted_field_change_count": 56,
+  "accepted_field_changes": [
+    {
+      "candidate_id": "p1",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the home workspace, warm natural light, stack of papers, and lived-in tone.",
+        "Removed extra everyday objects to fit the tight one-prop view.",
+        "Added household administration language from source messaging."
+      ],
+      "proposed": [
+        "Made the desk explicit for the tight view.",
+        "Kept the home workspace, warm natural light, stack of papers, and lived-in tone.",
+        "Added household administration language from source messaging."
+      ]
+    },
+    {
+      "candidate_id": "p1",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "Same Home environment as CT18 with camera-driven prop simplification and a small source-grounded purpose added to the papers.",
+      "proposed": "Same Home environment as CT18 with one retained paper prop, an explicit desk surface, and a small source-grounded purpose added."
+    },
+    {
+      "candidate_id": "p1",
+      "field": "ctech_reference_score",
+      "reason": "scene_edit_allowed",
+      "original": 88,
+      "proposed": 78
+    },
+    {
+      "candidate_id": "p1",
+      "field": "ctech_relationship",
+      "reason": "scene_edit_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p1",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A modern home workspace with warm natural light and a stack of papers for household administration. Lived-in and authentic with subtle imperfections and a warm neutral tone.",
+      "proposed": "A modern home workspace with a desk in warm natural light and a stack of papers for household administration. Lived-in and authentic with subtle imperfections and a warm neutral tone."
+    },
+    {
+      "candidate_id": "p2",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 88,
+      "proposed": 78
+    },
+    {
+      "candidate_id": "p2",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Office environment as CT03 with larger reference contents reduced to a single paper stack for the camera.",
+      "proposed": "Same Office environment as CT03 with the broader desk contents reduced to one paper stack and source-specific paperwork language added."
+    },
+    {
+      "candidate_id": "p2",
+      "field": "ctech_changes",
+      "reason": "metadata_only_field_allowed",
+      "original": [
+        "Kept the bright corporate office, warm natural light, papers, and tidy professional tone.",
+        "Removed additional workstation objects and background depth for the tight view.",
+        "Added everyday business paperwork language from source messaging."
+      ],
+      "proposed": [
+        "Kept the bright corporate office, warm natural light, papers, and tidy professional tone.",
+        "Reduced workstation objects and background depth for the tight view.",
+        "Added everyday business paperwork language from source messaging."
+      ]
+    },
+    {
+      "candidate_id": "p2",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p3",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the bright corporate office, small table, stacked papers, warm natural light, and lived-in professional tone.",
+        "Removed integrated shelving and surrounding office details for the tight view.",
+        "Added regular document queues from source messaging."
+      ],
+      "proposed": [
+        "Kept the bright corporate office, small table, stacked papers, warm natural light, and lived-in professional tone.",
+        "Removed integrated shelving and surrounding office details for the tight view.",
+        "Removed the task suffix."
+      ]
+    },
+    {
+      "candidate_id": "p3",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "Same Office environment as CT13 with the focal furniture simplified to a table and one paper prop.",
+      "proposed": "Same Office environment as CT13 with the focal furniture simplified to a table and one paper prop for the tight camera."
+    },
+    {
+      "candidate_id": "p3",
+      "field": "explanation",
+      "reason": "scene_edit_allowed",
+      "original": "Regular document queues and business paperwork are directly supported and expressed through stacked papers on an office table.",
+      "proposed": "Office papers are broadly compatible with the source's business paperwork context, but the specific document-queue task is no longer expressed."
+    },
+    {
+      "candidate_id": "p3",
+      "field": "relationship",
+      "reason": "scene_edit_allowed",
+      "original": "source_grounded",
+      "proposed": "source_adjacent"
+    },
+    {
+      "candidate_id": "p3",
+      "field": "score_components",
+      "reason": "scene_edit_allowed",
+      "original": {
+        "setting": 20,
+        "activity": 30,
+        "materials": 20,
+        "use_context": 20
+      },
+      "proposed": {
+        "setting": 20,
+        "activity": 10,
+        "materials": 10,
+        "use_context": 10
+      }
+    },
+    {
+      "candidate_id": "p3",
+      "field": "source_relevance_score",
+      "reason": "scene_edit_allowed",
+      "original": 90,
+      "proposed": 50
+    },
+    {
+      "candidate_id": "p3",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A bright, modern corporate office table in warm natural light with neatly stacked papers for regular document queues. Professional yet lived-in.",
+      "proposed": "A bright, modern corporate office table in warm natural light with neatly stacked papers. Professional yet lived-in."
+    },
+    {
+      "candidate_id": "p4",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 88,
+      "proposed": 78
+    },
+    {
+      "candidate_id": "p4",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Home environment as CT05 with camera-driven deletion of extra objects and background furnishings.",
+      "proposed": "Same Home environment as CT05 with camera-driven deletion of extra objects and source-specific admin language added to the papers."
+    },
+    {
+      "candidate_id": "p4",
+      "field": "ctech_changes",
+      "reason": "metadata_only_field_allowed",
+      "original": [
+        "Kept the lived-in home workspace, wooden desk, loose papers, soft daylight, and casually imperfect tone.",
+        "Removed the extra desk props and room details for the tight view.",
+        "Added everyday admin work language from source messaging."
+      ],
+      "proposed": [
+        "Kept the lived-in home workspace, wooden desk, loose papers, soft daylight, and casually imperfect tone.",
+        "Removed extra desk props and room details for the tight view.",
+        "Added everyday admin work language from source messaging."
+      ]
+    },
+    {
+      "candidate_id": "p4",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p5",
+      "field": "ctech_changes",
+      "reason": "scene_edit_allowed",
+      "original": [
+        "Kept the modern home workspace, warm natural light, lived-in authenticity, and warm neutral tones.",
+        "Reduced the reference object grouping to one stack of forms.",
+        "Used a source-named paper material."
+      ],
+      "proposed": [
+        "Made the desk explicit for the tight view.",
+        "Kept the modern home workspace, warm natural light, lived-in authenticity, and warm neutral tones.",
+        "Reduced the reference object grouping to one stack of forms."
+      ]
+    },
+    {
+      "candidate_id": "p5",
+      "field": "ctech_explanation",
+      "reason": "scene_edit_allowed",
+      "original": "Same Home environment as CT06 with the broad object list simplified to one source-relevant prop.",
+      "proposed": "Same Home environment as CT06 with the broad object list simplified and a source-named paper material substituted."
+    },
+    {
+      "candidate_id": "p5",
+      "field": "ctech_reference_score",
+      "reason": "scene_edit_allowed",
+      "original": 88,
+      "proposed": 76
+    },
+    {
+      "candidate_id": "p5",
+      "field": "ctech_relationship",
+      "reason": "scene_edit_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p5",
+      "field": "text",
+      "reason": "scene_edit_allowed",
+      "original": "A modern home workspace with warm natural light and a tidy stack of forms. Lived-in and authentic with subtle imperfections, warm neutral tones.",
+      "proposed": "A modern home workspace desk with warm natural light and a tidy stack of forms. Lived-in and authentic with subtle imperfections, warm neutral tones."
+    },
+    {
+      "candidate_id": "p6",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 88,
+      "proposed": 76
+    },
+    {
+      "candidate_id": "p6",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Office environment as CT01 with background details removed and one ordinary paperwork prop added within the camera limit.",
+      "proposed": "Same Office environment as CT01 with background details removed and one paperwork prop added within the camera limit."
+    },
+    {
+      "candidate_id": "p6",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p7",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 88,
+      "proposed": 76
+    },
+    {
+      "candidate_id": "p7",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Office environment as CT03 with a small source-led paper-material substitution and camera simplification.",
+      "proposed": "Same Office environment as CT03 with a source-led paper-material substitution and camera simplification."
+    },
+    {
+      "candidate_id": "p7",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p8",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 88,
+      "proposed": 76
+    },
+    {
+      "candidate_id": "p8",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Office environment as CT02 with major background deletion required by the tight camera profile.",
+      "proposed": "Same Office environment as CT02 with major background deletion and a source-named paper material added for the tight camera."
+    },
+    {
+      "candidate_id": "p8",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p9",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 88,
+      "proposed": 76
+    },
+    {
+      "candidate_id": "p9",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Home environment as CT17 with the room reduced to the end table and one source-adjacent prop.",
+      "proposed": "Same Home environment as CT17 with the room reduced to the end table and a source-adjacent paper prop added."
+    },
+    {
+      "candidate_id": "p9",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p10",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 88,
+      "proposed": 77
+    },
+    {
+      "candidate_id": "p10",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Café environment as CT08 with the object list reduced to one retained prop.",
+      "proposed": "Same Café environment as CT08 with the object list reduced to one retained prop and a simple natural-light description added."
+    },
+    {
+      "candidate_id": "p10",
+      "field": "ctech_changes",
+      "reason": "metadata_only_field_allowed",
+      "original": [
+        "Kept the modern coffee shop workspace, lived-in table, loose papers, and warm natural feel.",
+        "Removed the coffee cup, notebook, pen, glasses, plate, and water glass for the tight view.",
+        "No source-supported café context was added."
+      ],
+      "proposed": [
+        "Kept the modern coffee shop workspace, lived-in table, loose papers, and warm natural feel.",
+        "Removed the coffee cup, notebook, pen, glasses, plate, and water glass for the tight view.",
+        "Added soft natural light."
+      ]
+    },
+    {
+      "candidate_id": "p10",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p12",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 88,
+      "proposed": 76
+    },
+    {
+      "candidate_id": "p12",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Café environment as CT07 with camera-driven deletion of extra props and background elements.",
+      "proposed": "Same Café environment as CT07 with camera-driven deletion of extra props and background elements, plus a simplified natural-light atmosphere."
+    },
+    {
+      "candidate_id": "p12",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p13",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 88,
+      "proposed": 76
+    },
+    {
+      "candidate_id": "p13",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Creative Studio environment as CT09 with major camera-driven deletion of props and background details.",
+      "proposed": "Same Creative Studio environment as CT09 with major camera-driven deletion and a simplified warm natural-light description."
+    },
+    {
+      "candidate_id": "p13",
+      "field": "ctech_changes",
+      "reason": "metadata_only_field_allowed",
+      "original": [
+        "Kept the modern creative office, medium wooden table, notebook, and warm workspace feel.",
+        "Removed pen, design materials, artwork, cabinet, plants, bookshelves, windows, and layered furnishings for the tight view.",
+        "No source-supported creative task was added."
+      ],
+      "proposed": [
+        "Kept the modern creative office, medium wooden table, and notebook.",
+        "Removed pen, design materials, artwork, cabinet, plants, bookshelves, windows, and layered furnishings for the tight view.",
+        "Added warm natural light as a simplified atmosphere."
+      ]
+    },
+    {
+      "candidate_id": "p13",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p23",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 84,
+      "proposed": 76
+    },
+    {
+      "candidate_id": "p23",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Creative Studio environment as CT09 with the tabletop reduced to one ordinary creative prop.",
+      "proposed": "Same Creative Studio environment as CT09 with the tabletop reduced to one ordinary creative prop and simplified lighting."
+    },
+    {
+      "candidate_id": "p23",
+      "field": "ctech_changes",
+      "reason": "metadata_only_field_allowed",
+      "original": [
+        "Kept the creative office, medium wooden table, and sketchbook-like work material.",
+        "Removed pen, design materials, framed artwork, side cabinet, plants, bookshelves, windows, and layered furnishings for the tight view."
+      ],
+      "proposed": [
+        "Kept the creative office and medium wooden table.",
+        "Changed the notebook to a small sketchbook.",
+        "Removed pen, design materials, framed artwork, side cabinet, plants, bookshelves, windows, and layered furnishings for the tight view."
+      ]
+    },
+    {
+      "candidate_id": "p23",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    },
+    {
+      "candidate_id": "p24",
+      "field": "ctech_reference_score",
+      "reason": "metadata_only_field_allowed",
+      "original": 82,
+      "proposed": 75
+    },
+    {
+      "candidate_id": "p24",
+      "field": "ctech_explanation",
+      "reason": "metadata_only_field_allowed",
+      "original": "Same Office environment as CT13 with most furniture and background detail removed for camera feasibility.",
+      "proposed": "Same Office environment as CT13 with the integrated table-and-shelving unit simplified to a desk and one retained prop."
+    },
+    {
+      "candidate_id": "p24",
+      "field": "ctech_changes",
+      "reason": "metadata_only_field_allowed",
+      "original": [
+        "Kept the corporate office feel, cup of pens, and warm natural lighting from CT13.",
+        "Removed integrated shelving, books, papers, supplies, personal touches, desks, chairs, and plants for the tight view."
+      ],
+      "proposed": [
+        "Kept the corporate office feel, cup of pens, and warm natural lighting from CT13.",
+        "Changed the focal table unit to a desk surface.",
+        "Removed integrated shelving, books, papers, supplies, personal touches, desks, chairs, and plants for the tight view."
+      ]
+    },
+    {
+      "candidate_id": "p24",
+      "field": "ctech_relationship",
+      "reason": "metadata_only_field_allowed",
+      "original": "minimal_camera_edit",
+      "proposed": "close_adaptation"
+    }
+  ],
+  "discarded_unauthorized_change_count": 0,
+  "discarded_unauthorized_changes": []
+}

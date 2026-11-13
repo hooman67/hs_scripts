@@ -1,0 +1,74 @@
+{
+  "schema_version": "hp-placement-v4.3.1-quality-canary-freeze-v1",
+  "created_at": "2026-11-06T04:15:02.954177+00:00",
+  "status": "frozen_before_quality_canary",
+  "purpose": "same-case GPT-5.5 quality and transport gate for visible laptop chair displacement",
+  "quality_requirement": {
+    "target_record_id": "elitebook__laptop_FrontLeftMedium__p1",
+    "required_verdict": "review",
+    "required_owned_issue_code": "chair_displacement",
+    "required_severity": 1,
+    "required_warning_level": "review",
+    "prohibited_reasoning": "do not invent a second centered off-frame chair when the visible chair is the only plausible associated user position"
+  },
+  "model": {
+    "requested": "gpt-5.5",
+    "route": "foundry_direct_openai",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 24000,
+    "sdk_retries": 0,
+    "application_total_attempts_max": 2,
+    "timeout_seconds": 600,
+    "concurrency": 1
+  },
+  "runtime": {
+    "python": "3.12",
+    "foundry_aws_gateway": ">=2.0.0",
+    "jsonschema": "4.25.1",
+    "pillow": "12.0.0",
+    "opencv": "4.10.0.84"
+  },
+  "files": {
+    "PROVENANCE.md": "fc8e700870c505be038d0ff56434f391ce0d8676b1c9b120b38e2d7da9a9902a",
+    "system_prompt.md": "ff3edca4b99db7dc9fb23c0f83468a438c430b31e70573846eb6236b5bb72568",
+    "build_schema.py": "e2dc68394ba51200b3021dac4483eeb749d97d16a048bddd78cd296acf3a2b6c",
+    "assessment_schema.json": "dc1554ca428fcc54cb6c462ed0fea9ffe34389fe9e14fbf883069ea920df3f13",
+    "build_wire_schema.py": "70d93297e7f55bd0d106ee91889700d95ff22dd8b8fbce80427067dd97118395",
+    "wire_schema.json": "8a09887271a0c03536dba1f2f836afd55e4e0ec9c07bef82c1d583a406fb643d",
+    "result_schema.json": "6692c245b6ddfe7e06e3b2eff775ce7ef5543167dfabfe44fac569ad98bb0d6e",
+    "scoring.py": "3d9715bd8bd77354795681b9cdd1659acc28fefbfa415dec00de3add90f706af",
+    "crop.py": "c0b1d2e20ae10d172587782b65ab8a7b7282033c655864c8dd84d95912791fab",
+    "anchor_selection.py": "32f96d12b1aba988e34c6dad5235e8e8a50210a80356a1b97b64503ebce24fb8",
+    "anchors/anchor_catalog.json": "0ed988da25f1159b22d1e7897a7172324a298105fdaab7025105d830504032b3",
+    "run_judge.py": "ed88106b8b24a4cfd610282a5bd46f7e6ea08b1a0bcf93297261a410369da439",
+    "preflight_gate.py": "3479799646ecaf5c34b0f3d4861047b46bceb2e208dd4615846637a6a83ed106",
+    "data/gate_6_preflight.json": "30309b7cd41038d3bad0ffd86fec8c3998d2acb74cf1f291469b8fb73f5c1718",
+    "data/canary_input.json": "ffc5a92885a47568300684ca06afd4dfbc3a08964065c72f070c6c9f99ec7590",
+    "data/canary_manifest.json": "a83d0690056a05880dea358fe6d222d5f03a4acc8fb693ee3db02fa898d98186",
+    "test_v4_3_1.py": "4acc03496b2f5e333bac59e7b58255fc1cf2967df416b841490f5cd66045c6ac",
+    "run_canary_tmux.sh": "0f36b7888a56ac4325529619ab5f0190fdbb6f9c92a6cad13113227090787f65"
+  },
+  "anchor_assets": {
+    "anchors/assets/a01_cashmere__laptop_BackRightCloseUp__p5_scene.jpg": "1ceb4996340f88e9881c5a27cc69b0754eff8cb4e5cdbb60096a7cab7c32cb41",
+    "anchors/assets/a01_cashmere__laptop_BackRightCloseUp__p5_twin.jpg": "3706eb5e283fbd8093d0589a84674aec8edfe3d5a931fb1525f4f7693c208e68",
+    "anchors/assets/a02_cashmere__laptop_FrontLeftMedium__p6_scene.jpg": "f866ba16dca56ddf4aa0332509f8e49843f80a368fdd686aec200c5df903ad96",
+    "anchors/assets/a02_cashmere__laptop_FrontLeftMedium__p6_twin.jpg": "0ce167c5a628955d5e1f59001dfb942f480ad7e4fa8f183a0a37b0e8aaad2371",
+    "anchors/assets/a03_elitebook__laptop_FrontLeftMedium__p5_scene.jpg": "fbb2a1cf936d9a115b81b100c1833c427e56910efb741901fe3875bd55edbb22",
+    "anchors/assets/a03_elitebook__laptop_FrontLeftMedium__p5_twin.jpg": "bfd6b9a7602dfe33d1ff81e7c21dc55cde6e6062e345eb46ee36e3b0ca71a080",
+    "anchors/assets/a04_elitebook__laptop_FrontLeftMedium__p6_scene.jpg": "48ee5c99cac4560f4519dd593b1fda9424b6f02d61b1a0134e689ab9586b847e",
+    "anchors/assets/a04_elitebook__laptop_FrontLeftMedium__p6_twin.jpg": "bfd6b9a7602dfe33d1ff81e7c21dc55cde6e6062e345eb46ee36e3b0ca71a080",
+    "anchors/assets/a05_magic__printer_FrontCloseUp__p5_scene.jpg": "b4d3c48be5e692bd9f63e5848f86158163a8ac7b8eebb73cc6b387c3cd567e16",
+    "anchors/assets/a05_magic__printer_FrontCloseUp__p5_twin.jpg": "cbcdd36602ab31fbb8b0c327c8e0ece01ab40cc4a1d4d5fe5436afb5e708f035",
+    "anchors/assets/a06_magic__printer_FrontWide__p2_scene.jpg": "67588bd66a0491f3ce7315749d56d221f300763e30e14ae4bba0b3441993f406",
+    "anchors/assets/a06_magic__printer_FrontWide__p2_twin.jpg": "9eb3540f9eb7ca9a76aeb6c57a88758060893e98f8b236d937f455cb975f8cb4",
+    "anchors/assets/a07_magic__printer_FrontCloseUp__p3_scene.jpg": "07533606d57b3f3ccac741eab7b3dfbf8653b99bb2101baab9f3d575925e98ee",
+    "anchors/assets/a07_magic__printer_FrontCloseUp__p3_twin.jpg": "cbcdd36602ab31fbb8b0c327c8e0ece01ab40cc4a1d4d5fe5436afb5e708f035",
+    "anchors/assets/a08_tassel__printer_FrontLeftMedium__p6_scene.jpg": "6c02b63aff623ef7b2adcb25185c3c219e8bada2349f940b6c0f1acc290ad1f6",
+    "anchors/assets/a08_tassel__printer_FrontLeftMedium__p6_twin.jpg": "515d001a505ea79ac32c513b6cb15f1dc11733049af37053d2b07daeccf33574"
+  },
+  "source_v4_3_artifacts": {
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3/data/protocol_freeze_canary_v1.json": "9d68c90551a5789f026fdde64b621679a6e07d332eb49c73ff3c28dc3a84773d",
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3/runs/canary-v1-gpt55/result/result.json": "9a0305e657f2d84eab6dd030f046e79ea701686cd05064af7aad52d1b495a542",
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3/runs/canary-v1-gpt55/result/attempt_1_response.txt": "2d47b45f7f731b1d24df74e42ec6c09876231a4e041b8800f795162278adb008"
+  }
+}

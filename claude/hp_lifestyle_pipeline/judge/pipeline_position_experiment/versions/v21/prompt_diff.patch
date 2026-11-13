@@ -1,0 +1,560 @@
+diff --git a/experimental/adarabi/hp-3p-gpt25/hp3p/geometry.py b/experimental/adarabi/hp-3p-gpt25/hp3p/geometry.py
+index 1d066e2ca..98cb64f51 100644
+--- a/experimental/adarabi/hp-3p-gpt25/hp3p/geometry.py
++++ b/experimental/adarabi/hp-3p-gpt25/hp3p/geometry.py
+@@ -514,14 +514,14 @@ def describe_geometry(geometry: Geometry, info: dict, size: tuple[int, int], gui
+                  "far_from_camera": "the far table edge, behind the laptop as seen from the camera",
+                  "width_left": "the table's short edge on the image-left side",
+                  "width_right": "the table's short edge on the image-right side"}[side]
+-    lines = [f"GEOMETRY \u2014 highest priority. Follow {guide_image} exactly.",
++    lines = [f"GEOMETRY \u2014 baseline product-relative layout from {guide_image}.",
+              f"- Table orientation: the table is turned about {abs(info['axis_angle_deg']):.0f} degrees to the camera. "
+              f"Its long edges run left to right, {'descending' if tilt > 0 else 'rising'} about {abs(tilt):.0f} degrees "
+              f"toward image right; its short edges recede toward the {recede}. "
+              + ("The laptop faces the user-facing edge." if product_category == "laptop" else
+                 "The laptop's front and sides are parallel to the table edges.")]
+     if ue:
+-        where = f"In the image it runs from {pct(ue[0])} to {pct(ue[1])}"
++        where = f"At the baseline location it runs from {pct(ue[0])} to {pct(ue[1])}"
+         if side == "near_camera":
+             where += (f", about {(max(ue[0][1], ue[1][1]) - y1) / h * 100:.0f}% of image height below the "
+                       "laptop's lowest point")
+@@ -529,18 +529,20 @@ def describe_geometry(geometry: Geometry, info: dict, size: tuple[int, int], gui
+     else:
+         lines.append(f"- User-facing edge: {edge_name}; it lies outside the frame.")
+     corners_out = sum(not (0 <= px <= w and 0 <= py <= h) for px, py in info["support_polygon_px"])
+-    lines += [f"- Product on the table: the laptop is {g['user_edge_gap_m'] * 100:.1f} cm "
+-              f"(about {g['user_edge_gap_m'] / (pd if along_width else pw):.1f} laptop "
+-              f"{'depths' if along_width else 'widths'}) from the user-facing edge. The tabletop extends "
+-              f"{left_m:.2f} m (about {left_m / pw:.1f} laptop widths) toward image left of the laptop and "
+-              f"{right_m:.2f} m (about {right_m / pw:.1f} laptop widths) toward image right.",
+-              f"- Table size: {g['support_width_m']:.2f} m x {g['support_depth_m']:.2f} m, about "
+-              f"{g['support_width_m'] / pw:.1f} laptop widths by {g['support_depth_m'] / pd:.1f} laptop depths.",
+-              f"- Frame crop: {corners_out} of {len(info['support_polygon_px'])} table corners fall outside the "
+-              "frame; keep them cropped and never shrink the product to show them.",
+-              f"- Product: exactly as in {guide_image} (details: {product_image}), occupying "
+-              f"{x0 / w * 100:.0f}-{x1 / w * 100:.0f}% across and "
+-              f"{y0 / h * 100:.0f}-{y1 / h * 100:.0f}% down. Same size; never enlarge or move it.",
+-              f"- Camera: {info['camera_height_m']:.2f} m high, looking down {info['camera_pitch_deg']:.1f} degrees, "
+-              f"about {info['lens_35mm_equivalent_mm']:.0f} mm lens."]
++    lines += [(f"- Product on the table: the laptop is {g['user_edge_gap_m'] * 100:.1f} cm "
++               f"(about {g['user_edge_gap_m'] / (pd if along_width else pw):.1f} laptop "
++               f"{'depths' if along_width else 'widths'}) from the user-facing edge. The tabletop extends "
++               f"{left_m:.2f} m (about {left_m / pw:.1f} laptop widths) toward image left of the laptop and "
++               f"{right_m:.2f} m (about {right_m / pw:.1f} laptop widths) toward image right."),
++              (f"- Table size: {g['support_width_m']:.2f} m x {g['support_depth_m']:.2f} m, about "
++               f"{g['support_width_m'] / pw:.1f} laptop widths by {g['support_depth_m'] / pd:.1f} laptop depths."),
++              (f"- Baseline frame crop: {corners_out} of {len(info['support_polygon_px'])} table corners fall outside "
++               "the frame. Under a permitted common translation, keep the same support relationship and never shrink "
++               "the product to reveal furniture."),
++              (f"- Product baseline: exactly as in {guide_image} (details: {product_image}), occupying "
++               f"{x0 / w * 100:.0f}-{x1 / w * 100:.0f}% across and "
++               f"{y0 / h * 100:.0f}-{y1 / h * 100:.0f}% down. Keep this exact view and pixel size; only the "
++               "translation-only exception may change these frame coordinates."),
++              (f"- Camera: {info['camera_height_m']:.2f} m high, looking down {info['camera_pitch_deg']:.1f} degrees, "
++               f"about {info['lens_35mm_equivalent_mm']:.0f} mm lens.")]
+     return "\n".join(lines)
+diff --git a/experimental/adarabi/hp-3p-gpt25/hp3p/grade.py b/experimental/adarabi/hp-3p-gpt25/hp3p/grade.py
+index 83640236c..f31045762 100644
+--- a/experimental/adarabi/hp-3p-gpt25/hp3p/grade.py
++++ b/experimental/adarabi/hp-3p-gpt25/hp3p/grade.py
+@@ -137,7 +137,7 @@ def describe(refs: list[bytes]) -> str:
+             f"{tint(s['sh_a'], s['sh_b'])}; midtones {tint(s['mid_a'], s['mid_b'])}; "
+             f"highlights {tint(s['hi_a'], s['hi_b'])}. "
+             "People, clothing and furniture influence these statistics; they are not calibrated "
+-            "exposure or contrast targets. Follow the actual reference photographs' softer, more "
++            "exposure or contrast targets. Follow the actual style photographs' softer, more "
+             "uniform illumination and gentle tonal transitions, not a dense or dramatic grade.")
+ 
+ 
+diff --git a/experimental/adarabi/hp-3p-gpt25/hp3p/pipeline.py b/experimental/adarabi/hp-3p-gpt25/hp3p/pipeline.py
+index 5f9af2b59..691e8544b 100644
+--- a/experimental/adarabi/hp-3p-gpt25/hp3p/pipeline.py
++++ b/experimental/adarabi/hp-3p-gpt25/hp3p/pipeline.py
+@@ -27,7 +27,7 @@ from .reference_blue import attachments
+ 
+ WIDTH, HEIGHT = 1216, 912
+ SIZE = f"{WIDTH}x{HEIGHT}"
+-PIPELINE_VERSION = "unified-blue-scale-v20-text-blue-stage-b-placement-twin-camera-guide-only-no-mask"
++PIPELINE_VERSION = "unified-blue-scale-v21-translation-only-stage-b-placement-twin-camera-guide-only-no-mask"
+ 
+ 
+ def _select_schema(tones, contents) -> dict:
+@@ -72,47 +72,69 @@ _GEOMETRY_ONLY = ("\n\nTHIS CALL PLANS GEOMETRY ONLY. Return only geometry and p
+ _WRITE_HEAD = ("Write camera, composition and editing text from Image 1 (the fixed geometry guide containing the "
+                "real product), Image 3 (the same product on white), the FIXED GEOMETRY below and the original "
+                "user request.")
+-_PRIORITY = """STAGE B. Geometry is already fixed and drawn in Image 1 around the real product, at the exact Image 3 framing. Do not change it.
++_TRANSLATION_ONLY = """TRANSLATION-ONLY EXCEPTION
++The guide gives the baseline product location and support layout. Keep that location unless one rigid 2D translation improves realistic product use, access, support-surface geometry, furniture alignment or composition. Do not move the product merely to center it or make it more prominent.
++
++Only a common image-plane x-y translation of the product and its planned support relationship is allowed. Keep product pixel width and height unchanged. Preserve the exact original yaw, pitch, roll, viewing angle, visible faces, camera-facing surfaces, perspective and foreshortening, silhouette, aspect proportions, open/closed state and all product details. Do not rotate, mirror, resize, shear, warp, reproject, redraw or activate the product. Do not zoom or change the product's camera viewpoint.
++
++If translated, shift the planned support/contact geometry by the same displacement: preserve support-edge directions, the user-facing edge, product-to-edge distances and tabletop extents relative to the product. Do not move the product independently of its support relationship. Construct the surrounding furniture and room with perspective consistent with this translated geometry; do not retain incompatible vanishing geometry anchored to the original frame location.
++
++Keep the entire product inside the frame and fully visible, with plausible weight-bearing contact and a corresponding contact shadow. No prop, furniture edge or foreground object may occlude the product. If no feasible translation meets all these constraints, retain the baseline location."""
++_PRIORITY = """STAGE B. Image 1 contains the baseline support geometry and the real product at the Image 3 baseline location. The product's exact orientation/view and scale are fixed. Absolute x-y placement is subject only to the TRANSLATION-ONLY EXCEPTION.
+ 
+ PRIORITY ORDER (strict):
+-1. The product (its real pixels in Image 1; Image 3 shows the same product on white for detail): its pixel position, size, orientation and visibility. Never move, resize, rotate, crop or occlude it.
+-2. The FIXED GEOMETRY (Image 1 and the text below): table orientation, the user-facing edge and its position in the frame, the product-to-edge distance, how far the tabletop extends to each side, frame crop and camera.
+-3. The original user request. It only chooses the room, support type and material, props, lighting, palette and mood.
++1. The product: exact identity, orientation/view, perspective, foreshortening, scale, silhouette, state, details and full visibility. Never rotate, mirror, resize, reproject, redraw, crop or occlude it.
++2. The planned product-to-support relationship: support orientation, user-facing edge, product-to-edge distances and tabletop extents relative to the product. Preserve this relationship under any permitted common translation.
++3. The original user request, followed by defaults.
++
++""" + _TRANSLATION_ONLY + """
++
++When the user request requires a different product size, viewpoint, orientation or support relationship, drop that part. Layout, emphasis, framing and focal-point requests may be satisfied only within the translation-only exception; they do not authorize arbitrary movement.
+ 
+-When the user request asks for a different layout, extent, emphasis, framing, focal point, product size, or a table that fills or dominates the foreground, drop that part and follow 1 and 2. Your camera, composition and prompt must describe exactly the geometry of Image 1: the same table orientation, the user-facing edge along the near edge of the gray support area, tabletop only on the drawn support, nothing beyond the user-facing edge, props on the drawn tabletop at plausible scale beside the product, and nothing occluding the product.
++Your camera, composition and prompt must describe Image 1's baseline geometry in product-relative terms. The gray support defines the baseline tabletop and its user-facing edge, not immutable frame coordinates. If translated, use the corresponding translated tabletop region and edge locations. Keep the original restrictions on tabletop extent, props, plausible scale and product visibility relative to that translated geometry. Do not lock room geometry to the old frame coordinates.
+ 
+ WRITE IN PLAIN VISUAL WORDS. The image model follows pictures and plain descriptions, not measurements. Use the numbers below only to choose your words. In layout, camera, composition and prompt, describe sizes, distances, angles and positions the way a photographer briefs a set builder: by comparison with the laptop, the frame edges and nearby objects (for example "the tabletop continues about two laptop widths to the left of the laptop and a little less to the right", "the tabletop is about three times as deep as the laptop", "the table ends inside the frame on both sides", "camera at standing eye height, looking gently down").
+ 
+ FIXED GEOMETRY (derived by code from Image 1):
+ """
+-_WRITE_OVERRIDE = ("\n\nSTAGE B OVERRIDE: geometry is a fixed input in this call, not an output. "
++_WRITE_OVERRIDE = ("\n\nSTAGE B OVERRIDE: geometry is a baseline layout in this call, not an output. "
+                    "Image 1 is the drawn geometry guide and is visible to you now. Follow the PRIORITY ORDER "
+-                   "in the user message: product first, fixed geometry second, user request third. "
++                   "in the user message: product invariants first, product-relative support geometry second, user request third. "
+                    "Return layout, camera, composition and prompt, each written in plain visual words. "
+                    "layout opens the image prompt as its GEOMETRY section: short lines on how the table is "
+-                   "turned and how its edges run across the frame; which edge faces the user and where it sits "
++                   "turned and how its edges run relative to the product; which edge faces the user and where it sits "
+                    "relative to the laptop; how close the laptop sits to that edge; how much tabletop continues "
+                    "on each side of the laptop and how deep the table is compared with the laptop; which table "
+                    "ends and corners stay inside the frame; the camera height and how steeply it looks down; and "
+-                   "the laptop unchanged in its place."
++                   "the product's unchanged orientation/view and scale. Treat absolute coordinates as baseline "
++                   "positions that share the same permitted translation; never relocate support edges independently. "
++                   "Include the translation-only exception. Do not require a new location: leave the baseline unchanged "
++                   "unless a feasible common translation improves realistic use, access, support geometry, furniture "
++                   "alignment or composition. Use the actual product category, not laptop, for other products."
+                    "\n\nIMAGE MODEL INPUT: the image model receives ONLY Image 1 and your text. It never sees the "
+-                   "style reference or the product on white. In layout, camera, composition and prompt, never "
+-                   "mention any image other than Image 1, the reference, or where a style or material came from. "
+-                   "Describe the lighting, palette, materials and textures you take from the style reference "
++                   "style image or the product on white. In layout, camera, composition and prompt, never "
++                   "mention any image other than Image 1 or where a style or material came from. "
++                   "Describe the lighting, palette, materials and textures you take from the style image "
+                    "directly in words, as a brief for a photographer who has never seen it. Never explain where a "
+                    "color, material or blue carrier was adapted or transferred from. Product detail comes from the real "
+                    "product pixels in Image 1.")
+ _WRITE_PRINTER_WALL = ("\n\nPRINTER AGAINST THE WALL: the printer's back stands right against the wall at the "
+                        "support's back edge, with no gap, shelf or objects between them. State this plainly in the "
+                        "prompt.")
+-_LEGEND = ("Image 1 is the canvas to edit: a geometry-only diagram at the final framing whose product pixels are "
+-           "the real product. Keep those product pixels unchanged. The flat gray area with a thin darker outline "
+-           "is the exact top surface of the support: the tabletop covers exactly that area, with its edges where "
+-           "the gray area's edges are; the gray is not its color. Replace everything else in Image 1, including "
+-           "the white background and the gray fill, with the photographic scene. Never render any diagram mark. ")
+-_FINAL_CHECK = ("\n\nFinal check before rendering: the product is unchanged in position, size and orientation; "
+-                "the table orientation, user-facing edge, product-to-edge distance and tabletop extent match the "
+-                "GEOMETRY section and Image 1. Where any other text conflicts, follow GEOMETRY.")
++_LEGEND = ("Image 1 is the canvas to edit: a geometry-only diagram containing the real product at its baseline "
++           "location and scale. Preserve the product without redrawing it; only the permitted rigid 2D translation "
++           "may change its frame location. The flat gray area defines the baseline support top surface and edge "
++           "locations. Preserve its geometry relative to the product. If the product is translated, translate this "
++           "support geometry by exactly the same displacement. It is not an immutable gray region that must remain "
++           "at its original coordinates. Replace diagram styling with photographic materials and physically plausible "
++           "furniture and room geometry. Leave no gray guide remnants, diagram lines, duplicate product or "
++           "product-shaped remnant at the original location. Keep only one intact product at the final location. ")
++_FINAL_CHECK = ("\n\nFinal check before rendering: the product retains its exact identity, orientation/view, "
++                "visible faces, perspective/foreshortening, scale, silhouette, state and details. Its only permitted "
++                "geometric change is one rigid x-y translation. Any translated support/contact geometry shares "
++                "exactly that displacement and preserves the planned relative geometry. The surrounding scene has "
++                "consistent perspective. The product is fully visible, unoccluded and physically supported with a "
++                "plausible contact shadow. No diagram remnants or duplicate product remain.")
+ 
+ 
+ _STALE_IMAGE = re.compile(r"\bImages?\s+(?:[2-9]|1\d)\b|\breference(?:'s|\u2019s)|\b(?:style|selected) references?\b"
+@@ -219,16 +241,21 @@ def run_row(row, client, catalog, run_dir: Path, hero: bytes, captions: dict | N
+             (out / f"ref_{i}.{r.mime.split('/')[1]}").write_bytes(r.data)
+         images = [("image/png", hero)] + [(r.mime, r.data) for r in refs]
+         body = (" No upstream rewritten scene brief is supplied. "
+-                "Keep the requested room, support type, objects and lighting. The fixed product and "
+-                "planned support geometry take priority over requested layout, extent and emphasis; "
+-                "adapt those to the geometry. When blue is unspecified, "
++                "Keep the requested room, support type, objects and lighting. The product's exact orientation/view, "
++                "scale and visibility and its planned support relationship take priority over requested layout, "
++                "extent and emphasis. Plan the structured support geometry around the supplied baseline product "
++                "bounds and contact point. Do not pretranslate the guide or invent a new viewpoint. Later scene "
++                "construction may apply only the common translation allowed by the translation-only exception. "
++                "When blue is unspecified, "
+                 "include one large blue surface/furnishing or multiple clearly visible blue elements "
+                 "whose combined area makes blue immediately noticeable, not a token accent. "
+                 "Tiny props, thin partition frames, screen graphics, sky and lighting casts alone "
+                 "do not qualify. Name the blue materials, visible extent and anchored placement "
+                 "consistently in composition and the final prompt. Keep small props neutral by default. "
+-                "Keep the product's color, finish, orientation, position, scale and visibility unchanged; "
+-                "never change the product or camera to make room for blue. Warm-neutral lighting "
++                "Keep the product's color, finish, exact orientation/view, scale, details and full visibility unchanged. "
++                "Never change the product or its camera viewpoint to make room for blue. Blue does not justify a "
++                "translation; any translation must independently satisfy the translation-only exception. "
++                "Warm-neutral lighting "
+                 "can coexist with physical blue. Explicit minimal-blue, blue amount/carrier or no-blue "
+                 "requests override this default.\n\n"
+                 f"Original user request: {row.user_prompt}\n\n"
+@@ -285,8 +312,12 @@ def run_row(row, client, catalog, run_dir: Path, hero: bytes, captions: dict | N
+             rewrite = reference_blue.rewrite(client, system, write_text, images, _WRITE_SCHEMA,
+                                              selection, row.user_prompt, out, suffix=override)
+         res["layout"], res["camera"], res["composition"] = rewrite["layout"], rewrite["camera"], rewrite["composition"]
+-        res["prompt"] = (f"GEOMETRY \u2014 highest priority. Follow Image 1 exactly.\n{res['layout']}\n\n"
++        res["prompt"] = ("GEOMETRY \u2014 subordinate only to the product invariants.\n"
++                         "Use Image 1 as the baseline layout, not an absolute x-y lock. Preserve its "
++                         "product-to-support geometry under the translation-only exception below.\n"
++                         f"{res['layout']}\n\n"
+                          f"Camera: {res['camera']}\n\nComposition: {res['composition']}\n\n"
++                         + _wording(_TRANSLATION_ONLY, category, product_image) + "\n\n"
+                          + _wording(_LEGEND, category, product_image) +
+                          "Render the lighting, palette, materials and textures described here photographically. "
+                          "When blue is unspecified, "
+@@ -296,9 +327,10 @@ def run_row(row, client, catalog, run_dir: Path, hero: bytes, captions: dict | N
+                          "do not qualify. Keep the planned blue materials, visible extent and placement "
+                          "consistent; leave small props neutral by default. "
+                          "Explicit minimal-blue or no-blue requests override that default, as do explicit "
+-                         "blue amounts or carriers. Keep the product's original color, finish, orientation, "
+-                         "position, scale and visibility; never change the product or camera to make room "
+-                         "for blue. Retain requested warm-neutral lighting alongside physical blue materials. "
++                         "blue amounts or carriers. Keep the product's original color, finish, exact orientation/view, "
++                         "scale, details and full visibility. Only the translation-only exception may change its x-y "
++                         "location. Never change the product or its camera viewpoint to make room for blue. "
++                         "Retain requested warm-neutral lighting alongside physical blue materials. "
+                          "Do not impose a universal blue hue or coverage percentage. "
+                          "Match soft, uniform exposure and gentle contrast; no bright-hero/dark-room treatment "
+                          "and no orange or global blue color cast. "
+diff --git a/experimental/adarabi/hp-3p-gpt25/hp3p/prompts/system_3p.txt b/experimental/adarabi/hp-3p-gpt25/hp3p/prompts/system_3p.txt
+index 27e4dffc8..4cfbd8844 100644
+--- a/experimental/adarabi/hp-3p-gpt25/hp3p/prompts/system_3p.txt
++++ b/experimental/adarabi/hp-3p-gpt25/hp3p/prompts/system_3p.txt
+@@ -1,16 +1,42 @@
+ You plan and write one image-editing instruction for GPT Image from the original
+-user request, {product_image} (the product), and {style_images} (photographic references).
++user request, {product_image} (the product), and {style_images} (photographic style examples).
+ There is no upstream scene rewrite. Complete scene interpretation, product-driven
+ camera planning, spatial layout and photographic adaptation in this one response.
+ 
+ # Authority and constraints
+-- Priority: {product_image}'s fixed product first, then the planned geometry (camera,
+-  support, user-facing edge and the product's place on the support), then the
+-  user request, then defaults.
+-- {product_image} defines the product's exact orientation, position, size, visible faces,
+-  silhouette, finish, ports, logo and display content. Do not move, rotate,
+-  enlarge, shrink, crop, redraw or activate the product. An unlit display stays
+-  unlit. These are instructions, not a guarantee of pixel preservation.
++- Priority: {product_image}'s exact product identity, orientation/view, scale and
++  full visibility first; then the planned support relationship under the
++  translation-only exception; then the user request; then defaults.
++- {product_image} defines the product's exact orientation/view, size, visible faces,
++  camera-facing surfaces, perspective/foreshortening, silhouette, aspect proportions,
++  open/closed state, finish, ports, logo and display content. Its x-y location is the
++  baseline, not an immutable frame position. Apply the TRANSLATION-ONLY EXCEPTION below.
++
++TRANSLATION-ONLY EXCEPTION
++The guide gives the baseline product location and support layout. Keep that location
++unless one rigid 2D translation improves realistic product use, access,
++support-surface geometry, furniture alignment or composition. Do not move the product
++merely to center it or make it more prominent.
++
++Only a common image-plane x-y translation of the product and its planned support
++relationship is allowed. Keep product pixel width and height unchanged. Preserve the
++exact original yaw, pitch, roll, viewing angle, visible faces, camera-facing surfaces,
++perspective and foreshortening, silhouette, aspect proportions, open/closed state and
++all product details. Do not rotate, mirror, resize, shear, warp, reproject, redraw or
++activate the product. Do not zoom or change the product's camera viewpoint.
++
++If translated, shift the planned support/contact geometry by the same displacement:
++preserve support-edge directions, the user-facing edge, product-to-edge distances and
++tabletop extents relative to the product. Do not move the product independently of its
++support relationship. Construct the surrounding furniture and room with perspective
++consistent with this translated geometry; do not retain incompatible
++vanishing geometry anchored to the original frame location.
++
++Keep the entire product inside the frame and fully visible, with plausible
++weight-bearing contact and a corresponding contact shadow. No prop, furniture edge or
++foreground object may occlude the product. If no feasible translation meets all these
++constraints, retain the baseline location. An unlit display stays unlit. These are
++instructions, not a guarantee of pixel preservation.
+ - The user request supplies the room type, support category, named objects,
+   material requirements, light preference and requested amount of blue; keep
+   them. Add plausible details only where the request leaves choices open.
+@@ -29,8 +55,10 @@ camera planning, spatial layout and photographic adaptation in this one response
+ 
+ # Product-first planning
+ 1. Identify the product category, visible front/top/side faces, chassis edge
+-   directions, exact frame region and user side. Use the supplied pixel bounds
+-   and contact point, not a newly centered or resized product.
++   directions, baseline frame region and user side. Use the supplied pixel bounds
++   and contact point to plan the baseline layout; do not invent a newly centered,
++   resized or reoriented product. These bounds and contact point may later shift
++   only by the common translation allowed above.
+ 2. Choose one internally coherent estimated camera that explains those visible
+    faces. Little visible top means a compatible near-frontal view, not an
+    arbitrarily overhead room. Do not invent recovered EXIF or claim calibration.
+@@ -40,7 +68,10 @@ camera planning, spatial layout and photographic adaptation in this one response
+    laptop or monitor, or a shelf, side table or credenza for a printer.
+    Place it beneath the existing contact point with the whole product base
+    flush on the surface, natural contact shadow and no floating or overhang.
+-4. Arrange the scene around the fixed product and planned support.
++4. Arrange the scene around the product and its planned support relationship.
++   Stage A plans that relationship at the supplied baseline location. Subsequent
++   scene construction may translate the relationship as a unit, but must preserve
++   its relative geometry and the product's exact orientation/view and scale.
+    For EACH named object specify near/mid/far plane, left/center/right position,
+    and a physical anchor such as on the desk, against the wall, or beside the
+    product. Keep tabletop objects on the support: beside the product along the
+@@ -67,20 +98,23 @@ camera planning, spatial layout and photographic adaptation in this one response
+   estimates do not guarantee product fidelity.
+ 
+ # Geometry and user-side layout
+-- Preserve {product_image}'s exact framing. The product may be small or off-center and
+-  need not dominate the image. Never shrink it to reveal furniture; crop the
+-  furniture at the frame instead.
++- Preserve {product_image}'s exact product scale and orientation/view; preserve its
++  frame location unless the translation-only exception improves the scene. The
++  product may remain small or off-center and need not dominate the image. Never
++  shrink it to reveal furniture; crop the furniture at the frame instead. Never
++  crop the product.
+ - The support's width and depth edges follow axis_angle_deg; parallel 3D edges
+   share vanishing points and need not look parallel on-screen. All room objects
+   share one floor plane and consistent horizon; align furniture, not the product.
+-- A printer sits square on its support: its front and side faces are parallel
+-  in 3D to the support edges. Estimate its axis_angle_deg from the two bottom
++- A printer sits square on its support: construct the support so that its
++  corresponding edges are parallel in 3D to the printer's front and side faces.
++  Never rotate or reproject the printer to achieve this. Estimate its axis_angle_deg from the two bottom
+   edges meeting at the base corner nearest the camera (front bottom edge =
+   width axis, side bottom edge = depth axis), not from the top, trays or control
+   panel. In a frontal view, the visible front bottom edge is the width axis.
+-- A laptop need not sit exactly square to its desk; the desk follows the
+-  laptop's estimated chassis yaw. Other products share their chassis axes with
+-  the support.
++- A laptop need not sit exactly square to its desk; construct the desk from the
++  laptop's supplied chassis yaw and viewpoint. Never change the laptop's yaw or
++  viewpoint to fit the desk. Other products share their chassis axes with the support.
+ - Identify the user side from the screen, control panel or output tray.
+   Put working seating where a user would face the screen. A screen facing away
+   from the camera requires the working chair across the table, not behind the
+@@ -96,7 +130,8 @@ camera planning, spatial layout and photographic adaptation in this one response
+   from using the product, with no person shown. Plan furniture orientation
+   and spacing together: leave realistic room to sit or stand, reach the
+   product and requested supplies, and operate it without obstructions.
+-  Adapt furniture to the fixed product; do not add props merely to suggest use.
++  Adapt furniture to the product's unchanged view and scale and its final permitted
++  location; do not add props merely to suggest use.
+ - Supply the structured "geometry" required by the schema: estimated camera
+   height, support height, look-at height, horizontal distance, vertical FOV,
+   support yaw, support width/depth, product base footprint, user side,
+@@ -122,7 +157,7 @@ camera planning, spatial layout and photographic adaptation in this one response
+   working_seat for user-side working chairs, background_furniture for others.
+   Each working_seat box area must be at most 1.5 times the product box area.
+   Move seating deeper or crop it rather than enlarging a foreground chair.
+-- {guide_image} will be a geometry-only diagram, not a photographic reference.
++- {guide_image} will be a geometry-only diagram, not a photographic style example.
+   Never reproduce its lines, labels, bounds or flat guide colors.
+ 
+ # Blue: physical carriers named in words
+@@ -153,12 +188,14 @@ camera planning, spatial layout and photographic adaptation in this one response
+ 
+ # Restrictions
+ - No people, hands, human silhouettes or human reflections, including anyone
+-  in the style references. State "no people" in the editing instruction.
++  in the style images. State "no people" in the editing instruction.
+ - No added text, signage, watermarks or branding. Preserve existing product
+   markings from {product_image}. Do not mention the HP brand name in the instruction;
+   refer to the product by category.
+ - Keep the product fully visible: no object crossing or touching its silhouette,
+   no foreground occluder, no invented cables or irrelevant floor clutter.
++- Required weight-bearing contact with the support is not an occlusion; the support
++  must not cross over or hide the product.
+ 
+ # Output and final consistency check
+ Return only the fields the current response schema requires: Stage A returns
+@@ -172,10 +209,14 @@ layout, camera, composition and prompt.
+ - "geometry": the numeric construction parameters and furniture boxes required
+   by the supplied schema. Keep prose and numbers consistent.
+ - "prompt": one 180-320-word photorealistic edit instruction starting
+-  "Turn {guide_image} into a photograph; keep the [category] exactly as shown". State unchanged product framing and
+-  details, chosen camera, support contact and user-facing edge, shared
+-  perspective, anchored named objects, resolved blue carrier or explicit override, lighting and "no people".
+-  State that {guide_image} is geometry-only and its annotations must not appear.
++  "Turn {guide_image} into a photograph; preserve the [category]'s exact
++  orientation/view, scale and details; translate it only under the rule below."
++  State the translation-only exception, unchanged product orientation/view/scale/details,
++  coherent support translation, full visibility and physical contact. Describe the
++  support relative to the product, not as immutable absolute frame coordinates.
++  Remove the diagram appearance; leave only one product at its final location. Include
++  chosen camera, anchored named objects, resolved blue carrier or explicit override,
++  lighting and "no people".
+   End with "One full-bleed photorealistic photograph with natural imperfections;
+   no added text, logos, borders, watermark or CGI look."
+ Before returning, check that no requested object was lost; that composition and
+diff --git a/experimental/adarabi/hp-3p-gpt25/hp3p/reference_blue.py b/experimental/adarabi/hp-3p-gpt25/hp3p/reference_blue.py
+index bd7d2779d..63a3ffebe 100644
+--- a/experimental/adarabi/hp-3p-gpt25/hp3p/reference_blue.py
++++ b/experimental/adarabi/hp-3p-gpt25/hp3p/reference_blue.py
+@@ -9,7 +9,7 @@ from .histogram import save
+ from .openai_client import IMAGE_MODEL, TEXT_MODEL, load_prompt
+ from .reference_style import photometry, select_reference
+ 
+-VERSION = "unified-blue-v22-text-blue-twin-camera-guide-only-no-mask"
++VERSION = "unified-blue-v23-translation-only-twin-camera-guide-only-no-mask"
+ 
+ 
+ def digest(body):
+@@ -83,7 +83,7 @@ class ReferenceBlue:
+         human_policy = (
+             "The original request explicitly asks for people. Include only the requested people, "
+             "naturally placed without product occlusion. This explicitly overrides the baseline "
+-            "no-person restriction. Do not copy reference identities or faces."
++            "no-person restriction. Do not copy identities or faces from the style image."
+             if human else "Human policy: no people, hands, human silhouettes or human reflections."
+         )
+         system += "\n\n" + human_policy + suffix
+diff --git a/experimental/adarabi/hp-3p-gpt25/tests/test_pipeline.py b/experimental/adarabi/hp-3p-gpt25/tests/test_pipeline.py
+index b1d8b76b9..f9574a586 100644
+--- a/experimental/adarabi/hp-3p-gpt25/tests/test_pipeline.py
++++ b/experimental/adarabi/hp-3p-gpt25/tests/test_pipeline.py
+@@ -1,5 +1,6 @@
+ import io
+ import json
++import re
+ from dataclasses import replace
+ 
+ import pytest
+@@ -15,9 +16,10 @@ class Fake:
+         self.calls = []
+         self.scale, self.shift = scale, shift
+         self.generated = None
+-        self.camera = "Near-frontal camera matching Image 1, with no zoom."
+-        self.composition = "Keep the product fixed; align the support front edge with its base."
+-        self.layout = "- The laptop sits right at the near edge of a shallow table."
++        self.camera = "Near-frontal camera preserving the product viewpoint, with no zoom."
++        self.composition = ("Preserve the product view and scale; keep the support front edge aligned with its "
++                            "base under any permitted common translation.")
++        self.layout = "- The laptop remains near the user-facing edge of a shallow table."
+         self.category = "laptop"
+         self.geometry = {
+             "camera_height_m": 1.5, "support_height_m": 0.75, "look_at_height_m": 1.0,
+@@ -133,7 +135,7 @@ def test_run_row_plans_only_from_original_request_with_explicit_blue_precedence(
+         assert "one large blue surface/furnishing or" in text
+         assert "multiple clearly visible blue elements" in text
+         assert "Tiny props, thin partition frames, screen graphics, sky and lighting casts" in text
+-        assert "never change the product or camera to make room for blue" in text.lower()
++        assert "never change the product or its camera viewpoint to make room for blue" in text.lower()
+     assert "blue amount/carrier or no-blue requests override this default" in fake.last_text
+     assert "as do explicit blue amounts or carriers" in result["prompt"]
+     assert "sole photographic-style authority" not in result["prompt"]
+@@ -252,18 +254,49 @@ def test_geometry_is_planned_before_prompt_writer_sees_the_drawn_guide(tmp_path)
+     assert "written in a later call after the geometry guide is drawn." in fake.geometry_request["text"]
+     assert "back_edge_against_wall" in fake.geometry_request["schema"]["properties"]["geometry"]["required"]
+     assert "STAGE B OVERRIDE" in fake.rewrite_request["system"]
+-    assert fake.last_text.startswith("STAGE B. Geometry is already fixed and drawn in Image 1 around the real "
+-                                     "product, at the exact Image 6 framing")
++    assert fake.last_text.startswith("STAGE B. Image 1 contains the baseline support geometry and the real "
++                                     "product at the Image 6 baseline location")
+     assert res["geometry_text"] in fake.last_text and json.dumps(fake.geometry) in fake.last_text
+     assert "Choose coherent estimated camera dimensions" not in fake.last_text
+     assert (out / "geometry_text.txt").read_text() == res["geometry_text"]
+-    assert res["prompt"].startswith("GEOMETRY \u2014 highest priority. Follow Image 1 exactly.\n" + fake.layout)
++    assert res["prompt"].startswith("GEOMETRY \u2014 subordinate only to the product invariants.\n"
++                                    "Use Image 1 as the baseline layout, not an absolute x-y lock.")
++    assert fake.layout in res["prompt"]
+     assert res["layout"] == fake.layout and res["geometry_text"] not in res["prompt"]
+     assert "WRITE IN PLAIN VISUAL WORDS" in fake.last_text and "plain visual words" in fake.rewrite_request["system"]
+-    assert res["prompt"].endswith("Where any other text conflicts, follow GEOMETRY.")
++    assert res["prompt"].endswith("No diagram remnants or duplicate product remain.")
+     assert json.loads((out / "geometry_response.json").read_text())["geometry"] == fake.geometry
+ 
+ 
++def test_translation_only_exception_reaches_every_prompt_layer_without_changing_guide_flow(tmp_path):
++    fake = Fake()
++    res = run_row(ROW, fake, CAT, tmp_path, _hero(), ref_count=1)
++    assert res["status"] == "ok"
++    stage_a = fake.geometry_request["system"] + fake.geometry_request["text"]
++    stage_b = fake.rewrite_request["system"] + fake.last_text
++    image_prompt = fake.edit_request["prompt"]
++    for text in (stage_a, stage_b, image_prompt):
++        assert "TRANSLATION-ONLY EXCEPTION" in text or "translation-only exception" in text
++        assert "exact original yaw, pitch, roll, viewing angle" in text
++        assert "Keep product pixel width and height unchanged" in text
++    assert "Do not pretranslate the guide" in stage_a
++    assert "Absolute x-y placement is subject only" in stage_b
++    assert "same displacement" in stage_b and "same displacement" in image_prompt
++    assert "Do not move the product merely to center it" in image_prompt
++    assert "No diagram remnants or duplicate product remain" in image_prompt
++    assert not re.search(r"\breference\b", image_prompt, re.IGNORECASE)
++    translation_policy = stage_b.split("When the user request requires", 1)[0]
++    assert not re.search(r"\breference\b", translation_policy, re.IGNORECASE)
++    for old_lock in ("Never move, resize, rotate", "unchanged in its place",
++                     "Follow Image 1 exactly", "unchanged in position, size and orientation",
++                     "tabletop covers exactly that area"):
++        assert old_lock not in stage_b + image_prompt
++    assert fake.calls == [("chat", 0), ("chat", 2), ("chat", 3), ("edit", 1, "1216x912", False)]
++    assert fake.edit_request["images"] == [
++        ("image/png", (tmp_path / "rows/b-1/geometry_guide.png").read_bytes())
++    ]
++
++
+ def test_non_laptop_category_rewords_geometry_text_for_its_support(tmp_path):
+     fake = Fake()
+     fake.category = "printer"
+@@ -272,7 +305,7 @@ def test_non_laptop_category_rewords_geometry_text_for_its_support(tmp_path):
+     words = res["geometry_text"] + fake.last_text.split("Fixed geometry JSON")[0]
+     assert "the printer is" in words and "Support orientation" in words
+     assert "laptop" not in words and " table" not in words and "tabletop" not in words
+-    assert "the support orientation, user-facing edge" in res["prompt"]
++    assert "preserve support-edge directions, the user-facing edge" in res["prompt"]
+     assert "PRINTER AGAINST THE WALL" not in fake.rewrite_request["system"]
+     fake.geometry = {**fake.geometry, "back_edge_against_wall": True}
+     run_row(ROW, fake, CAT, tmp_path / "wall", _hero(), ref_count=1)
+@@ -298,16 +331,17 @@ def test_v8_lifestyle_composition_reaches_planner(tmp_path):
+     assert "Plan furniture orientation and spacing together" in system
+     assert "keep user_edge_gap_m small so the laptop sits near the desk's user-facing edge" in system
+     assert "Describe the same support placement in composition and the final prompt" in system
+-    assert "Adapt furniture to the fixed product; do not add props merely to suggest use" in system
++    assert "Adapt furniture to the product's unchanged view and scale and its final permitted location" in system
+     assert "Image 1 is the canvas to edit" in prompt and "Estimated camera/support plan" not in prompt
+     assert "envelope" not in prompt and "Furniture may extend beyond the frame" not in prompt
+     planner = " ".join(fake.last_text.split())
+-    assert "planned support geometry take priority over requested layout, extent and emphasis" in planner
+-    assert "Priority: Image 3's fixed product first, then the planned geometry" in system
++    assert "planned support relationship take priority over requested layout" in planner
++    assert "Priority: Image 3's exact product identity, orientation/view, scale" in system
+     assert "never override explicit user requirements" not in system
+     assert "never between the product and that edge or beyond it" in system
+     assert "There is no tabletop beyond the user-facing edge" in system
+-    assert prompt.startswith("GEOMETRY — highest priority") and "Final check before rendering" in prompt
++    assert prompt.startswith("GEOMETRY — subordinate only to the product invariants")
++    assert "Final check before rendering" in prompt
+     assert fake.calls == [("chat", 0), ("chat", 2), ("chat", 3), ("edit", 1, "1216x912", False)]
+ 
+ 
+diff --git a/experimental/adarabi/hp-3p-gpt25/tests/test_prompts.py b/experimental/adarabi/hp-3p-gpt25/tests/test_prompts.py
+index c07e925ae..711b60dac 100644
+--- a/experimental/adarabi/hp-3p-gpt25/tests/test_prompts.py
++++ b/experimental/adarabi/hp-3p-gpt25/tests/test_prompts.py
+@@ -32,3 +32,21 @@ def test_scale_reasoning_distinguishes_estimates_and_retains_projection_uncertai
+                         "say they are assumed", "Never equate bbox width with physical width or resize the product",
+                         "estimates do not guarantee product fidelity"]:
+         assert requirement in prompt
++
++
++def test_system_prompt_defines_translation_as_the_only_location_exception():
++    prompt = " ".join(load_prompt("system_3p").split())
++    for requirement in [
++        "TRANSLATION-ONLY EXCEPTION",
++        "one rigid 2D translation",
++        "Do not move the product merely to center it or make it more prominent",
++        "common image-plane x-y translation of the product and its planned support relationship",
++        "Keep product pixel width and height unchanged",
++        "exact original yaw, pitch, roll, viewing angle",
++        "Do not rotate, mirror, resize, shear, warp, reproject, redraw or activate",
++        "shift the planned support/contact geometry by the same displacement",
++        "If no feasible translation meets all these constraints, retain the baseline location",
++    ]:
++        assert requirement in prompt
++    for contradictory_lock in ["Do not move, rotate", "exact framing", "unchanged product framing"]:
++        assert contradictory_lock not in prompt

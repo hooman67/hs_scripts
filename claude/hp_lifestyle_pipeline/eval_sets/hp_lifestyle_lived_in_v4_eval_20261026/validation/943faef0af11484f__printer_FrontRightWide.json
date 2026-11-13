@@ -1,0 +1,327 @@
+{
+  "version": "v4-raw-normalized-audit-v1",
+  "case_id": "943faef0af11484f__printer_FrontRightWide",
+  "request_sha256": "c19e8809488a650fd075ce5c09839662a4972320fbea2d91be1bfe52cffee939",
+  "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_lived_in_v4_eval_20261026/records/attempts/943faef0af11484f__printer_FrontRightWide/sample_002.json",
+  "raw_record_sha256": "730dbe87a3d2ebad6f0b4ca0c1b90efabe0dbeaaff3cb60c3aa801b09e7868c9",
+  "raw_validation": {
+    "validator_version": "v4-host-validator-r2",
+    "passed": false,
+    "error_count": 2,
+    "warning_count": 2,
+    "errors": [
+      {
+        "code": "ungrounded_nonzero_score",
+        "detail": "nonzero relevance requires relevant source evidence",
+        "candidate_id": "p24"
+      },
+      {
+        "code": "ungrounded_nonzero_score",
+        "detail": "nonzero relevance requires relevant source evidence",
+        "candidate_id": "p25"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "unused_source_evidence",
+        "detail": "Unused evidence may support an omission explanation; inspect: ['e7']"
+      },
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 30,
+      "evidence": 7,
+      "environments": {
+        "Office": 13,
+        "Education": 4,
+        "Home": 5,
+        "Café": 3,
+        "Creative Studio": 4,
+        "Gaming": 1
+      },
+      "relationships": {
+        "source_grounded": 11,
+        "source_adjacent": 6,
+        "creative_departure": 13
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 5,
+        "Office": 13,
+        "Education": 4,
+        "Gaming": 1,
+        "Café": 3,
+        "Creative Studio": 4
+      },
+      "relationship_counts": {
+        "source_grounded": 11,
+        "source_adjacent": 6,
+        "creative_departure": 13
+      },
+      "distinct_subsettings": 30,
+      "evidence_reverse_mappings": {
+        "KSP1": {
+          "evidence_ids": [
+            "e1"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p6",
+            "p7",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18",
+            "p19",
+            "p20",
+            "p23"
+          ]
+        },
+        "KSP2": {
+          "evidence_ids": [
+            "e2",
+            "e3"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p15",
+            "p16",
+            "p17",
+            "p18",
+            "p20"
+          ]
+        },
+        "KSP3": {
+          "evidence_ids": [
+            "e4"
+          ],
+          "prompt_ids": [
+            "p5",
+            "p12",
+            "p13",
+            "p14",
+            "p19"
+          ]
+        },
+        "KSP4": {
+          "evidence_ids": [
+            "e5"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p4",
+            "p6",
+            "p9",
+            "p11",
+            "p21",
+            "p22"
+          ]
+        },
+        "ValueProposition": {
+          "evidence_ids": [
+            "e6"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p14",
+            "p15",
+            "p17",
+            "p18",
+            "p19",
+            "p20"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "9053e3d6d7e5e9afea19bab69a9a2ad0e8777a3be6d30a6d3f99c07fa3a03a49"
+  },
+  "normalized_validation": {
+    "validator_version": "v4-host-validator-r2",
+    "passed": true,
+    "error_count": 0,
+    "warning_count": 2,
+    "errors": [],
+    "warnings": [
+      {
+        "code": "unused_source_evidence",
+        "detail": "Unused evidence may support an omission explanation; inspect: ['e7']"
+      },
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 30,
+      "evidence": 7,
+      "environments": {
+        "Office": 13,
+        "Education": 4,
+        "Home": 5,
+        "Café": 3,
+        "Creative Studio": 4,
+        "Gaming": 1
+      },
+      "relationships": {
+        "source_grounded": 11,
+        "source_adjacent": 6,
+        "creative_departure": 13
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 5,
+        "Office": 13,
+        "Education": 4,
+        "Gaming": 1,
+        "Café": 3,
+        "Creative Studio": 4
+      },
+      "relationship_counts": {
+        "source_grounded": 11,
+        "source_adjacent": 6,
+        "creative_departure": 13
+      },
+      "distinct_subsettings": 30,
+      "evidence_reverse_mappings": {
+        "KSP1": {
+          "evidence_ids": [
+            "e1"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p6",
+            "p7",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18",
+            "p19",
+            "p20",
+            "p23"
+          ]
+        },
+        "KSP2": {
+          "evidence_ids": [
+            "e2",
+            "e3"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p15",
+            "p16",
+            "p17",
+            "p18",
+            "p20"
+          ]
+        },
+        "KSP3": {
+          "evidence_ids": [
+            "e4"
+          ],
+          "prompt_ids": [
+            "p5",
+            "p12",
+            "p13",
+            "p14",
+            "p19"
+          ]
+        },
+        "KSP4": {
+          "evidence_ids": [
+            "e5"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p4",
+            "p6",
+            "p9",
+            "p11",
+            "p21",
+            "p22"
+          ]
+        },
+        "ValueProposition": {
+          "evidence_ids": [
+            "e6"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p14",
+            "p15",
+            "p17",
+            "p18",
+            "p19",
+            "p20"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "7686560d26823a4523638384f8701d3a2005c5e767d5257a770822455810ad68"
+  },
+  "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_lived_in_v4_eval_20261026/normalized_outputs/943faef0af11484f__printer_FrontRightWide__sample_002.json",
+  "normalized_output_file_sha256": "6e167bda7516a8475424bc39cefcbcd382b3c2bcb5710281251a22ae8a279fc3",
+  "normalized_output_semantic_sha256": "7686560d26823a4523638384f8701d3a2005c5e767d5257a770822455810ad68",
+  "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_lived_in_v4_eval_20261026/normalization_logs/943faef0af11484f__printer_FrontRightWide__sample_002.json",
+  "normalization_log_file_sha256": "18641535d099b9efd1418c388043f4b3af83d58e468191be1a85d1b75876304e"
+}

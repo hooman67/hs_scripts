@@ -1,0 +1,60 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.cai[public]
+  - colligo.models.firefall.entity_service[public]
+  - colligo.models.firefly.clio_common[public]
+  - colligo.models.firefall.notification[public]
+  - pydantic
+deps:
+- aiohttp
+- anyio
+- av
+- colligo.aiohttp
+- colligo.caplan_taxonomy
+- colligo.data
+- colligo.external_services.abp_profile
+- colligo.external_services.acp
+- colligo.external_services.arp
+- colligo.external_services.business_kit
+- colligo.external_services.ip_guard
+- colligo.fastapi
+- colligo.httpx
+- colligo.image
+- colligo.models.common.adapter_utils
+- colligo.models.common.metrics
+- colligo.models.dentro.model_zoo
+- colligo.models.dentro.pylib
+- colligo.models.external_services.vectorize
+- colligo.models.firefall.auto_model_selector
+- colligo.models.firefall.cai
+- colligo.models.firefall.entity_service
+- colligo.models.firefall.firefall_router
+- colligo.models.firefall.notification
+- colligo.models.firefall.pipelines.llm_3p
+- colligo.models.firefall.policy_service
+- colligo.models.firefall.utils
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.service_common.persistence
+- colligo.models.firefly.vllm_serve[public]
+- colligo.rhode
+- coredis
+- fastapi
+- imageio
+- lasier
+- numpy
+- openai
+- pillow
+- pyjwt
+- pytest
+- pyyaml
+- soundfile
+- starlette
+- torch
+- torchaudio
+exclude:
+- scripts
+- "..."

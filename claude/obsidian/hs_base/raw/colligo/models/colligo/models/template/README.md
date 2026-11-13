@@ -1,0 +1,1 @@
+See inference framework tutorials to see what each folder does: [aidoc/inference-platform/tutorials/index.md](/aidoc/inference-platform/tutorials/index.md)

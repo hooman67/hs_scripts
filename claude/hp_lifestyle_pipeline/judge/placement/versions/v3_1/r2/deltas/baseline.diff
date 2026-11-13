@@ -1,0 +1,59 @@
+--- /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/prompts/baseline.md
++++ /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/prompts/baseline.md
+@@ -1,3 +1,56 @@
++V3.1 r2 OUTPUT CONTRACT — this supersedes only output packaging/observation order:
++Return the supplied placement-evidence-envelope-v3.1-r2 JSON envelope. First emit
++trace, then observation. All existing rubric/output rules below apply unchanged
++to the nested observation payload, not the envelope's outer schema_version.
++
++FOCUSED OBSERVATION BEFORE SCORING
++Judge Image A. Image B identifies the rigid product base/operating front only.
++Before scene-level conclusions, inventory visible product-base width/depth
++boundaries and corresponding supporting-surface boundaries. Give locally unique
++IDs, geometric roles, visible locations and visibility limits. Refer to those IDs
++in width/depth comparisons. Compare paired boundaries and convergence within
++CORRESPONDING 3D direction families; product width versus table depth is not a
++valid correspondence. Raw image-slope differences alone are insufficient. Do not
++substitute the display, raised tray, loose props, chair pose or usable approach.
++Explain compatible perspective and counter-evidence. Distinct direction families
++can have different vanishing points. Name hidden families; determine whether the
++remaining visible evidence independently establishes a consequential conflict or
++leaves it unresolved. Circular/oval supports may lack rectangular axes.
++
++Trace visible tabletop outline, thickness transitions and joins under
++surface_construction (reference ID "surface"). Inventory relevant visible support
++members and associated chair/stool connections separately, with unique IDs,
++likely furniture ownership, exposed connections, occluded/out-of-frame termination
++and plausible alternatives. Distinguish genuine duplication/disconnection/impossible
++joining from rear supports, separate furniture, frame termination, occlusion,
++legitimate L-shaped construction or nonconventional supports. No fixed leg count,
++required hidden legs, invented wall fixings or numerical angle thresholds.
++
++In focused_findings give separate alignment/construction conclusions, valid
++evidence_refs, concise supporting evidence, strongest plausible counter-explanation,
++visibility limits and consequence. These are brief observable reports, not a
++request for lengthy private reasoning. A crop neither proves a defect nor exempts
++a visible defect. Missing evidence does not establish alignment or certify hidden
++construction. Movable-chair centering/angle alone remains non-defective.
++
++material_established requires the corresponding existing observation component to
++be medium/high confidence, observed/partial, severity at least 2, and include the
++same supported existing codes. Alignment concerns here use furniture_axis_conflict
++or established corner_facing, with an identified corresponding direction-family
++conflict; malformed construction uses malformed_support_furniture and actual
++projective contradictions use conflicting_perspective. Non-material trace findings
++have no issue_codes. An unresolved subrelationship does not automatically make the
++whole component unobservable, force review, or suppress independently visible
++issues. Unrelated existing criteria within every component remain assessable.
++
++No trace finding is another vote or score. Missing/inconsistent trace is invalid,
++not permission to repair a judgment. For component verifiers, assess only the
++requested dimensions; focused findings outside them must be not_applicable with
++no issue codes. If neither focused dimension was requested, empty inventories and
++not_applicable comparisons are appropriate; explain this role limit.
++
++UNCHANGED V3.1 r1 RUBRIC FOR THE NESTED OBSERVATION FOLLOWS:
++
+ You judge NATURAL PRODUCT PLACEMENT in photographs of HP laptops and printers. The standard is how a person would actually arrange and use this space, not whether the object could physically sit there. A beautiful, physically possible scene can fail this standard.
+ 
+ INPUTS

@@ -1,0 +1,34 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - pydantic
+
+# vLLM-Omni with Firefly Image5 DIT: uses same vllm_omni_0_18_0 env
+# plus vae_core for VQGAN VAE decode.
+custom_pyenv: vllm_omni_0_18_0
+
+deps:
+- cache-dit
+- colligo.data
+- colligo.models.firefly.lego_mllm[public]
+- colligo.models.firefly.lego_vllm_v4[public]
+- colligo.models.firefly.pipelines.lego_v1
+- einops
+- numpy
+- omegaconf
+- pillow
+- torch
+- transformers
+- vae_core
+- vllm
+- vllm-omni
+
+# The .claude porting skill is dev-only tooling; its helper script imports
+# (safetensors, torch, numpy) are not worker runtime deps. Exclude from the
+# import/dependency scan. '...' keeps the default excludes.
+exclude:
+- "..."
+- .claude

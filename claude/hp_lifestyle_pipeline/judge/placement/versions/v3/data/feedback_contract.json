@@ -1,0 +1,34 @@
+{
+  "schema_version": "placement-human-feedback-contract-v1",
+  "current_feedback_policy": {
+    "button_selections": "ignored by explicit user instruction; retained only in immutable raw submission",
+    "written_comments": "authoritative feedback with exact source and item ID",
+    "brief_agreement": "agreement with displayed prior judge, not independent per-dimension gold annotation",
+    "blank_comment": "user reports no concern raised; not a numeric placement label",
+    "absent_record": "not reviewed/unknown; never inferred pass",
+    "ui_completion": "not used to filter comments or estimate substantive review coverage"
+  },
+  "future_review_questions": [
+    {
+      "id": "image_naturalness",
+      "text": "Is the IMAGE naturally arranged?",
+      "options": [
+        "pass",
+        "review",
+        "fail"
+      ],
+      "comment_box": true
+    },
+    {
+      "id": "judge_assessment_agreement",
+      "text": "Do you agree with the JUDGE assessment and explanation?",
+      "options": [
+        "agree",
+        "partly_agree",
+        "disagree"
+      ],
+      "comment_box": true
+    }
+  ],
+  "future_questionnaire_status": "Specification for next report builder; no existing reports or published human feedback altered."
+}

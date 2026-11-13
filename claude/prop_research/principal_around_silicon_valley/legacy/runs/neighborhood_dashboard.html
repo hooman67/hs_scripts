@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property Research Dashboard — All Neighborhoods</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; padding: 20px; }
+h1 { font-size: 1.8rem; margin-bottom: 8px; color: #f8fafc; }
+.subtitle { color: #94a3b8; margin-bottom: 20px; font-size: 0.95rem; }
+.controls { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; align-items: center; }
+.controls label { font-size: 0.85rem; color: #94a3b8; }
+.controls select, .controls input { background: #1e293b; border: 1px solid #334155; color: #e2e8f0; padding: 6px 10px; border-radius: 6px; font-size: 0.85rem; }
+.controls input[type="text"] { width: 200px; }
+.legend { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: #94a3b8; }
+.legend-swatch { width: 14px; height: 14px; border-radius: 3px; }
+.tier-a { background: #10b981; }
+.tier-b { background: #3b82f6; }
+.tier-c { background: #f59e0b; }
+.tier-d { background: #ef4444; }
+.tier-e { background: #6b7280; }
+table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+thead { position: sticky; top: 0; z-index: 10; }
+th { background: #1e293b; color: #94a3b8; padding: 10px 8px; text-align: left; cursor: pointer; user-select: none; white-space: nowrap; border-bottom: 2px solid #334155; }
+th:hover { color: #e2e8f0; background: #334155; }
+th.sorted-asc::after { content: ' ▲'; color: #60a5fa; }
+th.sorted-desc::after { content: ' ▼'; color: #60a5fa; }
+td { padding: 8px; border-bottom: 1px solid #1e293b; white-space: nowrap; }
+tr { background: #0f172a; }
+tr:hover { background: #1e293b; }
+tr.tier-A { border-left: 3px solid #10b981; }
+tr.tier-B { border-left: 3px solid #3b82f6; }
+tr.tier-C { border-left: 3px solid #f59e0b; }
+tr.tier-D { border-left: 3px solid #ef4444; }
+tr.tier-E { border-left: 3px solid #6b7280; }
+.score-cell { text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
+.score-10 { color: #10b981; }
+.score-9 { color: #34d399; }
+.score-8 { color: #60a5fa; }
+.score-7 { color: #93c5fd; }
+.score-6 { color: #fbbf24; }
+.score-5 { color: #f59e0b; }
+.score-4 { color: #fb923c; }
+.score-3 { color: #f87171; }
+.score-2 { color: #ef4444; }
+.score-1 { color: #dc2626; }
+.weighted-cell { font-weight: 700; font-size: 0.9rem; }
+.tier-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem; }
+.badge-A { background: #065f46; color: #6ee7b7; }
+.badge-B { background: #1e3a5f; color: #93c5fd; }
+.badge-C { background: #78350f; color: #fde68a; }
+.badge-D { background: #7f1d1d; color: #fca5a5; }
+.badge-E { background: #374151; color: #9ca3af; }
+.recommendation { font-weight: 600; }
+.rec-strong-buy { color: #10b981; }
+.rec-buy { color: #60a5fa; }
+.rec-hold { color: #f59e0b; }
+.rec-pass { color: #ef4444; }
+.summary-bar { display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+.stat-card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 12px 16px; min-width: 140px; }
+.stat-card .label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-card .value { font-size: 1.3rem; font-weight: 700; color: #f8fafc; margin-top: 4px; }
+.table-wrapper { overflow-x: auto; border-radius: 8px; border: 1px solid #334155; }
+.weights-row td { font-size: 0.7rem; color: #64748b; font-style: italic; text-align: center; background: #1e293b; }
+/* Column header tooltips */
+th[data-tooltip] { position: relative; }
+th[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #e2e8f0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.45;
+  white-space: normal;
+  width: max-content;
+  max-width: 300px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+th[data-tooltip]::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-bottom-color: #475569;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+th[data-tooltip]:hover::before,
+th[data-tooltip]:hover::after {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<h1>California Property Research Dashboard</h1>
+<p class="subtitle">43 neighborhoods across 4 regions — 11 weighted criteria — Scored June 2026</p>
+
+<div class="summary-bar">
+<div class="stat-card"><div class="label">Neighborhoods</div><div class="value">43</div></div>
+<div class="stat-card"><div class="label">Regions</div><div class="value">4</div></div>
+<div class="stat-card"><div class="label">Tier A</div><div class="value" style="color:#10b981">6</div></div>
+<div class="stat-card"><div class="label">#1 Pick</div><div class="value" style="color:#10b981;font-size:1rem">Fremont</div></div>
+<div class="stat-card"><div class="label">Budget</div><div class="value" style="font-size:1rem">≤$2M</div></div>
+</div>
+
+<div class="controls">
+<div>
+<label>Region:</label>
+<select id="filterRegion">
+<option value="all">All Regions</option>
+<option value="East Bay — Alameda">East Bay — Alameda</option>
+<option value="East Bay — Contra Costa">East Bay — Contra Costa</option>
+<option value="Peninsula">Peninsula</option>
+<option value="South Bay">South Bay</option>
+<option value="San Jose">San Jose</option>
+<option value="Sacramento Valley">Sacramento Valley</option>
+</select>
+</div>
+<div>
+<label>Tier:</label>
+<select id="filterTier">
+<option value="all">All Tiers</option>
+<option value="A">Tier A (≥7.5)</option>
+<option value="B">Tier B (6.5-7.4)</option>
+<option value="C">Tier C (5.5-6.4)</option>
+<option value="D">Tier D (4.5-5.4)</option>
+<option value="E">Tier E (<4.5)</option>
+</select>
+</div>
+<div>
+<label>Search:</label>
+<input type="text" id="searchBox" placeholder="Filter by name...">
+</div>
+<div>
+<label>Step 3 Only:</label>
+<input type="checkbox" id="filterStep3">
+</div>
+</div>
+
+<div class="legend">
+<div class="legend-item"><div class="legend-swatch tier-a"></div>Tier A (Deep Dive)</div>
+<div class="legend-item"><div class="legend-swatch tier-b"></div>Tier B (Contender)</div>
+<div class="legend-item"><div class="legend-swatch tier-c"></div>Tier C (Compromises)</div>
+<div class="legend-item"><div class="legend-swatch tier-d"></div>Tier D (Marginal)</div>
+<div class="legend-item"><div class="legend-swatch tier-e"></div>Tier E (Eliminated)</div>
+</div>
+
+<div class="table-wrapper">
+<table id="mainTable">
+<thead>
+<tr>
+<th data-col="rank">#</th>
+<th data-col="region">Region</th>
+<th data-col="neighborhood">Neighborhood</th>
+<th data-col="weighted" data-tooltip="Composite score using all 11 criteria with their percentage weights. Formula: Jobs x 16% + Schools x 13% + Growth x 12% + Safety x 11% + Diversity x 10% + Price x 10% + Community x 9% + Property x 6% + Survival x 6% + Beach x 4% + Climate x 3%">Weighted</th>
+<th data-col="tier">Tier</th>
+<th data-col="jobs" data-tooltip="Commute time to Adobe Downtown San Jose + density of AI/ML jobs within 30-minute drive. Higher = shorter commute + more jobs nearby.">Jobs<br><span style="font-size:0.65rem;color:#475569">16%</span></th>
+<th data-col="schools" data-tooltip="GreatSchools district average rating + count of alternative schools (Montessori, Waldorf, homeschool co-ops) within 15 min. Important: family needs vaccination-exempt options.">Schools<br><span style="font-size:0.65rem;color:#475569">13%</span></th>
+<th data-col="growth" data-tooltip="5-year home price appreciation percentage. Higher = stronger market momentum and investment upside.">Growth<br><span style="font-size:0.65rem;color:#475569">12%</span></th>
+<th data-col="safety" data-tooltip="Combined violent crime rate per 1K residents + property crime rate. Higher = safer neighborhood.">Safety<br><span style="font-size:0.65rem;color:#475569">11%</span></th>
+<th data-col="diversity" data-tooltip="Simpson Diversity Index + % non-white population + immigrant-friendly culture. Critical for brown Middle Eastern family safety and belonging.">Diversity<br><span style="font-size:0.65rem;color:#475569">10%</span></th>
+<th data-col="price" data-tooltip="How much house $2M budget buys here. Higher = more affordable (better value). Based on median 3BR SFH price.">Price<br><span style="font-size:0.65rem;color:#475569">10%</span></th>
+<th data-col="community" data-tooltip="Neighborhood cohesion, owner-occupancy rate, walkable third places, community events, Persian/Brazilian diaspora presence. Higher = stronger social bonds.">Community<br><span style="font-size:0.65rem;color:#475569">9%</span></th>
+<th data-col="property" data-tooltip="Typical lot size and availability of SFH with yards. Higher = larger lots suitable for gardening, dogs, and outdoor living.">Property<br><span style="font-size:0.65rem;color:#475569">6%</span></th>
+<th data-col="survival" data-tooltip="Water supply reliability, well drilling feasibility, air quality, growing zone potential, solar viability. Higher = better self-sufficiency potential.">Survival<br><span style="font-size:0.65rem;color:#475569">6%</span></th>
+<th data-col="beach" data-tooltip="Drive time to nearest swimmable ocean beach. Higher = closer to beach (wife loves beaches).">Beach<br><span style="font-size:0.65rem;color:#475569">4%</span></th>
+<th data-col="climate" data-tooltip="Wildfire zone risk, flood zone, earthquake fault proximity, extreme heat days. Higher = fewer natural disaster risks.">Climate<br><span style="font-size:0.65rem;color:#475569">3%</span></th>
+<th data-col="median" data-tooltip="Median price for a 3BR+ single-family home in this neighborhood (2026 data).">Median $</th>
+<th data-col="commute" data-tooltip="Rush hour (8 AM weekday) drive time to Adobe's Downtown San Jose office.">Commute</th>
+<th data-col="recommendation" data-tooltip="Final recommendation from Step 3 deep dive analysis. Only Tier A neighborhoods received deep-dive recommendations.">Rec.</th>
+</tr>
+</thead>
+<tbody id="tableBody">
+</tbody>
+</table>
+</div>
+
+<script>
+const DATA = [
+  // East Bay — Alameda County (8)
+  {region:"East Bay — Alameda", neighborhood:"Fremont", weighted:8.0, tier:"A", jobs:9.5, schools:7.0, growth:8.0, safety:6.0, diversity:10.0, price:9.5, community:8.0, property:8.5, survival:6.0, beach:5.5, climate:6.5, median:"$1.15M", commute:"35 min", recommendation:"STRONG BUY", step3:true},
+  {region:"East Bay — Alameda", neighborhood:"Castro Valley", weighted:7.63, tier:"B", jobs:8.5, schools:7.0, growth:8.0, safety:5.25, diversity:9.5, price:9.0, community:8.5, property:7.5, survival:6.0, beach:6.0, climate:6.0, median:"$1.28M", commute:"40 min", recommendation:"", step3:false},
+  {region:"East Bay — Alameda", neighborhood:"Alameda", weighted:7.61, tier:"B", jobs:8.0, schools:8.0, growth:8.5, safety:6.75, diversity:10.0, price:7.0, community:7.5, property:5.0, survival:7.0, beach:7.0, climate:7.0, median:"$1.42M", commute:"38 min", recommendation:"", step3:false},
+  {region:"East Bay — Alameda", neighborhood:"Dublin", weighted:7.59, tier:"B", jobs:6.5, schools:9.0, growth:8.5, safety:8.75, diversity:8.0, price:8.0, community:6.5, property:8.5, survival:5.0, beach:5.0, climate:6.0, median:"$1.38M", commute:"55 min", recommendation:"", step3:false},
+  {region:"East Bay — Alameda", neighborhood:"Berkeley", weighted:7.51, tier:"B", jobs:6.5, schools:9.0, growth:9.0, safety:6.75, diversity:10.0, price:5.0, community:9.0, property:6.5, survival:6.0, beach:6.0, climate:6.5, median:"$1.68M", commute:"50 min", recommendation:"", step3:false},
+  {region:"East Bay — Alameda", neighborhood:"Pleasanton", weighted:7.48, tier:"A", jobs:6.5, schools:9.5, growth:8.5, safety:8.75, diversity:7.0, price:7.0, community:6.5, property:8.5, survival:5.5, beach:5.5, climate:6.0, median:"$1.65M", commute:"45 min", recommendation:"BUY", step3:true},
+  {region:"East Bay — Alameda", neighborhood:"Oakland Hills", weighted:7.43, tier:"A", jobs:8.5, schools:7.0, growth:9.5, safety:4.0, diversity:9.0, price:6.0, community:8.5, property:9.5, survival:5.5, beach:5.5, climate:6.5, median:"$1.25M", commute:"40 min", recommendation:"PASS", step3:true},
+  {region:"East Bay — Alameda", neighborhood:"Livermore", weighted:6.56, tier:"C", jobs:3.5, schools:8.0, growth:8.0, safety:7.5, diversity:7.0, price:8.0, community:6.0, property:8.5, survival:4.0, beach:4.0, climate:5.5, median:"$1.32M", commute:"65 min", recommendation:"", step3:false},
+  // East Bay — Contra Costa (7)
+  {region:"East Bay — Contra Costa", neighborhood:"San Ramon", weighted:7.22, tier:"B", jobs:9.0, schools:8.0, growth:8.0, safety:8.0, diversity:8.0, price:6.0, community:7.0, property:7.0, survival:5.5, beach:4.0, climate:6.0, median:"$1.52M", commute:"44 min", recommendation:"", step3:false},
+  {region:"East Bay — Contra Costa", neighborhood:"Walnut Creek", weighted:6.8, tier:"B", jobs:8.0, schools:7.0, growth:7.0, safety:7.0, diversity:7.0, price:7.0, community:8.0, property:7.0, survival:5.5, beach:4.0, climate:6.0, median:"$1.55M", commute:"48 min", recommendation:"", step3:false},
+  {region:"East Bay — Contra Costa", neighborhood:"Danville", weighted:6.5, tier:"C", jobs:9.0, schools:7.0, growth:6.0, safety:8.0, diversity:7.0, price:4.0, community:7.0, property:7.0, survival:5.5, beach:5.0, climate:6.0, median:"$1.65M", commute:"44 min", recommendation:"", step3:false},
+  {region:"East Bay — Contra Costa", neighborhood:"Lafayette", weighted:6.2, tier:"C", jobs:7.0, schools:9.0, growth:9.0, safety:9.0, diversity:2.0, price:6.0, community:8.0, property:9.0, survival:5.5, beach:5.0, climate:6.0, median:"$1.48M", commute:"57 min", recommendation:"", step3:false},
+  {region:"East Bay — Contra Costa", neighborhood:"Orinda", weighted:5.9, tier:"C", jobs:5.0, schools:9.0, growth:8.0, safety:10.0, diversity:3.0, price:5.0, community:8.0, property:10.0, survival:5.5, beach:6.0, climate:6.0, median:"$1.58M", commute:"59 min", recommendation:"", step3:false},
+  {region:"East Bay — Contra Costa", neighborhood:"Pleasant Hill", weighted:5.5, tier:"C", jobs:7.0, schools:7.0, growth:7.0, safety:8.0, diversity:6.0, price:8.0, community:7.0, property:6.0, survival:5.0, beach:5.0, climate:6.0, median:"$1.31M", commute:"55 min", recommendation:"", step3:false},
+  {region:"East Bay — Contra Costa", neighborhood:"Concord", weighted:5.0, tier:"D", jobs:7.0, schools:6.0, growth:8.0, safety:3.0, diversity:10.0, price:9.0, community:5.0, property:5.0, survival:5.0, beach:6.0, climate:6.0, median:"$1.28M", commute:"53 min", recommendation:"", step3:false},
+  // Peninsula (9)
+  {region:"Peninsula", neighborhood:"San Mateo", weighted:7.25, tier:"A", jobs:8.5, schools:7.6, growth:7.8, safety:8.2, diversity:7.2, price:6.8, community:8.0, property:7.5, survival:4.0, beach:2.6, climate:7.2, median:"$1.55M", commute:"30 min", recommendation:"BUY", step3:true},
+  {region:"Peninsula", neighborhood:"San Carlos", weighted:7.21, tier:"A", jobs:8.0, schools:7.8, growth:8.0, safety:7.5, diversity:6.4, price:7.2, community:7.5, property:7.8, survival:4.5, beach:2.8, climate:7.1, median:"$1.45M", commute:"22 min", recommendation:"PASS", step3:true},
+  {region:"Peninsula", neighborhood:"Foster City", weighted:7.02, tier:"B", jobs:8.4, schools:7.4, growth:8.0, safety:7.8, diversity:6.2, price:6.5, community:7.8, property:7.0, survival:4.2, beach:2.5, climate:7.0, median:"$1.65M", commute:"33 min", recommendation:"", step3:false},
+  {region:"Peninsula", neighborhood:"Burlingame", weighted:6.94, tier:"B", jobs:7.8, schools:7.3, growth:7.2, safety:7.2, diversity:6.1, price:7.3, community:7.0, property:7.6, survival:4.5, beach:2.8, climate:7.1, median:"$1.40M", commute:"28 min", recommendation:"", step3:false},
+  {region:"Peninsula", neighborhood:"Belmont", weighted:6.91, tier:"B", jobs:7.8, schools:6.9, growth:7.0, safety:7.0, diversity:5.8, price:8.5, community:6.8, property:8.2, survival:4.8, beach:3.0, climate:7.2, median:"$1.10M", commute:"25 min", recommendation:"", step3:false},
+  {region:"Peninsula", neighborhood:"Millbrae", weighted:6.85, tier:"B", jobs:8.0, schools:7.1, growth:6.8, safety:6.8, diversity:5.9, price:7.4, community:6.8, property:7.4, survival:4.8, beach:3.0, climate:7.0, median:"$1.35M", commute:"31 min", recommendation:"", step3:false},
+  {region:"Peninsula", neighborhood:"Redwood City", weighted:6.33, tier:"C", jobs:7.5, schools:7.2, growth:7.5, safety:4.2, diversity:6.9, price:8.0, community:7.0, property:7.5, survival:4.0, beach:2.5, climate:7.0, median:"$1.20M", commute:"28 min", recommendation:"", step3:false},
+  {region:"Peninsula", neighborhood:"Pacifica", weighted:5.83, tier:"C", jobs:4.0, schools:6.5, growth:4.0, safety:8.5, diversity:4.5, price:9.5, community:5.0, property:8.8, survival:7.2, beach:3.5, climate:2.5, median:"$900K", commute:"48 min", recommendation:"", step3:false},
+  {region:"Peninsula", neighborhood:"Half Moon Bay", weighted:5.41, tier:"C", jobs:2.0, schools:6.2, growth:2.5, safety:9.0, diversity:4.0, price:9.6, community:4.5, property:9.2, survival:8.0, beach:3.2, climate:2.2, median:"$850K", commute:"53 min", recommendation:"", step3:false},
+  // South Bay (8)
+  {region:"South Bay", neighborhood:"Saratoga", weighted:7.0, tier:"B", jobs:6.0, schools:8.5, growth:8.0, safety:9.0, diversity:5.0, price:4.0, community:7.5, property:8.0, survival:7.0, beach:7.5, climate:8.0, median:"$2.50M", commute:"28 min", recommendation:"", step3:false},
+  {region:"South Bay", neighborhood:"Cupertino", weighted:6.9, tier:"B", jobs:9.0, schools:8.5, growth:8.0, safety:8.0, diversity:4.0, price:5.0, community:6.0, property:5.0, survival:5.0, beach:5.0, climate:6.0, median:"$2.15M", commute:"23 min", recommendation:"", step3:false},
+  {region:"South Bay", neighborhood:"Los Gatos", weighted:6.7, tier:"B", jobs:7.0, schools:8.5, growth:8.0, safety:7.0, diversity:6.0, price:5.0, community:7.5, property:6.0, survival:7.0, beach:7.5, climate:8.0, median:"$2.20M", commute:"26 min", recommendation:"", step3:false},
+  {region:"South Bay", neighborhood:"Mountain View", weighted:6.5, tier:"C", jobs:9.0, schools:7.0, growth:7.0, safety:5.0, diversity:8.0, price:6.0, community:6.0, property:4.0, survival:5.0, beach:5.0, climate:6.0, median:"$1.93M", commute:"24 min", recommendation:"", step3:false},
+  {region:"South Bay", neighborhood:"Sunnyvale", weighted:6.5, tier:"C", jobs:9.0, schools:7.0, growth:6.0, safety:6.0, diversity:8.0, price:6.0, community:5.0, property:4.0, survival:5.0, beach:5.0, climate:6.0, median:"$1.80M", commute:"22 min", recommendation:"", step3:false},
+  {region:"South Bay", neighborhood:"Morgan Hill", weighted:6.3, tier:"C", jobs:4.0, schools:6.0, growth:5.0, safety:7.0, diversity:8.0, price:7.0, community:7.5, property:7.0, survival:6.0, beach:6.0, climate:6.0, median:"$1.55M", commute:"34 min", recommendation:"", step3:false},
+  {region:"South Bay", neighborhood:"Campbell", weighted:5.9, tier:"C", jobs:8.0, schools:7.0, growth:7.0, safety:5.0, diversity:7.0, price:6.0, community:6.0, property:5.0, survival:5.0, beach:6.0, climate:6.0, median:"$1.94M", commute:"15 min", recommendation:"", step3:false},
+  {region:"South Bay", neighborhood:"Milpitas", weighted:5.8, tier:"C", jobs:7.0, schools:6.0, growth:5.0, safety:4.0, diversity:6.0, price:7.0, community:5.0, property:4.0, survival:5.0, beach:3.0, climate:5.0, median:"$1.60M", commute:"18 min", recommendation:"", step3:false},
+  // San Jose (6)
+  {region:"San Jose", neighborhood:"Willow Glen", weighted:6.59, tier:"B", jobs:9.0, schools:7.5, growth:7.0, safety:6.0, diversity:7.0, price:6.0, community:7.5, property:5.0, survival:5.0, beach:5.0, climate:6.0, median:"$1.65M", commute:"15 min", recommendation:"", step3:false},
+  {region:"San Jose", neighborhood:"Almaden Valley", weighted:6.4, tier:"C", jobs:8.0, schools:8.0, growth:7.0, safety:7.0, diversity:6.0, price:5.5, community:7.0, property:7.0, survival:5.0, beach:5.0, climate:6.0, median:"$1.75M", commute:"18 min", recommendation:"", step3:false},
+  {region:"San Jose", neighborhood:"Rose Garden", weighted:6.25, tier:"C", jobs:9.0, schools:7.5, growth:7.0, safety:5.5, diversity:7.0, price:6.0, community:7.0, property:5.0, survival:5.0, beach:5.0, climate:6.0, median:"$1.60M", commute:"12 min", recommendation:"", step3:false},
+  {region:"San Jose", neighborhood:"Downtown SJ / SoFA", weighted:5.8, tier:"C", jobs:10.0, schools:5.5, growth:7.5, safety:3.5, diversity:8.0, price:7.0, community:5.0, property:2.0, survival:5.0, beach:5.0, climate:6.0, median:"$1.40M", commute:"3 min", recommendation:"", step3:false},
+  {region:"San Jose", neighborhood:"Cambrian Park", weighted:5.6, tier:"C", jobs:8.0, schools:6.0, growth:8.0, safety:5.0, diversity:6.5, price:7.5, community:5.5, property:6.5, survival:5.0, beach:6.0, climate:6.0, median:"$1.35M", commute:"22 min", recommendation:"", step3:false},
+  {region:"San Jose", neighborhood:"Evergreen", weighted:5.2, tier:"D", jobs:7.0, schools:6.0, growth:7.5, safety:4.5, diversity:6.5, price:8.0, community:5.0, property:8.0, survival:5.0, beach:4.0, climate:6.0, median:"$1.25M", commute:"25 min", recommendation:"", step3:false},
+  // Sacramento Valley (5)
+  {region:"Sacramento Valley", neighborhood:"Folsom", weighted:7.64, tier:"A", jobs:5.0, schools:8.0, growth:7.0, safety:8.0, diversity:7.0, price:10.0, community:7.5, property:8.5, survival:5.5, beach:2.0, climate:5.0, median:"$875K", commute:"90 min", recommendation:"HOLD", step3:true},
+  {region:"Sacramento Valley", neighborhood:"El Dorado Hills", weighted:6.59, tier:"B", jobs:3.0, schools:8.5, growth:7.0, safety:9.0, diversity:5.0, price:9.0, community:7.0, property:9.0, survival:5.0, beach:2.0, climate:5.0, median:"$1.05M", commute:"100 min", recommendation:"", step3:false},
+  {region:"Sacramento Valley", neighborhood:"Roseville", weighted:6.52, tier:"B", jobs:3.5, schools:7.5, growth:7.0, safety:7.5, diversity:6.0, price:10.0, community:6.5, property:8.0, survival:5.0, beach:2.0, climate:5.0, median:"$725K", commute:"95 min", recommendation:"", step3:false},
+  {region:"Sacramento Valley", neighborhood:"Davis", weighted:6.11, tier:"C", jobs:2.0, schools:8.0, growth:5.0, safety:6.5, diversity:7.0, price:8.5, community:8.0, property:7.0, survival:5.0, beach:2.0, climate:5.0, median:"$850K", commute:"110 min", recommendation:"", step3:false},
+  {region:"Sacramento Valley", neighborhood:"Elk Grove", weighted:5.28, tier:"D", jobs:2.0, schools:6.5, growth:5.5, safety:5.5, diversity:9.0, price:9.5, community:5.5, property:7.5, survival:5.0, beach:2.0, climate:5.0, median:"$650K", commute:"105 min", recommendation:"", step3:false},
+];
+
+// Sort by weighted score descending initially
+DATA.sort((a, b) => b.weighted - a.weighted);
+
+let currentSort = { col: 'weighted', dir: 'desc' };
+
+function scoreClass(val) {
+  const v = Math.round(val);
+  return `score-cell score-${Math.min(10, Math.max(1, v))}`;
+}
+
+function tierBadge(tier) {
+  return `<span class="tier-badge badge-${tier}">${tier}</span>`;
+}
+
+function recClass(rec) {
+  if (!rec) return '';
+  if (rec === 'STRONG BUY') return 'rec-strong-buy';
+  if (rec === 'BUY') return 'rec-buy';
+  if (rec === 'HOLD') return 'rec-hold';
+  if (rec === 'PASS') return 'rec-pass';
+  return '';
+}
+
+function renderTable(data) {
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = data.map((d, i) => `
+    <tr class="tier-${d.tier}">
+      <td>${i + 1}</td>
+      <td>${d.region}</td>
+      <td><strong>${d.neighborhood}</strong></td>
+      <td class="score-cell weighted-cell" style="color:${d.weighted >= 7.5 ? '#10b981' : d.weighted >= 6.5 ? '#60a5fa' : d.weighted >= 5.5 ? '#fbbf24' : '#f87171'}">${d.weighted.toFixed(2)}</td>
+      <td>${tierBadge(d.tier)}</td>
+      <td class="${scoreClass(d.jobs)}">${d.jobs.toFixed(1)}</td>
+      <td class="${scoreClass(d.schools)}">${d.schools.toFixed(1)}</td>
+      <td class="${scoreClass(d.growth)}">${d.growth.toFixed(1)}</td>
+      <td class="${scoreClass(d.safety)}">${d.safety.toFixed(1)}</td>
+      <td class="${scoreClass(d.diversity)}">${d.diversity.toFixed(1)}</td>
+      <td class="${scoreClass(d.price)}">${d.price.toFixed(1)}</td>
+      <td class="${scoreClass(d.community)}">${d.community.toFixed(1)}</td>
+      <td class="${scoreClass(d.property)}">${d.property.toFixed(1)}</td>
+      <td class="${scoreClass(d.survival)}">${d.survival.toFixed(1)}</td>
+      <td class="${scoreClass(d.beach)}">${d.beach.toFixed(1)}</td>
+      <td class="${scoreClass(d.climate)}">${d.climate.toFixed(1)}</td>
+      <td>${d.median}</td>
+      <td>${d.commute}</td>
+      <td class="recommendation ${recClass(d.recommendation)}">${d.recommendation || '—'}</td>
+    </tr>
+  `).join('');
+}
+
+function getFilteredData() {
+  let filtered = [...DATA];
+  const region = document.getElementById('filterRegion').value;
+  const tier = document.getElementById('filterTier').value;
+  const search = document.getElementById('searchBox').value.toLowerCase();
+  const step3Only = document.getElementById('filterStep3').checked;
+
+  if (region !== 'all') filtered = filtered.filter(d => d.region === region);
+  if (tier !== 'all') filtered = filtered.filter(d => d.tier === tier);
+  if (search) filtered = filtered.filter(d => d.neighborhood.toLowerCase().includes(search) || d.region.toLowerCase().includes(search));
+  if (step3Only) filtered = filtered.filter(d => d.step3);
+
+  // Sort
+  const col = currentSort.col;
+  const dir = currentSort.dir === 'asc' ? 1 : -1;
+  filtered.sort((a, b) => {
+    let va = a[col], vb = b[col];
+    if (typeof va === 'string') return dir * va.localeCompare(vb);
+    return dir * (va - vb);
+  });
+
+  return filtered;
+}
+
+function refresh() {
+  renderTable(getFilteredData());
+  // Update sort indicators
+  document.querySelectorAll('th').forEach(th => {
+    th.classList.remove('sorted-asc', 'sorted-desc');
+    if (th.dataset.col === currentSort.col) {
+      th.classList.add(currentSort.dir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+    }
+  });
+}
+
+// Sort on header click
+document.querySelectorAll('th[data-col]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.col;
+    if (currentSort.col === col) {
+      currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+      currentSort.col = col;
+      currentSort.dir = (col === 'neighborhood' || col === 'region' || col === 'tier' || col === 'median' || col === 'commute' || col === 'recommendation') ? 'asc' : 'desc';
+    }
+    refresh();
+  });
+});
+
+// Filter handlers
+document.getElementById('filterRegion').addEventListener('change', refresh);
+document.getElementById('filterTier').addEventListener('change', refresh);
+document.getElementById('searchBox').addEventListener('input', refresh);
+document.getElementById('filterStep3').addEventListener('change', refresh);
+
+// Initial render
+refresh();
+</script>
+</body>
+</html>

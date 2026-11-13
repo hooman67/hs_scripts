@@ -1,0 +1,3767 @@
+{
+  "version": "v5-pilot-accepted-prompt-cases-v1-normalized",
+  "status": "human_review_required",
+  "manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/manifest.json",
+  "manifest_sha256": "8ff485ef7078c6cb9ec950885bbdc0c1bd50a0ca4933fefca4d541c8857e3c8c",
+  "selection_status": "not_yet_performed",
+  "human_review_status": "pending",
+  "launchable": false,
+  "counts": {
+    "manifest_cases": 8,
+    "accepted_cases": 3,
+    "status_counts": {
+      "normalized_validator_passed_pending_human_review": 3,
+      "normalized_validator_rejected": 5
+    },
+    "candidates": 60
+  },
+  "cases": {
+    "elitebook__laptop_FrontRightCloseUp": {
+      "case_id": "elitebook__laptop_FrontRightCloseUp",
+      "group_id": "elitebook__laptop_FrontRight",
+      "pair_id": "elitebook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontRightCloseUp",
+      "view_role": "close_up",
+      "product_identity_conflict": false,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/elitebook__laptop_FrontRightCloseUp.json",
+      "input_sha256": "ad041affb68d886cecafd9216b5704926eb503fd133690102d2ffd7874150356",
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/elitebook__laptop_FrontRightCloseUp/sample_001.json",
+      "record_sha256": "29d3ae404f42cab412cacd69681e7781c3bd6a63107211b803ad2804e6dfc000",
+      "raw_parsed_output_sha256": "f3a7bc6a127721cda7dc7d340495fff98e45054d4d405829059e6886ed0ca778",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/elitebook__laptop_FrontRightCloseUp__sample_001.json",
+      "normalized_output_file_sha256": "9038794316d112a138efba9c08c1de281d13514f4b271e7e9d87b2baa65c62e5",
+      "normalized_output_semantic_sha256": "f3a7bc6a127721cda7dc7d340495fff98e45054d4d405829059e6886ed0ca778",
+      "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalization_logs/elitebook__laptop_FrontRightCloseUp__sample_001.json",
+      "normalization_log_file_sha256": "d167be83a5aed0f1a971e61988546fa36031550c68015ed3917eba56773fb88a",
+      "validation_audit_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/validation/elitebook__laptop_FrontRightCloseUp.json",
+      "raw_record_status": "raw_response_preserved_pending_derived_audit",
+      "status": "normalized_validator_passed_pending_human_review",
+      "human_review_status": "pending",
+      "launchable": false,
+      "candidates": [
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p1",
+          "rank": 1,
+          "text_sha256": "013d425d7f0d5634784f363b589d818c437b7ec56466f75fd3362c83016077d7",
+          "id": "p1",
+          "environment": "Office",
+          "subsetting": "modern corporate office desk",
+          "text": "A modern corporate office desk in warm natural light, with a polished, inviting atmosphere.",
+          "ctech_reference_id": "CT01",
+          "ctech_reference_score": 88,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the corporate office desk and warm natural lighting.",
+            "Removed shelving, plants, artwork, décor, and room depth for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Office environment as CT01 with only camera-driven deletion of background details.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e7",
+            "e10"
+          ],
+          "explanation": "Both documents support business and office work across locations; the tight view preserves only a corporate office work surface and broad work context.",
+          "creative_departures": [
+            "Warm natural light and polished atmosphere are C-Tech-led rather than source-specific."
+          ],
+          "visual_signature": {
+            "surface": "modern corporate office desk",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p2",
+          "rank": 2,
+          "text_sha256": "63f796dff74e97041a104951c16f7966a1506e5a4906ccba50b4a5158b8dbaee",
+          "id": "p2",
+          "environment": "Home",
+          "subsetting": "modern home workspace",
+          "text": "A modern home workspace with a simple desk in warm natural light. Lived-in and authentic with subtle imperfections, warm neutral tones.",
+          "ctech_reference_id": "CT06",
+          "ctech_reference_score": 88,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the modern home workspace, warm natural light, lived-in feel, and warm neutral tones.",
+            "Removed books, notebooks, papers, plants, and everyday objects for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Home workspace as CT06 with camera-driven prop deletion and an explicit desk support.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e6",
+            "e7",
+            "e11"
+          ],
+          "explanation": "Both documents name home or distributed work; the prompt preserves a home work surface without adding unsupported task materials.",
+          "creative_departures": [
+            "Simple desk finish, warm natural light, and lived-in atmosphere are reference-led details."
+          ],
+          "visual_signature": {
+            "surface": "simple desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p3",
+          "rank": 3,
+          "text_sha256": "de9e8722f346a08304af1f3f3cb4cfdad9eff552d3ae9bc2b15112c4bac2995b",
+          "id": "p3",
+          "environment": "Home",
+          "subsetting": "modern home desk",
+          "text": "A modern home workspace with a wooden desk in warm natural light. Lived-in and authentic with subtle imperfections and a warm neutral tone.",
+          "ctech_reference_id": "CT18",
+          "ctech_reference_score": 87,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the modern home workspace, warm natural light, and warm neutral tone.",
+            "Removed the book, notebook, stack of papers, and everyday objects for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Home workspace as CT18, simplified to the support surface and lighting.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e6",
+            "e7",
+            "e11"
+          ],
+          "explanation": "Both documents support home and distributed work; the final text keeps only the home workspace setting because props are not allowed.",
+          "creative_departures": [
+            "Wooden desk and warm neutral atmosphere are C-Tech-led details."
+          ],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p4",
+          "rank": 4,
+          "text_sha256": "15551759001489736c94144008eb4baaebef9391339eee4727a73ac79caf15f7",
+          "id": "p4",
+          "environment": "Office",
+          "subsetting": "bright corporate office desk",
+          "text": "A bright, modern corporate office desk in warm natural light. Lived-in but tidy and professional.",
+          "ctech_reference_id": "CT03",
+          "ctech_reference_score": 86,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the bright corporate office, warm natural light, and tidy professional feel.",
+            "Removed multiple workstations, chairs, notebooks, papers, plants, and personal touches for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Office environment as CT03 with larger scene elements deleted for camera feasibility.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e7",
+            "e10"
+          ],
+          "explanation": "The business-office setting is supported by both documents; visible work activity is reduced to a general professional desk context.",
+          "creative_departures": [
+            "Warm natural light and tidy lived-in styling come from the C-Tech office reference."
+          ],
+          "visual_signature": {
+            "surface": "bright modern corporate office desk",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p5",
+          "rank": 5,
+          "text_sha256": "c6b41587fe080da4d1a9435836fc36108ef0be8fca3e4bc3c47d67a89d41ceee",
+          "id": "p5",
+          "environment": "Home",
+          "subsetting": "lived-in home workspace",
+          "text": "A lived-in home workspace with a wooden desk. Soft daylight creates a warm, layered, casually imperfect atmosphere.",
+          "ctech_reference_id": "CT05",
+          "ctech_reference_score": 85,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the lived-in home workspace, wooden desk, soft daylight, and casually imperfect tone.",
+            "Removed notebook, spiral pad, loose papers, pens, coffee, chair, plants, shelving, books, and residential objects for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Home workspace as CT05 with substantial camera-driven deletion but surviving wording and atmosphere.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e6",
+            "e7",
+            "e11"
+          ],
+          "explanation": "Home work is supported by both documents; the camera profile prevents source-related work materials from appearing.",
+          "creative_departures": [
+            "Soft daylight and casually imperfect atmosphere are reference-led."
+          ],
+          "visual_signature": {
+            "surface": "wooden desk in a lived-in home workspace",
+            "light": "soft daylight",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p6",
+          "rank": 6,
+          "text_sha256": "7022de4fcd81a4ff2c357728219667ad6e2586b285738440c010434bca70e59e",
+          "id": "p6",
+          "environment": "Office",
+          "subsetting": "open corporate office desk",
+          "text": "An open modern corporate office with a simple desk in warm natural lighting. Polished and inviting with a clean professional feel.",
+          "ctech_reference_id": "CT02",
+          "ctech_reference_score": 84,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the open modern corporate office, desk, warm natural lighting, and polished inviting atmosphere.",
+            "Removed multiple workstations, shelving, plants, artwork, décor, and architectural depth for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Office environment as CT02, reduced to one support surface and lighting.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e7",
+            "e10"
+          ],
+          "explanation": "Both documents support offices and distributed business work; the final text expresses only the broad office context.",
+          "creative_departures": [
+            "Simple desk wording and clean professional feel are C-Tech-led rather than source-specific."
+          ],
+          "visual_signature": {
+            "surface": "simple desk in an open modern corporate office",
+            "light": "warm natural lighting",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p7",
+          "rank": 7,
+          "text_sha256": "7f2ae293bab3b49bfd8f545b609f028287c7967393a9d475ff825ef3a9c8ef94",
+          "id": "p7",
+          "environment": "Home",
+          "subsetting": "calm home workspace",
+          "text": "A modern home workspace with a wooden desk. Soft daylight creates a calm residential atmosphere.",
+          "ctech_reference_id": "CT04",
+          "ctech_reference_score": 84,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the modern home workspace, wooden desk, and soft daylight.",
+            "Removed notebook, spiral pad, pen, papers, coffee mug, windows, curtains, chair, plants, shelving, and residential furnishings for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Home workspace as CT04, simplified for the zero-prop close view.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e6",
+            "e7",
+            "e11"
+          ],
+          "explanation": "Both documents explicitly include home or distributed work settings; activity remains broad because no work materials can appear.",
+          "creative_departures": [
+            "Soft daylight and calm residential tone are C-Tech-led."
+          ],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "soft daylight",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p8",
+          "rank": 8,
+          "text_sha256": "5429e8c95291e3d4a448ab9a281423ef936254668bd1649f0a623c8ab141ef77",
+          "id": "p8",
+          "environment": "Office",
+          "subsetting": "corporate office table with integrated shelving",
+          "text": "A bright, modern corporate office featuring a small table with integrated shelving as the main focal point. Warm natural light creates an open, professional yet lived-in atmosphere.",
+          "ctech_reference_id": "CT13",
+          "ctech_reference_score": 82,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the bright corporate office, small table with integrated shelving, warm natural light, and professional lived-in atmosphere.",
+            "Removed books, office supplies, papers, cup of pens, personal touches, surrounding desks, ergonomic chairs, plants, and wall placement for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Office environment as CT13 with the combined furniture unit retained and contents/background removed.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e7",
+            "e10"
+          ],
+          "explanation": "Both sources support office and business-location contexts; the prompt keeps only a corporate support surface and professional atmosphere.",
+          "creative_departures": [
+            "Integrated shelving furniture and warm natural light are reference-led details."
+          ],
+          "visual_signature": {
+            "surface": "small table with integrated shelving in a bright modern corporate office",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p9",
+          "rank": 9,
+          "text_sha256": "7ca3edd291d64a327d65f244d301ac0ac94741b59fcccc94166c367d0fee829a",
+          "id": "p9",
+          "environment": "Creative Studio",
+          "subsetting": "bright creative office desk",
+          "text": "A bright, modern creative office with a simple desk in warm natural light. Lived-in and authentic with subtle imperfections.",
+          "ctech_reference_id": "CT10",
+          "ctech_reference_score": 86,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the bright modern creative office, simple desk, warm natural light, and lived-in authentic atmosphere.",
+            "Removed sketchbooks, papers, books, plants, and creative materials for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Creative Studio environment as CT10 with props deleted for camera limits.",
+          "source_relevance_score": 40,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e4",
+            "e8",
+            "e9",
+            "e11"
+          ],
+          "explanation": "The sources support creation, collaboration, and business workflows, but a creative office is an inferred workplace subsetting and no creative materials survive the camera crop.",
+          "creative_departures": [
+            "Creative office setting is inferred from supported creation/work cues, not explicitly named.",
+            "Warm natural light and lived-in styling are C-Tech-led."
+          ],
+          "visual_signature": {
+            "surface": "simple desk in a bright modern creative office",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p10",
+          "rank": 10,
+          "text_sha256": "1663ef84a79c78781fa08f5af6447d9e281acb444d5591ed0f6aec4065212fdd",
+          "id": "p10",
+          "environment": "Creative Studio",
+          "subsetting": "creative office wooden table",
+          "text": "A modern creative office with a medium wooden table. A focused workspace atmosphere.",
+          "ctech_reference_id": "CT09",
+          "ctech_reference_score": 74,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Kept the modern creative office and medium wooden table.",
+            "Removed notebook, pen, design materials, artwork, cabinet, plants, bookshelves, windows, and layered furnishings for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Creative Studio environment as CT09, but heavily simplified beyond deletion into a close adaptation.",
+          "source_relevance_score": 40,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e4",
+            "e8",
+            "e9",
+            "e11"
+          ],
+          "explanation": "Creative business work is adjacent to the source's creation and collaboration cues; the final view cannot show the sourced tasks or materials.",
+          "creative_departures": [
+            "Creative office subsetting and focused atmosphere are inferred from broader work and creation cues."
+          ],
+          "visual_signature": {
+            "surface": "medium wooden table in a modern creative office",
+            "light": "",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p11",
+          "rank": 11,
+          "text_sha256": "03d53268500e1de5faa54d6bedcfa3710fa7ee47dfb268c5765c9f0e9640a089",
+          "id": "p11",
+          "environment": "Creative Studio",
+          "subsetting": "creative studio work table",
+          "text": "A bright, modern creative office with a simple work table in warm natural light. Lived-in and authentic with warm neutral tones.",
+          "ctech_reference_id": "CT10",
+          "ctech_reference_score": 74,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Kept the bright modern creative office, warm natural light, and lived-in authentic tone.",
+            "Changed simple desks to a single work table and removed sketchbooks, papers, books, plants, and creative materials for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Creative Studio environment as CT10, with a small support-surface change and required prop deletion.",
+          "source_relevance_score": 40,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e4",
+            "e8",
+            "e9",
+            "e11"
+          ],
+          "explanation": "The sources support broad creation and business workflow, while the creative studio setting remains an inferred adjacent workplace.",
+          "creative_departures": [
+            "Creative studio/work-table setting is inferred rather than directly sourced.",
+            "Warm neutral styling is reference-led."
+          ],
+          "visual_signature": {
+            "surface": "simple work table in a bright modern creative office",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p12",
+          "rank": 12,
+          "text_sha256": "e417eb35dd1d2482d16f2aa0498b7aaaa95c1d21114c1e4109fd207337e5214a",
+          "id": "p12",
+          "environment": "Home",
+          "subsetting": "living-room end table",
+          "text": "A modern home living room featuring a stylish end table in warm natural light. A cozy, lived-in atmosphere with warm neutral tones.",
+          "ctech_reference_id": "CT17",
+          "ctech_reference_score": 88,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the modern home living room, stylish end table, warm natural light, cozy lived-in atmosphere, and warm neutral tones.",
+            "Removed accent chair, plants, textiles, furniture, and everyday objects for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Home living-room environment as CT17, simplified to the end table and lighting.",
+          "source_relevance_score": 35,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e7"
+          ],
+          "explanation": "Both documents mention home as a work-across-locations setting, but the living-room end table does not express the source's work activities.",
+          "creative_departures": [
+            "Living-room end table, cozy styling, and warm natural light are C-Tech-led."
+          ],
+          "visual_signature": {
+            "surface": "stylish end table in a modern home living room",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p13",
+          "rank": 13,
+          "text_sha256": "1a60e4b19460d43eb2f9330e7bcc7b26229d730a9dbd2efb465f60660aa1f904",
+          "id": "p13",
+          "environment": "Home",
+          "subsetting": "living-room coffee table",
+          "text": "A modern home living room with a simple coffee table in warm natural light. Cozy, lived-in, and comfortable with warm neutral tones.",
+          "ctech_reference_id": "CT16",
+          "ctech_reference_score": 73,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Kept the modern home living room, warm natural light, cozy lived-in atmosphere, and warm neutral tones.",
+            "Introduced a simple coffee table as the visible support surface and removed couch, furniture, plants, textiles, and everyday objects for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Home living-room environment as CT16, adapted to include a feasible support surface for the camera.",
+          "source_relevance_score": 35,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e7"
+          ],
+          "explanation": "Home is supported by both documents, but this living-room surface is atmosphere-led rather than a visible source task.",
+          "creative_departures": [
+            "Coffee table and living-room styling are C-Tech-led, not source-specific."
+          ],
+          "visual_signature": {
+            "surface": "simple coffee table in a modern home living room",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p14",
+          "rank": 14,
+          "text_sha256": "fae02c3df468e894c414faf2eee70655069205ff3e978d5ea1d511334ede66ab",
+          "id": "p14",
+          "environment": "Café",
+          "subsetting": "modern coffee shop workspace",
+          "text": "A modern coffee shop workspace focused on a lived-in table. Warm, casual light gives the table an everyday café feel.",
+          "ctech_reference_id": "CT08",
+          "ctech_reference_score": 76,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Kept the modern coffee shop workspace and lived-in table.",
+            "Removed coffee cup, notebook, loose papers, pen, glasses, pastry plate, and water glass for the tight zero-prop view; added simple warm light."
+          ],
+          "ctech_explanation": "Same Café environment as CT08, but with all props removed and light adapted.",
+          "source_relevance_score": 27.5,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 10,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e7",
+            "e10"
+          ],
+          "explanation": "The sources support shared-space and distributed work; a coffee shop workspace is an inferred adjacent setting with no source materials visible.",
+          "creative_departures": [
+            "Coffee shop is inferred from shared-space cues; it is not explicitly named.",
+            "Warm casual café light is C-Tech-led."
+          ],
+          "visual_signature": {
+            "surface": "lived-in table in a modern coffee shop workspace",
+            "light": "warm, casual light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p15",
+          "rank": 15,
+          "text_sha256": "beb1906555e7c3c10cfec92bc784aac32dfc9bcb6dc2c8ef48944538d094d73a",
+          "id": "p15",
+          "environment": "Café",
+          "subsetting": "cozy neighborhood café table",
+          "text": "A cozy neighborhood café with a small wooden table. Soft natural light creates an inviting, lived-in atmosphere.",
+          "ctech_reference_id": "CT12",
+          "ctech_reference_score": 86,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the cozy neighborhood café, small wooden table, soft natural light, and inviting lived-in atmosphere.",
+            "Removed sketchbook, pens, coffee cup, wood finishes, framed art, plants, and seating for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Café environment as CT12, simplified to surface and light.",
+          "source_relevance_score": 15,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e7"
+          ],
+          "explanation": "Shared spaces are source-supported, but a neighborhood café table is an inferred adjacent place and does not show source work activity.",
+          "creative_departures": [
+            "Neighborhood café is inferred from shared-space cues, not explicitly sourced.",
+            "Soft natural light and lived-in café atmosphere are C-Tech-led."
+          ],
+          "visual_signature": {
+            "surface": "small wooden table in a cozy neighborhood café",
+            "light": "soft natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p16",
+          "rank": 16,
+          "text_sha256": "02b9164c10d86943734a23e88704d83e15d36cf7d78f87962c5477a1ccadd4f6",
+          "id": "p16",
+          "environment": "Café",
+          "subsetting": "small wooden café table",
+          "text": "A warm small wooden café table in a modern neighborhood café. Natural light keeps the atmosphere relaxed and inviting.",
+          "ctech_reference_id": "CT07",
+          "ctech_reference_score": 84,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the warm small wooden café table and modern neighborhood café setting.",
+            "Removed notebook, pen, coffee cup, artwork, shelving, plants, seating, and large windows for the tight zero-prop view; retained simple natural light."
+          ],
+          "ctech_explanation": "Same Café environment as CT07 with all props and background elements removed.",
+          "source_relevance_score": 15,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e7"
+          ],
+          "explanation": "The sources support shared spaces broadly; the café is an adjacent ordinary setting without visible source activity.",
+          "creative_departures": [
+            "Neighborhood café setting is inferred from shared-space language.",
+            "Natural café light is reference-led."
+          ],
+          "visual_signature": {
+            "surface": "warm small wooden café table",
+            "light": "natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p17",
+          "rank": 17,
+          "text_sha256": "c63e416301cfdabf461204bc4174590e7ea19acbbb4c93c1698e1071db932e17",
+          "id": "p17",
+          "environment": "Gaming",
+          "subsetting": "modern gaming workspace",
+          "text": "A modern gaming workspace with a dark desk. Vibrant RGB lighting creates an organized space with layered neon tones.",
+          "ctech_reference_id": "CT14",
+          "ctech_reference_score": 86,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the modern gaming workspace, dark desk, RGB lighting, organized feel, and layered neon tones.",
+            "Removed illuminated display shelving, collectibles, wall art, cabinetry, and organized displays for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Gaming environment as CT14, reduced to desk and lighting for the camera profile.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "Neither document supports a gaming environment or gaming activity; this is included for required category diversity and follows the C-Tech gaming reference.",
+          "creative_departures": [
+            "Gaming environment is unsupported by both source documents.",
+            "RGB/neon lighting is C-Tech-led."
+          ],
+          "visual_signature": {
+            "surface": "dark desk in a modern gaming workspace",
+            "light": "vibrant RGB lighting",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p18",
+          "rank": 18,
+          "text_sha256": "0647231228eb3bfa31e382ac7b540df4dda5bc4ee303acd2bd64098254170e43",
+          "id": "p18",
+          "environment": "Gaming",
+          "subsetting": "stylish gaming room desk",
+          "text": "A stylish gaming room with a dark wood desk. Vibrant RGB lighting and soft neon glows add depth and atmosphere.",
+          "ctech_reference_id": "CT15",
+          "ctech_reference_score": 85,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept the stylish gaming room, dark wood desk, RGB lighting, soft neon glows, and atmosphere.",
+            "Removed textured wall, floating shelves, collectibles, décor, wall art, and cabinetry for the tight zero-prop view."
+          ],
+          "ctech_explanation": "Same Gaming environment as CT15 with camera-driven removal of background and display details.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "Gaming is not supported by either source document; this remains a C-Tech-led category alternative.",
+          "creative_departures": [
+            "Gaming room is unsupported by the sources.",
+            "Dark wood desk and neon lighting follow the C-Tech gaming reference."
+          ],
+          "visual_signature": {
+            "surface": "dark wood desk in a stylish gaming room",
+            "light": "vibrant RGB lighting and soft neon glows",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p19",
+          "rank": 19,
+          "text_sha256": "63aae787b3e85cdfdd7da8cb17b852da24498922730fed33968e608845bbab46",
+          "id": "p19",
+          "environment": "Education",
+          "subsetting": "bright classroom table",
+          "text": "A bright classroom table in warm natural light. Lived-in but tidy and ready for focused study.",
+          "ctech_reference_id": "CT03",
+          "ctech_reference_score": 66,
+          "ctech_relationship": "category_extension",
+          "ctech_changes": [
+            "Changed the corporate office environment to a classroom table for required Education coverage.",
+            "Kept bright light and tidy lived-in professionalism; removed all office props and background details for the tight zero-prop view."
+          ],
+          "ctech_explanation": "This changes CT03 from Office to Education, so it is a category extension rather than a same-environment edit.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "Neither document supports a classroom or education setting; this prompt is included only to satisfy required environment coverage.",
+          "creative_departures": [
+            "Classroom setting is unsupported by both source documents.",
+            "Focused study language is C-Tech-led and category-led."
+          ],
+          "visual_signature": {
+            "surface": "bright classroom table",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        },
+        {
+          "candidate_key": "elitebook__laptop_FrontRightCloseUp::p20",
+          "rank": 20,
+          "text_sha256": "f02fe517b6aabe3322c472889df304857683b095a5bc1e1eece7e10e3ef0b715",
+          "id": "p20",
+          "environment": "Education",
+          "subsetting": "library study table",
+          "text": "A library study table in warm natural light. Lived-in and authentic with subtle imperfections and a warm neutral tone.",
+          "ctech_reference_id": "CT18",
+          "ctech_reference_score": 64,
+          "ctech_relationship": "category_extension",
+          "ctech_changes": [
+            "Changed the home workspace environment to a library study table for required Education coverage.",
+            "Kept warm natural light, lived-in authenticity, subtle imperfections, and warm neutral tone; removed all props for the tight zero-prop view."
+          ],
+          "ctech_explanation": "This changes CT18 from Home to Education, making it a category extension with C-Tech wording retained where feasible.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "The documents do not name education, libraries, classrooms, or study settings; this is a required category departure.",
+          "creative_departures": [
+            "Library study setting is unsupported by both source documents.",
+            "Warm neutral study-table atmosphere is adapted from the C-Tech home reference."
+          ],
+          "visual_signature": {
+            "surface": "library study table",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Removed all local props.",
+            "Removed all background details.",
+            "Omitted people per camera profile."
+          ]
+        }
+      ],
+      "debug": {
+        "source_evidence": [
+          {
+            "id": "e1",
+            "path": "",
+            "quote": "client sites, airports, shared spaces, and home",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e2",
+            "path": "",
+            "quote": "business environments that require standardized, secure, manageable PCs",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e3",
+            "path": "",
+            "quote": "medium-to-large organizations with hybrid workforces",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e4",
+            "path": "",
+            "quote": "sketching, presenting, collaborating, and moving between focused work and live discussion",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e5",
+            "path": "",
+            "quote": "mobile leaders who need ideas, meetings, and decisions to move fluidly across work modes",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e6",
+            "path": "",
+            "quote": "Move work from idea to meeting to decision",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e7",
+            "path": "",
+            "quote": "client sites, shared spaces, home, and offices",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e8",
+            "path": "",
+            "quote": "sketching, presenting, collaboration, and focused execution across changing locations",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e9",
+            "path": "",
+            "quote": "Calls, content, and apps can overlap in a single session",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e10",
+            "path": "",
+            "quote": "Sensitive work follows the day across client, office, and shared-space moments",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e11",
+            "path": "",
+            "quote": "secure business productivity, AI-enhanced workflows, and hybrid collaboration",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e12",
+            "path": "",
+            "quote": "helping concepts move from sketch to shared review to decision",
+            "document": "source_messaging"
+          }
+        ],
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "explanation": "Flexible productivity and sketch/present/collaborate cues support ordinary office, home workspace, and creative-office choices, but the tight zero-prop camera prevents sketchbooks, papers, or other task materials from appearing."
+          },
+          {
+            "ksp_id": "KSP2",
+            "explanation": "Hybrid-meeting clarity is relevant to the office/work context, but it is mostly omitted from prompt text because showing calls, people, or hardware would exceed the camera/profile and product-boundary constraints."
+          },
+          {
+            "ksp_id": "KSP3",
+            "explanation": "Work across client, office, shared-space, and home moments supports distributed-location variety; security features are not translated into visible props."
+          },
+          {
+            "ksp_id": "KSP4",
+            "explanation": "Busy sessions and overlapping calls/content/apps support broad professional workspace choices, but no apps, screens, or computing hardware are requested."
+          }
+        ],
+        "value_proposition": {
+          "explanation": "Both documents align around mobile business work moving from ideas to meetings and decisions across locations. The prompts preserve compatible ordinary settings—office, home, shared-space café, and adjacent creative work—without mentioning or depicting the target device."
+        },
+        "input_assessment": "The smart brief and source messaging are aligned on a premium business convertible for mobile leaders, hybrid work, meetings, sketching, collaboration, secure work, and distributed locations. The selected camera is a tight laptop FrontRightCloseUp view with no local props or background details, so most source tasks can only be represented as broad setting context.",
+        "count_explanation": "Returned exactly 20 distinct prompts. Home, Office, Education, Gaming, Café, and Creative Studio are all represented; source-grounded Office/Home prompts sort first, followed by adjacent Creative/Café and required creative-departure categories.",
+        "used_fallback": false,
+        "ignored_fields": [
+          "BrightEdge search rankings and competitor URLs were not used as scene evidence.",
+          "Transport/run metadata and review status were not used as scene evidence.",
+          "Product brand, model, device specifications, and hardware appearance were excluded from prompt text by the stage boundary.",
+          "Detailed security, processor, Wi-Fi, camera, audio, OS, and AI feature claims were not converted into props or scenes."
+        ],
+        "diversity_summary": "Within a zero-prop tight view, diversity is carried by ordinary support surfaces and settings: corporate desks, home workspace desks, home living-room tables, creative-office work tables, café tables, gaming desks, a classroom table, and a library study table. Visible object diversity is intentionally limited by the camera profile.",
+        "limitations": [
+          "The camera profile allows zero local props and zero background details, so notebooks, papers, coffee cups, plants, shelving, people, and room-depth cues were removed even when present in C-Tech references.",
+          "Source activities such as sketching, presenting, video calls, collaboration, and sensitive work are mostly not visible because no people, devices, screens, or task materials can be included.",
+          "Café, Creative Studio, Education, and Gaming alternatives are less source-grounded than Office/Home; Education and Gaming are required category departures.",
+          "No runtime image analysis or SKU-specific visual inspection was performed."
+        ],
+        "camera": {
+          "requested_tag": "laptop_FrontRightCloseUp",
+          "resolved_tag": "laptop_FrontRightCloseUp",
+          "device_type": "laptop",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "tight",
+          "elevation": "oblique",
+          "max_local_props": 0,
+          "max_background_details": 0,
+          "people_policy": "omit"
+        },
+        "document_assessments": [
+          {
+            "document": "smart_brief",
+            "useful_scene_cues": [
+              "Mobile leaders and hybrid executive creators.",
+              "Business environments and medium-to-large organizations with hybrid workforces.",
+              "Work across meetings, travel, focused work, live presentations, shared spaces, client sites, airports, and home.",
+              "Activities include sketching, presenting, collaborating, content review, video calls, multitasking, and secure mobile work."
+            ],
+            "limitations": [
+              "Most useful activities require people, papers, or devices that are not allowed by the camera/profile or product boundary.",
+              "Education and gaming settings are not supported.",
+              "Many technical claims are not scene evidence."
+            ]
+          },
+          {
+            "document": "source_messaging",
+            "useful_scene_cues": [
+              "Ideas moving from sketch to meeting to decision.",
+              "Sketching, presenting, collaboration, focused execution, hybrid meetings, and busy work sessions.",
+              "Distributed work across client sites, shared spaces, home, and offices.",
+              "Secure business productivity and hybrid collaboration as broad context."
+            ],
+            "limitations": [
+              "The messaging is product-centric and technical; device-specific claims cannot appear in prompts.",
+              "No explicit café, classroom, library, gaming room, or detailed creative studio setting is named.",
+              "Tasks like video conferencing and app switching cannot be shown without excluded hardware or people."
+            ]
+          }
+        ],
+        "source_conflicts": []
+      }
+    },
+    "deskjet_2955__printer_FrontRightCloseUp": {
+      "case_id": "deskjet_2955__printer_FrontRightCloseUp",
+      "group_id": "deskjet_2955__printer_FrontRight",
+      "pair_id": "deskjet_2955",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "view_role": "close_up",
+      "product_identity_conflict": false,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/deskjet_2955__printer_FrontRightCloseUp.json",
+      "input_sha256": "8dfb44e6d83b2d11c6358adb1c3e58f065eab31fa9d2c569d4ac6b42085c70d3",
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/deskjet_2955__printer_FrontRightCloseUp/sample_003.json",
+      "record_sha256": "713289cc735b88358e866962d498a53b73bf9462925cf21ca210cdafad4dc9ea",
+      "raw_parsed_output_sha256": "280ff52791e7f118f36856c733ba93ccd88c98644cabddbbe79d3a0929654c9f",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/deskjet_2955__printer_FrontRightCloseUp__sample_003.json",
+      "normalized_output_file_sha256": "6e361264032c172a8cf63161780c096de920bdac4887e1987611bdee74fb09dd",
+      "normalized_output_semantic_sha256": "66bf4090e99739e8b8680d9d4e50d6ea953a5c145bba888cfd79cf17f5eac335",
+      "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalization_logs/deskjet_2955__printer_FrontRightCloseUp__sample_003.json",
+      "normalization_log_file_sha256": "a7e612e3653e3fa2f63ac91d2477032830f98ea96da0de8ad04280be0d17f32d",
+      "validation_audit_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/validation/deskjet_2955__printer_FrontRightCloseUp.json",
+      "raw_record_status": "raw_response_preserved_pending_derived_audit",
+      "status": "normalized_validator_passed_pending_human_review",
+      "human_review_status": "pending",
+      "launchable": false,
+      "candidates": [
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p1",
+          "rank": 1,
+          "text_sha256": "c293193e5c578946a02ec16d11bd4932b36a3999ec83023d73d8d2fc2f2a0fd2",
+          "id": "p1",
+          "environment": "Home",
+          "subsetting": "modern home workspace",
+          "text": "A modern home workspace with a wooden desk holding a return label. Warm natural light creates a cozy, lived-in atmosphere with warm neutral tones.",
+          "ctech_reference_id": "CT04",
+          "ctech_reference_score": 76,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Reduced CT04 to one local prop for the tight view.",
+            "Replaced the notebook cluster with a return label."
+          ],
+          "ctech_explanation": "Same home-workspace environment as CT04, with ordinary prop substitution and camera-driven deletion of background details.",
+          "source_relevance_score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e7",
+            "e10"
+          ],
+          "explanation": "Both documents explicitly support home household tasks and return labels; the home desk and label preserve that use without showing the device.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [
+              "return label"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Extra desk items and room furnishings from the reference omitted for the tight oblique view.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p2",
+          "rank": 2,
+          "text_sha256": "a32c60d9ca88182a6253b6c5623fb513c2dd887d13283d15b36ca60849a77700",
+          "id": "p2",
+          "environment": "Home",
+          "subsetting": "lived-in home workspace",
+          "text": "A lived-in home workspace with a wooden desk holding a school worksheet. Soft daylight creates a warm, casually imperfect atmosphere.",
+          "ctech_reference_id": "CT05",
+          "ctech_reference_score": 76,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Reduced CT05 to one local prop.",
+            "Replaced the larger paper-and-coffee arrangement with a school worksheet."
+          ],
+          "ctech_explanation": "Same lived-in home-workspace setting as CT05, simplified to fit the tight camera and source-specific worksheet.",
+          "source_relevance_score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e7",
+            "e10"
+          ],
+          "explanation": "The prompt directly reflects supported home learning and school worksheet use from both documents.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "wooden desk in a lived-in home workspace",
+            "light": "soft daylight",
+            "local_props": [
+              "school worksheet"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Reference background furnishings and additional tabletop objects omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p3",
+          "rank": 3,
+          "text_sha256": "2725a0364337ef2ea167534b2e6ba212d8a34d9ca0b93f3c11f55227f5d48b72",
+          "id": "p3",
+          "environment": "Home",
+          "subsetting": "modern home workspace",
+          "text": "A modern home workspace with a wooden desk holding a simple household form. Warm natural light keeps the scene lived-in and authentic with subtle imperfections.",
+          "ctech_reference_id": "CT18",
+          "ctech_reference_score": 76,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Reduced CT18 to one paper item.",
+            "Changed the stack of papers to a household form."
+          ],
+          "ctech_explanation": "Same home-workspace environment and warm natural light as CT18, with a small source-led prop change.",
+          "source_relevance_score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e8",
+            "e10"
+          ],
+          "explanation": "Both sources name forms as everyday home tasks; the household form on a home desk preserves that use case.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [
+              "simple household form"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Additional CT18 props and room detail omitted for the tight view.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p4",
+          "rank": 4,
+          "text_sha256": "f830476f4eefd9c42695e6c4210c312fc14ab682ce6f8a715df47d13dcc34695",
+          "id": "p4",
+          "environment": "Home",
+          "subsetting": "modern home workspace",
+          "text": "A modern home workspace with a wooden desk holding a household list. Warm natural light creates a lived-in, authentic feeling with warm neutral tones.",
+          "ctech_reference_id": "CT06",
+          "ctech_reference_score": 75,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Reduced CT06 to a single surface and one prop.",
+            "Used a household list instead of the broader books, notebooks, and papers."
+          ],
+          "ctech_explanation": "Same home-workspace style as CT06, simplified and given one source-supported home organization item.",
+          "source_relevance_score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e4",
+            "e7",
+            "e9"
+          ],
+          "explanation": "Both sources support home organization and household lists; the prompt keeps that task visible through one ordinary paper item.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [
+              "household list"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Plants, books, and casually arranged objects omitted for camera limits.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p5",
+          "rank": 5,
+          "text_sha256": "6f5d20160e7645f9aaba199cc8741ab2136da3b81921ef25ebf73b82caa73d61",
+          "id": "p5",
+          "environment": "Home",
+          "subsetting": "modern home workspace",
+          "text": "A modern home workspace with a wooden desk holding a recipe page. Warm natural light creates a cozy, lived-in atmosphere.",
+          "ctech_reference_id": "CT18",
+          "ctech_reference_score": 75,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Reduced CT18 to one prop.",
+            "Replaced the reference paper stack with a recipe page."
+          ],
+          "ctech_explanation": "Same home-workspace setting and warm light as CT18, with a source-supported recipe page as the single local prop.",
+          "source_relevance_score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            }
+          },
+          "evidence_ids": [
+            "e4",
+            "e9"
+          ],
+          "explanation": "Both documents name recipes within light creative or household project use; the home desk expresses that supported home context.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [
+              "recipe page"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Other papers and everyday objects from CT18 omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p6",
+          "rank": 6,
+          "text_sha256": "e7a28bac2062668e67a1712de6666a2fc0aba5856e8ae91e435e9cfc24f360e6",
+          "id": "p6",
+          "environment": "Home",
+          "subsetting": "modern home workspace",
+          "text": "A modern home workspace with a wooden desk holding a visual planning page. Warm natural light keeps the scene lived-in and authentic.",
+          "ctech_reference_id": "CT06",
+          "ctech_reference_score": 75,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Reduced CT06 to one prop and no background details.",
+            "Used a visual planning page as the single paper item."
+          ],
+          "ctech_explanation": "Same home-workspace environment as CT06, with one source-led creative planning item replacing the broader everyday object mix.",
+          "source_relevance_score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            }
+          },
+          "evidence_ids": [
+            "e4",
+            "e9"
+          ],
+          "explanation": "Both sources explicitly mention visual planning pages in home creative use; the prompt keeps the setting and material plainly visible.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [
+              "visual planning page"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Reference plants, books, and additional objects omitted for the tight view.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p7",
+          "rank": 7,
+          "text_sha256": "c2ed84af191fb3f101f946e29feafef41e1f9c37944015cbc54901c645c7e989",
+          "id": "p7",
+          "environment": "Home",
+          "subsetting": "modern home workspace",
+          "text": "A modern home workspace with a wooden desk holding a colorful worksheet. Warm natural light creates a warm, casually imperfect atmosphere.",
+          "ctech_reference_id": "CT05",
+          "ctech_reference_score": 75,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Reduced CT05 to one local paper item.",
+            "Used a colorful worksheet instead of the original notebook, papers, pens, and coffee."
+          ],
+          "ctech_explanation": "Same lived-in home-workspace style as CT05, adapted around a single worksheet for camera feasibility.",
+          "source_relevance_score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 30,
+              "materials": 20,
+              "use_context": 20
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e3",
+            "e7",
+            "e9"
+          ],
+          "explanation": "The home worksheet and learning context are directly supported by both source documents.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [
+              "colorful worksheet"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Room furnishings and extra tabletop props from the reference omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p8",
+          "rank": 8,
+          "text_sha256": "2f3a71f96646b6589dfffa1f253dfd38fd6214f59619c039271de65aac43ea21",
+          "id": "p8",
+          "environment": "Home",
+          "subsetting": "modern home workspace",
+          "text": "A modern home workspace with a wooden desk holding a stack of papers. Warm natural light creates a lived-in and authentic home setting.",
+          "ctech_reference_id": "CT18",
+          "ctech_reference_score": 90,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept CT18's home workspace, warm light, and stack of papers.",
+            "Deleted other CT18 props for the one-prop camera limit."
+          ],
+          "ctech_explanation": "Very close to CT18, mainly simplified for the tight view while preserving the ordinary home paperwork feel.",
+          "source_relevance_score": 85,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 20,
+              "materials": 15,
+              "use_context": 20
+            },
+            "source_messaging": {
+              "setting": 30,
+              "activity": 20,
+              "materials": 15,
+              "use_context": 20
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e7",
+            "e8",
+            "e10"
+          ],
+          "explanation": "The stack of papers is a broad stand-in for supported everyday home documents, forms, and organization rather than a specific named item.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [
+              "stack of papers"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Book, notebook, and additional everyday objects omitted for camera limits.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p9",
+          "rank": 9,
+          "text_sha256": "c2bb1cff5c64d34e579aca25bcc7bbaa746f009b874ccc9906d5a4c125994b6b",
+          "id": "p9",
+          "environment": "Office",
+          "subsetting": "modern corporate office desk",
+          "text": "A bright, open modern corporate office with a simple desk holding a form. Warm natural lighting creates a polished, inviting atmosphere.",
+          "ctech_reference_id": "CT03",
+          "ctech_reference_score": 75,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Reduced CT03 to one desk and one paper item.",
+            "Changed the office paper mix to a single form and removed background details."
+          ],
+          "ctech_explanation": "Same corporate-office environment as CT03, but simplified heavily for the tight view and source task cue.",
+          "source_relevance_score": 50,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 10,
+              "activity": 20,
+              "materials": 20,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 20,
+              "materials": 20,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e8",
+            "e10"
+          ],
+          "explanation": "Forms are source-supported, but a corporate office is not the main supported environment, so this is a work-setting departure.",
+          "creative_departures": [
+            "Corporate office setting inferred from C-Tech rather than supplied as the primary source environment."
+          ],
+          "visual_signature": {
+            "surface": "simple desk in a bright modern corporate office",
+            "light": "warm natural lighting",
+            "local_props": [
+              "form"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Multiple workstations, chairs, plants, and personal touches omitted for the tight view.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p10",
+          "rank": 10,
+          "text_sha256": "16a53d332b89c4a06fbd8065823eb5b203430ed787b1ab2f2a1f01484542a4e0",
+          "id": "p10",
+          "environment": "Creative Studio",
+          "subsetting": "modern creative office table",
+          "text": "A bright, modern creative office with a simple desk holding a visual planning page. Warm natural light creates a lived-in and authentic atmosphere.",
+          "ctech_reference_id": "CT10",
+          "ctech_reference_score": 76,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Reduced CT10 to one simple desk and one prop.",
+            "Replaced the broader creative materials with a visual planning page."
+          ],
+          "ctech_explanation": "Same creative-office environment as CT10, with a source-supported planning-page prop and tight-view simplification.",
+          "source_relevance_score": 45,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 20,
+              "materials": 20,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 20,
+              "materials": 20,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e4",
+            "e9"
+          ],
+          "explanation": "The visual planning page is source-supported, but a creative studio environment is not; the scene is a C-Tech-led departure with one compatible material.",
+          "creative_departures": [
+            "Creative studio setting is not supplied as a customer environment."
+          ],
+          "visual_signature": {
+            "surface": "simple desk in a bright modern creative office",
+            "light": "warm natural light",
+            "local_props": [
+              "visual planning page"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Books, plants, papers, and room depth from CT10 omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p11",
+          "rank": 11,
+          "text_sha256": "db383716d2944a8e43cec355c9dbd8caaea0d0aba004b4900fcfeaa920805fc7",
+          "id": "p11",
+          "environment": "Education",
+          "subsetting": "simple classroom table",
+          "text": "A simple classroom table holding a school worksheet. Soft natural light creates a tidy, familiar learning atmosphere.",
+          "ctech_reference_id": "CT04",
+          "ctech_reference_score": 65,
+          "ctech_relationship": "category_extension",
+          "ctech_changes": [
+            "Changed CT04's home workspace to a classroom table.",
+            "Kept the ordinary paper-on-table structure and removed all background details."
+          ],
+          "ctech_explanation": "Education is a category extension from the home reference, adapted simply because no direct Education reference exists.",
+          "source_relevance_score": 45,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 20,
+              "materials": 20,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 20,
+              "materials": 20,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e7",
+            "e10"
+          ],
+          "explanation": "Worksheets and learning are source-supported, but the classroom setting is not; home learning does not establish a school environment.",
+          "creative_departures": [
+            "Classroom setting inferred for category coverage rather than sourced."
+          ],
+          "visual_signature": {
+            "surface": "simple classroom table",
+            "light": "soft natural light",
+            "local_props": [
+              "school worksheet"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Home-room furnishings from CT04 omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p12",
+          "rank": 12,
+          "text_sha256": "55e95aeaca66965d5dbc70b6ca3200f2abded043253df02a63df6809f8da7c50",
+          "id": "p12",
+          "environment": "Office",
+          "subsetting": "modern corporate office table",
+          "text": "A bright, modern corporate office featuring a small table holding neatly stacked papers. Warm natural light creates an open, professional yet lived-in atmosphere.",
+          "ctech_reference_id": "CT13",
+          "ctech_reference_score": 88,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept CT13's corporate office, small table, stacked papers, and warm natural light.",
+            "Deleted integrated shelving contents and surrounding office depth for camera limits."
+          ],
+          "ctech_explanation": "Very close to CT13, with camera-driven deletion of background and extra props.",
+          "source_relevance_score": 35,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 10,
+              "activity": 10,
+              "materials": 15,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 10,
+              "materials": 15,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e8",
+            "e10"
+          ],
+          "explanation": "Stacked papers weakly overlap with everyday documents, but the corporate office context is not sourced.",
+          "creative_departures": [
+            "Corporate office setting is C-Tech-led rather than source-led."
+          ],
+          "visual_signature": {
+            "surface": "small table in a bright modern corporate office",
+            "light": "warm natural light",
+            "local_props": [
+              "neatly stacked papers"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Integrated shelving, books, office supplies, cup of pens, surrounding desks, chairs, and plants omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p13",
+          "rank": 13,
+          "text_sha256": "b988d8716ff578215eb8f0ae3495e51266bc00fa68f82549c9e92ec9f981664c",
+          "id": "p13",
+          "environment": "Education",
+          "subsetting": "library study table",
+          "text": "A library study table holding a stack of papers. Warm natural light keeps the setting quiet and lived-in.",
+          "ctech_reference_id": "CT18",
+          "ctech_reference_score": 64,
+          "ctech_relationship": "category_extension",
+          "ctech_changes": [
+            "Changed CT18's home workspace to a library study table.",
+            "Kept a stack of papers and warm natural light while removing other props."
+          ],
+          "ctech_explanation": "Library study is an Education category extension from CT18's home paperwork scene.",
+          "source_relevance_score": 25,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 10,
+              "materials": 10,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 10,
+              "materials": 10,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e7",
+            "e8"
+          ],
+          "explanation": "The papers broadly resemble supported documents or worksheets, but the library setting is not in the sources.",
+          "creative_departures": [
+            "Library setting inferred for Education coverage."
+          ],
+          "visual_signature": {
+            "surface": "library study table",
+            "light": "warm natural light",
+            "local_props": [
+              "stack of papers"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Home furniture and additional CT18 objects omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p14",
+          "rank": 14,
+          "text_sha256": "44ba5e138d7513b5b8d75a7699a62b3a909d6b34fd8aeffb0e4aac4d87ede26b",
+          "id": "p14",
+          "environment": "Creative Studio",
+          "subsetting": "modern creative office table",
+          "text": "A modern creative office with a medium wooden table holding a sketchbook. Warm natural light creates an inviting workspace.",
+          "ctech_reference_id": "CT09",
+          "ctech_reference_score": 86,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept CT09's creative office, wooden table, and sketchbook-like creative material.",
+            "Removed pen, design materials, and all background elements."
+          ],
+          "ctech_explanation": "Close to CT09 with only camera-driven reductions and a single ordinary creative prop.",
+          "source_relevance_score": 20,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 10,
+              "materials": 10,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 10,
+              "materials": 10,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [
+            "e3",
+            "e7",
+            "e9"
+          ],
+          "explanation": "Light creative projects are source-supported, but a sketchbook in a creative office is only a loose stand-in and the setting is not sourced.",
+          "creative_departures": [
+            "Creative office setting and sketchbook are C-Tech-led alternatives."
+          ],
+          "visual_signature": {
+            "surface": "medium wooden table in a modern creative office",
+            "light": "warm natural light",
+            "local_props": [
+              "sketchbook"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Framed artwork, side cabinet, plants, bookshelves, windows, layered furnishings, pen, and design materials omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p15",
+          "rank": 15,
+          "text_sha256": "5da9147dd33e25af64bc4e1d10c29114b6fd6a30928c1a0efbd403c7ca3abe10",
+          "id": "p15",
+          "environment": "Education",
+          "subsetting": "classroom table",
+          "text": "A classroom table with a notebook. Soft natural light creates a simple, everyday study setting.",
+          "ctech_reference_id": "CT06",
+          "ctech_reference_score": 63,
+          "ctech_relationship": "category_extension",
+          "ctech_changes": [
+            "Changed CT06's home workspace to a classroom table.",
+            "Kept one notebook and removed all background objects."
+          ],
+          "ctech_explanation": "Education category extension from a home workspace reference, simplified for the camera.",
+          "source_relevance_score": 10,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 10,
+              "materials": 5,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [
+            "e1"
+          ],
+          "explanation": "The study cue is only weakly adjacent to source mentions of students and learning households; the classroom setting is unsourced.",
+          "creative_departures": [
+            "Classroom setting and notebook study scene are inferred for diversity."
+          ],
+          "visual_signature": {
+            "surface": "classroom table",
+            "light": "soft natural light",
+            "local_props": [
+              "notebook"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Books, papers, plants, and everyday objects from CT06 omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p16",
+          "rank": 16,
+          "text_sha256": "022fc3ee06b413271251698fba86610ef5378219c7ca364b2b14d2ab846afef2",
+          "id": "p16",
+          "environment": "Café",
+          "subsetting": "modern coffee shop workspace",
+          "text": "A modern coffee shop workspace focused on a lived-in wooden table with a ceramic coffee cup. Soft natural light creates an inviting atmosphere.",
+          "ctech_reference_id": "CT11",
+          "ctech_reference_score": 88,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept CT11's coffee shop workspace, lived-in table, and ceramic coffee cup.",
+            "Removed notebook, pen, glasses, plate, crumbs, and water glass."
+          ],
+          "ctech_explanation": "Very close to CT11, with only camera-driven reduction to one prop and no background detail.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "The café and coffee cup are unsupported by both source documents; retained for C-Tech diversity.",
+          "creative_departures": [
+            "Coffee shop setting is not source-supported."
+          ],
+          "visual_signature": {
+            "surface": "lived-in wooden table in a modern coffee shop workspace",
+            "light": "soft natural light",
+            "local_props": [
+              "ceramic coffee cup"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Additional tabletop items and all room depth omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p17",
+          "rank": 17,
+          "text_sha256": "c63e416301cfdabf461204bc4174590e7ea19acbbb4c93c1698e1071db932e17",
+          "id": "p17",
+          "environment": "Gaming",
+          "subsetting": "modern gaming workspace",
+          "text": "A modern gaming workspace with a dark desk. Vibrant RGB lighting creates an organized space with layered neon tones.",
+          "ctech_reference_id": "CT14",
+          "ctech_reference_score": 88,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept CT14's gaming workspace, dark desk, and RGB lighting.",
+            "Removed illuminated shelving, collectibles, wall art, cabinetry, and background layers."
+          ],
+          "ctech_explanation": "Same gaming environment as CT14, reduced to a surface-and-light scene for the tight profile.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "Gaming is not supported by the sources; this is a C-Tech-led alternative for category coverage.",
+          "creative_departures": [
+            "Gaming workspace is unsupported by the product sources."
+          ],
+          "visual_signature": {
+            "surface": "dark desk in a modern gaming workspace",
+            "light": "vibrant RGB lighting with layered neon tones",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Display shelving, collectibles, wall art, cabinetry, and room depth omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p18",
+          "rank": 18,
+          "text_sha256": "4f72a76fb6af4f30c1d55c11e63da0d4e91d467247235c91520ec69a26250f90",
+          "id": "p18",
+          "environment": "Gaming",
+          "subsetting": "stylish gaming room desk",
+          "text": "A stylish gaming room with a dark wood desk. Soft neon glows add depth and atmosphere, with warm neutral finishes.",
+          "ctech_reference_id": "CT15",
+          "ctech_reference_score": 88,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept CT15's gaming room, dark wood desk, neon glow, and warm neutral finishes.",
+            "Removed textured wall, shelves, collectibles, décor, wall art, and cabinetry."
+          ],
+          "ctech_explanation": "Same gaming environment as CT15, simplified to match the tight no-background camera scope.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "No source document supports a gaming room; this remains a reference-led creative departure.",
+          "creative_departures": [
+            "Gaming room setting is unsupported by the sources."
+          ],
+          "visual_signature": {
+            "surface": "dark wood desk in a stylish gaming room",
+            "light": "soft neon glows",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Textured wall, floating shelves, collectibles, décor, wall art, and cabinetry omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p19",
+          "rank": 19,
+          "text_sha256": "4397929a246036ba96d0c3ef12d12b2b0c68632d982384f866284bd02fa1f08a",
+          "id": "p19",
+          "environment": "Office",
+          "subsetting": "open modern corporate office desk",
+          "text": "An open modern corporate office with a desk holding a notebook. Warm natural lighting creates a polished, inviting atmosphere.",
+          "ctech_reference_id": "CT03",
+          "ctech_reference_score": 86,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Kept CT03's corporate office, desk, notebook, and warm natural light.",
+            "Deleted the additional workstations, plants, papers, chairs, and personal touches."
+          ],
+          "ctech_explanation": "Same corporate-office environment as CT03, reduced to fit the tight one-prop profile.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "The sources do not support a corporate notebook scene; this is retained as a C-Tech-led office alternative.",
+          "creative_departures": [
+            "Corporate office notebook scene is unsupported by the product sources."
+          ],
+          "visual_signature": {
+            "surface": "desk in an open modern corporate office",
+            "light": "warm natural lighting",
+            "local_props": [
+              "notebook"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Multiple workstations and background office details omitted.",
+            "No people included under the camera profile."
+          ]
+        },
+        {
+          "candidate_key": "deskjet_2955__printer_FrontRightCloseUp::p20",
+          "rank": 20,
+          "text_sha256": "a68b8340341b00248a67b9d281bde390db3e29ac0a2bae6b1059d7a4ba023b52",
+          "id": "p20",
+          "environment": "Café",
+          "subsetting": "cozy neighborhood café table",
+          "text": "A cozy neighborhood café with a small wooden table holding a notebook. Soft natural light creates an inviting, lived-in atmosphere.",
+          "ctech_reference_id": "CT12",
+          "ctech_reference_score": 78,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Reduced CT12 to one notebook on a small wooden table.",
+            "Removed pens, coffee cup, finishes, seating, framed art, and plants for camera limits."
+          ],
+          "ctech_explanation": "Same café environment as CT12, with a small prop simplification and ordinary notebook substitution.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "Neither source supports café use; this is a C-Tech-led lifestyle alternative.",
+          "creative_departures": [
+            "Café setting and notebook work scene are unsupported by the sources."
+          ],
+          "visual_signature": {
+            "surface": "small wooden table in a cozy neighborhood café",
+            "light": "soft natural light",
+            "local_props": [
+              "notebook"
+            ],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Framed art, plants, seating, pens, and coffee cup omitted.",
+            "No people included under the camera profile."
+          ]
+        }
+      ],
+      "debug": {
+        "source_evidence": [
+          {
+            "id": "e1",
+            "path": "",
+            "quote": "value-conscious home households—especially parents and household managers who need simple, occasional printing for school, returns, forms, and everyday organization",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e2",
+            "path": "",
+            "quote": "return label, school worksheet, form, or creative activity",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e3",
+            "path": "",
+            "quote": "colorful learning pages, simple activities, and light creative projects",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e4",
+            "path": "",
+            "quote": "household lists, recipes, small photos, or visual planning pages",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e5",
+            "path": "",
+            "quote": "Students, young renters, and hybrid workers with light document needs",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e6",
+            "path": "",
+            "quote": "the source names DeskJet 2955, references DeskJet 2900 in footnotes, and includes a DeskJet 4300 photo-printing passage",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e7",
+            "path": "",
+            "quote": "return labels, forms, scans, school worksheets, home organization, and light creative projects",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e8",
+            "path": "",
+            "quote": "Labels, forms, worksheets, and documents are easier to manage at home.",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e9",
+            "path": "",
+            "quote": "HP Printables gives access to educational worksheets through the HP app or website for worksheets, household lists, recipes, and visual planning pages.",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e10",
+            "path": "",
+            "quote": "occasional home printing, scanning, and copying across return labels, forms, school worksheets, household organization, and simple creative projects",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e11",
+            "path": "",
+            "quote": "Home tasks should not turn printing into a project.",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e12",
+            "path": "",
+            "quote": "The HP DeskJet 2955 All-in-One Printer helps occasional home printing feel simple",
+            "document": "source_messaging"
+          }
+        ],
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "explanation": "Simple everyday phone-to-page use contributes indirectly through home task materials such as forms and labels; app and connectivity claims are omitted from prompt prose."
+          },
+          {
+            "ksp_id": "KSP2",
+            "explanation": "Practical home output is the strongest contributor, reflected in labels, forms, worksheets, documents, and home organization scenes."
+          },
+          {
+            "ksp_id": "KSP3",
+            "explanation": "Accessible value and responsible-printing cues are mostly omitted because savings, recycling, and recycled-content claims do not naturally translate into ordinary camera-safe environments."
+          },
+          {
+            "ksp_id": "KSP4",
+            "explanation": "Learning and light creativity contributes to school worksheets, colorful worksheets, recipes, household lists, and visual planning pages in home-led prompts."
+          }
+        ],
+        "value_proposition": {
+          "explanation": "Both documents support a simple, good-value home-use story centered on everyday household tasks. The prompts express that shared value through ordinary home desks and named paper materials, without showing or describing the target device."
+        },
+        "input_assessment": "The smart brief and source messaging are rich in home-use cues: household managers, parents, school worksheets, return labels, forms, home organization, recipes, and light creative projects. They provide limited support for office and no explicit support for café, gaming, classroom, library, or creative-studio environments, so those categories are kept as C-Tech-led alternatives with lower source relevance.",
+        "count_explanation": "Generated exactly 20 distinct prompts. The set covers Home, Office, Education, Gaming, Café, and Creative Studio while respecting the tight camera profile of at most one local prop, no background details, and no people.",
+        "used_fallback": false,
+        "ignored_fields": [
+          "Transport metadata and runtime/session fields, if any, were ignored.",
+          "Source authoring directions and copy guardrails were treated as data rather than instructions overriding the prompt contract.",
+          "Device appearance, brand, model, screen, ports, position, and state were excluded from prompt text."
+        ],
+        "diversity_summary": "The bank starts with source-grounded home household-task scenes, then expands into office, education, creative studio, café, and gaming references. Because the selected camera is tight with no background detail, diversity is expressed mainly through ordinary setting names, support surfaces, lighting, and one visible prop where allowed.",
+        "limitations": [
+          "The camera profile prevents room-depth details, visible shelving, windows, plants, seating, and most of the richer C-Tech background atmosphere.",
+          "The source documents support home use much more strongly than other lifestyle categories, so required non-home categories are often creative departures.",
+          "The target device is intentionally excluded from all prompt texts, limiting direct expression of print, scan, copy, app, and connectivity claims."
+        ],
+        "camera": {
+          "requested_tag": "printer_FrontRightCloseUp",
+          "resolved_tag": "printer_FrontRightCloseUp",
+          "device_type": "printer",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "tight",
+          "elevation": "oblique",
+          "max_local_props": 1,
+          "max_background_details": 0,
+          "people_policy": "omit"
+        },
+        "document_assessments": [
+          {
+            "document": "smart_brief",
+            "useful_scene_cues": [
+              "Primary home-household audience, especially parents and household managers.",
+              "Everyday home tasks including returns, forms, school worksheets, organization, recipes, and visual planning pages.",
+              "Secondary cues for students, first-time buyers, and light home-office users."
+            ],
+            "limitations": [
+              "Contains many technical, claim, SEO, and substantiation details that do not become lifestyle scenes.",
+              "Office support is mostly home-office or secondary-user context, not corporate office.",
+              "Flags source-integrity gaps across DeskJet references, so product-dependent claims were avoided."
+            ]
+          },
+          {
+            "document": "source_messaging",
+            "useful_scene_cues": [
+              "Everyday home tasks with return labels, forms, scans, school worksheets, home organization, and light creative projects.",
+              "KSPs for practical home output, learning worksheets, household lists, recipes, and visual planning pages.",
+              "Occasional home-use context and intermittent household task framing."
+            ],
+            "limitations": [
+              "Little to no support for café, gaming, classroom, library, corporate office, or creative-studio settings.",
+              "Many app, wireless, value, recycling, and recycled-content claims are not visible environmental cues.",
+              "Repeated KSP copy variants describe the same messages and were not treated as additional evidence."
+            ]
+          }
+        ],
+        "source_conflicts": [
+          {
+            "description": "The smart brief flags unresolved cross-model source references, while the source messaging presents the DeskJet 2955 message consistently. The prompts therefore avoid product-dependent use claims and use only shared ordinary home-task cues.",
+            "evidence_ids": [
+              "e6",
+              "e12"
+            ],
+            "handling": "No device appearance, model-specific feature, or hardware-dependent scene was included; shared paper-task and home-setting cues were retained."
+          }
+        ]
+      }
+    },
+    "cashmere__laptop_FrontRightCloseUp": {
+      "case_id": "cashmere__laptop_FrontRightCloseUp",
+      "group_id": "cashmere__laptop_FrontRight",
+      "pair_id": "cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontRightCloseUp",
+      "view_role": "close_up",
+      "product_identity_conflict": true,
+      "input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/cashmere__laptop_FrontRightCloseUp.json",
+      "input_sha256": "cc5e575ad5ce579fdf6046e4dc9aa4ebd3d1fd400cc2029f6cb821fc5b231c6f",
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/cashmere__laptop_FrontRightCloseUp/sample_001.json",
+      "record_sha256": "1f4af2cf85c21181323b725c53c5cf9812b5409da1a008a971db931f7c88e3b7",
+      "raw_parsed_output_sha256": "81f883f2ffebc0cb8383741de05b4d915679e0fa7ac7e74343ae509fd6fc4625",
+      "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/cashmere__laptop_FrontRightCloseUp__sample_001.json",
+      "normalized_output_file_sha256": "bafbfdfea24f7146cf68d0acceb453c933aeacf6f935d79541a5e68e8f6e1477",
+      "normalized_output_semantic_sha256": "450cbf35375a23aaa0053bcdcd82ce6cf3d369bcdb57fd0d245b11e6ada5df1e",
+      "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalization_logs/cashmere__laptop_FrontRightCloseUp__sample_001.json",
+      "normalization_log_file_sha256": "1b8b3603b8d98c3f1fae39313aeac7f9a015d5543c7e866315821011a695482a",
+      "validation_audit_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/validation/cashmere__laptop_FrontRightCloseUp.json",
+      "raw_record_status": "raw_response_preserved_pending_derived_audit",
+      "status": "normalized_validator_passed_pending_human_review",
+      "human_review_status": "pending",
+      "launchable": false,
+      "candidates": [
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p1",
+          "rank": 1,
+          "text_sha256": "133e50625dc1edb2804e7ea526df81f0537916637b927be15c59ee5c7ba42591",
+          "id": "p1",
+          "environment": "Office",
+          "subsetting": "bright corporate office desk",
+          "text": "A bright, open modern corporate office with a simple desk and warm natural light. Lived-in but tidy and professional.",
+          "ctech_reference_id": "CT03",
+          "ctech_reference_score": 88,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Deleted notebooks, papers, plants, chairs, and workstation depth for the tight zero-prop view.",
+            "Kept the bright modern corporate office, simple desk, warm light, and tidy professional mood."
+          ],
+          "ctech_explanation": "Same Office environment as CT03 with camera-driven deletions only.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            },
+            "source_messaging": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e5",
+            "e11",
+            "e12",
+            "e13"
+          ],
+          "explanation": "The smart brief explicitly supports office-based mobile work and broad multitasking; source messaging supports hybrid work and wherever-work-happens context. No work materials survive the tight view.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "simple desk in a bright modern corporate office",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "No local props or background details due to laptop_FrontRightCloseUp tight zero-prop profile."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p2",
+          "rank": 2,
+          "text_sha256": "1ad84282a8b1b4c8aa4f03b012adca7accb2fbae44aa6b412ff6bdb72a6b1c44",
+          "id": "p2",
+          "environment": "Office",
+          "subsetting": "open corporate office desk",
+          "text": "An open modern corporate office with a clean desk. Warm natural lighting creates a polished, inviting atmosphere.",
+          "ctech_reference_id": "CT01",
+          "ctech_reference_score": 87,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed shelving, plants, artwork, décor, furnishings, and architectural depth.",
+            "Kept the open modern corporate office, clean desk, and warm natural lighting."
+          ],
+          "ctech_explanation": "Same Office environment as CT01, simplified for the tight view.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            },
+            "source_messaging": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e5",
+            "e11",
+            "e12",
+            "e13"
+          ],
+          "explanation": "Office work is directly supported by the smart brief and broadly supported by the source messaging’s hybrid-work language. The prompt expresses setting and professional work context only.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "clean desk in an open modern corporate office",
+            "light": "warm natural lighting",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Reference room details omitted to respect zero background allowance."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p3",
+          "rank": 3,
+          "text_sha256": "66bdd134e116dc5263b1a031df6618a01dbfb14237a966a7fcdee17ece5a21d5",
+          "id": "p3",
+          "environment": "Office",
+          "subsetting": "corporate office focal table",
+          "text": "A bright, modern corporate office featuring a small table as the main focal point. Professional yet lived-in, enhanced by warm natural light.",
+          "ctech_reference_id": "CT13",
+          "ctech_reference_score": 85,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed integrated shelving, books, papers, pen cup, surrounding desks, chairs, and plants.",
+            "Kept the bright modern corporate office, small focal table, professional lived-in feel, and warm light."
+          ],
+          "ctech_explanation": "Same Office environment as CT13 with the object list reduced for the tight profile.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            },
+            "source_messaging": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e5",
+            "e11",
+            "e12",
+            "e13"
+          ],
+          "explanation": "The corporate office table fits the brief’s office mobility context and the source messaging’s hybrid-work value. No source-named materials are visible.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "small table in a bright modern corporate office",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Integrated shelving and all tabletop props omitted for camera feasibility."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p4",
+          "rank": 4,
+          "text_sha256": "9b26de232276486a2ad3520094841aad1065ee1e1f3887c1f4b4e058d4fece8d",
+          "id": "p4",
+          "environment": "Office",
+          "subsetting": "modern office work surface",
+          "text": "An open modern corporate office with a simple desk in warm natural lighting. A polished, inviting atmosphere.",
+          "ctech_reference_id": "CT02",
+          "ctech_reference_score": 84,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Deleted multiple workstations, shelving, plants, artwork, décor, and floor-plan depth.",
+            "Kept the modern corporate office, simple desk, warm light, and polished atmosphere."
+          ],
+          "ctech_explanation": "Same Office environment as CT02, reduced to the visible support and lighting.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            },
+            "source_messaging": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e5",
+            "e11",
+            "e12",
+            "e13"
+          ],
+          "explanation": "The office setting and professional work context are supported by the smart brief, with broad hybrid-work support from source messaging. The tight view removes activity materials.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "simple desk in an open modern corporate office",
+            "light": "warm natural lighting",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Expansive office depth and background furnishings omitted for the tight view."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p5",
+          "rank": 5,
+          "text_sha256": "5fed0838fb4e833e80f8611a74bb9a5272d4110d0968ea549aabf2d83b640acc",
+          "id": "p5",
+          "environment": "Office",
+          "subsetting": "tidy professional office desk",
+          "text": "A modern corporate office desk in warm natural lighting. Polished and inviting, with a tidy professional feel.",
+          "ctech_reference_id": "CT01",
+          "ctech_reference_score": 76,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Condensed CT01 to a tighter desk-led office description.",
+            "Omitted all background décor and layered furnishings."
+          ],
+          "ctech_explanation": "Same Office environment as CT01, but rephrased more tightly around the surface.",
+          "source_relevance_score": 50,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            },
+            "source_messaging": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e5",
+            "e11",
+            "e12",
+            "e13"
+          ],
+          "explanation": "This is a grounded professional office scene from the smart brief and source messaging’s hybrid-work context. No visible task materials remain.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "modern corporate office desk",
+            "light": "warm natural lighting",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "No props, people, or room-depth details included because the selected view is tight with zero background allowance."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p6",
+          "rank": 6,
+          "text_sha256": "b1e1986a77dac8620ee56e248a78fd9ce666c9e819157b07ffac3d108813e11c",
+          "id": "p6",
+          "environment": "Home",
+          "subsetting": "modern home desk",
+          "text": "A modern home workspace with a simple desk in warm natural light. Lived-in and authentic with subtle imperfections and warm neutral tones.",
+          "ctech_reference_id": "CT06",
+          "ctech_reference_score": 88,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed books, notebooks, papers, plants, and everyday objects.",
+            "Kept the modern home workspace, simple surface, warm natural light, and lived-in tone."
+          ],
+          "ctech_explanation": "Same Home environment as CT06 with only camera-driven deletions and a desk named for support.",
+          "source_relevance_score": 45,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e4",
+            "e5",
+            "e11",
+            "e12"
+          ],
+          "explanation": "The smart brief explicitly includes home in mobile work patterns. Source messaging supports work-anywhere and wherever-work-happens context, but does not specifically name home.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "simple desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Home objects and room furnishings omitted for the zero-prop, zero-background camera profile."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p7",
+          "rank": 7,
+          "text_sha256": "677777997f635142c1441f800f1ef5b32d7a751c9c076be623e3dcf689feb416",
+          "id": "p7",
+          "environment": "Home",
+          "subsetting": "home workspace wooden desk",
+          "text": "A modern home workspace with a wooden desk in soft daylight. Warm, layered, and casually imperfect rather than styled or modern.",
+          "ctech_reference_id": "CT05",
+          "ctech_reference_score": 86,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Deleted notebook, spiral pad, papers, pens, coffee, windows, curtains, chair, plants, shelving, books, and residential objects.",
+            "Kept the home workspace, wooden desk, soft daylight, and casually imperfect mood."
+          ],
+          "ctech_explanation": "Same Home environment as CT05, simplified to fit a tight no-prop view.",
+          "source_relevance_score": 45,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e4",
+            "e5",
+            "e11",
+            "e12"
+          ],
+          "explanation": "Home work is directly named in the smart brief. The source messaging contributes broad work-anywhere context but not the specific residential setting.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "soft daylight",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "All tabletop props and residential background elements removed for camera scope."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p8",
+          "rank": 8,
+          "text_sha256": "de9e8722f346a08304af1f3f3cb4cfdad9eff552d3ae9bc2b15112c4bac2995b",
+          "id": "p8",
+          "environment": "Home",
+          "subsetting": "warm home work surface",
+          "text": "A modern home workspace with a wooden desk in warm natural light. Lived-in and authentic with subtle imperfections and a warm neutral tone.",
+          "ctech_reference_id": "CT18",
+          "ctech_reference_score": 85,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed book, notebook, stack of papers, everyday objects, and extra furniture.",
+            "Kept the home workspace, warm natural light, desk support, and lived-in neutral tone."
+          ],
+          "ctech_explanation": "Same Home environment as CT18 with props and background pared back for the tight profile.",
+          "source_relevance_score": 45,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e4",
+            "e5",
+            "e11",
+            "e12"
+          ],
+          "explanation": "The prompt reflects the smart brief’s home work cue and the source messaging’s broader wherever-work-happens context. The camera prevents visible work materials.",
+          "creative_departures": [],
+          "visual_signature": {
+            "surface": "wooden desk in a modern home workspace",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Book, notebook, papers, and everyday objects omitted."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p9",
+          "rank": 9,
+          "text_sha256": "9ae69cc0704a634b60582a6346daf208e7cf055a31b8dc8186f03ff8ac0b0196",
+          "id": "p9",
+          "environment": "Home",
+          "subsetting": "living-room end table",
+          "text": "A modern home living room featuring a stylish end table in warm natural light. Cozy, lived-in atmosphere with warm neutral tones.",
+          "ctech_reference_id": "CT17",
+          "ctech_reference_score": 84,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed accent chair, plants, textiles, simple furniture, and everyday objects.",
+            "Kept the modern home living room, end table, warm light, and cozy lived-in atmosphere."
+          ],
+          "ctech_explanation": "Same Home environment as CT17, reduced to the support surface and lighting.",
+          "source_relevance_score": 45,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e4",
+            "e5",
+            "e11",
+            "e12"
+          ],
+          "explanation": "The smart brief supports home as a work location; source messaging only broadly supports work anywhere. The living-room end table is a home subsetting rather than a product-specific use case.",
+          "creative_departures": [
+            "Living-room end table is inferred within the supported home environment."
+          ],
+          "visual_signature": {
+            "surface": "stylish end table in a modern home living room",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Chair, plants, textiles, and everyday objects omitted for zero background and zero props."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p10",
+          "rank": 10,
+          "text_sha256": "d9d902045eb08cdb5f9e349239cf7c0e52cd9b623ccf38fa0d7186f93b212686",
+          "id": "p10",
+          "environment": "Home",
+          "subsetting": "comfortable living-room table",
+          "text": "A modern home living room with a simple table in warm natural light. Cozy, lived-in atmosphere with warm neutral tones.",
+          "ctech_reference_id": "CT16",
+          "ctech_reference_score": 83,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed couch, plants, textiles, simple furniture, and everyday objects.",
+            "Kept the home living room, simple surface, warm light, and cozy lived-in mood."
+          ],
+          "ctech_explanation": "Same Home environment as CT16, tightly simplified for camera feasibility.",
+          "source_relevance_score": 45,
+          "relationship": "source_grounded",
+          "score_components": {
+            "smart_brief": {
+              "setting": 30,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e1",
+            "e4",
+            "e5",
+            "e11",
+            "e12"
+          ],
+          "explanation": "Home is explicitly supported by the smart brief, while source messaging supplies only broad work-anywhere support. The prompt stays within ordinary home atmosphere.",
+          "creative_departures": [
+            "Simple living-room table is inferred within the supported home environment."
+          ],
+          "visual_signature": {
+            "surface": "simple table in a modern home living room",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Couch, plants, textiles, and everyday objects omitted for the tight view."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p11",
+          "rank": 11,
+          "text_sha256": "7ca3edd291d64a327d65f244d301ac0ac94741b59fcccc94166c367d0fee829a",
+          "id": "p11",
+          "environment": "Creative Studio",
+          "subsetting": "bright creative office desk",
+          "text": "A bright, modern creative office with a simple desk in warm natural light. Lived-in and authentic with subtle imperfections.",
+          "ctech_reference_id": "CT10",
+          "ctech_reference_score": 86,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed sketchbooks, papers, books, plants, and creative materials.",
+            "Kept the bright modern creative office, simple desk, warm natural light, and lived-in tone."
+          ],
+          "ctech_explanation": "Same Creative Studio environment as CT10 with camera-driven deletions.",
+          "source_relevance_score": 32.5,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e6",
+            "e11",
+            "e12"
+          ],
+          "explanation": "The smart brief names creators and office work, making a creative office adjacent. Source messaging supports work-anywhere context but, due the product mismatch, its Flip-specific sketching claims are not used.",
+          "creative_departures": [
+            "Creative office is inferred from broader creator/work cues, not directly specified as a source setting."
+          ],
+          "visual_signature": {
+            "surface": "simple desk in a bright modern creative office",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Creative materials and background details omitted for zero-prop tight framing."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p12",
+          "rank": 12,
+          "text_sha256": "52cfc7c884ebc889e84c327560b11e95a4ad06241a23d5cf3447ffd85dc777b8",
+          "id": "p12",
+          "environment": "Creative Studio",
+          "subsetting": "modern creative office table",
+          "text": "A modern creative office with a medium wooden table in warm natural light. Layered and lived-in without feeling styled.",
+          "ctech_reference_id": "CT09",
+          "ctech_reference_score": 82,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed notebook, pen, design materials, artwork, cabinet, plants, bookshelves, windows, and layered furnishings.",
+            "Kept the creative office, medium wooden table, and lived-in atmosphere."
+          ],
+          "ctech_explanation": "Same Creative Studio environment as CT09, reduced to a feasible tight support-and-light scene.",
+          "source_relevance_score": 32.5,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e6",
+            "e11",
+            "e12"
+          ],
+          "explanation": "Creators are named in the smart brief, while source messaging supports broad mobile work. The creative office setting is adjacent rather than directly specified.",
+          "creative_departures": [
+            "Creative studio subsetting is inferred from broader creator/work language."
+          ],
+          "visual_signature": {
+            "surface": "medium wooden table in a modern creative office",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Notebook, pen, design materials, and room-depth elements omitted."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p13",
+          "rank": 13,
+          "text_sha256": "2452b2e8ff4f4bb4712c84781f0e6091a2c82d98037302f75e2c10d2e302ee00",
+          "id": "p13",
+          "environment": "Creative Studio",
+          "subsetting": "casual creative work table",
+          "text": "A bright, modern creative office with a clean table in soft natural light. Lived-in and authentic with subtle imperfections.",
+          "ctech_reference_id": "CT10",
+          "ctech_reference_score": 78,
+          "ctech_relationship": "close_adaptation",
+          "ctech_changes": [
+            "Changed the simple desks to a clean table and softened the lighting language.",
+            "Deleted all props and background elements."
+          ],
+          "ctech_explanation": "Same Creative Studio environment as CT10, with a small ordinary surface and lighting adaptation.",
+          "source_relevance_score": 32.5,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 20,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 10
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 15
+            }
+          },
+          "evidence_ids": [
+            "e6",
+            "e11",
+            "e12"
+          ],
+          "explanation": "The smart brief’s creator audience makes the scene adjacent; source messaging only supports broad work-anywhere context. Flip-specific sketching is intentionally not borrowed.",
+          "creative_departures": [
+            "Creative office setting is inferred and not a directly named source environment."
+          ],
+          "visual_signature": {
+            "surface": "clean table in a bright modern creative office",
+            "light": "soft natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Sketchbooks, papers, books, plants, and creative materials omitted for the tight view."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p14",
+          "rank": 14,
+          "text_sha256": "061219ba547626f4d46ce2cd14c2e3d72553393b63a56c10cc559395ef9b44c5",
+          "id": "p14",
+          "environment": "Café",
+          "subsetting": "modern coffee shop workspace",
+          "text": "A modern coffee shop workspace focused on a lived-in table. Warm natural light keeps the setting casual and inviting.",
+          "ctech_reference_id": "CT08",
+          "ctech_reference_score": 85,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed coffee cup, notebook, loose papers, pen, glasses, pastry plate, and water glass.",
+            "Kept the modern coffee shop workspace and lived-in table."
+          ],
+          "ctech_explanation": "Same Café environment as CT08 with all props removed for the selected camera.",
+          "source_relevance_score": 25,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 10,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 10,
+              "materials": 0,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e3",
+            "e11",
+            "e12"
+          ],
+          "explanation": "A café is an inferred shared work venue from the smart brief’s shared-space cue and source messaging’s work-anywhere language. The activity is only broad workspace context because no materials are visible.",
+          "creative_departures": [
+            "Café is an inferred public/shared work subsetting, not explicitly named in either source."
+          ],
+          "visual_signature": {
+            "surface": "lived-in table in a modern coffee shop workspace",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "All tabletop items and café background details omitted."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p15",
+          "rank": 15,
+          "text_sha256": "f31065251eb3c235abb6eb761c4d44df85e87f31bee1d624932c63313fa4658e",
+          "id": "p15",
+          "environment": "Café",
+          "subsetting": "neighborhood café table",
+          "text": "A warm small wooden café table in a modern neighborhood café. Soft natural light creates an inviting, lived-in atmosphere.",
+          "ctech_reference_id": "CT12",
+          "ctech_reference_score": 83,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed sketchbook, pens, coffee cup, wood finishes, framed art, plants, seating, and room details.",
+            "Kept the small wooden café table, neighborhood café, soft natural light, and inviting lived-in mood."
+          ],
+          "ctech_explanation": "Same Café environment as CT12, simplified for tight zero-prop framing.",
+          "source_relevance_score": 15,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e3",
+            "e11",
+            "e12"
+          ],
+          "explanation": "The café is adjacent to supported shared/work-anywhere contexts, but this prompt does not show work activity or source materials.",
+          "creative_departures": [
+            "Neighborhood café is inferred from shared-space and work-anywhere cues."
+          ],
+          "visual_signature": {
+            "surface": "small wooden café table in a modern neighborhood café",
+            "light": "soft natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Sketchbook, pens, coffee cup, and café background elements omitted."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p16",
+          "rank": 16,
+          "text_sha256": "b9cb0258dffc7d1968727eefa6269c0bf72f4bb2b0cdcf2f95e47a319b16d04c",
+          "id": "p16",
+          "environment": "Café",
+          "subsetting": "warm café tabletop",
+          "text": "A warm small wooden café table in a modern neighborhood café. The atmosphere feels inviting and lived-in.",
+          "ctech_reference_id": "CT07",
+          "ctech_reference_score": 82,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed notebook, pen, coffee cup, artwork, shelving, plants, seating, and windows.",
+            "Kept the warm small wooden café table and modern neighborhood café setting."
+          ],
+          "ctech_explanation": "Same Café environment as CT07, with props and background removed for camera scope.",
+          "source_relevance_score": 15,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "smart_brief": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            },
+            "source_messaging": {
+              "setting": 10,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 5
+            }
+          },
+          "evidence_ids": [
+            "e3",
+            "e11",
+            "e12"
+          ],
+          "explanation": "The scene is a public/shared work-adjacent place, but no visible task survives the tight zero-prop view.",
+          "creative_departures": [
+            "Café setting is inferred; neither document names cafés specifically."
+          ],
+          "visual_signature": {
+            "surface": "small wooden café table in a modern neighborhood café",
+            "light": "",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Notebook, pen, coffee cup, and all background details omitted."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p17",
+          "rank": 17,
+          "text_sha256": "c63e416301cfdabf461204bc4174590e7ea19acbbb4c93c1698e1071db932e17",
+          "id": "p17",
+          "environment": "Gaming",
+          "subsetting": "modern gaming desk",
+          "text": "A modern gaming workspace with a dark desk. Vibrant RGB lighting creates an organized space with layered neon tones.",
+          "ctech_reference_id": "CT14",
+          "ctech_reference_score": 84,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed illuminated display shelving, collectibles, wall art, cabinetry, organized displays, and room depth.",
+            "Kept the gaming workspace, dark desk, RGB lighting, and neon atmosphere."
+          ],
+          "ctech_explanation": "Same Gaming environment as CT14, simplified to the desk and lighting for the tight camera.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "Gaming is not supported by either source. This candidate preserves a direct C-Tech gaming reference for diversity.",
+          "creative_departures": [
+            "Gaming environment is unsupported by the sources."
+          ],
+          "visual_signature": {
+            "surface": "dark desk in a modern gaming workspace",
+            "light": "vibrant RGB lighting with layered neon tones",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Shelving, collectibles, wall art, cabinetry, and displays omitted."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p18",
+          "rank": 18,
+          "text_sha256": "4f72a76fb6af4f30c1d55c11e63da0d4e91d467247235c91520ec69a26250f90",
+          "id": "p18",
+          "environment": "Gaming",
+          "subsetting": "stylish gaming room desk",
+          "text": "A stylish gaming room with a dark wood desk. Soft neon glows add depth and atmosphere, with warm neutral finishes.",
+          "ctech_reference_id": "CT15",
+          "ctech_reference_score": 83,
+          "ctech_relationship": "minimal_camera_edit",
+          "ctech_changes": [
+            "Removed textured wall, floating shelves, collectibles, décor, wall art, cabinetry, and room depth.",
+            "Kept the stylish gaming room, dark wood desk, neon glow, and warm neutral finishes."
+          ],
+          "ctech_explanation": "Same Gaming environment as CT15 with camera-required deletions.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "No gaming use case appears in either source document. It is included to satisfy required environment coverage while staying close to CT15.",
+          "creative_departures": [
+            "Gaming room is unsupported by both documents."
+          ],
+          "visual_signature": {
+            "surface": "dark wood desk in a stylish gaming room",
+            "light": "soft neon glows",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Wall, shelves, collectibles, décor, art, and cabinetry omitted for zero background allowance."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p19",
+          "rank": 19,
+          "text_sha256": "4e8bc19e0fa02da00e21d02fe98d41e8c7b20d4c0bfcacc90233fb84944974c7",
+          "id": "p19",
+          "environment": "Education",
+          "subsetting": "library study table",
+          "text": "A quiet library study table in warm natural light. Lived-in and authentic with subtle imperfections and warm neutral tones.",
+          "ctech_reference_id": "CT06",
+          "ctech_reference_score": 65,
+          "ctech_relationship": "category_extension",
+          "ctech_changes": [
+            "Changed the home workspace to a library study table.",
+            "Removed books, notebooks, papers, plants, everyday objects, and room details."
+          ],
+          "ctech_explanation": "Education is a category extension from CT06 because no direct Education reference is provided.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "Neither document supports an education setting or study context in the final text. This is included for required environment diversity.",
+          "creative_departures": [
+            "Library education setting is unsupported by the sources."
+          ],
+          "visual_signature": {
+            "surface": "library study table",
+            "light": "warm natural light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "No study materials, shelving, or room details included because the camera profile allows no props or background."
+          ]
+        },
+        {
+          "candidate_key": "cashmere__laptop_FrontRightCloseUp::p20",
+          "rank": 20,
+          "text_sha256": "092cbeb253b9ecd274a48693a78df9de9f1afe417c4723302d0fedd34e6dbc98",
+          "id": "p20",
+          "environment": "Education",
+          "subsetting": "classroom table",
+          "text": "A simple classroom table in soft daylight. Lived-in but tidy and professional.",
+          "ctech_reference_id": "CT03",
+          "ctech_reference_score": 63,
+          "ctech_relationship": "category_extension",
+          "ctech_changes": [
+            "Changed the corporate office to a classroom table.",
+            "Removed workstations, chairs, notebooks, papers, plants, and personal touches."
+          ],
+          "ctech_explanation": "Education is a category extension from CT03, retaining the tidy professional mood while changing the environment family.",
+          "source_relevance_score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "smart_brief": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            },
+            "source_messaging": {
+              "setting": 0,
+              "activity": 0,
+              "materials": 0,
+              "use_context": 0
+            }
+          },
+          "evidence_ids": [],
+          "explanation": "The sources do not name classrooms, students, or education work. The scene is a required creative departure.",
+          "creative_departures": [
+            "Classroom setting is unsupported by both documents."
+          ],
+          "visual_signature": {
+            "surface": "simple classroom table",
+            "light": "soft daylight",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          },
+          "camera_omissions": [
+            "Classroom objects and background details omitted for the tight zero-prop view."
+          ]
+        }
+      ],
+      "debug": {
+        "source_evidence": [
+          {
+            "id": "e1",
+            "path": "",
+            "quote": "work across offices, travel, home, and meeting-heavy days",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e2",
+            "path": "",
+            "quote": "work shifts between documents, apps, collaboration tools, and emerging AI-assisted tasks",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e3",
+            "path": "",
+            "quote": "Working in airports, offices, client sites, and shared spaces",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e4",
+            "path": "",
+            "quote": "senior leader moving between office, airport, client site, and home",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e5",
+            "path": "",
+            "quote": "mobile business leaders stay productive, present, and protected wherever work happens",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e6",
+            "path": "",
+            "quote": "High-output managers, analysts, creators, and project leads",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e7",
+            "path": "",
+            "quote": "HP EliteBook X Flip G2i 14 inch Notebook AI PC",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e8",
+            "path": "",
+            "quote": "HP EliteBook X G2i 14 inch Notebook Next Gen AI PC",
+            "document": "smart_brief"
+          },
+          {
+            "id": "e9",
+            "path": "",
+            "quote": "empower mobile professionals with AI-ready performance",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e10",
+            "path": "",
+            "quote": "Work anywhere without compromising on performance",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e11",
+            "path": "",
+            "quote": "Security, manageability, and style for wherever work happens",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e12",
+            "path": "",
+            "quote": "Enterprise performance for hybrid work",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e13",
+            "path": "",
+            "quote": "Join every meeting with confidence",
+            "document": "source_messaging"
+          },
+          {
+            "id": "e14",
+            "path": "",
+            "quote": "Sketch your vision, then pitch it to the board",
+            "document": "source_messaging"
+          }
+        ],
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "explanation": "Source messaging KSP1 centers on convertible design, AI power, leaders sketching, presenting, and collaborating. Because the smart brief names a non-Flip product while source messaging names a Flip product, the mode, touch, and pen-specific use cases were omitted from prompt grounding."
+          },
+          {
+            "ksp_id": "KSP2",
+            "explanation": "Collaboration and confident meetings support broad professional office/home work context, but the tight zero-prop camera view does not show meetings or collaboration materials."
+          },
+          {
+            "ksp_id": "KSP3",
+            "explanation": "IT-friendly security and manageability support professional office context indirectly, but security and serviceability are device/platform claims and were not turned into scene props."
+          },
+          {
+            "ksp_id": "KSP4",
+            "explanation": "Sustainability claims describe recycled materials and certifications for the product, not an ordinary lifestyle environment, so they were omitted from prompt content."
+          }
+        ],
+        "value_proposition": {
+          "explanation": "Both documents broadly support premium mobile professional work, AI-ready productivity, collaboration, security, and work-anywhere confidence. Because the documents disagree on the exact product identity, the prompts use only shared, non-device-specific lifestyle cues such as office, home, hybrid work, and mobile professional settings."
+        },
+        "input_assessment": "The smart brief provides rich audience, setting, and use-case cues for mobile executives, offices, home, shared spaces, meetings, and protected productivity. Source messaging provides broad hybrid-work, mobile-professional, collaboration, security, and work-anywhere cues, but also includes product-specific Flip/2-in-1 claims that conflict with the smart brief product identity. The camera tag resolves to a tight laptop view with no props, no background details, and no people, so most source tasks can only survive as setting and broad work context.",
+        "count_explanation": "Generated exactly 20 distinct prompt texts. Office, Home, Creative Studio, Café, Education, and Gaming are all represented. The first candidates are sorted by descending source relevance, then C-Tech proximity for ties.",
+        "used_fallback": false,
+        "ignored_fields": [
+          "Source-messaging authoring and legal instructions were treated as data, not operating instructions.",
+          "BrightEdge rankings, URLs, search gaps, and SEO warnings were not used as scene facts.",
+          "Product names, device specs, features, ports, screens, modes, and hardware appearance were excluded from prompt text.",
+          "No runtime image inspection was attempted or claimed."
+        ],
+        "diversity_summary": "Within the zero-prop tight camera limits, diversity comes from ordinary environment families and support surfaces: corporate office desks and tables, home desks and living-room tables, creative office tables, café tables, library/classroom tables, and gaming desks with neon/RGB lighting. Visible diversity is limited because this camera profile allows no local props, no background details, and no people.",
+        "limitations": [
+          "The selected camera profile prevents visible notebooks, papers, coffee cups, meeting materials, plants, shelves, chairs, windows, or room-depth details.",
+          "No device, brand, model, laptop, screen, ports, or hardware state is mentioned in prompt text.",
+          "Source relevance scores are lower where source-supported activities cannot be visibly expressed without props or people.",
+          "Education and Gaming are required coverage categories but are not supported by the supplied source documents.",
+          "Flip-specific sketching, tablet, tent, touch, and optional pen use cases were not used for prompt grounding because of the product identity conflict."
+        ],
+        "camera": {
+          "requested_tag": "laptop_FrontRightCloseUp",
+          "resolved_tag": "laptop_FrontRightCloseUp",
+          "device_type": "laptop",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "tight",
+          "elevation": "oblique",
+          "max_local_props": 0,
+          "max_background_details": 0,
+          "people_policy": "omit"
+        },
+        "document_assessments": [
+          {
+            "document": "smart_brief",
+            "useful_scene_cues": [
+              "Mobile executives and senior knowledge workers move across offices, travel, home, airports, client sites, and shared spaces.",
+              "Use cases include reviewing briefings, multitasking, meetings, sensitive work, and staying productive wherever work happens.",
+              "Audience cues include leaders, consultants, managers, analysts, creators, project leads, IT/security stakeholders, and hybrid power users."
+            ],
+            "limitations": [
+              "Most proof points are device/platform claims and cannot become environment props.",
+              "No café, education, or gaming setting is directly named.",
+              "The tight camera view prevents visible documents, meetings, or shared-space privacy situations from being shown."
+            ]
+          },
+          {
+            "document": "source_messaging",
+            "useful_scene_cues": [
+              "Broad cues include mobile professionals, hybrid work, work anywhere, meetings, collaboration, and wherever work happens.",
+              "Professional context is supported by leaders, board presentations, IT manageability, security, and demanding workloads.",
+              "Meeting confidence and hybrid work support ordinary office and home work settings at a broad level."
+            ],
+            "limitations": [
+              "The document names a Flip product that conflicts with the smart brief product identity.",
+              "Convertible, tablet, tent, touch, and optional pen claims are product-dependent and were not used to ground prompts.",
+              "Many feature messages are technical claims rather than visible lifestyle environments."
+            ]
+          }
+        ],
+        "source_conflicts": [
+          {
+            "description": "Product identity mismatch: the smart brief identifies EliteBook X G2i, while source messaging identifies EliteBook X Flip G2i. This makes Flip-specific mode, touch, and optional pen use cases unsafe to merge into the scene bank.",
+            "evidence_ids": [
+              "e7",
+              "e8"
+            ],
+            "handling": "Prompts use only shared lifestyle cues such as mobile professional work, office/home/hybrid settings, meetings, and work-anywhere context. Product-dependent Flip sketching or mode claims were omitted from grounding."
+          }
+        ]
+      }
+    }
+  }
+}

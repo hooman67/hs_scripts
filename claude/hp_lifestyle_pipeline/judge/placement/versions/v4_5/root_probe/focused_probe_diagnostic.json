@@ -1,0 +1,95 @@
+{
+  "schema_version": "hp-placement-v4.5-focused-probe-diagnostic-v1",
+  "development_only": true,
+  "decision": "diagnostic_only_do_not_promote",
+  "required_issue_detected": 3,
+  "required_issue_total": 7,
+  "labeled_verdict_correct": 1,
+  "labeled_verdict_total": 5,
+  "rows": [
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "expected_verdict": "review",
+      "required_checks": [
+        "user_position"
+      ],
+      "actual_checks": [
+        "user_position"
+      ],
+      "max_severity": 2,
+      "derived_verdict": "fail",
+      "detected_required": [
+        "user_position"
+      ],
+      "unexpected": []
+    },
+    {
+      "record_id": "tassel__printer_FrontWide__p1",
+      "expected_verdict": "fail",
+      "required_checks": [
+        "support_anatomy",
+        "support_room_placement"
+      ],
+      "actual_checks": [
+        "support_room_placement"
+      ],
+      "max_severity": 1,
+      "derived_verdict": "review",
+      "detected_required": [
+        "support_room_placement"
+      ],
+      "unexpected": []
+    },
+    {
+      "record_id": "magic__printer_FrontLeftMedium__p1",
+      "expected_verdict": "fail",
+      "required_checks": [
+        "load_path"
+      ],
+      "actual_checks": [],
+      "max_severity": 0,
+      "derived_verdict": "pass",
+      "detected_required": [],
+      "unexpected": []
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p2",
+      "expected_verdict": "fail",
+      "required_checks": [
+        "device_support_axes",
+        "prop_activity_relation"
+      ],
+      "actual_checks": [
+        "prop_activity_relation"
+      ],
+      "max_severity": 1,
+      "derived_verdict": "review",
+      "detected_required": [
+        "prop_activity_relation"
+      ],
+      "unexpected": []
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p1",
+      "expected_verdict": null,
+      "required_checks": [
+        "shared_perspective"
+      ],
+      "actual_checks": [],
+      "max_severity": 0,
+      "derived_verdict": "pass",
+      "detected_required": [],
+      "unexpected": []
+    },
+    {
+      "record_id": "magic__printer_FrontRightCloseUp__p2",
+      "expected_verdict": "pass",
+      "required_checks": [],
+      "actual_checks": [],
+      "max_severity": 0,
+      "derived_verdict": "pass",
+      "detected_required": [],
+      "unexpected": []
+    }
+  ]
+}

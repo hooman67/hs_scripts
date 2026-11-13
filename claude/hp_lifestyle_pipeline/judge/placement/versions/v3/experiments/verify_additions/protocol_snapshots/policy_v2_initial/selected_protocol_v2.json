@@ -1,0 +1,94 @@
+{
+  "schema_version": "placement-new160-selected-protocol-freeze-v1",
+  "selected_policy": "placement-verified-additions-decision-v2",
+  "development_status": "research_candidate_posthoc_policy",
+  "frozen_at_utc": "2026-11-05T23:27:39.940156+00:00",
+  "files": {
+    "two_pass_policy": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/policy.json",
+      "sha256": "26731b6c1ba0e66fb70caac88da3674f9ad414b5caeb0d7a6fce822958a6d018"
+    },
+    "two_pass_combiner": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/combine.py",
+      "sha256": "87e5ac23a0ef9254f7c43b499197539abe2670db243f427a9d477ddc6cbfb1e1"
+    },
+    "trigger_builder": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions/build_triggers.py",
+      "sha256": "aca00b313e65bd0230f0db5b9917f8388183a002dbbc1d7e3bdcc71a7dc38714"
+    },
+    "verifier_runner": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions/run_verifier.py",
+      "sha256": "3d6caf2f4a60ac350f1422b0d2facf24cc9d637a9dcb589ec71ed0bcbecffbfe"
+    },
+    "verifier_batch": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions/run_batch.py",
+      "sha256": "9c2894115289e77285c6754f6f59e170df255703b3797666e650d7cb79437bd4"
+    },
+    "verifier_prompt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions/system_prompt.md",
+      "sha256": "5174cfc0caac713d056b6c4c2c80162b802db6c77763c4bfaa128d6dec4a2f10"
+    },
+    "verified_merge_v2": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions/merge_verified_v2.py",
+      "sha256": "cb632c91f9a2959b5840b9afe1bf2f0babf376a50eba720c8fd302cd36bd76de"
+    },
+    "v2_runner": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/run_judge.py",
+      "sha256": "3f5258ef3bf4fc9f4fca8d18602bce046a36837dc34573428f82ef714c4a277e"
+    },
+    "v2_schema": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/observation_schema.json",
+      "sha256": "77bf7067c0b8a9a7c5a4d8c7025f8f6c36215744f2529073373d20a09743fa19"
+    },
+    "v2_scoring": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/scoring.py",
+      "sha256": "0f3a1473d60e22fbf921c2883a7f61cb03519678c664f06470e7ca5739b434ae"
+    },
+    "v2_anchors": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/data/visual_anchors.json",
+      "sha256": "db43e5aa1550015cc26c0615e965a1a1214f2c9cd7fb007241c3255b288ac74f"
+    },
+    "v3_runner": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/run_judge.py",
+      "sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1"
+    },
+    "v3_prompt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/system_prompt.md",
+      "sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6"
+    },
+    "v3_schema": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/observation_schema.json",
+      "sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231"
+    },
+    "v3_scoring": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/scoring.py",
+      "sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006"
+    },
+    "new160_manifest": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/new_v6_1_eval_20261105/manifest.json",
+      "sha256": "fd84149fa421c32602358c325b4fb14ed555d3e5033fb92bc2800ab37e6daefc"
+    }
+  },
+  "required_stage_contracts": {
+    "baseline_v2": {
+      "protocol": "placement-judge-v2-request-v3",
+      "model": "gpt-5.5",
+      "reasoning": "high",
+      "anchors": true
+    },
+    "compact_v3": {
+      "protocol": "placement-judge-v3-request-v1",
+      "model": "gpt-5.5",
+      "reasoning": "high",
+      "anchors": false
+    },
+    "verifier": {
+      "protocol": "placement-addition-verifier-v1",
+      "model": "gpt-5.5",
+      "reasoning": "high",
+      "workers": 3
+    }
+  },
+  "trigger_policy": "compact observed/partial medium/high confidence severity>=2 and baseline unassessable/low confidence or compact severity strictly greater",
+  "merge_policy": "placement-verified-additions-decision-v2"
+}

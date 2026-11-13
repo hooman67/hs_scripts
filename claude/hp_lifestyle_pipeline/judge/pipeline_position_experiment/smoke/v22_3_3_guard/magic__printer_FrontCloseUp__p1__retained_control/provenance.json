@@ -1,0 +1,182 @@
+{
+  "slug": "magic__printer_FrontCloseUp__p1__retained_control",
+  "base_slug": "magic__printer_FrontCloseUp__p1",
+  "mode": "retained_control",
+  "device_id": "magic",
+  "camera_id": "Front_CloseUp",
+  "prompt": "A common office area with a dedicated output table in clear midday light, with an architectural letter tray holding a few plain papers with indistinct markings. The surrounding wall and work surface stay orderly, giving the area the practical rhythm of everyday document work.",
+  "pipeline_version": "unified-blue-scale-v22.3.3-clean-fixed-rewrite-affine-guard-twin-camera-guide-only-no-mask",
+  "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+  "status": "ok",
+  "error": null,
+  "output_sha256": "2c7ddb28026833f7f605f9ee45d132e9bd92a376a0d4939d5497eb8e68a363f4",
+  "attempt_1_sha256": "2c7ddb28026833f7f605f9ee45d132e9bd92a376a0d4939d5497eb8e68a363f4",
+  "attempt_2_sha256": null,
+  "product_invariant_guard": {
+    "guard_version": "full-affine-v1.2",
+    "attempts": [
+      {
+        "guard_version": "full-affine-v1.2",
+        "fixed_position": true,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.5,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          497,
+          176,
+          1754,
+          1431
+        ],
+        "matches": 75,
+        "inliers": 62,
+        "inlier_ratio": 0.8266666666666667,
+        "full_affine_matrix": [
+          [
+            0.999505153769077,
+            -0.0002013737286520115,
+            1.0971795740575714
+          ],
+          [
+            0.0004604404152349419,
+            0.9978031424269891,
+            0.6301698622963927
+          ]
+        ],
+        "partial_affine_matrix": [
+          [
+            0.9989768914002576,
+            -7.634249803011766e-05,
+            1.6623045438757589
+          ],
+          [
+            7.634249803011766e-05,
+            0.9989768914002576,
+            0.29338194552847385
+          ]
+        ],
+        "partial_inliers": 62,
+        "singular_values": [
+          0.999515010414078,
+          0.9977933954290441
+        ],
+        "anisotropy_ratio": 1.0017254223097896,
+        "rotation_deg": 0.018985129111628155,
+        "column_shear_cos": 0.00025885125044744506,
+        "residual_median_px": 0.6070656175157293,
+        "residual_p95_px": 2.080208502505217,
+        "source_span_x_fraction": 0.9269977807998657,
+        "source_span_y_fraction": 0.7471712827682495,
+        "source_quadrants": 4,
+        "source_hull_fraction": 0.5730597108054298,
+        "transformed_product_corners_px": [
+          [
+            497.8157992210461,
+            176.47236181581823
+          ],
+          [
+            1754.1937775087756,
+            177.05113541776856
+          ],
+          [
+            1753.9410534793174,
+            1429.29407916364
+          ],
+          [
+            497.5630751915878,
+            1428.7153055616895
+          ]
+        ],
+        "corners_in_frame": true,
+        "translation_x_px": 1.0971795740575714,
+        "translation_y_px": 0.6301698622963927,
+        "checks": {
+          "inliers": true,
+          "inlier_ratio": true,
+          "singular_min": true,
+          "singular_max": true,
+          "anisotropy": true,
+          "rotation": true,
+          "shear": true,
+          "residual_median": true,
+          "residual_p95": true,
+          "span_x": true,
+          "span_y": true,
+          "quadrants": true,
+          "hull": true,
+          "corners": true,
+          "fixed_translation_x": true,
+          "fixed_translation_y": true
+        },
+        "reasons": [],
+        "verdict": "pass"
+      }
+    ],
+    "selected_attempt": 1
+  },
+  "final_prompt_sha256": "a06eb79dcfd60811ed89ebe6d0d1c93f0d35a84d5ee7965c5cd8aa5b640a5bb2",
+  "selected_prompt_sha256": "a06eb79dcfd60811ed89ebe6d0d1c93f0d35a84d5ee7965c5cd8aa5b640a5bb2",
+  "stage_b_attempts": [
+    {
+      "attempt": 1,
+      "system_sha256": "8b8c236baf906c572841aed4a31c94bc3d497073693e6c1c6e414400156eff90",
+      "text_sha256": "cca04df1067406dd02cbc215b82ec370a3a78deedf9f18dc1f7c8261aa953dfd",
+      "request_sha256": "1f3ee7b9edad81d56a77cd847d357ecb8b6923b350f1b6ff14d0d6f87e175f4b",
+      "response_sha256": "daf0804e93f1d07f84457187acd481d9c4d4e342b90695b0ba3efedf5b54c0b2",
+      "executable_prompt_sha256": "a06eb79dcfd60811ed89ebe6d0d1c93f0d35a84d5ee7965c5cd8aa5b640a5bb2"
+    }
+  ],
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1007,
+        "prompt_tokens": 14182,
+        "total_tokens": 15189,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 114,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 13568,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+      "mask": false
+    }
+  ]
+}

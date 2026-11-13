@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "experiment": "v22.2.1 unambiguous high-fill position lock with lower-fill x-y freedom",
+  "pr_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+  "pipeline_version": "unified-blue-scale-v22.2.1-unambiguous-high-fill-lock-twin-camera-guide-only-no-mask",
+  "source_hashes": {
+    "hp3p/prompts/system_3p.txt": "bb02ad09f86a9a4aa4bdeac7c023d1ece0356ecef298853436af4781fa595ddf",
+    "hp3p/pipeline.py": "3f61392d6b02d17cefc5fb1a2a1b612e4b56a71ddffe5a710efa84b29de399b5",
+    "hp3p/geometry.py": "f9d0f3a395624a150f9a9fed8c836394b66f041f6e212dc87c8b1a2322514a95",
+    "hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+    "hp3p/reference_blue.py": "cc66ad327b4db6d165c48dd0933cd717cf3af191aca161fd05e5d765df20c555"
+  },
+  "fixtures": [
+    {
+      "slug": "cashmere__laptop_FrontCloseUp__p1__retained_control",
+      "base_slug": "cashmere__laptop_FrontCloseUp__p1",
+      "mode": "retained_control",
+      "device_id": "cashmere",
+      "camera_id": "Front_CloseUp",
+      "prompt": "A quiet office desk set up before a meeting, with an open unlabelled folder showing blank sheets on a pale work surface. A frosted glass partition behind the desk catches clean morning light, keeping the area composed and ready for focused work.",
+      "pipeline_version": "unified-blue-scale-v22.2.1-unambiguous-high-fill-lock-twin-camera-guide-only-no-mask",
+      "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+      "output_sha256": "9cf3ebf121f29f4e80461d99367f393c2b9bfc38cdcd6ab92c3490058f19deb9",
+      "final_prompt_sha256": "1a84f7dd02bc81a76042d4d2ec82a5afce24f58139155dee8c234ac8b4e2709a",
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 933,
+            "prompt_tokens": 14126,
+            "total_tokens": 15059,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 65,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "cashmere__laptop_FrontCloseUp__p1__relocation_demand",
+      "base_slug": "cashmere__laptop_FrontCloseUp__p1",
+      "mode": "relocation_demand",
+      "device_id": "cashmere",
+      "camera_id": "Front_CloseUp",
+      "prompt": "A close modern office scene. Place the fully visible laptop substantially farther toward image left than its current position, as far as its unchanged pixel size safely allows, so a broad clear planning area sits to its right. Build a pale wood worktable beneath the laptop at that chosen position, with believable edge clearances and its working edge facing the keyboard. Align an upholstered chair with the laptop's keyboard and keep the approach completely clear. A ribbed glass partition and soft daylight complete the scene.",
+      "pipeline_version": "unified-blue-scale-v22.2.1-unambiguous-high-fill-lock-twin-camera-guide-only-no-mask",
+      "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+      "output_sha256": "8c28071cf37421b59cc98c43da08abbd0931e3c47913f9fe3f5e82ea110da6d9",
+      "final_prompt_sha256": "c4f604a3cedec2af64c67ee92eb02defec829b66faf615af87069810ea93e62c",
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 919,
+            "prompt_tokens": 14174,
+            "total_tokens": 15093,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 48,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "cashmere__laptop_FrontWide__p1__relocation_demand",
+      "base_slug": "cashmere__laptop_FrontWide__p1",
+      "mode": "relocation_demand",
+      "device_id": "cashmere",
+      "camera_id": "Front_Wide",
+      "prompt": "A wide glass-walled office planning room. Move the fully visible laptop into a right-hand workstation, leaving a broad unobstructed aisle and open tabletop area on the left. Keep the laptop's exact view and pixel size. Compose a new sturdy worktable beneath it with a user-facing edge and a chair aligned directly with the keyboard. Add a felt privacy screen in the far background and cool even daylight.",
+      "pipeline_version": "unified-blue-scale-v22.2.1-unambiguous-high-fill-lock-twin-camera-guide-only-no-mask",
+      "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+      "output_sha256": "d7fa9d10f6e82bf2797a70bb52fa8a80639a6d78689818ee86dd210d489d03fc",
+      "final_prompt_sha256": "396ae9e593d979ac20825891c520d05a4a949319c5d54eed11d6075a97fcfe0c",
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 1074,
+            "prompt_tokens": 14301,
+            "total_tokens": 15375,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 125,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "d0d671e2d79cc7c616b474decdbd630af88736d051dbc5584094f6e9dcf15fcc",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "magic__printer_FrontCloseUp__p1__retained_control",
+      "base_slug": "magic__printer_FrontCloseUp__p1",
+      "mode": "retained_control",
+      "device_id": "magic",
+      "camera_id": "Front_CloseUp",
+      "prompt": "A common office area with a dedicated output table in clear midday light, with an architectural letter tray holding a few plain papers with indistinct markings. The surrounding wall and work surface stay orderly, giving the area the practical rhythm of everyday document work.",
+      "pipeline_version": "unified-blue-scale-v22.2.1-unambiguous-high-fill-lock-twin-camera-guide-only-no-mask",
+      "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+      "output_sha256": "223ce95b43a92695418e07ce2f8d89c5cc823480b745180ac54fba1bdfa78acb",
+      "final_prompt_sha256": "78e339b4f80b9e3876518edff72fc30bc738be44a5f123e5dbc6c0dbd046c7cc",
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 996,
+            "prompt_tokens": 14182,
+            "total_tokens": 15178,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 86,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "magic__printer_FrontCloseUp__p1__relocation_demand",
+      "base_slug": "magic__printer_FrontCloseUp__p1",
+      "mode": "relocation_demand",
+      "device_id": "magic",
+      "camera_id": "Front_CloseUp",
+      "prompt": "A close office output station. Place the fully visible printer distinctly farther toward image right than its current position, preserving its exact view and pixel size, to leave a clear paper-sorting area on the left. Build a dedicated pale oak printer table beneath it with the complete base supported, the printer square to the table, clear standing access at the operating front, and the back of the station against a plain wall. Keep all objects beside rather than in front of the printer.",
+      "pipeline_version": "unified-blue-scale-v22.2.1-unambiguous-high-fill-lock-twin-camera-guide-only-no-mask",
+      "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+      "output_sha256": "37b222869d0c6368641708d72ce07d6b6bf144ce5f19618bbf264469846b19e4",
+      "final_prompt_sha256": "56048092dc70941ef14a6dcfd67bf2b5c12629ded4dbc2b2e1839d9e40b7525c",
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 892,
+            "prompt_tokens": 14227,
+            "total_tokens": 15119,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 45,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "5ac4c86f737197b16fa133b7b4a85f92e6b9211a2dc902fbc77d934a241ab319",
+          "mask": false
+        }
+      ]
+    },
+    {
+      "slug": "magic__printer_FrontWide__p1__relocation_demand",
+      "base_slug": "magic__printer_FrontWide__p1",
+      "mode": "relocation_demand",
+      "device_id": "magic",
+      "camera_id": "Front_Wide",
+      "prompt": "A wide open-office output area. Relocate the fully visible printer to a right-of-center dedicated output station, leaving the left side of the room open for paper sorting and circulation. Preserve the printer's exact view and pixel size. Compose a new pale oak support table beneath it, square to the fixed printer orientation, with believable edge clearances, wall alignment and unobstructed standing access at the front. Use soft clear daylight and an orderly office background.",
+      "pipeline_version": "unified-blue-scale-v22.2.1-unambiguous-high-fill-lock-twin-camera-guide-only-no-mask",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "output_sha256": "2562081175a07cc60606e6ffb730916f758ff71151c9d67ec01cd5360fa00341",
+      "final_prompt_sha256": "8f946ee7fdc6faf8b1857f94b5a4325ee460ca2bbbcfbec641307344a4631bf6",
+      "image_calls": 1,
+      "masked": false,
+      "calls": [
+        {
+          "kind": "selection_replay"
+        },
+        {
+          "kind": "geometry_replay"
+        },
+        {
+          "kind": "astra_write",
+          "model": "gpt-6-astra",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 962,
+            "prompt_tokens": 14268,
+            "total_tokens": 15230,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 75,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          }
+        },
+        {
+          "kind": "image_edit",
+          "model": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+          "mask": false
+        }
+      ]
+    }
+  ],
+  "frozen_inputs": "V6.1 p1 products, style images, Stage-A geometry and byte-identical guides",
+  "api_retries": 0,
+  "best_of": 1,
+  "manual_repair": false
+}

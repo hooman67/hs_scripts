@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "scope": {
+    "report": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+    "rows": 30,
+    "question": "Whether the report's V13 final and V14 final assets are scene-generation outputs before any downstream relight stage",
+    "excluded": [
+      "annotation-label interpretation",
+      "image-content inspection",
+      "final-relight quality"
+    ]
+  },
+  "conclusions": {
+    "v13_final": {
+      "classification": "confirmed_scene_generation_output",
+      "basis": "The report provenance names the V13 source runs; the archived run pipeline makes one images.edit call and writes the returned bytes unchanged to gpt_1.png and ours.png; sampled report originals are byte-identical to source-run ours.png objects by content length, ETag, and sha256 metadata.",
+      "relight_stage_evidence": "No downstream relight operation occurs between images.edit and ours.png in the archived active generation path.",
+      "coverage_limit": "Byte identity was checked for one base V13 row and one edited-prompt V13 row, not exhaustively for all 26 report rows that contain V13 assets."
+    },
+    "v14_final": {
+      "classification": "provisional_scene_generation_output",
+      "basis": "The report provenance names hp-repo-two-stage30-20261103T013935Z as its V14 run; report metadata labels every V14 asset 'Repo pipeline, PR #4256'; the run page labels its outputs 'Now: repo pipeline (PR #4256)'; and commit 4d685d95cb8790da4a464a659892b792a0c96d9c makes one images.edit call and saves the returned PNG bytes unchanged as gpt_1.png and ours.png.",
+      "reason_provisional": "The V14 S3 run prefix contains only JPEG before/guide/now renderings and index.html. It has no raw PNG, result.json, run manifest, job/stage record, or content hash that can byte-link the report's v14_final.png originals to ours.png. The stage interpretation is strongly supported by linked source code and report metadata, but exact raw-artifact lineage is not independently verifiable from the persisted run prefix."
+    }
+  },
+  "evidence": [
+    {
+      "id": "report_run_lineage",
+      "source": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/provenance.json",
+      "exact_snippets": [
+        "\"v14_run\": \"hp-repo-two-stage30-20261103T013935Z\"",
+        "\"v13_run\": \"hp-v8-concise-scale-laptop-printer30-20261029T222710Z-762277fe\"",
+        "\"v13_edited_run\": \"hp-laptop-edited-prompt4-20261102T212359Z-0bfc5afc\""
+      ]
+    },
+    {
+      "id": "report_asset_labels",
+      "source": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/data.json",
+      "exact_snippets": [
+        "\"Label\": \"V13 final\", \"Pipeline\": \"V13 edited-prompt run\"",
+        "\"Label\": \"V14 final\", \"Pipeline\": \"Repo pipeline, PR #4256\"",
+        "\"V14 pipeline PR\": \"https://github.com/Adobe-Firefly/foundry/pull/4256\""
+      ],
+      "observed_coverage": "All 30 rows label V14 output with the same PR #4256 pipeline; V13 labels select either the base V13 run or edited-prompt run."
+    },
+    {
+      "id": "v14_run_page",
+      "source": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-repo-two-stage30-20261103T013935Z/index.html",
+      "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-repo-two-stage30-20261103T013935Z/index.html",
+      "exact_snippets": [
+        "Repo pipeline (PR #4256): 24 laptops + 6 printers (30/30 ok)",
+        "Before: V13 run",
+        "Before: edited-prompt run",
+        "Now: repo pipeline (PR #4256)",
+        "Guide",
+        "Final prompt"
+      ],
+      "persisted_objects": "The prefix contains index.html plus per-case *-before.jpg, *-guide.jpg, and *-now.jpg objects. No JSON manifest, raw PNG, job record, or stage record is present."
+    },
+    {
+      "id": "v14_pr_source_contract",
+      "source": "https://github.com/Adobe-Firefly/foundry/commit/4d685d95cb8790da4a464a659892b792a0c96d9c",
+      "paths": [
+        "experimental/adarabi/hp-3p-gpt25/README.md",
+        "experimental/adarabi/hp-3p-gpt25/hp3p/pipeline.py",
+        "experimental/adarabi/hp-3p-gpt25/hp3p/openai_client.py"
+      ],
+      "exact_snippets": [
+        "Make exactly one image call; save its untouched bytes as `gpt_1.png` and `ours.png`.",
+        "res[\"image_calls\"] = 1",
+        "gpt = client.edit_image(res[\"prompt\"], images, requested_size, mask=mask)",
+        "(out / \"gpt_1.png\").write_bytes(gpt)",
+        "(out / \"ours.png\").write_bytes(gpt)",
+        "resp = self.client.images.edit(model=IMAGE_MODEL, image=files, prompt=prompt, n=1, size=size, quality=\"high\", output_format=\"png\", background=\"opaque\", **extra)"
+      ]
+    },
+    {
+      "id": "v13_archived_pipeline",
+      "sources": [
+        "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v8-concise-scale-laptop-printer30-20261029T222710Z-762277fe-comparison-v1/run_manifest.json",
+        "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v8-concise-scale-laptop-printer30-20261029T222710Z-762277fe-comparison-v1/source/hp3p/pipeline.py"
+      ],
+      "exact_snippets": [
+        "\"pipeline_version\": \"unified-blue-v13-full-histogram-reference-carriers-estimated-scale\"",
+        "\"image_model\": \"gpt-image-2.5-sunburst-2026-09-08\"",
+        "\"image_calls\": 26",
+        "res[\"image_calls\"] = 1",
+        "gpt = client.edit_image(res[\"prompt\"], images, requested_size, mask=mask)",
+        "(out / \"gpt_1.png\").write_bytes(gpt)",
+        "(out / \"ours.png\").write_bytes(gpt)"
+      ]
+    },
+    {
+      "id": "v13_byte_identity_base_sample",
+      "source_object": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v8-concise-scale-laptop-printer30-20261029T222710Z-762277fe-comparison-v1/rows/baseline-0008/ours.png",
+      "report_object": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/v13_final.png",
+      "exact_head_values": {
+        "content_length": 4647734,
+        "etag": "17e0ecdbaf2fc9eb0b9317df54b90a48",
+        "sha256": "42e6ee7fee12cd8bb490087b21b0166645dba6cf2c56e7e9ac8a882ae581233d"
+      }
+    },
+    {
+      "id": "v13_byte_identity_edited_sample",
+      "source_object": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-laptop-edited-prompt4-20261102T212359Z-0bfc5afc-comparison-v1/rows/baseline-0007/ours.png",
+      "report_object": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/01/v13_final.png",
+      "exact_head_values": {
+        "content_length": 4960259,
+        "etag": "c58d950750e7c65d86845ce061906047",
+        "sha256": "a64086f53f199fba35cbd6a51fbd7ba3fb7a13ab7e0eee02ba55fdc82c31d1fd"
+      }
+    }
+  ],
+  "annotation_persistence": {
+    "report_prefix_search": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/",
+    "persisted_annotation_objects_found": [
+      {
+        "uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/annotations/reviewer_0.json",
+        "size_bytes": 38058,
+        "last_modified_listing": "2026-11-03 09:21:01"
+      }
+    ],
+    "other_persistence": "No additional annotation, review, or submission object was found under the report prefix. No claim is made about storage outside this S3 prefix."
+  },
+  "unresolved": [
+    "No V14 raw job/stage manifest or raw output PNG was persisted under the named V14 run prefix.",
+    "The V14 *-now.jpg page assets are JPEG renderings and cannot be byte-matched to the report's v14_final.png originals.",
+    "The two sampled V13 byte matches establish both base-run and edited-run copying behavior, but do not constitute an exhaustive 26-asset hash audit."
+  ]
+}

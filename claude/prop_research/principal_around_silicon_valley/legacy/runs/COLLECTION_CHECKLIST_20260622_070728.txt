@@ -1,0 +1,37 @@
+PENINSULA BAY AREA 3BR MARKET RESEARCH CHECKLIST
+================================================
+
+Phase 1: Quick Zillow/Redfin Scan (20 min)
+[ ] Open all Zillow town pages (use zillow_urls_*.txt)
+[ ] Screenshot/note median price and date for each town
+[ ] Open all Redfin town pages (use redfin_urls_*.txt)
+[ ] Screenshot/note median price and date for each town
+[ ] Fill in zillow_median, zillow_date, redfin_median, redfin_date columns in CSV
+
+Phase 2: MLS Validation (30 min - 2 hours)
+[ ] Identify 1-2 local real estate agents for each town
+[ ] Send data request email (template in mls_contacts_*.txt)
+[ ] Receive responses with current market data
+[ ] Fill in mls_median, mls_date, mls_source columns in CSV
+
+Phase 3: Compilation (15 min)
+[ ] For each town, compare the 2-3 data points (Zillow, Redfin, MLS)
+[ ] Identify "final_median" (average or most recent/authoritative)
+[ ] Assign confidence level: HIGH (3 sources, recent), MEDIUM (2 sources or slightly stale), LOW (1 source or >6 months old)
+[ ] Add notes for any conflicts or methodology differences
+[ ] Fill in final_median and confidence columns
+
+Phase 4: Integration (30 min)
+[ ] Open peninsula_market_research_2025-2026.json
+[ ] Populate median_price_data array with results
+[ ] Update summary_statistics with min/max/average across all towns
+[ ] Commit to git: git add . && git commit -m "prop_research: Peninsula market data Q2 2026"
+
+Quality Checks:
+[ ] All 8 towns have at least 1 data source (prefer 2+)
+[ ] Data dates are within last 6 months (prioritize Q2 2026)
+[ ] Confidence levels are justified
+[ ] Any conflicts (>10% difference) are documented in notes
+[ ] Price ranges make sense (no town is dramatically cheaper/more expensive than neighbors)
+
+Estimated Time: 1-2 hours (Option 1+2 combined)

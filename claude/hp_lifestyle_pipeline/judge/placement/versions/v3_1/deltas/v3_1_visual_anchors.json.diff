@@ -1,0 +1,20 @@
+--- /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/data/visual_anchors.json
++++ /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/visual_anchors.json
+@@ -24,7 +24,7 @@
+       "kind": "user_adjudicated_failure",
+       "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_09/v14_final.png",
+       "sha256": "53618cc0df28274b5ae69596d09ba5f4f145b7e1e35f7d0e1c5164b4694b896b",
+-      "guidance": "Hooman explicitly rates this laptop scene FAIL. The laptop is too far into the broad tabletop and away from an actual user chair. The surrounding work objects do not make a coherent reachable laptop station. A laptop must sit near the person using it with an unobstructed keyboard work area. Do not excuse this as a shared table or an attractive conference scene.",
++      "guidance": "Hooman explicitly rates this laptop scene FAIL. The laptop is too far into the broad tabletop and away from an actual user chair. The surrounding work objects do not make a coherent reachable laptop station. A laptop must sit near the person using it with an unobstructed keyboard work area. Do not excuse this as a shared table or an attractive conference scene. V3.1 clarification: confirm excessive working-edge reach/obstruction independently of the movable chair's current position; chair displacement alone is not a failure.",
+       "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/09/v14_final.png",
+       "label_status": "user_confirmed_fail; training demonstration, not held-out"
+     },
+@@ -33,7 +33,7 @@
+       "kind": "user_adjudicated_failure",
+       "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_29/v13_final.png",
+       "sha256": "b465f94249d56d50fa5a2404fb925bb69d8ae559e2e264b2172881fa69d602eb",
+-      "guidance": "Hooman explicitly rates this laptop scene FAIL. The visible chair is in front of the notebook area while the laptop is too far away to the left/back for natural seated typing. He likes the scene narrative, but that appeal cannot rescue failed reach and chair alignment. Assess depth and sideways displacement from the actual chair, not a hypothetical chair placed at the keyboard.",
++      "guidance": "Historical human failure example for excessive laptop reach, not a chair-pose or chair-centering rule. Under V3.1, inspect actual device distance from a usable working edge and visible obstruction. A movable chair's lateral position alone does not establish this defect; do not transfer the historical chair-alignment accusation.",
+       "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/29/v13_final.png",
+       "label_status": "user_confirmed_fail; training demonstration, not held-out"
+     },

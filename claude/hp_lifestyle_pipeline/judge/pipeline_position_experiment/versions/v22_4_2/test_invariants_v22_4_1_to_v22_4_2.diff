@@ -1,0 +1,54 @@
+--- /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/versions/v22_4_2/pre_v22_4_2_snapshot/test_invariants_v22_4_1.py	2026-11-05 22:05:33.105904913 -0800
++++ /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/versions/v22_4_2/frozen_source/test_invariants.py	2026-11-05 22:16:30.365032393 -0800
+@@ -107,3 +107,51 @@
+     )
+     assert dark["verdict"] == "fail"
+     assert dark["checks"]["internal_structure_floor"] is False
++
++
++def _rgba_mask_bytes(bounds=(220, 160, 540, 400)):
++    mask = np.zeros((600, 800, 4), np.uint8)
++    x0, y0, x1, y1 = bounds
++    mask[y0:y1, x0:x1, 3] = 255
++    return cv2.imencode(".png", mask)[1].tobytes()
++
++
++def test_fixed_position_affine_fit_failure_dispatches_to_alpha_fallback(monkeypatch):
++    guide, exact = _fixture()
++    monkeypatch.setattr(cv2, "estimateAffine2D", lambda *args, **kwargs: (None, None))
++    monkeypatch.setattr(cv2, "estimateAffinePartial2D", lambda *args, **kwargs: (None, None))
++
++    result = assess_product_affine(
++        guide,
++        exact,
++        [220, 160, 540, 400],
++        fixed_position=True,
++        product_mask=_rgba_mask_bytes(),
++    )
++
++    assert result["matches"] >= 3
++    assert result["primary_verdict"] == "unverifiable"
++    assert result["primary_reasons"] == ["affine_fit_failed"]
++    assert result["textureless_fallback"]["method"] == "alpha_mask_fixed_position_fallback"
++    assert result["textureless_fallback"]["verdict"] == "pass"
++    assert result["verdict"] == "pass"
++    assert result["reasons"] == []
++
++
++def test_affine_fit_failure_without_fixed_rgba_remains_unverifiable(monkeypatch):
++    guide, exact = _fixture()
++    monkeypatch.setattr(cv2, "estimateAffine2D", lambda *args, **kwargs: (None, None))
++    monkeypatch.setattr(cv2, "estimateAffinePartial2D", lambda *args, **kwargs: (None, None))
++
++    for fixed_position, product_mask in ((True, None), (False, _rgba_mask_bytes())):
++        result = assess_product_affine(
++            guide,
++            exact,
++            [220, 160, 540, 400],
++            fixed_position=fixed_position,
++            product_mask=product_mask,
++        )
++        assert result["matches"] >= 3
++        assert result["verdict"] == "unverifiable"
++        assert result["reasons"] == ["affine_fit_failed"]
++        assert "textureless_fallback" not in result

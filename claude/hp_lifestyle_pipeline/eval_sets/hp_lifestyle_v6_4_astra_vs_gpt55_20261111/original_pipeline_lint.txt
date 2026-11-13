@@ -1,0 +1,186 @@
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_align.py:1:1
+  |
+1 | / import io
+2 | |
+3 | | import numpy as np
+4 | | from PIL import Image
+5 | |
+6 | | from hp3p.align import align, product_alpha
+7 | | from hp3p.locate import locate
+  | |______________________________^
+  |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_captions.py:1:1
+  |
+1 | / import io
+2 | | import json
+3 | |
+4 | | from PIL import Image
+5 | |
+6 | | from hp3p.captions import caption_catalog, format_caption, palette
+7 | | from hp3p.catalog import StyleRef
+  | |_________________________________^
+  |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_catalog.py:40:5
+   |
+39 |   def test_catalog_retains_user_tags_and_rejects_conflicting_duplicate_tags(tmp_path):
+40 | /     import base64
+41 | |     import json
+42 | |
+43 | |     import pytest
+44 | |
+45 | |     from hp3p.catalog import load_catalog
+   | |_________________________________________^
+46 |
+47 |       ref = {"id": "r", "name": "n", "tone": "T", "content": "C", "human_presence": "no_humans",
+   |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_grade.py:1:1
+   |
+ 1 | / import io
+ 2 | | import json
+ 3 | | from dataclasses import replace
+ 4 | |
+ 5 | | import numpy as np
+ 6 | | import pytest
+ 7 | | from PIL import Image
+ 8 | |
+ 9 | | from hp3p import grade
+10 | | from hp3p.catalog import StyleRef
+11 | | from hp3p.grade import lab_stats, match_grade
+   | |_____________________________________________^
+   |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_histogram.py:1:1
+   |
+ 1 | / import gzip
+ 2 | | import json
+ 3 | |
+ 4 | | import numpy as np
+ 5 | | import pytest
+ 6 | |
+ 7 | | from hp3p.histogram import HistogramLookup, build_index
+ 8 | | from hp3p.reference_style import (
+ 9 | |     lab,
+10 | |     material_anchor,
+11 | |     resolve_bindings,
+12 | |     rgb,
+13 | |     select_reference,
+14 | | )
+   | |_^
+   |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+   --> tests/test_histogram.py:106:5
+    |
+104 |       tmp_path, lookup, presence, with_dimensions, size,
+105 |   ):
+106 | /     from dataclasses import replace
+107 | |
+108 | |     from PIL import Image
+109 | |     from test_pipeline import ROW, SIZE_QUOTE, Fake, _hero, _img
+110 | |
+111 | |     from hp3p.catalog import StyleRef
+112 | |     from hp3p.pipeline import run_row
+113 | |     from hp3p.reference_blue import VERSION, ReferenceBlue
+    | |__________________________________________________________^
+114 |
+115 |       reference = StyleRef("tagged", "Cafe", "Warm", "Cafe", "image/png", _img("#357773"), presence)
+    |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+   --> tests/test_histogram.py:175:5
+    |
+174 |   def test_reference_blue_rejects_untagged_catalog_and_four_reference_mode(tmp_path, lookup):
+175 | /     from test_pipeline import CAT, ROW, Fake, _hero
+176 | |
+177 | |     from hp3p.pipeline import run_row
+178 | |     from hp3p.reference_blue import ReferenceBlue
+    | |_________________________________________________^
+179 |
+180 |       with pytest.raises(ValueError, match="existing human/no_humans tags"):
+    |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_locate.py:1:1
+  |
+1 | / import io
+2 | |
+3 | | import numpy as np
+4 | | from PIL import Image
+5 | |
+6 | | from hp3p.locate import locate
+  | |______________________________^
+  |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_mask.py:1:1
+  |
+1 | / import io
+2 | |
+3 | | import numpy as np
+4 | | from PIL import Image
+5 | |
+6 | | from hp3p.mask import prepare
+  | |_____________________________^
+  |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_pipeline.py:1:1
+   |
+ 1 | / import io
+ 2 | | import json
+ 3 | | from dataclasses import replace
+ 4 | |
+ 5 | | import pytest
+ 6 | | from PIL import Image
+ 7 | |
+ 8 | | from hp3p.catalog import StyleRef
+ 9 | | from hp3p.evalset import Row
+10 | | from hp3p.pipeline import run_row
+   | |_________________________________^
+   |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_prompts.py:1:1
+  |
+1 | / import pytest
+2 | |
+3 | | from hp3p.openai_client import load_prompt
+  | |__________________________________________^
+  |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_report.py:1:1
+  |
+1 | / import json
+2 | | from html.parser import HTMLParser
+3 | |
+4 | | import pytest
+5 | |
+6 | | from hp3p import report
+7 | | from hp3p.evalset import Row
+8 | | from hp3p.report import render
+  | |______________________________^
+  |
+help: Organize imports
+
+Found 12 errors.
+[*] 12 fixable with the `--fix` option.

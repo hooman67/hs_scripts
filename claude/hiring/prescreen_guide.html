@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hooman's Pre-Screen Questions</title>
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1c1e21; --muted:#6b7280; --card:#f7f8fa; --border:#e4e7ec;
+    --accent:#d5341a; --accent-soft:#fdecea; --green:#0a7d33; --green-bg:#e9f6ee;
+    --red:#c1121f; --red-bg:#fdecec; --code:#f0f1f3; --quote:#f2f4f7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16181c; --fg:#e6e8eb; --muted:#9aa1ab; --card:#1e2126; --border:#2c3038;
+      --accent:#ff6a4d; --accent-soft:#2a1c19; --green:#5bd684; --green-bg:#14261a;
+      --red:#ff7a7a; --red-bg:#2a1618; --code:#22262c; --quote:#1b1e23;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:0;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:44px 24px 80px}
+  header{border-bottom:3px solid var(--accent); padding-bottom:18px; margin-bottom:8px}
+  h1{font-size:27px; line-height:1.25; margin:0 0 4px; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:14px; margin:0}
+  h2{
+    font-size:20px; margin:38px 0 6px; padding-top:16px;
+    border-top:1px solid var(--border); letter-spacing:-.01em;
+  }
+  h2:first-of-type{border-top:none}
+  h3{font-size:15px; margin:22px 0 6px; color:var(--accent); text-transform:uppercase; letter-spacing:.04em}
+  p{margin:10px 0}
+  ul{margin:8px 0 8px; padding-left:22px}
+  li{margin:5px 0}
+  strong{font-weight:650}
+  em{color:var(--muted)}
+  code{background:var(--code); padding:1px 5px; border-radius:4px; font-size:13.5px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  blockquote{
+    margin:14px 0; padding:12px 16px; background:var(--quote);
+    border-left:4px solid var(--accent); border-radius:0 8px 8px 0; font-size:14.5px;
+  }
+  blockquote p{margin:6px 0}
+  .q{
+    background:var(--card); border:1px solid var(--border); border-radius:10px;
+    padding:13px 16px; margin:14px 0; box-shadow:0 1px 2px rgba(0,0,0,.03);
+  }
+  .q .ask{font-weight:600}
+  .qlabel{
+    display:inline-block; font-size:11px; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--accent); background:var(--accent-soft);
+    padding:2px 8px; border-radius:20px; margin-bottom:6px;
+  }
+  .flag{display:block; margin:5px 0; padding-left:26px; position:relative; font-size:14.5px}
+  .flag::before{position:absolute; left:0; top:0; font-size:15px}
+  .green{color:var(--green)} .green::before{content:"🟢"}
+  .red{color:var(--red)} .red::before{content:"🔴"}
+  .flag b{color:var(--fg)}
+  .note{color:var(--muted); font-size:13.5px; font-style:italic}
+  ol{padding-left:22px; margin:8px 0}
+  ol li{margin:7px 0}
+  table{border-collapse:collapse; width:100%; margin:14px 0; font-size:14.5px}
+  th,td{border:1px solid var(--border); padding:9px 12px; text-align:left; vertical-align:top}
+  th{background:var(--card); font-weight:650}
+  td:first-child{white-space:nowrap; font-weight:600}
+  .rules li{margin:8px 0}
+  footer{margin-top:40px; padding-top:16px; border-top:1px solid var(--border);
+    color:var(--muted); font-size:12.5px}
+  @media print{
+    body{font-size:12px} .wrap{padding:0} .q{box-shadow:none;
+      break-inside:avoid} h2{break-after:avoid}
+    :root{--bg:#fff;--fg:#000}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Hooman's Pre-Screen Questions</h1>
+</header>
+
+<h2>Part 1 — Technical (10 min)</h2>
+
+<div class="q">
+  <span class="qlabel">A · Diffusion / flow fundamentals — warm-up</span>
+  <p class="ask">"Walk me through what a diffusion model actually learns — forward vs. reverse
+  process, and what the network predicts (ε / x₀ / v)." → then: "DDPM vs. flow-matching / rectified
+  flow — what changes, and why do we care for few-step sampling?"</p>
+  <span class="flag green">Explains the objective crisply, knows the prediction-target trade-offs,
+  connects to sampling.</span>
+  <span class="flag red">Hand-waves "it denoises," can't say what the loss is on, only knows the API.</span>
+</div>
+
+<div class="q">
+  <span class="qlabel">B · Post-training &amp; the gate — ASK EVERYONE</span>
+  <p class="ask">"SFT vs. preference optimization (DPO) vs. RL (RLHF/GRPO) vs. distillation for a
+  T2I/T2V model — when do you reach for each, and what do you actually need to run each one?"</p>
+  <p class="ask">Follow-up: "Where does the <strong>reward / preference signal</strong> come from for
+  an image or video model, and what goes wrong with it?" <span class="note">(reward hacking,
+  aesthetic vs. alignment, eval noise)</span></p>
+  <span class="flag green">Has personally run at least one; can talk data/compute cost, failure
+  modes, eval. <b>Method is secondary — depth of hands-on is the check.</b></span>
+  <span class="flag red">Only names techniques; can't describe building the signal or a run they did.</span>
+</div>
+
+<div class="q">
+  <span class="qlabel">C · Conditioning &amp; guidance — architecture depth</span>
+  <p class="ask">"How does text conditioning enter a diffusion transformer — cross-attention vs.
+  adaLN? What is classifier-free guidance, and what breaks at high CFG?"
+  <span class="note">(oversaturation, artifacts, diversity loss)</span></p>
+  <span class="flag green">Concrete, has tuned this.</span>
+  <span class="flag red">Textbook-only.</span>
+</div>
+
+<div class="q">
+  <span class="qlabel">D · Sampling acceleration / deployment — great for a "shipped it" claim</span>
+  <p class="ask">"You have a 50-step model; product needs 1–4 steps at interactive latency. Options
+  and trade-offs?" <span class="note">(distillation, consistency/LCM, guidance distillation,
+  quantization, caching)</span></p>
+  <span class="flag green">Knows quality/latency trade-offs from experience.</span>
+  <span class="flag red">Only "use fewer steps."</span>
+</div>
+
+<div class="q">
+  <span class="qlabel">E · Debugging — best signal for real practitioners</span>
+  <p class="ask">"Your T2I model gives blurry / mode-collapsed / prompt-ignoring outputs. How do you
+  diagnose, in order?" <span class="note">(data → conditioning → loss/schedule → CFG → eval harness)</span></p>
+  <span class="flag green">Systematic, isolates variables, has war stories.</span>
+  <span class="flag red">Guesses randomly.</span>
+</div>
+
+<p class="note">Optional systems depth (only if they claim training-infra strength): numerically
+stable softmax / mixed-precision in attention; why RoPE encodes <strong>relative</strong> position;
+sharding a big DiT run.</p>
+
+<h2>Part 2 — Experience (10 min) — the E2E-ownership probe</h2>
+<p><strong>The "one project" drill</strong> (spend most of the 10 min here):</p>
+<ol>
+  <li>"Pick the project you consider <strong>most your own</strong>. Take me from the initial
+    problem to what shipped." Let them talk, then drill:</li>
+  <li><strong>Whose idea was it?</strong> Who decided the architecture / data strategy / eval?</li>
+  <li>"Draw the full pipeline — data → training → post-training → eval → deployment — and mark which
+    boxes <strong>you personally owned end-to-end</strong>, which you <strong>collaborated</strong>
+    on, which you <strong>handed off</strong>." → This one question separates a lead from a
+    strong contributor.</li>
+  <li>"What broke, and how did you personally unblock it?" <span class="note">(technical +
+    cross-team)</span></li>
+  <li>"What was the measurable outcome — and how do you know <strong>your</strong> part caused it?"</li>
+  <li>"Who else was on it, and what did they do?" <span class="note">(cross-check the ownership
+    story)</span></li>
+</ol>
+<span class="flag green">Owns decisions under ambiguity, drove data/train/post-train/deploy, can
+  attribute impact, generous about naming teammates while still clearly the driver.</span>
+<span class="flag red">"We" with no "I"; owned one component (e.g. just the distillation, just a
+  paper) but frames it as leading the whole thing; can't explain decisions outside their slice;
+  vague on outcome.</span>
+<p><strong>Scale/scope quickies:</strong> biggest model (params) &amp; GPU count they've driven;
+largest dataset; latency/throughput or adoption numbers they're proud of.</p>
+
+<h2>Part 3 — Culture fit (10–20 min)</h2>
+<blockquote>
+  <p>Screen for: <strong>collaborator · listens · responsible · takes initiative.</strong> Strong
+  culture fit can outweigh a slightly-off skillset; a strong-skills candidate who <strong>can't
+  listen / doesn't own failure / is dismissive is a NO</strong> unless you believe it's coachable.
+  Score some of this from <em>how they behave in the screen itself</em>, not just their answers.</p>
+</blockquote>
+
+<h3>Collaborator</h3>
+<div class="q">
+  <p class="ask">"Tell me about a technical disagreement with a peer or a partner team. How did it
+  resolve?"</p>
+  <span class="flag green">Sought to understand the other view, changed their mind at least once,
+  kept the relationship.</span>
+  <span class="flag red">"They were wrong"; steamrolled; only wins.</span>
+</div>
+
+<h3>Listens (score live + one question)</h3>
+<div class="q">
+  <p class="ask">Live signal: do they answer the question you actually asked? Build on your
+  follow-ups? Ask clarifying questions before answering a vague prompt?</p>
+  <p class="ask">"A time real feedback changed your technical approach — what was it and what did you
+  do?"</p>
+  <span class="flag green">Concrete example, integrated it.</span>
+  <span class="flag red">Can't recall one; treats feedback as an obstacle.</span>
+</div>
+
+<h3>Responsible / owns outcomes</h3>
+<div class="q">
+  <p class="ask">"Something you shipped broke, or a project slipped. What did you do?"</p>
+  <span class="flag green">Owns it, root-causes, fixes the system, no blame.</span>
+  <span class="flag red">Blames team/manager/data; passive.</span>
+</div>
+
+<h3>Takes initiative (go-getter)</h3>
+<div class="q">
+  <p class="ask">"Something you started that nobody asked you to do" — bonus if it grew the team/org
+  investment, or you convinced leadership to fund it.</p>
+  <span class="flag green">Self-started 0→1, pitched up, competition/challenge wins,
+  intern→lead conversions.</span>
+  <span class="flag red">Only executes assigned work.</span>
+</div>
+
+<h3>Motivation (2 min)</h3>
+<div class="q">
+  <p class="ask">"Why Firefly / generative media, and what do you want to own next?"</p>
+  <span class="flag green">Wants to lead a gen project E2E; excited about the modality.</span>
+  <span class="flag red">Generic "big models"; or only wants pure research with no shipping appetite.</span>
+</div>
+
+<footer>Foundry Generative Models — pre-screen calibration guide · internal use</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+  "version": "hp-v5-top5-dual-image-generation-manifest-v1",
+  "status": "authorized",
+  "authorized_at": "2026-10-27T00:00:00-07:00",
+  "authorization": "Hooman requested generation of both 40-prompt V5 selections using the corrected renderings on 2026-10-27.",
+  "scope": {
+    "image_generation_authorized": true,
+    "expected_images": 80,
+    "selection_count": 2,
+    "prompts_per_selection": 40,
+    "bank_count": 8,
+    "prompts_per_bank_per_selection": 5,
+    "distinct_candidate_keys": 80,
+    "render_count": 4,
+    "miniPC_excluded": true,
+    "candidate_texts_unchanged": true
+  },
+  "selections": [
+    {
+      "selection_type": "smart_brief",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/selections/v5_top5_smart_brief_per_bank_40.json",
+      "sha256": "efa3ee0cbc8059efaf879c486f02ea7a409cff10bc42302efd733a1a7d118d99",
+      "prompt_count": 40
+    },
+    {
+      "selection_type": "ctech",
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/selections/v5_top5_ctech_per_bank_40.json",
+      "sha256": "9b84eec744c4f65bf2a1317a2b83d211e721df211d9f8140f71834d02fdc5743",
+      "prompt_count": 40
+    }
+  ],
+  "review_data": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/data/review_data.json",
+    "sha256": "9476571ed901657fd35b21f3069639ca0819964dd5dabf8d0ff5618484222535"
+  },
+  "runner_dependency": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/generation/run_generation.py",
+    "sha256": "4dc94c8a791c3b16aa7c05f634be8d052b32f488b9d8a15a7c974a5776b1deb6",
+    "purpose": "Frozen, tested submit-poll-materialize implementation reused without modifying V4.1."
+  },
+  "reference_blob_bindings": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_ctech_v4_1_pilot_20261026_corrected_twins_20261027/blob_bindings.json",
+    "sha256": "d17b6b4a4947b83fbbfe90508f7e57e9a4ec82c414dedf182ff68bbc3dc17801",
+    "source_manifest_sha256": "52a7cb4538510dcd6bf76e1189a022f79dfea36fa163c4275c6f3f2ff08b3a64",
+    "reuse_policy": "Use the exact four previously uploaded blob IDs; never upload substitute reference bytes."
+  },
+  "corrected_asset_manifest": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/corrected_twin_assets_20261027/selected_renders.json",
+    "sha256": "b5d1a01ea36214c82c3cd70317100e542577fd829b44e92e4d7f0ff522df473b"
+  },
+  "source_image_generation_manifest": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/image_generation_manifest.json",
+    "sha256": "52a7cb4538510dcd6bf76e1189a022f79dfea36fa163c4275c6f3f2ff08b3a64"
+  },
+  "model": {
+    "base_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8000.or2.colligo.dev",
+    "model_id": "hp-image",
+    "rewriter_model": "gemini-3.1-pro",
+    "num_inference_steps": 50,
+    "seed": 42,
+    "n": 1,
+    "width": 2368,
+    "height": 1776,
+    "enable_prompt_rewrite": true
+  },
+  "run_dir": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/generation_runs/hp_lifestyle_dual_source_v5_pilot_20261027_top5_dual",
+  "s3": {
+    "bucket": "foundry-hp-enterprise-adobe-assets",
+    "prefix": "eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/generated_top5_dual_v1"
+  },
+  "interpretation_limits": [
+    "The 80 selected candidate keys are distinct across the two selection files.",
+    "Each candidate uses the corrected reference selected only by its deviceType_CameraName tag.",
+    "The V5 reviewed corpus was editorially reviewed; generation authorization here does not convert the prior text pilot into an unaided model-reliability claim."
+  ]
+}

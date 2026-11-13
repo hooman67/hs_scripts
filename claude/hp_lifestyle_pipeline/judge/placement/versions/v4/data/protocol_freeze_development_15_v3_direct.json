@@ -1,0 +1,83 @@
+{
+  "schema_version": "hp-natural-placement-v4-protocol-freeze-v1",
+  "frozen_at_utc": "2026-11-06T02:42:35.080102+00:00",
+  "status": "frozen_before_any_successful_v4_model_evaluation_direct_openai",
+  "git_head_at_freeze": "c25571079be3380a290356108db919dcaf173c67",
+  "model": "gpt-5.5",
+  "reasoning_effort": "high",
+  "client_route": "foundry_direct_openai",
+  "expected_returned_model_regex": "^gpt-5\\.5(?:-\\d{4}-\\d{2}-\\d{2})?$",
+  "batch_concurrency": 1,
+  "transport_sdk_max_retries": 0,
+  "transport_timeout_seconds": 180,
+  "application_repair_policy": {
+    "maximum_repair_attempts": 1,
+    "trigger": "invalid structured output only",
+    "transport_failures_retried": false
+  },
+  "development_record_count": 15,
+  "labels_passed_to_model": false,
+  "manual_output_edits_allowed": false,
+  "artifacts": [
+    {
+      "path": "system_prompt.md",
+      "bytes": 7676,
+      "sha256": "3dab85a6eba792e88484fa650c7884ae173f5dd599b819fc7f5d0f8e85092222"
+    },
+    {
+      "path": "assessment_schema.json",
+      "bytes": 4393,
+      "sha256": "ed135bc200267f3ac1e6d4d197bb3e6820319f97e11bfa604ca3d09f4b011e2e"
+    },
+    {
+      "path": "result_schema.json",
+      "bytes": 2351,
+      "sha256": "6b9e68b5904d10a22a4d971bd4a7be7250d12b2e16b6d2ec646eeb7d6185ccc2"
+    },
+    {
+      "path": "scoring.py",
+      "bytes": 12568,
+      "sha256": "efbb8b6c5f64af16c1d12b15475f94846192beb91478e970cae2b0b2b64cc569"
+    },
+    {
+      "path": "run_judge.py",
+      "bytes": 13055,
+      "sha256": "dc3051136cce3492fd0c123dd3ee185b278a5445b46fd78c2ada3820632a6d43"
+    },
+    {
+      "path": "run_batch.py",
+      "bytes": 15269,
+      "sha256": "72a9f4593dbc5c39f879ec429cec29535e3f18650ca7ac35551c4001b536e04c"
+    },
+    {
+      "path": "test_v4_scoring.py",
+      "bytes": 4819,
+      "sha256": "a40edcdc46b6b6c7a0e58630dd04a622da76ae206ea45ccfa3cfbe168eda0785"
+    },
+    {
+      "path": "test_v4_runtime.py",
+      "bytes": 5043,
+      "sha256": "19aabf707dc4b9cbb5f9ed0a135c76d4f5f3b9d3aa5750489bd00dd00f618439"
+    },
+    {
+      "path": "data/development_15_manifest.json",
+      "bytes": 86779,
+      "sha256": "a94e4d6e0865eaa9f9d2aa232ecc97275e5712796b79f5b9c378d0e4662e8eb0"
+    },
+    {
+      "path": "data/development_15_expectations.json",
+      "bytes": 7812,
+      "sha256": "4ae4d88c954cea9b1050fe7600113d5f0f4c45593e23c877b64f18386846620b"
+    },
+    {
+      "path": "astra/astra_output.md",
+      "bytes": 40306,
+      "sha256": "ff078f61df61eb94f3af7012212db9ea2271b09d6cd786cb9af5944a124791f4"
+    },
+    {
+      "path": "astra/request_manifest.json",
+      "bytes": 2756,
+      "sha256": "5354a7f4eb96c2ee4c6bf568580963c881f2206c99f1a5f432d2e03860a2ee25"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "version": "hp-lifestyle-dual-source-v5-top6-review-log-v1",
+  "case_id": "cashmere__laptop_FrontLeftMedium",
+  "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/normalized_outputs/cashmere__laptop_FrontLeftMedium__sample_001.json",
+  "normalized_output_sha256": "4ce0972d0e43720ae3f3323366b71747f006e87e1b32d3b2a6bfd0ebe051945c",
+  "reviewed_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/reviewed_outputs/cashmere__laptop_FrontLeftMedium.json",
+  "reviewed_output_sha256": "584998a98370e6e10fe97e2f252549b24d079f4bf0b6da9704b554fe763da8f9",
+  "reviewed_output_semantic_sha256": "74af135e20698df34cd918519320c8309a10027ba1398b6955307494d7dd7aa0",
+  "text_changed": true,
+  "edit_count": 6,
+  "edits": [
+    {
+      "path": "/prompts/p2/text",
+      "before": "A lived-in home workspace with a wooden desk holding an open notebook and loose papers. Soft daylight filters through relaxed curtains, with a comfortable chair keeping the room warm and casually imperfect.",
+      "after": "A lived-in home workspace with a wooden desk holding an open notebook and loose papers. Soft daylight fills the room, with a comfortable chair keeping it warm and casually imperfect.",
+      "reason": "Remove curtains so the medium view has one background detail."
+    },
+    {
+      "path": "/prompts/p2/ctech_changes",
+      "before": [
+        "Kept the lived-in home workspace, wooden desk, open notebook, loose papers, soft daylight, relaxed curtains, comfortable chair, and casually imperfect tone.",
+        "Deleted extra pens, coffee, plants, shelving, books, and broader room objects for the camera limit."
+      ],
+      "after": [
+        "Kept the lived-in home workspace, wooden desk, open notebook, loose papers, soft daylight, comfortable chair, and casually imperfect tone.",
+        "Deleted curtains, extra pens, coffee, plants, shelving, books, and broader room objects for the camera limit."
+      ],
+      "reason": "Keep the C-Tech change explanation consistent with the prompt."
+    },
+    {
+      "path": "/prompts/p18/text",
+      "before": "A modern gaming workspace with a dark desk and illuminated display shelving. Wall art and vibrant RGB lighting create an organized space with layered neon tones.",
+      "after": "A modern gaming workspace with a dark desk and illuminated display shelving. Vibrant RGB lighting creates an organized space with layered neon tones.",
+      "reason": "Remove wall art so the medium view has one background detail."
+    },
+    {
+      "path": "/prompts/p18/visual_signature/background_details",
+      "before": [
+        "illuminated display shelving",
+        "wall art"
+      ],
+      "after": [
+        "illuminated display shelving"
+      ],
+      "reason": "Match the corrected prose and camera budget."
+    },
+    {
+      "path": "/prompts/p19/text",
+      "before": "A stylish gaming room with a dark wood desk positioned against a textured wall. Floating shelves displaying collectibles and vibrant RGB lighting create a dynamic yet organized space.",
+      "after": "A stylish gaming room with a dark wood desk. Floating shelves displaying collectibles and vibrant RGB lighting create a dynamic yet organized space.",
+      "reason": "Remove the textured wall so the medium view has one background detail."
+    },
+    {
+      "path": "/prompts/p19/visual_signature/background_details",
+      "before": [
+        "textured wall",
+        "floating shelves displaying collectibles"
+      ],
+      "after": [
+        "floating shelves displaying collectibles"
+      ],
+      "reason": "Match the corrected prose and camera budget."
+    }
+  ]
+}

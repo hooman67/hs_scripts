@@ -1,0 +1,14 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - pydantic
+deps:
+- colligo.models.firefly.diffusion.common[public]
+- colligo.models.firefly.imcoding.common
+- torch
+exclude:
+- build_data.py
+- '...'

@@ -1,0 +1,16 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.filix3.common[public]
+deps:
+- colligo.image
+- colligo.models.common.adapter_utils
+- colligo.models.filix3.common
+- colligo.models.filix3.workers.dit_filix3[public]
+- colligo.models.filix3.workers.dual_vae[public]
+- colligo.models.filix3.workers.t5[public]
+- colligo.models.firefly.clio_common
+- colligo.models.prompt_forge.worker[public]

@@ -1,0 +1,72 @@
+visibility: public
+public:
+  files:
+  - endpoints
+  - types
+  deps:
+  - colligo.base
+  - colligo.models.cai[public]
+  - colligo.models.firefly.clio_common[public]
+  - colligo.models.firefly.lego_mllm[public]
+  - colligo.models.foundry.authz[public]
+  - pydantic
+deps:
+- aiohttp
+- colligo.caplan_taxonomy
+- colligo.data
+- colligo.external_services.acp
+- colligo.external_services.business_kit
+- colligo.external_services.cai
+- colligo.external_services.ims
+- colligo.fastapi
+- colligo.image
+- colligo.models.cai
+- colligo.models.common.adapter_utils
+- colligo.models.common.metrics
+- colligo.models.dentro.model_zoo
+- colligo.models.dentro.pylib
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.common
+- colligo.models.firefly.diffusion.common[public]
+- colligo.models.firefly.diffusion.gen45[public]
+- colligo.models.firefly.diffusion.gr6[public]
+- colligo.models.firefly.diffusion.image5[public]
+- colligo.models.firefly.diffusion.lego[public]
+- colligo.models.firefly.gen45_text_encoder[public]
+- colligo.models.firefly.imcoding.conversational_processor[public]
+- colligo.models.firefly.imcoding.mori_vae[public]
+- colligo.models.firefly.lego_mllm
+- colligo.models.firefly.load_testing
+- colligo.models.firefly.nsfw_adobe_one[public]
+- colligo.models.firefly.pipelines.common
+- colligo.models.firefly.prompty
+- colligo.models.firefly.service_common.persistence
+- colligo.models.firefly.vllm_omni_image5[public]
+- colligo.models.foundry.metrics
+- colligo.models.foundry.workers.common
+- colligo.models.foundry.workers.gen45_conversational[public]
+- colligo.models.prompt_forge.worker[public]
+- duckdb
+- foundry_aws_gateway
+- google-auth
+- google-genai
+- jmespath
+- numpy
+- openai
+- piexif
+- pillow
+- pyjwt
+- pytest
+- pyyaml
+- torch
+- torchvision
+- typing-extensions
+exclude:
+- scripts
+- "..."
+
+# This does not change behavior of the code
+# This is useful when for any rason the tar of deps uploaded to s3 or the cache of CI agents
+# being corrupted. Bump this to cause a new value and invalidate the cache.
+# "1" is added for this incident: https://adoberesearch.slack.com/archives/C050XP8QH98/p1738009670643249?thread_ts=1738008639.457959&cid=C050XP8QH98
+pyenv_cache_etag: "1"

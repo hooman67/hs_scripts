@@ -1,0 +1,1371 @@
+{
+  "version": "camera-v2-prompt-review-batch-v1",
+  "batch_id": "batch_003",
+  "case_count": 25,
+  "cases": [
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontCloseUpHigh",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontCloseUpHigh",
+        "resolved_tag": "laptop_FrontCloseUpHigh",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "high",
+        "max_local_props": 1,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontCloseUpHigh.json",
+      "record_sha256": "ecd61e2f6481335e2ba1e8507342d89a01c3439cd8b510e4cf477d4d29a91a77",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A focused office work surface in pale wood, with the cropped edge of a meeting notes sheet and small sketch in soft daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontCloseUpHigh/sample_001.json",
+          "sha256": "0024b0ee456a365bb07cd4d2756f66d6407922a5f35da2d54217bd20a296a07d",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontLeftCloseUp",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontLeftCloseUp",
+        "resolved_tag": "laptop_FrontLeftCloseUp",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "max_local_props": 1,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontLeftCloseUp.json",
+      "record_sha256": "130cacf649bfa5fcb583fa9919bf5604c4d7376b170e8f9a9a755f4d81a102e9",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A focused office tabletop in pale wood, with the cropped edge of a sketched meeting agenda in soft daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontLeftCloseUp/sample_001.json",
+          "sha256": "55de1fe72e05ecd0232cde21234c0fcbcb890464c076fbfdb3f0741b5dd8460d",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontLeftMedium",
+      "status": "manual_review",
+      "camera": {
+        "requested_tag": "laptop_FrontLeftMedium",
+        "resolved_tag": "laptop_FrontLeftMedium",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "max_local_props": 2,
+        "max_background_details": 1,
+        "people_policy": "optional_partial_activity"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontLeftMedium.json",
+      "record_sha256": "fbdcba528185d39829e06fb6177a7df40b15b430d65a1ba6627cf79b73002db9",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office table in pale wood with an open sketch notebook and a black marker. A softly blurred meeting-room chair adds collaboration context in daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Home",
+          "text": "A compact home worktable with a printed meeting agenda and a single pen, lit by diffuse daylight against a calm neutral wall."
+        },
+        {
+          "id": "p3",
+          "environment": "Office",
+          "text": "A local café work surface in natural wood with a paper notebook and a ceramic cup. Soft upholstered seating sits out of focus in daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [
+        {
+          "prompt_id": "p2",
+          "reasons": [
+            "creative-addition heuristic counts 4 details against combined prop/background ceiling 3"
+          ],
+          "countable_details": [
+            "Compact home worktable",
+            "Printed meeting agenda",
+            "Single pen",
+            "Neutral wall"
+          ],
+          "profile": {
+            "framing": "medium",
+            "max_local_props": 2,
+            "max_background_details": 1,
+            "people_policy": "optional_partial_activity"
+          }
+        }
+      ],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontLeftMedium/sample_001.json",
+          "sha256": "f0a132a58be5d3c9d3b2501c58eb188b8324dd0f865331c39a1b835aa0fd4c21",
+          "successful_sample_attempt": 1,
+          "status": "rejected",
+          "validated_failures": [
+            "Evidence is not a verbatim source substring: KSP2.long_message_best_sku",
+            "Citation path guard failure at /debug/ksp_mappings/1/source_evidence/0/path: citation_quote_not_found_in_intended_message"
+          ],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontLeftMedium/sample_002.json",
+          "sha256": "66ec3e2fbfb16f9adfe50bf1b2e0d3c93a51ed9ead42e012b60da453ca0cd40b",
+          "successful_sample_attempt": 2,
+          "status": "manual_review",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": [
+            {
+              "prompt_id": "p2",
+              "reasons": [
+                "creative-addition heuristic counts 4 details against combined prop/background ceiling 3"
+              ],
+              "countable_details": [
+                "Compact home worktable",
+                "Printed meeting agenda",
+                "Single pen",
+                "Neutral wall"
+              ],
+              "profile": {
+                "framing": "medium",
+                "max_local_props": 2,
+                "max_background_details": 1,
+                "people_policy": "optional_partial_activity"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontLeftMediumHigh",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontLeftMediumHigh",
+        "resolved_tag": "laptop_FrontLeftMediumHigh",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "high",
+        "max_local_props": 2,
+        "max_background_details": 1,
+        "people_policy": "optional_partial_activity"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontLeftMediumHigh.json",
+      "record_sha256": "d1788b296e54afbaf583805bd1eb2530f78d76811209a3a98b4781781270f326",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office table in pale wood, with a sketch pad and fine marker for planning ideas. A softly blurred meeting-room chair suggests nearby calls and collaboration."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontLeftMediumHigh/sample_001.json",
+          "sha256": "60b4be026826b7865712161d8deae4fb856b232dfbc4b67b2b39ae58a42591c0",
+          "successful_sample_attempt": 1,
+          "status": "rejected",
+          "validated_failures": [
+            "Evidence is not a verbatim source substring: KSP2.long_message_best_sku",
+            "Citation path guard failure at /debug/ksp_mappings/1/source_evidence/0/path: citation_quote_not_found_in_intended_message"
+          ],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontLeftMediumHigh/sample_002.json",
+          "sha256": "5c7a376d4a4e3eb579aaff7b34f4e4783012fecc43ac4f7f92f2c53fc495c03c",
+          "successful_sample_attempt": 2,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontLeftWide",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontLeftWide",
+        "resolved_tag": "laptop_FrontLeftWide",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontLeftWide.json",
+      "record_sha256": "6a85399f6469195172cf0babba86dcfe87a0dbb02e4a4808488948f31f9de1bc",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A collaborative office table in light wood with an open sketchbook, a single pen, and a compact stack of call agenda notes. Soft daylight and a blurred glass partition suggest a nearby meeting area."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A compact café work surface in natural wood with a paper notebook and ceramic cup. Soft daylight and a softly defined upholstered bench suggest work between meetings."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontLeftWide/sample_001.json",
+          "sha256": "7d0416b48fa12c75e630df47ceccf721df66397258df455265a9d89bd1653e56",
+          "successful_sample_attempt": 1,
+          "status": "rejected",
+          "validated_failures": [
+            "Evidence is not a verbatim source substring: KSP2.long_message_best_sku",
+            "Citation path guard failure at /debug/ksp_mappings/1/source_evidence/0/path: citation_quote_not_found_in_intended_message"
+          ],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontLeftWide/sample_002.json",
+          "sha256": "f8f49aede60ea0f8f7ac7655e4512ee6c88d3935c0167c46e3995904ed8b37c5",
+          "successful_sample_attempt": 2,
+          "status": "rejected",
+          "validated_failures": [
+            "Evidence is not a verbatim source substring: KSP2.long_message_best_sku",
+            "Citation path guard failure at /debug/ksp_mappings/1/source_evidence/0/path: citation_quote_not_found_in_intended_message"
+          ],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontLeftWide/sample_003.json",
+          "sha256": "8db94f3a154de5cd5f2ee1cd5e4e681bc011483a3b62b42f9ff1b5364fb68101",
+          "successful_sample_attempt": 3,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontMedium",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontMedium",
+        "resolved_tag": "laptop_FrontMedium",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "level",
+        "max_local_props": 2,
+        "max_background_details": 1,
+        "people_policy": "optional_partial_activity"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontMedium.json",
+      "record_sha256": "7bea0b555b120783c81cd789b3e9da5582d81a90ed0dbe2e982d0d7861b89a5d",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office table in pale wood, with an open sketch notebook and a pen nearby. A softly blurred meeting-room wall panel adds context in diffuse daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontMedium/sample_001.json",
+          "sha256": "cf9c2d6865a54366fbc1ff19a38d6276a6928faff9c7e2e15a41d9ad0e995717",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontMediumHigh",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontMediumHigh",
+        "resolved_tag": "laptop_FrontMediumHigh",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "high",
+        "max_local_props": 2,
+        "max_background_details": 1,
+        "people_policy": "optional_partial_activity"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontMediumHigh.json",
+      "record_sha256": "071429b38acb6fa7b638d02aec54db689d40ffc0bccb569042214037837e3d12",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office table in light wood with an open paper notebook showing quick sketches and a single pen, with a softly blurred meeting-room wall in daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A quiet café work table in matte wood with a compact stack of marked-up notes and a single pen, with muted upholstered seating softly behind."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontMediumHigh/sample_001.json",
+          "sha256": "d79ae8e40eb41e3b85a440a4c965f847596cff4b58bbf4e761bbae1a0e2c869e",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontRightCloseUp",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontRightCloseUp",
+        "resolved_tag": "laptop_FrontRightCloseUp",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "max_local_props": 0,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontRightCloseUp.json",
+      "record_sha256": "ba5a591fbb553087c2e0f7b9a2e2c6193f79d8152fb695b97da92b144bf0eebf",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A clean office meeting surface in pale wood, with soft daylight and a neutral surrounding tone suggesting focused collaboration."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontRightCloseUp/sample_001.json",
+          "sha256": "d22408d531600176ecb8c5a2b4c093e0f1d38e7f360b8f3fba009b3ac278bddf",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontRightCloseUpLow",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontRightCloseUpLow",
+        "resolved_tag": "laptop_FrontRightCloseUpLow",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "low",
+        "max_local_props": 0,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontRightCloseUpLow.json",
+      "record_sha256": "5818b1b51c025077e3ffe6b5e299106dccdaa731409bd2ef882e9cfdcf3d2c63",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A clean project table with smooth pale wood grain and soft daylight, kept uncluttered for sketching ideas and quick collaboration."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A quiet meeting table surface in matte laminate, lit by gentle daylight, with a plain neutral backdrop for focused calls."
+        },
+        {
+          "id": "p3",
+          "environment": "Office",
+          "text": "A minimal touchdown work surface with subtle wood texture and even ambient light, suggesting a flexible spot between work locations."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontRightCloseUpLow/sample_001.json",
+          "sha256": "b5afc13dca4fc4fe9ee34679d600e9450a43dbc9ae50daefbcb7d648dca4ab47",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontRightWide",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontRightWide",
+        "resolved_tag": "laptop_FrontRightWide",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontRightWide.json",
+      "record_sha256": "4214b75f66c08c4bee8cd5c6993ebeaeed3df6db28c02c0bc70a38294bcf1437",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office table in natural wood with a sketchpad, a felt-tip marker, and a small stack of presentation notes. A softly blurred whiteboard and nearby chair suggest a collaborative workspace in diffuse daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A small meeting table with a printed agenda, a pen, and a water glass. A softly blurred acoustic panel and meeting-room wall add quiet collaboration context in even daylight."
+        },
+        {
+          "id": "p3",
+          "environment": "Office",
+          "text": "A compact café work surface in pale wood with a paper notebook, capped pen, and travel mug. Soft upholstered seating and muted wall texture sit in the background under natural daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontRightWide/sample_001.json",
+          "sha256": "4e2a51baa4a72b6f705d6ef03a45ea28f9748721bea707642c307386f13519c2",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontWide",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontWide",
+        "resolved_tag": "laptop_FrontWide",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontWide.json",
+      "record_sha256": "43216836046285a0342993bb4e749ff01d3e9d591e2c9e87678f67a54ffc52a6",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A collaborative office worktable in natural wood, with an open paper notebook, a single pen, and a compact stack of sketched concept sheets. A softly blurred meeting chair and simple pinboard suggest shared direction in daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A quiet meeting-table surface with a printed agenda, a single pen, and a ceramic cup. A softly defined conference chair and neutral acoustic wall panel add meeting context in gentle daylight."
+        },
+        {
+          "id": "p3",
+          "environment": "Office",
+          "text": "A compact café work surface in natural wood, with a notebook, a travel mug, and a folded receipt nearby. Upholstered seating and an indistinct service counter stay softly in the background."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontWide/sample_001.json",
+          "sha256": "c6f75c22a8d7b09edf1c487fe39b77425e1cdedaec7ce061d0338bec4b08d23e",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontWideLow",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_FrontWideLow",
+        "resolved_tag": "laptop_FrontWideLow",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "low",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_FrontWideLow.json",
+      "record_sha256": "416faaf5f9c36e3510b28aa18473853c710f0df5455bc834ad21719c4b72d4a3",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A clean meeting table in light wood, with a sketchpad open to simple diagrams, a single marker, and a small stack of presentation notes. A nearby chair and softly blurred whiteboard suggest a collaborative office session in natural daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A shared conference table with a paper agenda, marked-up content brief, and capped pen arranged for call prep. Soft daylight and a muted acoustic wall panel create a calm meeting setting."
+        },
+        {
+          "id": "p3",
+          "environment": "Home",
+          "text": "A compact home work surface in matte wood, with a closed notebook, a pen, and a travel mug. A simple chair and softly textured wall keep the setting practical for shifting work locations in gentle daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_FrontWideLow/sample_001.json",
+          "sha256": "c16a792b17dbbb7b35078dd0dcfcf1f3ad85f54dacb7ee7fbccf016d1b9efffc",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_LeftCloseUp",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_LeftCloseUp",
+        "resolved_tag": "laptop_LeftCloseUp",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "max_local_props": 1,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_LeftCloseUp.json",
+      "record_sha256": "2ef916c2ac7b830d00ffcb61914e46553af586186795972ced0aa0d6171c9af1",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A pale wooden work surface with the cropped edge of a sketch sheet in soft daylight, against a plain neutral backdrop."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A clean conference tabletop with the edge of a printed agenda, softly lit by daylight against a simple neutral backdrop."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_LeftCloseUp/sample_001.json",
+          "sha256": "98784e217164e92c8595542285d8cb0f4d66ba3caa556b7b0cb8f54d87a341eb",
+          "successful_sample_attempt": 1,
+          "status": "rejected",
+          "validated_failures": [
+            "Evidence is not a verbatim source substring: KSP2.long_message_best_sku",
+            "Citation path guard failure at /debug/ksp_mappings/1/source_evidence/0/path: citation_quote_not_found_in_intended_message"
+          ],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_LeftCloseUp/sample_002.json",
+          "sha256": "22e19e227bcbf105a6757c4200c047a7ab7e45391e0a2efa7f4059c9849e2ebe",
+          "successful_sample_attempt": 2,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_LeftCloseUp90",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_LeftCloseUp90",
+        "resolved_tag": "laptop_LeftCloseUp90",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "max_local_props": 0,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_LeftCloseUp90.json",
+      "record_sha256": "b10e2016f5bda43c476550d4fa2d2e89e34fcfdd38c8ca98fc6022d464e6db4b",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A quiet office work surface in pale wood, kept clear under soft daylight with a neutral close background."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_LeftCloseUp90/sample_001.json",
+          "sha256": "d76e6ad05936d037c93479b28d312756e360d0477203dcc5411a804a89e22fb3",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_LeftWide",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_LeftWide",
+        "resolved_tag": "laptop_LeftWide",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_LeftWide.json",
+      "record_sha256": "b3c1ffdc208a4be866df4ae177ee31af70dc27abc598c2bb578da00e0bc2c3fb",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office project table in pale wood, with a sketch sheet, capped marker, and compact stack of presentation notes. A simple chair and muted acoustic panel suggest collaborative discussion in soft daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A compact café work table in natural wood, with a paper notebook, a single pen, and a slim folder of forms. A muted upholstered bench and softly blurred wall paneling keep the mobile-work setting understated in daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_LeftWide/sample_001.json",
+          "sha256": "bb5ed6b11793cedd221b99d0e4ca0929e37caa38a5eaf0eaa4d86351996541e2",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_LeftWideHigh",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_LeftWideHigh",
+        "resolved_tag": "laptop_LeftWideHigh",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "high",
+        "max_local_props": 3,
+        "max_background_details": 1,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_LeftWideHigh.json",
+      "record_sha256": "f85c4cdf17c5d3b18cc008cddef12351a0c1da8c6ddc06f49695cfaa4836827e",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A clean conference table in pale wood with a sketchpad, fine-tip pen, and compact stack of presentation handouts. A single softened meeting chair adds context in diffuse daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Home",
+          "text": "A home worktable with a lined notebook, one pen, and a neat stack of call notes in diffuse daylight. A simple upholstered chair stays softly secondary."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_LeftWideHigh/sample_001.json",
+          "sha256": "a36830e3ee61bc795e4b8cb33916e3f39704ae314b5611f10a7c4e4acf82a970",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_RightCloseUp",
+      "status": "manual_review",
+      "camera": {
+        "requested_tag": "laptop_RightCloseUp",
+        "resolved_tag": "laptop_RightCloseUp",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "max_local_props": 1,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_RightCloseUp.json",
+      "record_sha256": "49850b827c9d2b1c24a47037525f1317f57e706bc20a46f754277672fbc99ffd",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A clean meeting-table surface with the cropped edge of a hand-sketched concept sheet, lit by soft daylight against a neutral tone."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A quiet call-ready workspace on pale wood, with a single paper agenda partly visible and soft daylight on a neutral backdrop."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [
+        {
+          "prompt_id": "p1",
+          "reasons": [
+            "people wording appears under an omit policy"
+          ],
+          "countable_details": [
+            "Cropped hand-sketched concept sheet"
+          ],
+          "profile": {
+            "framing": "tight",
+            "max_local_props": 1,
+            "max_background_details": 0,
+            "people_policy": "omit"
+          }
+        }
+      ],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_RightCloseUp/sample_001.json",
+          "sha256": "e3adb0a6f8600e69a02ae2dcec54b1207c531ef1f697d855fe533a721d81418f",
+          "successful_sample_attempt": 1,
+          "status": "manual_review",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": [
+            {
+              "prompt_id": "p1",
+              "reasons": [
+                "people wording appears under an omit policy"
+              ],
+              "countable_details": [
+                "Cropped hand-sketched concept sheet"
+              ],
+              "profile": {
+                "framing": "tight",
+                "max_local_props": 1,
+                "max_background_details": 0,
+                "people_policy": "omit"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_RightCloseUp90",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_RightCloseUp90",
+        "resolved_tag": "laptop_RightCloseUp90",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "max_local_props": 0,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_RightCloseUp90.json",
+      "record_sha256": "ab50a0f844f0bbd6f903ef2a2ce45d7489bf2bfe70930439c66193a938643588",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A quiet office work surface in pale wood, kept clear under soft daylight with a simple neutral backdrop."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_RightCloseUp90/sample_001.json",
+          "sha256": "6aca2306da3e3f763cb2f540cc570021af41406dc275c3b0104504662bb7368d",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_RightMedium",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_RightMedium",
+        "resolved_tag": "laptop_RightMedium",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "max_local_props": 2,
+        "max_background_details": 1,
+        "people_policy": "optional_partial_activity"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_RightMedium.json",
+      "record_sha256": "ef60d34672a73b755923df2f459086085503a6ae3cf5d86e33b87717f3b887fa",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A collaborative office table in smooth light wood, with an open sketch notebook and a single marker. A softly blurred meeting chair suggests shared presentation work in daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A quiet office call area on a matte wooden table, with a paper agenda and ceramic cup. A muted acoustic wall panel sits softly out of focus in natural light."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_RightMedium/sample_001.json",
+          "sha256": "94239c7ab2257747cae938d07df578d7486bba82dc10760ae9178ca0f771e89a",
+          "successful_sample_attempt": 1,
+          "status": "rejected",
+          "validated_failures": [
+            "Evidence is not a verbatim source substring: KSP2.long_message_best_sku",
+            "Citation path guard failure at /debug/ksp_mappings/1/source_evidence/0/path: citation_quote_not_found_in_intended_message"
+          ],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_RightMedium/sample_002.json",
+          "sha256": "d0438f6680246ddb7de57388fcb7aa7106ff1b5c32d09e17568a8b33c6ba9331",
+          "successful_sample_attempt": 2,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_RightMediumHigh",
+      "status": "manual_review",
+      "camera": {
+        "requested_tag": "laptop_RightMediumHigh",
+        "resolved_tag": "laptop_RightMediumHigh",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "high",
+        "max_local_props": 2,
+        "max_background_details": 1,
+        "people_policy": "optional_partial_activity"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_RightMediumHigh.json",
+      "record_sha256": "d996c9d33222ce00153394931afe3b70eafd297fdaad0b40625d07564e82c27e",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A clean office worktable with a paper notebook opened to rough concept sketches and a single pen, with a softly blurred meeting-room wall in diffuse daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A quiet meeting nook with a pale tabletop, a compact notepad of agenda points and a ceramic cup, with muted acoustic panels in soft daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [
+        {
+          "prompt_id": "p1",
+          "reasons": [
+            "creative-addition heuristic counts 4 details against combined prop/background ceiling 3"
+          ],
+          "countable_details": [
+            "Clean office worktable",
+            "Paper notebook with rough concept sketches",
+            "Single pen",
+            "Softly blurred meeting-room wall"
+          ],
+          "profile": {
+            "framing": "medium",
+            "max_local_props": 2,
+            "max_background_details": 1,
+            "people_policy": "optional_partial_activity"
+          }
+        },
+        {
+          "prompt_id": "p2",
+          "reasons": [
+            "creative-addition heuristic counts 4 details against combined prop/background ceiling 3"
+          ],
+          "countable_details": [
+            "Quiet meeting nook",
+            "Compact notepad of agenda points",
+            "Ceramic cup",
+            "Muted acoustic panels"
+          ],
+          "profile": {
+            "framing": "medium",
+            "max_local_props": 2,
+            "max_background_details": 1,
+            "people_policy": "optional_partial_activity"
+          }
+        }
+      ],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_RightMediumHigh/sample_001.json",
+          "sha256": "6a369f94273e7d10a276955d7c6907134e7298592e9d580ab54313e9bd872b02",
+          "successful_sample_attempt": 1,
+          "status": "manual_review",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": [
+            {
+              "prompt_id": "p1",
+              "reasons": [
+                "creative-addition heuristic counts 4 details against combined prop/background ceiling 3"
+              ],
+              "countable_details": [
+                "Clean office worktable",
+                "Paper notebook with rough concept sketches",
+                "Single pen",
+                "Softly blurred meeting-room wall"
+              ],
+              "profile": {
+                "framing": "medium",
+                "max_local_props": 2,
+                "max_background_details": 1,
+                "people_policy": "optional_partial_activity"
+              }
+            },
+            {
+              "prompt_id": "p2",
+              "reasons": [
+                "creative-addition heuristic counts 4 details against combined prop/background ceiling 3"
+              ],
+              "countable_details": [
+                "Quiet meeting nook",
+                "Compact notepad of agenda points",
+                "Ceramic cup",
+                "Muted acoustic panels"
+              ],
+              "profile": {
+                "framing": "medium",
+                "max_local_props": 2,
+                "max_background_details": 1,
+                "people_policy": "optional_partial_activity"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_RightWide",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_RightWide",
+        "resolved_tag": "laptop_RightWide",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_RightWide.json",
+      "record_sha256": "04b47262790ca3820503a345311033aaaa471b21b8f7b9b18766fb49c981e81d",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A bright office worktable in natural wood with an open sketchbook, a marker, and a compact stack of presentation notes. A simple meeting chair and softly blurred whiteboard suggest collaboration in daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A quiet shared work surface with a notebook, pen, and ceramic cup. A softly blurred meeting-room wall and acoustic panel suggest call preparation in diffuse daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_RightWide/sample_001.json",
+          "sha256": "5dcb476aeb31cd1aff39ca663e722f63711a71ce142523161f1b00c216548274",
+          "successful_sample_attempt": 1,
+          "status": "rejected",
+          "validated_failures": [
+            "Evidence is not a verbatim source substring: KSP2.long_message_best_sku",
+            "Citation path guard failure at /debug/ksp_mappings/1/source_evidence/0/path: citation_quote_not_found_in_intended_message"
+          ],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_RightWide/sample_002.json",
+          "sha256": "14af88eebeb0f2585e2a09cefae213446b4d6b99598c1768530b8537cdd63ca4",
+          "successful_sample_attempt": 2,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_RightWideLow",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_RightWideLow",
+        "resolved_tag": "laptop_RightWideLow",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "low",
+        "max_local_props": 3,
+        "max_background_details": 2,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_RightWideLow.json",
+      "record_sha256": "bd9c941a419670310ae60dc01784613fbd8671e061833194b32eafda6565782f",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "An office meeting table with a clean wood surface, a sketch pad, a single marker, and a small presentation handout. Soft daylight leaves nearby chairs and a plain whiteboard gently out of focus."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A coworking counter in natural wood, set for mobile work with a paper notebook, one pen, and a compact stack of marked-up pages. A soft divider panel and simple seating suggest a shared location in diffuse daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_RightWideLow/sample_001.json",
+          "sha256": "fe89cdf93d32438a4eb2390d27f951170b2469da1360abfa48bf5c4e9734fb76",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_TopFrontCloseUp",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_TopFrontCloseUp",
+        "resolved_tag": "laptop_TopFrontCloseUp",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "top_oblique",
+        "max_local_props": 1,
+        "max_background_details": 0,
+        "people_policy": "omit"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_TopFrontCloseUp.json",
+      "record_sha256": "b46a3c0048d6a0f8274e96fa921b545e115dc5fb7b3a2dad1b6bac3f9ac33ddd",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A clean office tabletop in natural wood, with the cropped corner of a marked sketch sheet under diffuse daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A quiet meeting prep surface with a single printed agenda page on pale wood, lit by soft daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_TopFrontCloseUp/sample_001.json",
+          "sha256": "6060c38f31b52b9afa360e83e316b161509a799da2d8d2e3dd067443f89badd5",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_TopFrontLeftWide",
+      "status": "accepted",
+      "camera": {
+        "requested_tag": "laptop_TopFrontLeftWide",
+        "resolved_tag": "laptop_TopFrontLeftWide",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "top_oblique",
+        "max_local_props": 3,
+        "max_background_details": 0,
+        "people_policy": "optional_if_supported_and_unobtrusive"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_TopFrontLeftWide.json",
+      "record_sha256": "fb86cf7545c3ede179928f1639d58aca76f37cec1870200b1ea4fcf534303186",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office table in pale wood with a sketchpad, a fine marker, and a compact stack of presentation notes, lit by diffuse daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A quiet meeting-prep surface in matte laminate with an open notebook, a single pen, and a small agenda card arranged in soft daylight."
+        },
+        {
+          "id": "p3",
+          "environment": "Office",
+          "text": "A compact café worktable in natural wood with a travel notebook, a paper receipt, and a capped pen, kept tidy under gentle daylight."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_TopFrontLeftWide/sample_001.json",
+          "sha256": "a07191d678a9fb004efcc7b880e728a4dee9f53454e0aa778493b5a9a3986ddb",
+          "successful_sample_attempt": 1,
+          "status": "accepted",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": []
+        }
+      ]
+    },
+    {
+      "case_id": "d60e13e4457fd44c__laptop_TopFrontMedium",
+      "status": "manual_review",
+      "camera": {
+        "requested_tag": "laptop_TopFrontMedium",
+        "resolved_tag": "laptop_TopFrontMedium",
+        "device_type": "laptop",
+        "profile_version": "camera-v2-draft-2026-10-22-r3",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "top_oblique",
+        "max_local_props": 2,
+        "max_background_details": 0,
+        "people_policy": "optional_partial_activity"
+      },
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/records/accepted/d60e13e4457fd44c__laptop_TopFrontMedium.json",
+      "record_sha256": "09ac9c3219fa54bd92a01df8eca7ee919ca24778b894328dbd0d1261b7a411d3",
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A clean studio worktable with a paper sketchpad and a single pen, lit by diffuse daylight for a concept-to-presentation work session."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A tidy meeting table with printed call notes and a ceramic cup, lit by soft daylight and kept uncluttered for quiet collaboration."
+        },
+        {
+          "id": "p3",
+          "environment": "Office",
+          "text": "A compact shared work counter with a slim folder and a travel notebook, evenly lit for focused work between locations."
+        }
+      ],
+      "final_citation_repairs": [],
+      "final_validated_failures": [],
+      "final_manual_density_flags": [
+        {
+          "prompt_id": "p1",
+          "reasons": [
+            "creative-addition heuristic counts 3 details against combined prop/background ceiling 2"
+          ],
+          "countable_details": [
+            "Clean studio worktable",
+            "paper sketchpad",
+            "single pen"
+          ],
+          "profile": {
+            "framing": "medium",
+            "max_local_props": 2,
+            "max_background_details": 0,
+            "people_policy": "optional_partial_activity"
+          }
+        }
+      ],
+      "attempt_history": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/validation/attempts/d60e13e4457fd44c__laptop_TopFrontMedium/sample_001.json",
+          "sha256": "1de1503ecaee0895cb66f685291ea90012a43ac2baf98eaf75c5f0fa08ea7aa1",
+          "successful_sample_attempt": 1,
+          "status": "manual_review",
+          "validated_failures": [],
+          "citation_repairs": [],
+          "manual_density_flags": [
+            {
+              "prompt_id": "p1",
+              "reasons": [
+                "creative-addition heuristic counts 3 details against combined prop/background ceiling 2"
+              ],
+              "countable_details": [
+                "Clean studio worktable",
+                "paper sketchpad",
+                "single pen"
+              ],
+              "profile": {
+                "framing": "medium",
+                "max_local_props": 2,
+                "max_background_details": 0,
+                "people_policy": "optional_partial_activity"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

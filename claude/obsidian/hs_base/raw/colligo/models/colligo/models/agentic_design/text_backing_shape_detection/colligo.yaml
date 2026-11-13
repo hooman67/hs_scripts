@@ -1,0 +1,17 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.agentic_design.agentic_design_bl[public]
+  - colligo.models.agentic_design.text_extraction[public]
+  - colligo.models.agentic_design.text_processor[public]
+  - pydantic
+deps:
+- colligo.models.agentic_design.text_processor
+- numpy
+- opencv-contrib-python-headless
+- torch
+exclude:
+- "..."

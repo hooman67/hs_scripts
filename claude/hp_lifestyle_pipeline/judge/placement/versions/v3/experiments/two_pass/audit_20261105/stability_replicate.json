@@ -1,0 +1,127 @@
+{
+  "schema_version": "placement-verifier-stability-audit-v1",
+  "audited_at_utc": "2026-11-05T23:36:57.963364+00:00",
+  "scope": "one preregistered stability replicate over the same six posthoc development trigger cases and eight components",
+  "campaign_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_stability_v1",
+  "run_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_stability_v1/runs/stability-replicate-v1",
+  "original_run_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions/runs/verifier-v3",
+  "protocol": {
+    "freeze_sha256": "ae0f85b36324d5feedc9caa7558e1eb6400bc67c4152be4855869635e349191d",
+    "runner_sha256": "53382e595f6608a32c638f055cca7aff4f10f691435c87324dbb6cb4ff5506dd",
+    "batch_sha256": "9c2894115289e77285c6754f6f59e170df255703b3797666e650d7cb79437bd4",
+    "system_prompt_sha256": "5174cfc0caac713d056b6c4c2c80162b802db6c77763c4bfaa128d6dec4a2f10",
+    "triggers_sha256": "0797c99432381317394d66a6fa5181222ccbdd7e3abf7f1b0b3a23de6e3717dc",
+    "summary_sha256": "dc2f3b930f6ab232693a216b1936dece5f4cac5879ec2c52d27b0f0ab8473153",
+    "model_requested": "gpt-5.5",
+    "model_returned": "gpt-5.5-2026-04-24",
+    "reasoning_effort": "high",
+    "workers": 2,
+    "calls": 6,
+    "successful_calls": 6,
+    "failed_calls": 0,
+    "all_completed_on_attempt": 1
+  },
+  "independent_integrity_checks": {
+    "schema_valid_assessments": 6,
+    "raw_response_matches_assessment_and_embedded_result": 6,
+    "trigger_proposal_source_joins_correct": 6,
+    "runtime_input_exact_five_keys": 6,
+    "image_hashes_checked": 12,
+    "image_hash_mismatches": 0,
+    "request_fields_match_embedded_result": 6,
+    "human_label_or_comment_keys_in_runtime_requests": 0,
+    "exact_target_comment_or_expectation_prose_hits": 0,
+    "serialized_image_base64_in_request_json": 0,
+    "protocol_freeze_match": true
+  },
+  "classification_rule": "material iff visibility is observed or partial, severity >= 2, and confidence is medium or high; unobservable/null is unknown",
+  "aggregate": {
+    "original_classes": {"material": 3, "clear": 2, "unobservable": 1, "mild_or_other": 2},
+    "replicate_classes": {"material": 5, "clear": 2, "mild_or_other": 1},
+    "exact_all_requested_fields": "3/8",
+    "visibility_agreement": "7/8",
+    "severity_agreement": "4/8",
+    "confidence_agreement": "5/8",
+    "issue_codes_agreement": "5/8",
+    "material_binary_agreement": "6/8"
+  },
+  "preregistered_answers": {
+    "three_original_material_components_repeat": "3/3",
+    "cafe_seating_components": "Both repeat exactly as material.",
+    "printer_serving_component": "Repeats as material with identical visibility, severity, and codes; confidence changes medium to high.",
+    "visitor_chair_false_failure": "Remains rejected as nonmaterial. Access repeats clear exactly. Orientation changes from unobservable/unknown to observed clear with no issue codes, so its observability label is unstable."
+  },
+  "components": [
+    {
+      "record_id": "cashmere__laptop_FrontLeftMedium__p6",
+      "component": "access_usability",
+      "original": {"visibility": "partial", "severity": 2, "confidence": "medium", "issue_codes": ["no_user_position"], "class": "material"},
+      "replicate": {"visibility": "partial", "severity": 2, "confidence": "medium", "issue_codes": ["no_user_position"], "class": "material"},
+      "exact": true
+    },
+    {
+      "record_id": "cashmere__laptop_FrontLeftMedium__p6",
+      "component": "orientation_alignment",
+      "original": {"visibility": "observed", "severity": 2, "confidence": "medium", "issue_codes": ["chair_alignment_conflict"], "class": "material"},
+      "replicate": {"visibility": "observed", "severity": 2, "confidence": "medium", "issue_codes": ["chair_alignment_conflict"], "class": "material"},
+      "exact": true
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p5",
+      "component": "support_scenario",
+      "original": {"visibility": "observed", "severity": 0, "confidence": "high", "issue_codes": [], "class": "clear"},
+      "replicate": {"visibility": "observed", "severity": 1, "confidence": "medium", "issue_codes": ["unmotivated_position"], "class": "mild_or_other"},
+      "exact": false
+    },
+    {
+      "record_id": "cashmere__laptop_FrontCloseUp__p5",
+      "component": "access_usability",
+      "original": {"visibility": "partial", "severity": 0, "confidence": "medium", "issue_codes": [], "class": "clear"},
+      "replicate": {"visibility": "partial", "severity": 0, "confidence": "medium", "issue_codes": [], "class": "clear"},
+      "exact": true
+    },
+    {
+      "record_id": "cashmere__laptop_FrontCloseUp__p5",
+      "component": "orientation_alignment",
+      "original": {"visibility": "unobservable", "severity": null, "confidence": "low", "issue_codes": [], "class": "unobservable"},
+      "replicate": {"visibility": "observed", "severity": 0, "confidence": "medium", "issue_codes": [], "class": "clear"},
+      "exact": false
+    },
+    {
+      "record_id": "magic__printer_FrontCloseUp__p3",
+      "component": "support_scenario",
+      "original": {"visibility": "observed", "severity": 1, "confidence": "medium", "issue_codes": ["unmotivated_position"], "class": "mild_or_other"},
+      "replicate": {"visibility": "observed", "severity": 2, "confidence": "medium", "issue_codes": ["occupied_workstation", "unmotivated_position"], "class": "material"},
+      "exact": false
+    },
+    {
+      "record_id": "magic__printer_FrontLeftMedium__p1",
+      "component": "support_scenario",
+      "original": {"visibility": "observed", "severity": 1, "confidence": "medium", "issue_codes": ["inappropriate_support"], "class": "mild_or_other"},
+      "replicate": {"visibility": "observed", "severity": 2, "confidence": "medium", "issue_codes": ["occupied_workstation"], "class": "material"},
+      "exact": false
+    },
+    {
+      "record_id": "tassel__printer_FrontLeftMedium__p6",
+      "component": "support_scenario",
+      "original": {"visibility": "observed", "severity": 2, "confidence": "medium", "issue_codes": ["inappropriate_support", "incoherent_use_arrangement", "unmotivated_position"], "class": "material"},
+      "replicate": {"visibility": "observed", "severity": 2, "confidence": "high", "issue_codes": ["inappropriate_support", "incoherent_use_arrangement", "unmotivated_position"], "class": "material"},
+      "exact": false
+    }
+  ],
+  "replicate_artifacts_sha256": {
+    "cashmere__laptop_FrontCloseUp__p5": {"request.json": "fc9e4d9ccb6a637c06ea8ce78c36714b224c67bf3d36381b64b43eb320b2d178", "response.json": "4a4162c5db88b53c45c915cee00c1ba1a8a8ba961d8d7d3d04a8f967a3a52a40", "result.json": "6bc602383e83e6cfdb8108255c8b56194af236f4e9b37421806ee32bc9f19961", "assessment.json": "6ceeb2c915ebc9b91ad8271cd603998a97d1d3bf18a618c2ee31f414aa36abca"},
+    "cashmere__laptop_FrontLeftMedium__p6": {"request.json": "a06619e42b314b9d6296fc0071b4adb8f91312d63c25af378c799ad634c7ca01", "response.json": "ab93ec0f13e576277be344dae63523b843a1483d001ecffcee5bda0b8c3974fc", "result.json": "dfd8cef9c53389b116e37acb85fcc030855ad1dc1dc2ecba5a99dc11331885a7", "assessment.json": "6221c2aa9dfdf69dc7895871975dc4203dc1fd0696872ff7d6edb998868b7136"},
+    "magic__printer_FrontCloseUp__p3": {"request.json": "0f989cf43e2f6d61a7eae6e6b4cc9017e7c82bc68807851111747e961b7880be", "response.json": "ac3a2da4e9fa2dff501a9038107a149c6138ee23c029a2d2ab5f483b044f0ce6", "result.json": "f349f80383ef45990ab76547992fff70f72c615daf2cb77d278e589c9d8d89c9", "assessment.json": "368529e80ffad92d2adc05454991994590f75951418d5aa2d6d07ba69e740e85"},
+    "magic__printer_FrontLeftMedium__p1": {"request.json": "3254e1ec1a2e366d9f927b1a25852457082081f8adbe888085f93152c6f33c07", "response.json": "cad7ea94696da738d4cd9a524b573bfcd6c257f23fdc02bf01e05b3921410795", "result.json": "b4d6b9590f52e66507462ad2f1ac89a01ee28bd51250bb4cf839947cfdd0f425", "assessment.json": "2ae595c03adc2c0af5cd652f693f0f5d3771ce29b8ed30903f44f988f0cd9123"},
+    "tassel__printer_FrontCloseUp__p5": {"request.json": "4e24a2766de1081650f9261422d441f94d61d6d349e546a81df9349dcf67164e", "response.json": "38dd7ae925063cb090fba68c5b9fc733683e314f9a20343f0fdf8810288197e3", "result.json": "432334ffcdae8374a0c5dda1d6aeeb0f9c6f02bff0ff762a450cb51f956f3875", "assessment.json": "49bc268d375082ab7bca24b5b9f866076644a3641ce5f8c6bb2b7d5b14f33a10"},
+    "tassel__printer_FrontLeftMedium__p6": {"request.json": "69cc61e6e35c7d8acfba4ca022eafbe63804c92606dee1d3528b82613aae0bcd", "response.json": "91e621e4f3249a976b9f1d3217756f5b5acb375dd40e5a1014372d395c6fff85", "result.json": "6f5e7258a07fd246ef65d29595419c95ea85843dd5823e0751613ec9c427e40f", "assessment.json": "0f1bb61101a9192e9b93f6351df86fe2332f94a32d48020eb9a6178fe9234b1f"}
+  },
+  "interpretation": "The three preregistered material components repeat, but material classifications expand from three to five. Two printer-workspace components move from severity 1 to severity 2, and a clear printer component becomes mild. Preserve both runs; do not select a preferred result or change candidates automatically.",
+  "limitations": [
+    "Same six posthoc development triggers; this is not a holdout and does not estimate whole-judge accuracy.",
+    "Only one replicate was authorized, so no stable probability or confidence interval can be estimated.",
+    "No human ground truth was supplied to the verifier; this checks stochastic repeatability, not correctness.",
+    "Issue-code disagreement is reported descriptively; companion codes have no invented labels or independent human assessment."
+  ]
+}

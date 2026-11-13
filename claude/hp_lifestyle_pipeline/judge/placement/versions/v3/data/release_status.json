@@ -1,0 +1,43 @@
+{
+  "as_of_utc": "2026-11-06T00:08:56.838763+00:00",
+  "version": "placement-judge-v3",
+  "status": "selected_consensus_research_candidate_for_human_review",
+  "baseline_version": "placement-judge-v2",
+  "automatic_acceptance_authorized": false,
+  "reason": "Two-check consensus retains additional development detections and removes an unsupported new orientation accusation. One earlier accepted case becomes review. This is a small development tradeoff, not established generalization.",
+  "default_model": "gpt-5.5",
+  "future_validation": "Collect independent placement feedback on the new160 images using separate image-quality and judge-agreement questions. No automatic acceptance authorized.",
+  "buttons_from_20261105_feedback": "ignored",
+  "target_comments_in_model_input": false,
+  "selected_protocol": "placement-consensus-additions-decision-v1",
+  "development_evidence": {
+    "diagnostic_verdict_matches": {
+      "baseline": 5,
+      "candidate": 6,
+      "denominator": 11
+    },
+    "extended_explicit_verdict_matches": {
+      "baseline": 2,
+      "candidate": 2,
+      "denominator": 2
+    },
+    "extended_comment_agreements_with_v2": {
+      "baseline": 56,
+      "candidate": 55,
+      "denominator": 56
+    },
+    "policy_tuned_on_these_checks": true,
+    "remaining_agreement_case": "pass_to_review_for_unresolved_visitor_chair_relation"
+  },
+  "selected_run": "experiments/consensus_policy/runs/consensus-160-v2",
+  "new160_results": {
+    "pass": 118,
+    "fail": 38,
+    "review": 4,
+    "human_labeled_accuracy": null,
+    "partial_new_image_inspection_informed_policy": true,
+    "model_calls": 328,
+    "errors": 0,
+    "retries": 0
+  }
+}

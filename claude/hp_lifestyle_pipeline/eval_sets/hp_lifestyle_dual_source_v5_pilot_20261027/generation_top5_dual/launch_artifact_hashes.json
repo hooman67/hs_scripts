@@ -1,0 +1,33 @@
+{
+  "version": "hp-v5-top5-dual-launch-artifact-hashes-v1",
+  "status": "validated_preflight_and_smoke_started",
+  "files": [
+    {"path": "generation_top5_dual/image_generation_manifest.json", "sha256": "c99a9fbb28cafb006f4ed6f015015895a756a50aa1314b9703c0405ae5ca1cab"},
+    {"path": "generation_top5_dual/run_generation.py", "sha256": "77a84679f34d309574ed1ce4e64064ebe70f22aaf6b65edec7eb941370280106"},
+    {"path": "generation_top5_dual/test_run_generation.py", "sha256": "e06b49ee91caafd05825341ec5e1d593882753ea54984d3ee2d5cd4deb1391b1"},
+    {"path": "generation_top5_dual/build_gallery.py", "sha256": "e88da6d7e6f6f735709b1c8b5cb8b4ba7cb12da5b040f4d8cf1373053698c55d"},
+    {"path": "generation_top5_dual/validate_gallery.py", "sha256": "bc10e3f8d1c651f42fc0fe231426fbf2f347e22e4a2b4ae44d7f1bac8c280ac7"},
+    {"path": "generation_top5_dual/test_gallery.py", "sha256": "318888c2c27895d9f126eb98b48cc9c136089b2de885bf3a91ce5e7497000599"},
+    {"path": "generation_top5_dual/publish_gallery.py", "sha256": "b4c7801e74e9a114050c1caf2e75936821fd1545afe0ca6b067049591fc6d942"},
+    {"path": "generation_top5_dual/supervise_generation.py", "sha256": "5999c906b9c2718ef539601802ebe226053be8596c89610c413fad30e38b8d40"},
+    {"path": "generation_top5_dual/supervise_publication.py", "sha256": "ecd515f60bf674e258e979d458028ad81691a6b5c4d12a90dec001e179cf684a"},
+    {"path": "generation_top5_dual/.gitignore", "sha256": "6e7640457f72dfc8ce92fc3aa3f02773729fda2207619e2ec5e9a8dd2a35ae29"},
+    {"path": "generation_top5_dual/README.md", "sha256": "459f39c3d4d679ccd5e67f4cd99dac10f6499f1b7b269a9ae3f7a921e318920a"},
+    {"path": "generation_top5_dual/gallery_template/index.html", "sha256": "afff5c5565d60f6782b185e3d32bd6e4396665d2edd4345a32eec9558d3fe32a"},
+    {"path": "generation_top5_dual/gallery_template/main.js", "sha256": "fef3f9f9cb51e72aa1286bd75687426528fc22dfdef29975c25bac12c55528eb"},
+    {"path": "generation_top5_dual/gallery_template/style.css", "sha256": "669f7a106b399e2144238a300310b7ac4caa890daf06504be112d3fd4a78c832"},
+    {"path": "generation_top5_dual/gallery_template/imsauth.js", "sha256": "269ec81678b5cffb043d80a1340aa05ca5d2c24ea96396f0f97d690ddb772a1a"},
+    {"path": "selections/v5_top5_smart_brief_per_bank_40.json", "sha256": "efa3ee0cbc8059efaf879c486f02ea7a409cff10bc42302efd733a1a7d118d99"},
+    {"path": "selections/v5_top5_ctech_per_bank_40.json", "sha256": "9b84eec744c4f65bf2a1317a2b83d211e721df211d9f8140f71834d02fdc5743"}
+  ],
+  "validation": {
+    "validate_only_rows": 80,
+    "selection_counts": {"smart_brief": 40, "ctech": 40},
+    "distinct_candidate_keys": 80,
+    "exact_reference_blob_count": 4,
+    "endpoint_preflight_openapi_http_status": 200,
+    "endpoint_preflight_metadata_http_status": 200,
+    "generation_submitted_by_preflight": false,
+    "offline_tests_passed": 9
+  }
+}

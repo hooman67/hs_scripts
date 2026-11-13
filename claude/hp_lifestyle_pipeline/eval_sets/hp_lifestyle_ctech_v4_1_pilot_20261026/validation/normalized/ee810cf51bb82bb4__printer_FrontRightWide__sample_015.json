@@ -1,0 +1,207 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 11,
+  "warning_count": 1,
+  "errors": [
+    {
+      "code": "unnatural_place_phrase",
+      "detail": "teaching preparation table",
+      "candidate_id": "p28"
+    },
+    {
+      "code": "ctech_extension_environment",
+      "detail": "category_extension must change the reference environment",
+      "candidate_id": "p29"
+    },
+    {
+      "code": "ctech_extension_environment",
+      "detail": "category_extension must change the reference environment",
+      "candidate_id": "p30"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['desks', 'plants', 'wall']",
+      "candidate_id": "p11"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['desks', 'plants', 'wall'] but signature has 2 entries",
+      "candidate_id": "p11"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['plants', 'shelving', 'workstations']",
+      "candidate_id": "p13"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['plants', 'shelving', 'workstations'] but signature has 2 entries",
+      "candidate_id": "p13"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['desks', 'plants', 'wall']",
+      "candidate_id": "p18"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['desks', 'plants', 'wall'] but signature has 2 entries",
+      "candidate_id": "p18"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['plants', 'shelving', 'workstations']",
+      "candidate_id": "p21"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['plants', 'shelving', 'workstations'] but signature has 2 entries",
+      "candidate_id": "p21"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 4,
+    "environments": {
+      "Home": 8,
+      "Office": 8,
+      "Café": 4,
+      "Gaming": 3,
+      "Creative Studio": 4,
+      "Education": 3
+    },
+    "relationships": {
+      "source_adjacent": 9,
+      "creative_departure": 14,
+      "source_grounded": 7
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 8,
+      "Office": 8,
+      "Education": 3,
+      "Gaming": 3,
+      "Café": 4,
+      "Creative Studio": 4
+    },
+    "relationship_counts": {
+      "source_grounded": 7,
+      "source_adjacent": 9,
+      "creative_departure": 14
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 15,
+      "close_adaptation": 10,
+      "category_extension": 5
+    },
+    "ctech_reference_counts": {
+      "CT18": 1,
+      "CT03": 3,
+      "CT11": 2,
+      "CT12": 2,
+      "CT14": 2,
+      "CT16": 1,
+      "CT17": 1,
+      "CT15": 1,
+      "CT09": 2,
+      "CT10": 3,
+      "CT13": 3,
+      "CT01": 2,
+      "CT02": 2,
+      "CT04": 2,
+      "CT05": 2,
+      "CT06": 1
+    },
+    "ctech_score_range": [
+      62,
+      88
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p30"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e1"
+        ],
+        "prompt_ids": [
+          "p9",
+          "p10",
+          "p17",
+          "p18",
+          "p20",
+          "p21",
+          "p23",
+          "p24",
+          "p25",
+          "p26",
+          "p27",
+          "p28",
+          "p29",
+          "p30"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e2"
+        ],
+        "prompt_ids": [
+          "p2",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p22",
+          "p24",
+          "p28",
+          "p29"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p6",
+          "p7",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "f63e7560402aa620073ad4824b212b7ec911364f0ed4a1bcbca19c4ba9a030a2"
+}

@@ -1,0 +1,272 @@
+{
+  "type": "object",
+  "properties": {
+    "prompts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "Home",
+              "Office",
+              "Education",
+              "Gaming"
+            ]
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "environment",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "debug": {
+      "type": "object",
+      "properties": {
+        "input_assessment": {
+          "type": "string"
+        },
+        "count_explanation": {
+          "type": "string"
+        },
+        "used_fallback": {
+          "type": "boolean"
+        },
+        "ksp_mappings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ksp_id": {
+                "type": "string"
+              },
+              "eligible_for_additional_prompt": {
+                "type": "boolean"
+              },
+              "source_evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "quote"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "prompt_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "explanation": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ksp_id",
+              "eligible_for_additional_prompt",
+              "source_evidence",
+              "prompt_ids",
+              "explanation"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "value_proposition": {
+          "type": "object",
+          "properties": {
+            "source_evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path",
+                  "quote"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "prompt_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "explanation": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_evidence",
+            "prompt_ids",
+            "explanation"
+          ],
+          "additionalProperties": false
+        },
+        "creative_additions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "prompt_id": {
+                "type": "string"
+              },
+              "details": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "prompt_id",
+              "details"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "ignored_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "camera": {
+          "type": "object",
+          "properties": {
+            "requested_tag": {
+              "type": "string"
+            },
+            "resolved_tag": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "profile_version": {
+              "type": "string"
+            },
+            "resolution": {
+              "type": "string",
+              "enum": [
+                "exact",
+                "alias",
+                "unknown",
+                "missing"
+              ]
+            },
+            "framing": {
+              "type": "string",
+              "enum": [
+                "tight",
+                "medium",
+                "wide",
+                "unknown"
+              ]
+            },
+            "elevation": {
+              "type": "string",
+              "enum": [
+                "level",
+                "oblique",
+                "low",
+                "high",
+                "top_oblique",
+                "unknown"
+              ]
+            },
+            "adjustments": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "prompt_id": {
+                    "type": "string"
+                  },
+                  "omitted_or_simplified": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "explanation": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "prompt_id",
+                  "omitted_or_simplified",
+                  "explanation"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "device_type": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Effective registered device type from the resolved camera, or null if unresolved. Types are not a fixed enum."
+            }
+          },
+          "required": [
+            "requested_tag",
+            "resolved_tag",
+            "profile_version",
+            "resolution",
+            "framing",
+            "elevation",
+            "adjustments",
+            "device_type"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "input_assessment",
+        "count_explanation",
+        "used_fallback",
+        "ksp_mappings",
+        "value_proposition",
+        "creative_additions",
+        "ignored_fields",
+        "camera"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "prompts",
+    "debug"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,19 @@
+visibility: public
+custom_pyenv: foundry_mesh3d
+has_build_module: true
+
+public:
+  files:
+  - types
+  deps:
+  - colligo.base
+  - pydantic
+
+
+  - colligo.models.foundry.workers.mesh2tex[public]
+exclude:
+- tests
+
+deps:
+- colligo.data
+- colligo.models.build

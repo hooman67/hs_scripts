@@ -1,0 +1,164 @@
+{
+  "guard_version": "full-affine-v1.5-unreliable-affine-alpha-fallback",
+  "fixed_position": true,
+  "thresholds": {
+    "min_inliers": 20,
+    "min_inlier_ratio": 0.55,
+    "singular_min": 0.98,
+    "singular_max": 1.02,
+    "max_anisotropy_ratio": 1.02,
+    "max_abs_rotation_deg": 1.0,
+    "max_column_shear_cos": 0.02,
+    "max_residual_median_px": 1.5,
+    "max_residual_p95_px": 3.5,
+    "min_source_span_x_fraction": 0.45,
+    "min_source_span_y_fraction": 0.4,
+    "min_source_quadrants": 3,
+    "min_source_hull_fraction": 0.12,
+    "max_fixed_translation_px": 8.0
+  },
+  "product_bounds_px": [
+    576,
+    536,
+    1996,
+    1402
+  ],
+  "matches": 5,
+  "inliers": 4,
+  "inlier_ratio": 0.8,
+  "full_affine_matrix": [
+    [
+      0.8929898947115803,
+      0.4138524197204018,
+      -467.1462297304927
+    ],
+    [
+      -0.018288603530733503,
+      1.0768460542350007,
+      -88.76077438592547
+    ]
+  ],
+  "partial_affine_matrix": [
+    [
+      0.9820531269901042,
+      -0.0018170912664785994,
+      17.56529455100597
+    ],
+    [
+      0.0018170912664785994,
+      0.9820531269901042,
+      21.974344152152526
+    ]
+  ],
+  "partial_inliers": 3,
+  "singular_values": [
+    1.2264420992838583,
+    0.7902382248475632
+  ],
+  "anisotropy_ratio": 1.5519903501509797,
+  "rotation_deg": -12.37348664976802,
+  "column_shear_cos": 0.3395498816293864,
+  "residual_median_px": 0.771840856099548,
+  "residual_p95_px": 1.6420006190203884,
+  "source_span_x_fraction": 0.2709517776966095,
+  "source_span_y_fraction": 0.10381323099136353,
+  "source_quadrants": 1,
+  "source_hull_fraction": 0.0018718911660288344,
+  "transformed_product_corners_px": [
+    [
+      269.0408465935129,
+      477.89447505033246
+    ],
+    [
+      1537.086497083957,
+      451.9246580366908
+    ],
+    [
+      1895.4826925618252,
+      1384.4733410042013
+    ],
+    [
+      627.437042071381,
+      1410.443158017843
+    ]
+  ],
+  "corners_in_frame": true,
+  "translation_x_px": -467.1462297304927,
+  "translation_y_px": -88.76077438592547,
+  "checks": {
+    "inliers": false,
+    "inlier_ratio": true,
+    "singular_min": false,
+    "singular_max": false,
+    "anisotropy": false,
+    "rotation": false,
+    "shear": false,
+    "residual_median": true,
+    "residual_p95": true,
+    "span_x": false,
+    "span_y": false,
+    "quadrants": false,
+    "hull": false,
+    "corners": true,
+    "fixed_translation_x": false,
+    "fixed_translation_y": false
+  },
+  "reasons": [
+    "boundary"
+  ],
+  "verdict": "fail",
+  "primary_verdict": "fail",
+  "primary_reasons": [
+    "inliers",
+    "singular_min",
+    "singular_max",
+    "anisotropy",
+    "rotation",
+    "shear",
+    "span_x",
+    "span_y",
+    "quadrants",
+    "hull",
+    "fixed_translation_x",
+    "fixed_translation_y"
+  ],
+  "fallback_dispatch_reason": "structurally_insufficient_affine_evidence",
+  "affine_evidence_reliability_checks": {
+    "inliers": false,
+    "span_x": false,
+    "span_y": false,
+    "quadrants": false,
+    "hull": false
+  },
+  "textureless_fallback": {
+    "method": "alpha_mask_fixed_position_fallback",
+    "thresholds": {
+      "max_translation_px": 8,
+      "min_boundary_edge_coverage_2px": 0.8,
+      "min_internal_edge_coverage_floor_2px": 0.2,
+      "min_internal_edge_coverage_2px": 0.8,
+      "min_highpass_ncc_override": 0.8,
+      "min_internal_edge_samples": 100
+    },
+    "translation_x_px": 1,
+    "translation_y_px": 0,
+    "boundary_edge_coverage_2px": 0.7193481351853878,
+    "boundary_distance_p90_px": 6.684999942779541,
+    "internal_edge_coverage_2px": 0.8849740932642487,
+    "internal_distance_p90_px": 2.3243000507354736,
+    "highpass_ncc": 0.4439203441143036,
+    "source_boundary_samples": 9143,
+    "source_internal_edge_samples": 965,
+    "source_appearance_samples": 48128,
+    "checks": {
+      "boundary": false,
+      "internal_structure_floor": true,
+      "structure_or_appearance": true,
+      "internal_support": true
+    },
+    "reasons": [
+      "boundary"
+    ],
+    "verdict": "fail"
+  }
+}

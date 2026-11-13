@@ -1,0 +1,42 @@
+{
+  "version": "camera-v2-root-review-v1",
+  "reviews": [
+    {
+      "batch_id": "batch_001",
+      "batch_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_001.json",
+      "batch_sha256": "cf40bed3abb8f6be99e4694fa7380353b9fa03f6541b76309ca7f266dfbe3d6c",
+      "reviewer": "root research agent",
+      "status": "scene_scopes_accepted",
+      "case_count": 25,
+      "confirmed_validator_false_positives": [
+        {
+          "case_id": "22fdbf19f03d1a31__laptop_CAMReview",
+          "term": "Subdued simple background"
+        },
+        {
+          "case_id": "22fdbf19f03d1a31__laptop_FrontMedium",
+          "term": "Compact creative worktable"
+        }
+      ],
+      "resolution": "Release offline after corrected density classification; do not edit raw prose."
+    },
+    {
+      "batch_id": "batch_003",
+      "batch_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_camera_v2_eval_20261022/batches/prompt_batch_003.json",
+      "batch_sha256": "021ed4690e80de445b173ddbfbb0978d7fb4c66f19693e6621071c337c8ec7cc",
+      "reviewer": "root research agent",
+      "status": "tight_low_top_spotcheck_accepted",
+      "advisories": [
+        {
+          "case_id": "d60e13e4457fd44c__laptop_FrontCloseUpHigh",
+          "detail": "Phrase 'sheet and small sketch' is ambiguous but plausibly one physical sheet with debug support; retain without regeneration and do not claim unambiguous perfect density."
+        }
+      ],
+      "confirmed_validator_false_positives": [
+        "surface/worktable counted as object",
+        "hand-sketched matched person hand"
+      ],
+      "resolution": "Release named classifier false positives offline; preserve advisory."
+    }
+  ]
+}

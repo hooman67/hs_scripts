@@ -1,0 +1,62 @@
+--- judge/pipeline_position_experiment/versions/v22_4_3/pre_v22_4_3_snapshot/test_invariants_v22_4_2.py	2026-11-05 22:32:32.443757232 -0800
++++ /home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25/tests/test_invariants.py	2026-11-05 22:32:42.823743429 -0800
+@@ -155,3 +155,59 @@
+         assert result["verdict"] == "unverifiable"
+         assert result["reasons"] == ["affine_fit_failed"]
+         assert "textureless_fallback" not in result
++
++
++def test_fixed_position_structurally_insufficient_affine_dispatches_to_alpha_fallback(monkeypatch):
++    guide, exact = _fixture()
++    original_full = cv2.estimateAffine2D
++    original_partial = cv2.estimateAffinePartial2D
++
++    def sparse_full(*args, **kwargs):
++        matrix, mask = original_full(*args, **kwargs)
++        sparse = np.zeros_like(mask)
++        sparse[:3] = 1
++        return matrix, sparse
++
++    def sparse_partial(*args, **kwargs):
++        matrix, mask = original_partial(*args, **kwargs)
++        sparse = np.zeros_like(mask)
++        sparse[:3] = 1
++        return matrix, sparse
++
++    monkeypatch.setattr(cv2, "estimateAffine2D", sparse_full)
++    monkeypatch.setattr(cv2, "estimateAffinePartial2D", sparse_partial)
++    result = assess_product_affine(
++        guide,
++        exact,
++        [220, 160, 540, 400],
++        fixed_position=True,
++        product_mask=_rgba_mask_bytes(),
++    )
++
++    assert result["primary_verdict"] == "fail"
++    assert "inliers" in result["primary_reasons"]
++    assert result["fallback_dispatch_reason"] == "structurally_insufficient_affine_evidence"
++    assert result["affine_evidence_reliability_checks"]["inliers"] is False
++    assert result["textureless_fallback"]["verdict"] == "pass"
++    assert result["verdict"] == "pass"
++
++
++def test_fixed_position_reliable_dense_affine_failure_does_not_dispatch_to_fallback():
++    guide, moved = _fixture([[1, 0, 110], [0, 1, -35]])
++    result = assess_product_affine(
++        guide,
++        moved,
++        [220, 160, 540, 400],
++        fixed_position=True,
++        product_mask=_rgba_mask_bytes(),
++    )
++
++    assert result["matches"] >= result["thresholds"]["min_inliers"]
++    assert result["checks"]["inliers"] is True
++    assert result["checks"]["span_x"] is True
++    assert result["checks"]["span_y"] is True
++    assert result["checks"]["quadrants"] is True
++    assert result["checks"]["hull"] is True
++    assert result["verdict"] == "fail"
++    assert "fixed_translation_x" in result["reasons"]
++    assert "textureless_fallback" not in result

@@ -1,0 +1,3443 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "inventory",
+    "triggers",
+    "defect_candidates",
+    "stage_status",
+    "unable_reason",
+    "functional_front",
+    "context_reading",
+    "checks",
+    "general_artifact_warnings"
+  ],
+  "properties": {
+    "inventory": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "scene_extent",
+            "support_and_room_landmarks_visible",
+            "support_type",
+            "room_location",
+            "product_footprint",
+            "functional_front",
+            "surface_position",
+            "edge_families",
+            "visible_corners",
+            "load_path",
+            "room_relations",
+            "operating_approach",
+            "associated_chair_or_standing_position",
+            "props_activity"
+          ],
+          "properties": {
+            "scene_extent": {
+              "type": "string",
+              "enum": [
+                "tight",
+                "medium",
+                "wide",
+                "indeterminate"
+              ]
+            },
+            "support_and_room_landmarks_visible": {
+              "type": "boolean"
+            },
+            "support_type": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "observation",
+                "regions",
+                "visibility_limit"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "room_location": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "observation",
+                "regions",
+                "visibility_limit"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "product_footprint": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "observation",
+                "regions",
+                "visibility_limit"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "functional_front": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "observation",
+                "regions",
+                "visibility_limit"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "surface_position": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "observation",
+                "regions",
+                "visibility_limit"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "edge_families": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "longitudinal",
+                "depth"
+              ],
+              "properties": {
+                "longitudinal": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "visibility",
+                    "observation",
+                    "regions",
+                    "visibility_limit"
+                  ],
+                  "properties": {
+                    "visibility": {
+                      "type": "string",
+                      "enum": [
+                        "observed",
+                        "partial",
+                        "unobservable"
+                      ]
+                    },
+                    "observation": {
+                      "type": "string"
+                    },
+                    "regions": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 8,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "image",
+                          "label",
+                          "box"
+                        ],
+                        "properties": {
+                          "image": {
+                            "type": "string",
+                            "enum": [
+                              "generated_scene",
+                              "original_twin"
+                            ]
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "box": {
+                            "type": "array",
+                            "minItems": 4,
+                            "maxItems": 4,
+                            "items": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "visibility_limit": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "depth": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "visibility",
+                    "observation",
+                    "regions",
+                    "visibility_limit"
+                  ],
+                  "properties": {
+                    "visibility": {
+                      "type": "string",
+                      "enum": [
+                        "observed",
+                        "partial",
+                        "unobservable"
+                      ]
+                    },
+                    "observation": {
+                      "type": "string"
+                    },
+                    "regions": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 8,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "image",
+                          "label",
+                          "box"
+                        ],
+                        "properties": {
+                          "image": {
+                            "type": "string",
+                            "enum": [
+                              "generated_scene",
+                              "original_twin"
+                            ]
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "box": {
+                            "type": "array",
+                            "minItems": 4,
+                            "maxItems": 4,
+                            "items": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "visibility_limit": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "visible_corners": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "observation",
+                "regions",
+                "visibility_limit"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "load_path": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "observation",
+                "regions",
+                "visibility_limit"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "room_relations": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "wall",
+                "floor",
+                "cabinets",
+                "nearby_furniture"
+              ],
+              "properties": {
+                "wall": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "visibility",
+                    "observation",
+                    "regions",
+                    "visibility_limit"
+                  ],
+                  "properties": {
+                    "visibility": {
+                      "type": "string",
+                      "enum": [
+                        "observed",
+                        "partial",
+                        "unobservable"
+                      ]
+                    },
+                    "observation": {
+                      "type": "string"
+                    },
+                    "regions": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 8,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "image",
+                          "label",
+                          "box"
+                        ],
+                        "properties": {
+                          "image": {
+                            "type": "string",
+                            "enum": [
+                              "generated_scene",
+                              "original_twin"
+                            ]
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "box": {
+                            "type": "array",
+                            "minItems": 4,
+                            "maxItems": 4,
+                            "items": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "visibility_limit": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "floor": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "visibility",
+                    "observation",
+                    "regions",
+                    "visibility_limit"
+                  ],
+                  "properties": {
+                    "visibility": {
+                      "type": "string",
+                      "enum": [
+                        "observed",
+                        "partial",
+                        "unobservable"
+                      ]
+                    },
+                    "observation": {
+                      "type": "string"
+                    },
+                    "regions": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 8,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "image",
+                          "label",
+                          "box"
+                        ],
+                        "properties": {
+                          "image": {
+                            "type": "string",
+                            "enum": [
+                              "generated_scene",
+                              "original_twin"
+                            ]
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "box": {
+                            "type": "array",
+                            "minItems": 4,
+                            "maxItems": 4,
+                            "items": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "visibility_limit": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "cabinets": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "visibility",
+                    "observation",
+                    "regions",
+                    "visibility_limit"
+                  ],
+                  "properties": {
+                    "visibility": {
+                      "type": "string",
+                      "enum": [
+                        "observed",
+                        "partial",
+                        "unobservable"
+                      ]
+                    },
+                    "observation": {
+                      "type": "string"
+                    },
+                    "regions": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 8,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "image",
+                          "label",
+                          "box"
+                        ],
+                        "properties": {
+                          "image": {
+                            "type": "string",
+                            "enum": [
+                              "generated_scene",
+                              "original_twin"
+                            ]
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "box": {
+                            "type": "array",
+                            "minItems": 4,
+                            "maxItems": 4,
+                            "items": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "visibility_limit": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "nearby_furniture": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "visibility",
+                    "observation",
+                    "regions",
+                    "visibility_limit"
+                  ],
+                  "properties": {
+                    "visibility": {
+                      "type": "string",
+                      "enum": [
+                        "observed",
+                        "partial",
+                        "unobservable"
+                      ]
+                    },
+                    "observation": {
+                      "type": "string"
+                    },
+                    "regions": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 8,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "image",
+                          "label",
+                          "box"
+                        ],
+                        "properties": {
+                          "image": {
+                            "type": "string",
+                            "enum": [
+                              "generated_scene",
+                              "original_twin"
+                            ]
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "box": {
+                            "type": "array",
+                            "minItems": 4,
+                            "maxItems": 4,
+                            "items": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "visibility_limit": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "operating_approach": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "observation",
+                "regions",
+                "visibility_limit"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "associated_chair_or_standing_position": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "observation",
+                "regions",
+                "visibility_limit"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "props_activity": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "observation",
+                "regions",
+                "visibility_limit"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "triggers": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "support_role",
+            "room_use_zone",
+            "device_surface_position",
+            "props_use_relation",
+            "operating_access",
+            "user_position",
+            "device_support_axes",
+            "furniture_room_axes",
+            "product_scale",
+            "support_load_path",
+            "support_shape",
+            "shared_perspective",
+            "support_contact",
+            "shadows_reflections"
+          ],
+          "properties": {
+            "support_role": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "room_use_zone": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "device_surface_position": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "props_use_relation": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "operating_access": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "user_position": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "device_support_axes": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "furniture_room_axes": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "product_scale": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "support_load_path": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "support_shape": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "shared_perspective": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "support_contact": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            },
+            "shadows_reflections": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "answer",
+                "evidence",
+                "inventory_refs",
+                "candidate_ids",
+                "visibility_limit"
+              ],
+              "properties": {
+                "answer": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "visibility_limit": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "defect_candidates": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "physical_relation",
+          "hypothesis",
+          "regions",
+          "inventory_refs",
+          "trigger_ids",
+          "owner_check",
+          "issue_code",
+          "disposition",
+          "disposition_evidence",
+          "benign_alternative",
+          "alternative_status",
+          "severity",
+          "confidence",
+          "warning_level",
+          "consequence",
+          "missing_support_test"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "physical_relation": {
+            "type": "string"
+          },
+          "hypothesis": {
+            "type": "string"
+          },
+          "regions": {
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 8,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "image",
+                "label",
+                "box"
+              ],
+              "properties": {
+                "image": {
+                  "type": "string",
+                  "enum": [
+                    "generated_scene",
+                    "original_twin"
+                  ]
+                },
+                "label": {
+                  "type": "string"
+                },
+                "box": {
+                  "type": "array",
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "items": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  }
+                }
+              }
+            }
+          },
+          "inventory_refs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 16,
+            "items": {
+              "type": "string"
+            }
+          },
+          "trigger_ids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 14,
+            "items": {
+              "type": "string",
+              "enum": [
+                "support_role",
+                "room_use_zone",
+                "device_surface_position",
+                "props_use_relation",
+                "operating_access",
+                "user_position",
+                "device_support_axes",
+                "furniture_room_axes",
+                "product_scale",
+                "support_load_path",
+                "support_shape",
+                "shared_perspective",
+                "support_contact",
+                "shadows_reflections"
+              ]
+            }
+          },
+          "owner_check": {
+            "type": "string",
+            "enum": [
+              "support_role",
+              "room_use_zone",
+              "device_surface_position",
+              "props_use_relation",
+              "operating_access",
+              "user_position",
+              "device_support_axes",
+              "furniture_room_axes",
+              "product_scale",
+              "support_anatomy",
+              "shared_perspective",
+              "support_contact",
+              "shadows_reflections"
+            ]
+          },
+          "issue_code": {
+            "type": "string",
+            "enum": [
+              "inappropriate_support",
+              "occupied_workstation",
+              "misplaced_support_furniture",
+              "incoherent_use_zone",
+              "unmotivated_device_position",
+              "incoherent_prop_arrangement",
+              "blocked_operating_path",
+              "excessive_reach",
+              "no_feasible_user_position",
+              "chair_displacement",
+              "device_support_axis_conflict",
+              "furniture_layout_conflict",
+              "implausible_scale",
+              "missing_required_support",
+              "malformed_support_furniture",
+              "conflicting_perspective",
+              "unsupported_product",
+              "floating",
+              "sinking_or_intersection",
+              "inconsistent_shadow",
+              "inconsistent_reflection"
+            ]
+          },
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "retained",
+              "rejected"
+            ]
+          },
+          "disposition_evidence": {
+            "type": "string"
+          },
+          "benign_alternative": {
+            "type": "string"
+          },
+          "alternative_status": {
+            "type": "string",
+            "enum": [
+              "excluded_by_visible_evidence",
+              "remains_substantial",
+              "not_assessable"
+            ]
+          },
+          "severity": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "maximum": 4
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "warning_level": {
+            "type": "string",
+            "enum": [
+              "none",
+              "advisory",
+              "review"
+            ]
+          },
+          "consequence": {
+            "type": "string"
+          },
+          "missing_support_test": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "exposed_required_region",
+                  "required_support_reason",
+                  "positive_break_or_unsupported_span_evidence",
+                  "observed_alternate_load_paths",
+                  "hidden_alternatives_and_limits"
+                ],
+                "properties": {
+                  "exposed_required_region": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "image",
+                      "label",
+                      "box"
+                    ],
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "enum": [
+                          "generated_scene",
+                          "original_twin"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "box": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    }
+                  },
+                  "required_support_reason": {
+                    "type": "string"
+                  },
+                  "positive_break_or_unsupported_span_evidence": {
+                    "type": "string"
+                  },
+                  "observed_alternate_load_paths": {
+                    "type": "string"
+                  },
+                  "hidden_alternatives_and_limits": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "stage_status": {
+      "type": "string",
+      "enum": [
+        "assessed",
+        "unable"
+      ]
+    },
+    "unable_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "unreadable_image",
+        "target_not_identifiable",
+        "product_type_conflict",
+        "fundamentally_unjudgeable_product_support"
+      ]
+    },
+    "functional_front": {
+      "type": "string"
+    },
+    "context_reading": {
+      "type": "string"
+    },
+    "checks": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "support_role",
+            "room_use_zone",
+            "device_surface_position",
+            "props_use_relation",
+            "operating_access",
+            "user_position",
+            "device_support_axes",
+            "furniture_room_axes",
+            "product_scale",
+            "support_anatomy",
+            "shared_perspective",
+            "support_contact",
+            "shadows_reflections"
+          ],
+          "properties": {
+            "support_role": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "room_use_zone": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "device_surface_position": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "props_use_relation": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "operating_access": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "user_position": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "device_support_axes": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "furniture_room_axes": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "product_scale": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "support_anatomy": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "shared_perspective": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "support_contact": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "shadows_reflections": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "visibility",
+                "severity",
+                "confidence",
+                "warning_level",
+                "issue_codes",
+                "evidence",
+                "consequence",
+                "alternative_explanation",
+                "visibility_limit",
+                "inventory_refs",
+                "candidate_ids"
+              ],
+              "properties": {
+                "visibility": {
+                  "type": "string",
+                  "enum": [
+                    "observed",
+                    "partial",
+                    "unobservable"
+                  ]
+                },
+                "severity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                },
+                "warning_level": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "advisory",
+                    "review"
+                  ]
+                },
+                "issue_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "inappropriate_support",
+                      "occupied_workstation",
+                      "misplaced_support_furniture",
+                      "incoherent_use_zone",
+                      "unmotivated_device_position",
+                      "incoherent_prop_arrangement",
+                      "blocked_operating_path",
+                      "excessive_reach",
+                      "no_feasible_user_position",
+                      "chair_displacement",
+                      "device_support_axis_conflict",
+                      "furniture_layout_conflict",
+                      "implausible_scale",
+                      "missing_required_support",
+                      "malformed_support_furniture",
+                      "conflicting_perspective",
+                      "unsupported_product",
+                      "floating",
+                      "sinking_or_intersection",
+                      "inconsistent_shadow",
+                      "inconsistent_reflection"
+                    ]
+                  }
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "alternative_explanation": {
+                  "type": "string"
+                },
+                "visibility_limit": {
+                  "type": "string"
+                },
+                "inventory_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 16,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "general_artifact_warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "evidence"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "const": "unrelated_rendering_artifact"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

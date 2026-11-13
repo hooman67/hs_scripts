@@ -1,0 +1,22 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.firefly.lego_mllm[public]
+
+
+# LegoSGLang v1: SGLang 0.5.9 implementation with CUDA 12.8 support.
+# Uses SGLang 0.5.9 + PyTorch 2.9.1+cu128 + FlashInfer 0.6.3 backend. No vllm dependency.
+custom_pyenv: sglang_0_5_9
+
+deps:
+- colligo.models.common.adapter_utils
+- colligo.models.firefly.lego_mllm
+- opentelemetry-propagator-b3
+- pillow
+- sglang
+- torch
+- torchvision
+- transformers

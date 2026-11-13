@@ -1,0 +1,26 @@
+visibility: public
+deps:
+- av
+- colligo.aiohttp
+- colligo.data
+- colligo.fastapi
+- colligo.image
+- colligo.models.common.adapter_utils
+- colligo.models.dentro.model_zoo
+- colligo.models.dentro.pylib
+- colligo.models.ip_guard.worker.pipeline
+- colligo.models.prompt_forge.worker[public]
+- colligo.models.prompt_forge_llm.worker[public]
+- numpy
+- opencv-contrib-python-headless
+- pyyaml
+- torch
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.dentro.pylib[public]
+  - colligo.models.dentro.worker.api[public]
+  - colligo.models.ip_guard.worker.pipeline[public]
+  - pydantic

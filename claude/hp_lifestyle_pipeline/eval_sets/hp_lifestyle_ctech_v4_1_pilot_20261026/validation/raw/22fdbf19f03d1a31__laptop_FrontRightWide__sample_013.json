@@ -1,0 +1,197 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 4,
+  "warning_count": 1,
+  "errors": [
+    {
+      "code": "score_order",
+      "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+      "candidate_id": "p16"
+    },
+    {
+      "code": "score_order",
+      "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+      "candidate_id": "p29"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['plants', 'shelving', 'workstations']",
+      "candidate_id": "p15"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['plants', 'shelving', 'workstations'] but signature has 2 entries",
+      "candidate_id": "p15"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 5,
+    "environments": {
+      "Office": 8,
+      "Creative Studio": 3,
+      "Home": 7,
+      "Café": 6,
+      "Gaming": 3,
+      "Education": 3
+    },
+    "relationships": {
+      "source_grounded": 8,
+      "source_adjacent": 16,
+      "creative_departure": 6
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 7,
+      "Office": 8,
+      "Education": 3,
+      "Gaming": 3,
+      "Café": 6,
+      "Creative Studio": 3
+    },
+    "relationship_counts": {
+      "source_grounded": 8,
+      "source_adjacent": 16,
+      "creative_departure": 6
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 18,
+      "close_adaptation": 9,
+      "category_extension": 3
+    },
+    "ctech_reference_counts": {
+      "CT13": 2,
+      "CT03": 3,
+      "CT09": 2,
+      "CT10": 2,
+      "CT18": 2,
+      "CT04": 2,
+      "CT05": 1,
+      "CT11": 2,
+      "CT08": 1,
+      "CT07": 1,
+      "CT12": 2,
+      "CT14": 2,
+      "CT15": 1,
+      "CT01": 3,
+      "CT02": 1,
+      "CT06": 1,
+      "CT16": 1,
+      "CT17": 1
+    },
+    "ctech_score_range": [
+      63,
+      88
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e1"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p16",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p24",
+          "p25",
+          "p26",
+          "p27",
+          "p28"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p3",
+          "p4",
+          "p11",
+          "p19",
+          "p23",
+          "p24",
+          "p30"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e2"
+        ],
+        "prompt_ids": [
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p16",
+          "p17",
+          "p18",
+          "p21",
+          "p22",
+          "p30"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p14",
+          "p15",
+          "p19",
+          "p20",
+          "p24",
+          "p25"
+        ]
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e5"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p24",
+          "p25"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "ebf06b2bd8db786e7f95bbbab65901f7108565d61ae3bff983cad564d3ab711b"
+}

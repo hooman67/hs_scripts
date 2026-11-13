@@ -1,0 +1,198 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 4,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'collectibles', 'shelving']",
+      "candidate_id": "p5"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'collectibles', 'shelving'] but signature has 2 entries",
+      "candidate_id": "p5"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['plants', 'shelving', 'workstations']",
+      "candidate_id": "p13"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['plants', 'shelving', 'workstations'] but signature has 2 entries",
+      "candidate_id": "p13"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support an omission explanation; inspect: ['e7']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 8,
+    "environments": {
+      "Office": 8,
+      "Home": 6,
+      "Café": 6,
+      "Gaming": 3,
+      "Creative Studio": 4,
+      "Education": 3
+    },
+    "relationships": {
+      "source_grounded": 8,
+      "source_adjacent": 10,
+      "creative_departure": 12
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 6,
+      "Office": 8,
+      "Education": 3,
+      "Gaming": 3,
+      "Café": 6,
+      "Creative Studio": 4
+    },
+    "relationship_counts": {
+      "source_grounded": 8,
+      "source_adjacent": 10,
+      "creative_departure": 12
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 15,
+      "close_adaptation": 12,
+      "category_extension": 3
+    },
+    "ctech_reference_counts": {
+      "CT13": 3,
+      "CT18": 1,
+      "CT12": 1,
+      "CT14": 2,
+      "CT15": 1,
+      "CT11": 2,
+      "CT10": 3,
+      "CT09": 2,
+      "CT01": 2,
+      "CT05": 1,
+      "CT04": 2,
+      "CT07": 2,
+      "CT02": 1,
+      "CT06": 2,
+      "CT08": 1,
+      "CT03": 3,
+      "CT17": 1
+    },
+    "ctech_score_range": [
+      64,
+      88
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e1",
+          "e2"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p7",
+          "p9",
+          "p10",
+          "p11",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p23",
+          "p24",
+          "p25",
+          "p27",
+          "p28",
+          "p29",
+          "p30"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p3",
+          "p7",
+          "p8",
+          "p19",
+          "p20",
+          "p23",
+          "p26"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e8"
+        ],
+        "prompt_ids": [
+          "p2",
+          "p3",
+          "p6",
+          "p10",
+          "p12",
+          "p15",
+          "p21",
+          "p22",
+          "p26"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [
+          "e4",
+          "e5"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p9",
+          "p13",
+          "p16",
+          "p17",
+          "p18",
+          "p20",
+          "p25"
+        ]
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e6"
+        ],
+        "prompt_ids": [
+          "p2",
+          "p3",
+          "p6",
+          "p10",
+          "p11",
+          "p12",
+          "p14",
+          "p15",
+          "p21",
+          "p22",
+          "p24",
+          "p26"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "2476de075adce350adf17a28b759f8f6807a5980155015ae98a51d17f61d1cf2"
+}

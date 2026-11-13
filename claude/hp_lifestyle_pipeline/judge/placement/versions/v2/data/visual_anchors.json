@@ -1,0 +1,65 @@
+{
+  "status": "Fixed development demonstrations. All prior report data now training; target-identical anchors excluded from diagnostic regression calls.",
+  "examples": [
+    {
+      "asset_id": "regression-userfail-row25-v14",
+      "kind": "user_adjudicated_failure",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_25/v14_final.png",
+      "sha256": "4ceb50f8a4605789bb2c5437de503899c1e11b7c0b81a85a8978e7764862c4b4",
+      "guidance": "Hooman explicitly rates this printer scene FAIL. Although it has a dedicated support and pleasant d\u00e9cor, the rigid printer edges do not align with the table edges. Compare the front and side axes carefully: do not dismiss this visible mismatch as a stylish angle or award a pass merely because the support looks usable. The surrounding furniture must also form a coherent aligned arrangement. This illustrates the required sensitivity to device/table alignment.",
+      "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/v14_final.png",
+      "label_status": "user_confirmed_fail; training demonstration, not held-out"
+    },
+    {
+      "asset_id": "regression-userfail-row12-v13",
+      "kind": "user_adjudicated_failure",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_12/v13_final.png",
+      "sha256": "bcd88892c5a5b416f5becca8e4102de1ebae1337462031e1a9d27a8b47100a98",
+      "guidance": "Hooman explicitly rates this printer scene FAIL. He expects a wall-aligned printer set back toward the wall and toward a practical side of the table; this conspicuous isolated placement wastes the surface and looks staged rather than naturally arranged. Being on a table separate from the meeting desk is insufficient. Judge the position and body axes relative to the entire wall-backed table, not just lack of obstacles.",
+      "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/v13_final.png",
+      "label_status": "user_confirmed_fail; training demonstration, not held-out"
+    },
+    {
+      "asset_id": "regression-userfail-row09-v14",
+      "kind": "user_adjudicated_failure",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_09/v14_final.png",
+      "sha256": "53618cc0df28274b5ae69596d09ba5f4f145b7e1e35f7d0e1c5164b4694b896b",
+      "guidance": "Hooman explicitly rates this laptop scene FAIL. The laptop is too far into the broad tabletop and away from an actual user chair. The surrounding work objects do not make a coherent reachable laptop station. A laptop must sit near the person using it with an unobstructed keyboard work area. Do not excuse this as a shared table or an attractive conference scene.",
+      "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/09/v14_final.png",
+      "label_status": "user_confirmed_fail; training demonstration, not held-out"
+    },
+    {
+      "asset_id": "regression-userfail-row29-v13",
+      "kind": "user_adjudicated_failure",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_29/v13_final.png",
+      "sha256": "b465f94249d56d50fa5a2404fb925bb69d8ae559e2e264b2172881fa69d602eb",
+      "guidance": "Hooman explicitly rates this laptop scene FAIL. The visible chair is in front of the notebook area while the laptop is too far away to the left/back for natural seated typing. He likes the scene narrative, but that appeal cannot rescue failed reach and chair alignment. Assess depth and sideways displacement from the actual chair, not a hypothetical chair placed at the keyboard.",
+      "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/29/v13_final.png",
+      "label_status": "user_confirmed_fail; training demonstration, not held-out"
+    },
+    {
+      "asset_id": "comparison-row-21-v13",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_21/v13_final.png",
+      "sha256": "827f4461f364139fa03cf63cce66574dc5843f8ad429d294b2850fd762449d64",
+      "s3_url": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/21/v13_final.png",
+      "kind": "development_human_defect_anchor",
+      "guidance": "C-Tech flags: \"v13 product is floating\". Inspect how the laptop base plane sits relative to the table plane: a low corner and some shadow are not sufficient evidence that the entire load-bearing base is convincingly supported. This is a contact_integration defect (floating), not simply a styling preference."
+    },
+    {
+      "asset_id": "printer-reference-style_279",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/references/HP_Lifestyle_DSv2_graded_279.png",
+      "sha256": "ed8d1850eaa86fb6cfcc0c4317eee49f1078917627492fdaf7e93900b75e3376",
+      "s3_url": "s3://foundry-dropbox-hp-enterprise/HP_Lifestyle_Dataset_v3/HP_Lifestyle_DSv2_graded_279.png",
+      "kind": "researcher_interpreted_reference",
+      "guidance": "Reference photograph: a printer on its own cabinet, operating front facing the standing user and an open paper-output path. This illustrates natural printer access without a chair. It is an explanatory support/access example, not a human-labeled perfect overall score."
+    },
+    {
+      "asset_id": "printer-reference-style_342",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/references/HP_Lifestyle_DSv2_graded_342.png",
+      "sha256": "2398fd8895a61b1608e43c3f62a72f1327bc64e96f2641ef689d66ab97c8b68f",
+      "s3_url": "s3://foundry-dropbox-hp-enterprise/HP_Lifestyle_Dataset_v3/HP_Lifestyle_DSv2_graded_342.png",
+      "kind": "researcher_interpreted_reference",
+      "guidance": "Reference photograph: the printer is on a separate table in the background while laptop activity uses the foreground table. A neighboring workspace is compatible with natural printer placement when its support and approach are separate. Some printer details are too distant to score confidently."
+    }
+  ]
+}

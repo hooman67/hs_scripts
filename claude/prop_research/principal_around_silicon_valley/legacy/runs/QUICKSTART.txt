@@ -1,0 +1,251 @@
+================================================================================
+PENINSULA BAY AREA 3BR MARKET RESEARCH — QUICK START
+================================================================================
+
+PROJECT: Collect 2025-2026 median 3BR home prices for 8 Peninsula Bay Area towns
+PURPOSE: Support $2M property purchase research (Step 2 neighborhood scoring)
+TIME: 20 min (fast) to 2 hours (comprehensive)
+
+================================================================================
+STEP 1: UNDERSTAND THE GOAL (2 min)
+================================================================================
+
+Your target: Find what $2M can buy in each of these 8 towns:
+
+    • Daly City        (northernmost, SF border)
+    • Millbrae         (near SFO airport)
+    • Burlingame       (Peninsula mid-town)
+    • San Carlos       (popular family area)
+    • Foster City      (planned community)
+    • Belmont          (quieter, less known)
+    • Pacifica         (coastal, isolated)
+    • Half Moon Bay    (coastal town)
+
+Your criteria: 3BR minimum, 1700+ sqft, backyard — what does $2M get you?
+
+================================================================================
+STEP 2: CHOOSE YOUR APPROACH (1 min)
+================================================================================
+
+OPTION A: FAST (20-30 min)
+    → Perfect if you just need baseline data
+    → Zillow + Redfin only
+    → Result: 2 sources per town, MEDIUM confidence
+
+OPTION B: THOROUGH (1-2 hours)
+    → Best for serious decision-making
+    → Zillow + Redfin + local MLS/agent data
+    → Result: 3+ sources per town, HIGH confidence
+
+OPTION C: COMPREHENSIVE (2-4 hours)
+    → Deep market analysis
+    → All sources + supplementary metrics
+    → Result: Rich dataset with trend analysis
+
+>>> RECOMMENDED: Start with OPTION A, expand to B if needed
+
+================================================================================
+STEP 3: EXECUTE OPTION A — ZILLOW + REDFIN (20 min)
+================================================================================
+
+PART 1: ZILLOW (10 min)
+    1. Open this file: market_urls/zillow_urls_*.txt
+    2. For each town, open the Zillow link in your browser
+    3. Look for "Market insights" or median home value on the page
+    4. Screenshot or note: [Town] - $[PRICE] - [DATE]
+    5. Repeat for all 8 towns
+
+PART 2: REDFIN (10 min)
+    1. Open this file: market_urls/redfin_urls_*.txt
+    2. For each town, open the Redfin link in your browser
+    3. Click "Market insights" or scroll for median sale price
+    4. Screenshot or note: [Town] - $[PRICE] - [DATE]
+    5. Repeat for all 8 towns
+
+PART 3: FILL IN DATA (5 min)
+    1. Open: market_data_collection_*.csv (in your text editor or Excel)
+    2. Fill in zillow_median, zillow_date, redfin_median, redfin_date columns
+    3. Save the file
+
+PART 4: RECONCILE (5 min)
+    1. For each town, compare Zillow vs Redfin numbers
+    2. If within 5-10%: Great! Use average or most recent
+    3. If differ by >10%: Note discrepancy; use most recent source
+    4. Fill in final_median column with your best estimate
+    5. Set confidence = MEDIUM (2 sources, recent)
+
+================================================================================
+STEP 4: POPULATE MAIN JSON (10 min)
+================================================================================
+
+File: peninsula_market_research_2025-2026.json
+
+For each town, fill in this structure:
+{
+  "town": "San Carlos",
+  "medianPrice": 1750000,
+  "source": "Redfin (Q2 2026) + Zillow (June 2026)",
+  "url": "https://www.redfin.com/CA/San-Carlos/homes-for-sale",
+  "date": "2026-06-22",
+  "confidence": "medium",
+  "notes": "Zillow: $1.68M, Redfin: $1.75M. Using Redfin (more recent actual sales)."
+}
+
+>>> Populate all 8 towns following this format
+
+================================================================================
+STEP 5 (OPTIONAL): EXPAND TO OPTION B — ADD MLS DATA (45 min - 2 hrs)
+================================================================================
+
+If you have time and want higher confidence:
+
+1. Open: market_urls/mls_contacts_*.txt
+2. Identify 1-2 real estate agents for each town
+   → Search "[TOWN] + real estate agent" on Zillow/Google
+   → Look for agents with recent listings in that town
+3. Send email requesting:
+   → "Median 3BR home price, YTD 2026 or last 60 days"
+   → "Recent market report for [TOWN]"
+4. Wait for responses (typically 24-48 hours)
+5. Add mls_median and mls_source to CSV
+6. Update JSON with all 3 sources
+7. Increase confidence to HIGH (3 sources)
+
+>>> See MARKET_RESEARCH_GUIDE.md for email template
+
+================================================================================
+STEP 6: QUALITY CHECK (5 min)
+================================================================================
+
+Before considering this "done", verify:
+
+    ☐ All 8 towns have data (at least 1 source per town)
+    ☐ Data is recent (Q2 2026 or at least Q1 2026)
+    ☐ Confidence levels are assigned and justified
+    ☐ Any conflicts >10% are documented in "notes"
+    ☐ Prices make sense (neighboring towns similar range)
+    ☐ For each town, you can answer: "What does $2M buy here?"
+
+================================================================================
+STEP 7: COMMIT TO GIT (2 min)
+================================================================================
+
+cd /home/colligo/hs_scripts/claude/prop_research/
+
+git add -A
+
+git commit -m "prop_research: Peninsula Bay Area market research Q2 2026
+
+Collected 3BR median home prices for 8 target towns:
+- Daly City, Millbrae, Burlingame, San Carlos
+- Foster City, Belmont, Pacifica, Half Moon Bay
+
+Data sources: Zillow, Redfin, and local MLS
+All data Q2 2026 (June 2026)
+Ready for Step 2 neighborhood scoring integration"
+
+================================================================================
+STEP 8: NEXT — INTEGRATION (Optional but recommended)
+================================================================================
+
+Once complete, this market data feeds into your property research plan:
+
+    → Step 2: Neighborhood Scoring
+       Use median prices to score "Price & Value" criterion
+       Use "What $2M buys" to assess fit with your criteria
+
+    → Step 3: Deep Analysis
+       When deep-diving specific neighborhoods
+       Reference this market baseline
+
+    → Step 4: Financial Analysis
+       Use medians for purchase scenario modeling ($1.5M, $1.75M, $2.0M)
+
+See: /home/colligo/hs_scripts/claude/prop_research/research-plan.md (full context)
+
+================================================================================
+FILES YOU'LL NEED
+================================================================================
+
+Core Files:
+    • peninsula_market_research_2025-2026.json  ← Main output (fill this in)
+    • market_data_collection_*.csv              ← Data entry worksheet
+
+Guides:
+    • README.md                                 ← Full overview
+    • MARKET_RESEARCH_GUIDE.md                  ← Detailed instructions
+    • EXAMPLE_COMPLETED_RESEARCH.md             ← What finished output looks like
+
+Tools:
+    • market_urls/zillow_urls_*.txt             ← Copy/paste into browser
+    • market_urls/redfin_urls_*.txt             ← Copy/paste into browser
+    • market_urls/mls_contacts_*.txt            ← Email template for agents
+    • COLLECTION_CHECKLIST_*.txt                ← Step-by-step checklist
+
+================================================================================
+WHAT YOU'LL PRODUCE
+================================================================================
+
+Example of completed research (San Carlos):
+
+    Town:           San Carlos
+    Median Price:   $1,750,000
+    Source:         Redfin Q2 2026
+    Date:           2026-06-22
+    Confidence:     HIGH
+    What $2M Buys:  4BR/2.5BA, 2300 sqft, 0.5-acre lot, good schools
+
+× 8 towns = comprehensive market baseline for Peninsula region
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Q: Zillow page shows "403 Forbidden"?
+A: Try incognito mode or clear cache. Or skip to Redfin + MLS.
+
+Q: Can't find "market insights" on Redfin?
+A: Scroll down, or try mobile version. Look for median price stat.
+
+Q: Agents not responding?
+A: Call directly instead of email. Try 2-3 agents per town.
+
+Q: Zillow and Redfin differ by a lot?
+A: Check dates (one may be stale). Use most recent. Note the discrepancy.
+
+Q: Can't find 3BR-specific data?
+A: Use overall median. Note it in JSON. Add to "notes": "Overall median, not 3BR-specific"
+
+>>> More help: See MARKET_RESEARCH_GUIDE.md
+
+================================================================================
+TIMELINE
+================================================================================
+
+Today:           Run OPTION A (Zillow + Redfin) — 20-30 min
+Tomorrow:        Expand to OPTION B if desired (MLS outreach)
+This week:       Compile results and populate JSON
+Next steps:      Use market data for Step 2 neighborhood scoring
+
+Total time commitment: 30 min - 2 hours (depending on depth)
+Value delivered: Solid foundation for $2M purchase decisions in 8-town region
+
+================================================================================
+QUESTIONS OR STUCK?
+================================================================================
+
+1. Re-read MARKET_RESEARCH_GUIDE.md — covers most common issues
+2. Look at EXAMPLE_COMPLETED_RESEARCH.md — shows what success looks like
+3. Check research-plan.md — context on where this fits in your full project
+4. Review COLLECTION_CHECKLIST_*.txt — phase-by-phase walkthrough
+
+Ready to start? Open your browser and visit:
+    https://www.zillow.com/homes/for_sale/Daly-City-CA/
+
+Good luck! You've got this.
+
+================================================================================
+Created: 2026-06-22
+Ready for execution: YES
+Status: COMPLETE RESEARCH INFRASTRUCTURE
+================================================================================

@@ -1,0 +1,1659 @@
+{
+  "expected_count": 20,
+  "status": "Comment-driven development regression, not held-out. All mappings frozen before model calls.",
+  "input_contract": {
+    "image_stage": "scene_generation",
+    "judge_inputs": [
+      "generated_image",
+      "twin_image",
+      "device_type",
+      "scene_prompt"
+    ],
+    "annotations_passed_to_judge": false
+  },
+  "records": [
+    {
+      "id": "magic__printer_FrontCloseUp__p2",
+      "product": "Magic",
+      "device": "magic",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontCloseUp",
+        "source_camera_name": "Front_CloseUp",
+        "view_role": "tight"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p2",
+      "scene_prompt": "A modern corporate office desk near soft daylight holds an open unlabelled folder with blank pages next to a water glass. A low storage cabinet stands against the wall, giving the workspace a clean, practical office feel.",
+      "scene_prompt_sha256": "40a48652da49a0d2da83102b8c3472cf4b18107334c38dc2aa0f2d3c3f769c2c",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "magic__printer_FrontCloseUp::p2",
+        "source_revision": "v6-approved-20261029-r42",
+        "bank_rank": 2,
+        "environment": "Office",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "158e0741bcbe6774d8ef__magic__printer_FrontCloseUp__p2.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/158e0741bcbe6774d8ef__magic__printer_FrontCloseUp__p2.png",
+        "sha256": "35f29527bb3f5b911b14671790a1042ed979f862e8861da4fc768552d0ddda3f",
+        "bytes": 4384330,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/158e0741bcbe6774d8ef__magic__printer_FrontCloseUp__p2.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/158e0741bcbe6774d8ef__magic__printer_FrontCloseUp__p2.png",
+        "s3_etag": "eb17766bc0c187ded02b0cdbce2b0d2c",
+        "s3_last_modified": "2026-11-03T21:56:33+00:00"
+      },
+      "twin_image": {
+        "render_id": "magic__Front_CloseUp",
+        "filename": "magic__Front_CloseUp.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_CloseUp.png",
+        "sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+        "bytes": 998978,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/01_Front_CloseUp_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/01_Front_CloseUp_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_CloseUp.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_CloseUp.png",
+        "s3_etag": "1c6ab3ece298beeacbb73ec1ec497180",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "35f29527bb3f5b911b14671790a1042ed979f862e8861da4fc768552d0ddda3f",
+        "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+        "scene_prompt_sha256": "40a48652da49a0d2da83102b8c3472cf4b18107334c38dc2aa0f2d3c3f769c2c"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/158e0741bcbe6774d8ef__magic__printer_FrontCloseUp__p2.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/01_Front_CloseUp_white.png"
+      },
+      "human_feedback": "The position of the printer is very weird. It's too close to the edge (a bit \nof it is even hanging) and it's not aligned with the edges of the cabined. Also there is a desk right in front of the printer. and cabinet. This is not a natural placement.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "furniture_axis_conflict",
+          "precarious_edge",
+          "unsupported_base",
+          "blocked_operating_side"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Visible support margin, alignment, and desk blocking approach.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "magic__printer_FrontCloseUp__p5",
+      "product": "Magic",
+      "device": "magic",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontCloseUp",
+        "source_camera_name": "Front_CloseUp",
+        "view_role": "tight"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p5",
+      "scene_prompt": "A quiet corporate office desk is lit by warm daylight, with a desk calendar showing non-readable dates and a pair of reading glasses set neatly on the surface. A coat stand rests near the wall, adding a familiar workplace detail.",
+      "scene_prompt_sha256": "2fbafb2bc916348c73822fbf3d3ae8b1f89f9c33d742c850aaad0f9de8f037f3",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "magic__printer_FrontCloseUp::p5",
+        "source_revision": "v6-approved-20261029-r42",
+        "bank_rank": 5,
+        "environment": "Office",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "ac598808b9801e47f3ab__magic__printer_FrontCloseUp__p5.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/ac598808b9801e47f3ab__magic__printer_FrontCloseUp__p5.png",
+        "sha256": "dae0563361111a1d18b4c1c212601bd579b3f31135a9225f5d81f62bb2fbe4e4",
+        "bytes": 4531168,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/ac598808b9801e47f3ab__magic__printer_FrontCloseUp__p5.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/ac598808b9801e47f3ab__magic__printer_FrontCloseUp__p5.png",
+        "s3_etag": "80afd3987d5e015f34a96077785260a9",
+        "s3_last_modified": "2026-11-03T21:56:39+00:00"
+      },
+      "twin_image": {
+        "render_id": "magic__Front_CloseUp",
+        "filename": "magic__Front_CloseUp.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_CloseUp.png",
+        "sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+        "bytes": 998978,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/01_Front_CloseUp_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/01_Front_CloseUp_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_CloseUp.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_CloseUp.png",
+        "s3_etag": "1c6ab3ece298beeacbb73ec1ec497180",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "dae0563361111a1d18b4c1c212601bd579b3f31135a9225f5d81f62bb2fbe4e4",
+        "twin_image_sha256": "e5c593c84c0315a82dab2a0e8284ca52eacc597d5282e30488cbdbaaf7902e3a",
+        "scene_prompt_sha256": "2fbafb2bc916348c73822fbf3d3ae8b1f89f9c33d742c850aaad0f9de8f037f3"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/ac598808b9801e47f3ab__magic__printer_FrontCloseUp__p5.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/01_Front_CloseUp_white.png"
+      },
+      "human_feedback": "The printer is aligned to the edge of the dresser. But this should be a fail because no one puts a print\ner on their dressor like this. Very unatural. and out of place. The whole \"office credenza\" which actually looks like a dressor is misplaced. No one puts this furnature in the middle of the office like that. These usually are placed with their backs against a wall",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "misplaced_support_furniture"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Explicit scene fail despite aligned printer.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "magic__printer_FrontLeftMedium__p2",
+      "product": "Magic",
+      "device": "magic",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontLeftMedium",
+        "source_camera_name": "Front_Left_Medium",
+        "view_role": "medium"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p2",
+      "scene_prompt": "A bright corporate office with an office desk arranged for a small meeting, with an open ring binder showing blank, unmarked pages and a pen nearby. A low storage cabinet and framed artwork with abstract shapes sit against the wall, with warm natural light keeping the space polished and inviting.",
+      "scene_prompt_sha256": "56a15ef699fc3eeadc41707af37c4475b5ebc5b711f95351e5dc747a4c5e0614",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "magic__printer_FrontLeftMedium::p2",
+        "source_revision": "v6-approved-20261029-r42",
+        "bank_rank": 2,
+        "environment": "Office",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "795924fc8df3316c9e0f__magic__printer_FrontLeftMedium__p2.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/795924fc8df3316c9e0f__magic__printer_FrontLeftMedium__p2.png",
+        "sha256": "9f780331ecee1b24726cbd5744bbbb4f39dc31d6b3eb3a8145510177e4c5152c",
+        "bytes": 4592484,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/795924fc8df3316c9e0f__magic__printer_FrontLeftMedium__p2.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/795924fc8df3316c9e0f__magic__printer_FrontLeftMedium__p2.png",
+        "s3_etag": "409120546ae0686552d592dc7604f8bc",
+        "s3_last_modified": "2026-11-03T21:56:37+00:00"
+      },
+      "twin_image": {
+        "render_id": "magic__Front_Left_Medium",
+        "filename": "magic__Front_Left_Medium.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_Left_Medium.png",
+        "sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+        "bytes": 943918,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/28_Front-Left_Medium_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/28_Front-Left_Medium_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_Left_Medium.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_Left_Medium.png",
+        "s3_etag": "4a4318e515e29352b1fac9ca6009b1d0",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "9f780331ecee1b24726cbd5744bbbb4f39dc31d6b3eb3a8145510177e4c5152c",
+        "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+        "scene_prompt_sha256": "56a15ef699fc3eeadc41707af37c4475b5ebc5b711f95351e5dc747a4c5e0614"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/795924fc8df3316c9e0f__magic__printer_FrontLeftMedium__p2.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/28_Front-Left_Medium_white.png"
+      },
+      "human_feedback": "The printer is placed correctly on the cabinet as you pointed out. But the cabined is in a very unatural place in the room. No one places cabines in the centre of the room like that. THey put them against the walls.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "misplaced_support_furniture"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Cabinet position in room, rather than printer on cabinet.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "magic__printer_FrontLeftMedium__p3",
+      "product": "Magic",
+      "device": "magic",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontLeftMedium",
+        "source_camera_name": "Front_Left_Medium",
+        "view_role": "medium"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p3",
+      "scene_prompt": "An open modern office desk near a window has a letter tray, a face-down clipboard, and a desk calendar with non-readable dates. A coat stand near the wall adds a familiar workplace detail in warm daylight.",
+      "scene_prompt_sha256": "c249606d9f9e6707d1d5e0158f79ef117bff7a681edf9224dcc19741b9047b1e",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "magic__printer_FrontLeftMedium::p3",
+        "source_revision": "v6-approved-20261029-r42",
+        "bank_rank": 3,
+        "environment": "Office",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "4c02320488c9b45e784c__magic__printer_FrontLeftMedium__p3.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/4c02320488c9b45e784c__magic__printer_FrontLeftMedium__p3.png",
+        "sha256": "fdffe668c7642cd9c1d4e887ef21bd9835ef94db78f51556115bfd7b2d595099",
+        "bytes": 4496660,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/4c02320488c9b45e784c__magic__printer_FrontLeftMedium__p3.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/4c02320488c9b45e784c__magic__printer_FrontLeftMedium__p3.png",
+        "s3_etag": "ebb688dd6ec995c0c52542d9779b4f04",
+        "s3_last_modified": "2026-11-03T21:56:35+00:00"
+      },
+      "twin_image": {
+        "render_id": "magic__Front_Left_Medium",
+        "filename": "magic__Front_Left_Medium.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_Left_Medium.png",
+        "sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+        "bytes": 943918,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/28_Front-Left_Medium_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/28_Front-Left_Medium_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_Left_Medium.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_Left_Medium.png",
+        "s3_etag": "4a4318e515e29352b1fac9ca6009b1d0",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "fdffe668c7642cd9c1d4e887ef21bd9835ef94db78f51556115bfd7b2d595099",
+        "twin_image_sha256": "8846a1cb49879e8f113713a57629d07f22a631e2914dc53029659bbfe1200027",
+        "scene_prompt_sha256": "c249606d9f9e6707d1d5e0158f79ef117bff7a681edf9224dcc19741b9047b1e"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/4c02320488c9b45e784c__magic__printer_FrontLeftMedium__p3.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/28_Front-Left_Medium_white.png"
+      },
+      "human_feedback": "This is great. maybe the printer would have been a bit push back so that its back edge is at the edge of the desk. A human would set it like that to maximize the space in the front of the pinters. In general humans place objects to maximize usable space.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "pass"
+        ],
+        "expected_issue_any": [],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Explicit great placement with optional extra setback; avoid over-penalizing.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "magic__printer_FrontRightCloseUp__p2",
+      "product": "Magic",
+      "device": "magic",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontRightCloseUp",
+        "source_camera_name": "Front_Right_CloseUp",
+        "view_role": "tight"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p2",
+      "scene_prompt": "A bright corporate office with an office desk set up for planning a routine meeting, with an open paper notebook showing blank pages and a pen laid beside it. Clean shelving stands near a wall with framed artwork depicting abstract geometric shapes, and warm natural light keeps the space inviting.",
+      "scene_prompt_sha256": "5d2221f1de1435ef9f44f5e47c05a461c471436f4c7a83a448844558d6d28a91",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "magic__printer_FrontRightCloseUp::p2",
+        "source_revision": "v6-approved-20261029-r32",
+        "bank_rank": 2,
+        "environment": "Office",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "02a9e7e626a8ebd9d7bb__magic__printer_FrontRightCloseUp__p2.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/02a9e7e626a8ebd9d7bb__magic__printer_FrontRightCloseUp__p2.png",
+        "sha256": "71f58e7b8a2be2dbcf8e71dd2828b7967b8b7c471e392d633597b766d13236e7",
+        "bytes": 4162609,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/02a9e7e626a8ebd9d7bb__magic__printer_FrontRightCloseUp__p2.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/02a9e7e626a8ebd9d7bb__magic__printer_FrontRightCloseUp__p2.png",
+        "s3_etag": "acc39a8c47cd4025b75d1e845058e8eb",
+        "s3_last_modified": "2026-11-03T21:56:32+00:00"
+      },
+      "twin_image": {
+        "render_id": "magic__Front_Right_CloseUp",
+        "filename": "magic__Front_Right_CloseUp.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_Right_CloseUp.png",
+        "sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+        "bytes": 1378227,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/34_Front-Right_CloseUp_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/34_Front-Right_CloseUp_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_Right_CloseUp.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_Right_CloseUp.png",
+        "s3_etag": "4aa3bdac98397c3d4a926814a5934032",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "71f58e7b8a2be2dbcf8e71dd2828b7967b8b7c471e392d633597b766d13236e7",
+        "twin_image_sha256": "d89c5aa32fbddf7824aad34939828d7d7b6a8315a250ecbc0b42566384ee5077",
+        "scene_prompt_sha256": "5d2221f1de1435ef9f44f5e47c05a461c471436f4c7a83a448844558d6d28a91"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/02a9e7e626a8ebd9d7bb__magic__printer_FrontRightCloseUp__p2.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/34_Front-Right_CloseUp_white.png"
+      },
+      "human_feedback": "The only issue here is that the shelves behind the printer are all empty. This of\nfice doesn't look like a lived in environment.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "unpopulated_storage"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Only explicit concern is exposed empty shelving; do not infer image fail label.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "magic__printer_FrontWide__p2",
+      "product": "Magic",
+      "device": "magic",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontWide",
+        "source_camera_name": "Front_Wide",
+        "view_role": "wide"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p2",
+      "scene_prompt": "An open modern corporate office with a desk holding an open ring binder showing blank, unmarked pages, an unlabelled document folder, and a small pad of blank sticky notes. A low storage cabinet and a fully empty cork pinboard sit along the wall, keeping the room tidy and practical. Warm natural light gives the workspace a calm, everyday office feel.",
+      "scene_prompt_sha256": "2634a3e66689d0eb8ff22ff8c92a5d3b51b23b2af2e643fd226b2d959ab3572b",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "magic__printer_FrontWide::p2",
+        "source_revision": "v6-approved-20261029-r22",
+        "bank_rank": 2,
+        "environment": "Office",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "954178a920bf3d44c6e0__magic__printer_FrontWide__p2.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/954178a920bf3d44c6e0__magic__printer_FrontWide__p2.png",
+        "sha256": "34d8639594009511693f6b8a5f65e7d09072a4a5fbf811db570fec11719581e4",
+        "bytes": 4833632,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/954178a920bf3d44c6e0__magic__printer_FrontWide__p2.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/954178a920bf3d44c6e0__magic__printer_FrontWide__p2.png",
+        "s3_etag": "3876627d9d1269010848bdfdb8369baa",
+        "s3_last_modified": "2026-11-03T21:56:38+00:00"
+      },
+      "twin_image": {
+        "render_id": "magic__Front_Wide",
+        "filename": "magic__Front_Wide.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_Wide.png",
+        "sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+        "bytes": 256408,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/15_Front_Wide_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/15_Front_Wide_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_Wide.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_Wide.png",
+        "s3_etag": "91384e367f33daf83efac26c14ab58c4",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "34d8639594009511693f6b8a5f65e7d09072a4a5fbf811db570fec11719581e4",
+        "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+        "scene_prompt_sha256": "2634a3e66689d0eb8ff22ff8c92a5d3b51b23b2af2e643fd226b2d959ab3572b"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/954178a920bf3d44c6e0__magic__printer_FrontWide__p2.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/15_Front_Wide_white.png"
+      },
+      "human_feedback": "this is a pass. but printer could be placed a bit more to the left and closer to the wall. But this is a pass",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "pass"
+        ],
+        "expected_issue_any": [],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Explicit pass despite optional left/back adjustment.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "magic__printer_FrontWide__p5",
+      "product": "Magic",
+      "device": "magic",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontWide",
+        "source_camera_name": "Front_Wide",
+        "view_role": "wide"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p5",
+      "scene_prompt": "A bright modern corporate office with a simple desk arranged for the day: an open paper notebook with blank pages, a pen, and a desk calendar with non-readable dates. A clear water glass and a coat stand near the wall add small everyday touches. The room stays tidy, professional, and softly lit by natural light.",
+      "scene_prompt_sha256": "76ace476fea45713e38cffcddbdd6c007514e8625f20c3d1e18be722aff45dc2",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "magic__printer_FrontWide::p5",
+        "source_revision": "v6-approved-20261029-r22",
+        "bank_rank": 5,
+        "environment": "Office",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "b0577f5760f4faeea8f7__magic__printer_FrontWide__p5.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/b0577f5760f4faeea8f7__magic__printer_FrontWide__p5.png",
+        "sha256": "8aa998b4fda692c049277a61a4e50e94958dffadb81dbd57054c107bc58f8e23",
+        "bytes": 3992930,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/b0577f5760f4faeea8f7__magic__printer_FrontWide__p5.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/b0577f5760f4faeea8f7__magic__printer_FrontWide__p5.png",
+        "s3_etag": "e8a4051207f69453c6907e699d878a89",
+        "s3_last_modified": "2026-11-03T21:56:40+00:00"
+      },
+      "twin_image": {
+        "render_id": "magic__Front_Wide",
+        "filename": "magic__Front_Wide.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/magic__Front_Wide.png",
+        "sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+        "bytes": 256408,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/15_Front_Wide_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/15_Front_Wide_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_Wide.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/magic__Front_Wide.png",
+        "s3_etag": "91384e367f33daf83efac26c14ab58c4",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "8aa998b4fda692c049277a61a4e50e94958dffadb81dbd57054c107bc58f8e23",
+        "twin_image_sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+        "scene_prompt_sha256": "76ace476fea45713e38cffcddbdd6c007514e8625f20c3d1e18be722aff45dc2"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/b0577f5760f4faeea8f7__magic__printer_FrontWide__p5.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/15_Front_Wide_white.png"
+      },
+      "human_feedback": "agree with your comments. Also the table itself has issues. It's right leg is not aligned with the top portion of it.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "malformed_support_furniture"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Additional right table leg/top alignment complaint.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "tassel__printer_FrontCloseUp__p3",
+      "product": "Tassel",
+      "device": "tassel",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontCloseUp",
+        "source_camera_name": "Front_CloseUp",
+        "view_role": "tight"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p3",
+      "scene_prompt": "A modern home living-room table in warm natural light with a partially assembled jigsaw puzzle showing a quiet landscape and no people or faces. The relaxed setup feels like an everyday family activity left ready to continue.",
+      "scene_prompt_sha256": "e6d542f8bc2132d828a7f7db20d34c575b894067dc10dfc683ea440866f6c72a",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "tassel__printer_FrontCloseUp::p3",
+        "source_revision": "v6-approved-20261029-r18",
+        "bank_rank": 3,
+        "environment": "Home",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "9e726ac4839fee00a678__tassel__printer_FrontCloseUp__p3.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/9e726ac4839fee00a678__tassel__printer_FrontCloseUp__p3.png",
+        "sha256": "817e009420dcaca488a8eb2153d023637cf8dc1f584d398668b7358a398e854b",
+        "bytes": 4208892,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/9e726ac4839fee00a678__tassel__printer_FrontCloseUp__p3.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/9e726ac4839fee00a678__tassel__printer_FrontCloseUp__p3.png",
+        "s3_etag": "fa542ea0b4376d056752107dfb343912",
+        "s3_last_modified": "2026-11-03T21:56:38+00:00"
+      },
+      "twin_image": {
+        "render_id": "tassel__Front_CloseUp",
+        "filename": "tassel__Front_CloseUp.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/tassel__Front_CloseUp.png",
+        "sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+        "bytes": 528360,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_CloseUp/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_CloseUp/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/tassel__Front_CloseUp.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/tassel__Front_CloseUp.png",
+        "s3_etag": "a86160291f787d096f1d04413a020877",
+        "s3_last_modified": "2026-11-03T21:56:32+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "817e009420dcaca488a8eb2153d023637cf8dc1f584d398668b7358a398e854b",
+        "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+        "scene_prompt_sha256": "e6d542f8bc2132d828a7f7db20d34c575b894067dc10dfc683ea440866f6c72a"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/9e726ac4839fee00a678__tassel__printer_FrontCloseUp__p3.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_CloseUp/product_white.png"
+      },
+      "human_feedback": "agree with yoru comment. Additionally no one puts printer in their coffee table in the middle of the living room. Also what's the puzzel doing there? the puzzel belongs on the cofee table but has nothing to do with the printer.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "implausible_scenario",
+          "inappropriate_support",
+          "incoherent_use_arrangement"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Printer with puzzle on living-room coffee table.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "tassel__printer_FrontCloseUp__p5",
+      "product": "Tassel",
+      "device": "tassel",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontCloseUp",
+        "source_camera_name": "Front_CloseUp",
+        "view_role": "tight"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p5",
+      "scene_prompt": "A bright creative studio worktable with unlabelled fabric swatches and unlabelled color swatches laid out in a small, casual grouping. Warm natural light keeps the materials clear and tactile, suggesting a simple project in progress.",
+      "scene_prompt_sha256": "b729de1ff820003da80d93c7c12e17034bfb6ceaf6724317975eba772c08f5a8",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "tassel__printer_FrontCloseUp::p5",
+        "source_revision": "v6-approved-20261029-r18",
+        "bank_rank": 5,
+        "environment": "Creative Studio",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "c66373a1ee2e06ad55e6__tassel__printer_FrontCloseUp__p5.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/c66373a1ee2e06ad55e6__tassel__printer_FrontCloseUp__p5.png",
+        "sha256": "9ec4541837f0ad45e5b34b79deb4c7ec7ad872383986715abf3880fe61585fdd",
+        "bytes": 3852387,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/c66373a1ee2e06ad55e6__tassel__printer_FrontCloseUp__p5.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/c66373a1ee2e06ad55e6__tassel__printer_FrontCloseUp__p5.png",
+        "s3_etag": "8818c56a9a1068738d3be8aecaaca6e7",
+        "s3_last_modified": "2026-11-03T21:56:41+00:00"
+      },
+      "twin_image": {
+        "render_id": "tassel__Front_CloseUp",
+        "filename": "tassel__Front_CloseUp.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/tassel__Front_CloseUp.png",
+        "sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+        "bytes": 528360,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_CloseUp/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_CloseUp/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/tassel__Front_CloseUp.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/tassel__Front_CloseUp.png",
+        "s3_etag": "a86160291f787d096f1d04413a020877",
+        "s3_last_modified": "2026-11-03T21:56:32+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "9ec4541837f0ad45e5b34b79deb4c7ec7ad872383986715abf3880fe61585fdd",
+        "twin_image_sha256": "e709a4870735e91e35523ace3d0937c8acb99a47475fb88761cc68da243bacf4",
+        "scene_prompt_sha256": "b729de1ff820003da80d93c7c12e17034bfb6ceaf6724317975eba772c08f5a8"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/c66373a1ee2e06ad55e6__tassel__printer_FrontCloseUp__p5.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_CloseUp/product_white.png"
+      },
+      "human_feedback": "The placement of printer on the table is fine. But the scene is unatural. The wall is very empty. Generally you should penalize empty walls and empty shelves. Also the fabric props have nothing to do with anything in the scene.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "incoherent_use_arrangement",
+          "bare_staged_setting"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Good product/table placement does not resolve empty, unrelated setting.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "tassel__printer_FrontLeftMedium__p1",
+      "product": "Tassel",
+      "device": "tassel",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontLeftMedium",
+        "source_camera_name": "Front_Left_Medium",
+        "view_role": "medium"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p1",
+      "scene_prompt": "A modern home workspace near a window, with an unlabelled folder open beside a small stack of plain household papers with indistinct markings. Soft curtains filter warm daylight across the desk surface, making the space feel practical, lived-in, and ready for everyday home organization.",
+      "scene_prompt_sha256": "8aa20fa0bf6936780ed8d13400001dd96bdc69188d96a463d5a6aa0bb370bfc7",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "tassel__printer_FrontLeftMedium::p1",
+        "source_revision": "v6-approved-20261029-r39",
+        "bank_rank": 1,
+        "environment": "Home",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "a00867a10fc2cbfa4225__tassel__printer_FrontLeftMedium__p1.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/a00867a10fc2cbfa4225__tassel__printer_FrontLeftMedium__p1.png",
+        "sha256": "21e9a7cd2132b3a646049a877e5c104112ab4a10bff239f123eaeea679e56b25",
+        "bytes": 5654975,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/a00867a10fc2cbfa4225__tassel__printer_FrontLeftMedium__p1.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/a00867a10fc2cbfa4225__tassel__printer_FrontLeftMedium__p1.png",
+        "s3_etag": "7c4e90f85d9b69859b36053958f092cc",
+        "s3_last_modified": "2026-11-03T21:56:39+00:00"
+      },
+      "twin_image": {
+        "render_id": "tassel__Front_Left_Medium",
+        "filename": "tassel__Front_Left_Medium.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/tassel__Front_Left_Medium.png",
+        "sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+        "bytes": 343257,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_Left_Medium/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_Left_Medium/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/tassel__Front_Left_Medium.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/tassel__Front_Left_Medium.png",
+        "s3_etag": "b02cc9d3559897b48a97d285567b67b2",
+        "s3_last_modified": "2026-11-03T21:56:32+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "21e9a7cd2132b3a646049a877e5c104112ab4a10bff239f123eaeea679e56b25",
+        "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+        "scene_prompt_sha256": "8aa20fa0bf6936780ed8d13400001dd96bdc69188d96a463d5a6aa0bb370bfc7"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/a00867a10fc2cbfa4225__tassel__printer_FrontLeftMedium__p1.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_Left_Medium/product_white.png"
+      },
+      "human_feedback": "The printer should be pushed back on teh desk so that its back is flush against the edge of the desk (alsmost). It should also be to one side. But also the whole deks in this room makes no sense its placmeent is unatural.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "misplaced_support_furniture",
+          "unmotivated_position"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Back/side device positioning plus table placement in room.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "tassel__printer_FrontLeftMedium__p5",
+      "product": "Tassel",
+      "device": "tassel",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontLeftMedium",
+        "source_camera_name": "Front_Left_Medium",
+        "view_role": "medium"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p5",
+      "scene_prompt": "A creative studio worktable is prepared with unlabelled fabric swatches, a thread spool, and a measuring tape with non-readable measurement markings. A rolling materials cart stands nearby in warm daylight, giving the workspace an active but ordinary project feel.",
+      "scene_prompt_sha256": "8865dfc95c5f2968d8a08b038e1fd08ba1fcf4c19d4b1b8bb1e36e9550878c13",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "tassel__printer_FrontLeftMedium::p5",
+        "source_revision": "v6-approved-20261029-r39",
+        "bank_rank": 5,
+        "environment": "Creative Studio",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "a28549ab696a767d70d5__tassel__printer_FrontLeftMedium__p5.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/a28549ab696a767d70d5__tassel__printer_FrontLeftMedium__p5.png",
+        "sha256": "7867b55a05b736e89e88d973e022747c5ad5d7f69b0c99efeb0bffb0b36719fd",
+        "bytes": 4436685,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/a28549ab696a767d70d5__tassel__printer_FrontLeftMedium__p5.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/a28549ab696a767d70d5__tassel__printer_FrontLeftMedium__p5.png",
+        "s3_etag": "76be9b2e5fb288570f0f45c8193c2fcf",
+        "s3_last_modified": "2026-11-03T21:56:39+00:00"
+      },
+      "twin_image": {
+        "render_id": "tassel__Front_Left_Medium",
+        "filename": "tassel__Front_Left_Medium.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/tassel__Front_Left_Medium.png",
+        "sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+        "bytes": 343257,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_Left_Medium/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_Left_Medium/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/tassel__Front_Left_Medium.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/tassel__Front_Left_Medium.png",
+        "s3_etag": "b02cc9d3559897b48a97d285567b67b2",
+        "s3_last_modified": "2026-11-03T21:56:32+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "7867b55a05b736e89e88d973e022747c5ad5d7f69b0c99efeb0bffb0b36719fd",
+        "twin_image_sha256": "235bcc2b1e88b07d5cb4a32c055730685bcc1761107606ec6827b67c1a1ee36b",
+        "scene_prompt_sha256": "8865dfc95c5f2968d8a08b038e1fd08ba1fcf4c19d4b1b8bb1e36e9550878c13"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/a28549ab696a767d70d5__tassel__printer_FrontLeftMedium__p5.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_Left_Medium/product_white.png"
+      },
+      "human_feedback": "The printer would probabaly be closer to the back edge of the table to maximize space in front of it. But also the scene is weird, the walls are all empty. Its not clear what the printer is doing in this scene. Feels like we just put random props together.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "incoherent_use_arrangement",
+          "bare_staged_setting",
+          "unmotivated_position"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Token props and empty setting; printer forward on surface.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "tassel__printer_FrontRightCloseUp__p1",
+      "product": "Tassel",
+      "device": "tassel",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "printer_FrontRightCloseUp",
+        "source_camera_name": "Front_Right_CloseUp",
+        "view_role": "tight"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p1",
+      "scene_prompt": "A lived-in home workspace with a wooden desk near a window, holding an open unlabelled folder and a small stack of household papers with indistinct markings. Warm natural light keeps the home task area tidy and practical.",
+      "scene_prompt_sha256": "9edd8fc3774073ea07aaf98c4890d20b9c7a183da404b2baeb2c349b3024ba85",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "tassel__printer_FrontRightCloseUp::p1",
+        "source_revision": "v6-approved-20261029-r18",
+        "bank_rank": 1,
+        "environment": "Home",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "f54c501716a279478fe9__tassel__printer_FrontRightCloseUp__p1.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/f54c501716a279478fe9__tassel__printer_FrontRightCloseUp__p1.png",
+        "sha256": "d7608aebf60f241fc29dca79aecf44e54288e1e44583c02ed6f132179310a969",
+        "bytes": 4112070,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/f54c501716a279478fe9__tassel__printer_FrontRightCloseUp__p1.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/f54c501716a279478fe9__tassel__printer_FrontRightCloseUp__p1.png",
+        "s3_etag": "02734de974a70d0d01e67d1c0e7db9ff",
+        "s3_last_modified": "2026-11-03T21:56:43+00:00"
+      },
+      "twin_image": {
+        "render_id": "tassel__Front_Right_CloseUp",
+        "filename": "tassel__Front_Right_CloseUp.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/tassel__Front_Right_CloseUp.png",
+        "sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+        "bytes": 426162,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_Right_CloseUp/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_Right_CloseUp/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/tassel__Front_Right_CloseUp.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/tassel__Front_Right_CloseUp.png",
+        "s3_etag": "408006bf5114347d54ade74750699056",
+        "s3_last_modified": "2026-11-03T21:56:32+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "d7608aebf60f241fc29dca79aecf44e54288e1e44583c02ed6f132179310a969",
+        "twin_image_sha256": "c5871bf74f71018ee4c798bf2129ef32f9bf66275fb9f4c9e6ceb001e8fc219c",
+        "scene_prompt_sha256": "9edd8fc3774073ea07aaf98c4890d20b9c7a183da404b2baeb2c349b3024ba85"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/f54c501716a279478fe9__tassel__printer_FrontRightCloseUp__p1.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/tassel/Front_Right_CloseUp/product_white.png"
+      },
+      "human_feedback": "It's unclear what is this desk doing in this office. It just looks very staged. But I agree with your comments, the postion of printer on the desk is correct. Its just he positiuon of the desk in the scene that's weird.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [
+          "misplaced_support_furniture"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Product on table correct; table in office looks staged.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "cashmere__laptop_BackRightCloseUp__p6",
+      "product": "Cashmere",
+      "device": "cashmere",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "laptop_BackRightCloseUp",
+        "source_camera_name": "Back_Right_CloseUp",
+        "view_role": "tight"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p6",
+      "scene_prompt": "A warm small wooden café table in a modern neighborhood café. A ceramic coffee cup rests on a saucer beside a croissant on a small pastry plate, with an upholstered banquette behind the table and soft daylight from the windows.",
+      "scene_prompt_sha256": "85a5a3ed1babfef242f2de10ae03d1eaf7cdc9ebc1920c934be33879529a3e40",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "cashmere__laptop_BackRightCloseUp::p6",
+        "source_revision": "v6-approved-20261029-r42",
+        "bank_rank": 6,
+        "environment": "Café",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "af79a0af5395ee372bb5__cashmere__laptop_BackRightCloseUp__p6.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/af79a0af5395ee372bb5__cashmere__laptop_BackRightCloseUp__p6.png",
+        "sha256": "74199a614c7ec8519b725d37ea7181eaed0c7e33dc15a744e1e280d6d28f5265",
+        "bytes": 3266063,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/af79a0af5395ee372bb5__cashmere__laptop_BackRightCloseUp__p6.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/af79a0af5395ee372bb5__cashmere__laptop_BackRightCloseUp__p6.png",
+        "s3_etag": "67602416a8fa1bc07dfc16c68958aca4",
+        "s3_last_modified": "2026-11-03T21:56:40+00:00"
+      },
+      "twin_image": {
+        "render_id": "cashmere__Back_Right_CloseUp",
+        "filename": "cashmere__Back_Right_CloseUp.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/cashmere__Back_Right_CloseUp.png",
+        "sha256": "a12dec7cf9f6816e95e88706cd4913d8fffc3811ea0795422714efa6740a3118",
+        "bytes": 419334,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/cashmere_x/Back_Right_CloseUp/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/cashmere_x/Back_Right_CloseUp/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/cashmere__Back_Right_CloseUp.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/cashmere__Back_Right_CloseUp.png",
+        "s3_etag": "f1bf007f9a5c1c1626eea36d9637902f",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "74199a614c7ec8519b725d37ea7181eaed0c7e33dc15a744e1e280d6d28f5265",
+        "twin_image_sha256": "a12dec7cf9f6816e95e88706cd4913d8fffc3811ea0795422714efa6740a3118",
+        "scene_prompt_sha256": "85a5a3ed1babfef242f2de10ae03d1eaf7cdc9ebc1920c934be33879529a3e40"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/af79a0af5395ee372bb5__cashmere__laptop_BackRightCloseUp__p6.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/cashmere_x/Back_Right_CloseUp/product_white.png"
+      },
+      "human_feedback": "This is a fail. The laptop should face the chairs not the other customers.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "chair_alignment_conflict",
+          "no_user_position"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Explicit fail for facing customers rather than seating.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontLeftMedium__p6",
+      "product": "Cashmere",
+      "device": "cashmere",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "laptop_FrontLeftMedium",
+        "source_camera_name": "Front_Left_Medium",
+        "view_role": "medium"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p6",
+      "scene_prompt": "A modern neighborhood café with a small wooden table set for a brief stop between meetings. A ceramic coffee cup and folded napkin rest on the tabletop, with an upholstered banquette behind it and soft natural light from the windows.",
+      "scene_prompt_sha256": "6933c97f25fa1c8deef23065213a00be37b1c35e9f537bfa1bb7641f9128e75a",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "cashmere__laptop_FrontLeftMedium::p6",
+        "source_revision": "v6-approved-20261029-r42",
+        "bank_rank": 6,
+        "environment": "Café",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "18613ec2b2f5f030f142__cashmere__laptop_FrontLeftMedium__p6.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/18613ec2b2f5f030f142__cashmere__laptop_FrontLeftMedium__p6.png",
+        "sha256": "3037a6278781f216e742291f390d07c97e56d46e387c91dc4f2a5c14cf993650",
+        "bytes": 4896539,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/18613ec2b2f5f030f142__cashmere__laptop_FrontLeftMedium__p6.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/18613ec2b2f5f030f142__cashmere__laptop_FrontLeftMedium__p6.png",
+        "s3_etag": "2acd6ec5b99c2bb625fe2eea4970770b",
+        "s3_last_modified": "2026-11-03T21:56:33+00:00"
+      },
+      "twin_image": {
+        "render_id": "cashmere__Front_Left_Medium",
+        "filename": "cashmere__Front_Left_Medium.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/cashmere__Front_Left_Medium.png",
+        "sha256": "9e8e8db18f73af0a4806d32e9ed9edada43a43449f4846451db2e7770e41c290",
+        "bytes": 502943,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/cashmere_x/Front_Left_Medium/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/cashmere_x/Front_Left_Medium/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/cashmere__Front_Left_Medium.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/cashmere__Front_Left_Medium.png",
+        "s3_etag": "93df39b80aa5b276f91002572afd1982",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "3037a6278781f216e742291f390d07c97e56d46e387c91dc4f2a5c14cf993650",
+        "twin_image_sha256": "9e8e8db18f73af0a4806d32e9ed9edada43a43449f4846451db2e7770e41c290",
+        "scene_prompt_sha256": "6933c97f25fa1c8deef23065213a00be37b1c35e9f537bfa1bb7641f9128e75a"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/18613ec2b2f5f030f142__cashmere__laptop_FrontLeftMedium__p6.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/cashmere_x/Front_Left_Medium/product_white.png"
+      },
+      "human_feedback": "Thsi si a fail. The laptop should be facing the chairs behind it. Those benches (with teal/blue cover) is where people would sit in a caffe",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "chair_alignment_conflict",
+          "no_user_position"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Explicit fail for facing away from banquette.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "cashmere__laptop_FrontWide__p4",
+      "product": "Cashmere",
+      "device": "cashmere",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "laptop_FrontWide",
+        "source_camera_name": "Front_Wide",
+        "view_role": "wide"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p4",
+      "scene_prompt": "A bright modern corporate office desk used between calls, with a letter tray, blank unmarked index cards, blank sticky notes, and a stapler arranged within easy reach. A floor lamp near the wall adds a softer workplace layer while warm natural light keeps the space tidy and approachable.",
+      "scene_prompt_sha256": "083dbe97a8c55f61a5f169522afe2a6220b9fdf74074e101efcf74355d6ec8b6",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "cashmere__laptop_FrontWide::p4",
+        "source_revision": "v6-approved-20261029-r39",
+        "bank_rank": 4,
+        "environment": "Office",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "e1bfe286da2bfa6cc263__cashmere__laptop_FrontWide__p4.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/e1bfe286da2bfa6cc263__cashmere__laptop_FrontWide__p4.png",
+        "sha256": "ae7fde47093b6170c20b9316bf7ab759b16359af3dcde87f5c8c09015fe84448",
+        "bytes": 4773082,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/e1bfe286da2bfa6cc263__cashmere__laptop_FrontWide__p4.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/e1bfe286da2bfa6cc263__cashmere__laptop_FrontWide__p4.png",
+        "s3_etag": "b096a69dfbeca1553973fd1ff3d9c1bc",
+        "s3_last_modified": "2026-11-03T21:56:42+00:00"
+      },
+      "twin_image": {
+        "render_id": "cashmere__Front_Wide",
+        "filename": "cashmere__Front_Wide.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/cashmere__Front_Wide.png",
+        "sha256": "8e361fe46f56561120bb0c2ffdf134dc02b8cd7a92b823a3cba2fae49f080243",
+        "bytes": 263693,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/cashmere_x/Front_Wide/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/cashmere_x/Front_Wide/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/cashmere__Front_Wide.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/cashmere__Front_Wide.png",
+        "s3_etag": "7b3dda952bbb33eb4f6d1a219c62a8c2",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "ae7fde47093b6170c20b9316bf7ab759b16359af3dcde87f5c8c09015fe84448",
+        "twin_image_sha256": "8e361fe46f56561120bb0c2ffdf134dc02b8cd7a92b823a3cba2fae49f080243",
+        "scene_prompt_sha256": "083dbe97a8c55f61a5f169522afe2a6220b9fdf74074e101efcf74355d6ec8b6"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/e1bfe286da2bfa6cc263__cashmere__laptop_FrontWide__p4.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/cashmere_x/Front_Wide/product_white.png"
+      },
+      "human_feedback": "fail. No one randomly abandons a laptop in a middle of the desk like this. I agree tha there is no chair visible. But the whole scene looks weird.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "unmotivated_position",
+          "incoherent_use_arrangement"
+        ],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Unmotivated placement on broad surface despite absent chair.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "elitebook__laptop_BackRightCloseUp__p5",
+      "product": "EliteBook",
+      "device": "elitebook",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "laptop_BackRightCloseUp",
+        "source_camera_name": "Back_Right_CloseUp",
+        "view_role": "tight"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p5",
+      "scene_prompt": "A modern home workspace with reading glasses beside a closed plain eyeglass case on a wooden desk. Soft daylight and warm neutral tones make the area feel quiet and lived-in for focused reading between calls.",
+      "scene_prompt_sha256": "e5372a575f99c72f7e8de259e2b857f0cf590e0e6906e6d8001d55c2b8c5dd85",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "elitebook__laptop_BackRightCloseUp::p5",
+        "source_revision": "v6-approved-20261029-r35",
+        "bank_rank": 5,
+        "environment": "Home",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "7d3a704d0afcecce5a76__elitebook__laptop_BackRightCloseUp__p5.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/7d3a704d0afcecce5a76__elitebook__laptop_BackRightCloseUp__p5.png",
+        "sha256": "b1999a979d2ebe7dab095d20fd0d3686968dc18e95bcbeee65f035699a0a6267",
+        "bytes": 4727892,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/7d3a704d0afcecce5a76__elitebook__laptop_BackRightCloseUp__p5.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/7d3a704d0afcecce5a76__elitebook__laptop_BackRightCloseUp__p5.png",
+        "s3_etag": "5ad797553b653d0da7f4407ab27752be",
+        "s3_last_modified": "2026-11-03T21:56:37+00:00"
+      },
+      "twin_image": {
+        "render_id": "elitebook__Back_Right_CloseUp",
+        "filename": "elitebook__Back_Right_CloseUp.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/elitebook__Back_Right_CloseUp.png",
+        "sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+        "bytes": 700325,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/elitebook_13/Back_Right_CloseUp/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/elitebook_13/Back_Right_CloseUp/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/elitebook__Back_Right_CloseUp.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/elitebook__Back_Right_CloseUp.png",
+        "s3_etag": "38f22c32e5810467ab6ecbfa1b4dc0f2",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "b1999a979d2ebe7dab095d20fd0d3686968dc18e95bcbeee65f035699a0a6267",
+        "twin_image_sha256": "6f15ab52552c756b00d034d52c0d54e8c61e7b3bd0582c69c3e07d47a30e4925",
+        "scene_prompt_sha256": "e5372a575f99c72f7e8de259e2b857f0cf590e0e6906e6d8001d55c2b8c5dd85"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/7d3a704d0afcecce5a76__elitebook__laptop_BackRightCloseUp__p5.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/elitebook_13/Back_Right_CloseUp/product_white.png"
+      },
+      "human_feedback": "this is weak fail because tehre is also a chair in front of the laptop. So it could be either way.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [],
+        "expected_issue_any": [],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Weak fail/competing chair: preserve uncertainty, not hard-label as fail.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontLeftMedium__p5",
+      "product": "EliteBook",
+      "device": "elitebook",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "laptop_FrontLeftMedium",
+        "source_camera_name": "Front_Left_Medium",
+        "view_role": "medium"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p5",
+      "scene_prompt": "A bright creative studio worktable is arranged for sketching out a direction, with unlabelled color swatches, unlabelled fabric swatches, and a measuring tape with non-readable markings. A studio stool rests at the table, and warm natural light keeps the workspace practical and casually used.",
+      "scene_prompt_sha256": "712a0961dea595ae1eb2a797078ddfa7a6e1613551d68a0adb8318ee5ce3a24a",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "elitebook__laptop_FrontLeftMedium::p5",
+        "source_revision": "v6-approved-20261029-r42",
+        "bank_rank": 5,
+        "environment": "Creative Studio",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "9b8db404ae09fc7bdb60__elitebook__laptop_FrontLeftMedium__p5.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/9b8db404ae09fc7bdb60__elitebook__laptop_FrontLeftMedium__p5.png",
+        "sha256": "daa8c4c7e2d8d3fa3c8140ec2245b31e168a0f80f5a24f683a9c9c7b9b3b7c53",
+        "bytes": 4980288,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/9b8db404ae09fc7bdb60__elitebook__laptop_FrontLeftMedium__p5.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/9b8db404ae09fc7bdb60__elitebook__laptop_FrontLeftMedium__p5.png",
+        "s3_etag": "772d090b82d721ffcfc6170c576a3bed",
+        "s3_last_modified": "2026-11-03T21:56:38+00:00"
+      },
+      "twin_image": {
+        "render_id": "elitebook__Front_Left_Medium",
+        "filename": "elitebook__Front_Left_Medium.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/elitebook__Front_Left_Medium.png",
+        "sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+        "bytes": 352511,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/elitebook_13/Front_Left_Medium/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/elitebook_13/Front_Left_Medium/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/elitebook__Front_Left_Medium.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/elitebook__Front_Left_Medium.png",
+        "s3_etag": "536783a83a8e96b611cb4b1ac13b7100",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "daa8c4c7e2d8d3fa3c8140ec2245b31e168a0f80f5a24f683a9c9c7b9b3b7c53",
+        "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+        "scene_prompt_sha256": "712a0961dea595ae1eb2a797078ddfa7a6e1613551d68a0adb8318ee5ce3a24a"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/9b8db404ae09fc7bdb60__elitebook__laptop_FrontLeftMedium__p5.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/elitebook_13/Front_Left_Medium/product_white.png"
+      },
+      "human_feedback": "This could go eitehr way. Maybe this is front of the deks. WE don't have enough clues to know that the laptop is facing the wrong direction. Id say this is an ambiguous case.",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "review"
+        ],
+        "expected_issue_any": [],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "User explicitly ambiguous working front; examine overconfident direction failure.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "elitebook__laptop_FrontLeftMedium__p6",
+      "product": "EliteBook",
+      "device": "elitebook",
+      "device_type": "laptop",
+      "view": {
+        "camera_tag": "laptop_FrontLeftMedium",
+        "source_camera_name": "Front_Left_Medium",
+        "view_role": "medium"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "p6",
+      "scene_prompt": "A modern home living room with a simple end table holding a teapot and a folded cloth napkin. A comfortable sofa with a casually draped throw blanket sits nearby, and warm natural light creates a cozy, lived-in atmosphere for a break between appointments.",
+      "scene_prompt_sha256": "0467b438db7170091bf3a1862052ad66785cb7ff15f84fd61cbee124e62a00b6",
+      "scene_prompt_source": {
+        "kind": "original_v6_prompt",
+        "prompt_key": "elitebook__laptop_FrontLeftMedium::p6",
+        "source_revision": "v6-approved-20261029-r42",
+        "bank_rank": 6,
+        "environment": "Home",
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "a9d79068881e6b16cc3f__elitebook__laptop_FrontLeftMedium__p6.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/generated/a9d79068881e6b16cc3f__elitebook__laptop_FrontLeftMedium__p6.png",
+        "sha256": "4ec1666f69f6bd7516dce0ac1db941daa329793a7ebe9e31a45e6dc69f68a084",
+        "bytes": 4782983,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/a9d79068881e6b16cc3f__elitebook__laptop_FrontLeftMedium__p6.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/a9d79068881e6b16cc3f__elitebook__laptop_FrontLeftMedium__p6.png",
+        "s3_etag": "35bc437844231c7b18c8ce0c3534341b",
+        "s3_last_modified": "2026-11-03T21:56:39+00:00"
+      },
+      "twin_image": {
+        "render_id": "elitebook__Front_Left_Medium",
+        "filename": "elitebook__Front_Left_Medium.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_placement_assets/twins/elitebook__Front_Left_Medium.png",
+        "sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+        "bytes": 352511,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/elitebook_13/Front_Left_Medium/product_white.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/elitebook_13/Front_Left_Medium/product_white.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/elitebook__Front_Left_Medium.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/assets/corrected_inputs/elitebook__Front_Left_Medium.png",
+        "s3_etag": "536783a83a8e96b611cb4b1ac13b7100",
+        "s3_last_modified": "2026-11-03T21:56:31+00:00"
+      },
+      "hashes": {
+        "generated_image_sha256": "4ec1666f69f6bd7516dce0ac1db941daa329793a7ebe9e31a45e6dc69f68a084",
+        "twin_image_sha256": "78bc89bb4fc8a230af253ab9dde43ac5fed382b3f2501afc60eb9b63f07f9b51",
+        "scene_prompt_sha256": "0467b438db7170091bf3a1862052ad66785cb7ff15f84fd61cbee124e62a00b6"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/eval_sets/hp_lifestyle_approved_props_v6_top6_four_devices_20261029/generated_preview_v1/images/a9d79068881e6b16cc3f__elitebook__laptop_FrontLeftMedium__p6.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/elitebook_13/Front_Left_Medium/product_white.png"
+      },
+      "human_feedback": "I'd say this is border line pass. Would be more natural if laptop was facing the couch. Or if it was at least closer to the chair in front (and the chair was more visible)",
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "pass",
+          "review"
+        ],
+        "expected_issue_any": [],
+        "basis": "researcher interpretation of exact comment; button selections ignored",
+        "question": "Borderline pass with possible closer seating; no clear hard-fail label.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "regression-userfail-row25-v14",
+      "source_case_id": "25_baseline-0043",
+      "source_asset_id": "comparison-row-25-v14",
+      "product": "Printer",
+      "device": "comparison-row-25",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "unknown_legacy_report_view",
+        "source_camera_name": "unknown",
+        "view_role": "unknown"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "v14",
+      "scene_prompt": "A modern home workspace centered around a side table positioned against a wall as the primary focal point of the scene. The side table is prominently framed and visually unobstructed, surrounded by subtle residential details and thoughtful décor. Nearby, a wooden desk holds a notebook, spiral pad, pen, stack of papers, and a coffee mug. Large windows with soft curtains bring natural light into the room, while a comfortable chair, houseplants, shelving, artwork, and understated furnishings extend into the background. The layered arrangement creates a bright, sophisticated, lived-in interior with natural depth, while keeping the side table against the wall as the dominant visual focus.",
+      "scene_prompt_sha256": "4bf4238b51955be6c0d4d7656098838a40671dece83bef9c181258d0380c4f64",
+      "scene_prompt_source": {
+        "kind": "original_report_prompt",
+        "prompt_key": "25_baseline-0043",
+        "source_revision": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "bank_rank": null,
+        "environment": null,
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "v14_final.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_25/v14_final.png",
+        "sha256": "4ceb50f8a4605789bb2c5437de503899c1e11b7c0b81a85a8978e7764862c4b4",
+        "bytes": 5910917,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/v14_final.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/v14_final.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "twin_image": {
+        "render_id": "comparison-row-25-product_input",
+        "filename": "product_input.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_25/product_input.png",
+        "sha256": "85ff3aec599bc7735f45915d85bdf3b955cead5be4d6dcecacdc393c3e189e36",
+        "bytes": 1045637,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/product_input.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/product_input.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/product_input.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/product_input.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "hashes": {
+        "generated_image_sha256": "4ceb50f8a4605789bb2c5437de503899c1e11b7c0b81a85a8978e7764862c4b4",
+        "twin_image_sha256": "85ff3aec599bc7735f45915d85bdf3b955cead5be4d6dcecacdc393c3e189e36",
+        "scene_prompt_sha256": "4bf4238b51955be6c0d4d7656098838a40671dece83bef9c181258d0380c4f64"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/v14_final.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/25/product_input.png"
+      },
+      "expected_verdict": "fail",
+      "human_feedback": "This one the edge of the printer is not aligned with edge of the tables.",
+      "human_feedback_source": "Hooman, current feedback message, 2026-11-04; verbatim excerpt",
+      "older_report_comment": "Product angle does not align with table angle.",
+      "older_expected_issue_codes": [
+        "furniture_axis_conflict"
+      ],
+      "expected_issue_codes": [
+        "furniture_axis_conflict"
+      ],
+      "regression_expectation": {
+        "human_verdict": "fail",
+        "human_comment": "This one the edge of the printer is not aligned with edge of the tables.",
+        "expected_issue_codes": [
+          "furniture_axis_conflict"
+        ],
+        "passed_to_judge": false
+      },
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "furniture_axis_conflict"
+        ],
+        "basis": "earlier user explicit failure feedback",
+        "question": "Retain old failure detection.",
+        "passed_to_judge": false
+      }
+    },
+    {
+      "id": "regression-userfail-row12-v13",
+      "source_case_id": "12_baseline-0018",
+      "source_asset_id": "comparison-row-12-v13",
+      "product": "Printer",
+      "device": "comparison-row-12",
+      "device_type": "printer",
+      "view": {
+        "camera_tag": "unknown_legacy_report_view",
+        "source_camera_name": "unknown",
+        "view_role": "unknown"
+      },
+      "image_stage": "scene_generation",
+      "candidate_id": "v13",
+      "scene_prompt": "A design-forward conference room centered visually on a sleek wooden side table positioned along a wall. The side table is large in the frame, clearly defined, and completely unobstructed, with ample open space across its top. A modern conference table and ergonomic chairs appear deeper in the room, complemented by glass walls, black metal accents, integrated lighting, and clean architectural finishes.",
+      "scene_prompt_sha256": "27d48ca94e6680d5ff80cc73f414d78f3b0801bf8c3be96feeb55be421e67781",
+      "scene_prompt_source": {
+        "kind": "original_report_prompt",
+        "prompt_key": "12_baseline-0018",
+        "source_revision": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer",
+        "bank_rank": null,
+        "environment": null,
+        "rewritten_prompt_included": false
+      },
+      "generated_image": {
+        "filename": "v13_final.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_12/v13_final.png",
+        "sha256": "bcd88892c5a5b416f5becca8e4102de1ebae1337462031e1a9d27a8b47100a98",
+        "bytes": 5691129,
+        "width": 2368,
+        "height": 1776,
+        "s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/v13_final.png",
+        "public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/v13_final.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "twin_image": {
+        "render_id": "comparison-row-12-product_input",
+        "filename": "product_input.png",
+        "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_12/product_input.png",
+        "sha256": "0403fc3b1aa3d4da61353b1020385e2c83f999e118e295eb20627ead3aa00497",
+        "bytes": 259894,
+        "width": 2368,
+        "height": 1776,
+        "source_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/product_input.png",
+        "source_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/product_input.png",
+        "preview_s3_uri": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/product_input.png",
+        "preview_public_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/product_input.png",
+        "s3_etag": null,
+        "s3_last_modified": null
+      },
+      "hashes": {
+        "generated_image_sha256": "bcd88892c5a5b416f5becca8e4102de1ebae1337462031e1a9d27a8b47100a98",
+        "twin_image_sha256": "0403fc3b1aa3d4da61353b1020385e2c83f999e118e295eb20627ead3aa00497",
+        "scene_prompt_sha256": "27d48ca94e6680d5ff80cc73f414d78f3b0801bf8c3be96feeb55be421e67781"
+      },
+      "dimensions": {
+        "generated_image": {
+          "width": 2368,
+          "height": 1776
+        },
+        "twin_image": {
+          "width": 2368,
+          "height": 1776
+        }
+      },
+      "original_public_urls": {
+        "generated_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/v13_final.png",
+        "twin_image": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/12/product_input.png"
+      },
+      "expected_verdict": "fail",
+      "human_feedback": "Because a human would put this flush against the wall. And also not in the middle of the table it would be to a side. The placement is not natural.",
+      "human_feedback_source": "Hooman, current feedback message, 2026-11-04; verbatim excerpt",
+      "older_report_comment": "scene alignment should match product angle",
+      "older_expected_issue_codes": [
+        "furniture_axis_conflict"
+      ],
+      "expected_issue_codes": [
+        "unmotivated_position"
+      ],
+      "regression_expectation": {
+        "human_verdict": "fail",
+        "human_comment": "Because a human would put this flush against the wall. And also not in the middle of the table it would be to a side. The placement is not natural.",
+        "expected_issue_codes": [
+          "unmotivated_position"
+        ],
+        "passed_to_judge": false
+      },
+      "diagnostic_expectation": {
+        "acceptable_verdicts": [
+          "fail"
+        ],
+        "expected_issue_any": [
+          "unmotivated_position"
+        ],
+        "basis": "earlier user explicit failure feedback",
+        "question": "Retain old failure detection.",
+        "passed_to_judge": false
+      }
+    }
+  ]
+}

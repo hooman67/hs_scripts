@@ -1,0 +1,345 @@
+{
+  "schema_version": "hp-position-flex-row-provenance-v23-pilot",
+  "experiment_id": "hp-position-flex-v23-all-view-translation-four-row-pilot",
+  "row_slug": "cashmere__laptop_FrontCloseUp__p1",
+  "job_id": "cashmere__laptop_FrontCloseUp__p1__outer_job_1",
+  "outer_attempt": 1,
+  "submission_request": {
+    "rowSlug": "cashmere__laptop_FrontCloseUp__p1",
+    "outerAttempt": 1
+  },
+  "submission_request_sha256": "75879b757277a2e0c95b86ae47c21aa66a91814b349786c74c105687e3def948",
+  "row_id": "cashmere__laptop_FrontCloseUp::p1",
+  "record": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/cashmere__laptop_FrontCloseUp__p1.json",
+    "sha256": "64ba2f6b0fe294f1cb4313ccb522ae6d29f1b0357065d2e291ef909d79104269"
+  },
+  "prompt_sha256": "d73ff4200640b286d72ad394192d70b2d544dfada62328aaff4f212eb463cdf1",
+  "control_job_id": "20261105T201942Z_83c24f3f",
+  "input_artifacts": {
+    "product.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/cashmere__laptop_FrontCloseUp__p1/product.png",
+      "sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T201942Z_83c24f3f/artifacts/hp16_product.png"
+    },
+    "reference.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/cashmere__laptop_FrontCloseUp__p1/reference.png",
+      "sha256": "306af9106e7f6e68057e52cb8b44b8edf109944b9922e995957feee13b053cc0",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T201942Z_83c24f3f/artifacts/hp16_reference.png"
+    },
+    "guide.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/cashmere__laptop_FrontCloseUp__p1/guide.png",
+      "sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T201942Z_83c24f3f/artifacts/hp16_geometry_guide.png"
+    }
+  },
+  "pipeline_version": "unified-blue-scale-v23-all-view-rigid-translation-twin-camera-guide-only-no-edit-mask",
+  "wrapper_version": "v23-four-row-pilot-stop-on-first-failure-v1",
+  "source_hashes": {
+    "hp3p/prompts/system_3p.txt": "324ce0e449804bc0d17ac0cf5ed10587716bc9d7e6ef72b9a91e439745b6aaec",
+    "hp3p/prompts/system_3p_fixed_position.txt": "67e4d817a5a203912116bb99afbd6c4511d9a5c537b241cc6e980e34e75b1118",
+    "hp3p/pipeline.py": "dde47ae75c6023a020ea26c405c5cf8e78183fe2de4e3219a5c279eb804b6ced",
+    "hp3p/invariants.py": "8c1a8204d27eeb3ba922d6d9519113da7beeff9368301bcc9f8c9a7ec2fb2665",
+    "hp3p/geometry.py": "f9d0f3a395624a150f9a9fed8c836394b66f041f6e212dc87c8b1a2322514a95",
+    "hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+    "hp3p/reference_blue.py": "f36098543e208029226ae3b04ffd22c39edf7e168ab49dd5868e2185bd90661d",
+    "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3"
+  },
+  "stage_b_attempts": [
+    {
+      "attempt": 1,
+      "system_sha256": "50eda1a4609022f6f21fc8dd903cf9fe12e072060e45947525669a9b3f03c3b5",
+      "text_sha256": "885aef70e2fb787dfa2f2bebee0dd507c46577ca1f70192bbdc852c8f77088eb",
+      "request_sha256": "6dc0e3c0158ff9da5b3ad08cff7a2a88467edecf2f48ce3b716b3986d9266412",
+      "response_sha256": "56c4ab90aabbcb723cf68131199e2d6e53ab95276e314efc60500714de9513cb",
+      "executable_prompt_sha256": "3857f38e5b7d551d4a97d6580932fd29cb151a38dcfd6ace5ba0533178c4776e"
+    }
+  ],
+  "image_calls": 1,
+  "product_invariant_guard": {
+    "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+    "attempts": [
+      {
+        "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+        "fixed_position": false,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.5,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          543,
+          432,
+          2069,
+          1464
+        ],
+        "matches": 132,
+        "inliers": 99,
+        "inlier_ratio": 0.75,
+        "full_affine_matrix": [
+          [
+            0.9985470406891325,
+            0.0013210146179834055,
+            1.4056999290480459
+          ],
+          [
+            0.0013835776700683868,
+            0.999552594459058,
+            -1.6824106446768794
+          ]
+        ],
+        "partial_affine_matrix": [
+          [
+            0.9998237029824938,
+            -0.0005668015774352389,
+            1.9655768924841424
+          ],
+          [
+            0.0005668015774352389,
+            0.9998237029824938,
+            -1.0598268270192321
+          ]
+        ],
+        "partial_inliers": 104,
+        "singular_values": [
+          1.0004925548579795,
+          0.9976070812696753
+        ],
+        "anisotropy_ratio": 1.0028923948541262,
+        "rotation_deg": 0.001794004049494767,
+        "column_shear_cos": 0.0027071918260606217,
+        "residual_median_px": 0.8255335068153377,
+        "residual_p95_px": 2.340460007506663,
+        "translation_only_residual_median_px": 0.8202260732650757,
+        "translation_only_residual_p95_px": 2.539613723754883,
+        "source_span_x_fraction": 0.7510875463485718,
+        "source_span_y_fraction": 0.6581977605819702,
+        "source_quadrants": 3,
+        "source_hull_fraction": 0.28454428714128505,
+        "transformed_product_corners_px": [
+          [
+            544.1874213382158,
+            430.8755928364833
+          ],
+          [
+            2067.970205429832,
+            432.98693236100763
+          ],
+          [
+            2069.3334925155905,
+            1464.5252098427557
+          ],
+          [
+            545.5507084239747,
+            1462.4138703182311
+          ]
+        ],
+        "corners_in_frame": true,
+        "translation_x_px": 1.2286376953125,
+        "translation_y_px": -0.65277099609375,
+        "final_product_bounds_px": [
+          544.2286376953125,
+          431.34722900390625,
+          2070.228515625,
+          1463.34716796875
+        ],
+        "rigid_transformed_product_corners_px": [
+          [
+            544.2286376953125,
+            431.34722900390625
+          ],
+          [
+            2070.228515625,
+            431.34722900390625
+          ],
+          [
+            2070.228515625,
+            1463.34716796875
+          ],
+          [
+            544.2286376953125,
+            1463.34716796875
+          ]
+        ],
+        "checks": {
+          "inliers": true,
+          "inlier_ratio": true,
+          "singular_min": true,
+          "singular_max": true,
+          "anisotropy": true,
+          "rotation": true,
+          "shear": true,
+          "residual_median": true,
+          "residual_p95": true,
+          "translation_only_residual_median": true,
+          "translation_only_residual_p95": true,
+          "span_x": true,
+          "span_y": true,
+          "quadrants": true,
+          "hull": true,
+          "corners": true
+        },
+        "reasons": [],
+        "verdict": "pass"
+      }
+    ],
+    "selected_attempt": 1,
+    "selected_localization": {
+      "translation_x_px": 1.2286376953125,
+      "translation_y_px": -0.65277099609375,
+      "final_product_bounds_px": [
+        544.2286376953125,
+        431.34722900390625,
+        2070.228515625,
+        1463.34716796875
+      ]
+    }
+  },
+  "calls": [
+    {
+      "kind": "selection_replay",
+      "response_sha256": "41dd4a28729484545ab3183110b213304ef9d4990cbe307de248ebef8bf14d7e"
+    },
+    {
+      "kind": "geometry_replay",
+      "response_sha256": "381ac13668a772faeb682203404d2e6d5a2793ac1a5386b7675903a375ba34c4"
+    },
+    {
+      "kind": "astra_write",
+      "attempt": 1,
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "system_sha256": "50eda1a4609022f6f21fc8dd903cf9fe12e072060e45947525669a9b3f03c3b5",
+      "text_sha256": "885aef70e2fb787dfa2f2bebee0dd507c46577ca1f70192bbdc852c8f77088eb",
+      "images_sha256": [
+        "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+        "306af9106e7f6e68057e52cb8b44b8edf109944b9922e995957feee13b053cc0",
+        "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c"
+      ],
+      "schema_sha256": "7a7fc445f534baf5eec4798c34c54e14f83dd5b2197f4ccb115d8b8c68f0d93b",
+      "response_sha256": "56c4ab90aabbcb723cf68131199e2d6e53ab95276e314efc60500714de9513cb",
+      "usage": {
+        "completion_tokens": 1037,
+        "prompt_tokens": 13746,
+        "total_tokens": 14783,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 127,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "attempt": 1,
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "prompt_sha256": "3857f38e5b7d551d4a97d6580932fd29cb151a38dcfd6ace5ba0533178c4776e",
+      "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+      "mask": false,
+      "output_sha256": "d1935e411ff0fe39300fc6743b8c36a59c7d650596895caa49727d10f726c4b2"
+    }
+  ],
+  "artifacts": {
+    "pipeline/geometry_guide.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/geometry_guide.png",
+      "sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+      "bytes": 989460
+    },
+    "pipeline/geometry_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/geometry_request.json",
+      "sha256": "b8936e102f9c17c4dec399c6ef21a8ce095f380f7fabd377645cea2bad64b69d",
+      "bytes": 27302
+    },
+    "pipeline/geometry_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/geometry_response.json",
+      "sha256": "4e7a11b8d556c3ef53aeceac05ad85ac37a5ea6fd5b1903aa8e3494050cd567a",
+      "bytes": 303
+    },
+    "pipeline/geometry_text.txt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/geometry_text.txt",
+      "sha256": "8d1bc4658f57576c726f1920fc70a48e4f843b894d17b6e1747fac94c0fa4792",
+      "bytes": 2084
+    },
+    "pipeline/gpt_1.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/gpt_1.png",
+      "sha256": "d1935e411ff0fe39300fc6743b8c36a59c7d650596895caa49727d10f726c4b2",
+      "bytes": 4193088
+    },
+    "pipeline/image_request_attempt_1.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/image_request_attempt_1.json",
+      "sha256": "ce0b20da10e6dbe2177f19ee39bca24642d7c5a2d5039b65d1356d7e052b8203",
+      "bytes": 11599
+    },
+    "pipeline/input.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/input.png",
+      "sha256": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+      "bytes": 995359
+    },
+    "pipeline/mask.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/mask.png",
+      "sha256": "d9f7e90b83cc58c4e121847786857e61ce6c07ad777e6b7116e08aedc3e7daea",
+      "bytes": 20740
+    },
+    "pipeline/ours.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/ours.png",
+      "sha256": "d1935e411ff0fe39300fc6743b8c36a59c7d650596895caa49727d10f726c4b2",
+      "bytes": 4193088
+    },
+    "pipeline/product_invariant_attempt_1.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/product_invariant_attempt_1.json",
+      "sha256": "ea3d25cee06ba585b035d09873de9199698cfd62c8050e3191203d9f209458a5",
+      "bytes": 3028
+    },
+    "pipeline/ref_2.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/ref_2.png",
+      "sha256": "306af9106e7f6e68057e52cb8b44b8edf109944b9922e995957feee13b053cc0",
+      "bytes": 1226458
+    },
+    "pipeline/result.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/result.json",
+      "sha256": "6082d26bfb8a5c3f0945a3b8d255bbf8fae0ee67cb149f7d1c2dbfbe064a3762",
+      "bytes": 24028
+    },
+    "pipeline/stage_b_attempt_1_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/stage_b_attempt_1_request.json",
+      "sha256": "6cb7ce6d0a504d906acbe1add35fd5f806f9c3a3cf14656c4a1b890404ee1e8d",
+      "bytes": 32398
+    },
+    "pipeline/stage_b_attempt_1_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/cashmere__laptop_FrontCloseUp__p1__outer_job_1/stage_b_attempt_1_response.json",
+      "sha256": "bd3c207861f65ad4cccaf888031e4c390910e0b877ebd0886368663a2f42cf27",
+      "bytes": 4546
+    },
+    "job/calls.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/jobs/cashmere__laptop_FrontCloseUp__p1__outer_job_1/calls.json",
+      "sha256": "4d9fae6ed9c3cb2dcaf993e5fd3ac8b5dcb491143bb18ed24bbecc104b732a57",
+      "bytes": 1913
+    },
+    "job/submission_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/jobs/cashmere__laptop_FrontCloseUp__p1__outer_job_1/submission_request.json",
+      "sha256": "1d7ab257707d711884338b7efa5e3298a97e275cc7da6b4c7241801e557ffb09",
+      "bytes": 74
+    }
+  }
+}

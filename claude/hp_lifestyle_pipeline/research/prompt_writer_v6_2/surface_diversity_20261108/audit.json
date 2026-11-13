@@ -1,0 +1,1010 @@
+{
+  "schema_version": "hp-v6.2-surface-diversity-audit-v1",
+  "as_of_date": "2026-11-08",
+  "scope": {
+    "question": "Count source-prompt primary-support shapes, trace explicit round café requests through downstream rewrites and images, census printer support types, and audit current grouped FE publication dependencies.",
+    "included": [
+      "all 160 frozen V6.2 prompt rows",
+      "all 160 saved scene-generation records",
+      "manual inspection of the eight generated images whose source prompt explicitly requests a round café table",
+      "printer support descriptions in the existing image-derived placement-judge report",
+      "local grouped FE files and locally preserved image equivalents"
+    ],
+    "excluded": [
+      "new image generation",
+      "new model or judge calls",
+      "edits to canonical/runtime files",
+      "remote S3 existence verification"
+    ]
+  },
+  "sources": {
+    "frozen_prompts": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/revisions/v6.2-full160-20261107-r5-validated-composite/exports/final/prompts_all_160.json",
+      "sha256": "d23da34ab0c8442f60e497866e79a05d42b25d74b6709ed4c34af0c67169ae84"
+    },
+    "generation_run": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run",
+      "records": 160,
+      "images": 160
+    },
+    "placement_manifest": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/new_v6_2_eval_20261107/manifest.json",
+      "sha256": "5ed2d0962a82a2d2ec941cccf58cb69107060077d496dd044bae88de3d668987"
+    },
+    "grouped_fe_data": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/fe_reports/v6_2_consensus_v2_grouped_20261107/data.json",
+      "sha256": "3e7362ced1487a601b55d1741e2369559f92a44a58104ab04f8f602303ba25a6"
+    },
+    "grouped_publication_plan": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/new_v6_2_eval_20261107/grouped_publication_plan.json",
+      "sha256": "3795e17a26ebd548a325c6168a6f7a095d534e56dc1022c9b0163383f6d78023"
+    }
+  },
+  "method": {
+    "source_shape_rule": "Classify explicit round/circular, oval, or rectangular tokens in the first sentence that names the primary support. All other primary supports are unspecified_shape; adjectives such as broad, wide, long, small, or square-to-the-wall alignment do not establish footprint shape.",
+    "printer_primary_support_rule": "Classify the first-sentence support that bears the printer. Secondary cabinets, sideboards, shelves, carts, and cubbies do not change the primary-support class.",
+    "evidence_separation": "Source prompt and rewrite/debug findings are text evidence. Only the eight round-café manual observations are direct image inspection. Placement-judge support descriptions are image-derived model text and are reported separately from direct inspection."
+  },
+  "source_shape_counts": {
+    "confidence": "VERIFIED",
+    "overall": {
+      "total": 160,
+      "round_or_circular": 11,
+      "oval": 1,
+      "rectangular": 1,
+      "unspecified_shape": 147,
+      "literal_circular_token": 0
+    },
+    "by_device": {
+      "cashmere": {
+        "total": 40,
+        "round_or_circular": 4,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 36
+      },
+      "elitebook": {
+        "total": 40,
+        "round_or_circular": 7,
+        "oval": 1,
+        "rectangular": 1,
+        "unspecified_shape": 31
+      },
+      "magic": {
+        "total": 40,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 40
+      },
+      "tassel": {
+        "total": 40,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 40
+      }
+    },
+    "by_environment": {
+      "Café": {
+        "total": 10,
+        "round_or_circular": 8,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 2
+      },
+      "Creative Studio": {
+        "total": 29,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 29
+      },
+      "Education": {
+        "total": 26,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 26
+      },
+      "Gaming": {
+        "total": 8,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 8
+      },
+      "Home": {
+        "total": 36,
+        "round_or_circular": 3,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 33
+      },
+      "Office": {
+        "total": 51,
+        "round_or_circular": 0,
+        "oval": 1,
+        "rectangular": 1,
+        "unspecified_shape": 49
+      }
+    },
+    "by_device_and_environment": {
+      "cashmere | Café": {
+        "total": 6,
+        "round_or_circular": 4,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 2
+      },
+      "cashmere | Creative Studio": {
+        "total": 5,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 5
+      },
+      "cashmere | Education": {
+        "total": 4,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 4
+      },
+      "cashmere | Gaming": {
+        "total": 4,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 4
+      },
+      "cashmere | Home": {
+        "total": 8,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 8
+      },
+      "cashmere | Office": {
+        "total": 13,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 13
+      },
+      "elitebook | Café": {
+        "total": 4,
+        "round_or_circular": 4,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 0
+      },
+      "elitebook | Creative Studio": {
+        "total": 8,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 8
+      },
+      "elitebook | Education": {
+        "total": 4,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 4
+      },
+      "elitebook | Gaming": {
+        "total": 4,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 4
+      },
+      "elitebook | Home": {
+        "total": 8,
+        "round_or_circular": 3,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 5
+      },
+      "elitebook | Office": {
+        "total": 12,
+        "round_or_circular": 0,
+        "oval": 1,
+        "rectangular": 1,
+        "unspecified_shape": 10
+      },
+      "magic | Creative Studio": {
+        "total": 7,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 7
+      },
+      "magic | Education": {
+        "total": 8,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 8
+      },
+      "magic | Home": {
+        "total": 8,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 8
+      },
+      "magic | Office": {
+        "total": 17,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 17
+      },
+      "tassel | Creative Studio": {
+        "total": 9,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 9
+      },
+      "tassel | Education": {
+        "total": 10,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 10
+      },
+      "tassel | Home": {
+        "total": 12,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 12
+      },
+      "tassel | Office": {
+        "total": 9,
+        "round_or_circular": 0,
+        "oval": 0,
+        "rectangular": 0,
+        "unspecified_shape": 9
+      }
+    },
+    "explicit_shape_rows": [
+      {
+        "row_id": "cashmere__laptop_FrontCloseUp::p8",
+        "device": "cashmere",
+        "device_type": "laptop",
+        "environment": "Café",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A round wooden café table holds a ceramic coffee cup with space left open on the tabletop. An upholstered banquette sits behind it against a glazed tile wall, and muted street daylight gives the corner an easy between-meetings feel.",
+        "source_text_sha256": "f378b5100ee7cdcb629da9ae07758d89d37450c17b2eccd83975581068fec4e5"
+      },
+      {
+        "row_id": "cashmere__laptop_BackRightCloseUp::p7",
+        "device": "cashmere",
+        "device_type": "laptop",
+        "environment": "Café",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A round wooden café table holds a ceramic coffee cup and a croissant set safely to one side. A narrow wash of daylight crosses a handmade tile wall, with an upholstered banquette behind the table for a quiet public-work stop.",
+        "source_text_sha256": "77c4d5bd491a80ae3d7a23c10f9ef7057bac271383ea38ab76505927f0edccb3"
+      },
+      {
+        "row_id": "cashmere__laptop_FrontLeftMedium::p8",
+        "device": "cashmere",
+        "device_type": "laptop",
+        "environment": "Café",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A round wooden café table holds a small pastry plate with a croissant, leaving plenty of open surface for focused work. A bentwood chair sits under a glazed tile wall, and clear street light gives the neighborhood café an easy midday rhythm.",
+        "source_text_sha256": "e3f3f889825d4dd415f74468322b51b80c307cec715668b6248cabe696f7f2de"
+      },
+      {
+        "row_id": "cashmere__laptop_FrontWide::p7",
+        "device": "cashmere",
+        "device_type": "laptop",
+        "environment": "Café",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A neighborhood café with a natural round wooden table set for a short work pause between appointments. A ceramic coffee cup, a small pastry plate with a croissant, an upholstered banquette, and a glazed tile wall create an inviting public setting with soft morning reflections.",
+        "source_text_sha256": "ba6230f24cc44b5bffdef2838e12fdfe7a888e5892fe857cda69770741989174"
+      },
+      {
+        "row_id": "elitebook__laptop_FrontCloseUp::p7",
+        "device": "elitebook",
+        "device_type": "laptop",
+        "environment": "Home",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A round home breakfast table sits in a calm corner with a small fruit bowl pulled toward one side for a quiet planning break. A simple woven fiber wall piece hangs beyond the table, with muted skylight giving the room a comfortable, unhurried feel.",
+        "source_text_sha256": "e55b51e23cb608c75c2a0b4bdbe35699b867ceb22d2c41af7819ca0a38cbe9c0"
+      },
+      {
+        "row_id": "elitebook__laptop_FrontCloseUp::p8",
+        "device": "elitebook",
+        "device_type": "laptop",
+        "environment": "Café",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A neighborhood café centers on a round wooden table with a ceramic coffee cup kept to the safe side of the work area. An upholstered banquette rests below a glazed tile wall, and soft street-facing light makes the table feel ready for a short stop between appointments.",
+        "source_text_sha256": "9ece3365cdd34a628f69cececa42b4aa2ca6454d8cde7272d29b6dbada44cdd5"
+      },
+      {
+        "row_id": "elitebook__laptop_BackRightCloseUp::p8",
+        "device": "elitebook",
+        "device_type": "laptop",
+        "environment": "Café",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A neighborhood café with a round wooden table holding a ceramic coffee cup and a small pastry plate with a croissant. An upholstered banquette runs along a glazed tile wall, giving the table an easy stop-between-meetings character under mellow café light.",
+        "source_text_sha256": "71378b274d4ce401bcf04b185f10bfc25be248824cf45e5c8faecac13f95a158"
+      },
+      {
+        "row_id": "elitebook__laptop_FrontLeftMedium::p1",
+        "device": "elitebook",
+        "device_type": "laptop",
+        "environment": "Office",
+        "shape_category": "oval",
+        "source_prompt": "An office huddle room uses a pale oval table for arranging two or three unlabelled architectural finish samples before a presentation. Muted felt acoustic panels line the wall, with even skylight and simple surfaces giving the room a calm planning mood.",
+        "source_text_sha256": "21a3925f710bb18772adce4eb2a08e788c460cacd51eb17000ea5c1cdc6a2fcc"
+      },
+      {
+        "row_id": "elitebook__laptop_FrontLeftMedium::p3",
+        "device": "elitebook",
+        "device_type": "laptop",
+        "environment": "Office",
+        "shape_category": "rectangular",
+        "source_prompt": "An open corporate office meeting area with a rectangular table holding an open unlabelled folder; the pages inside show only indistinct markings. Clear afternoon light falls across the tabletop, and abstract framed artwork is mounted on the wall beyond the table for a composed, ready-for-discussion feel.",
+        "source_text_sha256": "97eeaaf44efd6610076e1c228f03e24c10c2bdc5288eb7eafd642204d80cb81a"
+      },
+      {
+        "row_id": "elitebook__laptop_FrontLeftMedium::p5",
+        "device": "elitebook",
+        "device_type": "laptop",
+        "environment": "Home",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A home workspace sits at a small round wooden table, with folded reading glasses resting off to one side. Morning light washes over a warm limewash wall, keeping the room quiet and personal for focused work between calls.",
+        "source_text_sha256": "4296bd4fbe04001dd489c18d4c3a9f59288d65d04d4698151d65cc914f77b02f"
+      },
+      {
+        "row_id": "elitebook__laptop_FrontLeftMedium::p8",
+        "device": "elitebook",
+        "device_type": "laptop",
+        "environment": "Café",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A neighborhood café centers on a round wooden table with a ceramic coffee cup and a croissant set safely to the side. An upholstered banquette runs along a glazed tile wall, and midday street light gives the setting an easy between-meetings energy.",
+        "source_text_sha256": "ba35741c82aacd6238798a2f175646125f60fdde1cb6fe533b1843c27d131077"
+      },
+      {
+        "row_id": "elitebook__laptop_FrontWide::p7",
+        "device": "elitebook",
+        "device_type": "laptop",
+        "environment": "Home",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A home living room centers on a round wooden table with a plain pillar candle and a clear sand timer with no markings. Narrow natural-wood slats line the wall behind it, and a wooden textile ladder holding one plain woven textile adds an easy residential touch in low evening light.",
+        "source_text_sha256": "2fdb077778bcacbc51fa434f17f65d4684673c3021e8c41c081ab406944effbd"
+      },
+      {
+        "row_id": "elitebook__laptop_FrontWide::p8",
+        "device": "elitebook",
+        "device_type": "laptop",
+        "environment": "Café",
+        "shape_category": "round_or_circular",
+        "source_prompt": "A neighborhood café with a round wooden table holding a small pastry plate, a croissant, and a folded cloth napkin. An upholstered banquette runs along the glazed tile wall beneath a pendant lamp, giving the table an inviting between-meetings feel.",
+        "source_text_sha256": "a0665bbb64e59a831d62fec9433812a9a39e6bf1ab0faa57be49b847388ca161"
+      }
+    ]
+  },
+  "round_cafe_downstream_audit": {
+    "confidence": "VERIFIED for saved text/debug and direct manual observations of these eight local images",
+    "summary": {
+      "source_rows": 8,
+      "downstream_round_shape_preserved": 0,
+      "downstream_explicitly_overridden_to_square_or_straight_edged": 8,
+      "manual_images_with_visible_round_primary_support": 0,
+      "manual_images_visible_straight_edged_or_rectangular": 7,
+      "manual_images_full_footprint_inconclusive_due_crop": 1
+    },
+    "root_cause_evidence": "The geometry stage emits a rectangular support polygon and describes long edges, short edges, and corners. The writing stage treats that fixed guide as higher priority than the source request, explicitly declares a conflict, and substitutes a square/straight-edged tabletop in every round café row.",
+    "rows": [
+      {
+        "row_id": "cashmere__laptop_FrontCloseUp::p8",
+        "device": "cashmere",
+        "camera_tag": "laptop_FrontCloseUp",
+        "source_prompt": "A round wooden café table holds a ceramic coffee cup with space left open on the tabletop. An upholstered banquette sits behind it against a glazed tile wall, and muted street daylight gives the corner an easy between-meetings feel.",
+        "geometry_support_m": {
+          "width": 0.8,
+          "depth": 0.8
+        },
+        "geometry_is_equal_sided_rectangle": true,
+        "debug_conflict_resolution_quote": "The requested round tabletop conflicts with the fixed straight-edged support: retain the wooden café-table function and material, but use the exact straight-edged outline of the guide rather than introducing a curved perimeter.",
+        "executable_prompt_shape_evidence": "Create a quiet café corner with a warm oak tabletop precisely matching the drawn support.",
+        "downstream_preserved_round_shape": false,
+        "generation_record": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/records/cashmere__laptop_FrontCloseUp__p8.json",
+        "local_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/images/cashmere__laptop_FrontCloseUp__p8.png",
+        "image_sha256": "d9f6b285c59e820c0b355258396485196eb5b5a63fa7a159fa468d35b30f533b",
+        "manual_image_observation": {
+          "classification": "visible_straight_edged_or_rectangular",
+          "observation": "A straight front edge and right corner are visible; no curved tabletop perimeter is visible.",
+          "confidence": "high"
+        }
+      },
+      {
+        "row_id": "cashmere__laptop_BackRightCloseUp::p7",
+        "device": "cashmere",
+        "camera_tag": "laptop_BackRightCloseUp",
+        "source_prompt": "A round wooden café table holds a ceramic coffee cup and a croissant set safely to one side. A narrow wash of daylight crosses a handmade tile wall, with an upholstered banquette behind the table for a quiet public-work stop.",
+        "geometry_support_m": {
+          "width": 0.8,
+          "depth": 0.8
+        },
+        "geometry_is_equal_sided_rectangle": true,
+        "debug_conflict_resolution_quote": "The requested round tabletop conflicts with the fixed straight-edged support geometry; retain the café-table function and wood material but use the drawn square footprint instead.",
+        "executable_prompt_shape_evidence": "Replace only the drawn support with a warm wooden café table, retaining its straight-edged footprint and crop.",
+        "downstream_preserved_round_shape": false,
+        "generation_record": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/records/cashmere__laptop_BackRightCloseUp__p7.json",
+        "local_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/images/cashmere__laptop_BackRightCloseUp__p7.png",
+        "image_sha256": "27bcf91085df7554a63b35549f1b16c83afda990d9d18d544270c3ed67dc3322",
+        "manual_image_observation": {
+          "classification": "visible_straight_edged_or_rectangular",
+          "observation": "The cropped tabletop has straight edges and a corner; no round perimeter is visible.",
+          "confidence": "high"
+        }
+      },
+      {
+        "row_id": "cashmere__laptop_FrontLeftMedium::p8",
+        "device": "cashmere",
+        "camera_tag": "laptop_FrontLeftMedium",
+        "source_prompt": "A round wooden café table holds a small pastry plate with a croissant, leaving plenty of open surface for focused work. A bentwood chair sits under a glazed tile wall, and clear street light gives the neighborhood café an easy midday rhythm.",
+        "geometry_support_m": {
+          "width": 0.8,
+          "depth": 0.8
+        },
+        "geometry_is_equal_sided_rectangle": true,
+        "debug_conflict_resolution_quote": "The requested round tabletop conflicts with the fixed straight-edged support geometry; retain the wooden café-table function and material, but use the guide's square tabletop rather than changing its outline.",
+        "executable_prompt_shape_evidence": "Replace only the gray support with a square wooden café tabletop following its exact perimeter.",
+        "downstream_preserved_round_shape": false,
+        "generation_record": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/records/cashmere__laptop_FrontLeftMedium__p8.json",
+        "local_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/images/cashmere__laptop_FrontLeftMedium__p8.png",
+        "image_sha256": "e47d266a9f85c9ef2e25435b2978a4de786b0b06a2e086eacc3c66fb3d32feb1",
+        "manual_image_observation": {
+          "classification": "visible_straight_edged_or_rectangular",
+          "observation": "The tabletop is visibly rectangular with straight front and side edges.",
+          "confidence": "high"
+        }
+      },
+      {
+        "row_id": "cashmere__laptop_FrontWide::p7",
+        "device": "cashmere",
+        "camera_tag": "laptop_FrontWide",
+        "source_prompt": "A neighborhood café with a natural round wooden table set for a short work pause between appointments. A ceramic coffee cup, a small pastry plate with a croissant, an upholstered banquette, and a glazed tile wall create an inviting public setting with soft morning reflections.",
+        "geometry_support_m": {
+          "width": 0.8,
+          "depth": 0.8
+        },
+        "geometry_is_equal_sided_rectangle": true,
+        "debug_conflict_resolution_quote": "The requested round table conflicts with the fixed straight-edged support outline; retain the café table function and natural wood, but use the exact square tabletop geometry shown.",
+        "executable_prompt_shape_evidence": "Replace the gray support with natural wood, retaining its exact straight-edged outline.",
+        "downstream_preserved_round_shape": false,
+        "generation_record": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/records/cashmere__laptop_FrontWide__p7.json",
+        "local_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/images/cashmere__laptop_FrontWide__p7.png",
+        "image_sha256": "b86e2805e973884f84549c5779a2eb5d54f5f3b82a233def18d984ca40cc6991",
+        "manual_image_observation": {
+          "classification": "visible_straight_edged_or_rectangular",
+          "observation": "The full café support reads as a four-corner square/rectangular table.",
+          "confidence": "high"
+        }
+      },
+      {
+        "row_id": "elitebook__laptop_FrontCloseUp::p8",
+        "device": "elitebook",
+        "camera_tag": "laptop_FrontCloseUp",
+        "source_prompt": "A neighborhood café centers on a round wooden table with a ceramic coffee cup kept to the safe side of the work area. An upholstered banquette rests below a glazed tile wall, and soft street-facing light makes the table feel ready for a short stop between appointments.",
+        "geometry_support_m": {
+          "width": 0.75,
+          "depth": 0.75
+        },
+        "geometry_is_equal_sided_rectangle": true,
+        "debug_conflict_resolution_quote": "The requested round tabletop conflicts with the fixed straight-edged support geometry; retain the wooden café-table function and material but use the prescribed square tabletop instead.",
+        "executable_prompt_shape_evidence": "Replace the gray support with honey-toned wood, retaining its exact straight-edged shape and crop.",
+        "downstream_preserved_round_shape": false,
+        "generation_record": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/records/elitebook__laptop_FrontCloseUp__p8.json",
+        "local_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/images/elitebook__laptop_FrontCloseUp__p8.png",
+        "image_sha256": "f7d34796223466fd1ee90a831b7feb8df94c78551d90d3890d4e1cf1be796776",
+        "manual_image_observation": {
+          "classification": "visible_straight_edged_or_rectangular",
+          "observation": "The front edge and right corner are straight; no curved tabletop perimeter is visible.",
+          "confidence": "high"
+        }
+      },
+      {
+        "row_id": "elitebook__laptop_BackRightCloseUp::p8",
+        "device": "elitebook",
+        "camera_tag": "laptop_BackRightCloseUp",
+        "source_prompt": "A neighborhood café with a round wooden table holding a ceramic coffee cup and a small pastry plate with a croissant. An upholstered banquette runs along a glazed tile wall, giving the table an easy stop-between-meetings character under mellow café light.",
+        "geometry_support_m": {
+          "width": 0.8,
+          "depth": 0.8
+        },
+        "geometry_is_equal_sided_rectangle": true,
+        "debug_conflict_resolution_quote": "Conflict resolution: the requested round outline cannot coexist with the fixed straight-edged support geometry; retain the wooden café-table function and material, but use the fixed square tabletop footprint rather than introducing a circular perimeter.",
+        "executable_prompt_shape_evidence": "Replace only the gray support with honey-toned wood, following its exact straight-edged footprint and crop.",
+        "downstream_preserved_round_shape": false,
+        "generation_record": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/records/elitebook__laptop_BackRightCloseUp__p8.json",
+        "local_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/images/elitebook__laptop_BackRightCloseUp__p8.png",
+        "image_sha256": "cb2d40034310b196681983a8df7f68c01faed5cafd5f79573e5bc9073b828fa0",
+        "manual_image_observation": {
+          "classification": "full_footprint_inconclusive_due_crop",
+          "observation": "The tabletop fills the lower frame and does not expose enough outer perimeter to classify the full footprint; no curved perimeter is visible in the crop.",
+          "confidence": "medium"
+        }
+      },
+      {
+        "row_id": "elitebook__laptop_FrontLeftMedium::p8",
+        "device": "elitebook",
+        "camera_tag": "laptop_FrontLeftMedium",
+        "source_prompt": "A neighborhood café centers on a round wooden table with a ceramic coffee cup and a croissant set safely to the side. An upholstered banquette runs along a glazed tile wall, and midday street light gives the setting an easy between-meetings energy.",
+        "geometry_support_m": {
+          "width": 0.85,
+          "depth": 0.85
+        },
+        "geometry_is_equal_sided_rectangle": true,
+        "debug_conflict_resolution_quote": "The requested round tabletop conflicts with the fixed straight-edged geometry; retain the wooden café-table function and material but use the fixed square outline.",
+        "executable_prompt_shape_evidence": "Create a neighborhood café around the fixed square support outline, using honey-brown wood with visible grain and lightly worn edges.",
+        "downstream_preserved_round_shape": false,
+        "generation_record": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/records/elitebook__laptop_FrontLeftMedium__p8.json",
+        "local_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/images/elitebook__laptop_FrontLeftMedium__p8.png",
+        "image_sha256": "88ed45e69c8945d40518d2324e8f31cac13a1b0f8b0733c69875eec26be7f859",
+        "manual_image_observation": {
+          "classification": "visible_straight_edged_or_rectangular",
+          "observation": "The tabletop visibly has straight edges and a rectangular footprint.",
+          "confidence": "high"
+        }
+      },
+      {
+        "row_id": "elitebook__laptop_FrontWide::p8",
+        "device": "elitebook",
+        "camera_tag": "laptop_FrontWide",
+        "source_prompt": "A neighborhood café with a round wooden table holding a small pastry plate, a croissant, and a folded cloth napkin. An upholstered banquette runs along the glazed tile wall beneath a pendant lamp, giving the table an inviting between-meetings feel.",
+        "geometry_support_m": {
+          "width": 0.85,
+          "depth": 0.85
+        },
+        "geometry_is_equal_sided_rectangle": true,
+        "debug_conflict_resolution_quote": "The requested round outline conflicts with the fixed straight-edged support geometry; retain the wooden café-table function and material but use the guide’s square tabletop.",
+        "executable_prompt_shape_evidence": "Replace only the support fill with pale wood, preserving its straight-edged outline and all four corners inside the frame.",
+        "downstream_preserved_round_shape": false,
+        "generation_record": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/records/elitebook__laptop_FrontWide__p8.json",
+        "local_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/images/elitebook__laptop_FrontWide__p8.png",
+        "image_sha256": "1e1cb4589cf7b76eee88138848b9a6dd4d86a5c9af040f386e8e9e10976818b8",
+        "manual_image_observation": {
+          "classification": "visible_straight_edged_or_rectangular",
+          "observation": "The full café support reads as a four-corner square/rectangular table.",
+          "confidence": "high"
+        }
+      }
+    ]
+  },
+  "other_explicit_shape_downstream_note": {
+    "confidence": "VERIFIED text/debug evidence",
+    "finding": "The same conflict behavior affects all three round Home rows and the one oval Office row. The single rectangular source row is preserved. Across all 13 explicitly shaped source rows: 11 round requests and one oval request are overridden by fixed straight-edged geometry; one rectangular request remains compatible."
+  },
+  "printer_support_census": {
+    "source_prompt_text": {
+      "confidence": "VERIFIED",
+      "total_printer_rows": 80,
+      "primary_table_family": 80,
+      "primary_cabinet_credenza_sideboard_shelf_counter_console_cart_or_cubbies": 0,
+      "shape_explicit_round_or_circular": 0,
+      "shape_explicit_oval": 0,
+      "shape_explicit_rectangular": 0,
+      "shape_unspecified": 80,
+      "table_family_counts": {
+        "classroom resource table": 7,
+        "dedicated home-workspace table": 7,
+        "dedicated output table": 8,
+        "library worktable": 8,
+        "production table": 6,
+        "shared project table": 1,
+        "sturdy office worktable": 6,
+        "sturdy studio worktable": 8,
+        "sturdy supply table": 2,
+        "sturdy utility table": 7,
+        "substantial side table": 7,
+        "utility table": 5,
+        "wide project table": 2,
+        "wide worktable": 6
+      },
+      "table_family_row_ids": {
+        "classroom resource table": [
+          "tassel__printer_FrontCloseUp::p4",
+          "tassel__printer_FrontRightCloseUp::p4",
+          "tassel__printer_FrontLeftMedium::p5",
+          "tassel__printer_FrontWide::p4",
+          "magic__printer_FrontCloseUp::p7",
+          "magic__printer_FrontRightCloseUp::p9",
+          "magic__printer_FrontWide::p10"
+        ],
+        "dedicated home-workspace table": [
+          "tassel__printer_FrontCloseUp::p3",
+          "tassel__printer_FrontRightCloseUp::p2",
+          "tassel__printer_FrontLeftMedium::p1",
+          "tassel__printer_FrontWide::p1",
+          "magic__printer_FrontCloseUp::p5",
+          "magic__printer_FrontRightCloseUp::p6",
+          "magic__printer_FrontLeftMedium::p7"
+        ],
+        "dedicated output table": [
+          "tassel__printer_FrontCloseUp::p9",
+          "tassel__printer_FrontLeftMedium::p9",
+          "tassel__printer_FrontWide::p9",
+          "magic__printer_FrontCloseUp::p1",
+          "magic__printer_FrontRightCloseUp::p1",
+          "magic__printer_FrontLeftMedium::p1",
+          "magic__printer_FrontWide::p2",
+          "magic__printer_FrontWide::p5"
+        ],
+        "library worktable": [
+          "tassel__printer_FrontCloseUp::p5",
+          "tassel__printer_FrontRightCloseUp::p8",
+          "tassel__printer_FrontLeftMedium::p8",
+          "tassel__printer_FrontWide::p8",
+          "magic__printer_FrontCloseUp::p8",
+          "magic__printer_FrontRightCloseUp::p10",
+          "magic__printer_FrontLeftMedium::p9",
+          "magic__printer_FrontWide::p9"
+        ],
+        "production table": [
+          "tassel__printer_FrontCloseUp::p7",
+          "tassel__printer_FrontRightCloseUp::p7",
+          "tassel__printer_FrontLeftMedium::p10",
+          "tassel__printer_FrontWide::p6",
+          "magic__printer_FrontCloseUp::p10",
+          "magic__printer_FrontRightCloseUp::p7"
+        ],
+        "shared project table": [
+          "tassel__printer_FrontLeftMedium::p6"
+        ],
+        "sturdy office worktable": [
+          "tassel__printer_FrontRightCloseUp::p6",
+          "tassel__printer_FrontLeftMedium::p7",
+          "magic__printer_FrontCloseUp::p2",
+          "magic__printer_FrontRightCloseUp::p2",
+          "magic__printer_FrontLeftMedium::p2",
+          "magic__printer_FrontWide::p1"
+        ],
+        "sturdy studio worktable": [
+          "tassel__printer_FrontCloseUp::p8",
+          "tassel__printer_FrontRightCloseUp::p5",
+          "tassel__printer_FrontLeftMedium::p4",
+          "tassel__printer_FrontWide::p5",
+          "magic__printer_FrontCloseUp::p9",
+          "magic__printer_FrontRightCloseUp::p5",
+          "magic__printer_FrontLeftMedium::p5",
+          "magic__printer_FrontWide::p7"
+        ],
+        "sturdy supply table": [
+          "tassel__printer_FrontCloseUp::p6",
+          "magic__printer_FrontLeftMedium::p10"
+        ],
+        "sturdy utility table": [
+          "tassel__printer_FrontCloseUp::p2",
+          "tassel__printer_FrontRightCloseUp::p1",
+          "tassel__printer_FrontLeftMedium::p3",
+          "tassel__printer_FrontWide::p3",
+          "magic__printer_FrontCloseUp::p6",
+          "magic__printer_FrontRightCloseUp::p8",
+          "magic__printer_FrontWide::p8"
+        ],
+        "substantial side table": [
+          "tassel__printer_FrontCloseUp::p10",
+          "tassel__printer_FrontRightCloseUp::p10",
+          "tassel__printer_FrontWide::p10",
+          "magic__printer_FrontCloseUp::p3",
+          "magic__printer_FrontRightCloseUp::p4",
+          "magic__printer_FrontLeftMedium::p4",
+          "magic__printer_FrontWide::p4"
+        ],
+        "utility table": [
+          "tassel__printer_FrontRightCloseUp::p9",
+          "magic__printer_FrontCloseUp::p4",
+          "magic__printer_FrontRightCloseUp::p3",
+          "magic__printer_FrontLeftMedium::p3",
+          "magic__printer_FrontWide::p3"
+        ],
+        "wide project table": [
+          "tassel__printer_FrontWide::p7",
+          "magic__printer_FrontLeftMedium::p6"
+        ],
+        "wide worktable": [
+          "tassel__printer_FrontCloseUp::p1",
+          "tassel__printer_FrontRightCloseUp::p3",
+          "tassel__printer_FrontLeftMedium::p2",
+          "tassel__printer_FrontWide::p2",
+          "magic__printer_FrontLeftMedium::p8",
+          "magic__printer_FrontWide::p6"
+        ]
+      },
+      "secondary_non_primary_furnishings": {
+        "note": "Secondary furniture is present in some prompts but never bears the printer.",
+        "storage_cabinet_rows": 6,
+        "sideboard_rows": 1,
+        "rolling_cart_rows": 4,
+        "floating_shelf_rows": 1,
+        "open_cubbies_rows": 1
+      }
+    },
+    "downstream_executable_rewrite_text": {
+      "confidence": "VERIFIED lexical evidence",
+      "rows_with_table_worktable_or_tabletop_term": 80,
+      "rows_without_table_family_term": 0,
+      "limitation": "This establishes requested/rewrite support vocabulary, not the rendered furniture morphology."
+    },
+    "existing_placement_judge_image_descriptions": {
+      "confidence": "UNVERIFIED as a human visual census; these are saved judge descriptions derived from images",
+      "table_only_description": 55,
+      "ambiguous_table_or_other": 24,
+      "table_with_separate_secondary_sideboard": 1,
+      "definite_non_table_primary_support": 0,
+      "ambiguous_other_term_counts": {
+        "cabinet": 4,
+        "bench": 4,
+        "credenza": 2,
+        "console": 5,
+        "counter": 9
+      },
+      "ambiguous_rows": [
+        {
+          "row_id": "tassel__printer_FrontLeftMedium__p2",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "cabinet"
+          ],
+          "judge_support_surface_description": "A rectangular light wood worktable or cabinet surface placed against the blue wall."
+        },
+        {
+          "row_id": "tassel__printer_FrontLeftMedium__p6",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "bench"
+          ],
+          "judge_support_surface_description": "A long rectangular wooden table or bench positioned along the blue wall below the whiteboard and beside the window."
+        },
+        {
+          "row_id": "tassel__printer_FrontLeftMedium__p9",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "credenza"
+          ],
+          "judge_support_surface_description": "A long rectangular wooden table or credenza against the wall below acoustic panels."
+        },
+        {
+          "row_id": "magic__printer_FrontWide__p4",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "bench"
+          ],
+          "judge_support_surface_description": "A long rectangular wood-topped side table or equipment bench with metal legs, positioned against the wall."
+        },
+        {
+          "row_id": "magic__printer_FrontWide__p6",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "console"
+          ],
+          "judge_support_surface_description": "A wide rectangular wooden table or console placed against a plain wall."
+        },
+        {
+          "row_id": "tassel__printer_FrontWide__p2",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "console"
+          ],
+          "judge_support_surface_description": "A rectangular wooden table or console positioned along a pale wall supports the full printer base."
+        },
+        {
+          "row_id": "magic__printer_FrontCloseUp__p1",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "cabinet"
+          ],
+          "judge_support_surface_description": "A light wooden table or low cabinet against the wall below blue acoustic panels."
+        },
+        {
+          "row_id": "magic__printer_FrontCloseUp__p3",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "cabinet"
+          ],
+          "judge_support_surface_description": "A substantial rectangular wooden side table or cabinet positioned against a frosted architectural partition."
+        },
+        {
+          "row_id": "magic__printer_FrontCloseUp__p5",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "cabinet"
+          ],
+          "judge_support_surface_description": "A light wood rectangular table or cabinet set against the blue wall."
+        },
+        {
+          "row_id": "tassel__printer_FrontCloseUp__p1",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "counter"
+          ],
+          "judge_support_surface_description": "A wide light wood rectangular table or counter running along a blue wall."
+        },
+        {
+          "row_id": "tassel__printer_FrontCloseUp__p2",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "console"
+          ],
+          "judge_support_surface_description": "A sturdy wooden console or utility table against the blue hallway wall."
+        },
+        {
+          "row_id": "tassel__printer_FrontCloseUp__p3",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "console"
+          ],
+          "judge_support_surface_description": "A broad wooden table or console set against a wall."
+        },
+        {
+          "row_id": "tassel__printer_FrontCloseUp__p4",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "counter"
+          ],
+          "judge_support_surface_description": "A light-colored rectangular classroom resource table or counter runs along the mural wall."
+        },
+        {
+          "row_id": "tassel__printer_FrontCloseUp__p5",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "counter"
+          ],
+          "judge_support_surface_description": "A long light-colored tabletop or counter against a blue wall."
+        },
+        {
+          "row_id": "tassel__printer_FrontCloseUp__p6",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "counter"
+          ],
+          "judge_support_surface_description": "A long gray classroom-style supply table or counter against a blue wall below a raised geographic wall panel."
+        },
+        {
+          "row_id": "tassel__printer_FrontCloseUp__p8",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "bench"
+          ],
+          "judge_support_surface_description": "A long wooden worktable or bench set against a blue wall."
+        },
+        {
+          "row_id": "tassel__printer_FrontCloseUp__p9",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "bench"
+          ],
+          "judge_support_surface_description": "A wooden tabletop or bench set against a pale brick wall."
+        },
+        {
+          "row_id": "magic__printer_FrontRightCloseUp__p1",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "credenza"
+          ],
+          "judge_support_surface_description": "A long rectangular wooden table or credenza set parallel to a pale wall beneath blue acoustic panels."
+        },
+        {
+          "row_id": "tassel__printer_FrontRightCloseUp__p2",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "console"
+          ],
+          "judge_support_surface_description": "A rectangular wooden table or console positioned along the wall beside a sofa."
+        },
+        {
+          "row_id": "tassel__printer_FrontRightCloseUp__p7",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "counter"
+          ],
+          "judge_support_surface_description": "A long rectangular concrete/stone-topped table or counter runs along the blue wall."
+        },
+        {
+          "row_id": "magic__printer_FrontLeftMedium__p7",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "counter"
+          ],
+          "judge_support_surface_description": "A wide wooden table or wall-mounted counter running along a blue wall."
+        },
+        {
+          "row_id": "magic__printer_FrontLeftMedium__p8",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "counter"
+          ],
+          "judge_support_surface_description": "A wide rectangular worktable or counter with a gray top and wood front edge, set against the blue wall."
+        },
+        {
+          "row_id": "magic__printer_FrontLeftMedium__p9",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "counter"
+          ],
+          "judge_support_surface_description": "A broad rectangular library worktable or equipment counter against the wall, with a clear pale tabletop."
+        },
+        {
+          "row_id": "magic__printer_FrontLeftMedium__p10",
+          "classification": "ambiguous_table_or_other",
+          "alternative_terms": [
+            "counter"
+          ],
+          "judge_support_surface_description": "A rectangular, sturdy supply table or counter against the wall beneath colored wall panels."
+        }
+      ]
+    }
+  },
+  "current_grouped_fe_asset_audit": {
+    "confidence": "VERIFIED for local filesystem and hashes; remote publication not checked",
+    "grouped_fe": {
+      "root": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/fe_reports/v6_2_consensus_v2_grouped_20261107",
+      "planned_objects": 34,
+      "planned_objects_present_and_hash_matching": 34,
+      "bad_or_missing": [],
+      "composition": "root viewer.html + root data.json + 16 group viewer.html/data.json pairs"
+    },
+    "image_references_in_current_data_json": {
+      "total": 320,
+      "unique": 176,
+      "generated_output_refs": 160,
+      "unique_generated_output_refs": 160,
+      "generated_output_ref_host": "pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev",
+      "twin_refs": 160,
+      "unique_twin_refs": 16,
+      "twin_ref_host": "foundry-aws-corp.adobe.io",
+      "relative_or_bundled_asset_refs": 0
+    },
+    "local_equivalents": {
+      "generation_run_images": {
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_spatial_composition_v6_2_four_devices_20261106/generation_gpt_image2_scene_v1/run/images",
+        "expected": 160,
+        "present_and_hash_matching": 160,
+        "bad_or_missing": []
+      },
+      "judge_copy_generated_images": {
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/generated",
+        "expected": 160,
+        "present_and_hash_matching": 160,
+        "bad_or_missing": []
+      },
+      "twins": {
+        "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v6_2_placement_assets/twins",
+        "expected_unique": 16,
+        "present_and_hash_matching": 16,
+        "bad_or_missing": []
+      }
+    },
+    "publication_dependencies": {
+      "status": "The grouped plan and the general plan are local/dry-run evidence; project state says publication is pending because AWS credentials expired and broker hosts timed out.",
+      "grouped_fe_objects": 34,
+      "twin_asset_objects_from_general_plan": 16,
+      "minimum_objects_for_current_grouped_fe_if_endpoint_urls_remain_live": 50,
+      "durability_gap": "The grouped FE data points all 160 generated outputs at Pluto endpoint artifact URLs. The grouped publication plan contains no generated-image objects, so the report is not self-contained and depends on those endpoint URLs remaining readable.",
+      "stable_publication_requirement": "Upload the 160 hash-verified local generated PNGs to durable S3 paths and rebuild/rewrite every root and group data.json output image_src to those stable Foundry URLs (or bundle equivalent assets). Then upload the 34 grouped FE objects and 16 twin objects and verify remote metadata/hashes.",
+      "stable_self_contained_object_count_if_each_generated_image_is_uploaded_once": 210,
+      "aws_rule": "Any S3 execution must first refresh credentials with /aws-creds and source the resulting environment in the same shell command; this audit performed no upload."
+    }
+  },
+  "implication_for_revision": {
+    "confidence": "VERIFIED causal evidence within this saved pipeline run",
+    "finding": "Changing only V6.2 source prompt wording cannot make round or oval supports survive this downstream path. The geometry/guide contract and priority rule must represent curved support footprints or allow a requested curved perimeter to override the rectangular guide; otherwise the rewrite will continue to convert the requested shape to a four-corner table.",
+    "printer_diversity_finding": "V6.2 supplies no primary printer-support category diversity: all 80 source rows and all 80 executable rewrites use table-family vocabulary. Cabinet, credenza, shelf, console, or counter supports would require deliberate source-prompt and downstream-geometry support, with printer access and wall placement retained."
+  },
+  "limitations": [
+    "Only the eight explicit round café outputs received direct manual image inspection in this audit.",
+    "The 80-row printer rendered-support breakdown uses existing placement-judge text and is not a new human image annotation.",
+    "Remote S3 and endpoint availability were not tested; local existence and hashes were tested.",
+    "Unspecified_shape means no explicit footprint-shape token in the primary support phrase; it does not imply that the generated image lacks a shape."
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": "placement-verified-additions-new160-audit-v1",
+  "generated_at_utc": "2026-11-05T23:44:44.368182+00:00",
+  "evaluator": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_v6_1/evaluate_new160.py",
+    "sha256": "14ef27116c4ae9f3f7ffc73ef6f06e72f7f5d9b9f0c4074ae583f3b7947158e9"
+  },
+  "manifest": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/new_v6_1_eval_20261105/manifest.json",
+    "sha256": "fd84149fa421c32602358c325b4fb14ed555d3e5033fb92bc2800ab37e6daefc"
+  },
+  "runs": {
+    "baseline_v2": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_v2_baseline",
+      "progress_sha256": "2f47c8611897d6703e2ac95abff33c9f1266d64dbc6934715ec5d7284d85f8e4"
+    },
+    "compact_v3": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v6_1_compact_v3",
+      "progress_sha256": "93b393fa20e62fb29d63919bb4788616820af6a406ea271ea2e855070f106cdf"
+    },
+    "two_pass": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v6_1-v1",
+      "summary_sha256": "7aaf046e652cbda862631f8792f69920f2723486c1719a41124eec68c721e524"
+    },
+    "verifier": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_v6_1/runs/verifier-v1",
+      "summary_sha256": "fe009c7e8ccaaa4b8904d1e9d2bd299899b1c7f1bc8c2a5136f9b89572fda739"
+    },
+    "verified": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_v6_1/verified_runs/verified-160-v1",
+      "summary_sha256": "9366a3c07674bd81775ff68ab6bab4d283bd41187cb7b4c0f0dc9b3d38194936"
+    }
+  },
+  "trigger_manifest": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_v6_1/triggers.json",
+    "sha256": "9a87b591fd2e2dc5c520255fb835c487939eb22bfbaf499e9d920023fc915e71"
+  },
+  "protocol_freeze": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_v6_1/freeze.json",
+    "sha256": "50d2cc25f63de44b302e7321c8e635b559fcce204a4699bda94aee30814c7df6"
+  },
+  "selected_protocol": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_v6_1/selected_protocol_v2.json",
+    "sha256": "76458975bb76ffdb8a8f85801f703e99c395bfb051f4d6648fd775dc34bed7fd"
+  },
+  "merge_generator": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/verify_additions_v6_1/merge_verified_v2.py",
+    "sha256": "11594dccc74ba3ed5e986d0b32be7f531b63205186df7abb86b7ef5bed336922"
+  },
+  "stage_protocol_fingerprints": {
+    "baseline_v2": {
+      "records": 160,
+      "unique_full_fingerprints": 160,
+      "protocol_versions": [
+        "placement-judge-v2-request-v3"
+      ],
+      "runner_sha256": [
+        "3f5258ef3bf4fc9f4fca8d18602bce046a36837dc34573428f82ef714c4a277e"
+      ],
+      "system_prompt_sha256": [
+        "e30c7ab88c9e3ed2179738fa31abfa3598cf205d4f96f4069a49a9b3655cc0df"
+      ],
+      "schema_sha256": [
+        "77bf7067c0b8a9a7c5a4d8c7025f8f6c36215744f2529073373d20a09743fa19"
+      ],
+      "scoring_sha256": [
+        "0f3a1473d60e22fbf921c2883a7f61cb03519678c664f06470e7ca5739b434ae"
+      ]
+    },
+    "compact_v3": {
+      "records": 160,
+      "unique_full_fingerprints": 160,
+      "protocol_versions": [
+        "placement-judge-v3-request-v1"
+      ],
+      "runner_sha256": [
+        "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1"
+      ],
+      "system_prompt_sha256": [
+        "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6"
+      ],
+      "schema_sha256": [
+        "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231"
+      ],
+      "scoring_sha256": [
+        "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006"
+      ]
+    }
+  },
+  "coverage_validated": {
+    "manifest_records": 160,
+    "baseline_results": 160,
+    "compact_results": 160,
+    "two_pass_results": 160,
+    "verified_results": 160,
+    "trigger_cases": 4,
+    "trigger_components": 5,
+    "verifier_overlays": 4,
+    "verified_overlay_components": 5,
+    "stage_artifact_hashes_validated": 960,
+    "missing_records": 0
+  }
+}

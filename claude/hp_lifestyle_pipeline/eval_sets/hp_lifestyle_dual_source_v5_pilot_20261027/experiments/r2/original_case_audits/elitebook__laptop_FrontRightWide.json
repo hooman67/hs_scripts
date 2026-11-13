@@ -1,0 +1,346 @@
+{
+  "version": "v5-raw-normalized-audit-v1",
+  "case_id": "elitebook__laptop_FrontRightWide",
+  "request_sha256": "6d896c87b183c2fa04c81d9b651976868df456c97e8d365575b54b93dcea66e0",
+  "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/records/attempts/elitebook__laptop_FrontRightWide/sample_002.json",
+  "raw_record_sha256": "f15c79b39ef633132bb2f37f28bb3bb19adf14a66a75f7c9e373fe954c387fea",
+  "raw_validation": {
+    "validator_version": "v5-host-validator-r2",
+    "passed": false,
+    "error_count": 7,
+    "warning_count": 3,
+    "errors": [
+      {
+        "code": "score_order",
+        "detail": "source relevance, then C-Tech tie-breaker, are not descending",
+        "candidate_id": "p2"
+      },
+      {
+        "code": "score_mean",
+        "detail": "50/50 document mean is 55, score is 62.5",
+        "candidate_id": "p14"
+      },
+      {
+        "code": "score_order",
+        "detail": "source relevance, then C-Tech tie-breaker, are not descending",
+        "candidate_id": "p16"
+      },
+      {
+        "code": "score_order",
+        "detail": "source relevance, then C-Tech tie-breaker, are not descending",
+        "candidate_id": "p18"
+      },
+      {
+        "code": "literal_background_budget",
+        "detail": "3>2: ['plants', 'workplace decor', 'workstations']",
+        "candidate_id": "p10"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['plants', 'workplace decor', 'workstations'] but signature has 2 entries",
+        "candidate_id": "p10"
+      },
+      {
+        "code": "ksp_mapping_coverage",
+        "detail": "expected normalized ['KSP1', 'KSP2', 'KSP3', 'KSP4']; got ['KSP1', 'KSP2', 'KSP3', 'KSP4']"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "ambiguous_ksp_mapping_id",
+        "detail": "Could not normalize KSP-number prefixes from string-input mappings: ['source_value_proposition']"
+      },
+      {
+        "code": "unused_source_evidence",
+        "detail": "Unused evidence may support audit text; inspect: ['e9']"
+      },
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 20,
+      "evidence": 10,
+      "environments": {
+        "Home": 5,
+        "Office": 5,
+        "Creative Studio": 3,
+        "Café": 3,
+        "Education": 2,
+        "Gaming": 2
+      },
+      "relationships": {
+        "source_grounded": 8,
+        "source_adjacent": 8,
+        "creative_departure": 4
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 5,
+        "Office": 5,
+        "Education": 2,
+        "Gaming": 2,
+        "Café": 3,
+        "Creative Studio": 3
+      },
+      "relationship_counts": {
+        "source_grounded": 8,
+        "source_adjacent": 8,
+        "creative_departure": 4
+      },
+      "ctech_relationship_counts": {
+        "close_adaptation": 10,
+        "minimal_camera_edit": 8,
+        "category_extension": 2
+      },
+      "ctech_reference_counts": {
+        "CT04": 1,
+        "CT05": 1,
+        "CT03": 2,
+        "CT13": 2,
+        "CT01": 1,
+        "CT18": 2,
+        "CT09": 2,
+        "CT10": 1,
+        "CT02": 1,
+        "CT17": 1,
+        "CT07": 1,
+        "CT12": 1,
+        "CT08": 1,
+        "CT16": 1,
+        "CT14": 1,
+        "CT15": 1
+      },
+      "ctech_score_range": [
+        65,
+        92
+      ],
+      "distinct_subsettings": 20,
+      "evidence_reverse_mappings": {
+        "smart_brief": {
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e5"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        },
+        "source_messaging": {
+          "evidence_ids": [
+            "e6",
+            "e7",
+            "e8",
+            "e10"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "66ff6b49140b34e27c0e9218c0e22e44506f116ffbce780685bb88f025c6b66c"
+  },
+  "normalized_validation": {
+    "validator_version": "v5-host-validator-r2",
+    "passed": false,
+    "error_count": 3,
+    "warning_count": 3,
+    "errors": [
+      {
+        "code": "literal_background_budget",
+        "detail": "3>2: ['plants', 'workplace decor', 'workstations']",
+        "candidate_id": "p10"
+      },
+      {
+        "code": "background_signature_undercount",
+        "detail": "prose names ['plants', 'workplace decor', 'workstations'] but signature has 2 entries",
+        "candidate_id": "p10"
+      },
+      {
+        "code": "ksp_mapping_coverage",
+        "detail": "expected normalized ['KSP1', 'KSP2', 'KSP3', 'KSP4']; got ['KSP1', 'KSP2', 'KSP3', 'KSP4']"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "ambiguous_ksp_mapping_id",
+        "detail": "Could not normalize KSP-number prefixes from string-input mappings: ['source_value_proposition']"
+      },
+      {
+        "code": "unused_source_evidence",
+        "detail": "Unused evidence may support audit text; inspect: ['e9']"
+      },
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 20,
+      "evidence": 10,
+      "environments": {
+        "Home": 5,
+        "Office": 5,
+        "Creative Studio": 3,
+        "Café": 3,
+        "Education": 2,
+        "Gaming": 2
+      },
+      "relationships": {
+        "source_grounded": 8,
+        "source_adjacent": 8,
+        "creative_departure": 4
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 5,
+        "Office": 5,
+        "Education": 2,
+        "Gaming": 2,
+        "Café": 3,
+        "Creative Studio": 3
+      },
+      "relationship_counts": {
+        "source_grounded": 8,
+        "source_adjacent": 8,
+        "creative_departure": 4
+      },
+      "ctech_relationship_counts": {
+        "minimal_camera_edit": 8,
+        "close_adaptation": 10,
+        "category_extension": 2
+      },
+      "ctech_reference_counts": {
+        "CT05": 1,
+        "CT03": 2,
+        "CT04": 1,
+        "CT13": 2,
+        "CT01": 1,
+        "CT18": 2,
+        "CT09": 2,
+        "CT10": 1,
+        "CT02": 1,
+        "CT17": 1,
+        "CT07": 1,
+        "CT12": 1,
+        "CT16": 1,
+        "CT08": 1,
+        "CT14": 1,
+        "CT15": 1
+      },
+      "ctech_score_range": [
+        65,
+        92
+      ],
+      "distinct_subsettings": 20,
+      "evidence_reverse_mappings": {
+        "smart_brief": {
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e5"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        },
+        "source_messaging": {
+          "evidence_ids": [
+            "e6",
+            "e7",
+            "e8",
+            "e10"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15",
+            "p16",
+            "p17",
+            "p18"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "171f0f0aef58e0153ea73192b46add9293a86a3ab3e45e1e76f56a54543afbdd"
+  },
+  "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalized_outputs/elitebook__laptop_FrontRightWide__sample_002.json",
+  "normalized_output_file_sha256": "be156358d24e162cff2e57a5e5ad7fc98205ca645cb48d46253fcccf13a9ec1e",
+  "normalized_output_semantic_sha256": "171f0f0aef58e0153ea73192b46add9293a86a3ab3e45e1e76f56a54543afbdd",
+  "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/normalization_logs/elitebook__laptop_FrontRightWide__sample_002.json",
+  "normalization_log_file_sha256": "0c8dac56a3c972540b9d9d26cca0e2d033985df02bf481ac5a64ea7a38b1241b",
+  "human_review_status": "pending",
+  "launchable": false
+}

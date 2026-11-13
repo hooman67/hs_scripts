@@ -1,0 +1,152 @@
+{
+  "version": "v4.1-bounded-repair-human-semantic-review-v1",
+  "status": "automated_validation_passed_with_remaining_human_semantic_failures",
+  "scope": "Manual comparison of repaired merged candidates against repair_instruction.md and their declared C-Tech references; no text or metadata was edited during this review.",
+  "automated_validation": {
+    "banks_passed": 4,
+    "banks_rejected": 0,
+    "normalized_error_count": 0,
+    "warnings_by_bank": [2, 1, 2, 2]
+  },
+  "confirmed_remaining_failures": {
+    "count": 15,
+    "ctech_relationship_misclassifications": [
+      {
+        "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+        "merged_candidate_id": "p3",
+        "normalized_candidate_id": "p2",
+        "ctech_reference_id": "CT01",
+        "actual": "close_adaptation/78",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Office environment and existing desk/light; only background deletions and focus reduction."
+      },
+      {
+        "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+        "merged_candidate_id": "p5",
+        "normalized_candidate_id": "p3",
+        "ctech_reference_id": "CT03",
+        "actual": "close_adaptation/78",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Office environment; plural workstations/desks reduced to one desk plus deletions, which the repair instruction defines as a singular-support camera adjustment."
+      },
+      {
+        "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+        "merged_candidate_id": "p8",
+        "normalized_candidate_id": "p18",
+        "ctech_reference_id": "CT06",
+        "actual": "close_adaptation/75",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Home environment/light; making the otherwise generic support an explicit desk is the explicitly allowed singular-support adjustment, with all other edits deletions."
+      },
+      {
+        "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+        "merged_candidate_id": "p9",
+        "normalized_candidate_id": "p4",
+        "ctech_reference_id": "CT05",
+        "actual": "close_adaptation/78",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Home environment, wooden desk, daylight, and tone; all listed changes are deletions."
+      },
+      {
+        "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+        "merged_candidate_id": "p11",
+        "normalized_candidate_id": "p5",
+        "ctech_reference_id": "CT17",
+        "actual": "close_adaptation/78",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Home living room, end table, light, and tone; all listed changes are deletions."
+      },
+      {
+        "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+        "merged_candidate_id": "p12",
+        "normalized_candidate_id": "p6",
+        "ctech_reference_id": "CT12",
+        "actual": "close_adaptation/78",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Café environment, table, wood, light, and tone; all listed changes are deletions."
+      },
+      {
+        "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+        "merged_candidate_id": "p13",
+        "normalized_candidate_id": "p9",
+        "ctech_reference_id": "CT14",
+        "actual": "close_adaptation/77",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Gaming environment, desk, RGB/neon lighting, and tone; all listed changes are deletions/condensation."
+      },
+      {
+        "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+        "merged_candidate_id": "p14",
+        "normalized_candidate_id": "p7",
+        "ctech_reference_id": "CT15",
+        "actual": "close_adaptation/78",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Gaming environment, dark wood desk, RGB lighting, and finishes; all listed changes are deletions."
+      },
+      {
+        "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+        "merged_candidate_id": "p16",
+        "normalized_candidate_id": "p20",
+        "ctech_reference_id": "CT06",
+        "actual": "close_adaptation/75",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Home environment/light; making one simple desk explicit is the allowed singular-support adjustment and the remaining edits are deletions."
+      },
+      {
+        "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+        "merged_candidate_id": "p22",
+        "normalized_candidate_id": "p14",
+        "ctech_reference_id": "CT15",
+        "actual": "close_adaptation/76",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Gaming environment, desk, layered neon light, atmosphere, and finishes; all listed changes are deletions/condensation."
+      },
+      {
+        "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+        "merged_candidate_id": "p1",
+        "normalized_candidate_id": "p17",
+        "ctech_reference_id": "CT18",
+        "actual": "close_adaptation/79",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Home environment/light/objects/tone; the desk is only made explicit, paper wording is simplified, and other edits are deletions."
+      },
+      {
+        "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+        "merged_candidate_id": "p8",
+        "normalized_candidate_id": "p19",
+        "ctech_reference_id": "CT06",
+        "actual": "close_adaptation/79",
+        "expected": "minimal_camera_edit/80-99",
+        "reason": "Same Home environment/light/objects/tone; the desk is only made explicit and other edits are deletions."
+      }
+    ],
+    "prose_instruction_failures": [
+      {
+        "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+        "merged_candidate_id": "p1",
+        "normalized_candidate_id": "p12",
+        "text": "A modern home workspace with a desk in warm natural light and a stack of papers for household administration. Lived-in and authentic with subtle imperfections and a warm neutral tone.",
+        "reason": "The artificial task suffix 'for household administration' remains despite the instruction to avoid artificial task suffixes and elaborate paperwork. The queue allowed scene edits for this candidate."
+      },
+      {
+        "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+        "merged_candidate_id": "p2",
+        "normalized_candidate_id": "p13",
+        "text": "A bright, open modern corporate office desk in warm natural light with neatly stacked papers for everyday business paperwork. Lived-in but tidy and professional.",
+        "reason": "The artificial task suffix 'for everyday business paperwork' remains despite the instruction to avoid artificial task suffixes and elaborate paperwork. This candidate was metadata-only, so the host correctly preserved its base prose."
+      },
+      {
+        "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+        "merged_candidate_id": "p7",
+        "normalized_candidate_id": "p18",
+        "text": "An open modern corporate office with a workstation desk holding recurring document packets, color pages, and a notebook. Clean shelving and plants create a layered, active environment in warm natural lighting.",
+        "reason": "The elaborate phrase 'recurring document packets' remains despite the instruction to use ordinary papers and avoid elaborate paperwork. Scene editing was allowed for this candidate."
+      }
+    ]
+  },
+  "limitations": [
+    "Automated validation does not verify whether a truthful same-environment deletion-only explanation uses minimal_camera_edit instead of close_adaptation.",
+    "The finalizer clamps scores to the model-selected relationship band but intentionally does not change the relationship or prose.",
+    "The standard human_scene_review_required warnings remain applicable to all banks."
+  ]
+}

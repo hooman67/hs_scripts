@@ -1,0 +1,16 @@
+visibility: public
+deps:
+- librosa
+- numpy
+- scipy
+- torch
+- torchaudio
+# NOT included (intentional):
+#   - pytorch_lightning  — v2 uses plain nn.Module (LitBeatDetect)
+#   - madmom             — v2 uses Apollo's GPU DBN postfilter
+#   - omegaconf          — only imported lazily inside load() for the
+#                          legacy-checkpoint branch, never at runtime
+
+- colligo.base
+- numba
+- omegaconf

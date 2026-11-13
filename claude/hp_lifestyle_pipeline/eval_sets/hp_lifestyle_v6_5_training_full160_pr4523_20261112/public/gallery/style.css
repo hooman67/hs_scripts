@@ -1,0 +1,22 @@
+:root{font:15px/1.5 system-ui,sans-serif;color:#17233a;background:#edf1f7;--columns:5}
+*{box-sizing:border-box}body{margin:0}header,#ims,#loading{padding:1rem 2rem}header{background:#fff;border-bottom:1px solid #cbd4e4}
+h1{font-size:1.9rem;margin:.5rem 0}h2{font-size:1.45rem;margin:0}h3{font-size:1.15rem;margin:1.5rem 0 .6rem}h4{margin:.75rem 0 .25rem}
+a{color:#174caa}button,input,select{font:inherit}button,select{padding:.4rem;border:1px solid #9aabc6;border-radius:4px}
+button,summary{cursor:pointer}.hidden{display:none!important}.muted{color:#59677c}
+.controls{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}.controls label{display:flex;gap:.4rem;align-items:center}
+nav{display:flex;flex-wrap:wrap;gap:.4rem}nav a{font-size:.85rem;padding:.25rem .5rem;background:#edf1f7;border-radius:4px}
+.input-group{scroll-margin:1rem;margin:1rem;padding:1.2rem;background:#fff;border:1px solid #ccd5e5;border-radius:8px}
+.input-subtitle{margin:.3rem 0 .7rem}.source-context{margin:.6rem 0}summary{font-weight:600}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:400px;overflow:auto;background:#f2f5fa;padding:.8rem}
+.cards{display:grid;grid-template-columns:repeat(var(--columns),minmax(0,1fr));gap:.65rem;align-items:start}
+.card{min-width:0;border:1px solid #cbd4e4;border-radius:6px;overflow:hidden;background:#fafcff}
+.card-image{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;cursor:zoom-in;background:#eef1f6}
+.card-body{padding:.6rem}.card-caption{font-size:.9rem;margin:0 0 .4rem}.source-prompt{font-size:.9rem}
+.source-prompt p{white-space:pre-wrap;overflow-wrap:anywhere;margin:.5rem 0 0}.prompt-key{font-size:.75rem;color:#59677c;overflow-wrap:anywhere}
+#error{color:#a31717}dialog{border:1px solid #9aabc6;border-radius:8px;max-width:96vw;max-height:96vh;overflow:auto}
+dialog::backdrop{background:#000a}dialog img{display:block;max-width:90vw;max-height:78vh;object-fit:contain}
+#closeImage{float:right}#imageLabel{padding-right:5rem}.ims-button{margin-left:.5rem}
+@media(max-width:1000px){.cards{grid-template-columns:repeat(min(var(--columns),3),minmax(0,1fr))}}
+@media(max-width:600px){header,#ims,#loading{padding:1rem}.input-group{margin:.5rem;padding:.75rem}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.controls{align-items:flex-start;flex-direction:column}select{max-width:85vw}}
+
+.model-inputs img{max-width:100%;height:auto}.model-inputs p{overflow-wrap:anywhere}

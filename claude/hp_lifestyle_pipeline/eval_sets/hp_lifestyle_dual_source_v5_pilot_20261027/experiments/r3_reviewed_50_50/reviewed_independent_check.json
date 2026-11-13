@@ -1,0 +1,190 @@
+{
+  "version": "v5-r3-reviewed-independent-check-v1",
+  "generated_at": "2026-10-27T14:51:58-07:00",
+  "status": "complete",
+  "launchable": false,
+  "scope": {
+    "manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/manifest.json",
+    "manifest_sha256": "8ff485ef7078c6cb9ec950885bbdc0c1bd50a0ca4933fefca4d541c8857e3c8c",
+    "build_script_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/build_reviewed.py",
+    "build_script_sha256": "df265f32f7507e68ab996a394725127c9d5914f13fbfcdb8edf437297c85ef33",
+    "prior_independent_review_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/independent_review.json",
+    "prior_independent_review_sha256": "e0b7cf9ebfb304192c5dde1116f2eec4cf89c0205b451799629eb134279d06b2",
+    "reviewed_prompt_cases_sha256": "2cba5d71706ff92e1cf940509cd3ecf7be8f50bdc000e95fa4c5156e8b6fa63c",
+    "reviewed_validation_sha256": "51ece2bd7a434318cb334c385f7edcbba6c04bb3ba0f1328354334d895f75442",
+    "model_calls_made": 0,
+    "reviewed_output_mutations": 0
+  },
+  "summary": {
+    "case_count": 8,
+    "candidate_count": 160,
+    "live_validator_passes": 8,
+    "live_validator_failures": 0,
+    "prior_findings_checked": 14,
+    "prior_findings_addressed": 14,
+    "blocking_errors": 0,
+    "conclusion": "All 14 prior independent provenance, score, and C-Tech findings are addressed in the reviewed artifacts. All eight reviewed banks pass the live deterministic contract, including camera metadata, evidence, source arithmetic, sorting, and IDs. The root-authored build reproduces the reviewed artifacts."
+  },
+  "checks": {
+    "live_validation": {
+      "passed": true,
+      "schema_and_semantic_errors": 0,
+      "source_relevance_arithmetic_exact_for_all_candidates": true,
+      "source_then_ctech_sort_exact_for_all_candidates": true,
+      "candidate_ids_exact_p1_through_p20_for_all_cases": true,
+      "camera_metadata_matches_registry_for_all_cases": true,
+      "evidence_paths_and_quotes_valid": true
+    },
+    "reproducibility": {
+      "passed": true,
+      "method": "Ran build_reviewed.py in an isolated mirror with the V5 research tree mounted read-only by reference, then compared generated artifacts with the reviewed artifacts in the source evaluation directory.",
+      "reviewed_outputs_byte_identical": true,
+      "review_logs_byte_identical": true,
+      "reviewed_validation_byte_identical": true,
+      "reviewed_prompt_cases_semantically_identical_after_normalizing_temporary_absolute_paths": true,
+      "reproduced_counts": {
+        "cases": 8,
+        "candidates": 160,
+        "scene_texts_edited": 18,
+        "field_edits": 253,
+        "reviewed_validation_passes": 8,
+        "model_normalized_validation_passes": 3
+      }
+    }
+  },
+  "cases": {
+    "cashmere__laptop_FrontRightCloseUp": {
+      "validator_passed": true,
+      "reviewed_output_sha256": "bdc9b8feafdb1ebd4f133d2c979895faee0f29f1f5a1af4e2b2114e41c580768"
+    },
+    "cashmere__laptop_FrontRightWide": {
+      "validator_passed": true,
+      "reviewed_output_sha256": "7b8a90a245a322d1a9c025ba0457839574ae5b25726b3b734e35159493a67841"
+    },
+    "deskjet_2955__printer_FrontRightCloseUp": {
+      "validator_passed": true,
+      "reviewed_output_sha256": "fcacfd9bb2bc57d1f912426063950824c08a7729c52bee41d14ce40bd56cc9f7"
+    },
+    "deskjet_2955__printer_FrontRightWide": {
+      "validator_passed": true,
+      "reviewed_output_sha256": "339432031d72c5be285debfc9c13add236c5d7250bc98d406dd2e418bfd77cf8"
+    },
+    "elitebook__laptop_FrontRightCloseUp": {
+      "validator_passed": true,
+      "reviewed_output_sha256": "0d7ca9fb97bc0b0f74022288f3e0c8383810a6eeb1281585407afefacad2748f"
+    },
+    "elitebook__laptop_FrontRightWide": {
+      "validator_passed": true,
+      "reviewed_output_sha256": "36c024430f905db2cbc04cbed5d55c06fe612e33236d9436f8e03466cba114ff"
+    },
+    "laserjet__printer_FrontRightCloseUp": {
+      "validator_passed": true,
+      "reviewed_output_sha256": "5744d4e82f21323b0ff2e727a6e9bb7f1cfb301bd5cb67d77b54d22b266641f7"
+    },
+    "laserjet__printer_FrontRightWide": {
+      "validator_passed": true,
+      "reviewed_output_sha256": "1be7cab583c27fc4918707c0e1b4d83e2fae46bdb9c5ea5ddc9a7270d51796d6"
+    }
+  },
+  "prior_finding_resolution": [
+    {
+      "finding_id": "elitebook-close-ctech-1",
+      "case_id": "elitebook__laptop_FrontRightCloseUp",
+      "old_to_new_ids": {"p7": "p8", "p16": "p16"},
+      "resolution": "Both candidates are close_adaptation with C-Tech score 78.",
+      "addressed": true
+    },
+    {
+      "finding_id": "elitebook-wide-score-1",
+      "case_id": "elitebook__laptop_FrontRightWide",
+      "old_to_new_ids": {"p4": "p4", "p5": "p6"},
+      "resolution": "Both candidates use [30,10,10,10] for each document and exact source score 60.",
+      "addressed": true
+    },
+    {
+      "finding_id": "elitebook-wide-ctech-1",
+      "case_id": "elitebook__laptop_FrontRightWide",
+      "old_to_new_ids": {"p3": "p3", "p14": "p14", "p16": "p16"},
+      "resolution": "All three candidates are close_adaptation with C-Tech score 78.",
+      "addressed": true
+    },
+    {
+      "finding_id": "deskjet-close-score-1",
+      "case_id": "deskjet_2955__printer_FrontRightCloseUp",
+      "old_to_new_ids": {"p8": "p8"},
+      "resolution": "Candidate uses [30,10,10,10] for each document and exact source score 60.",
+      "addressed": true
+    },
+    {
+      "finding_id": "deskjet-close-ctech-1",
+      "case_id": "deskjet_2955__printer_FrontRightCloseUp",
+      "old_to_new_ids": {"p14": "p14", "p16": "p18", "p19": "p19"},
+      "resolution": "All three candidates are close_adaptation with C-Tech score 78.",
+      "addressed": true
+    },
+    {
+      "finding_id": "deskjet-wide-score-1",
+      "case_id": "deskjet_2955__printer_FrontRightWide",
+      "old_to_new_ids": {"p9": "p13", "p10": "p14", "p11": "p16"},
+      "resolution": "The classroom and library candidates use [0,20,20,0] per document and score 40; the study-room candidate uses [0,10,20,0] and scores 30. Invented setting and context receive zero.",
+      "addressed": true
+    },
+    {
+      "finding_id": "deskjet-wide-ctech-1",
+      "case_id": "deskjet_2955__printer_FrontRightWide",
+      "old_to_new_ids": {"p17": "p17"},
+      "resolution": "Candidate is close_adaptation with C-Tech score 78.",
+      "addressed": true
+    },
+    {
+      "finding_id": "laserjet-close-score-1",
+      "case_id": "laserjet__printer_FrontRightCloseUp",
+      "old_to_new_ids": {"p5": "p7", "p7": "p6"},
+      "resolution": "Both candidates use [30,10,10,10] for each document and exact source score 60.",
+      "addressed": true
+    },
+    {
+      "finding_id": "laserjet-close-ctech-1",
+      "case_id": "laserjet__printer_FrontRightCloseUp",
+      "old_to_new_ids": {"p8": "p8", "p18": "p19"},
+      "resolution": "Both candidates are close_adaptation with C-Tech score 78.",
+      "addressed": true
+    },
+    {
+      "finding_id": "laserjet-wide-ctech-1",
+      "case_id": "laserjet__printer_FrontRightWide",
+      "old_to_new_ids": {"p19": "p19"},
+      "resolution": "Candidate is close_adaptation with C-Tech score 78.",
+      "addressed": true
+    },
+    {
+      "finding_id": "cashmere-close-score-1",
+      "case_id": "cashmere__laptop_FrontRightCloseUp",
+      "old_to_new_ids": {"p11": "p12", "p12": "p13", "p13": "p14"},
+      "resolution": "All three candidates use [10,0,0,10] for each document, exact source score 20, and creative_departure relationship.",
+      "addressed": true
+    },
+    {
+      "finding_id": "cashmere-close-ctech-1",
+      "case_id": "cashmere__laptop_FrontRightCloseUp",
+      "old_to_new_ids": {"p10": "p10", "p12": "p13", "p14": "p11"},
+      "resolution": "All three candidates are close_adaptation with C-Tech score 78.",
+      "addressed": true
+    },
+    {
+      "finding_id": "cashmere-wide-provenance-1",
+      "case_id": "cashmere__laptop_FrontRightWide",
+      "old_to_new_ids": {"p9": "p18", "p10": "p19", "p11": "p20"},
+      "resolution": "All three candidates have zero components for both documents, source score 0, no evidence IDs, creative_departure relationship, and an explicit mismatched-product exclusion note.",
+      "addressed": true
+    },
+    {
+      "finding_id": "cashmere-wide-ctech-1",
+      "case_id": "cashmere__laptop_FrontRightWide",
+      "old_to_new_ids": {"p13": "p10"},
+      "resolution": "Candidate is close_adaptation with C-Tech score 78.",
+      "addressed": true
+    }
+  ],
+  "blocking_errors": []
+}

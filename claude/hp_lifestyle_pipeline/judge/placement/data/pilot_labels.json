@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "source_inventory": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/annotation_inventory.json",
+  "selection_source": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/data/split.json",
+  "contract_source": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/runtime_contract.md",
+  "label_policy": {
+    "unit": "one direct placement-specific comment segment",
+    "quote_policy": "exact_quote is copied verbatim from annotation_inventory.comment_segments and excludes nonplacement segments",
+    "target_policy": "An explicit version reference or a single displayed output yields exactly one target label. Unspecified pairwise comments retain the single comparison_set marker and are not duplicated across variants.",
+    "interpretation_policy": "expected_issue_codes and acceptable_components are agent mappings to the runtime contract; they are not human-authored labels.",
+    "negative_label_policy": "No severity, pass/fail, or absence-of-defect label is inferred. Selected rows without direct placement evidence are excluded."
+  },
+  "summary": {
+    "selected_rows": 13,
+    "direct_placement_segments": 12,
+    "exact_target_segments": 6,
+    "comparison_set_segments": 6,
+    "attribution_eligible_segments": 6,
+    "selected_rows_excluded_without_direct_placement_evidence": 1,
+    "development_segments": 7,
+    "held_out_segments": 5
+  },
+  "labels": [
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::01_baseline-0007",
+      "row": 1,
+      "split": "development",
+      "exact_quote": "Laptop should be closer to the edge.",
+      "target_variant_labels": [
+        "comparison_set"
+      ],
+      "target_basis": "not_specified",
+      "expected_issue_codes": [
+        "excessive_reach"
+      ],
+      "acceptable_components": [
+        "access_usability"
+      ],
+      "attribution_eligible": false,
+      "mapping_notes": "The requested move toward the user-facing edge maps to reach/access. The accompanying color clause is excluded. The comparison-set target cannot be assigned to either variant."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::02_baseline-0008",
+      "row": 2,
+      "split": "development",
+      "exact_quote": "v14 - Scene should be oriented in the same angle as the placed product",
+      "target_variant_labels": [
+        "V14 final"
+      ],
+      "target_basis": "explicit_text",
+      "expected_issue_codes": [
+        "furniture_axis_conflict"
+      ],
+      "acceptable_components": [
+        "orientation_alignment"
+      ],
+      "attribution_eligible": true,
+      "mapping_notes": "The explicit V14 reference supplies one exact target. Scene-versus-product angular mismatch maps to the furniture-axis orientation code."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::05_baseline-0011",
+      "row": 5,
+      "split": "development",
+      "exact_quote": "Laptop should be closer to the edge.",
+      "target_variant_labels": [
+        "comparison_set"
+      ],
+      "target_basis": "not_specified",
+      "expected_issue_codes": [
+        "excessive_reach"
+      ],
+      "acceptable_components": [
+        "access_usability"
+      ],
+      "attribution_eligible": false,
+      "mapping_notes": "The requested move toward the user-facing edge maps to reach/access. The separate props-orientation segment is placement-adjacent and excluded. The comparison-set target cannot be assigned to either variant."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::08_baseline-0014",
+      "row": 8,
+      "split": "development",
+      "exact_quote": "Product needs to be closer to the table edge.",
+      "target_variant_labels": [
+        "V14 final"
+      ],
+      "target_basis": "only_displayed_output",
+      "expected_issue_codes": [
+        "excessive_reach"
+      ],
+      "acceptable_components": [
+        "access_usability"
+      ],
+      "attribution_eligible": true,
+      "mapping_notes": "Only V14 was displayed, yielding one exact target. The requested move toward the table edge maps to reach/access. The props-and-work-environment segment is excluded."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::09_baseline-0015",
+      "row": 9,
+      "split": "held_out",
+      "exact_quote": "Product needs to be closer to the table edge.",
+      "target_variant_labels": [
+        "V14 final"
+      ],
+      "target_basis": "only_displayed_output",
+      "expected_issue_codes": [
+        "excessive_reach"
+      ],
+      "acceptable_components": [
+        "access_usability"
+      ],
+      "attribution_eligible": true,
+      "mapping_notes": "Only V14 was displayed, yielding one exact target. The requested move toward the table edge maps to reach/access. The props-and-work-environment segment is excluded."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::11_baseline-0017",
+      "row": 11,
+      "split": "development",
+      "exact_quote": "Table position related to product angle should be aligned.",
+      "target_variant_labels": [
+        "comparison_set"
+      ],
+      "target_basis": "not_specified",
+      "expected_issue_codes": [
+        "furniture_axis_conflict"
+      ],
+      "acceptable_components": [
+        "orientation_alignment"
+      ],
+      "attribution_eligible": false,
+      "mapping_notes": "Table-versus-product angular mismatch maps to the furniture-axis orientation code. The background-hallucination segment is excluded. The comparison-set target cannot be assigned to either variant."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::12_baseline-0018",
+      "row": 12,
+      "split": "held_out",
+      "exact_quote": "scene alignment should match product angle",
+      "target_variant_labels": [
+        "comparison_set"
+      ],
+      "target_basis": "not_specified",
+      "expected_issue_codes": [
+        "furniture_axis_conflict"
+      ],
+      "acceptable_components": [
+        "orientation_alignment"
+      ],
+      "attribution_eligible": false,
+      "mapping_notes": "Scene-versus-product angular mismatch maps to the furniture-axis orientation code. The hallucination segment is excluded. The comparison-set target cannot be assigned to either variant."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::13_baseline-0019",
+      "row": 13,
+      "split": "held_out",
+      "exact_quote": "v14 - Product needs to be closer to the edge near the chair, and table angle should align with the product angle.",
+      "target_variant_labels": [
+        "V14 final"
+      ],
+      "target_basis": "explicit_text",
+      "expected_issue_codes": [
+        "excessive_reach",
+        "furniture_axis_conflict"
+      ],
+      "acceptable_components": [
+        "access_usability",
+        "orientation_alignment"
+      ],
+      "attribution_eligible": true,
+      "mapping_notes": "The explicit V14 reference supplies one exact target. The edge-near-chair clause maps to reach/access, while the table-versus-product angle clause maps to furniture-axis orientation."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::21_baseline-0027",
+      "row": 21,
+      "split": "development",
+      "exact_quote": "v13 product is floating",
+      "target_variant_labels": [
+        "V13 final"
+      ],
+      "target_basis": "explicit_text",
+      "expected_issue_codes": [
+        "floating"
+      ],
+      "acceptable_components": [
+        "contact_integration"
+      ],
+      "attribution_eligible": true,
+      "mapping_notes": "The explicit V13 reference supplies one exact target. 'Floating' directly matches the contract's contact-integration code. General realism and the V14 warped-table segments are excluded."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::25_baseline-0043",
+      "row": 25,
+      "split": "development",
+      "exact_quote": "Product angle does not align with table angle.",
+      "target_variant_labels": [
+        "comparison_set"
+      ],
+      "target_basis": "not_specified",
+      "expected_issue_codes": [
+        "furniture_axis_conflict"
+      ],
+      "acceptable_components": [
+        "orientation_alignment"
+      ],
+      "attribution_eligible": false,
+      "mapping_notes": "Product-versus-table angular mismatch maps to the furniture-axis orientation code. The hallucination, realism, and furniture-distance segment is excluded. The comparison-set target cannot be assigned to either variant."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::26_baseline-0044",
+      "row": 26,
+      "split": "held_out",
+      "exact_quote": "Product angle does not align with table angle.",
+      "target_variant_labels": [
+        "comparison_set"
+      ],
+      "target_basis": "not_specified",
+      "expected_issue_codes": [
+        "furniture_axis_conflict"
+      ],
+      "acceptable_components": [
+        "orientation_alignment"
+      ],
+      "attribution_eligible": false,
+      "mapping_notes": "Product-versus-table angular mismatch maps to the furniture-axis orientation code. The hallucination, realism, and furniture-distance segment is excluded. The comparison-set target cannot be assigned to either variant."
+    },
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::29_baseline-0047",
+      "row": 29,
+      "split": "held_out",
+      "exact_quote": "v13 - product too far from the table edge closer to the chair.",
+      "target_variant_labels": [
+        "V13 final"
+      ],
+      "target_basis": "explicit_text",
+      "expected_issue_codes": [
+        "excessive_reach"
+      ],
+      "acceptable_components": [
+        "access_usability"
+      ],
+      "attribution_eligible": true,
+      "mapping_notes": "The explicit V13 reference supplies one exact target. Being too far from the chair-side table edge maps to reach/access. The nonspecific V14 placement mention and dark-background visibility segment are excluded."
+    }
+  ],
+  "excluded_selected_rows": [
+    {
+      "record": "hp-v13-v14-laptop-printer30-20261103T015107Z-viewer::zperkins::10_baseline-0016",
+      "row": 10,
+      "split": "held_out",
+      "reason": "The only comment segment is categorized as placement_adjacent_scene_context and is not direct placement evidence; no label is inferred."
+    }
+  ]
+}

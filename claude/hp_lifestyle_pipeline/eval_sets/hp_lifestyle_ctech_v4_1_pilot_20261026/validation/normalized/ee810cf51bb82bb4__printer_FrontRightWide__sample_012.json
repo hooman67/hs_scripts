@@ -1,0 +1,171 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 2,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "background_budget",
+      "detail": "3>2",
+      "candidate_id": "p14"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['plants', 'shelving', 'workstations']",
+      "candidate_id": "p14"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support an omission explanation; inspect: ['e5', 'e6']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 7,
+    "environments": {
+      "Home": 8,
+      "Office": 6,
+      "Café": 6,
+      "Gaming": 4,
+      "Creative Studio": 4,
+      "Education": 2
+    },
+    "relationships": {
+      "source_grounded": 10,
+      "creative_departure": 16,
+      "source_adjacent": 4
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 8,
+      "Office": 6,
+      "Education": 2,
+      "Gaming": 4,
+      "Café": 6,
+      "Creative Studio": 4
+    },
+    "relationship_counts": {
+      "source_grounded": 10,
+      "source_adjacent": 4,
+      "creative_departure": 16
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 17,
+      "close_adaptation": 11,
+      "category_extension": 2
+    },
+    "ctech_reference_counts": {
+      "CT18": 2,
+      "CT13": 2,
+      "CT03": 3,
+      "CT05": 2,
+      "CT04": 2,
+      "CT08": 2,
+      "CT11": 1,
+      "CT12": 3,
+      "CT14": 2,
+      "CT15": 2,
+      "CT10": 2,
+      "CT09": 2,
+      "CT01": 1,
+      "CT02": 1,
+      "CT16": 1,
+      "CT17": 1,
+      "CT07": 1
+    },
+    "ctech_score_range": [
+      64,
+      88
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p20"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e1"
+        ],
+        "prompt_ids": [
+          "p11",
+          "p12",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p23",
+          "p24",
+          "p25",
+          "p26",
+          "p27",
+          "p28",
+          "p29",
+          "p30"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e2",
+          "e7"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p6",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p25",
+          "p27",
+          "p28"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p11",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p28"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "17623240820bd4fcf0493c677b1d912705da7ab51dd6c67d49c94fed9c460f09"
+}

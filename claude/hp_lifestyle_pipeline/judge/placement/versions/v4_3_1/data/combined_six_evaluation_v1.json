@@ -1,0 +1,259 @@
+{
+  "schema_version": "hp-placement-v4.3.1-combined-six-evaluation-v1",
+  "valid_ok": 6,
+  "case_count": 6,
+  "required_issue_codes_detected": 2,
+  "required_issue_codes_total": 7,
+  "labeled_verdict_correct": 2,
+  "labeled_verdict_total": 5,
+  "forbidden_issue_case_count": 0,
+  "strict_gate_pass": false,
+  "v4_1_same_case_completed_count": 4,
+  "v4_1_labeled_verdict_correct": 0,
+  "v4_1_labeled_verdict_total": 3,
+  "v4_1_issue_any_matches": 0,
+  "v4_1_issue_cases_total": 4,
+  "rows": [
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "result_source": "frozen_quality_canary",
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3_1/runs/quality-canary-v1-gpt55/result/result.json",
+      "result_exists": true,
+      "valid": true,
+      "expected_verdict": "review",
+      "required_issues": [
+        "chair_displacement"
+      ],
+      "forbidden_issues": [
+        "missing_required_support"
+      ],
+      "status": "ok",
+      "attempts": [
+        {
+          "attempt": 1,
+          "audit_id": "962ff9591ed428da1673653623074a9543821f00891bc31cc3be9b57bbe165e4",
+          "validation_status": "valid",
+          "finish_reason": "stop",
+          "total_tokens": 31325,
+          "refusal": null,
+          "content_bytes": 19441
+        }
+      ],
+      "score": 94,
+      "actual_verdict": "review",
+      "verdict_match": true,
+      "detected_required": [
+        "chair_displacement"
+      ],
+      "all_required_detected": true,
+      "detected_forbidden": [],
+      "actual_issues": [
+        "chair_displacement"
+      ],
+      "general_artifact_warnings": [],
+      "v4_1_baseline": {
+        "verdict": "pass",
+        "issues": [],
+        "verdict_match": false,
+        "issue_any_match": false
+      }
+    },
+    {
+      "record_id": "tassel__printer_FrontWide__p1",
+      "result_source": "remaining_five_run",
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3_1/runs/remaining-five-v1-gpt55/tassel__printer_FrontWide__p1/result.json",
+      "result_exists": true,
+      "valid": true,
+      "expected_verdict": "fail",
+      "required_issues": [
+        "misplaced_support_furniture",
+        "malformed_support_furniture"
+      ],
+      "forbidden_issues": [],
+      "status": "ok",
+      "attempts": [
+        {
+          "attempt": 1,
+          "audit_id": "d46f771f9a301a2cc9888e1d4c413b701c284f20be23d1058999f53e3b2b49ea",
+          "validation_status": "valid",
+          "finish_reason": "stop",
+          "total_tokens": 29655,
+          "refusal": null,
+          "content_bytes": 19696
+        }
+      ],
+      "score": 79,
+      "actual_verdict": "review",
+      "verdict_match": false,
+      "detected_required": [
+        "misplaced_support_furniture"
+      ],
+      "all_required_detected": false,
+      "detected_forbidden": [],
+      "actual_issues": [
+        "misplaced_support_furniture"
+      ],
+      "general_artifact_warnings": [],
+      "v4_1_baseline": {
+        "verdict": "pass",
+        "issues": [],
+        "verdict_match": false,
+        "issue_any_match": false
+      }
+    },
+    {
+      "record_id": "magic__printer_FrontLeftMedium__p1",
+      "result_source": "remaining_five_run",
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3_1/runs/remaining-five-v1-gpt55/magic__printer_FrontLeftMedium__p1/result.json",
+      "result_exists": true,
+      "valid": true,
+      "expected_verdict": "fail",
+      "required_issues": [
+        "missing_required_support"
+      ],
+      "forbidden_issues": [],
+      "status": "ok",
+      "attempts": [
+        {
+          "attempt": 1,
+          "audit_id": "8f06be9b99098cdd0d1a63e010ed9ee4a87c66c12fd118f0d66b146a3489a1ca",
+          "validation_status": "valid",
+          "finish_reason": "stop",
+          "total_tokens": 30071,
+          "refusal": null,
+          "content_bytes": 21029
+        }
+      ],
+      "score": 100,
+      "actual_verdict": "pass",
+      "verdict_match": false,
+      "detected_required": [],
+      "all_required_detected": false,
+      "detected_forbidden": [],
+      "actual_issues": [],
+      "general_artifact_warnings": [],
+      "v4_1_baseline": {
+        "verdict": "pass",
+        "issues": [],
+        "verdict_match": false,
+        "issue_any_match": false
+      }
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p2",
+      "result_source": "remaining_five_run",
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3_1/runs/remaining-five-v1-gpt55/tassel__printer_FrontCloseUp__p2/result.json",
+      "result_exists": true,
+      "valid": true,
+      "expected_verdict": "fail",
+      "required_issues": [
+        "device_support_axis_conflict",
+        "incoherent_prop_arrangement"
+      ],
+      "forbidden_issues": [],
+      "status": "ok",
+      "attempts": [
+        {
+          "attempt": 1,
+          "audit_id": "682dbc93f6ee1555a9b2dd153e346235d79773f164384b1092ba2402f44e7704",
+          "validation_status": "invalid",
+          "finish_reason": "stop",
+          "total_tokens": 31467,
+          "refusal": null,
+          "content_bytes": 20902
+        },
+        {
+          "attempt": 2,
+          "audit_id": "095340f8a7f8bce3ce808e1cd09a43466790fee8e625225fbb4a9fc8aebb156f",
+          "validation_status": "valid",
+          "finish_reason": "stop",
+          "total_tokens": 33317,
+          "refusal": null,
+          "content_bytes": 20902
+        }
+      ],
+      "score": 100,
+      "actual_verdict": "pass",
+      "verdict_match": false,
+      "detected_required": [],
+      "all_required_detected": false,
+      "detected_forbidden": [],
+      "actual_issues": [],
+      "general_artifact_warnings": [],
+      "v4_1_baseline": null
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p1",
+      "result_source": "remaining_five_run",
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3_1/runs/remaining-five-v1-gpt55/tassel__printer_FrontRightCloseUp__p1/result.json",
+      "result_exists": true,
+      "valid": true,
+      "expected_verdict": null,
+      "required_issues": [
+        "conflicting_perspective"
+      ],
+      "forbidden_issues": [],
+      "status": "ok",
+      "attempts": [
+        {
+          "attempt": 1,
+          "audit_id": "d03d0dd02d12c8b5c7cd32783ba91894ee558a52ac91f600c65e7ac960b92d26",
+          "validation_status": "valid",
+          "finish_reason": "stop",
+          "total_tokens": 31222,
+          "refusal": null,
+          "content_bytes": 20038
+        }
+      ],
+      "score": 100,
+      "actual_verdict": "pass",
+      "verdict_match": true,
+      "detected_required": [],
+      "all_required_detected": false,
+      "detected_forbidden": [],
+      "actual_issues": [],
+      "general_artifact_warnings": [],
+      "v4_1_baseline": {
+        "verdict": "pass",
+        "issues": [],
+        "verdict_match": null,
+        "issue_any_match": false
+      }
+    },
+    {
+      "record_id": "magic__printer_FrontRightCloseUp__p2",
+      "result_source": "remaining_five_run",
+      "result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4_3_1/runs/remaining-five-v1-gpt55/magic__printer_FrontRightCloseUp__p2/result.json",
+      "result_exists": true,
+      "valid": true,
+      "expected_verdict": "pass",
+      "required_issues": [],
+      "forbidden_issues": [
+        "missing_required_support",
+        "malformed_support_furniture",
+        "conflicting_perspective"
+      ],
+      "status": "ok",
+      "attempts": [
+        {
+          "attempt": 1,
+          "audit_id": "74a11c5df4b148b441166fb12c03cf3ef455e5213350c177b5a24174c7f0dd96",
+          "validation_status": "valid",
+          "finish_reason": "stop",
+          "total_tokens": 29630,
+          "refusal": null,
+          "content_bytes": 20227
+        }
+      ],
+      "score": 100,
+      "actual_verdict": "pass",
+      "verdict_match": true,
+      "detected_required": [],
+      "all_required_detected": true,
+      "detected_forbidden": [],
+      "actual_issues": [],
+      "general_artifact_warnings": [],
+      "v4_1_baseline": null
+    }
+  ]
+}

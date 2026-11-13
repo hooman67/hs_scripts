@@ -1,0 +1,188 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 5,
+  "warning_count": 1,
+  "errors": [
+    {
+      "code": "ctech_score_band",
+      "detail": "minimal_camera_edit cannot use score 78",
+      "candidate_id": "p8"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "minimal_camera_edit cannot use score 78",
+      "candidate_id": "p9"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "minimal_camera_edit cannot use score 78",
+      "candidate_id": "p10"
+    },
+    {
+      "code": "score_sum",
+      "detail": "components sum 50, score is 55",
+      "candidate_id": "p15"
+    },
+    {
+      "code": "environment_scene_mismatch",
+      "detail": "Gaming scene may not use a café or coffee-shop setting",
+      "candidate_id": "p30"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 5,
+    "environments": {
+      "Office": 10,
+      "Home": 5,
+      "Creative Studio": 4,
+      "Café": 3,
+      "Education": 4,
+      "Gaming": 4
+    },
+    "relationships": {
+      "source_grounded": 10,
+      "source_adjacent": 9,
+      "creative_departure": 11
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 5,
+      "Office": 10,
+      "Education": 4,
+      "Gaming": 4,
+      "Café": 3,
+      "Creative Studio": 4
+    },
+    "relationship_counts": {
+      "source_grounded": 10,
+      "source_adjacent": 9,
+      "creative_departure": 11
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 10,
+      "close_adaptation": 12,
+      "category_extension": 8
+    },
+    "ctech_reference_counts": {
+      "CT01": 5,
+      "CT02": 2,
+      "CT03": 4,
+      "CT05": 3,
+      "CT06": 3,
+      "CT10": 4,
+      "CT04": 2,
+      "CT09": 3,
+      "CT07": 2,
+      "CT08": 2
+    },
+    "ctech_score_range": [
+      63,
+      86
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e1"
+        ],
+        "prompt_ids": [
+          "p4",
+          "p5",
+          "p7",
+          "p9",
+          "p10",
+          "p13",
+          "p15",
+          "p17",
+          "p18",
+          "p19",
+          "p22"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p6",
+          "p8",
+          "p16",
+          "p20",
+          "p21"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e2"
+        ],
+        "prompt_ids": [
+          "p4",
+          "p5",
+          "p7",
+          "p14",
+          "p17",
+          "p22"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p19",
+          "p20"
+        ]
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e5"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p23",
+          "p25",
+          "p27",
+          "p29"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "2f11de62cd19ded0433eb07585e2c453899971c7f11b8d8c53fb921d3e4299f2"
+}

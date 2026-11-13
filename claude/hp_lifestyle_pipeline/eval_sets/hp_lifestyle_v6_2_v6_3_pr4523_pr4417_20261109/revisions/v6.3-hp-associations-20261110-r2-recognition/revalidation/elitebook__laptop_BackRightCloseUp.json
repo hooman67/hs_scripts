@@ -1,0 +1,53 @@
+{
+  "case_id": "elitebook__laptop_BackRightCloseUp",
+  "source_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_2_v6_3_pr4523_pr4417_20261109/revisions/v6.3-hp-associations-20261110-r1/results/elitebook__laptop_BackRightCloseUp.json",
+  "source_result_sha256": "393008d5da62b78e9c03d7358d84ef109e2586c56e027750fb18f16cfb43740b",
+  "selected_attempt": 2,
+  "selection": "last actual normalized response only",
+  "source_service_status": "error",
+  "source_service_error": {
+    "code": "output_invalid",
+    "message": "The generated prompt bank failed validation after repair.",
+    "details": [
+      {
+        "code": "undeclared_known_prop",
+        "path": "/prompts/4/text",
+        "detail": "support furniture 'table' has no approved catalogue entry"
+      }
+    ]
+  },
+  "selected_normalized_output_sha256": "4f987072ee4e20c5d7736b091c993b7ec14ef8038db446427576ac13b9f53310",
+  "additional_model_calls": 0,
+  "manual_model_field_edits": false,
+  "validation": {
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      {
+        "code": "declared_prop_lexicon_match_unverified",
+        "path": "/prompts/2/prop_ids",
+        "detail": "declared repetition group 'wall_texture' uses a verbatim model-supplied mention but is outside the bounded recognition lexicon"
+      },
+      {
+        "code": "declared_prop_lexicon_match_unverified",
+        "path": "/prompts/4/prop_ids",
+        "detail": "declared repetition group 'glass_partition' uses a verbatim model-supplied mention but is outside the bounded recognition lexicon"
+      },
+      {
+        "code": "declared_prop_lexicon_match_unverified",
+        "path": "/prompts/6/prop_ids",
+        "detail": "declared repetition group 'tile_wall' uses a verbatim model-supplied mention but is outside the bounded recognition lexicon"
+      },
+      {
+        "code": "declared_prop_lexicon_match_unverified",
+        "path": "/prompts/8/prop_ids",
+        "detail": "declared repetition group 'closed_storage' uses a verbatim model-supplied mention but is outside the bounded recognition lexicon"
+      },
+      {
+        "code": "unknown_prose_objects_unverified",
+        "path": "/prompts",
+        "detail": "Known-lexicon checks do not establish the absence of every possible unlisted object."
+      }
+    ]
+  }
+}

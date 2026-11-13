@@ -1,0 +1,53 @@
+{
+  "as_of": "2026-10-14",
+  "source_hashes_match": true,
+  "original_examples": {
+    "rotate-image.py": "passed built-in assertions",
+    "hit-counter.py": "passed built-in assertions",
+    "ttl-cache.py": "passed built-in assertions"
+  },
+  "rotation_sizes_1_to_20": "passed against independent reference",
+  "hit_counter_monotonic_checks": 1000,
+  "hit_test_time_reversals": [
+    {
+      "earlier_call": [
+        92,
+        "getHits",
+        5
+      ],
+      "later_call": [
+        94,
+        "hit",
+        2
+      ]
+    },
+    {
+      "earlier_call": [
+        97,
+        "hit",
+        9
+      ],
+      "later_call": [
+        98,
+        "getHits",
+        5
+      ]
+    }
+  ],
+  "ttl_cache_monotonic_checks": 1000,
+  "binary64_score_collision": {
+    "ids": [
+      1152921504606846976,
+      1152921504606846977
+    ],
+    "distinct_ids": true,
+    "same_float_score": true
+  },
+  "book_purchase_claim_counterexample": {
+    "first_claim_rows": 1,
+    "second_claim_rows": 1,
+    "conclusion": "Predicate alone does not establish exclusive ownership; both claims match."
+  },
+  "python_version": "3.10.12 (main, Sep 11 2024, 15:47:36) [GCC 11.4.0]",
+  "sqlite_version": "3.37.2"
+}

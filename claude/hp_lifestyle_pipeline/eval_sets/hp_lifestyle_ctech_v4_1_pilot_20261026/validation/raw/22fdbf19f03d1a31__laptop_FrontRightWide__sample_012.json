@@ -1,0 +1,260 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 14,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "ctech_score_band",
+      "detail": "close_adaptation cannot use score 85",
+      "candidate_id": "p7"
+    },
+    {
+      "code": "score_order",
+      "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+      "candidate_id": "p9"
+    },
+    {
+      "code": "score_order",
+      "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+      "candidate_id": "p23"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "close_adaptation cannot use score 64",
+      "candidate_id": "p29"
+    },
+    {
+      "code": "score_order",
+      "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+      "candidate_id": "p30"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "close_adaptation cannot use score 64",
+      "candidate_id": "p30"
+    },
+    {
+      "code": "background_budget",
+      "detail": "3>2",
+      "candidate_id": "p7"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['plants', 'shelving', 'workstations']",
+      "candidate_id": "p7"
+    },
+    {
+      "code": "background_budget",
+      "detail": "3>2",
+      "candidate_id": "p8"
+    },
+    {
+      "code": "local_prop_budget",
+      "detail": "4>3",
+      "candidate_id": "p11"
+    },
+    {
+      "code": "local_prop_budget",
+      "detail": "4>3",
+      "candidate_id": "p13"
+    },
+    {
+      "code": "background_budget",
+      "detail": "3>2",
+      "candidate_id": "p16"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "4>2: ['artwork', 'collectibles', 'shelving', 'textured wall']",
+      "candidate_id": "p16"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'collectibles', 'shelving', 'textured wall'] but signature has 3 entries",
+      "candidate_id": "p16"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support an omission explanation; inspect: ['e7']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 8,
+    "environments": {
+      "Office": 8,
+      "Creative Studio": 3,
+      "Café": 6,
+      "Home": 7,
+      "Gaming": 3,
+      "Education": 3
+    },
+    "relationships": {
+      "source_grounded": 8,
+      "source_adjacent": 16,
+      "creative_departure": 6
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 7,
+      "Office": 8,
+      "Education": 3,
+      "Gaming": 3,
+      "Café": 6,
+      "Creative Studio": 3
+    },
+    "relationship_counts": {
+      "source_grounded": 8,
+      "source_adjacent": 16,
+      "creative_departure": 6
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 17,
+      "close_adaptation": 10,
+      "category_extension": 3
+    },
+    "ctech_reference_counts": {
+      "CT03": 3,
+      "CT13": 2,
+      "CT09": 3,
+      "CT07": 1,
+      "CT12": 2,
+      "CT10": 1,
+      "CT02": 2,
+      "CT01": 2,
+      "CT04": 1,
+      "CT05": 2,
+      "CT08": 2,
+      "CT06": 1,
+      "CT11": 1,
+      "CT18": 2,
+      "CT14": 2,
+      "CT15": 1,
+      "CT16": 1,
+      "CT17": 1
+    },
+    "ctech_score_range": [
+      64,
+      88
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e1",
+          "e2"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p23",
+          "p24",
+          "p25"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e3",
+          "e4"
+        ],
+        "prompt_ids": [
+          "p3",
+          "p5",
+          "p6",
+          "p23",
+          "p26",
+          "p27",
+          "p28",
+          "p29",
+          "p30"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e5"
+        ],
+        "prompt_ids": [
+          "p4",
+          "p5",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p17",
+          "p18",
+          "p22",
+          "p24",
+          "p30"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [
+          "e6"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p7",
+          "p8",
+          "p19",
+          "p20",
+          "p21",
+          "p25"
+        ]
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e8"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p4",
+          "p5",
+          "p7",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p24",
+          "p25",
+          "p30"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "c75172c4d82b72a43e4b03b33ec7f5100f5a32eae304e0bc8392aee9b5ebd71d"
+}

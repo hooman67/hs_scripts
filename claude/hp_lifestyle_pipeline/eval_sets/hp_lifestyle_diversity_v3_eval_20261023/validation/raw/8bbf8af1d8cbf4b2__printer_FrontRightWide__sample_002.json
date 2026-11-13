@@ -1,0 +1,139 @@
+{
+  "validator_version": "v3-host-validator-r2",
+  "passed": false,
+  "error_count": 6,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p21"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p22"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p23"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p24"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p25"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p27"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support an omission explanation; inspect: ['e6', 'e7', 'e8']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 9,
+    "environments": {
+      "Office": 16,
+      "Home": 7,
+      "Education": 4,
+      "Gaming": 3
+    },
+    "relationships": {
+      "source_grounded": 9,
+      "source_adjacent": 8,
+      "creative_departure": 13
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 7,
+      "Office": 16,
+      "Education": 4,
+      "Gaming": 3
+    },
+    "relationship_counts": {
+      "source_grounded": 9,
+      "source_adjacent": 8,
+      "creative_departure": 13
+    },
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e1",
+          "e2"
+        ],
+        "prompt_ids": [
+          "p8",
+          "p9",
+          "p13",
+          "p17",
+          "p20",
+          "p26"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e3",
+          "e4",
+          "e5"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "KSP4": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e9"
+        ],
+        "prompt_ids": [
+          "p8",
+          "p9"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "834151f30cb4a3c284c919fbfe417fa845aedbf357c67166104381a8822fe30b"
+}

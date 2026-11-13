@@ -1,0 +1,456 @@
+{
+  "schema_version": 3,
+  "row_id": "cashmere__laptop_FrontLeftMedium::p10",
+  "status": "failed",
+  "completed_at_utc": "2026-11-12T03:23:40.730357+00:00",
+  "prompt_sha256": "9b744f2513e356e5572ddae5e5ebae53465c9f80ab133e036b82e178d4a98fae",
+  "job_id": "20261112T032255Z_83ae6e656ba2",
+  "error": "RuntimeError: ValueError: Image prompt mentions an image the image model does not receive: 'low apron and simple gray steel legs, with its back against the reference wall. Beyond the user-facing boundary, '",
+  "final_status": {
+    "jobId": "20261112T032255Z_83ae6e656ba2",
+    "done": true,
+    "createdAt": "2026-11-12T03:22:55.710747+00:00",
+    "instanceId": "58dce2e7-3473-421e-944d-db9392f848f3",
+    "candidateLineage": {
+      "candidateId": "hp-pr4523-d1e5ae5323de-exact",
+      "codeTreeSha256": "4da08388491b36f6435aeea29d40b780bdd02b06b81f1a35b86999b0b6e8694e",
+      "generator": "GPT Image 2.5 / single reference / no grading",
+      "imageModel": "gpt-image-2.5-sunburst-2026-09-08",
+      "imageSettings": {
+        "background": "opaque",
+        "count": 1,
+        "inputs": "one generated geometry guide",
+        "mask": false,
+        "operation": "images.edit",
+        "outputFormat": "png",
+        "quality": "high",
+        "size": "2368x1776"
+      },
+      "inputManifestSha256": "7cc98fe46f5983acbf5fd9b781bf108ecdee12a042e953686201e9900698a1c5",
+      "patchSha256": null,
+      "pipelineVersion": "unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+      "referenceCaptionsSha256": "c92fd69684a64d0e6e1f4771c3d29a66ac07ba6f729c3843f83f59c7f16e3085",
+      "referenceCatalogSha256": "d1e87ce902b7ad62d9dd7e8287326a0225270ad065a4efeba9dd167dc0b12771",
+      "rewriterVersion": "Adobe-Firefly/foundry#4523 / d1e5ae5323de / unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+      "sourceCommit": "d1e5ae5323dedebc3b06ed173a3731307bd0623a",
+      "textModel": "gpt-6-astra",
+      "candidateManifestSha256": "c62f172f4dd08c6f4d229079c22e1b77751a6e008e13366dab2de14d3026542f",
+      "configSha256": "b69086f3856f5a90c4fd0ebff1e142de90f3dc51c807e85ad8e00fea989f4faa",
+      "deploymentManifestSha256": "8701a44a54e016a2837807926f5fe10c8bb6901286471f59b9ee83b4aba972e3",
+      "codeTreeScope": "41 byte-exact PR source files; restored assets and 16 inputs pinned separately",
+      "runtimeImports": {
+        "hp3p": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/__init__.py",
+        "pipeline": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/pipeline.py",
+        "geometry": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/geometry.py",
+        "openaiClient": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/openai_client.py",
+        "wrapperClient": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/endpoint.py"
+      }
+    },
+    "params": {
+      "digitalTwinId": "cashmere_x",
+      "cameraId": "Front_Left_Medium",
+      "prompt": "A studio worktable faces a wall of making references, with a studio stool tucked under one long edge. A paper sketchbook lies open to blank pages, loose illustration sheets show nonhuman abstract and plant forms with no readable text or signatures, and a plain brush jar holding paintbrushes sits beside a watercolor mixing palette. A fabric-covered reference pinboard above the worktable is populated with botanical reference sheets showing leaves and stems only, with non-readable annotations; nearby shelves hold closed unlabelled glaze jars, and a potted plant plus a studio task lamp make the room feel like an active making space rather than a display corner.",
+      "digitalTwinName": "Cashmere / EliteBook X",
+      "cameraPath": "/World/Cameras/Front_Left_Medium/Front_Left_Medium",
+      "heroLighting": "Approved original USDZ lighting",
+      "productVersion": "ac71c90cd2df40d8788a3fa523e7cf2a30895fe77e63e000b39d915853ccc13d",
+      "generationMode": "sceneOnly",
+      "candidateId": "hp-pr4523-d1e5ae5323de-exact",
+      "configSha256": "b69086f3856f5a90c4fd0ebff1e142de90f3dc51c807e85ad8e00fea989f4faa"
+    },
+    "stages": {
+      "hero": {
+        "status": "done",
+        "ms": 0,
+        "error": null,
+        "has_image": true,
+        "detail": {
+          "digitalTwinId": "cashmere_x",
+          "digitalTwinName": "Cashmere / EliteBook X",
+          "cameraId": "Front_Left_Medium",
+          "cameraPath": "/World/Cameras/Front_Left_Medium/Front_Left_Medium",
+          "heroLighting": "Approved original USDZ lighting",
+          "productVersion": "ac71c90cd2df40d8788a3fa523e7cf2a30895fe77e63e000b39d915853ccc13d",
+          "productSha256": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075"
+        }
+      },
+      "scene": {
+        "status": "error",
+        "ms": 0,
+        "error": "RuntimeError: ValueError: Image prompt mentions an image the image model does not receive: 'low apron and simple gray steel legs, with its back against the reference wall. Beyond the user-facing boundary, '",
+        "has_image": false,
+        "detail": {
+          "rewriterVersion": "Adobe-Firefly/foundry#4523 / d1e5ae5323de / unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+          "rewriterBackend": "Astra / original request only",
+          "pipelineVersion": "unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+          "candidateLineage": {
+            "candidateId": "hp-pr4523-d1e5ae5323de-exact",
+            "codeTreeSha256": "4da08388491b36f6435aeea29d40b780bdd02b06b81f1a35b86999b0b6e8694e",
+            "generator": "GPT Image 2.5 / single reference / no grading",
+            "imageModel": "gpt-image-2.5-sunburst-2026-09-08",
+            "imageSettings": {
+              "background": "opaque",
+              "count": 1,
+              "inputs": "one generated geometry guide",
+              "mask": false,
+              "operation": "images.edit",
+              "outputFormat": "png",
+              "quality": "high",
+              "size": "2368x1776"
+            },
+            "inputManifestSha256": "7cc98fe46f5983acbf5fd9b781bf108ecdee12a042e953686201e9900698a1c5",
+            "patchSha256": null,
+            "pipelineVersion": "unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+            "referenceCaptionsSha256": "c92fd69684a64d0e6e1f4771c3d29a66ac07ba6f729c3843f83f59c7f16e3085",
+            "referenceCatalogSha256": "d1e87ce902b7ad62d9dd7e8287326a0225270ad065a4efeba9dd167dc0b12771",
+            "rewriterVersion": "Adobe-Firefly/foundry#4523 / d1e5ae5323de / unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+            "sourceCommit": "d1e5ae5323dedebc3b06ed173a3731307bd0623a",
+            "textModel": "gpt-6-astra",
+            "candidateManifestSha256": "c62f172f4dd08c6f4d229079c22e1b77751a6e008e13366dab2de14d3026542f",
+            "configSha256": "b69086f3856f5a90c4fd0ebff1e142de90f3dc51c807e85ad8e00fea989f4faa",
+            "deploymentManifestSha256": "8701a44a54e016a2837807926f5fe10c8bb6901286471f59b9ee83b4aba972e3",
+            "codeTreeScope": "41 byte-exact PR source files; restored assets and 16 inputs pinned separately",
+            "runtimeImports": {
+              "hp3p": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/__init__.py",
+              "pipeline": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/pipeline.py",
+              "geometry": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/geometry.py",
+              "openaiClient": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/runtime/hp3p/openai_client.py",
+              "wrapperClient": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/endpoint.py"
+            }
+          },
+          "baselinePromptUsed": false,
+          "originalPrompt": "A studio worktable faces a wall of making references, with a studio stool tucked under one long edge. A paper sketchbook lies open to blank pages, loose illustration sheets show nonhuman abstract and plant forms with no readable text or signatures, and a plain brush jar holding paintbrushes sits beside a watercolor mixing palette. A fabric-covered reference pinboard above the worktable is populated with botanical reference sheets showing leaves and stems only, with non-readable annotations; nearby shelves hold closed unlabelled glaze jars, and a potted plant plus a studio task lamp make the room feel like an active making space rather than a display corner.",
+          "textModel": "gpt-6-astra",
+          "imageModel": "gpt-image-2.5-sunburst-2026-09-08",
+          "size": "2368x1776",
+          "refCount": 1,
+          "imageCalls": 0,
+          "graded": false,
+          "maskSource": "derived from frozen product render by pinned hp3p.mask.prepare",
+          "productPixelLock": "Unmasked generation; product preservation is instructed, not guaranteed.",
+          "imageMaskApplied": false,
+          "imageInputOrder": [
+            "hp16_geometry_guide.png"
+          ],
+          "twinCamera": {
+            "back": [
+              0.8848421818061283,
+              0.42272054159677697,
+              0.1958613208591692
+            ],
+            "bbox_err_px": 0.3103854262490131,
+            "cameraPrim": "/World/Cameras/Front_Left_Medium/Front_Left_Medium",
+            "focal_length": 0.699999988079071,
+            "footprint_corners_m": [
+              [
+                0.08330991531023649,
+                0.23314591674625393,
+                0.7500261348435809
+              ],
+              [
+                0.3683394408776596,
+                0.104054683536665,
+                0.7500261348435809
+              ],
+              [
+                0.46054789757123327,
+                0.3076481577891159,
+                0.7500261348435809
+              ],
+              [
+                0.17551837200381018,
+                0.43673939099870485,
+                0.7500261348435809
+              ]
+            ],
+            "front_xy": [
+              0.412563934186031,
+              0.9109286471557168
+            ],
+            "horizontal_aperture": 0.36000001430511475,
+            "position_m": [
+              1.8059808015823364,
+              1.0085656642913818,
+              1.1984987258911133
+            ],
+            "product_height_m": 0.21796391083724587,
+            "right": [
+              -0.4310696411710448,
+              0.9023186601531865,
+              -1.5780890670772714e-07
+            ],
+            "up": [
+              -0.17672939132254542,
+              -0.08442972966607164,
+              0.9806316041160803
+            ],
+            "vertical_aperture": 0.20250000059604645
+          },
+          "twinCameraSummary": {
+            "camera_above_support_top_m": 0.44847259104753234,
+            "camera_horizontal_distance_m": 1.7024124467677004,
+            "camera_distance_to_product_center_m": 1.7359326111889568,
+            "camera_azimuth_from_product_front_deg": -39.93766092608683,
+            "camera_pitch_down_deg": 11.295043945312345,
+            "camera_roll_deg": -9.041784323926551e-06,
+            "camera_aim_offset_deg": -0.16087662041671785,
+            "product_base_center_px": [
+              1171.475183889972,
+              1166.6633250486987
+            ],
+            "lens_35mm_equivalent_mm": 67.30361998808168,
+            "horizontal_fov_deg": 28.841547823978164,
+            "vertical_fov_deg": 21.831766072923333,
+            "base_edge_yaw_deg": 40.09853754650351,
+            "product_footprint_width_m": 0.31289994716644265,
+            "product_footprint_depth_m": 0.22350101172924033,
+            "product_height_m": 0.21796391083724587,
+            "product_front_faces_user_side": "near_camera",
+            "visible_faces": [
+              {
+                "face": "front",
+                "image_side": "right"
+              },
+              {
+                "face": "user's left side",
+                "image_side": "left"
+              }
+            ]
+          },
+          "selection": {
+            "tone": "Cool (Blue/Overcast)",
+            "content": "Creative / Design Work",
+            "rationale": "The sketchbook, illustration sheets, painting tools, and botanical reference pinboard establish an active creative studio. No explicit lighting tone is specified, so the HP Blue World default applies."
+          },
+          "reference": {
+            "id": "style_305",
+            "name": "HP 305 · Creative / Design Work",
+            "tone": "Cool (Blue/Overcast)",
+            "content": "Creative / Design Work"
+          },
+          "geometryResponse": {
+            "geometry": {
+              "support_height_m": 0.76,
+              "support_width_m": 1.6,
+              "support_depth_m": 0.75,
+              "user_edge_gap_m": 0.06,
+              "support_lateral_offset_m": 0.1,
+              "support_top_shape": "rectangular",
+              "user_side": "near_camera",
+              "back_edge_against_wall": true,
+              "furniture_boxes": [
+                {
+                  "kind": "working_seat",
+                  "label": "Studio stool at the user-facing long edge, partly tucked under the worktable and cropped by the bottom of the frame",
+                  "box": [
+                    0.65,
+                    0.87,
+                    0.94,
+                    1.0
+                  ]
+                },
+                {
+                  "kind": "background_furniture",
+                  "label": "Wall-mounted shelves for closed unlabelled glaze jars",
+                  "box": [
+                    0.78,
+                    0.04,
+                    1.0,
+                    0.28
+                  ]
+                }
+              ]
+            },
+            "product_category": "laptop"
+          },
+          "geometry": {
+            "support_height_m": 0.76,
+            "support_width_m": 1.6,
+            "support_depth_m": 0.75,
+            "user_edge_gap_m": 0.06,
+            "support_lateral_offset_m": 0.1,
+            "support_top_shape": "rectangular",
+            "user_side": "near_camera",
+            "back_edge_against_wall": true,
+            "furniture_boxes": [
+              {
+                "kind": "working_seat",
+                "label": "Studio stool at the user-facing long edge, partly tucked under the worktable and cropped by the bottom of the frame",
+                "box": [
+                  0.65,
+                  0.87,
+                  0.94,
+                  1.0
+                ]
+              },
+              {
+                "kind": "background_furniture",
+                "label": "Wall-mounted shelves for closed unlabelled glaze jars",
+                "box": [
+                  0.78,
+                  0.04,
+                  1.0,
+                  0.28
+                ]
+              }
+            ]
+          },
+          "guideInfo": {
+            "product_bounds_px": [
+              603,
+              533,
+              1663,
+              1281
+            ],
+            "contact_px": [
+              1033.5,
+              1280.5
+            ],
+            "lens_35mm_equivalent_mm": 67.30361998808168,
+            "lens_family": "short-telephoto",
+            "lens_estimate_basis": "Digital-twin camera focal length and horizontal aperture.",
+            "camera_source": "digital_twin",
+            "axis_angle_deg": 40.09853754650351,
+            "camera_height_m": 1.2084725910475322,
+            "product_footprint_width_m": 0.31289994716644265,
+            "product_footprint_depth_m": 0.22350101172924033,
+            "width_axis_px": [
+              [
+                738.5944450867571,
+                1259.47897984956
+              ],
+              [
+                1546.2925578531115,
+                1086.297263737426
+              ]
+            ],
+            "depth_axis_px": [
+              [
+                1539.3522595747934,
+                1278.5163229286052
+              ],
+              [
+                861.471203186406,
+                1072.4066374531214
+              ]
+            ],
+            "camera_pitch_deg": 11.295043945312345,
+            "horizon_y_px": -31.6445594171023,
+            "wall_polygon_px": [
+              [
+                -21974.83723845989,
+                4304.472552653721
+              ],
+              [
+                3291.3085215523506,
+                491.81557468622105
+              ],
+              [
+                3457.3358133370534,
+                -1355.6940888816634
+              ],
+              [
+                -57441.41673179935,
+                -25768.43064189617
+              ]
+            ],
+            "support_polygon_px": [
+              [
+                -483.4752985930245,
+                1743.4184666929768
+              ],
+              [
+                2848.734223803737,
+                926.8643468912451
+              ],
+              [
+                1703.281279521387,
+                731.4486078777823
+              ],
+              [
+                -1218.9127638287223,
+                1172.4071781392902
+              ]
+            ],
+            "user_edge_px": [
+              [
+                -483.4752985930245,
+                1743.4184666929768
+              ],
+              [
+                2848.734223803737,
+                926.8643468912451
+              ]
+            ]
+          },
+          "geometryText": "GEOMETRY — highest priority. Follow Image 1 exactly.\n- Table orientation: the table is turned about 40 degrees to the camera. Its long edges run left to right, rising about 12 degrees toward image right; its short edges recede toward the upper left. The laptop faces the user-facing edge.\n- User-facing edge: the table edge nearest the camera, in front of the laptop. In the image it runs from -20% across, 98% down to 120% across, 52% down, about 26% of image height below the laptop's lowest point. No tabletop beyond this edge.\n- Product on the table: the laptop is 6.0 cm (about 0.3 laptop depths) from the user-facing edge. The tabletop extends 0.54 m (about 1.7 laptop widths) toward image left of the laptop and 0.74 m (about 2.4 laptop widths) toward image right.\n- Table size: 1.60 m x 0.75 m, about 5.1 laptop widths by 3.4 laptop depths.\n- Frame crop: 3 of 4 table corners fall outside the frame; keep them cropped and never shrink the product to show them.\n- Product: exactly as in Image 1 (details: Image 3), occupying 25-70% across and 30-72% down. Same size; never enlarge or move it.\n- Camera: 1.21 m high, looking down 11.3 degrees, about 67 mm lens.",
+          "productCategory": "laptop",
+          "layout": "Rectangular studio worktable. Its long edges rise toward image right, and its short edges recede toward the upper left. The near long edge faces the user, crossing diagonally from near the lower-left frame boundary toward the right side. The laptop sits a narrow hand-width from this edge, about a third of its base depth. The top extends roughly one and three-quarter laptop widths to its left and two and a half to its right. Only the far corner toward the upper right remains inside the frame; the other three corners stay cropped. The tabletop stops at the drawn straight boundary.",
+          "camera": "Use a viewpoint around standing waist height, looking gently downward, with the screen face, keyboard deck and left chassis edge visible. Keep the restrained, slightly compressed perspective and existing close framing. All furniture shares the same horizon and coherent vanishing directions. No camera roll, raised viewpoint or wider view.",
+          "composition": null,
+          "scene": "An active illustration and ceramics studio. The worktable has a substantial pale birch rectangular top, a shallow apron and simple gray steel legs, with its back against the reference wall. Beyond the user-facing boundary, show the apron, open knee space and a warm-gray concrete floor. In the near right foreground, a wood-seated studio stool on steel legs is partly tucked beneath that long edge, facing the laptop; only a modest portion appears at the bottom-right crop, smaller than the laptop.\n\nThe far wall is warm off-white plaster. Across the upper-left and upper-center wall, a broad dusty-blue woven-fabric reference pinboard provides a conspicuous blue surface, roughly twice the laptop's width, hung at comfortable standing viewing height well above the tabletop. Pinned botanical reference sheets depict leaves and stems only, with indistinct, unreadable annotations; leave generous fabric visible around them. In the far upper-right plane, two shallow wall-mounted wooden shelves hold several closed, unlabelled glaze jars, each much smaller than the laptop screen.\n\nIn the middle-left plane, on the tabletop beside the laptop along the user-facing side, place a paper sketchbook open to blank cream pages, its spread approximately one laptop width. Slightly farther back on the left tabletop, loosely overlap a few illustration sheets of ordinary drawing-paper size, showing nonhuman abstract shapes and plant forms, with any markings indistinct and unreadable and no signatures. Keep both groups entirely beside the laptop, not in the narrow strip directly in front of it.\n\nIn the middle-right plane, on the tabletop beside the laptop, place a plain off-white brush jar holding a few wooden-handled paintbrushes, immediately beside a shallow white watercolor mixing palette about half a laptop width across. The brushes reach approximately half the height of the open laptop. In the rear-left plane, anchor a small potted leafy plant on the tabletop against the wall, in a plain stoneware pot; its overall height is comparable to the laptop screen, with foliage confined to the clear space on the left. In the rear-right plane, place a compact gray articulated studio task lamp on the tabletop beneath the shelves, its shade directed toward the palette and its arms contained to the right of the laptop. Leave usable space between these supplies and the computer.",
+          "look": "Broad, soft daylight enters from above and screen-right, with generous ambient fill and gentle shadow transitions. Keep the entire studio readable, with balanced highlights and restrained contrast rather than a dramatic product spotlight. Use neutral daylight color, quiet cream and pale wood tones, subdued gray metal and natural green foliage, without a global blue or orange cast. Show fine wood grain, woven fabric, slightly curled paper corners, faint pigment residue in the palette and subtle worktable wear. The mood is focused, calm and recently used, not pristine or display-like.",
+          "conflicts": "none",
+          "finalPrompt": "GEOMETRY — highest priority. Follow Image 1 exactly. The user-facing boundary is the table edge nearest the camera, in front of the laptop.\n\nCamera: Use a viewpoint around standing waist height, looking gently downward, with the screen face, keyboard deck and left chassis edge visible. Keep the restrained, slightly compressed perspective and existing close framing. All furniture shares the same horizon and coherent vanishing directions. No camera roll, raised viewpoint or wider view.\n\nScene: An active illustration and ceramics studio. The worktable has a substantial pale birch rectangular top, a shallow apron and simple gray steel legs, with its back against the reference wall. Beyond the user-facing boundary, show the apron, open knee space and a warm-gray concrete floor. In the near right foreground, a wood-seated studio stool on steel legs is partly tucked beneath that long edge, facing the laptop; only a modest portion appears at the bottom-right crop, smaller than the laptop.\n\nThe far wall is warm off-white plaster. Across the upper-left and upper-center wall, a broad dusty-blue woven-fabric reference pinboard provides a conspicuous blue surface, roughly twice the laptop's width, hung at comfortable standing viewing height well above the tabletop. Pinned botanical reference sheets depict leaves and stems only, with indistinct, unreadable annotations; leave generous fabric visible around them. In the far upper-right plane, two shallow wall-mounted wooden shelves hold several closed, unlabelled glaze jars, each much smaller than the laptop screen.\n\nIn the middle-left plane, on the tabletop beside the laptop along the user-facing side, place a paper sketchbook open to blank cream pages, its spread approximately one laptop width. Slightly farther back on the left tabletop, loosely overlap a few illustration sheets of ordinary drawing-paper size, showing nonhuman abstract shapes and plant forms, with any markings indistinct and unreadable and no signatures. Keep both groups entirely beside the laptop, not in the narrow strip directly in front of it.\n\nIn the middle-right plane, on the tabletop beside the laptop, place a plain off-white brush jar holding a few wooden-handled paintbrushes, immediately beside a shallow white watercolor mixing palette about half a laptop width across. The brushes reach approximately half the height of the open laptop. In the rear-left plane, anchor a small potted leafy plant on the tabletop against the wall, in a plain stoneware pot; its overall height is comparable to the laptop screen, with foliage confined to the clear space on the left. In the rear-right plane, place a compact gray articulated studio task lamp on the tabletop beneath the shelves, its shade directed toward the palette and its arms contained to the right of the laptop. Leave usable space between these supplies and the computer.\n\nLook: Broad, soft daylight enters from above and screen-right, with generous ambient fill and gentle shadow transitions. Keep the entire studio readable, with balanced highlights and restrained contrast rather than a dramatic product spotlight. Use neutral daylight color, quiet cream and pale wood tones, subdued gray metal and natural green foliage, without a global blue or orange cast. Show fine wood grain, woven fabric, slightly curled paper corners, faint pigment residue in the palette and subtle worktable wear. The mood is focused, calm and recently used, not pristine or display-like.\n\nImage 1 is the canvas to edit: a geometry-only diagram at the final framing whose product pixels are the real product. Keep the product exactly as shown: its position, size, orientation, silhouette, visible faces, color, finish, ports, markings and any unlit display; do not redraw, activate, crop or occlude it, and let nothing cross or touch its silhouette. Its whole base rests flush on the tabletop with a soft natural contact shadow. The flat gray area with a thin darker outline is the exact top surface of the support: the support top covers exactly that area, with every straight edge or curved rim where the gray boundary is; the gray is not its color. Preserve the support furniture category and body named in Scene; a rectangular top does not turn a cabinet, credenza or fitted counter into a table. Replace everything else in Image 1, including the white background and the gray fill, with the photographic scene. Never render any diagram lines, boxes, labels, text or flat guide colors.\n\nRender the lighting, palette, materials and textures described here photographically. Show the blue materials named in Scene at their stated extent and placement and keep other small props neutral; never change the product or camera to make room for blue. Match soft, uniform exposure and gentle contrast; no bright-hero/dark-room treatment and no orange or global blue color cast.\n\nOne full-bleed photorealistic photograph with natural imperfections; no added text, logos, borders, watermark, invented cables, floor clutter or CGI look.\n\nNo people, hands, human silhouettes or human reflections.\n\nFinal check before rendering: the product is unchanged in position, size and orientation; the support top shape, orientation, boundary and extent match the gray area in Image 1. Where any text conflicts, follow Image 1."
+        }
+      },
+      "ibl": {
+        "status": "skipped",
+        "ms": 0,
+        "error": null,
+        "has_image": false,
+        "detail": {}
+      },
+      "backplate": {
+        "status": "skipped",
+        "ms": 0,
+        "error": null,
+        "has_image": false,
+        "detail": {}
+      },
+      "recomposite": {
+        "status": "skipped",
+        "ms": 0,
+        "error": null,
+        "has_image": false,
+        "detail": {}
+      },
+      "relight": {
+        "status": "skipped",
+        "ms": 0,
+        "error": null,
+        "has_image": false,
+        "detail": {}
+      }
+    },
+    "completedAt": "2026-11-12T03:23:40.064537+00:00"
+  },
+  "run_sha256": "965946d1acca9a92ee32680dbccae5b4276247e06308f008a9428940aec29275",
+  "catalog_sha256": "98f80e6123887c1d9879f47c4ad61d2d5a4463d63e72a2f381d7e4edc2621be9",
+  "lineage": {
+    "label": "hp-pr4523-d1e5ae5323de-exact",
+    "endpoint_base_url": "http://127.0.0.1:39055",
+    "endpoint": "http://127.0.0.1:39055/api/generate",
+    "generator": "GPT Image 2.5 / single reference / no grading",
+    "rewriterVersion": "Adobe-Firefly/foundry#4523 / d1e5ae5323de / unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+    "pipelineVersion": "unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+    "source_commit": "d1e5ae5323dedebc3b06ed173a3731307bd0623a",
+    "patch_sha256": null,
+    "runtime_tree_sha256": "4da08388491b36f6435aeea29d40b780bdd02b06b81f1a35b86999b0b6e8694e",
+    "source_manifest_sha256": "c62f172f4dd08c6f4d229079c22e1b77751a6e008e13366dab2de14d3026542f",
+    "deployment_manifest_sha256": "8701a44a54e016a2837807926f5fe10c8bb6901286471f59b9ee83b4aba972e3",
+    "candidate_config_sha256": "b69086f3856f5a90c4fd0ebff1e142de90f3dc51c807e85ad8e00fea989f4faa",
+    "scene_contract": {
+      "textModel": "gpt-6-astra",
+      "imageModel": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "refCount": 1,
+      "imageCalls": 1,
+      "graded": false,
+      "imageMaskApplied": false,
+      "imageInputOrder": [
+        "hp16_geometry_guide.png"
+      ]
+    }
+  }
+}

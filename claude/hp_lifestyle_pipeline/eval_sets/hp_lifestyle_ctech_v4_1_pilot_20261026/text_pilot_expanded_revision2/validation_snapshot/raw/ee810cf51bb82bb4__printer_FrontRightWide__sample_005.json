@@ -1,0 +1,200 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 11,
+  "warning_count": 2,
+  "errors": [
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p1"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p3"
+    },
+    {
+      "code": "score_order",
+      "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+      "candidate_id": "p7"
+    },
+    {
+      "code": "score_order",
+      "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+      "candidate_id": "p14"
+    },
+    {
+      "code": "ctech_extension_environment",
+      "detail": "category_extension must change the reference environment",
+      "candidate_id": "p19"
+    },
+    {
+      "code": "ctech_extension_environment",
+      "detail": "category_extension must change the reference environment",
+      "candidate_id": "p20"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p25"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p26"
+    },
+    {
+      "code": "score_order",
+      "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+      "candidate_id": "p27"
+    },
+    {
+      "code": "ctech_score_band",
+      "detail": "close_adaptation cannot use score 62",
+      "candidate_id": "p27"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p29"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support an omission explanation; inspect: ['e2', 'e5']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 6,
+    "environments": {
+      "Café": 5,
+      "Office": 6,
+      "Creative Studio": 6,
+      "Home": 6,
+      "Education": 4,
+      "Gaming": 3
+    },
+    "relationships": {
+      "creative_departure": 18,
+      "source_adjacent": 6,
+      "source_grounded": 6
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 6,
+      "Office": 6,
+      "Education": 4,
+      "Gaming": 3,
+      "Café": 5,
+      "Creative Studio": 6
+    },
+    "relationship_counts": {
+      "source_grounded": 6,
+      "source_adjacent": 6,
+      "creative_departure": 18
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 10,
+      "close_adaptation": 9,
+      "category_extension": 11
+    },
+    "ctech_reference_counts": {
+      "CT07": 3,
+      "CT01": 3,
+      "CT09": 4,
+      "CT04": 2,
+      "CT08": 3,
+      "CT02": 3,
+      "CT03": 3,
+      "CT05": 4,
+      "CT10": 2,
+      "CT06": 3
+    },
+    "ctech_score_range": [
+      60,
+      93
+    ],
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e1",
+          "e6"
+        ],
+        "prompt_ids": [
+          "p2",
+          "p6",
+          "p7",
+          "p11",
+          "p13",
+          "p17",
+          "p18",
+          "p21",
+          "p22",
+          "p23",
+          "p27",
+          "p28",
+          "p30"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e3"
+        ],
+        "prompt_ids": [
+          "p12",
+          "p14",
+          "p15",
+          "p16",
+          "p19",
+          "p20",
+          "p21",
+          "p24",
+          "p27",
+          "p28",
+          "p30"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p4",
+          "p5",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "d9c9da9e88fef95d045e359b4f20964069ed6272891bd4bcc3502ea33d5e15c9"
+}

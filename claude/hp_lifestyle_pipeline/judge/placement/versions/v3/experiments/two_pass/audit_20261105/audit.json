@@ -1,0 +1,358 @@
+{
+  "schema_version": "placement-two-pass-independent-audit-v1",
+  "as_of_date": "2026-11-05",
+  "scope": {
+    "completed_runs": [
+      "diagnostic-v2",
+      "extended-v1"
+    ],
+    "new_model_calls": 0,
+    "aws_writes": 0,
+    "source_changes": 0,
+    "live_new160_outputs_modified": false,
+    "user_owned_prompt1_read_or_modified": false
+  },
+  "overall": {
+    "status": "verified_with_metric_semantics_and_provenance_metadata_caveats",
+    "case_count": 84,
+    "unique_case_count": 84,
+    "stage_join_count": 168,
+    "source_artifact_hash_checks": 504,
+    "raw_response_copy_hash_checks": 168,
+    "join_or_hash_failure_ids": [],
+    "combined_scoring_mismatch_ids": [],
+    "saved_evaluation_recomputation_mismatch_ids": []
+  },
+  "code_provenance": {
+    "combine_py_sha256": "87e5ac23a0ef9254f7c43b499197539abe2670db243f427a9d477ddc6cbfb1e1",
+    "evaluate_py_sha256_at_audit": "4d94a40951203ba73637139c6bd8fe45528608840473c788c3a40e039b35db9e",
+    "policy_json_sha256": "26731b6c1ba0e66fb70caac88da3674f9ad414b5caeb0d7a6fce822958a6d018",
+    "all_results_record_current_combiner_hash": true,
+    "all_results_record_current_policy_hash": true,
+    "evaluation_json_records_evaluator_hash": false,
+    "evaluation_json_records_creation_time": false
+  },
+  "stage_protocols": {
+    "baseline_v2": {
+      "protocol_version": "placement-judge-v2-request-v3",
+      "model_requested": "gpt-5.5",
+      "reasoning_effort": "high",
+      "visual_anchors_enabled": true,
+      "runner_sha256": "3f5258ef3bf4fc9f4fca8d18602bce046a36837dc34573428f82ef714c4a277e",
+      "wire_schema_sha256": "e33130f8346c3d9755039683925e7489b73362c76a6ecfc3eb087adbfffaa3d7",
+      "system_prompt_sha256": "e30c7ab88c9e3ed2179738fa31abfa3598cf205d4f96f4069a49a9b3655cc0df",
+      "schema_sha256": "77bf7067c0b8a9a7c5a4d8c7025f8f6c36215744f2529073373d20a09743fa19",
+      "scoring_sha256": "0f3a1473d60e22fbf921c2883a7f61cb03519678c664f06470e7ca5739b434ae",
+      "all_referenced_request_hashes_uniform_and_current": true,
+      "all_case_prompt_and_schema_snapshots_match_request_hashes": true
+    },
+    "compact_v3": {
+      "protocol_version": "placement-judge-v3-request-v1",
+      "model_requested": "gpt-5.5",
+      "reasoning_effort": "high",
+      "visual_anchors_enabled": false,
+      "runner_sha256": "5271d449b265c6d4c6b601efd8412e3f42ee27b8ba567d16602a2726208a69b1",
+      "wire_schema_sha256": "1d0eec0f042ea2ffe89a3f42e48e6d6a758e9a5c6294e32994cbaada0808a515",
+      "system_prompt_sha256": "97de67010da23e2c72ece582a3adb4c772612a1ab16b99e357027b4f7ab78df6",
+      "schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+      "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+      "all_referenced_request_hashes_uniform_and_current": true,
+      "all_case_prompt_and_schema_snapshots_match_request_hashes": true
+    }
+  },
+  "runtime_annotation_separation": {
+    "canonical_input_keys": [
+      "generated_image",
+      "image_stage",
+      "product_type",
+      "scene_prompt",
+      "twin_image"
+    ],
+    "request_snapshots_checked": 168,
+    "requests_with_noncanonical_input_keys": 0,
+    "recursive_target_annotation_key_hits": 0,
+    "exact_target_annotation_scalar_hits": 0,
+    "target_comments_or_expectations_passed": false,
+    "blanket_no_human_derived_guidance_claim_is_accurate": false,
+    "blanket_claim_caveat": "Baseline V2 intentionally passed fixed development visual-anchor guidance, including user-confirmed training examples. Compact V3 passed no anchors. The verified claim is that each evaluated target's own comment and expectation metadata was withheld."
+  },
+  "request_snapshot_privacy": {
+    "completed_two_pass_unique_request_snapshots": 168,
+    "target_image_input_representation": "absolute_local_path",
+    "images_metadata_keyset": [
+      "path",
+      "sha256"
+    ],
+    "embedded_data_image_uri_count": 0,
+    "long_base64_like_string_count": 0,
+    "wire_payload_persisted": false,
+    "finding": "Saved request snapshots already omit image bytes and base64. The runner constructs data-image payloads in memory. Any future wire-payload snapshot should omit or redact base64 image bytes."
+  },
+  "credential_pattern_scan": {
+    "scope": "Pre-audit-write snapshot of all UTF-8 text artifacts under placement/versions/v3, including then-present live-run snapshots; caches and binary files excluded.",
+    "text_files": 3107,
+    "bytes": 53118396,
+    "read_errors": 0,
+    "json_files_parsed_in_exact_key_scan": 2457,
+    "json_parse_errors": 0,
+    "pattern_match_counts": {
+      "pem_private_key_header": 0,
+      "aws_access_key_id_format": 0,
+      "slack_token_format": 0,
+      "bearer_credential": 0,
+      "jwt_compact_format": 0,
+      "aws_signed_url_signature": 0,
+      "secret_named_json_value": 0,
+      "exact_secret_key_name": 0,
+      "data_image_base64_uri_source_literal": 1,
+      "data_image_base64_uri_serialized_request": 0
+    },
+    "credential_serialization_found": false,
+    "live_run_limitation": "The live new160 tree can change after this bounded scan."
+  },
+  "issue_any_semantics": {
+    "implementation": "Union every issue_codes entry across all components, then count a match when its intersection with expected_issue_any is nonempty.",
+    "severity_gate": false,
+    "confidence_gate": false,
+    "visibility_gate": false,
+    "extra_code_penalty": false,
+    "can_count_mild_expected_code": true,
+    "current_mild_match_ids": [
+      "tassel__printer_FrontLeftMedium__p5"
+    ],
+    "current_low_confidence_or_unobservable_match_ids": [],
+    "matched_checks_with_extra_unscored_codes": 7,
+    "total_matched_issue_checks": 10,
+    "interpretation": "A matched expected code can coexist with unsupported or incorrect companion codes and still count. Current artifacts do not contain code-level gold labels sufficient to decide which companion codes are incorrect."
+  },
+  "runs": {
+    "diagnostic-v2": {
+      "manifest_sha256": "c18b747abd5059b071d5b2f317b00a811bb4c5c24ee4dae846378140aaf65aef",
+      "record_count": 20,
+      "case_ids": [
+        "magic__printer_FrontCloseUp__p2",
+        "magic__printer_FrontCloseUp__p5",
+        "magic__printer_FrontLeftMedium__p2",
+        "magic__printer_FrontLeftMedium__p3",
+        "magic__printer_FrontRightCloseUp__p2",
+        "magic__printer_FrontWide__p2",
+        "magic__printer_FrontWide__p5",
+        "tassel__printer_FrontCloseUp__p3",
+        "tassel__printer_FrontCloseUp__p5",
+        "tassel__printer_FrontLeftMedium__p1",
+        "tassel__printer_FrontLeftMedium__p5",
+        "tassel__printer_FrontRightCloseUp__p1",
+        "cashmere__laptop_BackRightCloseUp__p6",
+        "cashmere__laptop_FrontLeftMedium__p6",
+        "cashmere__laptop_FrontWide__p4",
+        "elitebook__laptop_BackRightCloseUp__p5",
+        "elitebook__laptop_FrontLeftMedium__p5",
+        "elitebook__laptop_FrontLeftMedium__p6",
+        "regression-userfail-row25-v14",
+        "regression-userfail-row12-v13"
+      ],
+      "source_case_counts": {
+        "baseline_v2_v6_batch_v1": 18,
+        "baseline_v2_userfail_regression_v3": 2,
+        "compact_v3_diagnostic_v3": 20
+      },
+      "baseline_userfail_regression_case_ids": [
+        "regression-userfail-row25-v14",
+        "regression-userfail-row12-v13"
+      ],
+      "id_and_hash_join": {
+        "manifest_ids_unique": true,
+        "result_directories_exactly_match_manifest_ids": true,
+        "summary_order_exactly_matches_manifest": true,
+        "manifest_hash_matches_summary_and_evaluation": true,
+        "input_identity_matches_manifest_for_both_stages": true,
+        "source_request_response_result_hashes_match": true,
+        "raw_response_observation_matches_stage_judgment": true,
+        "copied_raw_response_hashes_match_sources": true,
+        "failure_ids": []
+      },
+      "metrics": {
+        "verdict_expectations": {
+          "count": 11,
+          "baseline_v2_matched": 5,
+          "combined_matched": 6
+        },
+        "issue_any_expectations": {
+          "count": 15,
+          "baseline_v2_matched": 3,
+          "combined_matched": 6,
+          "combined_match_ids": [
+            "magic__printer_FrontCloseUp__p2",
+            "tassel__printer_FrontCloseUp__p3",
+            "tassel__printer_FrontCloseUp__p5",
+            "tassel__printer_FrontLeftMedium__p5",
+            "cashmere__laptop_FrontLeftMedium__p6",
+            "regression-userfail-row25-v14"
+          ]
+        },
+        "verdict_transition_counts": {
+          "fail->fail": 6,
+          "pass->fail": 2,
+          "pass->pass": 12
+        },
+        "verdict_changed_ids": [
+          "cashmere__laptop_FrontLeftMedium__p6",
+          "tassel__printer_FrontCloseUp__p5"
+        ],
+        "selected_component_source_counts": {
+          "baseline_v2": 95,
+          "compact_v3": 5
+        }
+      },
+      "evaluation_recomputed_exactly": true
+    },
+    "extended-v1": {
+      "manifest_sha256": "959f68231c1cf8c80ef962c29934e303cb3414ce151b1e2da2f6d1b53d2288ae",
+      "record_count": 64,
+      "case_ids": [
+        "cashmere__laptop_BackRightCloseUp__p1",
+        "cashmere__laptop_BackRightCloseUp__p2",
+        "cashmere__laptop_BackRightCloseUp__p3",
+        "cashmere__laptop_BackRightCloseUp__p4",
+        "cashmere__laptop_BackRightCloseUp__p5",
+        "cashmere__laptop_FrontCloseUp__p1",
+        "cashmere__laptop_FrontCloseUp__p2",
+        "cashmere__laptop_FrontCloseUp__p3",
+        "cashmere__laptop_FrontCloseUp__p4",
+        "cashmere__laptop_FrontCloseUp__p5",
+        "cashmere__laptop_FrontCloseUp__p6",
+        "cashmere__laptop_FrontLeftMedium__p1",
+        "cashmere__laptop_FrontLeftMedium__p2",
+        "cashmere__laptop_FrontLeftMedium__p3",
+        "cashmere__laptop_FrontLeftMedium__p4",
+        "cashmere__laptop_FrontLeftMedium__p5",
+        "cashmere__laptop_FrontWide__p1",
+        "cashmere__laptop_FrontWide__p2",
+        "cashmere__laptop_FrontWide__p3",
+        "cashmere__laptop_FrontWide__p5",
+        "elitebook__laptop_BackRightCloseUp__p1",
+        "elitebook__laptop_BackRightCloseUp__p6",
+        "elitebook__laptop_FrontCloseUp__p1",
+        "elitebook__laptop_FrontCloseUp__p2",
+        "elitebook__laptop_FrontCloseUp__p3",
+        "elitebook__laptop_FrontCloseUp__p4",
+        "elitebook__laptop_FrontCloseUp__p5",
+        "elitebook__laptop_FrontCloseUp__p6",
+        "elitebook__laptop_FrontLeftMedium__p1",
+        "elitebook__laptop_FrontLeftMedium__p2",
+        "elitebook__laptop_FrontLeftMedium__p3",
+        "elitebook__laptop_FrontLeftMedium__p4",
+        "elitebook__laptop_FrontWide__p1",
+        "elitebook__laptop_FrontWide__p2",
+        "elitebook__laptop_FrontWide__p3",
+        "elitebook__laptop_FrontWide__p4",
+        "elitebook__laptop_FrontWide__p5",
+        "elitebook__laptop_FrontWide__p6",
+        "magic__printer_FrontCloseUp__p3",
+        "magic__printer_FrontCloseUp__p4",
+        "magic__printer_FrontLeftMedium__p1",
+        "magic__printer_FrontLeftMedium__p5",
+        "magic__printer_FrontLeftMedium__p6",
+        "magic__printer_FrontRightCloseUp__p1",
+        "magic__printer_FrontRightCloseUp__p6",
+        "magic__printer_FrontWide__p1",
+        "magic__printer_FrontWide__p3",
+        "magic__printer_FrontWide__p6",
+        "tassel__printer_FrontCloseUp__p1",
+        "tassel__printer_FrontCloseUp__p2",
+        "tassel__printer_FrontCloseUp__p4",
+        "tassel__printer_FrontLeftMedium__p2",
+        "tassel__printer_FrontLeftMedium__p3",
+        "tassel__printer_FrontLeftMedium__p4",
+        "tassel__printer_FrontLeftMedium__p6",
+        "tassel__printer_FrontRightCloseUp__p2",
+        "tassel__printer_FrontRightCloseUp__p5",
+        "tassel__printer_FrontRightCloseUp__p6",
+        "tassel__printer_FrontWide__p1",
+        "tassel__printer_FrontWide__p2",
+        "tassel__printer_FrontWide__p3",
+        "tassel__printer_FrontWide__p4",
+        "tassel__printer_FrontWide__p5",
+        "tassel__printer_FrontWide__p6"
+      ],
+      "source_case_counts": {
+        "baseline_v2_v6_batch_v1": 64,
+        "compact_v3_extended_compact_v3": 64
+      },
+      "id_and_hash_join": {
+        "manifest_ids_unique": true,
+        "result_directories_exactly_match_manifest_ids": true,
+        "summary_order_exactly_matches_manifest": true,
+        "manifest_hash_matches_summary_and_evaluation": true,
+        "input_identity_matches_manifest_for_both_stages": true,
+        "source_request_response_result_hashes_match": true,
+        "raw_response_observation_matches_stage_judgment": true,
+        "copied_raw_response_hashes_match_sources": true,
+        "failure_ids": []
+      },
+      "metrics": {
+        "explicit_verdict_labels": {
+          "count": 2,
+          "baseline_v2_matched": 2,
+          "combined_matched": 2,
+          "ids": [
+            "cashmere__laptop_BackRightCloseUp__p5",
+            "magic__printer_FrontCloseUp__p4"
+          ]
+        },
+        "agreement_with_frozen_v2": {
+          "count": 56,
+          "combined_matched": 55,
+          "lost_match_ids": [
+            "cashmere__laptop_FrontCloseUp__p5"
+          ]
+        },
+        "issue_any_expectations": {
+          "count": 6,
+          "baseline_v2_matched": 2,
+          "combined_matched": 4,
+          "gained_match_ids": [
+            "magic__printer_FrontCloseUp__p3",
+            "tassel__printer_FrontLeftMedium__p6"
+          ],
+          "retained_match_ids": [
+            "magic__printer_FrontLeftMedium__p5",
+            "tassel__printer_FrontRightCloseUp__p5"
+          ],
+          "retained_miss_ids": [
+            "cashmere__laptop_BackRightCloseUp__p4",
+            "magic__printer_FrontWide__p1"
+          ]
+        },
+        "verdict_transition_counts": {
+          "fail->fail": 36,
+          "pass->fail": 3,
+          "pass->pass": 24,
+          "review->review": 1
+        },
+        "verdict_changed_ids": [
+          "cashmere__laptop_FrontCloseUp__p5",
+          "magic__printer_FrontCloseUp__p3",
+          "tassel__printer_FrontLeftMedium__p6"
+        ],
+        "selected_component_source_counts": {
+          "baseline_v2": 313,
+          "compact_v3": 7
+        }
+      },
+      "evaluation_recomputed_exactly": true
+    }
+  },
+  "limitations": [
+    "The diagnostic expectations and extended comment mappings are retrospective development evidence, not held-out accuracy labels.",
+    "Issue-any is detection-only: it does not measure precision, severity correctness, confidence correctness, or correctness of companion codes.",
+    "The saved evaluation files omit evaluator code hash and evaluation creation time; exact recomputation with the current evaluator proves present consistency but not the historical evaluator byte identity.",
+    "The credential scan is a bounded pattern scan rather than proof that arbitrary opaque strings contain no secret.",
+    "The live new160 tree was not frozen and can change after the privacy scan."
+  ],
+  "verification": {
+    "two_pass_tests": "9 passed",
+    "test_cache_disabled": true,
+    "independent_recomputation": true
+  }
+}

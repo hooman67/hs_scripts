@@ -1,0 +1,16 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.agentic_design.agentic_design_bl[public]
+  - colligo.models.agentic_design.text_extraction[public]
+  - pydantic
+deps:
+- numpy
+- opencv-contrib-python-headless
+- paddlepaddle
+- paddlex[ocr-core]
+exclude:
+- "..."

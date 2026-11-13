@@ -1,0 +1,223 @@
+# The pip indices to use - Adobe's mirror for pypi
+# If skipped , we just use pypi itself.
+index: https://artifactory-uw2.adobeitc.com/artifactory/api/pypi/pypi-remote/simple
+
+extra_indices:
+  # extra_index_urls is not recommended, but we need for genie and adobeone -- first put genie index then adobeone
+  # order matters for UV. If it finds genie on adobeone with different version but not matching one, it errors out.
+  - https://artifactory-uw2.adobeitc.com/artifactory/api/pypi/pypi-kineto-release/simple
+  - https://artifactory-uw2.adobeitc.com/artifactory/api/pypi/pypi-piat-release/simple
+  - https://artifactory-uw2.adobeitc.com/artifactory/api/pypi/pypi-adobeone-release/simple
+  - https://artifactory-uw2.adobeitc.com/artifactory/api/pypi/pypi-adobeshared-release/simple
+  - https://artifactory-uw2.adobeitc.com/artifactory/api/pypi/pypi-clio-release/simple
+  - https://artifactory-uw2.adobeitc.com/artifactory/api/pypi/pypi-eval-service-common-release-local/simple
+
+no_isolation_deps:
+  # Sadly some deps like flash attention don't properly set their build time dependencies :(
+  # so we need to install their deps before hand and use no build isolation
+  # This is an anti-pattern; but what can we do in face of bad dependencies
+  #
+  # Use this section to set all the deps that need to be installed before hand in the env
+  - numpy
+  - ninja
+  - setuptools
+  - setuptools_scm
+  - torch
+
+requirements:
+  local:
+    # These are the things you definitely want installed.
+    # Relative to root of Mori
+    - /collections/cliocore/diffusion_core
+    - /collections/cliocore/core_models/unets
+    - /collections/cliocore/core_models/cldm
+    - /collections/cliocore/core_models/autoencoders
+    - /collections/cliocore/core_models/encoders
+    - /collections/cliocore/core_models/latent_transformers
+    - /collections/cliocore/prototyping_tools
+    - /collections/cliocore/typings
+    - /collections/cliocore/process_utils
+    - /collections/genai_foundation
+    - /collections/clio4
+    - /collections/validate_mori_release
+    - /collections/foundation_exploration
+    - ../image_model_metrics
+    - /collections/vae_core
+
+  colligo:
+    # Anything that is needed to be installed from colligo via install-colligo-pkg.py
+    - colligo.pluto.lineage
+    - colligo.models.common.diffusion
+    - colligo.models.common.asml_generation_utils
+
+  pip:
+    # These are extra packages that we need to install.
+    # FIXME: ideally all packages in `local` should set their deps and we should not
+    # mention these. But if that is missing you can add here. You should also mention
+    # the dependencies of anything in the `colligo` section
+    - boto3
+    - botocore
+    - fastapi
+    - flash-attn
+    - flashattn-hopper
+    - sageattention
+    - genie
+    - genie-contrib
+    - GPUtil
+    - newrelic
+    - prometheus_client
+    - protobuf
+    - python-etcd
+    - pyyaml
+    - setuptools
+    - torch
+    - torchaudio
+    - triton
+    - urllib3
+    - xformers
+    - uvicorn
+    - awscli
+    - colligo.s3_training_cache
+    - clio.vigilant
+    - adobeocrmaskrcnnutil
+    - maskrcnn-benchmark
+    - ocreval
+    - torchao
+    - newrelic
+    - s3fs
+    - loguru
+    - eval-service-common
+    - av
+    - liger-kernel
+    - scikit-image
+    - nvidia-ml-py3
+    - easydict
+    - s3torchconnector
+    - decord
+    - lpips
+    - rich
+    - mori
+    - torch_tb_profiler
+    - portion
+    - tensorboard
+    - duckdb
+    # We don't really need pip, but add it so people don't get surprised
+    - pip
+
+constraints:
+  # These are the things you don't necessarily want installed, but if they are referenced
+  # by the things you want to install, you want them to have the version constraintes mentioned below
+  #
+  # Note the pyproject.toml should not mention any versions. All should just go here.
+
+  flashattn_sha: 0fcd405cfe26533f08fd710555cd8b3310b47afb
+  torch: torch==2.5.1
+  others:
+    - accelerate>=0.20.3
+    - adobeone==0.0.9
+    - boto3>=1.35.93
+    - botocore>=1.35.93
+    - clean-fid>=0.1.35
+    - clip@git+https://github.com/openai/CLIP.git
+    - torchao@git+https://github.com/goldhuang/ao.git@d016b5f1cebf04f6af9060a227e41d8ee190a3e4
+    - diffusers>=0.30
+    - fastapi<0.115.3,>0.95.0
+    - genie==1.0.0+167537a
+    - genie-contrib==2025.5.17.286
+    - firecats==1.0.0.dev0
+    - GPUtil==1.4.0
+    - newrelic==10.3.1
+    - numpy<2,>=1.24.0
+    - prometheus_client==0.20.0
+    - protobuf<5,>=4.25.3
+    - pydantic==2.9
+    - python-etcd==0.4.5
+    - pyyaml>=6.0.2
+    - setuptools>=61
+    - moviepy==1.0.3
+    - transformers>=4.35.2,<4.51 # 4.51 is not compatible with torchao@git+https://github.com/goldhuang/ao.git@d016b5f1cebf04f6af9060a227e41d8ee190a3e4
+    - urllib3<2
+    - xformers@git+https://github.com/facebookresearch/xformers.git@536363ecc38809cec9c6227e6ceef88255538fea
+    - piat==2025.4.25
+    - uvicorn==0.32.0
+    - awscli>=1.35.2
+    - colligo.s3_training_cache==7.6.dev0+dev.e157fa6
+    - clio.vigilant==1.0.2
+    - einops==0.8.0
+    # maskrcnn-benchmark is added to avoid the following error:
+    # error: Package `maskrcnn-benchmark` attempted to resolve via URL:
+    # https://artifactory-uw2.adobeitc.com/artifactory/pypi-adobeshared-release/maskrcnn-benchmark/0.1.26.1/maskrcnn_benchmark-0.1.26.1.tar.gz.
+    # URL dependencies must be expressed as direct requirements or constraints. Consider adding
+    # `maskrcnn-benchmark @ https://artifactory-uw2.adobeitc.com/artifactory/pypi-adobeshared-release/maskrcnn-benchmark/0.1.26.1/maskrcnn_benchmark-0.1.26.1.tar.gz`
+    # to your dependencies or constraints file.
+    - adobeocrmaskrcnnutil>=0.0.5
+    - maskrcnn-benchmark@https://artifactory-uw2.adobeitc.com/artifactory/pypi-adobeshared-release/maskrcnn-benchmark/0.1.27.2/maskrcnn_benchmark-0.1.27.2-cp310-cp310-linux_x86_64.whl
+    - triton@/sensei-fs/users/jinhuang/triton310-torch25/triton-3.1.0-cp310-cp310-linux_x86_64.whl
+    - t2v-metrics @ https://artifactory-uw2.adobeitc.com/artifactory/pypi-adobeshared-release/t2v-metrics/1.2.1/t2v_metrics-1.2.1-py3-none-any.whl
+    - moviepy==1.0.3
+    - nvidia-ml-py3==7.352.0
+    - s3torchconnector==1.4.1
+    - mori==0.3.4
+    - eval-service-common>=1.2.1
+    # Hit error of ImportError: /mnt/localssd/mori-venv/lib/python3.10/site-packages/sageattention/_fused.cpython-310-x86_64-linux-gnu.so:
+    # undefined symbol: _ZN3c106detail14torchCheckFailEPKcS2_jRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+    # for sageattention==2.1.2
+    - sageattention==2.1.1
+
+overrides:
+  # For experiments and short term hacking only. Avoid using this as much as possible
+  # These act like constraints, but uv will just force these versions and will not check
+  # version compatiblity with other packages.
+
+  # Genie is forcing older version, so we need this here.
+  # Once genie is fixed, delete this.
+  - pydantic==2.9
+
+  # Genie is forcing older version, so we need this here.
+  # Once genie is fixed, delete this
+  # × No solution found when resolving dependencies:
+  # ╰─▶ Because genie==1.0.0+04a4d3c depends on einops>=0.6.0,<0.7.dev0 and flash-attn==2.6.3.0+git3669b252.cuda124.torch250cu124.ubuntu2204 depends on einops==0.8.0, we
+  #     can conclude that flash-attn==2.6.3.0+git3669b252.cuda124.torch250cu124.ubuntu2204 and genie==1.0.0+04a4d3c are incompatible.
+  #     And because only flash-attn==2.6.3.0+git3669b252.cuda124.torch250cu124.ubuntu2204 is available, we can conclude that all versions of flash-attn and
+  #     genie==1.0.0+04a4d3c are incompatible.
+  #     And because you require flash-attn and genie==1.0.0+04a4d3c, we can conclude that your requirements are unsatisfiable.
+  - einops==0.8.0
+
+  # × No solution found when resolving dependencies:
+  # ╰─▶ Because genie==1.0.0+f3ae739 depends on pandas>=2.0.3,<2.1.dev0 and t2v-metrics==1.2.1 depends on pandas>=2.1.4, we can conclude that genie==1.0.0+f3ae739 and t2v-metrics==1.2.1 are incompatible.
+  #     And because only t2v-metrics==1.2.1 is available, we can conclude that genie==1.0.0+f3ae739 and all versions of t2v-metrics are incompatible.
+  #     And because image-model-metrics==0.1.dev0 depends on t2v-metrics and only image-model-metrics==0.1.dev0 is available, we can conclude that genie==1.0.0+f3ae739 and all versions of image-model-metrics are incompatible.
+  #     And because you require genie==1.0.0+f3ae739 and image-model-metrics, we can conclude that your requirements are unsatisfiable.
+  - pandas==2.0.3
+
+  #   × No solution found when resolving dependencies:
+  # ╰─▶ Because all versions of hpsv2 depend on protobuf<4 and only the following versions of hpsv2 are available:
+  #         hpsv2==1.0.0
+  #         hpsv2==1.1.0
+  #         hpsv2==1.1.1
+  #         hpsv2==1.1.2
+  #         hpsv2==1.2.0
+  #     we can conclude that all versions of hpsv2 depend on protobuf<4.
+  #     And because t2v-metrics==1.2.1 depends on hpsv2 and only t2v-metrics==1.2.1 is available, we can conclude that all versions of t2v-metrics depend on protobuf<4.
+  #     And because image-model-metrics==0.1.dev0 depends on t2v-metrics and only image-model-metrics==0.1.dev0 is available, we can conclude that all versions of image-model-metrics depend on protobuf<4.
+  #     And because you require protobuf>=4.25.3,<5 and image-model-metrics, we can conclude that your requirements are unsatisfiable.
+  - protobuf==4.25.5
+
+  # × No solution found when resolving dependencies:
+  # ╰─▶ Because all versions of hpsv2 depend on pytest==7.2.0 and only the following versions of hpsv2 are available:
+  #         hpsv2==1.0.0
+  #         hpsv2==1.1.0
+  #         hpsv2==1.1.1
+  #         hpsv2==1.1.2
+  #         hpsv2==1.2.0
+  #     we can conclude that all versions of hpsv2 depend on pytest==7.2.0.
+  #     And because t2v-metrics==1.2.1 depends on hpsv2, we can conclude that t2v-metrics==1.2.1 depends on pytest==7.2.0.
+  #     And because only t2v-metrics==1.2.1 is available and image-model-metrics==0.1.dev0 depends on t2v-metrics, we can conclude that image-model-metrics==0.1.dev0 depends on pytest==7.2.0.
+  #     And because genie==1.0.0+f3ae739 depends on pytest>=7.4.0,<7.5.dev0 and only image-model-metrics==0.1.dev0 is available, we can conclude that genie==1.0.0+f3ae739 and all versions of image-model-metrics are incompatible.
+  #     And because you require genie==1.0.0+f3ae739 and image-model-metrics, we can conclude that your requirements are unsatisfiable.
+  - pytest==7.4.4
+
+  #   × No solution found when resolving dependencies:
+  #   ╰─▶ Because genie==1.0.0+b587d8e depends on duckdb>=1.0.0,<1.1.dev0 and you require genie==1.0.0+b587d8e, we can conclude that you require duckdb>=1.0.0,<1.1.dev0.
+  #       And because you require duckdb>=1.2.2, we can conclude that your requirements are unsatisfiable.
+  - duckdb>=1.2.2

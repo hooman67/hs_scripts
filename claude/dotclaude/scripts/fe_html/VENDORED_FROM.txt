@@ -1,0 +1,10 @@
+Vendored verbatim from Adobe-Firefly/foundry @ main:
+  modeling/agent-skills/data/generate-html/parquet_to_fe_html.py
+  modeling/agent-skills/data/generate-html/annotation_viewer.html
+
+Refresh both with:
+  gh api "repos/Adobe-Firefly/foundry/contents/modeling/agent-skills/data/generate-html/parquet_to_fe_html.py?ref=main" --jq '.content' | base64 -d > parquet_to_fe_html.py
+  gh api "repos/Adobe-Firefly/foundry/contents/modeling/agent-skills/data/generate-html/annotation_viewer.html?ref=main" --jq '.content' | base64 -d > annotation_viewer.html
+
+Do NOT edit these two files locally — edit upstream and re-vendor, so the data.json
+contract stays in sync. The wrapper (fe_html_report.py) is where local additions live.

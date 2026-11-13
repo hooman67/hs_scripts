@@ -1,0 +1,30 @@
+visibility: public
+public:
+  files:
+  - api_constants.py
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.cai[public]
+  - colligo.models.firefly.clio_common[public]
+  - colligo.models.firefly.pipelines.substance3d[public]
+  - colligo.models.substance3d.common[public]
+  - colligo.models.substance3d.lagrange_meshing[public]
+  - pydantic
+deps:
+- colligo.external_services.business_kit
+- colligo.image
+- colligo.models.cai
+- colligo.models.common.adapter_utils
+- colligo.models.common.metrics
+- colligo.models.filix3.pipelines.img23d[public]
+- colligo.models.filix3.pipelines.rgbx[public]
+- colligo.models.filix3.pipelines.upscalegs[public]
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.pipelines.common
+- colligo.models.prompt_forge.worker[public]
+- kornia
+- numpy
+- scipy
+- torch
+- torchvision

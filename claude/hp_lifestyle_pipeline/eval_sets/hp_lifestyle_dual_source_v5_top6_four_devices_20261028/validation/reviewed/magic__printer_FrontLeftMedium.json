@@ -1,0 +1,123 @@
+{
+  "validator_version": "v5-host-validator-r3",
+  "passed": true,
+  "error_count": 0,
+  "warning_count": 2,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support audit text; inspect: ['e6', 'e10', 'e11', 'e12']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories and semantic grounding remain model self-reports; inspect prose before image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 20,
+    "evidence": 12,
+    "environments": {
+      "Office": 8,
+      "Creative Studio": 2,
+      "Café": 3,
+      "Home": 3,
+      "Education": 2,
+      "Gaming": 2
+    },
+    "relationships": {
+      "source_grounded": 8,
+      "source_adjacent": 4,
+      "creative_departure": 8
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 3,
+      "Office": 8,
+      "Education": 2,
+      "Gaming": 2,
+      "Café": 3,
+      "Creative Studio": 2
+    },
+    "relationship_counts": {
+      "source_grounded": 8,
+      "source_adjacent": 4,
+      "creative_departure": 8
+    },
+    "ctech_relationship_counts": {
+      "close_adaptation": 12,
+      "minimal_camera_edit": 6,
+      "category_extension": 2
+    },
+    "ctech_reference_counts": {
+      "CT13": 2,
+      "CT03": 4,
+      "CT02": 1,
+      "CT01": 2,
+      "CT10": 1,
+      "CT08": 1,
+      "CT07": 1,
+      "CT12": 1,
+      "CT05": 1,
+      "CT18": 2,
+      "CT14": 1,
+      "CT15": 1,
+      "CT09": 1,
+      "CT17": 1
+    },
+    "ctech_score_range": [
+      63,
+      90
+    ],
+    "distinct_subsettings": 20,
+    "evidence_reverse_mappings": {
+      "smart_brief": {
+        "evidence_ids": [
+          "e1",
+          "e2",
+          "e3",
+          "e4",
+          "e5"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9"
+        ]
+      },
+      "source_messaging": {
+        "evidence_ids": [
+          "e7",
+          "e8",
+          "e9"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "214419a0f70495573081a512c603bd58189c72e58145dcf74d7a31c9764909dd"
+}

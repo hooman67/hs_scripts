@@ -1,0 +1,5217 @@
+{
+  "source_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/analysis/hp-lifestyle-statistics-all-devices-20261106/index.html",
+  "scope": "Caption-derived laptop/printer evidence; no new visual assessment",
+  "metadata": {
+    "identities": 469,
+    "baseline": 458,
+    "added": 11,
+    "printer_containing": 25,
+    "desktop_printer_containing": 24,
+    "industrial_printer_containing": 1,
+    "profiles": 359,
+    "scap_fields_per_profile": 9,
+    "device_families": {
+      "Laptop": 340,
+      "Monitor": 163,
+      "Desktop tower": 34,
+      "All-in-one computer": 16,
+      "Mini PC": 14,
+      "Tablet": 9,
+      "Printer": 25,
+      "Keyboard / mouse": 174,
+      "Point-of-sale terminal": 1
+    },
+    "source_parquet_sha256": "db64caa1e1005e56de725ef2cc2f9695c9b190dac97f84ee32e76544ed529211",
+    "url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/analysis/hp-lifestyle-statistics-all-devices-20261106/index.html"
+  },
+  "sources": {
+    "data/ctech_report.html": {
+      "bytes": 1940512,
+      "sha256": "0dd310ebd247626d36078abdad706ae8003afad75585d096d1bdee8c57e7349a"
+    },
+    "data/source_manifest.json": {
+      "bytes": 2761,
+      "sha256": "2cb8f830f4de1f034815dc738244996f4acad67da42a18af13dca59cbc21be5b"
+    },
+    "data/upstream/additional_printer_captions.json": {
+      "bytes": 39574,
+      "sha256": "74b6a05fb2657525dad081d858b060dfcd7364ef47889d3fddf2d36c876a291d"
+    },
+    "data/upstream/code/device_stats.py": {
+      "bytes": 7990,
+      "sha256": "1425b09850318ca838ef25ce50471730da7b1331ea1361571512d660977e8096"
+    },
+    "data/upstream/code/review_overrides.json": {
+      "bytes": 4673,
+      "sha256": "a3636f19f90aed124f9e5e5c202661206eac9645ddaa780216b8e2d2c6c6d6e6"
+    },
+    "data/upstream/code/single_stats.py": {
+      "bytes": 33770,
+      "sha256": "6b53bc260026b9793f6ac34c03cd43f110752bfcc23504aac5877e6c694eed2e"
+    },
+    "data/upstream/device_placement_audit.csv": {
+      "bytes": 190676,
+      "sha256": "7c4599ce31a087d2659992dc908a8603a07880bdda562cb7d37a23419fab0a94"
+    },
+    "data/upstream/metadata.json": {
+      "bytes": 696,
+      "sha256": "7d5af83c565a81b56c2143ffa2720f997dea35655c2406f86fe5fdc3488d8a8f"
+    },
+    "data/upstream/printer_reconciliation.json": {
+      "bytes": 93469,
+      "sha256": "b287cd0e63976561f083529cc2fa11c3ea2db7e4169bbbcd9dddf84010424fe1"
+    },
+    "data/upstream/rows.json": {
+      "bytes": 2182936,
+      "sha256": "2042c683d88c699a0a6833ee2a762b9e347198b5ced23de4908a1ffd6062a1ee"
+    },
+    "data/upstream/statistics.json": {
+      "bytes": 7020846,
+      "sha256": "b7169ef45e6e15b0d268cdc09c06aa76950dbdd59ca1c1a9d2d369f012e66399"
+    }
+  },
+  "v62_baseline": {
+    "system_prompt.md": {
+      "bytes": 37046,
+      "sha256": "be6a7c2c53466afa07f951825a648227124db6543023de76cbf792f23fa75959"
+    },
+    "approved-v6.2-20261106.catalog.json": {
+      "bytes": 126141,
+      "sha256": "89169225c8cdf36289dc5456db0508d8195298a70a41bf286484b1a38f6d8e2b"
+    }
+  },
+  "devices": {
+    "Laptop": {
+      "all": {
+        "n": 340,
+        "source_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          9,
+          12,
+          13,
+          14,
+          20,
+          22,
+          23,
+          24,
+          26,
+          32,
+          33,
+          34,
+          38,
+          40,
+          41,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          56,
+          57,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          116,
+          121,
+          122,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          132,
+          133,
+          134,
+          135,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          146,
+          147,
+          148,
+          149,
+          155,
+          156,
+          157,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260,
+          261,
+          262,
+          264,
+          265,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          302,
+          303,
+          306,
+          307,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          342,
+          343,
+          344,
+          345,
+          351,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365,
+          369,
+          372,
+          373,
+          374,
+          375,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          386,
+          387,
+          393,
+          394,
+          395,
+          396,
+          397,
+          398,
+          399,
+          400,
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          408,
+          409,
+          410,
+          411,
+          412,
+          413,
+          414,
+          415,
+          416,
+          417,
+          418,
+          419,
+          420,
+          425,
+          426,
+          427,
+          428,
+          429,
+          430,
+          432,
+          434,
+          435,
+          437,
+          438,
+          441,
+          443,
+          445,
+          446,
+          447,
+          448,
+          450,
+          451,
+          452,
+          453,
+          454,
+          455,
+          456,
+          457,
+          458,
+          464,
+          467,
+          469
+        ],
+        "cohorts": {
+          "Original no-person parquet": 337,
+          "Added original printer references (people visible)": 3
+        },
+        "environments": {
+          "Home workspace": 76,
+          "Office": 72,
+          "Cafe": 51,
+          "Living room": 20,
+          "Not established": 14,
+          "Art / craft workspace": 11,
+          "Outdoor public / nature": 11,
+          "Bedroom": 10,
+          "Warehouse / stockroom": 10,
+          "Library / shared study": 9,
+          "Home kitchen / dining": 8,
+          "Meeting / conference room": 8,
+          "Pottery studio": 8,
+          "Lounge / breakout": 6,
+          "Outdoor patio / terrace": 6,
+          "Design / creative studio": 4,
+          "Engineering / scientific laboratory": 4,
+          "Product studio / seamless": 4,
+          "Workshop": 3,
+          "Outdoor cafe": 2,
+          "Construction site": 1,
+          "Hospital": 1,
+          "Retail / service counter": 1
+        },
+        "roles": {
+          "Primary / foreground": 319,
+          "Workstation / mixed focus (not an exclusive device target)": 12,
+          "Secondary / contextual": 9
+        },
+        "supports": {
+          "Desk": 154,
+          "Table": 79,
+          "Counter / countertop": 15,
+          "Sofa": 12,
+          "Workbench / worktable": 10,
+          "Conference table": 8,
+          "Not established": 7,
+          "Box / cardboard boxes": 6,
+          "Coffee table": 6,
+          "Ledge": 6,
+          "Pillow / cushion": 6,
+          "Side table": 5,
+          "Bench / lounge chair": 4,
+          "Bag / backpack": 3,
+          "Bed / bedding": 3,
+          "Device stand": 2,
+          "Rug / floor": 2,
+          "Shelf": 2,
+          "Surface (type unspecified)": 2,
+          "Equipment hard case": 1,
+          "Handheld (person)": 1,
+          "Human lap (caption claim)": 1,
+          "Multiple tables / counters": 1,
+          "Ottoman": 1,
+          "Podium": 1,
+          "Stack of magazines": 1,
+          "Studio surface": 1
+        },
+        "support_materials": {
+          "Wood": 175,
+          "Not established": 109,
+          "Fabric / upholstery": 14,
+          "Glass": 12,
+          "Marble": 9,
+          "Concrete": 6,
+          "Leather": 6,
+          "Cardboard": 4,
+          "Acrylic": 2,
+          "Stone": 2,
+          "Tile": 2,
+          "Paper": 1
+        },
+        "surrounding_objects": {
+          "Desk / table / counter": 259,
+          "Chair / seating": 234,
+          "Cup / mug / saucer": 132,
+          "Notebook / sketchbook": 116,
+          "Lamp / light fixture": 95,
+          "Pens / stationery": 93,
+          "Shelving / bookcase": 86,
+          "Plants / flowers": 83,
+          "Monitor / display": 71,
+          "Artwork / picture / poster": 69,
+          "Mouse / mouse pad": 67,
+          "Keyboard": 58,
+          "Windows / glass partitions": 35,
+          "Printed papers / documents": 34,
+          "Bed / bedding": 31,
+          "Curtains / blinds": 24,
+          "Books / magazines": 23,
+          "Water glass / carafe": 23,
+          "Ceramics / stock inventory": 21,
+          "Phone / smartphone": 20,
+          "Jar / bottle / container": 19,
+          "Bag / backpack / luggage": 17,
+          "Headphones / earbuds": 17,
+          "Art / craft supplies": 16,
+          "Eyeglasses": 16,
+          "Rug / mat": 15,
+          "Technical drawings / models": 13,
+          "Food / kitchenware": 11,
+          "Stairs / ladder": 11,
+          "Cushions / throws": 10,
+          "Tools / industrial equipment": 10,
+          "Water bottle": 10,
+          "Printer": 9,
+          "Clock / calendar": 8,
+          "Vase / decorative container": 8,
+          "Board / menu / noticeboard": 7,
+          "Dock / external storage": 7,
+          "Decorative figurine / toy / candle": 6,
+          "Music / audio equipment": 6,
+          "Storage / cabinet": 6,
+          "Bicycle / skateboard": 5,
+          "Tablet": 5,
+          "Design / reference materials": 4,
+          "Desktop tower / mini PC": 4,
+          "Mirror / cosmetics": 3,
+          "Cable / charger": 2,
+          "Camera / photographic equipment": 2,
+          "Medical equipment": 1
+        }
+      },
+      "primary_only": {
+        "n": 319,
+        "source_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          13,
+          14,
+          20,
+          22,
+          23,
+          24,
+          26,
+          32,
+          33,
+          34,
+          38,
+          40,
+          41,
+          44,
+          45,
+          48,
+          49,
+          56,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          116,
+          122,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          132,
+          133,
+          134,
+          135,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          146,
+          147,
+          148,
+          149,
+          155,
+          156,
+          157,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          171,
+          172,
+          173,
+          175,
+          177,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260,
+          261,
+          262,
+          264,
+          265,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          302,
+          303,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          342,
+          343,
+          344,
+          345,
+          351,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          365,
+          369,
+          372,
+          373,
+          375,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          393,
+          394,
+          395,
+          396,
+          397,
+          398,
+          399,
+          400,
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          408,
+          409,
+          410,
+          411,
+          412,
+          413,
+          414,
+          415,
+          416,
+          417,
+          418,
+          419,
+          420,
+          425,
+          426,
+          429,
+          430,
+          432,
+          434,
+          435,
+          437,
+          438,
+          441,
+          443,
+          445,
+          446,
+          448,
+          450,
+          451,
+          452,
+          453,
+          454,
+          455,
+          456,
+          457,
+          458,
+          464,
+          467,
+          469
+        ],
+        "cohorts": {
+          "Original no-person parquet": 316,
+          "Added original printer references (people visible)": 3
+        },
+        "environments": {
+          "Home workspace": 72,
+          "Office": 59,
+          "Cafe": 51,
+          "Living room": 20,
+          "Not established": 14,
+          "Art / craft workspace": 11,
+          "Outdoor public / nature": 11,
+          "Bedroom": 10,
+          "Library / shared study": 9,
+          "Warehouse / stockroom": 9,
+          "Home kitchen / dining": 8,
+          "Pottery studio": 8,
+          "Meeting / conference room": 7,
+          "Lounge / breakout": 6,
+          "Outdoor patio / terrace": 6,
+          "Product studio / seamless": 4,
+          "Design / creative studio": 3,
+          "Engineering / scientific laboratory": 3,
+          "Workshop": 3,
+          "Outdoor cafe": 2,
+          "Construction site": 1,
+          "Hospital": 1,
+          "Retail / service counter": 1
+        },
+        "roles": {
+          "Primary / foreground": 319
+        },
+        "supports": {
+          "Desk": 138,
+          "Table": 78,
+          "Counter / countertop": 15,
+          "Sofa": 12,
+          "Workbench / worktable": 10,
+          "Conference table": 8,
+          "Box / cardboard boxes": 6,
+          "Coffee table": 6,
+          "Ledge": 6,
+          "Pillow / cushion": 6,
+          "Side table": 5,
+          "Bench / lounge chair": 4,
+          "Bag / backpack": 3,
+          "Bed / bedding": 3,
+          "Not established": 3,
+          "Device stand": 2,
+          "Rug / floor": 2,
+          "Shelf": 2,
+          "Surface (type unspecified)": 2,
+          "Equipment hard case": 1,
+          "Handheld (person)": 1,
+          "Human lap (caption claim)": 1,
+          "Multiple tables / counters": 1,
+          "Ottoman": 1,
+          "Podium": 1,
+          "Stack of magazines": 1,
+          "Studio surface": 1
+        },
+        "support_materials": {
+          "Wood": 174,
+          "Not established": 89,
+          "Fabric / upholstery": 14,
+          "Glass": 12,
+          "Marble": 9,
+          "Concrete": 6,
+          "Leather": 6,
+          "Cardboard": 4,
+          "Acrylic": 2,
+          "Stone": 2,
+          "Tile": 2,
+          "Paper": 1
+        },
+        "surrounding_objects": {
+          "Desk / table / counter": 245,
+          "Chair / seating": 215,
+          "Cup / mug / saucer": 123,
+          "Notebook / sketchbook": 108,
+          "Lamp / light fixture": 93,
+          "Pens / stationery": 86,
+          "Shelving / bookcase": 84,
+          "Plants / flowers": 83,
+          "Artwork / picture / poster": 65,
+          "Monitor / display": 54,
+          "Mouse / mouse pad": 52,
+          "Keyboard": 42,
+          "Windows / glass partitions": 33,
+          "Bed / bedding": 31,
+          "Printed papers / documents": 30,
+          "Curtains / blinds": 24,
+          "Books / magazines": 23,
+          "Water glass / carafe": 23,
+          "Ceramics / stock inventory": 21,
+          "Jar / bottle / container": 19,
+          "Phone / smartphone": 19,
+          "Art / craft supplies": 16,
+          "Bag / backpack / luggage": 16,
+          "Eyeglasses": 16,
+          "Headphones / earbuds": 16,
+          "Rug / mat": 15,
+          "Food / kitchenware": 11,
+          "Stairs / ladder": 11,
+          "Cushions / throws": 10,
+          "Technical drawings / models": 9,
+          "Tools / industrial equipment": 9,
+          "Clock / calendar": 8,
+          "Vase / decorative container": 8,
+          "Water bottle": 8,
+          "Board / menu / noticeboard": 6,
+          "Decorative figurine / toy / candle": 6,
+          "Music / audio equipment": 6,
+          "Bicycle / skateboard": 5,
+          "Dock / external storage": 5,
+          "Printer": 5,
+          "Storage / cabinet": 5,
+          "Design / reference materials": 4,
+          "Mirror / cosmetics": 3,
+          "Tablet": 3,
+          "Cable / charger": 2,
+          "Camera / photographic equipment": 1,
+          "Medical equipment": 1
+        }
+      },
+      "by_environment": {
+        "Art / craft workspace": {
+          "n": 11,
+          "source_rows": [
+            108,
+            109,
+            110,
+            188,
+            194,
+            195,
+            206,
+            228,
+            229,
+            281,
+            429
+          ],
+          "cohorts": {
+            "Original no-person parquet": 11
+          },
+          "environments": {
+            "Art / craft workspace": 11
+          },
+          "roles": {
+            "Primary / foreground": 11
+          },
+          "supports": {
+            "Desk": 11
+          },
+          "support_materials": {
+            "Wood": 11
+          },
+          "surrounding_objects": {
+            "Desk / table / counter": 11,
+            "Art / craft supplies": 10,
+            "Chair / seating": 7,
+            "Lamp / light fixture": 7,
+            "Pens / stationery": 7,
+            "Artwork / picture / poster": 6,
+            "Notebook / sketchbook": 6,
+            "Jar / bottle / container": 5,
+            "Bed / bedding": 4,
+            "Printed papers / documents": 2,
+            "Shelving / bookcase": 2,
+            "Windows / glass partitions": 2,
+            "Ceramics / stock inventory": 1,
+            "Cup / mug / saucer": 1,
+            "Music / audio equipment": 1,
+            "Plants / flowers": 1,
+            "Printer": 1
+          }
+        },
+        "Bedroom": {
+          "n": 10,
+          "source_rows": [
+            66,
+            67,
+            101,
+            104,
+            112,
+            214,
+            239,
+            246,
+            255,
+            286
+          ],
+          "cohorts": {
+            "Original no-person parquet": 10
+          },
+          "environments": {
+            "Bedroom": 10
+          },
+          "roles": {
+            "Primary / foreground": 10
+          },
+          "supports": {
+            "Pillow / cushion": 5,
+            "Bed / bedding": 3,
+            "Desk": 2
+          },
+          "support_materials": {
+            "Fabric / upholstery": 7,
+            "Not established": 2,
+            "Wood": 1
+          },
+          "surrounding_objects": {
+            "Bed / bedding": 10,
+            "Desk / table / counter": 5,
+            "Lamp / light fixture": 5,
+            "Curtains / blinds": 4,
+            "Artwork / picture / poster": 3,
+            "Chair / seating": 2,
+            "Cushions / throws": 2,
+            "Mirror / cosmetics": 2,
+            "Notebook / sketchbook": 2,
+            "Plants / flowers": 2,
+            "Rug / mat": 2,
+            "Shelving / bookcase": 2,
+            "Windows / glass partitions": 2,
+            "Pens / stationery": 1,
+            "Storage / cabinet": 1
+          }
+        },
+        "Cafe": {
+          "n": 51,
+          "source_rows": [
+            64,
+            65,
+            68,
+            70,
+            71,
+            72,
+            74,
+            77,
+            91,
+            92,
+            177,
+            181,
+            182,
+            204,
+            205,
+            207,
+            208,
+            209,
+            211,
+            213,
+            215,
+            216,
+            217,
+            221,
+            224,
+            225,
+            226,
+            227,
+            231,
+            237,
+            238,
+            241,
+            251,
+            252,
+            276,
+            277,
+            278,
+            279,
+            302,
+            312,
+            313,
+            314,
+            315,
+            316,
+            317,
+            318,
+            319,
+            320,
+            375,
+            393,
+            426
+          ],
+          "cohorts": {
+            "Original no-person parquet": 51
+          },
+          "environments": {
+            "Cafe": 51
+          },
+          "roles": {
+            "Primary / foreground": 51
+          },
+          "supports": {
+            "Table": 36,
+            "Counter / countertop": 9,
+            "Sofa": 2,
+            "Bag / backpack": 1,
+            "Desk": 1,
+            "Device stand": 1,
+            "Multiple tables / counters": 1
+          },
+          "support_materials": {
+            "Wood": 36,
+            "Not established": 6,
+            "Leather": 3,
+            "Marble": 3,
+            "Glass": 2,
+            "Acrylic": 1,
+            "Concrete": 1
+          },
+          "surrounding_objects": {
+            "Desk / table / counter": 49,
+            "Cup / mug / saucer": 41,
+            "Chair / seating": 38,
+            "Lamp / light fixture": 24,
+            "Plants / flowers": 19,
+            "Notebook / sketchbook": 12,
+            "Bag / backpack / luggage": 10,
+            "Artwork / picture / poster": 8,
+            "Curtains / blinds": 8,
+            "Vase / decorative container": 8,
+            "Water glass / carafe": 6,
+            "Windows / glass partitions": 6,
+            "Board / menu / noticeboard": 5,
+            "Mouse / mouse pad": 5,
+            "Shelving / bookcase": 5,
+            "Headphones / earbuds": 4,
+            "Books / magazines": 3,
+            "Jar / bottle / container": 3,
+            "Pens / stationery": 3,
+            "Bicycle / skateboard": 2,
+            "Food / kitchenware": 2,
+            "Ceramics / stock inventory": 1,
+            "Mirror / cosmetics": 1,
+            "Phone / smartphone": 1,
+            "Tools / industrial equipment": 1
+          }
+        },
+        "Construction site": {
+          "n": 1,
+          "source_rows": [
+            382
+          ],
+          "cohorts": {
+            "Original no-person parquet": 1
+          },
+          "environments": {
+            "Construction site": 1
+          },
+          "roles": {
+            "Primary / foreground": 1
+          },
+          "supports": {
+            "Workbench / worktable": 1
+          },
+          "support_materials": {
+            "Wood": 1
+          },
+          "surrounding_objects": {
+            "Desk / table / counter": 1,
+            "Technical drawings / models": 1,
+            "Tools / industrial equipment": 1
+          }
+        },
+        "Design / creative studio": {
+          "n": 4,
+          "source_rows": [
+            428,
+            437,
+            446,
+            453
+          ],
+          "cohorts": {
+            "Original no-person parquet": 4
+          },
+          "environments": {
+            "Design / creative studio": 4
+          },
+          "roles": {
+            "Primary / foreground": 3,
+            "Secondary / contextual": 1
+          },
+          "supports": {
+            "Desk": 4
+          },
+          "support_materials": {
+            "Not established": 4
+          },
+          "surrounding_objects": {
+            "Monitor / display": 4,
+            "Technical drawings / models": 4,
+            "Chair / seating": 3,
+            "Cup / mug / saucer": 3,
+            "Headphones / earbuds": 3,
+            "Keyboard": 3,
+            "Mouse / mouse pad": 3,
+            "Phone / smartphone": 3,
+            "Desk / table / counter": 2,
+            "Notebook / sketchbook": 2,
+            "Pens / stationery": 2,
+            "Printed papers / documents": 2,
+            "Art / craft supplies": 1,
+            "Board / menu / noticeboard": 1,
+            "Camera / photographic equipment": 1,
+            "Dock / external storage": 1,
+            "Water bottle": 1
+          }
+        },
+        "Engineering / scientific laboratory": {
+          "n": 4,
+          "source_rows": [
+            124,
+            380,
+            381,
+            386
+          ],
+          "cohorts": {
+            "Original no-person parquet": 4
+          },
+          "environments": {
+            "Engineering / scientific laboratory": 4
+          },
+          "roles": {
+            "Primary / foreground": 3,
+            "Secondary / contextual": 1
+          },
+          "supports": {
+            "Desk": 2,
+            "Not established": 1,
+            "Workbench / worktable": 1
+          },
+          "support_materials": {
+            "Not established": 4
+          },
+          "surrounding_objects": {
+            "Desk / table / counter": 3,
+            "Pens / stationery": 3,
+            "Technical drawings / models": 3,
+            "Tools / industrial equipment": 3,
+            "Chair / seating": 2,
+            "Eyeglasses": 2,
+            "Lamp / light fixture": 2,
+            "Monitor / display": 2,
+            "Notebook / sketchbook": 2,
+            "Cup / mug / saucer": 1,
+            "Desktop tower / mini PC": 1,
+            "Keyboard": 1,
+            "Mouse / mouse pad": 1
+          }
+        },
+        "Home kitchen / dining": {
+          "n": 8,
+          "source_rows": [
+            129,
+            200,
+            219,
+            223,
+            262,
+            394,
+            407,
+            425
+          ],
+          "cohorts": {
+            "Original no-person parquet": 8
+          },
+          "environments": {
+            "Home kitchen / dining": 8
+          },
+          "roles": {
+            "Primary / foreground": 8
+          },
+          "supports": {
+            "Counter / countertop": 5,
+            "Table": 3
+          },
+          "support_materials": {
+            "Wood": 5,
+            "Not established": 3
+          },
+          "surrounding_objects": {
+            "Notebook / sketchbook": 5,
+            "Desk / table / counter": 4,
+            "Food / kitchenware": 4,
+            "Chair / seating": 3,
+            "Cup / mug / saucer": 3,
+            "Plants / flowers": 3,
+            "Shelving / bookcase": 3,
+            "Artwork / picture / poster": 2,
+            "Books / magazines": 2,
+            "Jar / bottle / container": 2,
+            "Windows / glass partitions": 2,
+            "Cable / charger": 1,
+            "Eyeglasses": 1,
+            "Lamp / light fixture": 1,
+            "Pens / stationery": 1,
+            "Tools / industrial equipment": 1
+          }
+        },
+        "Home workspace": {
+          "n": 76,
+          "source_rows": [
+            1,
+            4,
+            5,
+            23,
+            44,
+            46,
+            73,
+            78,
+            80,
+            81,
+            83,
+            86,
+            87,
+            94,
+            95,
+            96,
+            97,
+            107,
+            111,
+            113,
+            116,
+            125,
+            132,
+            139,
+            148,
+            155,
+            156,
+            157,
+            165,
+            175,
+            187,
+            191,
+            192,
+            197,
+            198,
+            199,
+            201,
+            218,
+            220,
+            230,
+            232,
+            233,
+            234,
+            236,
+            240,
+            242,
+            244,
+            245,
+            248,
+            254,
+            259,
+            284,
+            285,
+            288,
+            289,
+            290,
+            325,
+            326,
+            327,
+            328,
+            331,
+            351,
+            395,
+            399,
+            406,
+            411,
+            418,
+            419,
+            420,
+            427,
+            435,
+            447,
+            448,
+            451,
+            456,
+            469
+          ],
+          "cohorts": {
+            "Original no-person parquet": 75,
+            "Added original printer references (people visible)": 1
+          },
+          "environments": {
+            "Home workspace": 76
+          },
+          "roles": {
+            "Primary / foreground": 72,
+            "Workstation / mixed focus (not an exclusive device target)": 4
+          },
+          "supports": {
+            "Desk": 64,
+            "Table": 9,
+            "Device stand": 1,
+            "Not established": 1,
+            "Shelf": 1
+          },
+          "support_materials": {
+            "Wood": 58,
+            "Not established": 13,
+            "Glass": 5
+          },
+          "surrounding_objects": {
+            "Desk / table / counter": 68,
+            "Chair / seating": 52,
+            "Shelving / bookcase": 39,
+            "Cup / mug / saucer": 37,
+            "Pens / stationery": 36,
+            "Artwork / picture / poster": 30,
+            "Notebook / sketchbook": 29,
+            "Monitor / display": 24,
+            "Keyboard": 20,
+            "Plants / flowers": 20,
+            "Mouse / mouse pad": 19,
+            "Lamp / light fixture": 14,
+            "Bed / bedding": 11,
+            "Windows / glass partitions": 11,
+            "Books / magazines": 10,
+            "Jar / bottle / container": 8,
+            "Printed papers / documents": 8,
+            "Art / craft supplies": 4,
+            "Curtains / blinds": 4,
+            "Rug / mat": 4,
+            "Eyeglasses": 3,
+            "Food / kitchenware": 3,
+            "Stairs / ladder": 3,
+            "Clock / calendar": 2,
+            "Music / audio equipment": 2,
+            "Printer": 2,
+            "Technical drawings / models": 2,
+            "Water glass / carafe": 2,
+            "Ceramics / stock inventory": 1,
+            "Decorative figurine / toy / candle": 1,
+            "Design / reference materials": 1,
+            "Desktop tower / mini PC": 1,
+            "Dock / external storage": 1,
+            "Phone / smartphone": 1,
+            "Storage / cabinet": 1
+          }
+        },
+        "Hospital": {
+          "n": 1,
+          "source_rows": [
+            401
+          ],
+          "cohorts": {
+            "Original no-person parquet": 1
+          },
+          "environments": {
+            "Hospital": 1
+          },
+          "roles": {
+            "Primary / foreground": 1
+          },
+          "supports": {
+            "Table": 1
+          },
+          "support_materials": {
+            "Not established": 1
+          },
+          "surrounding_objects": {
+            "Bed / bedding": 1,
+            "Curtains / blinds": 1,
+            "Desk / table / counter": 1,
+            "Medical equipment": 1,
+            "Notebook / sketchbook": 1,
+            "Phone / smartphone": 1
+          }
+        },
+        "Library / shared study": {
+          "n": 9,
+          "source_rows": [
+            89,
+            98,
+            100,
+            103,
+            256,
+            258,
+            293,
+            294,
+            365
+          ],
+          "cohorts": {
+            "Original no-person parquet": 9
+          },
+          "environments": {
+            "Library / shared study": 9
+          },
+          "roles": {
+            "Primary / foreground": 9
+          },
+          "supports": {
+            "Table": 8,
+            "Desk": 1
+          },
+          "support_materials": {
+            "Not established": 9
+          },
+          "surrounding_objects": {
+            "Desk / table / counter": 9,
+            "Chair / seating": 8,
+            "Notebook / sketchbook": 8,
+            "Pens / stationery": 7,
+            "Shelving / bookcase": 5,
+            "Lamp / light fixture": 3,
+            "Stairs / ladder": 3,
+            "Bag / backpack / luggage": 2,
+            "Headphones / earbuds": 2,
+            "Phone / smartphone": 2,
+            "Books / magazines": 1,
+            "Cup / mug / saucer": 1,
+            "Cushions / throws": 1,
+            "Design / reference materials": 1,
+            "Printer": 1,
+            "Water bottle": 1
+          }
+        },
+        "Living room": {
+          "n": 20,
+          "source_rows": [
+            20,
+            69,
+            75,
+            76,
+            93,
+            102,
+            105,
+            106,
+            210,
+            222,
+            253,
+            257,
+            261,
+            287,
+            291,
+            292,
+            295,
+            408,
+            434,
+            454
+          ],
+          "cohorts": {
+            "Original no-person parquet": 20
+          },
+          "environments": {
+            "Living room": 20
+          },
+          "roles": {
+            "Primary / foreground": 20
+          },
+          "supports": {
+            "Sofa": 10,
+            "Coffee table": 5,
+            "Rug / floor": 2,
+            "Ottoman": 1,
+            "Pillow / cushion": 1,
+            "Stack of magazines": 1
+          },
+          "support_materials": {
+            "Fabric / upholstery": 6,
+            "Not established": 5,
+            "Wood": 5,
+            "Leather": 3,
+            "Paper": 1
+          },
+          "surrounding_objects": {
+            "Chair / seating": 20,
+            "Desk / table / counter": 13,
+            "Lamp / light fixture": 13,
+            "Artwork / picture / poster": 8,
+            "Shelving / bookcase": 7,
+            "Windows / glass partitions": 5,
+            "Bed / bedding": 4,
+            "Books / magazines": 4,
+            "Cushions / throws": 4,
+            "Rug / mat": 4,
+            "Notebook / sketchbook": 3,
+            "Music / audio equipment": 2,
+            "Plants / flowers": 2,
+            "Curtains / blinds": 1,
+            "Printed papers / documents": 1,
+            "Stairs / ladder": 1
+          }
+        },
+        "Lounge / breakout": {
+          "n": 6,
+          "source_rows": [
+            63,
+            186,
+            190,
+            212,
+            414,
+            443
+          ],
+          "cohorts": {
+            "Original no-person parquet": 6
+          },
+          "environments": {
+            "Lounge / breakout": 6
+          },
+          "roles": {
+            "Primary / foreground": 6
+          },
+          "supports": {
+            "Table": 5,
+            "Human lap (caption claim)": 1
+          },
+          "support_materials": {
+            "Not established": 5,
+            "Wood": 1
+          },
+          "surrounding_objects": {
+            "Chair / seating": 6,
+            "Desk / table / counter": 5,
+            "Cup / mug / saucer": 4,
+            "Lamp / light fixture": 3,
+            "Artwork / picture / poster": 2,
+            "Plants / flowers": 2,
+            "Cushions / throws": 1
+          }
+        },
+        "Meeting / conference room": {
+          "n": 8,
+          "source_rows": [
+            84,
+            140,
+            172,
+            303,
+            310,
+            311,
+            332,
+            396
+          ],
+          "cohorts": {
+            "Original no-person parquet": 8
+          },
+          "environments": {
+            "Meeting / conference room": 8
+          },
+          "roles": {
+            "Primary / foreground": 7,
+            "Workstation / mixed focus (not an exclusive device target)": 1
+          },
+          "supports": {
+            "Table": 4,
+            "Conference table": 3,
+            "Podium": 1
+          },
+          "support_materials": {
+            "Wood": 4,
+            "Glass": 2,
+            "Acrylic": 1,
+            "Marble": 1
+          },
+          "surrounding_objects": {
+            "Chair / seating": 8,
+            "Desk / table / counter": 7,
+            "Notebook / sketchbook": 4,
+            "Plants / flowers": 3,
+            "Printed papers / documents": 3,
+            "Artwork / picture / poster": 2,
+            "Cup / mug / saucer": 2,
+            "Monitor / display": 2,
+            "Pens / stationery": 2,
+            "Phone / smartphone": 2,
+            "Shelving / bookcase": 1,
+            "Stairs / ladder": 1,
+            "Storage / cabinet": 1,
+            "Tablet": 1,
+            "Water glass / carafe": 1
+          }
+        },
+        "Not established": {
+          "n": 14,
+          "source_rows": [
+            147,
+            149,
+            180,
+            184,
+            185,
+            189,
+            193,
+            202,
+            235,
+            260,
+            282,
+            283,
+            369,
+            398
+          ],
+          "cohorts": {
+            "Original no-person parquet": 14
+          },
+          "environments": {
+            "Not established": 14
+          },
+          "roles": {
+            "Primary / foreground": 14
+          },
+          "supports": {
+            "Desk": 6,
+            "Side table": 5,
+            "Table": 2,
+            "Surface (type unspecified)": 1
+          },
+          "support_materials": {
+            "Wood": 8,
+            "Not established": 6
+          },
+          "surrounding_objects": {
+            "Desk / table / counter": 12,
+            "Chair / seating": 11,
+            "Plants / flowers": 7,
+            "Notebook / sketchbook": 5,
+            "Curtains / blinds": 3,
+            "Pens / stationery": 3,
+            "Artwork / picture / poster": 2,
+            "Eyeglasses": 2,
+            "Lamp / light fixture": 2,
+            "Printed papers / documents": 2,
+            "Windows / glass partitions": 2,
+            "Art / craft supplies": 1,
+            "Bicycle / skateboard": 1,
+            "Books / magazines": 1,
+            "Clock / calendar": 1,
+            "Decorative figurine / toy / candle": 1,
+            "Shelving / bookcase": 1
+          }
+        },
+        "Office": {
+          "n": 72,
+          "source_rows": [
+            2,
+            3,
+            9,
+            22,
+            24,
+            26,
+            38,
+            40,
+            41,
+            45,
+            47,
+            56,
+            57,
+            82,
+            85,
+            88,
+            99,
+            121,
+            122,
+            126,
+            127,
+            128,
+            134,
+            141,
+            142,
+            146,
+            166,
+            167,
+            173,
+            174,
+            176,
+            247,
+            298,
+            299,
+            306,
+            307,
+            309,
+            329,
+            330,
+            352,
+            353,
+            354,
+            355,
+            358,
+            359,
+            361,
+            362,
+            363,
+            364,
+            372,
+            374,
+            377,
+            378,
+            379,
+            387,
+            397,
+            400,
+            402,
+            403,
+            409,
+            410,
+            415,
+            416,
+            417,
+            438,
+            441,
+            450,
+            452,
+            457,
+            458,
+            464,
+            467
+          ],
+          "cohorts": {
+            "Original no-person parquet": 70,
+            "Added original printer references (people visible)": 2
+          },
+          "environments": {
+            "Office": 72
+          },
+          "roles": {
+            "Primary / foreground": 59,
+            "Workstation / mixed focus (not an exclusive device target)": 7,
+            "Secondary / contextual": 6
+          },
+          "supports": {
+            "Desk": 61,
+            "Conference table": 5,
+            "Table": 3,
+            "Not established": 2,
+            "Handheld (person)": 1
+          },
+          "support_materials": {
+            "Not established": 35,
+            "Wood": 31,
+            "Marble": 4,
+            "Glass": 3
+          },
+          "surrounding_objects": {
+            "Chair / seating": 58,
+            "Desk / table / counter": 54,
+            "Monitor / display": 38,
+            "Mouse / mouse pad": 34,
+            "Keyboard": 32,
+            "Notebook / sketchbook": 31,
+            "Cup / mug / saucer": 27,
+            "Pens / stationery": 25,
+            "Lamp / light fixture": 17,
+            "Plants / flowers": 17,
+            "Printed papers / documents": 16,
+            "Water glass / carafe": 12,
+            "Phone / smartphone": 9,
+            "Headphones / earbuds": 7,
+            "Water bottle": 7,
+            "Eyeglasses": 6,
+            "Artwork / picture / poster": 5,
+            "Clock / calendar": 5,
+            "Dock / external storage": 5,
+            "Printer": 5,
+            "Windows / glass partitions": 5,
+            "Curtains / blinds": 3,
+            "Decorative figurine / toy / candle": 3,
+            "Rug / mat": 3,
+            "Tablet": 3,
+            "Technical drawings / models": 3,
+            "Books / magazines": 2,
+            "Design / reference materials": 2,
+            "Desktop tower / mini PC": 2,
+            "Shelving / bookcase": 2,
+            "Storage / cabinet": 2,
+            "Bag / backpack / luggage": 1,
+            "Board / menu / noticeboard": 1,
+            "Cable / charger": 1,
+            "Camera / photographic equipment": 1,
+            "Ceramics / stock inventory": 1,
+            "Cushions / throws": 1,
+            "Music / audio equipment": 1,
+            "Stairs / ladder": 1,
+            "Tools / industrial equipment": 1
+          }
+        },
+        "Outdoor cafe": {
+          "n": 2,
+          "source_rows": [
+            164,
+            430
+          ],
+          "cohorts": {
+            "Original no-person parquet": 2
+          },
+          "environments": {
+            "Outdoor cafe": 2
+          },
+          "roles": {
+            "Primary / foreground": 2
+          },
+          "supports": {
+            "Table": 2
+          },
+          "support_materials": {
+            "Tile": 2
+          },
+          "surrounding_objects": {
+            "Chair / seating": 2,
+            "Cup / mug / saucer": 2,
+            "Desk / table / counter": 2,
+            "Food / kitchenware": 2,
+            "Shelving / bookcase": 2,
+            "Water glass / carafe": 2,
+            "Bag / backpack / luggage": 1,
+            "Headphones / earbuds": 1
+          }
+        },
+        "Outdoor patio / terrace": {
+          "n": 6,
+          "source_rows": [
+            138,
+            249,
+            250,
+            296,
+            297,
+            404
+          ],
+          "cohorts": {
+            "Original no-person parquet": 6
+          },
+          "environments": {
+            "Outdoor patio / terrace": 6
+          },
+          "roles": {
+            "Primary / foreground": 6
+          },
+          "supports": {
+            "Table": 3,
+            "Bench / lounge chair": 2,
+            "Coffee table": 1
+          },
+          "support_materials": {
+            "Wood": 3,
+            "Not established": 2,
+            "Fabric / upholstery": 1
+          },
+          "surrounding_objects": {
+            "Chair / seating": 3,
+            "Mouse / mouse pad": 3,
+            "Plants / flowers": 3,
+            "Cup / mug / saucer": 2,
+            "Desk / table / counter": 2,
+            "Notebook / sketchbook": 2,
+            "Pens / stationery": 2,
+            "Bag / backpack / luggage": 1,
+            "Bed / bedding": 1,
+            "Cushions / throws": 1,
+            "Phone / smartphone": 1,
+            "Water bottle": 1
+          }
+        },
+        "Outdoor public / nature": {
+          "n": 11,
+          "source_rows": [
+            79,
+            135,
+            143,
+            144,
+            280,
+            360,
+            373,
+            405,
+            412,
+            413,
+            455
+          ],
+          "cohorts": {
+            "Original no-person parquet": 11
+          },
+          "environments": {
+            "Outdoor public / nature": 11
+          },
+          "roles": {
+            "Primary / foreground": 11
+          },
+          "supports": {
+            "Ledge": 6,
+            "Bench / lounge chair": 2,
+            "Bag / backpack": 1,
+            "Equipment hard case": 1,
+            "Surface (type unspecified)": 1
+          },
+          "support_materials": {
+            "Concrete": 5,
+            "Not established": 3,
+            "Stone": 2,
+            "Marble": 1
+          },
+          "surrounding_objects": {
+            "Chair / seating": 3,
+            "Plants / flowers": 2,
+            "Bag / backpack / luggage": 1,
+            "Bicycle / skateboard": 1,
+            "Decorative figurine / toy / candle": 1
+          }
+        },
+        "Pottery studio": {
+          "n": 8,
+          "source_rows": [
+            14,
+            48,
+            49,
+            133,
+            342,
+            343,
+            356,
+            357
+          ],
+          "cohorts": {
+            "Original no-person parquet": 8
+          },
+          "environments": {
+            "Pottery studio": 8
+          },
+          "roles": {
+            "Primary / foreground": 8
+          },
+          "supports": {
+            "Workbench / worktable": 6,
+            "Bag / backpack": 1,
+            "Counter / countertop": 1
+          },
+          "support_materials": {
+            "Wood": 7,
+            "Not established": 1
+          },
+          "surrounding_objects": {
+            "Ceramics / stock inventory": 8,
+            "Desk / table / counter": 8,
+            "Chair / seating": 6,
+            "Shelving / bookcase": 6,
+            "Cup / mug / saucer": 5,
+            "Eyeglasses": 2,
+            "Lamp / light fixture": 2,
+            "Notebook / sketchbook": 2,
+            "Bag / backpack / luggage": 1,
+            "Keyboard": 1,
+            "Mouse / mouse pad": 1,
+            "Tools / industrial equipment": 1
+          }
+        },
+        "Product studio / seamless": {
+          "n": 4,
+          "source_rows": [
+            183,
+            203,
+            264,
+            265
+          ],
+          "cohorts": {
+            "Original no-person parquet": 4
+          },
+          "environments": {
+            "Product studio / seamless": 4
+          },
+          "roles": {
+            "Primary / foreground": 4
+          },
+          "supports": {
+            "Not established": 3,
+            "Studio surface": 1
+          },
+          "support_materials": {
+            "Not established": 4
+          },
+          "surrounding_objects": {
+            "Tablet": 1
+          }
+        },
+        "Retail / service counter": {
+          "n": 1,
+          "source_rows": [
+            34
+          ],
+          "cohorts": {
+            "Original no-person parquet": 1
+          },
+          "environments": {
+            "Retail / service counter": 1
+          },
+          "roles": {
+            "Primary / foreground": 1
+          },
+          "supports": {
+            "Table": 1
+          },
+          "support_materials": {
+            "Not established": 1
+          },
+          "surrounding_objects": {
+            "Ceramics / stock inventory": 1,
+            "Notebook / sketchbook": 1,
+            "Shelving / bookcase": 1
+          }
+        },
+        "Warehouse / stockroom": {
+          "n": 10,
+          "source_rows": [
+            12,
+            13,
+            32,
+            33,
+            168,
+            169,
+            171,
+            344,
+            345,
+            432
+          ],
+          "cohorts": {
+            "Original no-person parquet": 10
+          },
+          "environments": {
+            "Warehouse / stockroom": 10
+          },
+          "roles": {
+            "Primary / foreground": 9,
+            "Secondary / contextual": 1
+          },
+          "supports": {
+            "Box / cardboard boxes": 6,
+            "Table": 2,
+            "Desk": 1,
+            "Shelf": 1
+          },
+          "support_materials": {
+            "Not established": 5,
+            "Cardboard": 4,
+            "Wood": 1
+          },
+          "surrounding_objects": {
+            "Shelving / bookcase": 10,
+            "Ceramics / stock inventory": 8,
+            "Cup / mug / saucer": 3,
+            "Stairs / ladder": 2,
+            "Keyboard": 1,
+            "Monitor / display": 1,
+            "Mouse / mouse pad": 1,
+            "Notebook / sketchbook": 1
+          }
+        },
+        "Workshop": {
+          "n": 3,
+          "source_rows": [
+            62,
+            243,
+            445
+          ],
+          "cohorts": {
+            "Original no-person parquet": 3
+          },
+          "environments": {
+            "Workshop": 3
+          },
+          "roles": {
+            "Primary / foreground": 3
+          },
+          "supports": {
+            "Workbench / worktable": 2,
+            "Desk": 1
+          },
+          "support_materials": {
+            "Wood": 3
+          },
+          "surrounding_objects": {
+            "Desk / table / counter": 3,
+            "Chair / seating": 2,
+            "Lamp / light fixture": 2,
+            "Plants / flowers": 2,
+            "Rug / mat": 2,
+            "Tools / industrial equipment": 2,
+            "Artwork / picture / poster": 1,
+            "Bicycle / skateboard": 1,
+            "Jar / bottle / container": 1,
+            "Pens / stationery": 1,
+            "Storage / cabinet": 1
+          }
+        }
+      }
+    },
+    "Printer": {
+      "all": {
+        "n": 25,
+        "source_rows": [
+          57,
+          161,
+          174,
+          281,
+          364,
+          365,
+          366,
+          367,
+          368,
+          370,
+          371,
+          433,
+          442,
+          447,
+          459,
+          460,
+          461,
+          462,
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469
+        ],
+        "cohorts": {
+          "Original no-person parquet": 14,
+          "Added original printer references (people visible)": 11
+        },
+        "environments": {
+          "Home workspace": 13,
+          "Office": 8,
+          "Library / shared study": 2,
+          "Art / craft workspace": 1,
+          "Print workshop": 1
+        },
+        "roles": {
+          "Primary / foreground": 14,
+          "Secondary / background": 9,
+          "Industrial machine": 1,
+          "Partial / cropped secondary": 1
+        },
+        "supports": {
+          "Desk / worktable": 11,
+          "Cabinet / console": 8,
+          "Not established": 2,
+          "Shelf / storage unit": 2,
+          "Crate": 1,
+          "Integrated machine structure": 1
+        },
+        "support_materials": {
+          "Not established": 14,
+          "Wood": 9,
+          "Metal": 1,
+          "Plastic": 1
+        },
+        "surrounding_objects": {
+          "Desk / table / counter": 20,
+          "Chair / seating": 14,
+          "Lamp / light fixture": 13,
+          "Printed papers / documents": 10,
+          "Laptop": 9,
+          "Artwork / picture / poster": 8,
+          "Plants / flowers": 8,
+          "Monitor / display": 7,
+          "Windows / glass partitions": 7,
+          "Storage / cabinet": 6,
+          "Books / magazines": 5,
+          "Curtains / blinds": 5,
+          "Keyboard": 5,
+          "Mouse / mouse pad": 5,
+          "Pens / stationery": 5,
+          "Board / menu / noticeboard": 4,
+          "Cup / mug / saucer": 4,
+          "Shelving / bookcase": 4,
+          "Headphones / earbuds": 3,
+          "Water bottle": 3,
+          "Desktop tower / mini PC": 2,
+          "Notebook / sketchbook": 2,
+          "Phone / smartphone": 2,
+          "Tablet": 2,
+          "Art / craft supplies": 1,
+          "Bed / bedding": 1,
+          "Camera / photographic equipment": 1,
+          "Cushions / throws": 1,
+          "Design / reference materials": 1,
+          "Dock / external storage": 1,
+          "Eyeglasses": 1,
+          "Printed substrate / workpiece": 1,
+          "Technical drawings / models": 1,
+          "Tools / industrial equipment": 1
+        }
+      },
+      "primary_only": {
+        "n": 14,
+        "source_rows": [
+          174,
+          364,
+          366,
+          367,
+          368,
+          370,
+          371,
+          433,
+          442,
+          459,
+          460,
+          461,
+          462,
+          463
+        ],
+        "cohorts": {
+          "Original no-person parquet": 9,
+          "Added original printer references (people visible)": 5
+        },
+        "environments": {
+          "Home workspace": 10,
+          "Office": 3,
+          "Library / shared study": 1
+        },
+        "roles": {
+          "Primary / foreground": 14
+        },
+        "supports": {
+          "Cabinet / console": 7,
+          "Desk / worktable": 6,
+          "Shelf / storage unit": 1
+        },
+        "support_materials": {
+          "Wood": 8,
+          "Not established": 6
+        },
+        "surrounding_objects": {
+          "Desk / table / counter": 10,
+          "Printed papers / documents": 8,
+          "Lamp / light fixture": 7,
+          "Artwork / picture / poster": 6,
+          "Chair / seating": 6,
+          "Plants / flowers": 5,
+          "Storage / cabinet": 5,
+          "Board / menu / noticeboard": 4,
+          "Books / magazines": 4,
+          "Pens / stationery": 4,
+          "Shelving / bookcase": 4,
+          "Windows / glass partitions": 4,
+          "Curtains / blinds": 2,
+          "Laptop": 2,
+          "Art / craft supplies": 1,
+          "Bed / bedding": 1,
+          "Cup / mug / saucer": 1,
+          "Cushions / throws": 1,
+          "Monitor / display": 1
+        }
+      },
+      "by_environment": {
+        "Art / craft workspace": {
+          "n": 1,
+          "source_rows": [
+            281
+          ],
+          "cohorts": {
+            "Original no-person parquet": 1
+          },
+          "environments": {
+            "Art / craft workspace": 1
+          },
+          "roles": {
+            "Secondary / background": 1
+          },
+          "supports": {
+            "Crate": 1
+          },
+          "support_materials": {
+            "Plastic": 1
+          },
+          "surrounding_objects": {
+            "Chair / seating": 1,
+            "Desk / table / counter": 1,
+            "Laptop": 1,
+            "Plants / flowers": 1
+          }
+        },
+        "Home workspace": {
+          "n": 13,
+          "source_rows": [
+            367,
+            368,
+            370,
+            371,
+            433,
+            442,
+            447,
+            459,
+            460,
+            461,
+            462,
+            465,
+            469
+          ],
+          "cohorts": {
+            "Original no-person parquet": 7,
+            "Added original printer references (people visible)": 6
+          },
+          "environments": {
+            "Home workspace": 13
+          },
+          "roles": {
+            "Primary / foreground": 10,
+            "Secondary / background": 2,
+            "Partial / cropped secondary": 1
+          },
+          "supports": {
+            "Cabinet / console": 7,
+            "Desk / worktable": 4,
+            "Not established": 1,
+            "Shelf / storage unit": 1
+          },
+          "support_materials": {
+            "Wood": 7,
+            "Not established": 6
+          },
+          "surrounding_objects": {
+            "Desk / table / counter": 9,
+            "Lamp / light fixture": 8,
+            "Artwork / picture / poster": 7,
+            "Plants / flowers": 6,
+            "Printed papers / documents": 6,
+            "Storage / cabinet": 6,
+            "Books / magazines": 5,
+            "Board / menu / noticeboard": 4,
+            "Chair / seating": 4,
+            "Pens / stationery": 3,
+            "Shelving / bookcase": 3,
+            "Curtains / blinds": 2,
+            "Keyboard": 2,
+            "Laptop": 2,
+            "Monitor / display": 2,
+            "Mouse / mouse pad": 2,
+            "Windows / glass partitions": 2,
+            "Art / craft supplies": 1,
+            "Bed / bedding": 1,
+            "Camera / photographic equipment": 1,
+            "Cup / mug / saucer": 1,
+            "Cushions / throws": 1,
+            "Desktop tower / mini PC": 1,
+            "Eyeglasses": 1,
+            "Headphones / earbuds": 1,
+            "Notebook / sketchbook": 1,
+            "Technical drawings / models": 1
+          }
+        },
+        "Library / shared study": {
+          "n": 2,
+          "source_rows": [
+            365,
+            366
+          ],
+          "cohorts": {
+            "Original no-person parquet": 2
+          },
+          "environments": {
+            "Library / shared study": 2
+          },
+          "roles": {
+            "Primary / foreground": 1,
+            "Secondary / background": 1
+          },
+          "supports": {
+            "Cabinet / console": 1,
+            "Shelf / storage unit": 1
+          },
+          "support_materials": {
+            "Not established": 2
+          },
+          "surrounding_objects": {
+            "Desk / table / counter": 2,
+            "Chair / seating": 1,
+            "Cup / mug / saucer": 1,
+            "Design / reference materials": 1,
+            "Lamp / light fixture": 1,
+            "Laptop": 1,
+            "Notebook / sketchbook": 1,
+            "Pens / stationery": 1,
+            "Shelving / bookcase": 1
+          }
+        },
+        "Office": {
+          "n": 8,
+          "source_rows": [
+            57,
+            161,
+            174,
+            364,
+            463,
+            464,
+            466,
+            467
+          ],
+          "cohorts": {
+            "Original no-person parquet": 4,
+            "Added original printer references (people visible)": 4
+          },
+          "environments": {
+            "Office": 8
+          },
+          "roles": {
+            "Secondary / background": 5,
+            "Primary / foreground": 3
+          },
+          "supports": {
+            "Desk / worktable": 7,
+            "Not established": 1
+          },
+          "support_materials": {
+            "Not established": 6,
+            "Wood": 2
+          },
+          "surrounding_objects": {
+            "Chair / seating": 8,
+            "Desk / table / counter": 8,
+            "Laptop": 5,
+            "Monitor / display": 5,
+            "Windows / glass partitions": 5,
+            "Lamp / light fixture": 4,
+            "Printed papers / documents": 4,
+            "Curtains / blinds": 3,
+            "Keyboard": 3,
+            "Mouse / mouse pad": 3,
+            "Water bottle": 3,
+            "Cup / mug / saucer": 2,
+            "Headphones / earbuds": 2,
+            "Phone / smartphone": 2,
+            "Tablet": 2,
+            "Artwork / picture / poster": 1,
+            "Desktop tower / mini PC": 1,
+            "Dock / external storage": 1,
+            "Pens / stationery": 1,
+            "Plants / flowers": 1
+          }
+        },
+        "Print workshop": {
+          "n": 1,
+          "source_rows": [
+            468
+          ],
+          "cohorts": {
+            "Added original printer references (people visible)": 1
+          },
+          "environments": {
+            "Print workshop": 1
+          },
+          "roles": {
+            "Industrial machine": 1
+          },
+          "supports": {
+            "Integrated machine structure": 1
+          },
+          "support_materials": {
+            "Metal": 1
+          },
+          "surrounding_objects": {
+            "Printed substrate / workpiece": 1,
+            "Tools / industrial equipment": 1
+          }
+        }
+      },
+      "desktop_only": {
+        "n": 24,
+        "source_rows": [
+          57,
+          161,
+          174,
+          281,
+          364,
+          365,
+          366,
+          367,
+          368,
+          370,
+          371,
+          433,
+          442,
+          447,
+          459,
+          460,
+          461,
+          462,
+          463,
+          464,
+          465,
+          466,
+          467,
+          469
+        ],
+        "cohorts": {
+          "Original no-person parquet": 14,
+          "Added original printer references (people visible)": 10
+        },
+        "environments": {
+          "Home workspace": 13,
+          "Office": 8,
+          "Library / shared study": 2,
+          "Art / craft workspace": 1
+        },
+        "roles": {
+          "Primary / foreground": 14,
+          "Secondary / background": 9,
+          "Partial / cropped secondary": 1
+        },
+        "supports": {
+          "Desk / worktable": 11,
+          "Cabinet / console": 8,
+          "Not established": 2,
+          "Shelf / storage unit": 2,
+          "Crate": 1
+        },
+        "support_materials": {
+          "Not established": 14,
+          "Wood": 9,
+          "Plastic": 1
+        },
+        "surrounding_objects": {
+          "Desk / table / counter": 20,
+          "Chair / seating": 14,
+          "Lamp / light fixture": 13,
+          "Printed papers / documents": 10,
+          "Laptop": 9,
+          "Artwork / picture / poster": 8,
+          "Plants / flowers": 8,
+          "Monitor / display": 7,
+          "Windows / glass partitions": 7,
+          "Storage / cabinet": 6,
+          "Books / magazines": 5,
+          "Curtains / blinds": 5,
+          "Keyboard": 5,
+          "Mouse / mouse pad": 5,
+          "Pens / stationery": 5,
+          "Board / menu / noticeboard": 4,
+          "Cup / mug / saucer": 4,
+          "Shelving / bookcase": 4,
+          "Headphones / earbuds": 3,
+          "Water bottle": 3,
+          "Desktop tower / mini PC": 2,
+          "Notebook / sketchbook": 2,
+          "Phone / smartphone": 2,
+          "Tablet": 2,
+          "Art / craft supplies": 1,
+          "Bed / bedding": 1,
+          "Camera / photographic equipment": 1,
+          "Cushions / throws": 1,
+          "Design / reference materials": 1,
+          "Dock / external storage": 1,
+          "Eyeglasses": 1,
+          "Technical drawings / models": 1
+        }
+      }
+    }
+  },
+  "reported_profile_comparisons": 150,
+  "candidate_object_evidence": {
+    "bags": [
+      {
+        "source_row": 74,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "brown leather bag"
+        ]
+      },
+      {
+        "source_row": 98,
+        "environment": "Library / shared study",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "brown leather backpack"
+        ]
+      },
+      {
+        "source_row": 100,
+        "environment": "Library / shared study",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "tan backpack"
+        ]
+      },
+      {
+        "source_row": 204,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "brown leather bag"
+        ]
+      },
+      {
+        "source_row": 207,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "brown leather backpack"
+        ]
+      },
+      {
+        "source_row": 209,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "brown leather bag"
+        ]
+      },
+      {
+        "source_row": 225,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "dark bag"
+        ]
+      },
+      {
+        "source_row": 249,
+        "environment": "Outdoor patio / terrace",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "brown leather bag"
+        ]
+      },
+      {
+        "source_row": 252,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "green backpack"
+        ]
+      },
+      {
+        "source_row": 277,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "black bag"
+        ]
+      },
+      {
+        "source_row": 280,
+        "environment": "Outdoor public / nature",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "grey backpack"
+        ]
+      },
+      {
+        "source_row": 307,
+        "environment": "Office",
+        "device_role": "Workstation / mixed focus (not an exclusive device target)",
+        "object_labels": [
+          "black backpack"
+        ]
+      },
+      {
+        "source_row": 314,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "black bag"
+        ]
+      },
+      {
+        "source_row": 320,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "blue backpack"
+        ]
+      },
+      {
+        "source_row": 343,
+        "environment": "Pottery studio",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "brown tote bag"
+        ]
+      },
+      {
+        "source_row": 375,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "brown leather bag"
+        ]
+      },
+      {
+        "source_row": 430,
+        "environment": "Outdoor cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "black laptop bag"
+        ]
+      }
+    ],
+    "clocks_and_calendars": [
+      {
+        "source_row": 56,
+        "environment": "Office",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "analog clock"
+        ]
+      },
+      {
+        "source_row": 139,
+        "environment": "Home workspace",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "desk calendar"
+        ]
+      },
+      {
+        "source_row": 235,
+        "environment": "Not established",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "calendar"
+        ]
+      },
+      {
+        "source_row": 379,
+        "environment": "Office",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "wall clock"
+        ]
+      },
+      {
+        "source_row": 411,
+        "environment": "Home workspace",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "desk calendar"
+        ]
+      },
+      {
+        "source_row": 415,
+        "environment": "Office",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "small wooden clock"
+        ]
+      },
+      {
+        "source_row": 450,
+        "environment": "Office",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "wall calendar"
+        ]
+      },
+      {
+        "source_row": 458,
+        "environment": "Office",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "wall calendar"
+        ]
+      }
+    ],
+    "ceramics_and_stock": [
+      {
+        "source_row": 14,
+        "environment": "Pottery studio",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "ceramic cups",
+          "ceramic pottery"
+        ]
+      },
+      {
+        "source_row": 32,
+        "environment": "Warehouse / stockroom",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "cardboard boxes",
+          "ceramic bowls and pottery"
+        ]
+      },
+      {
+        "source_row": 33,
+        "environment": "Warehouse / stockroom",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "cardboard box"
+        ]
+      },
+      {
+        "source_row": 34,
+        "environment": "Retail / service counter",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "ceramic bowls"
+        ]
+      },
+      {
+        "source_row": 48,
+        "environment": "Pottery studio",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "stack of ceramic bowls",
+          "pottery tools",
+          "pottery machinery"
+        ]
+      },
+      {
+        "source_row": 49,
+        "environment": "Pottery studio",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "ceramic bowls",
+          "pottery shelves"
+        ]
+      },
+      {
+        "source_row": 133,
+        "environment": "Pottery studio",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "stack of ceramic bowls",
+          "pottery shelves",
+          "pottery wheel"
+        ]
+      },
+      {
+        "source_row": 134,
+        "environment": "Office",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "white ceramic cups"
+        ]
+      },
+      {
+        "source_row": 168,
+        "environment": "Warehouse / stockroom",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "cardboard boxes"
+        ]
+      },
+      {
+        "source_row": 169,
+        "environment": "Warehouse / stockroom",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "cardboard boxes"
+        ]
+      },
+      {
+        "source_row": 171,
+        "environment": "Warehouse / stockroom",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "cardboard boxes"
+        ]
+      },
+      {
+        "source_row": 206,
+        "environment": "Art / craft workspace",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "art supplies"
+        ]
+      },
+      {
+        "source_row": 238,
+        "environment": "Cafe",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "white ceramic cups"
+        ]
+      },
+      {
+        "source_row": 342,
+        "environment": "Pottery studio",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "stack of ceramic bowls",
+          "pottery shelves",
+          "pottery wheel machine"
+        ]
+      },
+      {
+        "source_row": 343,
+        "environment": "Pottery studio",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "ceramic pottery"
+        ]
+      },
+      {
+        "source_row": 344,
+        "environment": "Warehouse / stockroom",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "blue ceramic bowl"
+        ]
+      },
+      {
+        "source_row": 345,
+        "environment": "Warehouse / stockroom",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "cardboard boxes"
+        ]
+      },
+      {
+        "source_row": 356,
+        "environment": "Pottery studio",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "ceramic bowls",
+          "small ceramic cups",
+          "pottery shelves"
+        ]
+      },
+      {
+        "source_row": 357,
+        "environment": "Pottery studio",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "ceramic bowls and mugs",
+          "shelves of pottery"
+        ]
+      },
+      {
+        "source_row": 395,
+        "environment": "Home workspace",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "cardboard boxes"
+        ]
+      },
+      {
+        "source_row": 432,
+        "environment": "Warehouse / stockroom",
+        "device_role": "Primary / foreground",
+        "object_labels": [
+          "cardboard boxes"
+        ]
+      }
+    ]
+  },
+  "approved_catalogue": [
+    {
+      "id": "V61-HOM-019",
+      "environment": "Home",
+      "name": "comfortable sofa",
+      "repetition_groups": [
+        "sofa"
+      ]
+    },
+    {
+      "id": "V61-HOM-020",
+      "environment": "Home",
+      "name": "upholstered accent chair or reading chair",
+      "repetition_groups": [
+        "lounge_seating"
+      ]
+    },
+    {
+      "id": "V61-HOM-021",
+      "environment": "Home",
+      "name": "low sideboard or tall residential storage cabinet",
+      "repetition_groups": [
+        "closed_storage"
+      ]
+    },
+    {
+      "id": "V61-HOM-022",
+      "environment": "Home",
+      "name": "bookshelf with unmarked spines kept softly out of focus",
+      "repetition_groups": [
+        "open_shelving"
+      ]
+    },
+    {
+      "id": "V61-HOM-023",
+      "environment": "Home",
+      "name": "simple floor lamp",
+      "repetition_groups": [
+        "floor_lighting"
+      ]
+    },
+    {
+      "id": "V61-HOM-024",
+      "environment": "Home",
+      "name": "relaxed curtains or translucent sheers",
+      "repetition_groups": [
+        "window_textile"
+      ]
+    },
+    {
+      "id": "V61-HOM-025",
+      "environment": "Home",
+      "name": "woven rug",
+      "repetition_groups": [
+        "floor_textile"
+      ]
+    },
+    {
+      "id": "V61-HOM-026",
+      "environment": "Home",
+      "name": "casually draped throw or textured cushion",
+      "repetition_groups": [
+        "soft_textile"
+      ]
+    },
+    {
+      "id": "V61-HOM-027",
+      "environment": "Home",
+      "name": "houseplant or trailing plant",
+      "repetition_groups": [
+        "plant"
+      ]
+    },
+    {
+      "id": "V61-HOM-028",
+      "environment": "Home",
+      "name": "simple wooden ladder with one plain textile",
+      "repetition_groups": [
+        "blanket_ladder"
+      ]
+    },
+    {
+      "id": "V61-HOM-029",
+      "environment": "Home",
+      "name": "abstract art without text, faces, or recognizable characters",
+      "repetition_groups": [
+        "framed_wall_art"
+      ]
+    },
+    {
+      "id": "V61-HOM-030",
+      "environment": "Home",
+      "name": "simple woven fiber wall piece",
+      "repetition_groups": [
+        "woven_wall_hanging"
+      ]
+    },
+    {
+      "id": "V61-HOM-031",
+      "environment": "Home",
+      "name": "narrow natural-wood slats",
+      "repetition_groups": [
+        "wall_slats"
+      ]
+    },
+    {
+      "id": "V61-HOM-032",
+      "environment": "Home",
+      "name": "warm limewash or lightly textured plaster",
+      "repetition_groups": [
+        "wall_texture"
+      ]
+    },
+    {
+      "id": "V61-HOM-033",
+      "environment": "Home",
+      "name": "muted felt panels in a home workspace",
+      "repetition_groups": [
+        "acoustic_wall"
+      ]
+    },
+    {
+      "id": "V61-HOM-034",
+      "environment": "Home",
+      "name": "small ceramic or carved-wood relief",
+      "repetition_groups": [
+        "wall_relief"
+      ]
+    },
+    {
+      "id": "V61-HOM-035",
+      "environment": "Home",
+      "name": "shallow picture ledge with one abstract ceramic form",
+      "repetition_groups": [
+        "wall_shelving"
+      ]
+    },
+    {
+      "id": "V61-HOM-036",
+      "environment": "Home",
+      "name": "compact wall sconce",
+      "repetition_groups": [
+        "wall_lighting"
+      ]
+    },
+    {
+      "id": "V61-HOM-037",
+      "environment": "Home",
+      "name": "restrained nonfigurative pattern",
+      "repetition_groups": [
+        "geometric_wallpaper"
+      ]
+    },
+    {
+      "id": "V61-HOM-038",
+      "environment": "Home",
+      "name": "wooden peg rail holding one plain woven basket or textile",
+      "repetition_groups": [
+        "peg_rail",
+        "woven_storage"
+      ]
+    },
+    {
+      "id": "V61-HOM-001",
+      "environment": "Home",
+      "name": "clothbound notebook, blank household folder, closed paperback with an unmarked cover",
+      "repetition_groups": [
+        "paper_materials"
+      ]
+    },
+    {
+      "id": "V61-HOM-002",
+      "environment": "Home",
+      "name": "folded reading glasses or a plain glasses case",
+      "repetition_groups": [
+        "eyewear"
+      ]
+    },
+    {
+      "id": "V61-HOM-003",
+      "environment": "Home",
+      "name": "ceramic mug, clear water glass, or matte reusable bottle",
+      "repetition_groups": [
+        "drinkware"
+      ]
+    },
+    {
+      "id": "V61-HOM-004",
+      "environment": "Home",
+      "name": "ceramic teapot or clear water carafe",
+      "repetition_groups": [
+        "serving_vessels"
+      ]
+    },
+    {
+      "id": "V61-HOM-005",
+      "environment": "Home",
+      "name": "fruit bowl or small snack bowl",
+      "repetition_groups": [
+        "food_bowl"
+      ]
+    },
+    {
+      "id": "V61-HOM-006",
+      "environment": "Home",
+      "name": "wooden serving tray, small ceramic key dish, or woven valet tray",
+      "repetition_groups": [
+        "tray_catchall"
+      ]
+    },
+    {
+      "id": "V61-HOM-007",
+      "environment": "Home",
+      "name": "ball of yarn with knitting needles",
+      "repetition_groups": [
+        "fiber_craft"
+      ]
+    },
+    {
+      "id": "V61-HOM-008",
+      "environment": "Home",
+      "name": "closed sewing box with a loose measuring ribbon",
+      "repetition_groups": [
+        "sewing_kit",
+        "measurement_tools",
+        "textile_notions"
+      ]
+    },
+    {
+      "id": "V61-HOM-009",
+      "environment": "Home",
+      "name": "partially assembled abstract-color puzzle with no text or faces",
+      "repetition_groups": [
+        "jigsaw_puzzle"
+      ]
+    },
+    {
+      "id": "V61-HOM-010",
+      "environment": "Home",
+      "name": "wooden chess set or abstract peg game",
+      "repetition_groups": [
+        "strategy_game"
+      ]
+    },
+    {
+      "id": "V61-HOM-011",
+      "environment": "Home",
+      "name": "small woven storage basket",
+      "repetition_groups": [
+        "woven_storage"
+      ]
+    },
+    {
+      "id": "V61-HOM-012",
+      "environment": "Home",
+      "name": "plain pillar candle or low ceramic candleholder",
+      "repetition_groups": [
+        "decorative_candle"
+      ]
+    },
+    {
+      "id": "V61-HOM-013",
+      "environment": "Home",
+      "name": "unlabelled glass diffuser with natural reeds",
+      "repetition_groups": [
+        "reed_diffuser"
+      ]
+    },
+    {
+      "id": "V61-HOM-015",
+      "environment": "Home",
+      "name": "original abstract wooden tabletop sculpture",
+      "repetition_groups": [
+        "wood_sculpture"
+      ]
+    },
+    {
+      "id": "V61-HOM-016",
+      "environment": "Home",
+      "name": "matte ceramic ornament with a simple geometric form",
+      "repetition_groups": [
+        "ceramic_object"
+      ]
+    },
+    {
+      "id": "V61-HOM-017",
+      "environment": "Home",
+      "name": "clear sand timer with no markings",
+      "repetition_groups": [
+        "hourglass"
+      ]
+    },
+    {
+      "id": "V61-HOM-018",
+      "environment": "Home",
+      "name": "woven or cork coaster",
+      "repetition_groups": [
+        "coaster"
+      ]
+    },
+    {
+      "id": "V61-OFF-022",
+      "environment": "Office",
+      "name": "ordinary upholstered office chair",
+      "repetition_groups": [
+        "task_seating"
+      ]
+    },
+    {
+      "id": "V61-OFF-023",
+      "environment": "Office",
+      "name": "clean bookcase or open shelving with unmarked objects",
+      "repetition_groups": [
+        "open_shelving"
+      ]
+    },
+    {
+      "id": "V61-OFF-024",
+      "environment": "Office",
+      "name": "low storage cabinet or tall filing cabinet with no labels",
+      "repetition_groups": [
+        "closed_storage"
+      ]
+    },
+    {
+      "id": "V61-OFF-025",
+      "environment": "Office",
+      "name": "simple coat stand with no visible garments",
+      "repetition_groups": [
+        "coat_stand"
+      ]
+    },
+    {
+      "id": "V61-OFF-026",
+      "environment": "Office",
+      "name": "floor lamp",
+      "repetition_groups": [
+        "floor_lighting"
+      ]
+    },
+    {
+      "id": "V61-OFF-027",
+      "environment": "Office",
+      "name": "area rug",
+      "repetition_groups": [
+        "floor_textile"
+      ]
+    },
+    {
+      "id": "V61-OFF-028",
+      "environment": "Office",
+      "name": "plain curtains or solar sheers",
+      "repetition_groups": [
+        "window_textile"
+      ]
+    },
+    {
+      "id": "V61-OFF-029",
+      "environment": "Office",
+      "name": "potted floor plant",
+      "repetition_groups": [
+        "plant"
+      ]
+    },
+    {
+      "id": "V61-OFF-030",
+      "environment": "Office",
+      "name": "translucent ribbed-glass divider",
+      "repetition_groups": [
+        "room_divider"
+      ]
+    },
+    {
+      "id": "V61-OFF-031",
+      "environment": "Office",
+      "name": "freestanding felt privacy screen",
+      "repetition_groups": [
+        "meeting_screen"
+      ]
+    },
+    {
+      "id": "V61-OFF-032",
+      "environment": "Office",
+      "name": "abstract framed artwork",
+      "repetition_groups": [
+        "framed_wall_art"
+      ]
+    },
+    {
+      "id": "V61-OFF-033",
+      "environment": "Office",
+      "name": "felt acoustic panels or geometric sound-diffusion blocks",
+      "repetition_groups": [
+        "acoustic_wall"
+      ]
+    },
+    {
+      "id": "V61-OFF-034",
+      "environment": "Office",
+      "name": "vertical wood-slat feature",
+      "repetition_groups": [
+        "wall_slats"
+      ]
+    },
+    {
+      "id": "V61-OFF-035",
+      "environment": "Office",
+      "name": "soft plaster, pale brick, or board-formed concrete finish",
+      "repetition_groups": [
+        "wall_texture"
+      ]
+    },
+    {
+      "id": "V61-OFF-036",
+      "environment": "Office",
+      "name": "corkboard or pinboard with sparse unlabeled color and texture blocks",
+      "repetition_groups": [
+        "wall_display_board"
+      ]
+    },
+    {
+      "id": "V61-OFF-037",
+      "environment": "Office",
+      "name": "whiteboard with distant, non-legible marks only when useful to the scene",
+      "repetition_groups": [
+        "wall_writing_board"
+      ]
+    },
+    {
+      "id": "V61-OFF-038",
+      "environment": "Office",
+      "name": "shallow wall-mounted planter",
+      "repetition_groups": [
+        "wall_planter",
+        "plant"
+      ]
+    },
+    {
+      "id": "V61-OFF-039",
+      "environment": "Office",
+      "name": "floating ledge with one abstract ceramic object",
+      "repetition_groups": [
+        "wall_shelving",
+        "ceramic_object"
+      ]
+    },
+    {
+      "id": "V61-OFF-040",
+      "environment": "Office",
+      "name": "geometric relief panel",
+      "repetition_groups": [
+        "wall_relief"
+      ]
+    },
+    {
+      "id": "V61-OFF-041",
+      "environment": "Office",
+      "name": "slim architectural wall sconce",
+      "repetition_groups": [
+        "wall_lighting"
+      ]
+    },
+    {
+      "id": "V61-OFF-042",
+      "environment": "Office",
+      "name": "clear or frosted architectural partition",
+      "repetition_groups": [
+        "glass_partition"
+      ]
+    },
+    {
+      "id": "V61-OFF-043",
+      "environment": "Office",
+      "name": "powder-coated perforated metal panel",
+      "repetition_groups": [
+        "perforated_panel"
+      ]
+    },
+    {
+      "id": "V61-OFF-001",
+      "environment": "Office",
+      "name": "notebook, binder, folder, clipboard, or stack of plain papers; choose only one form for the entire ten-prompt bank",
+      "repetition_groups": [
+        "paper_materials"
+      ]
+    },
+    {
+      "id": "V61-OFF-002",
+      "environment": "Office",
+      "name": "single pen or pencil; unavailable if another prompt already uses a writing or drawing tool",
+      "repetition_groups": [
+        "writing_tools"
+      ]
+    },
+    {
+      "id": "V61-OFF-003",
+      "environment": "Office",
+      "name": "pen cup holding a few plain pens or pencils",
+      "repetition_groups": [
+        "tool_cup",
+        "writing_tools"
+      ]
+    },
+    {
+      "id": "V61-OFF-004",
+      "environment": "Office",
+      "name": "stapler, paper clips, or binder clips",
+      "repetition_groups": [
+        "paper_fasteners"
+      ]
+    },
+    {
+      "id": "V61-OFF-005",
+      "environment": "Office",
+      "name": "metal ruler or compact set square",
+      "repetition_groups": [
+        "measurement_tools"
+      ]
+    },
+    {
+      "id": "V61-OFF-006",
+      "environment": "Office",
+      "name": "empty architectural letter tray, or one holding only the already-declared `paper_materials` family",
+      "repetition_groups": [
+        "letter_tray"
+      ]
+    },
+    {
+      "id": "V61-OFF-007",
+      "environment": "Office",
+      "name": "plain unlabelled document storage box",
+      "repetition_groups": [
+        "document_box"
+      ]
+    },
+    {
+      "id": "V61-OFF-008",
+      "environment": "Office",
+      "name": "folded reading glasses or plain glasses case",
+      "repetition_groups": [
+        "eyewear"
+      ]
+    },
+    {
+      "id": "V61-OFF-009",
+      "environment": "Office",
+      "name": "water glass, matte bottle, or ceramic mug",
+      "repetition_groups": [
+        "drinkware"
+      ]
+    },
+    {
+      "id": "V61-OFF-010",
+      "environment": "Office",
+      "name": "meeting-room water carafe",
+      "repetition_groups": [
+        "serving_vessels"
+      ]
+    },
+    {
+      "id": "V61-OFF-011",
+      "environment": "Office",
+      "name": "fruit bowl or small snack bowl",
+      "repetition_groups": [
+        "food_bowl"
+      ]
+    },
+    {
+      "id": "V61-OFF-012",
+      "environment": "Office",
+      "name": "plain closed lunch container",
+      "repetition_groups": [
+        "lunch_container"
+      ]
+    },
+    {
+      "id": "V61-OFF-013",
+      "environment": "Office",
+      "name": "low ceramic or felt desk tray",
+      "repetition_groups": [
+        "tray_catchall"
+      ]
+    },
+    {
+      "id": "V61-OFF-014",
+      "environment": "Office",
+      "name": "clear glass paperweight",
+      "repetition_groups": [
+        "paperweight"
+      ]
+    },
+    {
+      "id": "V61-OFF-015",
+      "environment": "Office",
+      "name": "small abstract metal or wood sculpture",
+      "repetition_groups": [
+        "desk_sculpture",
+        "wood_sculpture"
+      ]
+    },
+    {
+      "id": "V61-OFF-016",
+      "environment": "Office",
+      "name": "small unlabelled abstract ceramic form",
+      "repetition_groups": [
+        "ceramic_object"
+      ]
+    },
+    {
+      "id": "V61-OFF-017",
+      "environment": "Office",
+      "name": "unbranded metal balance toy with no text",
+      "repetition_groups": [
+        "kinetic_object"
+      ]
+    },
+    {
+      "id": "V61-OFF-018",
+      "environment": "Office",
+      "name": "compact clear sand timer",
+      "repetition_groups": [
+        "hourglass"
+      ]
+    },
+    {
+      "id": "V61-OFF-019",
+      "environment": "Office",
+      "name": "two or three unlabelled architectural finish samples",
+      "repetition_groups": [
+        "material_samples"
+      ]
+    },
+    {
+      "id": "V61-OFF-020",
+      "environment": "Office",
+      "name": "compact potted plant",
+      "repetition_groups": [
+        "plant"
+      ]
+    },
+    {
+      "id": "V61-OFF-021",
+      "environment": "Office",
+      "name": "cork, felt, or stone coaster",
+      "repetition_groups": [
+        "coaster"
+      ]
+    },
+    {
+      "id": "V61-EDU-026",
+      "environment": "Education",
+      "name": "classroom or library chair",
+      "repetition_groups": [
+        "task_seating"
+      ]
+    },
+    {
+      "id": "V61-EDU-027",
+      "environment": "Education",
+      "name": "low bookshelf with unmarked spines",
+      "repetition_groups": [
+        "open_shelving"
+      ]
+    },
+    {
+      "id": "V61-EDU-028",
+      "environment": "Education",
+      "name": "rolling library cart with books softly out of focus",
+      "repetition_groups": [
+        "book_cart",
+        "paper_materials"
+      ]
+    },
+    {
+      "id": "V61-EDU-029",
+      "environment": "Education",
+      "name": "storage cabinet or closed supply cupboard",
+      "repetition_groups": [
+        "closed_storage"
+      ]
+    },
+    {
+      "id": "V61-EDU-030",
+      "environment": "Education",
+      "name": "open cubbies containing plain color bins",
+      "repetition_groups": [
+        "storage_cubbies",
+        "open_shelving"
+      ]
+    },
+    {
+      "id": "V61-EDU-031",
+      "environment": "Education",
+      "name": "rolling classroom materials cart",
+      "repetition_groups": [
+        "materials_cart"
+      ]
+    },
+    {
+      "id": "V61-EDU-032",
+      "environment": "Education",
+      "name": "reading-area rug",
+      "repetition_groups": [
+        "floor_textile"
+      ]
+    },
+    {
+      "id": "V61-EDU-033",
+      "environment": "Education",
+      "name": "floor cushion",
+      "repetition_groups": [
+        "soft_textile"
+      ]
+    },
+    {
+      "id": "V61-EDU-034",
+      "environment": "Education",
+      "name": "potted plant",
+      "repetition_groups": [
+        "plant"
+      ]
+    },
+    {
+      "id": "V61-EDU-035",
+      "environment": "Education",
+      "name": "simple lab or art-room stool",
+      "repetition_groups": [
+        "stool"
+      ]
+    },
+    {
+      "id": "V61-EDU-036",
+      "environment": "Education",
+      "name": "whiteboard with sparse distant non-legible geometric marks",
+      "repetition_groups": [
+        "wall_writing_board"
+      ]
+    },
+    {
+      "id": "V61-EDU-037",
+      "environment": "Education",
+      "name": "corkboard with solid-color paper shapes and no text",
+      "repetition_groups": [
+        "wall_display_board"
+      ]
+    },
+    {
+      "id": "V61-EDU-038",
+      "environment": "Education",
+      "name": "abstract student artwork without faces, characters, or words",
+      "repetition_groups": [
+        "framed_wall_art"
+      ]
+    },
+    {
+      "id": "V61-EDU-039",
+      "environment": "Education",
+      "name": "simple color-block mural",
+      "repetition_groups": [
+        "geometric_mural"
+      ]
+    },
+    {
+      "id": "V61-EDU-040",
+      "environment": "Education",
+      "name": "soft geometric acoustic tiles",
+      "repetition_groups": [
+        "acoustic_wall"
+      ]
+    },
+    {
+      "id": "V61-EDU-041",
+      "environment": "Education",
+      "name": "unlabeled raised geographic wall panel",
+      "repetition_groups": [
+        "relief_map"
+      ]
+    },
+    {
+      "id": "V61-EDU-042",
+      "environment": "Education",
+      "name": "wall-mounted arrangement of geometric solids",
+      "repetition_groups": [
+        "shape_display",
+        "geometric_solids"
+      ]
+    },
+    {
+      "id": "V61-EDU-043",
+      "environment": "Education",
+      "name": "translucent colored wall inserts",
+      "repetition_groups": [
+        "colored_glass"
+      ]
+    },
+    {
+      "id": "V61-EDU-044",
+      "environment": "Education",
+      "name": "wall rail holding plain aprons with no logos",
+      "repetition_groups": [
+        "peg_rail"
+      ]
+    },
+    {
+      "id": "V61-EDU-045",
+      "environment": "Education",
+      "name": "pale wood slats",
+      "repetition_groups": [
+        "wall_slats"
+      ]
+    },
+    {
+      "id": "V61-EDU-046",
+      "environment": "Education",
+      "name": "carved geometric learning panel with no symbols or text",
+      "repetition_groups": [
+        "wall_relief"
+      ]
+    },
+    {
+      "id": "V61-EDU-001",
+      "environment": "Education",
+      "name": "textbook, exercise notebook, worksheet, folder, or binder; choose only one paper form for the entire bank",
+      "repetition_groups": [
+        "paper_materials"
+      ]
+    },
+    {
+      "id": "V61-EDU-002",
+      "environment": "Education",
+      "name": "pencil, crayon, marker, or colored pencil",
+      "repetition_groups": [
+        "writing_tools"
+      ]
+    },
+    {
+      "id": "V61-EDU-003",
+      "environment": "Education",
+      "name": "eraser with a manual pencil sharpener",
+      "repetition_groups": [
+        "stationery_utility"
+      ]
+    },
+    {
+      "id": "V61-EDU-004",
+      "environment": "Education",
+      "name": "ruler, protractor, or drawing compass",
+      "repetition_groups": [
+        "measurement_tools"
+      ]
+    },
+    {
+      "id": "V61-EDU-005",
+      "environment": "Education",
+      "name": "cup holding plain pencils; collides with office pen cups and studio brush jars",
+      "repetition_groups": [
+        "tool_cup",
+        "writing_tools",
+        "drinkware"
+      ]
+    },
+    {
+      "id": "V61-EDU-006",
+      "environment": "Education",
+      "name": "loose group of solid-color counting blocks",
+      "repetition_groups": [
+        "counting_blocks"
+      ]
+    },
+    {
+      "id": "V61-EDU-007",
+      "environment": "Education",
+      "name": "wooden abacus with colored beads",
+      "repetition_groups": [
+        "abacus"
+      ]
+    },
+    {
+      "id": "V61-EDU-008",
+      "environment": "Education",
+      "name": "clear sand timer",
+      "repetition_groups": [
+        "hourglass"
+      ]
+    },
+    {
+      "id": "V61-EDU-009",
+      "environment": "Education",
+      "name": "small set of wooden geometric solids",
+      "repetition_groups": [
+        "geometric_solids"
+      ]
+    },
+    {
+      "id": "V61-EDU-010",
+      "environment": "Education",
+      "name": "simple tabletop balance with no numbers",
+      "repetition_groups": [
+        "balance_scale"
+      ]
+    },
+    {
+      "id": "V61-EDU-011",
+      "environment": "Education",
+      "name": "handheld magnifying glass",
+      "repetition_groups": [
+        "magnifier"
+      ]
+    },
+    {
+      "id": "V61-EDU-012",
+      "environment": "Education",
+      "name": "small set of unlabelled mineral specimens",
+      "repetition_groups": [
+        "mineral_samples"
+      ]
+    },
+    {
+      "id": "V61-EDU-013",
+      "environment": "Education",
+      "name": "unlabelled globe with raised land shapes and no rendered place names",
+      "repetition_groups": [
+        "relief_globe"
+      ]
+    },
+    {
+      "id": "V61-EDU-014",
+      "environment": "Education",
+      "name": "original ball-and-stick molecular form with no label",
+      "repetition_groups": [
+        "molecule_model"
+      ]
+    },
+    {
+      "id": "V61-EDU-015",
+      "environment": "Education",
+      "name": "interlocking wooden gear demonstration",
+      "repetition_groups": [
+        "gear_model"
+      ]
+    },
+    {
+      "id": "V61-EDU-016",
+      "environment": "Education",
+      "name": "shallow cups with solid-color counters",
+      "repetition_groups": [
+        "color_sorting",
+        "drinkware"
+      ]
+    },
+    {
+      "id": "V61-EDU-017",
+      "environment": "Education",
+      "name": "simple abstract student clay form",
+      "repetition_groups": [
+        "clay_model"
+      ]
+    },
+    {
+      "id": "V61-EDU-018",
+      "environment": "Education",
+      "name": "plain geometric paper fold with no printed pattern",
+      "repetition_groups": [
+        "origami_model"
+      ]
+    },
+    {
+      "id": "V61-EDU-019",
+      "environment": "Education",
+      "name": "unlabelled watercolor pans",
+      "repetition_groups": [
+        "watercolor_set"
+      ]
+    },
+    {
+      "id": "V61-EDU-020",
+      "environment": "Education",
+      "name": "wooden geometric inset puzzle",
+      "repetition_groups": [
+        "shape_puzzle"
+      ]
+    },
+    {
+      "id": "V61-EDU-021",
+      "environment": "Education",
+      "name": "clear optical prism casting a small spectrum",
+      "repetition_groups": [
+        "prism"
+      ]
+    },
+    {
+      "id": "V61-EDU-022",
+      "environment": "Education",
+      "name": "small abstract construction made from translucent geometric tiles",
+      "repetition_groups": [
+        "magnetic_tiles"
+      ]
+    },
+    {
+      "id": "V61-EDU-023",
+      "environment": "Education",
+      "name": "unlabelled shell or leaf fossil replica",
+      "repetition_groups": [
+        "fossil_replica"
+      ]
+    },
+    {
+      "id": "V61-EDU-024",
+      "environment": "Education",
+      "name": "small generic wooden truss model",
+      "repetition_groups": [
+        "bridge_model"
+      ]
+    },
+    {
+      "id": "V61-EDU-025",
+      "environment": "Education",
+      "name": "unlabelled reusable water bottle",
+      "repetition_groups": [
+        "drinkware"
+      ]
+    },
+    {
+      "id": "V61-GAM-024",
+      "environment": "Gaming",
+      "name": "illuminated display shelving with abstract objects only",
+      "repetition_groups": [
+        "open_shelving"
+      ]
+    },
+    {
+      "id": "V61-GAM-025",
+      "environment": "Gaming",
+      "name": "white storage cabinetry",
+      "repetition_groups": [
+        "closed_storage"
+      ]
+    },
+    {
+      "id": "V61-GAM-026",
+      "environment": "Gaming",
+      "name": "recessed backlit display niche",
+      "repetition_groups": [
+        "backlit_niche"
+      ]
+    },
+    {
+      "id": "V61-GAM-027",
+      "environment": "Gaming",
+      "name": "simple lounge chair",
+      "repetition_groups": [
+        "lounge_seating"
+      ]
+    },
+    {
+      "id": "V61-GAM-028",
+      "environment": "Gaming",
+      "name": "upholstered ottoman",
+      "repetition_groups": [
+        "ottoman"
+      ]
+    },
+    {
+      "id": "V61-GAM-029",
+      "environment": "Gaming",
+      "name": "floor lamp",
+      "repetition_groups": [
+        "floor_lighting"
+      ]
+    },
+    {
+      "id": "V61-GAM-030",
+      "environment": "Gaming",
+      "name": "area rug",
+      "repetition_groups": [
+        "floor_textile"
+      ]
+    },
+    {
+      "id": "V61-GAM-031",
+      "environment": "Gaming",
+      "name": "throw blanket or lounge cushion",
+      "repetition_groups": [
+        "soft_textile"
+      ]
+    },
+    {
+      "id": "V61-GAM-032",
+      "environment": "Gaming",
+      "name": "geometric acoustic treatment",
+      "repetition_groups": [
+        "acoustic_wall"
+      ]
+    },
+    {
+      "id": "V61-GAM-033",
+      "environment": "Gaming",
+      "name": "concealed RGB light strip",
+      "repetition_groups": [
+        "indirect_rgb"
+      ]
+    },
+    {
+      "id": "V61-GAM-034",
+      "environment": "Gaming",
+      "name": "original abstract geometric wall art",
+      "repetition_groups": [
+        "framed_wall_art"
+      ]
+    },
+    {
+      "id": "V61-GAM-035",
+      "environment": "Gaming",
+      "name": "dark plaster, brick, or concrete texture",
+      "repetition_groups": [
+        "wall_texture"
+      ]
+    },
+    {
+      "id": "V61-GAM-036",
+      "environment": "Gaming",
+      "name": "dark wood slats",
+      "repetition_groups": [
+        "wall_slats"
+      ]
+    },
+    {
+      "id": "V61-GAM-037",
+      "environment": "Gaming",
+      "name": "wedge, felt, or block-style acoustic panels",
+      "repetition_groups": [
+        "acoustic_wall"
+      ]
+    },
+    {
+      "id": "V61-GAM-038",
+      "environment": "Gaming",
+      "name": "non-text neon line or geometric symbol",
+      "repetition_groups": [
+        "neon_shape"
+      ]
+    },
+    {
+      "id": "V61-GAM-039",
+      "environment": "Gaming",
+      "name": "abstract decorative light panels",
+      "repetition_groups": [
+        "wall_light_panels"
+      ]
+    },
+    {
+      "id": "V61-GAM-040",
+      "environment": "Gaming",
+      "name": "dark perforated metal wall panel",
+      "repetition_groups": [
+        "perforated_panel"
+      ]
+    },
+    {
+      "id": "V61-GAM-041",
+      "environment": "Gaming",
+      "name": "colored light wash across a plain wall",
+      "repetition_groups": [
+        "gradient_light"
+      ]
+    },
+    {
+      "id": "V61-GAM-042",
+      "environment": "Gaming",
+      "name": "framed shadow box holding a single abstract object",
+      "repetition_groups": [
+        "shadow_box"
+      ]
+    },
+    {
+      "id": "V61-GAM-043",
+      "environment": "Gaming",
+      "name": "narrow floating ledge with geometric objects",
+      "repetition_groups": [
+        "wall_shelving"
+      ]
+    },
+    {
+      "id": "V61-GAM-044",
+      "environment": "Gaming",
+      "name": "dimensional wood sound-diffusion blocks",
+      "repetition_groups": [
+        "sound_diffuser"
+      ]
+    },
+    {
+      "id": "V61-GAM-001",
+      "environment": "Gaming",
+      "name": "wooden chess set or abstract peg strategy game",
+      "repetition_groups": [
+        "strategy_game"
+      ]
+    },
+    {
+      "id": "V61-GAM-002",
+      "environment": "Gaming",
+      "name": "small group of plain dice with no branding",
+      "repetition_groups": [
+        "dice_game",
+        "dice"
+      ]
+    },
+    {
+      "id": "V61-GAM-003",
+      "environment": "Gaming",
+      "name": "solid-color geometric puzzle cube",
+      "repetition_groups": [
+        "puzzle_cube"
+      ]
+    },
+    {
+      "id": "V61-GAM-004",
+      "environment": "Gaming",
+      "name": "interlocking wooden or metal puzzle",
+      "repetition_groups": [
+        "mechanical_puzzle"
+      ]
+    },
+    {
+      "id": "V61-GAM-005",
+      "environment": "Gaming",
+      "name": "original building-block sculpture with no recognizable character",
+      "repetition_groups": [
+        "block_sculpture"
+      ]
+    },
+    {
+      "id": "V61-GAM-006",
+      "environment": "Gaming",
+      "name": "original geometric vehicle or spacecraft-like model with no franchise cues",
+      "repetition_groups": [
+        "abstract_model"
+      ]
+    },
+    {
+      "id": "V61-GAM-007",
+      "environment": "Gaming",
+      "name": "small unbranded trophy with no inscription",
+      "repetition_groups": [
+        "trophy"
+      ]
+    },
+    {
+      "id": "V61-GAM-008",
+      "environment": "Gaming",
+      "name": "decorative coin with abstract relief and no writing",
+      "repetition_groups": [
+        "collector_coin"
+      ]
+    },
+    {
+      "id": "V61-GAM-009",
+      "environment": "Gaming",
+      "name": "metal balance toy or kinetic desk sculpture",
+      "repetition_groups": [
+        "kinetic_object",
+        "desk_sculpture"
+      ]
+    },
+    {
+      "id": "V61-GAM-010",
+      "environment": "Gaming",
+      "name": "crystal or mineral specimen",
+      "repetition_groups": [
+        "geode"
+      ]
+    },
+    {
+      "id": "V61-GAM-011",
+      "environment": "Gaming",
+      "name": "compact lava lamp",
+      "repetition_groups": [
+        "lava_lamp"
+      ]
+    },
+    {
+      "id": "V61-GAM-012",
+      "environment": "Gaming",
+      "name": "small plasma globe",
+      "repetition_groups": [
+        "plasma_globe"
+      ]
+    },
+    {
+      "id": "V61-GAM-013",
+      "environment": "Gaming",
+      "name": "clear sand timer",
+      "repetition_groups": [
+        "hourglass"
+      ]
+    },
+    {
+      "id": "V61-GAM-014",
+      "environment": "Gaming",
+      "name": "small abstract metal desk object",
+      "repetition_groups": [
+        "metal_sculpture"
+      ]
+    },
+    {
+      "id": "V61-GAM-015",
+      "environment": "Gaming",
+      "name": "low empty plinth or one holding the declared abstract model",
+      "repetition_groups": [
+        "display_plinth"
+      ]
+    },
+    {
+      "id": "V61-GAM-016",
+      "environment": "Gaming",
+      "name": "plain keepsake box",
+      "repetition_groups": [
+        "keepsake_box"
+      ]
+    },
+    {
+      "id": "V61-GAM-017",
+      "environment": "Gaming",
+      "name": "matte bottle, drinking glass, or ceramic mug",
+      "repetition_groups": [
+        "drinkware"
+      ]
+    },
+    {
+      "id": "V61-GAM-018",
+      "environment": "Gaming",
+      "name": "snack bowl or fruit bowl",
+      "repetition_groups": [
+        "food_bowl"
+      ]
+    },
+    {
+      "id": "V61-GAM-019",
+      "environment": "Gaming",
+      "name": "plain unbranded popcorn tub with no writing",
+      "repetition_groups": [
+        "popcorn_container",
+        "popcorn_tub"
+      ]
+    },
+    {
+      "id": "V61-GAM-020",
+      "environment": "Gaming",
+      "name": "small snack plate",
+      "repetition_groups": [
+        "food_plate"
+      ]
+    },
+    {
+      "id": "V61-GAM-021",
+      "environment": "Gaming",
+      "name": "clear drink carafe",
+      "repetition_groups": [
+        "serving_vessels"
+      ]
+    },
+    {
+      "id": "V61-GAM-022",
+      "environment": "Gaming",
+      "name": "stone or felt coaster",
+      "repetition_groups": [
+        "coaster"
+      ]
+    },
+    {
+      "id": "V61-GAM-023",
+      "environment": "Gaming",
+      "name": "compact sculptural marble track",
+      "repetition_groups": [
+        "marble_track"
+      ]
+    },
+    {
+      "id": "V61-CAF-021",
+      "environment": "Café",
+      "name": "upholstered banquette",
+      "repetition_groups": [
+        "bench_seating"
+      ]
+    },
+    {
+      "id": "V61-CAF-022",
+      "environment": "Café",
+      "name": "bentwood chair",
+      "repetition_groups": [
+        "cafe_chair"
+      ]
+    },
+    {
+      "id": "V61-CAF-023",
+      "environment": "Café",
+      "name": "simple counter stool",
+      "repetition_groups": [
+        "stool"
+      ]
+    },
+    {
+      "id": "V61-CAF-024",
+      "environment": "Café",
+      "name": "café service counter kept secondary",
+      "repetition_groups": [
+        "service_counter"
+      ]
+    },
+    {
+      "id": "V61-CAF-025",
+      "environment": "Café",
+      "name": "simple glass pastry case with no labels",
+      "repetition_groups": [
+        "pastry_display"
+      ]
+    },
+    {
+      "id": "V61-CAF-026",
+      "environment": "Café",
+      "name": "shelves holding unlabelled ceramics",
+      "repetition_groups": [
+        "open_shelving"
+      ]
+    },
+    {
+      "id": "V61-CAF-027",
+      "environment": "Café",
+      "name": "pendant lamp or small pendant cluster",
+      "repetition_groups": [
+        "pendant_lighting"
+      ]
+    },
+    {
+      "id": "V61-CAF-028",
+      "environment": "Café",
+      "name": "leafy floor plant or hanging plant",
+      "repetition_groups": [
+        "plant"
+      ]
+    },
+    {
+      "id": "V61-CAF-029",
+      "environment": "Café",
+      "name": "plain coat stand",
+      "repetition_groups": [
+        "coat_stand"
+      ]
+    },
+    {
+      "id": "V61-CAF-030",
+      "environment": "Café",
+      "name": "café curtains",
+      "repetition_groups": [
+        "window_textile"
+      ]
+    },
+    {
+      "id": "V61-CAF-031",
+      "environment": "Café",
+      "name": "woven rug",
+      "repetition_groups": [
+        "floor_textile"
+      ]
+    },
+    {
+      "id": "V61-CAF-032",
+      "environment": "Café",
+      "name": "wood or fluted-glass divider",
+      "repetition_groups": [
+        "room_divider"
+      ]
+    },
+    {
+      "id": "V61-CAF-033",
+      "environment": "Café",
+      "name": "distant chalkboard menu with explicitly non-legible writing; use only when important to the café setting",
+      "repetition_groups": [
+        "wall_writing_board"
+      ]
+    },
+    {
+      "id": "V61-CAF-034",
+      "environment": "Café",
+      "name": "abstract framed art without text or faces",
+      "repetition_groups": [
+        "framed_wall_art"
+      ]
+    },
+    {
+      "id": "V61-CAF-035",
+      "environment": "Café",
+      "name": "glazed tile or handmade zellige-style wall",
+      "repetition_groups": [
+        "tile_wall"
+      ]
+    },
+    {
+      "id": "V61-CAF-036",
+      "environment": "Café",
+      "name": "warm plaster or exposed brick",
+      "repetition_groups": [
+        "wall_texture"
+      ]
+    },
+    {
+      "id": "V61-CAF-037",
+      "environment": "Café",
+      "name": "natural-wood slats",
+      "repetition_groups": [
+        "wall_slats"
+      ]
+    },
+    {
+      "id": "V61-CAF-038",
+      "environment": "Café",
+      "name": "fabric-wrapped acoustic panels",
+      "repetition_groups": [
+        "acoustic_wall"
+      ]
+    },
+    {
+      "id": "V61-CAF-039",
+      "environment": "Café",
+      "name": "small arrangement of plain ceramic wall plates",
+      "repetition_groups": [
+        "decorative_plates"
+      ]
+    },
+    {
+      "id": "V61-CAF-040",
+      "environment": "Café",
+      "name": "nonfigurative leaf-shape mural with no words",
+      "repetition_groups": [
+        "botanical_mural"
+      ]
+    },
+    {
+      "id": "V61-CAF-041",
+      "environment": "Café",
+      "name": "metal wall grid with sparse greenery",
+      "repetition_groups": [
+        "plant_grid",
+        "plant",
+        "wire_display_grid"
+      ]
+    },
+    {
+      "id": "V61-CAF-042",
+      "environment": "Café",
+      "name": "warm wall sconce",
+      "repetition_groups": [
+        "wall_lighting"
+      ]
+    },
+    {
+      "id": "V61-CAF-043",
+      "environment": "Café",
+      "name": "carved geometric wood panel",
+      "repetition_groups": [
+        "carved_panel"
+      ]
+    },
+    {
+      "id": "V61-CAF-044",
+      "environment": "Café",
+      "name": "small textured or stained-glass insert without imagery",
+      "repetition_groups": [
+        "colored_glass"
+      ]
+    },
+    {
+      "id": "V61-CAF-001",
+      "environment": "Café",
+      "name": "ceramic coffee cup, water glass, or reusable bottle",
+      "repetition_groups": [
+        "drinkware"
+      ]
+    },
+    {
+      "id": "V61-CAF-002",
+      "environment": "Café",
+      "name": "ceramic teapot, small milk jug, or pressed-glass water bottle",
+      "repetition_groups": [
+        "serving_vessels",
+        "drinkware"
+      ]
+    },
+    {
+      "id": "V61-CAF-003",
+      "environment": "Café",
+      "name": "sugar bowl or fruit bowl",
+      "repetition_groups": [
+        "food_bowl"
+      ]
+    },
+    {
+      "id": "V61-CAF-004",
+      "environment": "Café",
+      "name": "teaspoon or small dessert fork",
+      "repetition_groups": [
+        "cutlery"
+      ]
+    },
+    {
+      "id": "V61-CAF-005",
+      "environment": "Café",
+      "name": "small pastry plate",
+      "repetition_groups": [
+        "food_plate"
+      ]
+    },
+    {
+      "id": "V61-CAF-006",
+      "environment": "Café",
+      "name": "croissant, muffin, cookie, or cake slice; all collide as one family",
+      "repetition_groups": [
+        "baked_food"
+      ]
+    },
+    {
+      "id": "V61-CAF-007",
+      "environment": "Café",
+      "name": "small sandwich with no branded wrapping",
+      "repetition_groups": [
+        "savory_food"
+      ]
+    },
+    {
+      "id": "V61-CAF-008",
+      "environment": "Café",
+      "name": "woven basket with plain bread",
+      "repetition_groups": [
+        "bread_basket",
+        "woven_storage",
+        "bread"
+      ]
+    },
+    {
+      "id": "V61-CAF-009",
+      "environment": "Café",
+      "name": "folded cloth napkin or plain napkin holder",
+      "repetition_groups": [
+        "napkin"
+      ]
+    },
+    {
+      "id": "V61-CAF-010",
+      "environment": "Café",
+      "name": "cork or ceramic coaster",
+      "repetition_groups": [
+        "coaster"
+      ]
+    },
+    {
+      "id": "V61-CAF-011",
+      "environment": "Café",
+      "name": "bud vase with a single simple flower",
+      "repetition_groups": [
+        "flower_vessel"
+      ]
+    },
+    {
+      "id": "V61-CAF-012",
+      "environment": "Café",
+      "name": "small plain candleholder",
+      "repetition_groups": [
+        "decorative_candle"
+      ]
+    },
+    {
+      "id": "V61-CAF-013",
+      "environment": "Café",
+      "name": "wood or metal café tray",
+      "repetition_groups": [
+        "serving_tray"
+      ]
+    },
+    {
+      "id": "V61-CAF-014",
+      "environment": "Café",
+      "name": "small unlabelled ceramic condiment pair",
+      "repetition_groups": [
+        "condiment_set"
+      ]
+    },
+    {
+      "id": "V61-CAF-015",
+      "environment": "Café",
+      "name": "low pastry stand or clear pastry dome",
+      "repetition_groups": [
+        "cake_stand"
+      ]
+    },
+    {
+      "id": "V61-CAF-016",
+      "environment": "Café",
+      "name": "small herb pot or leafy tabletop plant",
+      "repetition_groups": [
+        "plant"
+      ]
+    },
+    {
+      "id": "V61-CAF-017",
+      "environment": "Café",
+      "name": "one hand-glazed ceramic tile used as a tabletop accent",
+      "repetition_groups": [
+        "decorative_tile",
+        "ceramic_tile"
+      ]
+    },
+    {
+      "id": "V61-CAF-018",
+      "environment": "Café",
+      "name": "small unlabelled ceramic form for populated shelving",
+      "repetition_groups": [
+        "ceramic_object"
+      ]
+    },
+    {
+      "id": "V61-CAF-019",
+      "environment": "Café",
+      "name": "one blank notebook form when the scene specifically depicts focused table work",
+      "repetition_groups": [
+        "paper_materials"
+      ]
+    },
+    {
+      "id": "V61-CAF-020",
+      "environment": "Café",
+      "name": "folded reading glasses",
+      "repetition_groups": [
+        "eyewear"
+      ]
+    },
+    {
+      "id": "V61-STU-023",
+      "environment": "Creative Studio",
+      "name": "studio stool",
+      "repetition_groups": [
+        "stool"
+      ]
+    },
+    {
+      "id": "V61-STU-024",
+      "environment": "Creative Studio",
+      "name": "wooden easel with an abstract, unfinished canvas",
+      "repetition_groups": [
+        "easel",
+        "large_canvas"
+      ]
+    },
+    {
+      "id": "V61-STU-025",
+      "environment": "Creative Studio",
+      "name": "rolling cart with unlabelled materials",
+      "repetition_groups": [
+        "materials_cart"
+      ]
+    },
+    {
+      "id": "V61-STU-026",
+      "environment": "Creative Studio",
+      "name": "side cabinet, drawer unit, or flat-file cabinet",
+      "repetition_groups": [
+        "closed_storage"
+      ]
+    },
+    {
+      "id": "V61-STU-027",
+      "environment": "Creative Studio",
+      "name": "shelves with unlabelled jars or material samples",
+      "repetition_groups": [
+        "open_shelving"
+      ]
+    },
+    {
+      "id": "V61-STU-028",
+      "environment": "Creative Studio",
+      "name": "headless plain dress form with no facial features",
+      "repetition_groups": [
+        "dress_form"
+      ]
+    },
+    {
+      "id": "V61-STU-029",
+      "environment": "Creative Studio",
+      "name": "simple drying rack with blank material sheets",
+      "repetition_groups": [
+        "drying_rack"
+      ]
+    },
+    {
+      "id": "V61-STU-030",
+      "environment": "Creative Studio",
+      "name": "rack holding plain fabric or paper rolls",
+      "repetition_groups": [
+        "material_roll_rack"
+      ]
+    },
+    {
+      "id": "V61-STU-031",
+      "environment": "Creative Studio",
+      "name": "studio task lamp",
+      "repetition_groups": [
+        "task_lighting"
+      ]
+    },
+    {
+      "id": "V61-STU-032",
+      "environment": "Creative Studio",
+      "name": "linen curtains",
+      "repetition_groups": [
+        "window_textile"
+      ]
+    },
+    {
+      "id": "V61-STU-033",
+      "environment": "Creative Studio",
+      "name": "potted plant",
+      "repetition_groups": [
+        "plant"
+      ]
+    },
+    {
+      "id": "V61-STU-034",
+      "environment": "Creative Studio",
+      "name": "low studio pedestal with one abstract prototype",
+      "repetition_groups": [
+        "display_pedestal"
+      ]
+    },
+    {
+      "id": "V61-STU-035",
+      "environment": "Creative Studio",
+      "name": "pegboard holding a restrained set of declared, non-digital tools",
+      "repetition_groups": [
+        "tool_pegboard"
+      ]
+    },
+    {
+      "id": "V61-STU-036",
+      "environment": "Creative Studio",
+      "name": "material board using only unlabeled color and texture samples",
+      "repetition_groups": [
+        "wall_display_board"
+      ]
+    },
+    {
+      "id": "V61-STU-037",
+      "environment": "Creative Studio",
+      "name": "large abstract canvas without text, faces, or recognizable characters",
+      "repetition_groups": [
+        "large_canvas"
+      ]
+    },
+    {
+      "id": "V61-STU-038",
+      "environment": "Creative Studio",
+      "name": "neutral studio acoustic panels",
+      "repetition_groups": [
+        "acoustic_wall"
+      ]
+    },
+    {
+      "id": "V61-STU-039",
+      "environment": "Creative Studio",
+      "name": "pale or dark wood slats",
+      "repetition_groups": [
+        "wall_slats"
+      ]
+    },
+    {
+      "id": "V61-STU-040",
+      "environment": "Creative Studio",
+      "name": "plaster test wall with subtle finish variation",
+      "repetition_groups": [
+        "wall_texture"
+      ]
+    },
+    {
+      "id": "V61-STU-041",
+      "environment": "Creative Studio",
+      "name": "wall grid holding geometric samples only",
+      "repetition_groups": [
+        "wire_display_grid"
+      ]
+    },
+    {
+      "id": "V61-STU-042",
+      "environment": "Creative Studio",
+      "name": "narrow hanging fabric strips with no printed imagery",
+      "repetition_groups": [
+        "hanging_textiles"
+      ]
+    },
+    {
+      "id": "V61-STU-043",
+      "environment": "Creative Studio",
+      "name": "small grid of handmade ceramic test tiles",
+      "repetition_groups": [
+        "ceramic_tile_grid",
+        "ceramic_samples",
+        "ceramic_tile"
+      ]
+    },
+    {
+      "id": "V61-STU-044",
+      "environment": "Creative Studio",
+      "name": "floating shelf with unlabelled jars or one prototype",
+      "repetition_groups": [
+        "wall_shelving"
+      ]
+    },
+    {
+      "id": "V61-STU-045",
+      "environment": "Creative Studio",
+      "name": "shallow wall box containing an abstract model",
+      "repetition_groups": [
+        "shadow_box",
+        "abstract_model"
+      ]
+    },
+    {
+      "id": "V61-STU-046",
+      "environment": "Creative Studio",
+      "name": "ceiling-mounted studio track lights",
+      "repetition_groups": [
+        "track_lighting"
+      ]
+    },
+    {
+      "id": "V61-STU-001",
+      "environment": "Creative Studio",
+      "name": "sketchbook, portfolio folder, blank drawing sheets, or rolled drawing; choose only one form for the entire bank",
+      "repetition_groups": [
+        "paper_materials"
+      ]
+    },
+    {
+      "id": "V61-STU-002",
+      "environment": "Creative Studio",
+      "name": "graphite pencils, charcoal, colored pencils, drawing pens, markers, or pastels",
+      "repetition_groups": [
+        "writing_tools"
+      ]
+    },
+    {
+      "id": "V61-STU-003",
+      "environment": "Creative Studio",
+      "name": "watercolor palette, paintbrushes, palette knife, or small mixing dish",
+      "repetition_groups": [
+        "paint_tools"
+      ]
+    },
+    {
+      "id": "V61-STU-004",
+      "environment": "Creative Studio",
+      "name": "brush holder or clear brush jar; collides with office and education pen cups",
+      "repetition_groups": [
+        "tool_cup",
+        "writing_tools"
+      ]
+    },
+    {
+      "id": "V61-STU-005",
+      "environment": "Creative Studio",
+      "name": "fabric, color, wood, or finish swatches; all collide as one visual family",
+      "repetition_groups": [
+        "material_swatches"
+      ]
+    },
+    {
+      "id": "V61-STU-006",
+      "environment": "Creative Studio",
+      "name": "ribbon, thread spool, or cord samples",
+      "repetition_groups": [
+        "textile_notions"
+      ]
+    },
+    {
+      "id": "V61-STU-007",
+      "environment": "Creative Studio",
+      "name": "measuring tape, ruler, or set square",
+      "repetition_groups": [
+        "measurement_tools"
+      ]
+    },
+    {
+      "id": "V61-STU-008",
+      "environment": "Creative Studio",
+      "name": "scissors or craft knife placed safely on the work surface",
+      "repetition_groups": [
+        "cutting_tools"
+      ]
+    },
+    {
+      "id": "V61-STU-009",
+      "environment": "Creative Studio",
+      "name": "plain craft cutting mat with no visible numbers or lettering",
+      "repetition_groups": [
+        "work_mat"
+      ]
+    },
+    {
+      "id": "V61-STU-010",
+      "environment": "Creative Studio",
+      "name": "masking tape or plain paper tape",
+      "repetition_groups": [
+        "adhesive"
+      ]
+    },
+    {
+      "id": "V61-STU-011",
+      "environment": "Creative Studio",
+      "name": "binder clips",
+      "repetition_groups": [
+        "paper_fasteners"
+      ]
+    },
+    {
+      "id": "V61-STU-012",
+      "environment": "Creative Studio",
+      "name": "ceramic test tile or small glaze sample",
+      "repetition_groups": [
+        "ceramic_samples"
+      ]
+    },
+    {
+      "id": "V61-STU-013",
+      "environment": "Creative Studio",
+      "name": "two or three abstract clay forms",
+      "repetition_groups": [
+        "clay_samples"
+      ]
+    },
+    {
+      "id": "V61-STU-014",
+      "environment": "Creative Studio",
+      "name": "small wooden model, geometric origami form, or plaster prototype",
+      "repetition_groups": [
+        "prototype_model"
+      ]
+    },
+    {
+      "id": "V61-STU-015",
+      "environment": "Creative Studio",
+      "name": "small abstract wire armature",
+      "repetition_groups": [
+        "wire_form"
+      ]
+    },
+    {
+      "id": "V61-STU-016",
+      "environment": "Creative Studio",
+      "name": "geometric foam mock-up pieces",
+      "repetition_groups": [
+        "foam_forms"
+      ]
+    },
+    {
+      "id": "V61-STU-017",
+      "environment": "Creative Studio",
+      "name": "unlabelled translucent glass or acrylic sample tiles",
+      "repetition_groups": [
+        "glass_samples"
+      ]
+    },
+    {
+      "id": "V61-STU-018",
+      "environment": "Creative Studio",
+      "name": "small unlabelled pigment jars with closed lids",
+      "repetition_groups": [
+        "pigment_jars"
+      ]
+    },
+    {
+      "id": "V61-STU-019",
+      "environment": "Creative Studio",
+      "name": "plain geometric stencils with no letters or numbers",
+      "repetition_groups": [
+        "stencil_shapes"
+      ]
+    },
+    {
+      "id": "V61-STU-020",
+      "environment": "Creative Studio",
+      "name": "compact woven test panel",
+      "repetition_groups": [
+        "loom_sample"
+      ]
+    },
+    {
+      "id": "V61-STU-021",
+      "environment": "Creative Studio",
+      "name": "small unbranded brayer or printmaking roller",
+      "repetition_groups": [
+        "hand_roller"
+      ]
+    },
+    {
+      "id": "V61-STU-022",
+      "environment": "Creative Studio",
+      "name": "short group of natural-wood dowels",
+      "repetition_groups": [
+        "dowel_set"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+You write a concise GPT Image 2.5 Sunburst correction prompt for an already composed and relit five-cup photograph. Return only the editing prompt, about 80–120 words. Change only the long smooth light arcs leaving the existing central focus.
+
+Image 1 is authoritative for every cup, content detail, arrangement, camera, crop, background, colored footprint, shadow direction, compact central focus and faint subordinate texture. Preserve those exactly.
+
+Erase the current haloed sweeping arcs. Replace them with three unequal primary refractive ridges that leave the core at irregular angles. Each path has sharp but naturally varied focused edges, two or three abrupt optical bends, visibly changing width and patchy intensity. Add one small off-center Y-fork to each of two paths; forks are different lengths and taper to nothing. Paths never cross or reconnect. Keep wide quiet gaps and faint smooth colored falloff between them. They must read as faceted transmitted sunlight on a tabletop, not drawn lightning, a soft glowing ribbon, wave, starburst, vein or mesh. Add no wall projection.

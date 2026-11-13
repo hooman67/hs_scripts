@@ -1,0 +1,175 @@
+{
+  "schema_version": "placement-consensus-v2-independent-audit-v1",
+  "audited_at_utc": "2026-11-06T00:09:55.630112+00:00",
+  "status": "pass_with_accuracy_limitations",
+  "scope": ["consensus-84-v2", "consensus-160-v2", "optional local consensus-v2 FE build"],
+  "protocol": {
+    "semantic_policy_version": "placement-consensus-additions-decision-v1",
+    "source_binding_version": "placement-consensus-source-binding-v2",
+    "policy_sha256": "560e82812beda2a3c7f1e4af53be36be933808da5cc8f95aa8b72d7e690cbc03",
+    "merge_generator_sha256": "3063874ed3bc19d4c76e6575fb3fef2da8652f7a9fc96c3fd06f7754a87c686b",
+    "evaluator_sha256": "fe3561ae43a09cff0f3718dba6c5446d6822dbc3acd0c5ccc682b2ffacda491c",
+    "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+    "two_pass_combiner_sha256": "87e5ac23a0ef9254f7c43b499197539abe2670db243f427a9d477ddc6cbfb1e1",
+    "snapshot_manifest_sha256": "272e84695035f3ebf6bdf334e6eed51044b4f292de0442066f135f29cd3224ce",
+    "uniformity": {
+      "unique_policy_hashes_across_244_records": 1,
+      "unique_merge_generator_hashes_across_244_records": 1,
+      "case_or_device_tokens_in_policy_or_merger": [],
+      "per_case_policy_choice_or_mapping": false,
+      "case_mapping_role": "input/source join and requested-component coverage only",
+      "same_resolution_and_final_policy_recomputed_for_every_trigger_component": true
+    }
+  },
+  "consensus_84_v2": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/consensus_policy/runs/consensus-84-v2",
+    "summary_sha256": "bd569cde1506139575b003d8ec386f9a09d3af52c4d653f6180bf075a8f13f5b",
+    "evaluation_sha256": "964a85be4d64f34017ec80abe564738930baa08c00b93c8fdcbf3672923cff05",
+    "upstream_audit_sha256": "49d759d34218bca7a35635d710dae4df86a8310058a766a19311142b5f4489da",
+    "records": 84,
+    "trigger_cases": 6,
+    "trigger_components": 8,
+    "trigger_manifest_sha256": "0797c99432381317394d66a6fa5181222ccbdd7e3abf7f1b0b3a23de6e3717dc",
+    "triggers_recomputed_exactly_from_predictions": [
+      {"id": "cashmere__laptop_FrontCloseUp__p5", "component": "access_usability"},
+      {"id": "cashmere__laptop_FrontCloseUp__p5", "component": "orientation_alignment"},
+      {"id": "cashmere__laptop_FrontLeftMedium__p6", "component": "access_usability"},
+      {"id": "cashmere__laptop_FrontLeftMedium__p6", "component": "orientation_alignment"},
+      {"id": "magic__printer_FrontCloseUp__p3", "component": "support_scenario"},
+      {"id": "magic__printer_FrontLeftMedium__p1", "component": "support_scenario"},
+      {"id": "tassel__printer_FrontCloseUp__p5", "component": "support_scenario"},
+      {"id": "tassel__printer_FrontLeftMedium__p6", "component": "support_scenario"}
+    ],
+    "resolution_counts": {"confirmed_consensus": 3, "rejected_confident_clear_or_minor": 4, "unconfirmed_uncertain": 1},
+    "verdict_counts": {
+      "baseline_v2": {"pass": 41, "review": 1, "fail": 42},
+      "original_two_pass": {"pass": 36, "review": 1, "fail": 47},
+      "consensus": {"pass": 38, "review": 2, "fail": 44}
+    },
+    "full_recomputation": {
+      "records_exact": 84,
+      "merged_components_exact_including_severity_confidence_codes": 420,
+      "consensus_resolutions_exact": 8,
+      "scores_and_final_decisions_exact": 84
+    },
+    "development_metrics_recomputed": {
+      "diagnostic_verdict_checks": "6/11",
+      "diagnostic_issue_any_checks": "5/15",
+      "extended_explicit_verdicts": "2/2",
+      "extended_v2_agreements": "55/56",
+      "sole_v2_agreement_mismatch": {"id": "cashmere__laptop_FrontCloseUp__p5", "consensus": "review", "v2": "pass"},
+      "extended_issue_any_checks": "3/6"
+    },
+    "archived_v1": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/consensus_policy/runs/consensus-84-v1",
+      "summary_sha256": "4fc4cab8ab0521e7b64c74288efd593ff2bc3277b8de02bcdcf613745aba52b5",
+      "summary_hash_matches_snapshot": true,
+      "semantic_fields_exact": "84/84"
+    }
+  },
+  "consensus_160_v2": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/consensus_policy/runs/consensus-160-v2",
+    "summary_sha256": "d5bf88848e2dae1b2f9e32a02d9aa04bec5281c6f51a5099b6dc1b9e9e52ec7c",
+    "evaluation_sha256": "56dff99a168c50eae33e33f4199f479617467ae6e2ec6a98999e6107007d806d",
+    "upstream_audit_sha256": "598e0d4ca2f8290d91707cbb670135e3f44652ce94a07ca2febfe3bc1530c1fb",
+    "records": 160,
+    "trigger_cases": 4,
+    "trigger_components": 5,
+    "trigger_manifest_sha256": "9a87b591fd2e2dc5c520255fb835c487939eb22bfbaf499e9d920023fc915e71",
+    "triggers_recomputed_exactly_from_predictions": [
+      {"id": "cashmere__laptop_BackRightCloseUp__p9", "component": "access_usability"},
+      {"id": "elitebook__laptop_BackRightCloseUp__p7", "component": "orientation_alignment"},
+      {"id": "elitebook__laptop_BackRightCloseUp__p9", "component": "access_usability"},
+      {"id": "elitebook__laptop_BackRightCloseUp__p9", "component": "orientation_alignment"},
+      {"id": "magic__printer_FrontLeftMedium__p6", "component": "support_scenario"}
+    ],
+    "resolution_counts": {"confirmed_consensus": 1, "rejected_confident_clear_or_minor": 4},
+    "verdict_counts": {
+      "baseline_v2": {"pass": 118, "review": 4, "fail": 38},
+      "original_two_pass": {"pass": 117, "review": 4, "fail": 39},
+      "consensus": {"pass": 118, "review": 4, "fail": 38}
+    },
+    "baseline_v2_to_consensus_verdict_changes": 0,
+    "two_pass_to_consensus": {"changed": 1, "id": "elitebook__laptop_BackRightCloseUp__p9", "transition": "fail->pass"},
+    "full_recomputation": {
+      "records_exact": 160,
+      "merged_components_exact_including_severity_confidence_codes": 800,
+      "consensus_resolutions_exact": 5,
+      "scores_and_final_decisions_exact": 160
+    },
+    "archived_v1": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/consensus_policy/runs/consensus-160-v1",
+      "summary_sha256": "104b649fb2617c1cca9ae14250d12dc7f7fd254f4db26133bbaca338a0c85927",
+      "summary_hash_matches_snapshot": true,
+      "semantic_fields_exact": "160/160"
+    }
+  },
+  "component_resolutions": [
+    {"dataset": "development84", "id": "cashmere__laptop_FrontCloseUp__p5", "component": "access_usability", "status": "rejected_confident_clear_or_minor", "selected_severity": 0, "selected_confidence": "medium", "selected_issue_codes": []},
+    {"dataset": "development84", "id": "cashmere__laptop_FrontCloseUp__p5", "component": "orientation_alignment", "status": "unconfirmed_uncertain", "selected_severity": 0, "selected_confidence": "high", "selected_issue_codes": []},
+    {"dataset": "development84", "id": "cashmere__laptop_FrontLeftMedium__p6", "component": "access_usability", "status": "confirmed_consensus", "selected_severity": 2, "selected_confidence": "medium", "selected_issue_codes": ["no_user_position"]},
+    {"dataset": "development84", "id": "cashmere__laptop_FrontLeftMedium__p6", "component": "orientation_alignment", "status": "confirmed_consensus", "selected_severity": 2, "selected_confidence": "medium", "selected_issue_codes": ["chair_alignment_conflict"]},
+    {"dataset": "development84", "id": "magic__printer_FrontCloseUp__p3", "component": "support_scenario", "status": "rejected_confident_clear_or_minor", "selected_severity": 0, "selected_confidence": "medium", "selected_issue_codes": []},
+    {"dataset": "development84", "id": "magic__printer_FrontLeftMedium__p1", "component": "support_scenario", "status": "rejected_confident_clear_or_minor", "selected_severity": 0, "selected_confidence": "medium", "selected_issue_codes": []},
+    {"dataset": "development84", "id": "tassel__printer_FrontCloseUp__p5", "component": "support_scenario", "status": "rejected_confident_clear_or_minor", "selected_severity": 0, "selected_confidence": "medium", "selected_issue_codes": []},
+    {"dataset": "development84", "id": "tassel__printer_FrontLeftMedium__p6", "component": "support_scenario", "status": "confirmed_consensus", "selected_severity": 2, "selected_confidence": "medium", "selected_issue_codes": ["inappropriate_support", "unmotivated_position"]},
+    {"dataset": "new160", "id": "cashmere__laptop_BackRightCloseUp__p9", "component": "access_usability", "status": "rejected_confident_clear_or_minor", "selected_severity": 2, "selected_confidence": "medium", "selected_issue_codes": ["no_user_position", "excessive_reach"]},
+    {"dataset": "new160", "id": "elitebook__laptop_BackRightCloseUp__p7", "component": "orientation_alignment", "status": "rejected_confident_clear_or_minor", "selected_severity": 0, "selected_confidence": "medium", "selected_issue_codes": []},
+    {"dataset": "new160", "id": "elitebook__laptop_BackRightCloseUp__p9", "component": "access_usability", "status": "rejected_confident_clear_or_minor", "selected_severity": 0, "selected_confidence": "medium", "selected_issue_codes": []},
+    {"dataset": "new160", "id": "elitebook__laptop_BackRightCloseUp__p9", "component": "orientation_alignment", "status": "rejected_confident_clear_or_minor", "selected_severity": 0, "selected_confidence": "medium", "selected_issue_codes": []},
+    {"dataset": "new160", "id": "magic__printer_FrontLeftMedium__p6", "component": "support_scenario", "status": "confirmed_consensus", "selected_severity": 2, "selected_confidence": "high", "selected_issue_codes": ["inappropriate_support", "unmotivated_position"]}
+  ],
+  "overlay_integrity": {
+    "proposal_aware_results_and_raw_responses": 10,
+    "names_only_results_and_raw_responses": 10,
+    "raw_body_parses_exactly_to_saved_assessment": "20/20",
+    "exact_requested_component_sets": "20/20",
+    "five_field_runtime_input_whitelist": "20/20",
+    "generated_image_bytes_bound_to_source": "20/20",
+    "twin_image_bytes_bound_to_source": "20/20",
+    "scene_prompt_hash_bound_to_source": "20/20",
+    "product_type_and_image_stage_bound_to_source": "20/20",
+    "proposal_source_two_pass_hash_bound": "10/10",
+    "names_only_trigger_manifest_hash_bound": "10/10",
+    "human_comment_or_prior_verdict_contamination_flags": false,
+    "raw_response_sha256": {
+      "development84": {
+        "cashmere__laptop_FrontCloseUp__p5": {"proposal_aware": "a9d4ad39e803fa1c70a2f4d3c86853ef71e43a2d79717d3009923b33f79f73fc", "names_only": "578504332ce059ee66349ce8ce0bdba8793025ef8b5f8b6769c2ea5691cb687e"},
+        "cashmere__laptop_FrontLeftMedium__p6": {"proposal_aware": "8f92c58fce5d9bbde41429df45cf9be386bdadb343a4d494c5846dbb80bc8a1f", "names_only": "4e974ec3a2691bbe1e006d6dc1d383e8cdf6a684cf45027af1099907bd64b208"},
+        "magic__printer_FrontCloseUp__p3": {"proposal_aware": "07c38c2576977e7a52e62037071cc6396e5b6ccc2b40412577ca73a1cb89c487", "names_only": "b935335db30d7f7b2d98f3cc0202a8349802a12bd1681fb4bcec1712be846d43"},
+        "magic__printer_FrontLeftMedium__p1": {"proposal_aware": "ec7347b7a82fab78c6639c6165d3df2e9af547b977b139e496af5221040f62e9", "names_only": "5605b6537505458a7c6a512aea92279a6f2823bef133184588aba099c06d026c"},
+        "tassel__printer_FrontCloseUp__p5": {"proposal_aware": "5d9d5723a50d2a669915a6f9e24f88b86878feb493be7660d87e282821b21a5a", "names_only": "6994ddb195a869d2f24e426a3e233198faa4c9ed53895c3ac15527f0e31838e6"},
+        "tassel__printer_FrontLeftMedium__p6": {"proposal_aware": "b975c0cba3998db7f121d138e9c3a91f2cd0deda6b5825ab00ef540430df9beb", "names_only": "95a716f10c37f0a5d6b72ccb092ea40a26398680d98bd7f75c78b585139bb8a2"}
+      },
+      "new160": {
+        "cashmere__laptop_BackRightCloseUp__p9": {"proposal_aware": "d38c0082aa4a8621607a33254495094a25532f587955c6ff509221e968a0df64", "names_only": "ebc9a40fe9f729e226b00c86d85d5f9faeeaaeea0b0093f9c95041a41e732b5a"},
+        "elitebook__laptop_BackRightCloseUp__p7": {"proposal_aware": "da28fe419b8dda9e9efad4d8aedb8ac65863f1162689626ce656e965fc31577b", "names_only": "f0640636752a827fe9cc3b348ec5757ad4e4992e09e1f9bf43c13f97098a7380"},
+        "elitebook__laptop_BackRightCloseUp__p9": {"proposal_aware": "44e26a5ddb3f529fd983411e214638bb65b3b0de1d3f58506f71cf1255b6e120", "names_only": "5e3ec6a52ddaed31565ab2762dbedb21dbe52a1659bf5625be5183e6e34152d0"},
+        "magic__printer_FrontLeftMedium__p6": {"proposal_aware": "77588898c32f27b761b79657bd06c82b3ad60a87e15234e0087741c9d7ff7995", "names_only": "cd29861162316a685741bd3a8d48972dee0f178a1582f90b529e7490d07d2584"}
+      }
+    }
+  },
+  "front_end_optional_check": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/fe_reports/v6_1_consensus_v2_20261105",
+    "build_manifest_sha256": "ee21e315a40ba1d585ea73b9ab523fb763ba54a95cc605aac4155490bbb099dc",
+    "status": "local_build_validated_not_published",
+    "combined": {"rows": 160, "data_sha256": "69b33ccd2ae8ffb6da62d423dd54fecd81c8c0b19f5d0a0613d3faf2cb0e4bfa"},
+    "laptops": {"rows": 80, "data_sha256": "c0e7303cfa5d6fb3d5203ee457fcb4a8721fe22f1b17f846cfd4aee7cbb94a13"},
+    "printers": {"rows": 80, "data_sha256": "15fc77e3d3274f9528e1528c66e303e381434576765601bad4cf32e996e05499"},
+    "exact_ids_images_twins_prompts_scores_verdicts": true,
+    "consensus_both_checks_resolution_and_final_decision_exposed": true,
+    "shared_twin_hashes_verified": 16
+  },
+  "tests": {
+    "command": "python -m pytest -q judge/placement/versions/v3/experiments/consensus_policy/test_consensus.py judge/placement/versions/v3/experiments/consensus_policy/test_consensus_v2.py",
+    "result": "9 passed in 1.34s"
+  },
+  "limitations": [
+    "Consensus-84 is posthoc development data, including human expectations used for the reported checks.",
+    "The NEW160 consensus policy was selected after partial root inspection of its four trigger cases and is explicitly not held-out validation.",
+    "The only concrete human image-level finding reported to this audit is root's suspected Elitebook error; there is no systematic human annotation set for NEW160.",
+    "The files can verify that no human labels entered model/runtime inputs, but cannot independently prove the complete history of informal human inspection.",
+    "The 118 pass / 38 fail / 4 review counts and zero V2 verdict changes are deterministic output facts, not accuracy estimates.",
+    "The FE build was local and not published at audit time."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "side_by_side": {"user_prompt": "Arrange these drinks side by side.", "description": "Five complete drinks, one row, shallow shared plane"},
+  "staggered": {"user_prompt": "Arrange these drinks as a compact staggered group.", "description": "Five complete drinks, shallow staggered grouping"},
+  "pair_lineup": {
+    "user_prompt": "Arrange the cola on the left and amber drink on the right, side by side.",
+    "description": "2 cups · cola + amber · side by side",
+    "input_indices": [4, 3],
+    "comparison_example": "assets/composition_examples/TCCC – Crafted Sept 2026-3 copy.png",
+    "comparison_note": "Matches the example's cola-left / amber-right pairing and lineup. Comparison only, not sent to either model. Retain original source cup geometry, white studio setting and neutral shadows; do not copy the example's refractions or equalized cup heights."
+  },
+  "pair_staggered": {
+    "user_prompt": "Arrange the cola front-left and amber drink back-right in a compact shallow staggered pair.",
+    "description": "2 cups · cola + amber · cola front-left",
+    "input_indices": [4, 3],
+    "comparison_example": "assets/composition_examples/TCCC – Crafted Sept 2026-1 copy.png",
+    "comparison_note": "Matches the example's cola-front-left / amber-back-right pairing. Comparison only, not sent to either model. Use shallow depth and original cup proportions, not the example's elevated camera, foreground enlargement or refractions."
+  },
+  "trio_lineup": {
+    "user_prompt": "Arrange the red, orange and amber drinks side by side, in that order from left to right.",
+    "description": "3 cups · red + orange + amber · side by side",
+    "input_indices": [2, 5, 3],
+    "comparison_example": "assets/composition_examples/TCCC – Crafted Sept 2026-6.png",
+    "comparison_note": "Internally generated layout example, not customer-approved output or a model input. Matches red / orange / amber order only. The updated upright orange source supplies its own flat base and syrup pattern; do not copy the example's geometry or refractions."
+  },
+  "trio_orange_front": {
+    "user_prompt": "Arrange the orange drink front-center, with red back-left and amber back-right, in a compact shallow staggered group.",
+    "description": "3 cups · red + orange + amber · orange front-center",
+    "input_indices": [2, 5, 3],
+    "comparison_example": "assets/composition_examples/TCCC – Crafted Sept 2026-3.png",
+    "comparison_note": "Internally generated layout example, not customer-approved output or a model input. Matches orange-front / red-back-left / amber-back-right slots only. Preserve the updated upright orange's flat base and source proportions; do not copy the example's enlarged foreground cup or refractions."
+  },
+  "trio_amber_front": {
+    "user_prompt": "Arrange the amber drink front-center, with red back-left and orange back-right, in a compact shallow staggered group.",
+    "description": "3 cups · red + amber + orange · amber front-center",
+    "input_indices": [2, 3, 5],
+    "comparison_example": "assets/composition_examples/TCCC – Crafted Sept 2026-4 copy.png",
+    "comparison_note": "Internally generated layout example, not customer-approved output or a model input. Matches amber-front / red-back-left / orange-back-right slots only. Preserve each current source cup including the new upright orange. The supplied -8.png is a byte-identical duplicate of this example."
+  }
+}

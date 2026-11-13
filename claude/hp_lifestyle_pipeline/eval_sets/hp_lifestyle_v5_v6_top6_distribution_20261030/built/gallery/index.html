@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HP Lifestyle · V5–V6 comparison and V6 prop audit</title>
+  <link rel="stylesheet" href="./style.css?v=3">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading" class="loading">Loading distribution report…</div>
+  <main id="content" class="hidden">
+    <header>
+      <p class="eyebrow">HP lifestyle prompt writer</p>
+      <h1>V5–V6 comparison and V6 prop audit</h1>
+      <p class="lede">A like-for-like top-96 comparison plus a separate prop audit of all 160 frozen V6 prompts and the 96 generated previews.</p>
+      <nav class="downloads">
+        <a href="../downloads/analysis.json" download>Analysis JSON</a>
+        <a href="../downloads/candidate_metrics.csv" download>Candidate metrics CSV</a>
+        <a href="../downloads/v5_prompts_top6_96.json" download>V5 prompts</a>
+        <a href="../downloads/v6_prompts_top6_96.json" download>V6 prompts</a>
+        <a href="../downloads/v6_prompts_all_160.json" download>All 160 V6 prompts</a>
+        <a href="../downloads/v6_prop_usage.json" download>V6 prop usage JSON</a>
+        <a href="../downloads/v6_prop_usage.csv" download>V6 prop usage CSV</a>
+        <a href="../downloads/downstream_prop_additions_audit.json" download>Rewrite additions JSON</a>
+      </nav>
+    </header>
+
+    <nav class="report-tabs" aria-label="Report views">
+      <button class="tab-button active" type="button" data-tab="comparisonTab">V5–V6 comparison</button>
+      <button class="tab-button" type="button" data-tab="v6PropTab">V6 prop audit · all 160</button>
+    </nav>
+
+    <div id="comparisonTab" class="tab-panel active">
+      <section><h2>Headline comparison</h2><div id="kpis" class="kpis"></div><div id="interpretation" class="callout"></div></section>
+      <section><h2>Environment distribution</h2><p class="note">Café and Creative Studio remain separate native environments.</p><div id="environmentChart" class="chart"></div><div id="environmentTable"></div></section>
+      <section class="split"><article><h2>Source relevance</h2><div id="sourceScoreChart"></div></article><article><h2>Declared C-Tech score</h2><div id="ctechScoreChart"></div></article></section>
+      <section class="split"><article><h2>Measured C-Tech proximity</h2><div id="measuredChart"></div></article><article><h2>Prompt length and props</h2><div id="densityTable"></div></article></section>
+      <section><h2>Source score × declared C-Tech score</h2><div id="dualScatter" class="svg-chart"></div><div id="legend" class="legend"></div></section>
+      <section><h2>Joint semantic map</h2><p class="note">Circles are prompts. Stars are the same normalized C-Tech references used in the established reports.</p><div class="controls"><label>Version <select id="mapVersion"><option value="all">Both</option><option>V5</option><option>V6</option></select></label><label>Environment <select id="mapEnvironment"><option value="all">All</option></select></label></div><div id="semanticMap" class="svg-chart"></div></section>
+      <section><h2>C-Tech proximity by environment and view</h2><div id="groupTables" class="split"></div></section>
+      <section><h2>Reference coverage</h2><div id="referenceCoverage" class="chart"></div><div id="referenceList"></div></section>
+      <section><h2>Repetition and recurring phrases</h2><div id="lexicalTables" class="split"></div></section>
+      <section><h2>Closest and farthest from C-Tech references</h2><div id="exampleTables" class="split"></div></section>
+      <section><h2>Candidate explorer</h2><div class="controls"><label>Version <select id="versionFilter"><option value="all">Both</option><option>V5</option><option>V6</option></select></label><label>Environment <select id="environmentFilter"><option value="all">All</option></select></label><label>Device <select id="deviceFilter"><option value="all">All</option></select></label><label>Search <input id="search" type="search"></label></div><div id="candidateCount" class="note"></div><div id="candidates"></div></section>
+      <section><h2>V4.1 context</h2><div id="v41" class="callout"></div></section>
+      <section><h2>Methods and limitations</h2><div id="methods"></div></section>
+    </div>
+
+    <div id="v6PropTab" class="tab-panel">
+      <section>
+        <h2>All 160 frozen V6 prompts</h2>
+        <p class="note">This section covers every prompt in the 16 V6 banks: ten prompts per device/camera bank. It analyzes the approved prop IDs and exact input prose before image generation.</p>
+        <div id="fullPropKpis" class="kpis"></div>
+        <div class="split prop-overview"><article><h3>Environment distribution</h3><div id="fullEnvironmentChart" class="chart"></div></article><article><h3>Most frequent semantic prop groups</h3><div id="fullPropGroupChart" class="chart"></div></article></div>
+        <div id="fullSignalTable" class="callout"></div>
+        <details open><summary>All approved V6 prop IDs used across 160 prompts</summary><div class="controls prop-controls"><label>Search <input id="fullPropSearch" type="search" placeholder="notebook, papers, plant…"></label><label>Environment <select id="fullPropEnvironment"><option value="all">All</option></select></label></div><div id="fullPropCount" class="note"></div><div id="fullPropTable" class="table-scroll"></div></details>
+      </section>
+
+      <section>
+        <h2>Generated preview rewrite audit · 96 prompts</h2>
+        <p class="note">Only the selected top six from each bank were generated and rewritten. Counts in this section cover those 96 rows only; the other 64 prompts have no downstream rewrite data.</p>
+        <div id="previewPropKpis" class="kpis"></div>
+        <div id="propFeedback" class="callout"></div>
+        <div class="split prop-overview"><article><h3>Most frequent approved semantic groups</h3><div id="previewPropGroupChart" class="chart"></div></article><article><h3>Most frequent exact downstream prop labels</h3><div id="rewriteEntityChart" class="chart"></div></article></div>
+        <details><summary>All exact downstream rewrite entity labels</summary><div class="controls prop-controls"><label>Search <input id="rewriteEntitySearch" type="search" placeholder="notebook, paper, cup…"></label><label>Category <select id="rewriteEntityCategory"><option value="all">All</option></select></label></div><div id="rewriteEntityCount" class="note"></div><div id="rewriteEntityTable" class="table-scroll"></div></details>
+      </section>
+
+      <section>
+        <h2>Items introduced by the downstream rewriter</h2>
+        <p class="note">Manual semantic audit of all 96 raw prompts against Gemini's complete editing instruction, scene, background, entities, and assembled usedPrompt. Fixed architecture, the primary device, support surfaces, and restatements of an existing prop are excluded.</p>
+        <div id="additionKpis" class="kpis"></div>
+        <div id="additionFamilyChart" class="chart prop-overview"></div>
+        <div id="additionExamples"></div>
+      </section>
+
+      <section><h2>V6 prop-audit methods and limits</h2><div id="propMethods"></div></section>
+    </div>
+  </main>
+  <div id="tooltip" class="tooltip hidden"></div>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script><script src="./data.js?v=3"></script><script src="./report.js?v=3"></script>
+  <script>document.addEventListener('DOMContentLoaded',()=>initializeIMS());</script>
+</body>
+</html>

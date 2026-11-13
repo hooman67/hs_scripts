@@ -1,0 +1,22 @@
+visibility: public
+public:
+  files:
+  - types.py
+  - base_types.py
+  - sfx/types.py
+  deps:
+  - colligo.base
+  - colligo.models.firefly.vllm_serve[public]
+  - pydantic
+deps:
+- einops
+- faiss-gpu
+- flash-attn
+- liger-kernel
+- numpy
+- omegaconf
+- pytorch-lightning
+- torch
+- torchaudio
+- transformers
+- colligo.models.audio.common

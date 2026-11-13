@@ -1,0 +1,20 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.cai[public]
+  - colligo.models.filix3.common[public]
+deps:
+- colligo.image
+- colligo.models.common.adapter_utils
+- colligo.models.filix3.common
+- colligo.models.filix3.workers.cvae[public]
+- colligo.models.filix3.workers.cvae_rgbx_decoder_upsampler[public]
+- colligo.models.filix3.workers.dit_rgbx[public]
+- colligo.models.firefly.clio_common
+- numpy
+- pillow
+- scipy
+- torch

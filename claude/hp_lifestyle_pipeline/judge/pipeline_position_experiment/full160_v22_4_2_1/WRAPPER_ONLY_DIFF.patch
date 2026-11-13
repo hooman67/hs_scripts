@@ -1,0 +1,628 @@
+--- full160_v22_4_2/config.py
++++ full160_v22_4_2_1/config.py
+@@ -1,7 +1,6 @@
+-"""Frozen paths and identifiers for the V22.4.2 V6.1 full-160 experiment."""
++"""Frozen paths and identifiers for the V22.4.2.1 wrapper-only full-160 run."""
+ 
+ from pathlib import Path
+-
+ 
+ ROOT = Path(__file__).resolve().parent
+ PROJECT = ROOT.parent
+@@ -42,12 +41,20 @@
+     "unified-blue-scale-v22.4.2-affine-failure-alpha-fallback-"
+     "twin-camera-guide-only-no-edit-mask"
+ )
++WRAPPER_VERSION = "v22.4.2.1-standard-stage-b-artifact-contract"
++WRAPPER_SOURCE_NAMES = (
++    "config.py",
++    "endpoint.py",
++    "run_full160.py",
++    "preflight.py",
++    "freeze_inputs.py",
++)
+ PROMPT_EXPORT_SHA256 = "adcb9edb2643e45acb0cb882cdc4d65b8c256a52d58ad4a44ddd9c235287b3cd"
+ 
+ REMOTE_CONTROL_ENDPOINT = (
+     "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev"
+ )
+-LOCAL_ENDPOINT = "http://127.0.0.1:8129"
++LOCAL_ENDPOINT = "http://127.0.0.1:8130"
+ 
+ SOURCE_HASHES = {
+     "hp3p/prompts/system_3p.txt": "bb02ad09f86a9a4aa4bdeac7c023d1ece0356ecef298853436af4781fa595ddf",
+@@ -60,7 +67,7 @@
+     "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3",
+ }
+ 
+-EXPERIMENT_ID = "hp-position-flex-v22.4.2-v6.1-full160"
++EXPERIMENT_ID = "hp-position-flex-v22.4.2.1-wrapper-v6.1-full160"
+ S3_BUCKET = "foundry-hp-enterprise-adobe-assets"
+-S3_PREFIX = "hp_position_flex_v22_4_2_v6_1_20261106/grouped"
++S3_PREFIX = "hp_position_flex_v22_4_2_1_wrapper_v6_1_20261106/grouped"
+ 
+--- full160_v22_4_2/endpoint.py
++++ full160_v22_4_2_1/endpoint.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Isolated serial API for the frozen V22.4.2 full-160 treatment.
++"""Isolated serial API for the frozen V22.4.2.1 wrapper-only full-160 treatment.
+ 
+ Selection, Stage-A geometry, and the rendered guide are replayed from each
+ original V6.1 record. Stage B and image generation are live. Every Stage-B
+@@ -12,7 +12,7 @@
+ import base64
+ import io
+ import json
+-import shutil
++import sys
+ import threading
+ import urllib.request
+ import uuid
+@@ -20,11 +20,14 @@
+ from pathlib import Path
+ 
+ import foundry_aws_gateway.llm
+-from fastapi import FastAPI, HTTPException
+-from fastapi.responses import FileResponse
+-from pydantic import BaseModel
+-
+-from common import atomic_json, load_json, require, sha256_bytes, sha256_file, sha256_json
++from common import (
++    atomic_json,
++    load_json,
++    require,
++    sha256_bytes,
++    sha256_file,
++    sha256_json,
++)
+ from config import (
+     FREEZE,
+     INPUT_ROOT,
+@@ -35,18 +38,19 @@
+     RECORDS,
+     REMOTE_CONTROL_ENDPOINT,
+     SOURCE_HASHES,
++    WRAPPER_VERSION,
+ )
++from fastapi import FastAPI, HTTPException
++from fastapi.responses import FileResponse
+ from preflight import verify as verify_preflight
+-
+-import sys
++from pydantic import BaseModel
+ 
+ sys.path.insert(0, str(PACKAGE))
+ 
++import hp3p.pipeline as pipeline  # noqa: E402
+ from hp3p.catalog import StyleRef  # noqa: E402
+ from hp3p.evalset import Row  # noqa: E402
+ from hp3p.openai_client import IMAGE_MODEL, TEXT_MODEL  # noqa: E402
+-import hp3p.pipeline as pipeline  # noqa: E402
+-
+ 
+ verify_preflight(allow_progress=True)
+ require(pipeline.PIPELINE_VERSION == PIPELINE_VERSION, "imported pipeline version differs from freeze")
+@@ -56,7 +60,7 @@
+ INPUT_ROOT.mkdir(parents=True, exist_ok=True)
+ JOB_ROOT.mkdir(parents=True, exist_ok=True)
+ PIPELINE_ROOT.mkdir(parents=True, exist_ok=True)
+-_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="hp-v2242-full160")
++_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="hp-v22421-full160")
+ _pipeline_lock = threading.Lock()
+ _instance_id = str(uuid.uuid4())
+ 
+@@ -222,8 +226,6 @@
+         "geometry_text.txt",
+         "geometry_request.json",
+         "geometry_response.json",
+-        "planning_request.json",
+-        "planning_response.json",
+         "stage_b_attempt_2_raw_response.json",
+     ]
+     for attempt in (1, 2):
+@@ -250,6 +252,8 @@
+     for attempt in range(1, len(stage_b) + 1):
+         require(f"stage_b_attempt_{attempt}_request.json" in artifacts, f"missing Stage-B request {attempt}")
+         require(f"stage_b_attempt_{attempt}_response.json" in artifacts, f"missing Stage-B response {attempt}")
++    if len(stage_b) == 2:
++        require("stage_b_attempt_2_raw_response.json" in artifacts, "missing raw Stage-B retry response")
+     require(len(guard_attempts) == image_calls, "guard attempt count does not equal image attempt count")
+     selected = guard.get("selected_attempt")
+     require(selected in (1, 2) and selected <= image_calls, "guard did not select a valid attempt")
+@@ -268,8 +272,8 @@
+         "geometry_text.txt",
+         "geometry_request.json",
+         "geometry_response.json",
+-        "planning_request.json",
+-        "planning_response.json",
++        "stage_b_attempt_1_request.json",
++        "stage_b_attempt_1_response.json",
+     }
+     require(required_core <= set(artifacts), f"missing core artifacts: {sorted(required_core - set(artifacts))}")
+     selected_sha = artifacts[f"gpt_{selected}.png"]["sha256"]
+@@ -338,6 +342,7 @@
+             "control_job_id": record["job_id"],
+             "input_artifacts": input_provenance,
+             "pipeline_version": result["pipeline_version"],
++            "wrapper_version": WRAPPER_VERSION,
+             "source_hashes": SOURCE_HASHES,
+             "stage_b_attempts": result["stage_b_attempts"],
+             "image_calls": result["image_calls"],
+@@ -357,6 +362,7 @@
+                 "error": None,
+                 "instanceId": _instance_id,
+                 "pipelineVersion": PIPELINE_VERSION,
++                "wrapperVersion": WRAPPER_VERSION,
+                 "sourceHashes": SOURCE_HASHES,
+                 "imageCalls": result["image_calls"],
+                 "stageBAttempts": len(result["stage_b_attempts"]),
+@@ -376,7 +382,7 @@
+     rowSlug: str
+ 
+ 
+-app = FastAPI(title="HP V22.4.2 position-flex full160", version="1")
++app = FastAPI(title="HP V22.4.2.1 wrapper-only position-flex full160", version="1")
+ 
+ 
+ @app.get("/health")
+@@ -385,6 +391,7 @@
+         "ok": True,
+         "experimentId": _freeze["experiment_id"],
+         "pipelineVersion": PIPELINE_VERSION,
++        "wrapperVersion": WRAPPER_VERSION,
+         "sourceHashes": SOURCE_HASHES,
+         "records": len(_frozen_record),
+         "maxWorkers": 1,
+--- full160_v22_4_2/freeze_inputs.py
++++ full160_v22_4_2_1/freeze_inputs.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Freeze the exact V6.1 records, prompt export, FE sources, and V22.4.2 code.
++"""Freeze the exact V6.1 records, prompt export, FE sources, and V22.4.2 pipeline code plus V22.4.2.1 wrapper code.
+ 
+ This script is local-only: it performs no network or model calls. Re-running it
+ is intentionally refused once ``freeze.json`` exists unless ``--verify-only``
+@@ -29,8 +29,11 @@
+     PROMPT_EXPORT,
+     PROMPT_EXPORT_SHA256,
+     RECORDS,
++    ROOT,
+     SOURCE_HASHES,
+     WORKTREE,
++    WRAPPER_SOURCE_NAMES,
++    WRAPPER_VERSION,
+ )
+ 
+ 
+@@ -41,6 +44,7 @@
+     require(head == PR_COMMIT, f"worktree HEAD changed: {head}")
+     actual_sources = {name: sha256_file(PACKAGE / name) for name in SOURCE_HASHES}
+     require(actual_sources == SOURCE_HASHES, f"V22.4.2 source mismatch: {actual_sources}")
++    wrapper_hashes = {name: sha256_file(ROOT / name) for name in WRAPPER_SOURCE_NAMES}
+     require(sha256_file(PROMPT_EXPORT) == PROMPT_EXPORT_SHA256, "prompt export hash changed")
+ 
+     export = load_json(PROMPT_EXPORT)
+@@ -99,6 +103,8 @@
+             "base_pr": "Adobe-Firefly/foundry#4349",
+             "base_commit": PR_COMMIT,
+             "source_hashes": actual_sources,
++            "wrapper_version": WRAPPER_VERSION,
++            "wrapper_source_hashes": wrapper_hashes,
+             "policy": (
+                 "V22.4.2 density-aware x-y translation with the full-affine guard, "
+                 "a calibrated alpha-masked fixed-position fallback for no/too-few "
+--- full160_v22_4_2/preflight.py
++++ full160_v22_4_2_1/preflight.py
+@@ -25,6 +25,8 @@
+     RUN_ROOT,
+     SOURCE_HASHES,
+     WORKTREE,
++    WRAPPER_SOURCE_NAMES,
++    WRAPPER_VERSION,
+ )
+ 
+ 
+@@ -40,6 +42,12 @@
+     require(head == PR_COMMIT, f"worktree moved: {head}")
+     actual_sources = {name: sha256_file(PACKAGE / name) for name in SOURCE_HASHES}
+     require(actual_sources == SOURCE_HASHES == freeze["treatment"]["source_hashes"], "source hashes changed")
++    require(freeze["treatment"]["wrapper_version"] == WRAPPER_VERSION, "wrapper version mismatch")
++    actual_wrapper = {name: sha256_file(ROOT / name) for name in WRAPPER_SOURCE_NAMES}
++    require(
++        actual_wrapper == freeze["treatment"]["wrapper_source_hashes"],
++        "wrapper source hashes changed",
++    )
+     require(sha256_file(PROMPT_EXPORT) == freeze["prompt_export"]["sha256"], "prompt export changed")
+     require(
+         sha256_file(CONTROL_REPORT) == freeze["control_report"]["sha256"],
+@@ -63,13 +71,14 @@
+         str(ROOT.parent / "smoke/treatment"),
+         str(ROOT.parent / "full160_v22_3_3/run"),
+         str(ROOT.parent / "full160_v22_4_1/run"),
++        str(ROOT.parent / "full160_v22_4_2/run"),
+     }
+     for path in (RUN_ROOT, PIPELINE_ROOT, JOB_ROOT):
+         require(
+             not any(path == Path(item) or Path(item) in path.parents for item in forbidden),
+             f"output collides with historical experiment: {path}",
+         )
+-        require("full160_v22_4_2" in str(path), f"output is not isolated under V22.4.2: {path}")
++        require("full160_v22_4_2_1" in str(path), f"output is not isolated under V22.4.2.1: {path}")
+     if PROGRESS.exists() and not allow_progress:
+         progress = load_json(PROGRESS)
+         require(not progress.get("done"), "progress exists; use --allow-progress to resume")
+@@ -79,6 +88,7 @@
+         "rows": 160,
+         "banks": len(freeze["group_counts"]),
+         "pipeline_version": PIPELINE_VERSION,
++        "wrapper_version": WRAPPER_VERSION,
+         "commit": head,
+         "freeze_sha256": sha256_file(FREEZE),
+         "records_digest": freeze["records_digest"],
+--- full160_v22_4_2/run_full160.py
++++ full160_v22_4_2_1/run_full160.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Fail-fast, atomically resumable, serial V22.4.2 full-160 submitter."""
++"""Fail-fast, atomically resumable, serial V22.4.2.1 wrapper-only full-160 submitter."""
+ 
+ from __future__ import annotations
+ 
+@@ -10,8 +10,39 @@
+ from pathlib import Path
+ 
+ from common import atomic_json, load_json, require, sha256_file
+-from config import FREEZE, JOB_ROOT, LOCAL_ENDPOINT, PIPELINE_VERSION, PROGRESS, SOURCE_HASHES
++from config import (
++    FREEZE,
++    JOB_ROOT,
++    LOCAL_ENDPOINT,
++    PIPELINE_VERSION,
++    PROGRESS,
++    SOURCE_HASHES,
++    WRAPPER_VERSION,
++)
+ from preflight import verify as verify_preflight
++
++
++def required_artifact_names(provenance: dict) -> set[str]:
++    """Return artifacts required by the standard (reference_blue=None) branch."""
++    stage_b_count = len(provenance["stage_b_attempts"])
++    image_count = int(provenance["image_calls"])
++    require(stage_b_count in (1, 2), "Stage-B attempt count invalid")
++    require(image_count in (1, 2), "image attempt count invalid")
++    required = {
++        "result.json", "ours.png", "input.png", "mask.png", "ref_2.png",
++        "geometry_guide.png", "geometry_text.txt", "geometry_request.json",
++        "geometry_response.json", "calls.json",
++    }
++    for attempt in range(1, stage_b_count + 1):
++        required.add(f"stage_b_attempt_{attempt}_request.json")
++        required.add(f"stage_b_attempt_{attempt}_response.json")
++    if stage_b_count == 2:
++        required.add("stage_b_attempt_2_raw_response.json")
++    for attempt in range(1, image_count + 1):
++        required.add(f"gpt_{attempt}.png")
++        required.add(f"image_request_attempt_{attempt}.json")
++        required.add(f"product_invariant_attempt_{attempt}.json")
++    return required
+ 
+ 
+ def request(method: str, path: str, body: dict | None = None) -> dict:
+@@ -29,25 +60,21 @@
+ def validate_completed(slug: str, status: dict) -> dict:
+     require(status.get("done") is True and status.get("stage") == "done", f"{slug}: job is not done")
+     require(status.get("pipelineVersion") == PIPELINE_VERSION, f"{slug}: pipeline version mismatch")
++    require(status.get("wrapperVersion") == WRAPPER_VERSION, f"{slug}: wrapper version mismatch")
+     require(status.get("sourceHashes") == SOURCE_HASHES, f"{slug}: source hash mismatch")
+     provenance_path = JOB_ROOT / slug / "provenance.json"
+     require(provenance_path.is_file(), f"{slug}: missing provenance")
+     require(sha256_file(provenance_path) == status["provenanceSha256"], f"{slug}: provenance hash mismatch")
+     provenance = load_json(provenance_path)
+     require(provenance["pipeline_version"] == PIPELINE_VERSION, f"{slug}: provenance pipeline mismatch")
++    require(provenance["wrapper_version"] == WRAPPER_VERSION, f"{slug}: provenance wrapper mismatch")
+     require(provenance["source_hashes"] == SOURCE_HASHES, f"{slug}: provenance source mismatch")
+     attempts = provenance["product_invariant_guard"]["attempts"]
+     selected = provenance["product_invariant_guard"]["selected_attempt"]
+     require(selected in (1, 2) and attempts[selected - 1]["verdict"] == "pass", f"{slug}: guard has no passing selection")
+     require(len(attempts) == provenance["image_calls"], f"{slug}: guard/image attempt mismatch")
+-    require(len(provenance["stage_b_attempts"]) in (1, 2), f"{slug}: Stage-B attempt count invalid")
+     artifacts = provenance.get("artifacts") or {}
+-    required = {
+-        "result.json", "ours.png", "input.png", "mask.png", "ref_2.png",
+-        "geometry_guide.png", "geometry_text.txt", "geometry_request.json",
+-        "geometry_response.json", "planning_request.json", "planning_response.json",
+-        "calls.json",
+-    }
++    required = required_artifact_names(provenance)
+     require(required <= set(artifacts), f"{slug}: incomplete artifact manifest")
+     for name, item in artifacts.items():
+         path = Path(item["path"])
+@@ -66,6 +93,7 @@
+         "freeze_sha256": sha256_file(FREEZE),
+         "endpoint_instance_id": health["instanceId"],
+         "pipeline_version": health["pipelineVersion"],
++        "wrapper_version": health["wrapperVersion"],
+         "source_hashes": health["sourceHashes"],
+         "serial": True,
+         "total": 160,
+@@ -94,6 +122,7 @@
+     require(health.get("ok") is True, "endpoint health failed")
+     require(health.get("records") == 160 and health.get("maxWorkers") == 1, "endpoint is not frozen serial full160")
+     require(health.get("pipelineVersion") == PIPELINE_VERSION, "endpoint pipeline version mismatch")
++    require(health.get("wrapperVersion") == WRAPPER_VERSION, "endpoint wrapper version mismatch")
+     require(health.get("sourceHashes") == SOURCE_HASHES, "endpoint source hash mismatch")
+ 
+     lock_path = PROGRESS.with_suffix(".lock")
+@@ -108,6 +137,7 @@
+         require(progress["experiment_id"] == freeze["experiment_id"], "progress belongs to another experiment")
+         require(progress["freeze_sha256"] == sha256_file(FREEZE), "progress freeze hash mismatch")
+         require(progress["pipeline_version"] == PIPELINE_VERSION, "progress pipeline mismatch")
++        require(progress["wrapper_version"] == WRAPPER_VERSION, "progress wrapper mismatch")
+         require(progress["source_hashes"] == SOURCE_HASHES, "progress source mismatch")
+         require(progress.get("first_error") is None, "previous first error is preserved; inspect before deliberate restart")
+ 
+--- full160_v22_4_2/run_endpoint.sh
++++ full160_v22_4_2_1/run_endpoint.sh
+@@ -2,7 +2,7 @@
+ set -euo pipefail
+ umask 077
+ 
+-root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_2
++root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_2_1
+ package=/home/colligo/foundry-pr4349-position-exp/experimental/adarabi/hp-3p-gpt25
+ mkdir -p "$root/logs"
+ cd "$root"
+@@ -16,6 +16,6 @@
+     --with 'fastapi>=0.115,<1' \
+     --with 'uvicorn>=0.34,<1' \
+     --extra-index-url 'https://artifacts.adobeitc.com/artifactory/api/pypi/pypi-adobeshared-release/simple' \
+-    uvicorn endpoint:app --host 127.0.0.1 --port 8129 \
++    uvicorn endpoint:app --host 127.0.0.1 --port 8130 \
+     >"$root/logs/endpoint.stdout.log" 2>"$root/logs/endpoint.stderr.log"
+ 
+--- full160_v22_4_2/run_full160.sh
++++ full160_v22_4_2_1/run_full160.sh
+@@ -2,7 +2,7 @@
+ set -euo pipefail
+ umask 077
+ 
+-root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_2
++root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_2_1
+ mkdir -p "$root/logs"
+ set +e
+ PYTHONPATH="$root" python "$root/run_full160.py" \
+--- full160_v22_4_2/launch_tmux.sh
++++ full160_v22_4_2_1/launch_tmux.sh
+@@ -4,9 +4,9 @@
+ # Deliberately not invoked during preparation. Run only after the V22.4.2 gate
+ # is accepted. Two durable sessions keep the endpoint and serial runner alive
+ # after SSH disconnects.
+-root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_2
+-endpoint_session=hp-v2242-full160-endpoint
+-runner_session=hp-v2242-full160-runner
++root=/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/full160_v22_4_2_1
++endpoint_session=hp-v22421-full160-endpoint
++runner_session=hp-v22421-full160-runner
+ 
+ PYTHONPATH="$root" python "$root/preflight.py" --allow-progress
+ if tmux has-session -t "$endpoint_session" 2>/dev/null; then
+@@ -20,7 +20,7 @@
+ tmux new-session -d -s "$endpoint_session" "$root/run_endpoint.sh"
+ 
+ for _ in $(seq 1 120); do
+-  if curl -fsS http://127.0.0.1:8129/health >/dev/null; then
++  if curl -fsS http://127.0.0.1:8130/health >/dev/null; then
+     tmux new-session -d -s "$runner_session" "$root/run_full160.sh"
+     printf 'Started %s and %s\n' "$endpoint_session" "$runner_session"
+     exit 0
+--- full160_v22_4_2/tests/test_contract.py
++++ full160_v22_4_2_1/tests/test_contract.py
+@@ -6,14 +6,62 @@
+ from pathlib import Path
+ from unittest.mock import patch
+ 
++from build_grouped_report import validate_sources_only
+ from common import atomic_json, load_json, sha256_file
+-from config import FREEZE, JOB_ROOT, PIPELINE_ROOT, PIPELINE_VERSION, RUN_ROOT, SOURCE_HASHES
+-from build_grouped_report import validate_sources_only
++from config import (
++    FREEZE,
++    JOB_ROOT,
++    PIPELINE_ROOT,
++    PIPELINE_VERSION,
++    RUN_ROOT,
++    SOURCE_HASHES,
++    WRAPPER_VERSION,
++)
+ from preflight import verify as verify_preflight
+-from run_full160 import completed_progress_row, validate_completed
++from run_full160 import (
++    completed_progress_row,
++    required_artifact_names,
++    validate_completed,
++)
+ 
+ 
+ class Full160ContractTest(unittest.TestCase):
++    @staticmethod
++    def completed_fixture(root: Path) -> tuple[str, dict, dict]:
++        slug = "fixture"
++        job = root / slug
++        job.mkdir()
++        provenance = {
++            "pipeline_version": PIPELINE_VERSION,
++            "wrapper_version": WRAPPER_VERSION,
++            "source_hashes": SOURCE_HASHES,
++            "stage_b_attempts": [{"attempt": 1}],
++            "image_calls": 1,
++            "product_invariant_guard": {
++                "attempts": [{"verdict": "pass"}],
++                "selected_attempt": 1,
++            },
++            "artifacts": {},
++        }
++        for name in sorted(required_artifact_names(provenance)):
++            path = job / name
++            path.write_bytes(b"selected" if name in {"ours.png", "gpt_1.png"} else name.encode())
++            provenance["artifacts"][name] = {
++                "path": str(path),
++                "sha256": sha256_file(path),
++                "bytes": path.stat().st_size,
++            }
++        atomic_json(job / "provenance.json", provenance)
++        status = {
++            "done": True,
++            "stage": "done",
++            "pipelineVersion": PIPELINE_VERSION,
++            "wrapperVersion": WRAPPER_VERSION,
++            "sourceHashes": SOURCE_HASHES,
++            "provenanceSha256": sha256_file(job / "provenance.json"),
++        }
++        return slug, provenance, status
++
+     def test_frozen_preflight_and_group_contract(self) -> None:
+         result = verify_preflight(allow_progress=True)
+         self.assertEqual(result["rows"], 160)
+@@ -33,42 +81,8 @@
+     def test_completed_row_requires_guard_selected_pass(self) -> None:
+         with tempfile.TemporaryDirectory() as directory:
+             root = Path(directory)
+-            slug = "fixture"
++            slug, provenance, status = self.completed_fixture(root)
+             job = root / slug
+-            job.mkdir()
+-            provenance = {
+-                "pipeline_version": PIPELINE_VERSION,
+-                "source_hashes": SOURCE_HASHES,
+-                "stage_b_attempts": [{"attempt": 1}],
+-                "image_calls": 1,
+-                "product_invariant_guard": {
+-                    "attempts": [{"verdict": "pass"}],
+-                    "selected_attempt": 1,
+-                },
+-                "artifacts": {},
+-            }
+-            required = [
+-                "result.json", "ours.png", "input.png", "mask.png", "ref_2.png",
+-                "geometry_guide.png", "geometry_text.txt", "geometry_request.json",
+-                "geometry_response.json", "planning_request.json", "planning_response.json",
+-                "calls.json", "gpt_1.png",
+-            ]
+-            for name in required:
+-                path = job / name
+-                path.write_bytes(b"selected" if name in {"ours.png", "gpt_1.png"} else name.encode())
+-                provenance["artifacts"][name] = {
+-                    "path": str(path),
+-                    "sha256": sha256_file(path),
+-                    "bytes": path.stat().st_size,
+-                }
+-            atomic_json(job / "provenance.json", provenance)
+-            status = {
+-                "done": True,
+-                "stage": "done",
+-                "pipelineVersion": PIPELINE_VERSION,
+-                "sourceHashes": SOURCE_HASHES,
+-                "provenanceSha256": sha256_file(job / "provenance.json"),
+-            }
+             with patch("run_full160.JOB_ROOT", root):
+                 self.assertEqual(validate_completed(slug, status), provenance)
+                 provenance["product_invariant_guard"]["attempts"][0]["verdict"] = "fail"
+@@ -77,13 +91,75 @@
+                 with self.assertRaisesRegex(RuntimeError, "guard has no passing selection"):
+                     validate_completed(slug, status)
+ 
++    def test_standard_branch_requires_stage_b_and_not_planning_artifacts(self) -> None:
++        with tempfile.TemporaryDirectory() as directory:
++            root = Path(directory)
++            slug, provenance, status = self.completed_fixture(root)
++            self.assertNotIn("planning_request.json", provenance["artifacts"])
++            self.assertNotIn("planning_response.json", provenance["artifacts"])
++            self.assertIn("stage_b_attempt_1_request.json", provenance["artifacts"])
++            self.assertIn("stage_b_attempt_1_response.json", provenance["artifacts"])
++            with patch("run_full160.JOB_ROOT", root):
++                self.assertEqual(validate_completed(slug, status), provenance)
++                provenance["artifacts"].pop("stage_b_attempt_1_request.json")
++                atomic_json(root / slug / "provenance.json", provenance)
++                status["provenanceSha256"] = sha256_file(root / slug / "provenance.json")
++                with self.assertRaisesRegex(RuntimeError, "incomplete artifact manifest"):
++                    validate_completed(slug, status)
++
++    def test_second_stage_b_attempt_requires_raw_response(self) -> None:
++        provenance = {
++            "stage_b_attempts": [{"attempt": 1}, {"attempt": 2}],
++            "image_calls": 2,
++        }
++        required = required_artifact_names(provenance)
++        self.assertIn("stage_b_attempt_2_request.json", required)
++        self.assertIn("stage_b_attempt_2_response.json", required)
++        self.assertIn("stage_b_attempt_2_raw_response.json", required)
++        self.assertIn("gpt_2.png", required)
++
++    def test_validator_hash_checks_every_declared_artifact(self) -> None:
++        with tempfile.TemporaryDirectory() as directory:
++            root = Path(directory)
++            slug, provenance, status = self.completed_fixture(root)
++            job = root / slug
++            diagnostic = job / "optional_diagnostic.json"
++            diagnostic.write_text("frozen")
++            provenance["artifacts"][diagnostic.name] = {
++                "path": str(diagnostic),
++                "sha256": sha256_file(diagnostic),
++                "bytes": diagnostic.stat().st_size,
++            }
++            atomic_json(job / "provenance.json", provenance)
++            status["provenanceSha256"] = sha256_file(job / "provenance.json")
++            diagnostic.write_text("tampered")
++            with patch("run_full160.JOB_ROOT", root):
++                with self.assertRaisesRegex(RuntimeError, "artifact hash mismatch"):
++                    validate_completed(slug, status)
++
++    def test_validator_rejects_selected_output_mismatch(self) -> None:
++        with tempfile.TemporaryDirectory() as directory:
++            root = Path(directory)
++            slug, provenance, status = self.completed_fixture(root)
++            job = root / slug
++            ours = job / "ours.png"
++            ours.write_bytes(b"not-the-selected-attempt")
++            provenance["artifacts"]["ours.png"].update(
++                sha256=sha256_file(ours), bytes=ours.stat().st_size
++            )
++            atomic_json(job / "provenance.json", provenance)
++            status["provenanceSha256"] = sha256_file(job / "provenance.json")
++            with patch("run_full160.JOB_ROOT", root):
++                with self.assertRaisesRegex(RuntimeError, "selected output differs"):
++                    validate_completed(slug, status)
++
+     def test_outputs_are_isolated_from_v2233_failed_tree(self) -> None:
+         old = Path(
+             "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/"
+             "pipeline_position_experiment/full160_v22_3_3"
+         )
+         for path in (RUN_ROOT, PIPELINE_ROOT, JOB_ROOT):
+-            self.assertIn("full160_v22_4_2", str(path))
++            self.assertIn("full160_v22_4_2_1", str(path))
+             self.assertNotEqual(path, old / "run")
+             self.assertNotIn(old / "run", path.parents)
+ 
+@@ -104,6 +180,19 @@
+         old_run = Path(
+             "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/"
+             "pipeline_position_experiment/full160_v22_4_1/run"
++        )
++        with (
++            patch("preflight.RUN_ROOT", old_run),
++            patch("preflight.PIPELINE_ROOT", old_run / "pipeline"),
++            patch("preflight.JOB_ROOT", old_run / "jobs"),
++        ):
++            with self.assertRaisesRegex(RuntimeError, "collides with historical experiment"):
++                verify_preflight(allow_progress=True)
++
++    def test_preflight_rejects_v2242_failed_tree_as_output(self) -> None:
++        old_run = Path(
++            "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/"
++            "pipeline_position_experiment/full160_v22_4_2/run"
+         )
+         with (
+             patch("preflight.RUN_ROOT", old_run),

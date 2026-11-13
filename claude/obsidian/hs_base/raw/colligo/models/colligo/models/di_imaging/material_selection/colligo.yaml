@@ -1,0 +1,18 @@
+visibility: public
+public:
+  files:
+  - types/adobe_sam.py
+  - types/material_refinement.py
+  - types/material_selection.py
+  deps:
+  - colligo.base
+  - pydantic
+deps:
+- colligo.image
+- colligo.models.common.adapter_utils
+- numpy
+- onnxruntime-gpu
+- opencv-contrib-python-headless
+- pillow
+- supermasking_py.adobe_sam
+- torch

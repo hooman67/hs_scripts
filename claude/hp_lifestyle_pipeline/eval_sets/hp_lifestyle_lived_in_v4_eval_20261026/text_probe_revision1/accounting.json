@@ -1,0 +1,106 @@
+{
+  "version": "hp-lifestyle-lived-in-v4-text-probe-accounting-v1",
+  "revision": 1,
+  "system_prompt_sha256": "0ce8988771298f6d7def687471fb585314626d64cec3ca2e64980692605fec60",
+  "manifest_sha256": "0322a4de141d8ae6ab8ffeb72a228910f83881b6a5816a82389d6399469c1166",
+  "counts": {
+    "requests": 4,
+    "transport_successes": 4,
+    "validator_passed": 2,
+    "validator_rejected": 2
+  },
+  "usage_totals": {
+    "prompt_tokens": 63862,
+    "completion_tokens": 38169,
+    "reasoning_tokens": 7247,
+    "cached_prompt_tokens": 31232,
+    "total_tokens": 102031
+  },
+  "cases": [
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightCloseUp",
+      "model": "gpt-5.5-2026-04-24",
+      "finish_reason": "stop",
+      "transport_attempts": 1,
+      "elapsed_seconds": 88.208,
+      "usage": {
+        "prompt_tokens": 13643,
+        "completion_tokens": 9362,
+        "reasoning_tokens": 2050,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 23005
+      },
+      "validator_passed": true,
+      "errors": [],
+      "record_sha256": "9fb9f2ad36cec9a2e01610fbc9f54c8e799638ee28e95930f3855e8284d6dd79"
+    },
+    {
+      "case_id": "22fdbf19f03d1a31__laptop_FrontRightWide",
+      "model": "gpt-5.5-2026-04-24",
+      "finish_reason": "stop",
+      "transport_attempts": 1,
+      "elapsed_seconds": 93.756,
+      "usage": {
+        "prompt_tokens": 13642,
+        "completion_tokens": 9533,
+        "reasoning_tokens": 1261,
+        "cached_prompt_tokens": 13056,
+        "total_tokens": 23175
+      },
+      "validator_passed": false,
+      "errors": [
+        {
+          "code": "device_term",
+          "detail": "phone",
+          "candidate_id": "p12"
+        }
+      ],
+      "record_sha256": "13893568ded14664e70b0bd8788e176c28142d4dd3d50a3e6308b8f551841f4d"
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+      "model": "gpt-5.5-2026-04-24",
+      "finish_reason": "stop",
+      "transport_attempts": 1,
+      "elapsed_seconds": 89.719,
+      "usage": {
+        "prompt_tokens": 18289,
+        "completion_tokens": 9365,
+        "reasoning_tokens": 1906,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 27654
+      },
+      "validator_passed": true,
+      "errors": [],
+      "record_sha256": "fcb33889539563918616ded3327e7ccc33eef8d0c419f978828d1706611a35dc"
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+      "model": "gpt-5.5-2026-04-24",
+      "finish_reason": "stop",
+      "transport_attempts": 1,
+      "elapsed_seconds": 94.45,
+      "usage": {
+        "prompt_tokens": 18288,
+        "completion_tokens": 9909,
+        "reasoning_tokens": 2030,
+        "cached_prompt_tokens": 18176,
+        "total_tokens": 28197
+      },
+      "validator_passed": false,
+      "errors": [
+        {
+          "code": "device_term",
+          "detail": "desktop",
+          "candidate_id": "p6"
+        },
+        {
+          "code": "device_term",
+          "detail": "desktop",
+          "candidate_id": "p13"
+        }
+      ],
+      "record_sha256": "9dde883105b43c6a237932987efcaf5d10371d7f116c22e815a3d6c7f24df5d8"
+    }
+  ]
+}

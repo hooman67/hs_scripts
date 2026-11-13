@@ -1,0 +1,99 @@
+{
+  "version": "v5-scoring-contract-smoke-analysis-v1",
+  "manifest_sha256": "1bc71aafad1c52681dadc7900bff15953fdfed5fc81b243d6cc37accb69ad2ed",
+  "separate_from_main_review_set": true,
+  "case_count": 2,
+  "all_empty_document_components_zero": true,
+  "all_scores_match_component_max_sum": true,
+  "cases": {
+    "empty_brief__elitebook_source__laptop_FrontRightCloseUp": {
+      "empty_document": "smart_brief",
+      "nonempty_document": "source_messaging",
+      "prompt_count": 20,
+      "normalized_validator_passed": false,
+      "normalized_error_count": 2,
+      "normalized_warning_count": 2,
+      "all_empty_document_components_zero": true,
+      "empty_document_nonzero_candidate_ids": [],
+      "all_scores_match_component_max_sum": true,
+      "arithmetic_errors": [],
+      "top_score": 60,
+      "top_score_exceeds_50": true,
+      "top_candidate": {
+        "id": "p1",
+        "environment": "Home",
+        "text": "A modern home workspace with a wooden desk in warm natural light. Lived-in and authentic with subtle imperfections and a warm neutral tone.",
+        "score_components": {
+          "smart_brief": {
+            "setting": 0,
+            "activity": 0,
+            "materials": 0,
+            "use_context": 0
+          },
+          "source_messaging": {
+            "setting": 30,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 20
+          }
+        },
+        "evidence_ids": [
+          "e1",
+          "e2"
+        ]
+      },
+      "source_evidence_counts": {
+        "smart_brief": 0,
+        "source_messaging": 6
+      },
+      "empty_document_evidence_count": 0,
+      "nonempty_document_evidence_count": 6,
+      "no_missing_document_penalty_observed": true
+    },
+    "deskjet_brief__empty_source__printer_FrontRightCloseUp": {
+      "empty_document": "source_messaging",
+      "nonempty_document": "smart_brief",
+      "prompt_count": 20,
+      "normalized_validator_passed": false,
+      "normalized_error_count": 2,
+      "normalized_warning_count": 2,
+      "all_empty_document_components_zero": true,
+      "empty_document_nonzero_candidate_ids": [],
+      "all_scores_match_component_max_sum": true,
+      "arithmetic_errors": [],
+      "top_score": 90,
+      "top_score_exceeds_50": true,
+      "top_candidate": {
+        "id": "p1",
+        "environment": "Home",
+        "text": "A modern home workspace with a simple desk holding a household form. Warm natural light and warm neutral tones keep the scene lived-in and authentic.",
+        "score_components": {
+          "smart_brief": {
+            "setting": 30,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 20
+          },
+          "source_messaging": {
+            "setting": 0,
+            "activity": 0,
+            "materials": 0,
+            "use_context": 0
+          }
+        },
+        "evidence_ids": [
+          "e1",
+          "e3",
+          "e8"
+        ]
+      },
+      "source_evidence_counts": {
+        "smart_brief": 11,
+        "source_messaging": 0
+      },
+      "empty_document_evidence_count": 0,
+      "nonempty_document_evidence_count": 11,
+      "no_missing_document_penalty_observed": true
+    }
+  }
+}

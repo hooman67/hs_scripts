@@ -1,0 +1,37 @@
+{
+  "schema_version": "hp-placement-v4-v6.1-rerun-readiness-v1",
+  "status": "ready_waiting_for_frozen_v4_handoff",
+  "judge_calls_made": 0,
+  "s3_writes_made": 0,
+  "source_manifest": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/data/new_v6_1_eval_20261105/manifest.json",
+  "source_manifest_sha256": "fd84149fa421c32602358c325b4fb14ed555d3e5033fb92bc2800ab37e6daefc",
+  "source_preflight": {
+    "records": 160,
+    "laptops": 80,
+    "printers": 80,
+    "unique_generated_images": 160,
+    "unique_twin_images": 16,
+    "device_camera_groups": 16,
+    "rows_per_group": 10,
+    "prompt_ranks_per_group": "1..10"
+  },
+  "proposed_s3_prefix": "s3://foundry-hp-enterprise-adobe-assets/hp_natural_placement_judge_v4_v6_1_20261105/grouped_by_source_input_r1/",
+  "proposed_prefix_collision_check": "blocked_missing_pluto_broker_token",
+  "grouped_builder_structural_test": {
+    "status": "passed_against_existing_validated_160_row_fe_source",
+    "groups": 16,
+    "rows": 160,
+    "dry_run_publication_objects": 34
+  },
+  "execution_gate": {
+    "required_from": "/root",
+    "missing": [
+      "frozen_v4_absolute_path",
+      "frozen_v4_sha256",
+      "exact_runner_command_and_model",
+      "calls_per_row_and_resume_contract",
+      "v4_result_schema_or_fe_adapter",
+      "review_question_configuration"
+    ]
+  }
+}

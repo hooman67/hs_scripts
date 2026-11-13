@@ -1,0 +1,1985 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HP placement judges - Astra calibration and revisions</title><link rel="stylesheet" href="review.css"></head><body data-protocol="dbd8fca5454017b3566ccdfd13ec1437de7ac461286e62d077b148f2e259a444"><div id="ims"></div><div id="loading">Sign in to load images.</div><main id="content" class="hidden"><header><h1>HP placement judges - Astra calibration and revisions</h1><nav><a href="index.html">Calibration / revisions</a><a href="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/viewer.html">Original32-row source (prior judges)</a><a href="../../../../refiner_evals/hp_judge_refiner/hpjr-all-fixable-20261109T225123Z/full_evalset.html">64-case source (historical feedback)</a><a href="astra_appearance_design.json">Actual Astra rubric proposal</a><a href="feedback_requirements.json">Preregistered feedback scope</a><a href="visual_acquisition_trace.json">Actual acquisition / stage trace</a><a href="astra_successor_diagnosis.json">Actual Astra failure diagnosis (not new predictions)</a><a href="astra_exemplar_audit.json">Actual Astra exemplar audit (proposals only)</a><a href="results.json">Current judge results</a><a href="astra_visual_analysis.json">Earlier Astra native-pixel probe</a></nav><p class="warning">NOT PROMOTED - required gates not met. Historical anchors are E2E diagnostics, not held-out scene-stage accuracy. All64 feedback cases informed Astra design. A post-feedback Astra failure diagnosis is linked; it is not a new blind prediction or recovered penalty. User-authorized appearance concerns receive explicit evidence and score penalties even if physically plausible; minor concerns need not FAIL. This is a prospective rubric change, not recovery of the original physical gate. New30-image C-Tech feedback informed design; whole-image FAIL/OK is not placement gold.</p><p><a href="astra_localized_feedback.json">Latest human clarification / Astra response</a></p><p>Astra judges the images and authors the system prompts; the application computes the unchanged placement score. A high score is not a probability or automatic approval. Target comments/labels were withheld from judge calls.</p><button id="export-feedback">Export my comments (JSON)</button><span id="feedback-status">Comments stay in this browser only; export them to share.</span></header><section class="study-row"><h2>07_cashmere_x_Front_Wide_1</h2><p>Criterion labels (not global ground truth): {&quot;orientation_alignment&quot;: &quot;no_material_defect&quot;, &quot;scale_perspective&quot;: &quot;unlabeled&quot;}</p><details><summary>Original scene prompt and product reference</summary><p>A bright creative studio with a medium wooden table set up for sketching a concept, with a sketchbook open to blank unmarked pages, graphite pencils, a watercolor palette, and paintbrushes in a brush holder. Warm natural light and simple studio walls keep the workspace focused, practical, and casually used.</p><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/07_cashmere_x_Front_Wide_0.jpg" alt="Original product reference" style="max-width:450px;width:100%;height:auto"></details><article class="scene" data-scene="07_cashmere_x_Front_Wide_1" data-sha="08b188e55d41d89c28298715beedb23b1c157d933d6ca303b51d1a9289c1677e"><strong>V15.6</strong><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/07_cashmere_x_Front_Wide_1.jpg" alt="07_cashmere_x_Front_Wide_1"><a href="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/07_cashmere_x_Front_Wide_1.jpg" target="_blank" rel="noopener">Full image</a><div class="judge pass"><strong>Astra P1 / v3_2_r4: PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The full scene and supplied tiles show the laptop supported within a substantial wooden tabletop, with adjacent sketching and painting materials forming a connected activity area. The open sketchbook does not establish a competing occupied workstation. The clear left-hand surface is usable space rather than an affirmative display-like arrangement; a staging concern is not retained. Hidden rear attachments do not establish a support defect.&quot;,
+    &quot;consequence&quot;: &quot;The visible support role, room siting and surface allocation are credible for combined laptop and art use.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The palm-rest edge faces the accessible long table edge, separated by a modest bare-wood strip. The sketchbook, pencils, palette and brush holder do not intrude between that edge and the keyboard. The seating is offset toward the book, but this alone does not demonstrate excessive reach or a blocked operating position. Much of the seat, knee clearance and floor immediately behind the chair back remains hidden, so complete seated clearance is unresolved rather than defective.&quot;,
+    &quot;consequence&quot;: &quot;No visible excessive working-edge reach, prop obstruction or unavailable operating side is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The readable chassis front lip follows the nearby tabletop working edge, with a shallow, nearly even exposed strip that widens only slightly toward the laptop&#x27;s right corner. The acquisition&#x27;s opposing depth-edge directions are visible, but the table&#x27;s left end lies well to the left of the laptop, and their backward continuations converge in a compatible general region. That difference does not establish local misregistration. The seating faces the same working side; its lateral offset toward the sketchbook does not create a directional or grouping conflict. No alignment concern is retained.&quot;,
+    &quot;consequence&quot;: &quot;The extended product-to-table relationship appears visually compatible, without a supported furniture-axis or station-direction conflict.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s size is plausible beside the open sketchbook, painting tools and broad tabletop when depth is considered; no single prop is treated as a ruler. The thin slab, deeper apron and exposed left-leg join have coherent continuations. The seating back has a continuous curved top, rounded upholstered returns and readable wooden uprights, without a localized awkward projection. The deeper apron is a distinct construction member, not an unexplained slab-thickness change. The seat, lower seating joins and table&#x27;s far-right termination remain concealed.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale discrepancy, plane inconsistency or malformed exposed furniture contour is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Along the exposed front lip and side corners, the lower chassis meets a narrow dark rim and soft shadow immediately beside the wood. There is no visible light slit, conspicuously raised corner or apparent tabletop intersection. Image B confirms that the thin dark lower edge belongs to the intrinsic chassis, so that rim alone is not evidence of floating. The underside, individual feet and rear contact boundary remain hidden; convincing front contact does not certify those concealed regions.&quot;,
+    &quot;consequence&quot;: &quot;The exposed contact boundaries are credible, while hidden load-bearing points remain unverified.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2_r4: PASS | 100/100</strong><p>The laptop reads as naturally supported within a coherent shared computing-and-art workspace. Its visible table registration, surrounding task allocation, furniture contours and exposed contacts show no supported placement concern. Hidden seating clearance, furniture joints and underside contact remain unverified rather than defective.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden table provides connected but distinct computing and sketching areas without visibly displacing either task. The open book, pencils, used palette and brush holder give the laptop a credible working context. Spare wood on the left and blank pages do not make this an isolated product display.&quot;,
+    &quot;consequence&quot;: &quot;No inappropriate support, occupied-workstation displacement or affirmative bare-staging concern is supported. Actual current use is not established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard, palm rest and display are exposed, with a clear wood strip between the laptop and working edge. The book and pencils are lateral rather than operating-strip intrusions; rearward painting supplies and plants do not visibly block operation. The foreground chair obscures the lower approach but does not show a collision.&quot;,
+    &quot;consequence&quot;: &quot;No visible local crowding, precarious edge placement or blocked operating side is supported. Seated reach, knee clearance and the complete access route remain unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Across the laptop footprint, its front lip and hinge line register closely with the table&#x27;s exposed width boundaries, leaving a nearly even working-edge strip with slight widening to the right. The laptop sides recede left while the distant table left-end edge recedes right, but their lateral separation and the extended width registration make this visually acceptable rather than a conspicuous axis mismatch. The chair favors the adjacent sketchbook while remaining on the same operating side.&quot;,
+    &quot;consequence&quot;: &quot;Neither rigid furniture-axis conflict nor corner-facing is supported. The chair&#x27;s lateral offset does not establish a displaced layout or operating-axis conflict. The table&#x27;s right depth boundary is cropped, so exact angular alignment is not established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The table&#x27;s thickness band and apron have continuous exposed outlines. The narrow strip beside its left leg continues below the apron as a leg side face, not a stray terminating member. Separately, the chair&#x27;s rounded upholstered perimeter and wooden side members have readable continuations. The laptop&#x27;s size relative to the open book and tabletop is plausible; its shallow projected deck also appears in B. Smaller rearward supplies and the larger foreground chair do not establish a depth-aware scale contradiction.&quot;,
+    &quot;consequence&quot;: &quot;No malformed furniture contour, implausible scale or inconsistent plane appearance is supported. The visible continuations resolve the apparent doubled leg strip; concealed joints, chair seat, lower frame and cropped furniture ends are not verified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s exposed front and left lower boundaries, including the front-right tip, meet the wood through a narrow dark rim and adjoining soft shadow without a visible light gap or buried edge. B already contains the chassis rim, so that band alone is not evidence of floating. The book, pencils, palette and brush vessel have readable resting edges and shadows. The wall frame&#x27;s edge and mounting shadow read as ordinary thickness rather than wall penetration.&quot;,
+    &quot;consequence&quot;: &quot;No visible floating, sinking, interpenetration or inconsistent shadow is supported at these exposed junctions. Laptop feet, underside and rear contact remain hidden; cropped plant contacts and reflective behavior are not fully assessable.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><details><summary>Previous judges (unchanged evidence)</summary><div class="judge pass"><strong>Astra P1 / v3_2_r3 (unchanged): PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The worktable accommodates the laptop and drawing materials in distinct, connected task areas. The laptop is fully within the support perimeter and does not displace an established separate workstation.&quot;,
+    &quot;consequence&quot;: &quot;The support and surface allocation read as suitable for combined digital and sketching work.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;A modest, unobstructed tabletop strip separates the laptop&#x27;s palm-rest edge from the foreground edge. The sketchbook is beside, not in front of, the keyboard. The chair&#x27;s lateral offset alone does not establish excessive reach.&quot;,
+    &quot;consequence&quot;: &quot;No supported keyboard obstruction, excessive working-edge reach or pinched laptop user area is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s rigid base and the tabletop read coherently together in perspective. Its operating side faces the table&#x27;s usable foreground approach, also served by the offset chair.&quot;,
+    &quot;consequence&quot;: &quot;No supported product-support misregistration or furniture-layout conflict is evident.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Laptop size is plausible relative to the sketchbook and available tabletop depth. The exposed tabletop thickness, apron and leg connections form a coherent assembly; the right table end and portions of the lower structure are cropped or concealed.&quot;,
+    &quot;consequence&quot;: &quot;No visible scale conflict, inconsistent supporting plane or malformed furniture is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side base edges sit close to the wood with soft contact shading and no visibly raised corner. Nearby props remain separate from the laptop. The rear underside is concealed.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact reads as grounded, without supported floating or intersection; hidden contact cannot be verified.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2_r3 (unchanged): PASS | 100/100</strong><p>The laptop is naturally integrated into a usable creative-work table. Support geometry, visible contact, prop spacing and the chair&#x27;s sketchbook-oriented position are coherent, with no supported placement concern. Cropped furniture portions, lower-body clearance and the hidden rear underside remain assessment limits.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop shares a suitable working table with complementary drawing materials. Their adjacent allocation supports computer-assisted creative work rather than displacing an established workstation or forming an unmotivated display.&quot;,
+    &quot;consequence&quot;: &quot;No supported concern with the support role, allocation or lived-in appearance.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard and touchpad are exposed toward the near edge, with a visible tabletop margin ahead of the base. The sketchbook is beside the laptop, while the palette and brushes remain behind the working area. Lower-body clearance is partly concealed.&quot;,
+    &quot;consequence&quot;: &quot;No visible obstruction, precarious placement or pinched laptop workspace.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop base registers coherently with the tabletop overall. The chair faces the shared working edge and favors the sketchbook, making its offset from the laptop compatible with the two adjacent activities rather than a discordant seating arrangement.&quot;,
+    &quot;consequence&quot;: &quot;No supported rigid-axis or furniture-layout conflict.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Laptop, sketchbook, painting supplies and foreground chair have plausible relative sizes with depth considered. The tabletop perimeter, slab thickness, deeper apron and exposed leg transitions read as a coherent assembly. The curved chair back has no clear contour defect; lower furniture portions and the table&#x27;s right end are concealed or cropped.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale, plane-perspective or furniture-construction defect in the visible portions.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side base edges meet the tabletop with a narrow contact shadow and no visible floating gap or penetration. Nearby props remain spatially distinct. The rear underside and individual feet are hidden.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is convincing; concealed contact points cannot be independently assessed.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P1 / v3_2_r2 (unchanged): PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop is fully accommodated on an ordinary worktable with separate, connected space for sketching and supplies.&quot;,
+    &quot;consequence&quot;: &quot;The support role and surface allocation are suitable for laptop-assisted creative work.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;Only a modest clear strip separates the palm-rest edge from the near table edge. No props obstruct keyboard access. The chair is laterally offset, while lower body space is partly concealed.&quot;,
+    &quot;consequence&quot;: &quot;No excessive working-edge reach or blocked operating side is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The rigid laptop front broadly follows the long tabletop edge. The exposed table end and laptop depth edges are compatible with their different positions in perspective, rather than demonstrating substantial relative rotation.&quot;,
+    &quot;consequence&quot;: &quot;No consequential device/table axis conflict is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop has a believable size relative to the sketchbook and work surface. The tabletop thickness, apron and visible leg connections form a coherent assembly without an exposed rack or structural discontinuity.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale, projection or furniture-construction problem is evident.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side portions of the laptop base sit closely against the wood with a narrow, plausible contact shadow. No lifted corner, widening gap or tabletop intersection is visible.&quot;,
+    &quot;consequence&quot;: &quot;The exposed chassis appears consistently grounded on the tabletop.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P2 / v3_2_r2 (unchanged): REVIEW | 100/100</strong><p>The reference laptop is naturally integrated into a coherent computer-and-sketching workspace. Visible alignment, support, contact and operating access show no supported placement defect, with some lower furniture structure and seated clearance concealed.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The table and associated chair form a credible seated workspace, with distinct surface areas for the laptop and sketching materials.&quot;,
+    &quot;consequence&quot;: &quot;No unsuitable support role or contradictory workspace allocation is evident.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;A modest clear strip separates the laptop from the near edge, and no prop blocks its controls. The chair&#x27;s lateral offset alone does not establish excessive reach; lower-body clearance is partly concealed.&quot;,
+    &quot;consequence&quot;: &quot;No visible obstruction to routine laptop operation is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The base&#x27;s width boundaries broadly follow the tabletop width family. The exposed left table boundary and short laptop depth edges permit compatible convergence; the right table boundary is cropped.&quot;,
+    &quot;consequence&quot;: &quot;No consequential product/table rotation or reversed operating arrangement is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s footprint is plausible relative to the tabletop and nearby art materials. The exposed slab, apron and uprights show coherent proportions and connections; the chair conceals portions of the lower assembly.&quot;,
+    &quot;consequence&quot;: &quot;No material scale discrepancy or exposed support deformation is evident; concealed construction remains unverified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and lateral chassis boundaries sit against the wood with a narrow, subdued contact shadow and no visible gap or penetration. The rear underside is concealed.&quot;,
+    &quot;consequence&quot;: &quot;The visible laptop base appears naturally supported by the tabletop.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P1 / v3_2 first attempt: REVIEW | 100/100</strong><p>The selected component assessments identify no visible placement defect. The two source assessments disagreed on the overall verdict.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden worktable contains the laptop&#x27;s full footprint and provides separate, connected areas for computer and sketchbook use.&quot;,
+    &quot;consequence&quot;: &quot;The support and allocation of workspace form a believable studio station.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;Only a modest strip of tabletop separates the laptop&#x27;s palm-rest edge from the near working edge. Nothing intervenes before the keyboard; the chair&#x27;s lateral offset does not establish excessive reach.&quot;,
+    &quot;consequence&quot;: &quot;Reachable laptop use is supported, although the chair obscures some under-table clearance.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The rigid deck&#x27;s front and rear width directions broadly agree with the table&#x27;s long boundaries. The visible left end does not establish a material depth-axis conflict; the opposite end is cropped.&quot;,
+    &quot;consequence&quot;: &quot;No consequential product/table rotation or reversed workstation is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Laptop size is plausible relative to the tabletop and nearby tools. The exposed tabletop, apron, leg joins and chair-back supports show no clear construction contradiction; lower and rear connections are partly hidden.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale error or malformed furniture is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The visible front and side portions of the laptop base sit flush against the tabletop with a narrow contact shadow and no widening air gap or intersection.&quot;,
+    &quot;consequence&quot;: &quot;The laptop appears naturally supported rather than floating or embedded.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2 first attempt: PASS | 100/100</strong><p>The laptop is naturally supported and accessible within a coherent shared sketching workspace. No material placement defect is supported by the visible evidence; cropped furniture geometry and concealed rear contact remain assessment limits.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden table is an appropriate seated work surface, with distinct usable areas for the laptop and sketching materials.&quot;,
+    &quot;consequence&quot;: &quot;The support and studio activity are coherent.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard faces the chair-side working edge with modest tabletop depth in front and no intervening props. The chair&#x27;s lateral offset does not establish excessive reach; lower body clearance is partly hidden.&quot;,
+    &quot;consequence&quot;: &quot;No material reach or operating-path obstruction is demonstrated.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The base&#x27;s paired width edges are compatible with the tabletop&#x27;s front and rear width boundaries. The left table depth edge and laptop base sides can converge consistently despite differing slopes; the other table depth edge is outside the frame.&quot;,
+    &quot;consequence&quot;: &quot;No consequential product/table rotation or station-layout conflict is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed tabletop contour, thickness, apron and visible leg connections are coherent. The chair back and uprights show no exposed connection contradiction, although its seat, lower joins and feet are hidden or cropped. Relative sizes are plausible at their respective depths.&quot;,
+    &quot;consequence&quot;: &quot;No supported furniture-construction or depth-aware scale defect is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side base boundaries meet the tabletop with a narrow soft shadow, without a visible air gap or intersection. Rear underside contact and individual feet are hidden.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is plausible; concealed contact is not certified.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div></details><details><summary>Comment on this image / judges</summary><textarea data-case="07_cashmere_x_Front_Wide_1" data-sha="08b188e55d41d89c28298715beedb23b1c157d933d6ca303b51d1a9289c1677e" data-image="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/07_cashmere_x_Front_Wide_1.jpg" placeholder="Name the judge/criterion you agree or disagree with, and the visible evidence."></textarea></details></article></section><section class="study-row"><h2>07_cashmere_x_Front_Wide_4</h2><p>Criterion labels (not global ground truth): {&quot;orientation_alignment&quot;: &quot;material_furniture_axis_conflict&quot;, &quot;scale_perspective&quot;: &quot;unlabeled&quot;}</p><details><summary>Original scene prompt and product reference</summary><p>A bright creative studio with a medium wooden table set up for sketching a concept, with a sketchbook open to blank unmarked pages, graphite pencils, a watercolor palette, and paintbrushes in a brush holder. Warm natural light and simple studio walls keep the workspace focused, practical, and casually used.</p><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/07_cashmere_x_Front_Wide_0.jpg" alt="Original product reference" style="max-width:450px;width:100%;height:auto"></details><article class="scene" data-scene="07_cashmere_x_Front_Wide_4" data-sha="0220952ea436b72877e113aa0c67a33252fd99b6b23ade96f359d641a0b8535c"><strong>V16.6 no geometry</strong><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/07_cashmere_x_Front_Wide_4.jpg" alt="07_cashmere_x_Front_Wide_4"><a href="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/07_cashmere_x_Front_Wide_4.jpg" target="_blank" rel="noopener">Full image</a><div class="judge fail"><strong>Astra P1 / v3_2_r4: FAIL | 59/100</strong><p>The readable chassis front lip and hinge establish a width direction conspicuously oblique to the table&#x27;s continued near and rear long edges. Across the footprint, the exposed working-edge strip expands from a relatively short setback at the left front corner into a much deeper wedge at the right. Returning to the full image, this extended relationship reads as a material product/table registration conflict, not merely a small difference in edge slopes. The chassis sides are visible, but corresponding table depth boundaries are not, so no incompatible-vanishing-point claim is made. Angled use toward the foreground chair is physically possible; that limits the functional interpretation but does not remove the visible skew. The registration concern is retained. The chair&#x27;s ordinary offset and the background furniture do not independently establish another directional or layout conflict. The laptop appears conspicuously skewed against the table&#x27;s established working-edge direction, despite remaining usable.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The full image and all six A tiles show the laptop allocated a distinct portion of a substantial wooden worktable, beside rather than on top of the sketching materials. The surrounding tools and storage support a coherent studio station. The tidy arrangement could be prepared for use rather than currently occupied; that alternative does not make it an unsupported display-like setting. No support-role or staging concern is retained. The far table ends and some under-table structure remain outside the view.&quot;,
+    &quot;consequence&quot;: &quot;The support type, room siting and shared surface allocation are credible for laptop-assisted creative work.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The keyboard faces the established near-side approach. The exposed wood between the palm rest and working edge contains no props; the sketchbook is to the right, and the palette and brush holder are farther back. The setback varies across the footprint, but does not independently establish excessive working reach. The chair is laterally offset, not demonstrably blocking operation. Obstruction and chair-based reach concerns are rejected; central legroom and the full floor approach remain hidden.&quot;,
+    &quot;consequence&quot;: &quot;No supported operating-path or user-workspace obstruction is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 2,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The readable chassis front lip and hinge establish a width direction conspicuously oblique to the table&#x27;s continued near and rear long edges. Across the footprint, the exposed working-edge strip expands from a relatively short setback at the left front corner into a much deeper wedge at the right. Returning to the full image, this extended relationship reads as a material product/table registration conflict, not merely a small difference in edge slopes. The chassis sides are visible, but corresponding table depth boundaries are not, so no incompatible-vanishing-point claim is made. Angled use toward the foreground chair is physically possible; that limits the functional interpretation but does not remove the visible skew. The registration concern is retained. The chair&#x27;s ordinary offset and the background furniture do not independently establish another directional or layout conflict.&quot;,
+    &quot;consequence&quot;: &quot;The laptop appears conspicuously skewed against the table&#x27;s established working-edge direction, despite remaining usable.&quot;,
+    &quot;issue_codes&quot;: [
+      &quot;furniture_axis_conflict&quot;
+    ]
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop, open sketchbook, chair and table have plausible relative sizes after allowing for depth; the book alone is not treated as a ruler. The table&#x27;s exposed front face continues with consistent thickness into the visible leg regions. The chair&#x27;s curved wooden back has continuous rounded ends and visible upright connections, without an isolated projection or broken contour. These continuations support ordinary furniture construction rather than malformed geometry. The laptop&#x27;s shallow deck repeats the intrinsic silhouette in B; no separate plane inconsistency is established. Hidden chair joints, rear table structure and exact dimensions remain unknown.&quot;,
+    &quot;consequence&quot;: &quot;No independent scale, perspective or furniture-contour concern is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed front lip and both front-corner regions sit immediately against the wood with narrow, soft darkening beneath them. The visible side boundaries show no widening air gap or apparent penetration. Image B confirms a dark lower chassis rim, so that rim is not treated as floating clearance. The soft shadow and continuous exposed boundaries support ordinary contact, while the underside, feet and rear contact remain concealed. A floating or sinking interpretation is rejected for the visible evidence, without certifying the hidden underside.&quot;,
+    &quot;consequence&quot;: &quot;The exposed base reads as resting on the tabletop, with no supported contact defect.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge fail"><strong>Astra P2 / v3_2_r4: FAIL | 59/100</strong><p>The scene supports a credible, accessible computer-and-art workspace with plausible scale, furniture construction and exposed contact. The retained material concern is the laptop base&#x27;s conspicuous misregistration with the table&#x27;s working edge. Chair offset, rounded chair-back returns and lateral art supplies do not add independent defects. Hidden support details and lower circulation remain unverified.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The broad table provides a suitable, connected work surface for the laptop and adjacent art activity. The sketchbook and painting materials have separate footprints rather than being displaced by the computer. The paint-marked palette and grouped tools support practical use despite the tidy arrangement.&quot;,
+    &quot;consequence&quot;: &quot;No inappropriate support, occupied-workstation displacement or affirmative display-like staging concern is supported. Active use is not shown, but a prepared workspace is credible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard and palm-rest side opens toward the foreground chair and clear near-edge strip. The sketchbook, palette, brush vessel, bowl and drawing implements remain beside or behind this strip, without covering the deck or visibly crowding the immediate operating area. The chair&#x27;s modest lateral offset does not eliminate the user position.&quot;,
+    &quot;consequence&quot;: &quot;No visible local reach, workspace or operating-side obstruction is supported. Concealed knee clearance and the complete walk-up route remain unknown rather than verified clear.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 2,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Across the full laptop footprint, the front chassis rim and rear base boundary register conspicuously against the table&#x27;s oppositely directed long edges. The clear wood strip expands from a relatively narrow left margin into a right-hand wedge deeper in projection than the nearby deck. This extended relationship produces a material body-to-working-edge mismatch, not just unequal edge slopes. The chair still serves the near-side task area; its offset and the independent rear furniture grouping do not establish additional layout conflicts.&quot;,
+    &quot;consequence&quot;: &quot;The laptop appears materially misregistered with its supporting workstation. Diagonal placement is physically possible and access remains usable, but those alternatives do not remove the pronounced visual discrepancy. No exact rotation, incompatible vanishing points or corner-facing relationship is established.&quot;,
+    &quot;issue_codes&quot;: [
+      &quot;furniture_axis_conflict&quot;
+    ]
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop, somewhat wider sketchbook spread, smaller palette and brush vessel have plausible relative sizes at their different depths; the foreground chair is naturally larger in projection. The laptop deck has no independently inconsistent plane. The table&#x27;s exposed thickness band and leg silhouettes continue coherently. Separately, the chair back&#x27;s edge band follows its curved ends as rounded returns, with distinct uprights below; these projections do not read as doubled or broken members.&quot;,
+    &quot;consequence&quot;: &quot;No independent scale, perspective or malformed-furniture concern is retained. The orientation discrepancy is not counted again here. Physical dimensions, concealed furniture joins and cropped lower members remain unverified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;A close dark boundary and soft shadow follow the exposed laptop base without a visible separating slit or tabletop cutting through it. B also contains the dark chassis rim and hinge recess, so these features are not evidence of floating. Exposed wood separates the laptop and sketchbook. The book cover, palette, vessels and stacked tabletop objects have readable resting boundaries; raised book pages remain distinguishable from the supporting cover. Background overlaps do not expose a collision.&quot;,
+    &quot;consequence&quot;: &quot;No floating, sinking, intersection or inconsistent-shadow concern is supported at the visible junctions. The underside, feet, rear bearing boundary and obscured prop-to-wall contacts remain unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><details><summary>Previous judges (unchanged evidence)</summary><div class="judge pass"><strong>Astra P1 / v3_2_r3 (unchanged): PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><p class="failed-check">Criterion mismatch: orientation_alignment:material_furniture_axis_conflict</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden table comfortably contains the laptop footprint and provides distinct, connected areas for digital work and sketching.&quot;,
+    &quot;consequence&quot;: &quot;The laptop belongs to the visible workstation without displacing an established separate station or fragmenting the working surface.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The keyboard faces the near-side user area with an open strip of tabletop in front. The sketchbook, palette and brush holder remain beside or behind the working zone.&quot;,
+    &quot;consequence&quot;: &quot;No supported excessive reach or pinched keyboard workspace is visible; the chair&#x27;s lateral position alone does not establish an access problem.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s front-width edge differs from the table&#x27;s long-edge direction, but the complete deck reads as an ordinary diagonal placement facing the shared near-side user area. The chair remains coherently associated with that working edge.&quot;,
+    &quot;consequence&quot;: &quot;The visible rotation does not establish awkward product/support registration or a conflicting furniture arrangement.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Laptop size is plausible relative to the open sketchbook, brushes and nearer chair. The exposed tabletop thickness, fascia and legs form a coherent assembly; the table ends and some connections are hidden.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale conflict, inconsistent supporting plane or malformed furniture contour is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side base edges sit against the wood with close, soft contact shading and no visible elevated corner or penetration. Rear underside contact is concealed.&quot;,
+    &quot;consequence&quot;: &quot;The laptop appears supported across its visible base rather than floating or sinking into the tabletop.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2_r3 (unchanged): PASS | 100/100</strong><p>The laptop matches the reference and reads naturally as part of a usable creative workstation. Its diagonal placement, chair relationship, surrounding supplies, apparent scale and exposed contact show no supported placement concern. Cropped furniture joints, rear underside contact and complete circulation cannot be assessed.</p><p class="failed-check">Criterion mismatch: orientation_alignment:material_furniture_axis_conflict</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The substantial worktable accommodates separate laptop and sketching areas. Task materials give the immediate station a practical purpose without visibly displacing another workstation.&quot;,
+    &quot;consequence&quot;: &quot;The laptop is plausibly integrated into a shared creative work surface rather than an unsupported or bare display arrangement.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard and touchpad face the foreground seating area, with clear tabletop to the near edge. The sketchbook and painting supplies remain beside or beyond the laptop&#x27;s operating approach.&quot;,
+    &quot;consequence&quot;: &quot;No supported obstruction, precarious placement or pinched laptop workspace is visible; full room circulation remains outside the view.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The chassis width edges differ in slope from the table perimeter, but the base reads as an ordinary diagonal placement. The foreground chair serves the same operating edge, with a reasonable offset for the combined laptop-and-sketching station.&quot;,
+    &quot;consequence&quot;: &quot;Neither rigid product-to-support registration nor the seating relationship shows a supported appearance conflict.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s scale is plausible relative to the nearer sketchbook, chair and table. The tabletop and front fascia form a continuous band, and the exposed legs and curved chair back show no supported malformed joins or contours. Table ends and several lower joints are concealed or cropped.&quot;,
+    &quot;consequence&quot;: &quot;No implausible scale, inconsistent support plane or malformed furniture is established in the assessable portions.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side underside sit close to the wood with narrow grounding shading and no visible separation or penetration. Nearby supplies remain spatially distinct from the chassis. Rear contact and individual feet are hidden.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is convincing, with no supported floating, sinking or awkward product–prop junction; concealed contact remains unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge fail"><strong>Astra P1 / v3_2_r2 (unchanged): FAIL | 59/100</strong><p>The tabletop&#x27;s front and rear long boundaries form a coherent leftward-converging family, while the laptop&#x27;s front lip and hinge-side base boundary converge rightward. At the laptop&#x27;s position, this creates substantial diagonal rotation and a markedly widening gap to the working edge across its front. The rigid laptop and table establish materially conflicting working axes despite usable access and plausible contact.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden table provides a suitable laptop work surface alongside a connected sketching area, with a chair on the operating side.&quot;,
+    &quot;consequence&quot;: &quot;The support role and workspace allocation are believable.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The keyboard faces the foreground working side. The intervening tabletop is clear, and the sketchbook and tools remain beside the approach; excessive reach is not clearly established.&quot;,
+    &quot;consequence&quot;: &quot;No supported obstruction or unavailable user position is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 2,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The tabletop&#x27;s front and rear long boundaries form a coherent leftward-converging family, while the laptop&#x27;s front lip and hinge-side base boundary converge rightward. At the laptop&#x27;s position, this creates substantial diagonal rotation and a markedly widening gap to the working edge across its front.&quot;,
+    &quot;consequence&quot;: &quot;The rigid laptop and table establish materially conflicting working axes despite usable access and plausible contact.&quot;,
+    &quot;issue_codes&quot;: [
+      &quot;furniture_axis_conflict&quot;
+    ]
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s size is plausible relative to the table, chair, and art supplies. The exposed tabletop thickness and supporting members show no affirmative deformation or incoherent assembly; some connections are obscured.&quot;,
+    &quot;consequence&quot;: &quot;No separate scale or furniture-construction defect is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side portions of the base sit against the tabletop with close contact shading. No visible raised corner, separating gap, or intersection appears.&quot;,
+    &quot;consequence&quot;: &quot;The laptop appears grounded on the wooden surface.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge fail"><strong>Astra P2 / v3_2_r2 (unchanged): FAIL | 59/100</strong><p>The matching laptop occupies a suitable, accessible studio workspace with plausible scale and contact. The supported concern is substantial diagonal alignment between its base and the table, not malformed furniture or blocked use.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden table is an appropriate seated work surface, with distinct laptop and sketching areas. The art materials support rather than contradict the activity.&quot;,
+    &quot;consequence&quot;: &quot;No supported support-role or workspace-allocation defect.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard and trackpad open toward the chair-side edge, with no intervening props or exposed operating obstruction. Some under-table space is hidden by the chair.&quot;,
+    &quot;consequence&quot;: &quot;No visible access or reach problem; concealed knee clearance is not certified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 2,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Around the laptop, the table&#x27;s long front and rear borders descend rightward and spread apart, while the chassis front and rear width boundaries rise rightward and narrow toward the right. These extended paired families support substantial relative yaw; cropped table ends prevent a separate depth-axis check.&quot;,
+    &quot;consequence&quot;: &quot;The laptop sits materially diagonal to the table&#x27;s long axis despite having a usable operating approach.&quot;,
+    &quot;issue_codes&quot;: [
+      &quot;furniture_axis_conflict&quot;
+    ]
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed tabletop, fascia, legs and curved chair show no clear racking or incoherent member arrangement. Laptop, sketchbook and chair sizes are plausible with depth accounted for; much of the under-table assembly is obscured.&quot;,
+    &quot;consequence&quot;: &quot;No independently supported scale or furniture-construction defect.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side chassis edges meet the wood with close, soft shadowing and no visible air gap or penetration. The rear underside and feet are concealed.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is plausible; hidden contact remains unverified.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge fail"><strong>Astra P1 / v3_2 first attempt: FAIL | 59/100</strong><p>Both the front and hinge-side width edges of the rigid keyboard base rise toward image right, while the tabletop&#x27;s near and rear long boundaries descend toward image right with a different convergence. This is a paired-axis conflict, not a single weak slope difference; cropped table ends limit only the depth comparison. The laptop is materially rotated relative to the rectangular work surface.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden worktable contains the full laptop footprint and provides additional usable surface for drawing beside it.&quot;,
+    &quot;consequence&quot;: &quot;The support type and allocation of workspace are suitable.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The keyboard faces the chair-side working edge across a clear tabletop band. Supplies remain to the side, and the visible setback does not establish excessive reach. Lower-body clearance is partly concealed.&quot;,
+    &quot;consequence&quot;: &quot;No material access obstruction or reversed operating arrangement is demonstrated.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 2,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;Both the front and hinge-side width edges of the rigid keyboard base rise toward image right, while the tabletop&#x27;s near and rear long boundaries descend toward image right with a different convergence. This is a paired-axis conflict, not a single weak slope difference; cropped table ends limit only the depth comparison.&quot;,
+    &quot;consequence&quot;: &quot;The laptop is materially rotated relative to the rectangular work surface.&quot;,
+    &quot;issue_codes&quot;: [
+      &quot;furniture_axis_conflict&quot;
+    ]
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Laptop, chair and tabletop proportions are plausible. The exposed tabletop and chair members show no definite construction contradiction; some joins and lower supports are hidden or cropped.&quot;,
+    &quot;consequence&quot;: &quot;No independent scale, projection or furniture-construction defect is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The visible front and side base edges meet the tabletop with close, soft shadowing and no evident lifted corner or intersection. The rear underside is concealed.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is plausible, without certifying the hidden underside.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge fail"><strong>Astra P2 / v3_2 first attempt: FAIL | 59/100</strong><p>The laptop matches the reference and occupies a credible, accessible studio workstation. The material concern is its substantial rigid-base rotation relative to the table, established by the opposing convergence of corresponding width boundaries. No separate construction, scale or contact defect is supported.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden table provides a suitable seated work surface with connected space for the laptop and sketching materials.&quot;,
+    &quot;consequence&quot;: &quot;The support and studio activity are coherent.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard faces the established chair side across a modest, clear tabletop margin. Art materials remain beside the approach; some under-table space is occluded by the chair.&quot;,
+    &quot;consequence&quot;: &quot;No excessive reach or blocked operating path is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 2,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The table&#x27;s front and rear long boundaries descend rightward and converge leftward. The corresponding front chassis and rear deck boundaries rise rightward and converge rightward. This paired-width relationship establishes substantial relative rotation; cropped table ends limit the depth-family comparison.&quot;,
+    &quot;consequence&quot;: &quot;The laptop sits materially diagonally to the table&#x27;s working axis, despite retaining usable keyboard access.&quot;,
+    &quot;issue_codes&quot;: [
+      &quot;furniture_axis_conflict&quot;
+    ]
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The tabletop contour and thickness are continuous, and exposed table-leg and chair-back connections show no construction contradiction. Laptop, sketchbook and chair sizes are plausible at their respective depths. Rear joins and lower chair supports are hidden or cropped.&quot;,
+    &quot;consequence&quot;: &quot;No independent scale or support-construction defect is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side base perimeter meets the wood with a narrow attached shadow, without a visible gap or penetration. Feet and the rear underside are concealed.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is plausible; concealed contact cannot be certified.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div></details><details><summary>Comment on this image / judges</summary><textarea data-case="07_cashmere_x_Front_Wide_4" data-sha="0220952ea436b72877e113aa0c67a33252fd99b6b23ade96f359d641a0b8535c" data-image="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/07_cashmere_x_Front_Wide_4.jpg" placeholder="Name the judge/criterion you agree or disagree with, and the visible evidence."></textarea></details></article></section><section class="study-row"><h2>13_elitebook_13_Front_Left_Medium_4</h2><p>Criterion labels (not global ground truth): {&quot;orientation_alignment&quot;: &quot;appearance_furniture_axis_conflict&quot;, &quot;scale_perspective&quot;: &quot;appearance_malformed_support_furniture&quot;}</p><aside class="warning"><strong>Latest human clarification (separate from frozen checks)</strong><p>The laptop&#x27;s front edge is not aligned with the front edge of the table. Also, there is an extra piece of wood coming out of the top of the backrest of the chair.</p><p>This revision uses the user-confirmed appearance-sensitive standard: explicit concerns and score penalties even when physically plausible, not necessarily FAIL. Earlier material-geometry disagreement remains preserved, not retrospectively resolved. <a href="astra_localized_feedback.json">Read actual Astra evidence and counter-evidence</a>.</p></aside><details><summary>Original scene prompt and product reference</summary><p>A bright creative studio worktable is arranged for sketching out a direction, with unlabelled color swatches, unlabelled fabric swatches, and a measuring tape with non-readable markings. A studio stool rests at the table, and warm natural light keeps the workspace practical and casually used.</p><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/13_elitebook_13_Front_Left_Medium_0.jpg" alt="Original product reference" style="max-width:450px;width:100%;height:auto"></details><article class="scene" data-scene="13_elitebook_13_Front_Left_Medium_4" data-sha="f912f2eaecee2f319cd6ffb6a3b5905357f3363fb9230cd84368b58f85171cd2"><strong>V16.6 no geometry</strong><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/13_elitebook_13_Front_Left_Medium_4.jpg" alt="13_elitebook_13_Front_Left_Medium_4"><a href="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/13_elitebook_13_Front_Left_Medium_4.jpg" target="_blank" rel="noopener">Full image</a><div class="judge review"><strong>Astra P1 / v3_2_r4: REVIEW | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><p class="failed-check">Criterion mismatch: orientation_alignment:appearance_furniture_axis_conflict; scale_perspective:appearance_malformed_support_furniture</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The full scene and supplied tiles show the laptop sharing a substantial worktable with related sampling materials, while retaining its own clear surface allocation. The chair is associated with this table, but neither it nor the props establish an already occupied competing workstation. Although the black screen leaves the exact digital task unknown, the connected material-working arrangement rebuts an isolated display-like staging concern. Far supports and some lower construction remain hidden or cropped.&quot;,
+    &quot;consequence&quot;: &quot;No supported concern about support suitability, siting, allocation or staging.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;Image B establishes the palm-rest lip as the functional approach. In A, a modest bare strip separates that lip from the near working edge, without a broad intervening reach area. The left fabric overhang and right tape and bowl are lateral to this strip, not keyboard obstructions. The chair&#x27;s rightward offset does not independently establish excessive reach. Lower-body clearance is partly concealed by the chair and wooden band, so it remains unknown rather than defective.&quot;,
+    &quot;consequence&quot;: &quot;The exposed operating area shows neither excessive reach nor prop intrusion.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Comparing chassis boundaries rather than the display, the front lip and hinge line rise toward the right more steeply than the table&#x27;s working edge. The exposed wood strip is narrower at the laptop&#x27;s left front corner and wider at its right, but remains modest and continuous across the footprint. On returning to the full view, this reads as a slight compatible turn rather than awkward registration; the measurable slope difference is retained as an observation but rejected as a defect. Table depth boundaries are insufficiently exposed for a second-axis judgment. The operating direction leads toward the near-side seating area, with no demonstrated furniture-axis or layout conflict.&quot;,
+    &quot;consequence&quot;: &quot;No supported product/support registration or station-direction concern.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop retains B&#x27;s thin base and display proportions, and its size is plausible relative to the table and nearer chair without treating any single prop as a ruler. The table&#x27;s deep front band continues regularly into the visible support areas; its thickness alone does not establish malformed construction. Independently, the chair&#x27;s curved backrest has rounded terminations, its uprights continue toward the seat, and the exposed seat rim follows a coherent rounded contour. No localized projection or discontinuity is apparent. Lower chair members, hidden joins and the table&#x27;s lateral ends are not fully assessable.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale, plane or exposed furniture-contour defect.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed left lower rim and front underside sit close to the wood with a narrow adjoining dark seam. The right front tip has a soft adjacent shadow rather than a visible lifting wedge, and wood continues outside the chassis outlines without an apparent intersection. B confirms that the dark left-flank openings are intrinsic ports above the lower rim, not gaps beneath the laptop. These exposed boundaries support convincing local contact; the feet, central underside and rear contact line remain hidden.&quot;,
+    &quot;consequence&quot;: &quot;No supported floating, sinking or inconsistent-shadow concern at the exposed boundaries.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2_r4: PASS | 100/100</strong><p>The matching laptop reads naturally as part of a material-selection worktable. Its modest turn relative to the table, the chair&#x27;s offset and the chair backrest&#x27;s rounded return do not establish appearance concerns. No in-scope correction is supported. Hidden underside contact, concealed furniture joins and complete seated and circulation clearances remain unresolved.</p><p class="failed-check">Criterion mismatch: orientation_alignment:appearance_furniture_axis_conflict; scale_perspective:appearance_malformed_support_furniture</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The broad tabletop provides a suitable, connected support area, with visible wood surrounding the laptop base. The materials flank a dedicated operating area rather than showing a separate workstation displaced by the laptop. Layered samples, overlapping cards and loose tape support practical use rather than an affirmative display-only arrangement. Rear open shelves visibly contain stacked items, so an empty-storage allegation is unsupported.&quot;,
+    &quot;consequence&quot;: &quot;No supported support-role, allocation or staging concern. The neat surface and dark screen do not establish a bare setting or an occupied workstation conflict; hidden storage and current activity remain unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The keyboard, touchpad and palm rest are unobstructed, and the exposed strip to the near working edge is clear. The left hanging textiles remain beside that strip; the tape, right samples and bowl are lateral rather than intervening. The front lip stays inside the table rim, without a visibly precarious overhang. The chair provides a recognizable front-side user position despite its rightward offset.&quot;,
+    &quot;consequence&quot;: &quot;No visible blocked operating side, crowded user workspace or excessive reach is established. The chair and deep table face conceal much of the knee area, so complete seated clearance and floor access are not verified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Across the laptop footprint, both chassis width boundaries are steeper than the near and rear table rims, and the clear working-edge strip widens rightward. The full exposed relationship reads as a modest relative turn, not a conspicuous rigid misregistration; the changing margin alone does not establish conflict. The chair remains associated with the same operating edge, and its offset does not displace or bunch the station. Background shelving belongs to a separate zone.&quot;,
+    &quot;consequence&quot;: &quot;No supported product-to-support axis conflict or furniture-layout concern. The table ends are not exposed, so corner-facing and exact depth-axis registration cannot be established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The table&#x27;s deep front face follows a continuous rim and has coherent visible continuations toward the leg regions; it does not establish a malformed slab or apron. On the chair, the slightly offset upper-right backrest contour remains connected to the rounded top thickness return rather than forming a visibly broken or duplicated member. Exposed uprights continue behind the back and seat with ordinary occlusion. The larger projected chair span is compatible with its nearer position. The laptop outline and tabletop plane show no independent perspective contradiction.&quot;,
+    &quot;consequence&quot;: &quot;No supported malformed furniture, implausible scale or conflicting perspective. The rounded backrest return resolves the localized contour concern, but concealed furniture joints and absolute dimensions remain unverified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed laptop underside has a narrow dark bevel and attached shading, with a softer shadow extending onto the wood to the right. B confirms that the lower bevel and recessed ports are product features; no distinct open gap or buried chassis edge is resolved. Nearby cards, textiles, tape and bowl remain separate from the laptop. Their visible bearing edges and layered overlaps are coherent, including the tape&#x27;s readable crossing order, rather than showing interpenetration. Foliage overlapping the brush cup and background furnishings reads as ordinary foreground overlap.&quot;,
+    &quot;consequence&quot;: &quot;No supported floating, sinking, intersection, shadow or reflection concern at the exposed junctions. The feet, central underside, rear bearing boundary and concealed prop contacts remain unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><details><summary>Previous judges (unchanged evidence)</summary><div class="judge pass"><strong>Astra P1 / v3_2_r3 (unchanged): PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><p class="failed-check">Criterion mismatch: orientation_alignment:appearance_furniture_axis_conflict; scale_perspective:appearance_malformed_support_furniture</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop occupies a useful portion of a sturdy worktable alongside related studio materials, without displacing another established workstation.&quot;,
+    &quot;consequence&quot;: &quot;The support and surface allocation form a credible mixed digital-and-material workspace.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;Only a modest strip of bare tabletop separates the palm-rest edge from the near working edge. Neither the samples nor the tape intrudes into the keyboard approach.&quot;,
+    &quot;consequence&quot;: &quot;Seated operation appears reachable and unobstructed; the stool&#x27;s lateral offset alone does not establish an access problem.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s width edges are slightly oblique to the table&#x27;s long edge, forming a natural diagonal placement. Its operating side opens toward the stool and usable near edge. Cropped table ends limit depth-axis comparison.&quot;,
+    &quot;consequence&quot;: &quot;No awkward product-to-support registration or conflicting station direction is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s size is plausible relative to the stool and worktable. The exposed tabletop, apron and leg connections read coherently, although the complete table perimeter is outside the frame.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale conflict, inconsistent supporting plane or malformed furniture contour is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side base edges sit closely against the wood with soft contact shading, including at the right-front tip. The rear underside is hidden, and nearby props do not intersect the chassis.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact convincingly grounds the laptop without a floating gap or apparent penetration.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2_r3 (unchanged): PASS | 100/100</strong><p>The laptop forms a coherent, accessible creative workstation with credible task materials and associated seating. Its modest diagonal placement, visible contact and surrounding furniture show no supported placement concern. Hidden underside contact, lower furniture joints and full room circulation remain unverified.</p><p class="failed-check">Criterion mismatch: orientation_alignment:appearance_furniture_axis_conflict; scale_perspective:appearance_malformed_support_furniture</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop occupies a usable portion of a substantial worktable alongside materials relevant to the apparent creative task. The arrangement is neither an empty display nor a visibly displaced workstation.&quot;,
+    &quot;consequence&quot;: &quot;The support and surrounding allocation suit seated laptop work combined with material selection.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard, palm rest and near-side approach are clear. The base remains inside the tabletop perimeter, and the side props do not intrude into the immediate user area. Lower-body clearance is only partly visible.&quot;,
+    &quot;consequence&quot;: &quot;No supported operating obstruction, precarious edge placement or workspace crowding is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The modest difference between laptop and table edge directions reads as ordinary diagonal placement rather than conflicting registration. The chair serves the same operating edge, and its lateral offset remains compatible with the laptop&#x27;s forward direction. Table ends are cropped.&quot;,
+    &quot;consequence&quot;: &quot;The product, support and seating form a coherent operating relationship.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Laptop size is plausible relative to the broad worktop and nearer chair. The table&#x27;s substantial front fascia has continuous contours and reads as a deep apron, while the visible chair contours form a coherent assembly. Fabric, occlusion and cropping conceal some lower joints.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale mismatch, inconsistent plane appearance or malformed furniture is visible in the assessable portions.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and left underside sit close to the tabletop with soft contact shading. The thin edge relief is consistent with the reference chassis, and nearby props remain separate from the laptop. Rear contact and individual feet are concealed.&quot;,
+    &quot;consequence&quot;: &quot;The visible base reads as resting naturally on the table, without supported floating or intersection.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P1 / v3_2_r2 (unchanged): PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect. The two source assessments disagreed on the overall verdict.</p><p class="failed-check">Criterion mismatch: scale_perspective:material_malformed_support_furniture</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop rests on an ordinary worktable with a coherent seated working side and usable space for adjacent craft materials.&quot;,
+    &quot;consequence&quot;: &quot;The support role and surface allocation are suitable for laptop use.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;A modest, clear strip of tabletop separates the palm-rest edge from the near working edge. Samples and tools sit beside rather than across this approach.&quot;,
+    &quot;consequence&quot;: &quot;The keyboard is plausibly reachable from the existing seating side; the chair&#x27;s lateral offset does not establish an access problem.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed long tabletop boundaries are coherent. The laptop base has mild obliquity relative to them, but no substantial rigid-body skew is established; the table&#x27;s depth boundaries are mostly cropped.&quot;,
+    &quot;consequence&quot;: &quot;No material product-to-support alignment conflict is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s size is plausible relative to the chair and tabletop at their respective depths. The exposed top, apron and legs form a coherent assembly, and the chair&#x27;s curved back and seat show no affirmative deformation.&quot;,
+    &quot;consequence&quot;: &quot;No implausible scale or materially awkward furniture construction is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and left underside sit closely against the tabletop with soft contact shading and no visible wedge-shaped gap or penetration. The rear underside is concealed by the chassis.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is plausible; concealed contact remains unverified rather than evidence of floating.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2_r2 (unchanged): PASS | 100/100</strong><p>The laptop fits a usable materials-selection workspace, with a clear operating approach and plausible surface contact. Minor obliquity does not establish a material alignment problem, and the exposed furniture shows no supported construction or scale defect.</p><p class="failed-check">Criterion mismatch: scale_perspective:material_malformed_support_furniture</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The broad worktable supports both the laptop and adjacent material samples, with a chair at its working edge. Their allocation supports a coherent studio task.&quot;,
+    &quot;consequence&quot;: &quot;&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;Only a short, unobstructed tabletop strip separates the palm rest from the near edge. The chair is on the operating side, and props do not block the controls or approach; some knee clearance is concealed.&quot;,
+    &quot;consequence&quot;: &quot;&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Corresponding laptop base-width edges are slightly steeper than the table&#x27;s long boundaries, supporting minor obliquity rather than substantial skew. Short table sides are mostly cropped. The chair serves the same working edge.&quot;,
+    &quot;consequence&quot;: &quot;&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed top, deep fascia, and outer supports show no visible racking or incoherent member arrangement. The chair&#x27;s curved back and seat are plausible, and its larger projection is compatible with its nearer position. Fabric, furniture, and cropping conceal several joints.&quot;,
+    &quot;consequence&quot;: &quot;&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front, port-side, and front-right base edges sit against the wood with attached soft shadows and no visible gap or intersection. The rear feet and central underside remain hidden.&quot;,
+    &quot;consequence&quot;: &quot;&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge fail"><strong>Astra P1 / v3_2 first attempt: FAIL | 59/100</strong><p>Both the front lip and hinge-side width of the rigid base run more steeply upward to the right than the tabletop&#x27;s front and rear boundaries. Their paired convergence does not support a shared width direction; cropped table ends limit the depth-axis comparison. The laptop is materially skewed relative to its worktable despite remaining supported and reachable. The two source assessments disagreed on the overall verdict.</p><p class="failed-check">Criterion mismatch: orientation_alignment:no_material_defect; scale_perspective:material_malformed_support_furniture</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden worktable accommodates the entire laptop base and leaves useful surrounding work surface.&quot;,
+    &quot;consequence&quot;: &quot;The support and studio location are suitable for laptop work.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;Only a modest clear strip separates the palm-rest edge from the near table edge. The chair is on the operating side, and no props intervene.&quot;,
+    &quot;consequence&quot;: &quot;No excessive reach or blocked keyboard workspace is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 2,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Both the front lip and hinge-side width of the rigid base run more steeply upward to the right than the tabletop&#x27;s front and rear boundaries. Their paired convergence does not support a shared width direction; cropped table ends limit the depth-axis comparison.&quot;,
+    &quot;consequence&quot;: &quot;The laptop is materially skewed relative to its worktable despite remaining supported and reachable.&quot;,
+    &quot;issue_codes&quot;: [
+      &quot;furniture_axis_conflict&quot;
+    ]
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Relative laptop, chair and tool sizes are plausible. The exposed tabletop, apron, legs and chair uprights show no clear connection contradiction; lower furniture portions are cropped.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale or furniture-construction defect is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The visible base perimeter meets the wood with close contact shading, without an evident widening gap or tabletop intersection.&quot;,
+    &quot;consequence&quot;: &quot;The laptop appears to rest on the tabletop.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge fail"><strong>Astra P2 / v3_2 first attempt: FAIL | 59/100</strong><p>The matching laptop has suitable support, plausible contact and clear access in a coherent studio workspace. Its paired rigid-base boundaries nevertheless establish a moderate table-axis mismatch; hidden short table edges limit the exact rotation estimate.</p><p class="failed-check">Criterion mismatch: orientation_alignment:no_material_defect; scale_perspective:material_malformed_support_furniture</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop occupies a clear section of a plausible work-height studio table, alongside materials consistent with the surrounding activity.&quot;,
+    &quot;consequence&quot;: &quot;No supported support-suitability or station-location defect.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard faces the foreground chair across a clear, reasonably shallow tabletop strip. Samples and tape remain lateral; some knee space is hidden by the chair and apron.&quot;,
+    &quot;consequence&quot;: &quot;No visible excessive reach, blocked operating side or unavailable user position.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 2,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The front and hinge-side width boundaries of the rigid base both rise more steeply rightward than the table&#x27;s front and rear long contours. The table pair&#x27;s shallow convergence does not explain that difference at the laptop. Cropped or covered short ends limit the corresponding depth check and exact rotation estimate.&quot;,
+    &quot;consequence&quot;: &quot;The laptop is materially rotated relative to the worktable&#x27;s principal axis, despite retaining usable keyboard access.&quot;,
+    &quot;issue_codes&quot;: [
+      &quot;furniture_axis_conflict&quot;
+    ]
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The tabletop and apron have continuous exposed contours, visible supports meet the underside, and the chair&#x27;s back, seat and uprights form a plausible assembly. Laptop size is compatible with furniture depth. Fabric, chair and cropping conceal other joins.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale or furniture-construction defect; hidden joins remain unverified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and left base boundaries and right-front corner sit against the tabletop with a narrow, soft shadow. No exposed gap or penetration appears; rear and underside contact points are hidden.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is plausible without certifying concealed contact points.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div></details><details><summary>Comment on this image / judges</summary><textarea data-case="13_elitebook_13_Front_Left_Medium_4" data-sha="f912f2eaecee2f319cd6ffb6a3b5905357f3363fb9230cd84368b58f85171cd2" data-image="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/13_elitebook_13_Front_Left_Medium_4.jpg" placeholder="Name the judge/criterion you agree or disagree with, and the visible evidence."></textarea></details></article></section><section class="study-row"><h2>01_cashmere_x_Front_CloseUp_2</h2><p>Criterion labels (not global ground truth): {&quot;orientation_alignment&quot;: &quot;no_material_defect&quot;, &quot;scale_perspective&quot;: &quot;no_new_material_defect&quot;}</p><details><summary>Original scene prompt and product reference</summary><p>A warm small wooden café table near a window, with a ceramic coffee cup beside an open paper notebook showing blank pages. Soft daylight and warm wood finishes make it feel like a quick pause between appointments.</p><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/01_cashmere_x_Front_CloseUp_0.jpg" alt="Original product reference" style="max-width:450px;width:100%;height:auto"></details><article class="scene" data-scene="01_cashmere_x_Front_CloseUp_2" data-sha="f8df71ad59ec4864885d5f70b50623d902c00321d75a8f32be89a24a57231cde"><strong>V16.4</strong><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/01_cashmere_x_Front_CloseUp_2.jpg" alt="01_cashmere_x_Front_CloseUp_2"><a href="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/01_cashmere_x_Front_CloseUp_2.jpg" target="_blank" rel="noopener">Full image</a><div class="judge review"><strong>Astra P1 / v3_2_r4: REVIEW | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The full image and all six A tiles show the laptop allocated to a wooden tabletop alongside coffee and a notebook, with an associated foreground chair. The broad surface accommodates these separate footprints. This is a coherent casual-use arrangement, not an affirmatively isolated display setting; clear space to the right is not itself a staging defect. The table ends and supporting frame remain hidden.&quot;,
+    &quot;consequence&quot;: &quot;No supported concern with the visible support role, siting or surface allocation.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The palm-rest edge lies close to the near working edge, and the foreground chair faces the screen and keyboard. The exposed strip between chassis and table edge remains clear across the input area. The notebook is beside this strip rather than across it, while the cup sits farther back to the left. Excessive reach or prop obstruction is not supported. The chair seat, knee space and floor approach are concealed.&quot;,
+    &quot;consequence&quot;: &quot;The visible arrangement supports a reachable laptop operating position; concealed lower clearances cannot be certified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The chassis front lip and the tabletop&#x27;s near perimeter maintain a similar direction, leaving a reasonably consistent narrow wood strip across the footprint. The hinge-side width boundary is also compatible with this registration. The more nearly level rear table edge does not create a conspicuous extended conflict. Product depth boundaries are readable, but the table&#x27;s lateral depth edges and frame are not. The foreground chair and background furniture show no established directional or grouping conflict.&quot;,
+    &quot;consequence&quot;: &quot;No supported product/support misregistration or station-direction conflict in the exposed relationships.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop retains B&#x27;s chassis and display proportions. Its size relative to the cup, notebook and nearer chair back is plausible after accounting for their different depths; none supplies an exact ruler. The table&#x27;s exposed rim and vertical band continue smoothly. The foreground chair&#x27;s curved upper contour and rounded end returns are continuous, without an awkward projection; visible background chair contours are also plausible. Lower furniture joins and complete support boundaries are hidden.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale, plane or exposed furniture-contour defect.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed front-left return, long front underside and right tip sit closely against the wood with narrow, adjoining shading rather than a widening air gap. B shows the same inset lower housing and projecting right-front lip, rebutting a floating interpretation based solely on that dark recess. No exposed boundary visibly sinks into the tabletop. The underside, rear contacts and individual bearing points remain hidden.&quot;,
+    &quot;consequence&quot;: &quot;The visible contact is credible, while complete load-bearing contact remains unobservable.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P2 / v3_2_r4: REVIEW | 100/100</strong><p>The laptop is coherently placed for near-side seated use on the café tabletop. Visible alignment, furniture contours, relative scale and contact do not support an appearance-sensitive placement concern. The recessed right-tip opening is consistent with the reference chassis, while the notebook and coffee remain lateral to the operating area. Hidden bearing points, furniture joins and floor access remain unverified.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden surface provides a coherent shared setting for the laptop, lateral notebook and coffee, with associated foreground seating. The vase belongs to the separate window ledge. This tidy arrangement reads as a usable café station rather than an affirmative display-only setup; neither displaced workstation use nor unsupported placement is visible.&quot;,
+    &quot;consequence&quot;: &quot;No support-scenario concern is supported. The cropped furniture footprint does not establish missing support or an unsuitable station.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard, touchpad and palm-rest edge address the near-side chair position across a clear tabletop strip. The notebook&#x27;s forward footprint remains lateral, and the cup is farther back rather than between the user and controls. The chair back overlaps the table&#x27;s front band in projection but does not visibly intrude into the operating surface. The exposed base remains inside the working edge.&quot;,
+    &quot;consequence&quot;: &quot;No visible blocked workspace, excessive reach or precarious-edge concern is retained. The chair seat, knee clearance and floor approach remain unassessed.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Across the laptop footprint, the long front base boundary and near tabletop edge have compatible registration, with a fairly even wood margin that opens beneath the tapered right tip. The flatter exposed far tabletop sections do not create a conspicuous rigid conflict. Side-depth comparison is unavailable because both table ends are cropped. The functional front addresses the foreground chair area; the separate background furniture does not displace or bunch this station.&quot;,
+    &quot;consequence&quot;: &quot;Neither rigid furniture-axis conflict nor corner-facing is supported by the visible boundaries. Minor chair offset does not disrupt the operating relationship, and independent background furniture need not share its axis.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The tabletop&#x27;s thick near band continues without an exposed broken termination or awkward extra projection; it can read as a substantial slab edge or apron. Separately, the foreground chair&#x27;s curved upper rim and rounded returns continue coherently rather than forming malformed members. Readable background contours show no distinct defect, though blur limits inspection. Laptop-to-cup and partial-notebook proportions remain plausible with depth and cropping considered, and the oblique deck and pages do not visibly contradict the tabletop plane.&quot;,
+    &quot;consequence&quot;: &quot;No malformed-furniture, implausible-scale or conflicting-perspective concern is retained. Hidden chair joins, table supports and cropped ends are not verified, and no exact dimensions are established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and left lower chassis meet a soft shadow immediately on the wood, producing a seated appearance. The opening beneath the right upper lip follows the inset underside visible in B, so it is not an unexplained floating gap. Wood separates the notebook and saucer from the laptop. The visible notebook/table, cup/saucer and vase/ledge junctions show no apparent penetration; distant plant contacts are softened by blur.&quot;,
+    &quot;consequence&quot;: &quot;No floating, intersection or inconsistent shadow or reflection concern is supported. Individual feet, the central underside and rear bearing boundary remain hidden rather than confirmed.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><details><summary>Previous judges (unchanged evidence)</summary><div class="judge pass"><strong>Astra P1 / v3_2_r3 (unchanged): PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The tabletop accommodates the complete laptop footprint and a coherent lateral coffee-and-notebook arrangement. The foreground chair gives the setup a credible working position.&quot;,
+    &quot;consequence&quot;: &quot;The station reads as a usable temporary café workspace rather than a displaced workstation or isolated display.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s operating edge is close to the near table edge. Its keyboard and palm-rest area remain clear, while both props sit laterally to the left.&quot;,
+    &quot;consequence&quot;: &quot;No excessive working-edge reach or pinched local user area is visible; floor-level access remains outside the view.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The readable laptop front-width edge registers naturally with the near tabletop edge, and its operating direction faces the associated foreground chair. Cropping prevents a full comparison of table-depth axes.&quot;,
+    &quot;consequence&quot;: &quot;No supported device/support misregistration or furniture-layout conflict is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The visible tabletop perimeter and fascia read continuously, without a malformed projection or disconnected member. Laptop, chair, and props have plausible depth-aware proportions; full furniture dimensions are unavailable.&quot;,
+    &quot;consequence&quot;: &quot;There is no supported scale or furniture-construction defect in the exposed area.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front underside and side terminations sit close to the wood with a short, coherent contact shadow. The slim stepped underside is consistent with Image B, rather than evidence of a floating base.&quot;,
+    &quot;consequence&quot;: &quot;The laptop appears grounded, with no visible sinking or intersection with neighboring props; rear contact is concealed.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P2 / v3_2_r3 (unchanged): REVIEW | 100/100</strong><p>The laptop is naturally integrated into a usable window-side café workspace. Its support, seating relationship, prop allocation and exposed contact show no supported placement concern. Cropping limits assessment of lower furniture construction, circulation and rear underside contact.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden table provides an appropriate shared surface for the laptop and adjacent café items. The chair and task-related props support a coherent short-stay working arrangement.&quot;,
+    &quot;consequence&quot;: &quot;No supported concern with the support choice or station allocation.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard and touchpad remain exposed toward the foreground seat. Neither the notebook nor the coffee intrudes into the central operating approach, and the base stays inside the visible table perimeter. Under-table clearance and full circulation are hidden.&quot;,
+    &quot;consequence&quot;: &quot;Visible operating access is credible; concealed legroom remains unassessed.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s front base edge and the table&#x27;s near edge have compatible directions. The foreground chair faces the same working side without a conspicuous offset or conflicting arrangement. Table depth boundaries are largely outside the frame.&quot;,
+    &quot;consequence&quot;: &quot;No supported rigid-registration or seating-layout conflict.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Laptop, cup, notebook and chair proportions are plausible at their respective depths. The exposed tabletop edge and thick fascia remain continuous, while the foreground chair&#x27;s curved back reads coherently. Most lower furniture joints and supports are concealed.&quot;,
+    &quot;consequence&quot;: &quot;No visible scale, plane-perspective or furniture-construction defect; hidden assembly cannot be certified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed lower chassis sits closely against the wood with soft grounding shadow. Its projecting tapered lip is consistent with B, not evidence of floating. The notebook, saucer and laptop retain distinct boundaries; rear underside contact is hidden.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact and nearby object junctions are coherent, with no supported floating or intersection concern.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P1 / v3_2_r2 (unchanged): PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect. The two source assessments disagreed on the overall verdict.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden table provides an ordinary laptop work surface with room for the complete base and adjacent personal items.&quot;,
+    &quot;consequence&quot;: &quot;The support role and visible surface allocation are suitable for seated laptop use.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard faces the foreground chair across a modest strip of clear tabletop. Neither the notebook nor the coffee intervenes between the working edge and the laptop.&quot;,
+    &quot;consequence&quot;: &quot;No excessive reach or obstruction is established; under-table clearance remains partly concealed.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s front and rear base boundaries are compatible with the exposed tabletop width direction. The table&#x27;s depth boundaries are cropped, and no consequential relative rotation is demonstrated.&quot;,
+    &quot;consequence&quot;: &quot;The visible axes and operating-side arrangement do not establish an alignment conflict.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop, mug, notebook and nearer chair have plausible depth-aware relative sizes. The exposed tabletop and front thickness are continuous, and the curved foreground member belongs to the chair back.&quot;,
+    &quot;consequence&quot;: &quot;No scale anomaly or affirmative furniture deformation is visible; lower furniture construction is largely cropped.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front underside and side-base transitions sit close to the wood with localized soft shadowing. There is no visible widening air gap, sinking or tabletop intersection.&quot;,
+    &quot;consequence&quot;: &quot;The exposed base reads as resting naturally on the tabletop.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P2 / v3_2_r2 (unchanged): REVIEW | 100/100</strong><p>The laptop forms a coherent, accessible café workstation with plausible visible alignment, scale, and contact. No placement correction is supported; cropped lower furniture and hidden underside relationships remain unassessed.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The café tabletop provides an appropriate seated laptop surface, with coffee and notebook occupying adjacent space rather than contradicting its use.&quot;,
+    &quot;consequence&quot;: &quot;No supported suitability or allocation problem.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The controls face the foreground chair across a modest clear strip of tabletop. No prop blocks the approach; the cropped seat and underside leave body clearance unknown.&quot;,
+    &quot;consequence&quot;: &quot;No visible reach or operating-path obstruction.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The laptop base width boundaries and exposed tabletop front and rear boundaries have compatible shallow directions. The table&#x27;s depth boundaries are cropped, but no substantial product/table skew is established.&quot;,
+    &quot;consequence&quot;: &quot;No supported consequential alignment conflict.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Laptop, cup, and nearer chair proportions are plausible with depth accounted for. The exposed tabletop band and curved chair back show no material deformation; lower assemblies are concealed.&quot;,
+    &quot;consequence&quot;: &quot;No visible scale, projection, or furniture-construction defect; concealed construction remains unassessed.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and side base margins sit close to the wood with a soft contact shadow and no visible gap or intersection. Rear underside contact is hidden.&quot;,
+    &quot;consequence&quot;: &quot;The visible laptop base appears naturally supported.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P1 / v3_2 first attempt: REVIEW | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The laptop&#x27;s full footprint fits on an ordinary café tabletop, with a clear working area at the near edge.&quot;,
+    &quot;consequence&quot;: &quot;The visible support and station location are suitable for laptop use.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard faces the foreground chair and sits close to the near edge. Neither the notebook nor cup obstructs access; lower body space is cropped.&quot;,
+    &quot;consequence&quot;: &quot;No excessive reach or blocked operating area is evident.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The rigid base&#x27;s front and hinge-width directions are compatible with the tabletop&#x27;s paired width boundaries. Cropped table ends limit the depth-axis comparison.&quot;,
+    &quot;consequence&quot;: &quot;No consequential product-to-table rotation is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Laptop size is plausible relative to the cup, notebook and nearer chair. The exposed tabletop thickness and chair back are coherent, while lower furniture construction is hidden.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale, projection or exposed construction defect is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The visible base perimeter sits consistently against the wood with a close, soft contact shadow and no evident raised section or intersection.&quot;,
+    &quot;consequence&quot;: &quot;The laptop appears naturally seated on the tabletop.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P2 / v3_2 first attempt: REVIEW | 100/100</strong><p>The laptop is naturally placed for seated café use, with suitable support, clear visible operating access and plausible contact. No supported placement defect is visible; cropped table sides and concealed lower assemblies limit geometric assessment.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The wooden seated-use table accommodates the laptop and adjacent café props without contradictory allocation of the working surface.&quot;,
+    &quot;consequence&quot;: &quot;No supported support-suitability or station-location defect.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The keyboard and touchpad face the foreground chair across a modest clear margin. Neither prop blocks operation; knee space and the floor approach are mostly hidden.&quot;,
+    &quot;consequence&quot;: &quot;Visible operating access is coherent; concealed body clearance is not certified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Corresponding front and rear width boundaries of the rigid base and tabletop show compatible convergence. The table&#x27;s cropped side edges prevent an independent depth-family comparison.&quot;,
+    &quot;consequence&quot;: &quot;No consequential product/table rotation or station-layout conflict is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed tabletop contour and thickness are continuous, and visible chair members show no connection contradiction. Laptop size is plausible relative to the notebook and farther cup. Lower supports are obscured or cropped.&quot;,
+    &quot;consequence&quot;: &quot;No visible scale or furniture-construction defect; hidden support assemblies remain unassessed.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front underside and side portions lie close to the wood with an attached soft shadow and no clear gap or penetration. The rear underside and feet are hidden.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is plausible, without certifying concealed contact points.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div></details><details><summary>Comment on this image / judges</summary><textarea data-case="01_cashmere_x_Front_CloseUp_2" data-sha="f8df71ad59ec4864885d5f70b50623d902c00321d75a8f32be89a24a57231cde" data-image="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/01_cashmere_x_Front_CloseUp_2.jpg" placeholder="Name the judge/criterion you agree or disagree with, and the visible evidence."></textarea></details></article></section><section class="study-row"><h2>17_tassel_Front_CloseUp_1</h2><p>Criterion labels (not global ground truth): {&quot;orientation_alignment&quot;: &quot;no_material_defect&quot;, &quot;scale_perspective&quot;: &quot;no_new_material_defect&quot;}</p><details><summary>Original scene prompt and product reference</summary><p>A modern home table in warm daylight with an open paper notebook and a pen placed beside it, the notebook pages blank and unmarked. The simple setup feels ready for schoolwork, a household list, or a small planning moment at home.</p><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/17_tassel_Front_CloseUp_0.jpg" alt="Original product reference" style="max-width:450px;width:100%;height:auto"></details><article class="scene" data-scene="17_tassel_Front_CloseUp_1" data-sha="085a88e3d0479073fbd3819749bed18ae781a846904902ab415245327fda9cd3"><strong>V15.6</strong><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/17_tassel_Front_CloseUp_1.jpg" alt="17_tassel_Front_CloseUp_1"><a href="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/17_tassel_Front_CloseUp_1.jpg" target="_blank" rel="noopener">Full image</a><div class="judge review"><strong>Astra P1 / v3_2_r4: REVIEW | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The full scene and all six A tiles show a continuous wooden tabletop beneath the printer, with distinct lateral allocations for the notebook and plant. The wall-backed table is a credible printer support, and the notebook does not establish displacement of an occupied workstation. Although the arrangement is tidy, its separated printing and writing areas do not affirmatively resemble an isolated display; a staging concern is rejected. The table ends and most of its lower structure remain outside view.&quot;,
+    &quot;consequence&quot;: &quot;No supported concern with the visible support role, siting, or surface allocation.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The output opening faces the exposed near edge across a modest clear wood strip. The notebook and pen remain to the right, and the plant remains left of the operating frontage; neither intrudes into the visible output or control approach. Standing operation is compatible with this printer and rebuts any concern based solely on absent seating. Rear clearance, full lid travel, and most floor access are not exposed; the closed lid and nearby wall do not themselves establish blockage.&quot;,
+    &quot;consequence&quot;: &quot;Visible frontal access is usable; rear service clearance and the complete floor approach remain unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Comparing the readable lower housing width with the tabletop&#x27;s near perimeter, the wood strip remains continuous across the footprint and narrows only modestly toward the printer&#x27;s right. The far tabletop boundary and the separate apron also follow the table&#x27;s long direction. The slight difference in slope is visible, but the extended relationship remains visually compatible on returning to the full image; it is not retained as misregistration. The upper housing supplies depth cues, but corresponding table side edges and rear base boundaries are unavailable, so depth registration remains unresolved rather than defective. No separate furniture arrangement establishes an axis or layout conflict.&quot;,
+    &quot;consequence&quot;: &quot;No supported directional conflict in the exposed product-to-table relationship.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The printer&#x27;s body proportions are consistent with B, and its size is plausible within the visible table span. It is more than twice the notebook&#x27;s spread, but the notebook may be compact and is not a reliable ruler; this does not establish overscaling. The tabletop thickness band, deeper apron, and visible left-leg junction have continuous, coherent contours. The deeper board reads as a normal apron rather than a malformed tabletop edge. Table ends, remaining legs, and seating contours are not visible.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale, plane, or exposed furniture-contour defect.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Both exposed rounded lower housing ends meet the wood with a narrow dark boundary and a soft nearby shadow, without a visible separating gap or penetration. The central ledge and projecting lip reproduce intrinsic output features visible in B; their recess is not evidence of a floating base. These visible boundaries support credible contact, while the underside, individual feet, and rear contact boundary remain hidden. No distinct shadow or intersection concern is retained.&quot;,
+    &quot;consequence&quot;: &quot;The exposed base appears grounded; concealed load-bearing contact cannot be verified.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P2 / v3_2_r4: REVIEW | 100/100</strong><p>The matching printer has a credible wall-side tabletop placement with compatible visible alignment, coherent furniture contours, grounded exposed contacts and a separate usable writing area. No supported minor or material placement concern is visible. Rear operating clearance, hidden bearing points and wider floor circulation remain unassessed.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer sits within a broad tabletop area with exposed surface ahead and on both sides. The notebook and pen retain a distinct writing area rather than being displaced or trapped by the printer. Although the arrangement is clean and sparse, its side-by-side task allocation does not visibly read as display-only staging.&quot;,
+    &quot;consequence&quot;: &quot;No inappropriate support, occupied-workstation takeover or incoherent use arrangement is supported. The cropped table ends do not establish inadequate support or missing workspace.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The output opening faces a continuous, prop-free strip toward the near edge. The notebook and pen remain to its right, and the plant remains lateral to the exposed controls. The lid is uncovered. Neither the nearby wall nor the closed configuration visibly demonstrates a blocked loading or lid path.&quot;,
+    &quot;consequence&quot;: &quot;No local operating-side or writing-space obstruction is supported. Standing printer use does not require a chair; rear clearance, lid travel and the full floor approach remain unresolved.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Across the printer&#x27;s width, its lower casing boundary and the table&#x27;s rigid working edge register compatibly. The exposed strip narrows modestly toward the right without a conspicuous wedge or awkward rotation. The local central projection belongs to the printer&#x27;s tray tab, not a displaced chassis boundary. The printer and adjacent writing area address the same near edge, with no competing furniture arrangement visible.&quot;,
+    &quot;consequence&quot;: &quot;No supported rigid-axis, corner-facing or station-layout conflict. The upper lid and rear rail cannot substitute for concealed base-depth boundaries, and the table&#x27;s end edges are outside the image.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The tabletop thickness band continues above a deeper apron, and the exposed left leg joins this assembly without a broken contour or stray projection. The deeper band reads as an ordinary apron rather than malformed furniture. The printer, open notebook and pen have plausible relative sizes after allowing for depth foreshortening; the notebook is not a fixed dimensional reference. Their visible surfaces do not establish conflicting planes.&quot;,
+    &quot;consequence&quot;: &quot;No supported construction, scale or perspective defect. Cropped legs and concealed joints establish neither missing structure nor verified hidden integrity; exact object dimensions remain unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;Both exposed lower casing corners meet the wood through narrow dark boundaries, with soft shadow beneath the front rather than a visible floating gap. B confirms that the gray lip, central tab and dark recessed opening are product geometry, not a support intersection. The notebook cover and pen show ordinary surface contact without apparent interpenetration. The picture&#x27;s wall-shadow separation is normal; the planter&#x27;s base is partly cropped and obscured.&quot;,
+    &quot;consequence&quot;: &quot;No floating, sinking or inconsistent-shadow concern is supported at the exposed junctions. The underside, individual feet, contact beneath the central lip and printer-to-wall clearance cannot be verified.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><details><summary>Previous judges (unchanged evidence)</summary><div class="judge pass"><strong>Astra P1 / v3_2_r3 (unchanged): PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer rests within a substantial tabletop with usable surface in front and beside it. The notebook area remains separate, and no existing workstation is visibly displaced.&quot;,
+    &quot;consequence&quot;: &quot;The table provides a credible home printing and occasional planning station.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The front output opening and upper-left controls are exposed toward the clear foreground edge. The notebook, pen and plant do not intervene in the operating area.&quot;,
+    &quot;consequence&quot;: &quot;Standing access and paper retrieval look natural. Rear service clearance and the full lid-opening sweep are not established by this view.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The printer&#x27;s readable front-width edges and the table&#x27;s long edges have a coherent overall relationship, without visible awkward rotation. The table&#x27;s depth edges are outside the crop.&quot;,
+    &quot;consequence&quot;: &quot;No product-support registration conflict is supported; a complete two-direction comparison is unavailable.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Printer, notebook and table proportions are plausible. The exposed tabletop thickness, apron and left-leg connection read coherently, without an uneven termination or disconnected member.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale, plane or furniture-construction defect is visible. Cropping prevents assessment of the complete table assembly.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed lower body sits consistently against the tabletop with a close, soft contact shadow. The recessed output opening and projecting tray agree with B rather than indicating a floating base. The rear underside is hidden.&quot;,
+    &quot;consequence&quot;: &quot;The visible load-bearing relationship looks grounded, with no apparent sinking or prop intersection.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P2 / v3_2_r3 (unchanged): REVIEW | 100/100</strong><p>The printer forms a coherent, accessible household station with plausible support, scale, alignment and visible contact. The notebook and pen provide a separate usable task area without crowding the operating front. No supported placement concern is visible; cropped furniture, concealed contacts and unshown lid travel limit assessment of those details.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer occupies a suitable tabletop with a distinct adjacent writing area. Nothing visibly establishes a displaced workstation or an incoherent allocation of the surface.&quot;,
+    &quot;consequence&quot;: &quot;The immediate setting supports plausible household printer use.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The front output opening and upper-left controls are exposed, with clear tabletop ahead and props positioned beside the device. Rear clearance and full lid travel are not established.&quot;,
+    &quot;consequence&quot;: &quot;No obstruction to the exposed operating area is supported; hidden service clearances remain unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The printer&#x27;s rigid front/base edges and the table&#x27;s long perimeter edges have compatible recession and coherent combined registration. Its operating front faces the usable table edge. Table ends are cropped, and no conflicting seating relationship is visible.&quot;,
+    &quot;consequence&quot;: &quot;No supported product-support axis conflict or discordant furniture layout is apparent.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The printer, notebook and available tabletop have a plausible relative size relationship. The exposed tabletop thickness, apron and left-leg junction form a coherent assembly, without a visible malformed termination or plane inconsistency.&quot;,
+    &quot;consequence&quot;: &quot;No scale or furniture-construction correction is supported; full table dimensions and concealed supports cannot be assessed.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed lower chassis sits against the wood with soft contact shading and no visible separation or penetration. The recessed output cavity and projecting lower lip are consistent with B. Nearby props remain visibly separate.&quot;,
+    &quot;consequence&quot;: &quot;The visible contact reads as grounded; rear and concealed underside contacts remain unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P1 / v3_2_r2 (unchanged): REVIEW | 100/100</strong><p>The selected component assessments identify no visible placement defect. The two source assessments disagreed on the overall verdict.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The ordinary wooden table accommodates the printer footprint with surrounding surface available. The notebook does not establish an occupied keyboard workstation, and the visible allocation is not conspicuously wasteful.&quot;,
+    &quot;consequence&quot;: &quot;The table provides a suitable household equipment support.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The front output opening and upper-left controls face the clear near edge. The notebook sits to the right, leaving the immediate operating and output area unobstructed; wider circulation is cropped.&quot;,
+    &quot;consequence&quot;: &quot;No visible obstruction or excessive operating reach is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The readable printer-front and tabletop-width directions are compatible. Rounded chassis boundaries and cropped table ends limit a reliable depth-axis comparison, but no consequential relative rotation is visible.&quot;,
+    &quot;consequence&quot;: &quot;No supported product-to-table alignment conflict.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The printer, small notebook and table have plausible relative proportions. The exposed tabletop, apron and left leg form a coherent assembly without visible deformation.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale, projection or furniture-construction defect.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed lower chassis sits consistently against the tabletop with localized soft shadow and no visible gap or intersection. The rear underside is occluded.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is plausible; hidden rear contact remains unverified.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P2 / v3_2_r2 (unchanged): REVIEW | 100/100</strong><p>The printer reads as naturally placed on an appropriate wall-side table, with accessible controls and output, plausible alignment and visible base contact. The notebook remains beside the operating area. No material placement defect is supported by the exposed scene.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The wall-side wooden table provides a plausible equipment surface with adjacent notebook space. Its cropped extent does not establish an isolated printer wasting a broad connected workspace, and no occupied workstation is shown.&quot;,
+    &quot;consequence&quot;: &quot;No unsuitable support role or contradictory allocation is demonstrated.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The output opening faces the clear foreground edge, and the upper-left controls are exposed. The notebook is lateral to the operating area. Rear servicing and full lid travel are not visible.&quot;,
+    &quot;consequence&quot;: &quot;Visible routine operating access is unobstructed; concealed service clearances remain unassessed.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Corresponding printer-chassis and tabletop width boundaries show compatible shallow perspective directions. Table depth boundaries are cropped, but no substantial product-to-table skew or contradictory station orientation is visible.&quot;,
+    &quot;consequence&quot;: &quot;No consequential alignment conflict is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed tabletop, thickness, apron and left-leg connection form a coherent assembly without visible racking. Printer, notebook and pen sizes are plausible with depth and foreshortening allowed for; most lower supports and the table ends are cropped.&quot;,
+    &quot;consequence&quot;: &quot;No material scale, projection or furniture-construction defect is established; concealed structure is not certified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed lower chassis meets the tabletop with an attached soft shadow across the visible base. No gap or penetration is apparent. The forward output tray is separate from the supporting chassis; rear underside contact is concealed.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact reads as supported rather than floating or intersecting.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P1 / v3_2 first attempt: PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect. The two source assessments disagreed on the overall verdict.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The wooden table supports the printer near the wall and preserves separate space for the notebook. Cropped table ends do not establish an isolated placement wasting a broad surface.&quot;,
+    &quot;consequence&quot;: &quot;No unsuitable support or materially unnatural allocation of workspace is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The front output opening and upper-left controls face the clear near edge. The notebook and plant do not intervene in that operating area.&quot;,
+    &quot;consequence&quot;: &quot;Routine front access is credible; wider circulation remains outside the crop.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The rigid front width edges follow a compatible direction with the tabletop&#x27;s paired near and rear boundaries. No exposed table end provides a reliable depth-axis comparison.&quot;,
+    &quot;consequence&quot;: &quot;No consequential printer/table rotation is supported by the visible geometry.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The tabletop, apron and visible leg form a coherent connection. Neither the small notebook nor the cropped table establishes a product-scale error; remaining supports are outside view.&quot;,
+    &quot;consequence&quot;: &quot;No visible construction or relative-scale contradiction is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed lower chassis meets the tabletop with a close, soft contact shadow and no visible lifting, sinking or intersection.&quot;,
+    &quot;consequence&quot;: &quot;The printer appears seated on the supporting surface.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge review"><strong>Astra P2 / v3_2 first attempt: REVIEW | 100/100</strong><p>The printer appears naturally supported and accessible, with compatible visible alignment and props kept beside its operating area. No material placement defect is established; the crop limits assessment of table height, hidden supports and rear contact.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The wooden surface accommodates the chassis and a separate notebook area without visibly displacing another workstation. Central placement does not conspicuously isolate the printer on the exposed surface. Full support height and table extent remain uncertain.&quot;,
+    &quot;consequence&quot;: &quot;No supported suitability or station-allocation defect.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The front output and upper-left controls face the clear foreground edge. Props remain lateral, and no furniture blocks the visible operating approach.&quot;,
+    &quot;consequence&quot;: &quot;No visible obstruction to routine front access.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The paired rigid chassis width boundaries are compatible with the tabletop&#x27;s front and rear width boundaries. Cropped table ends prevent a depth-family comparison; no consequential rotation is established.&quot;,
+    &quot;consequence&quot;: &quot;No supported product-to-table axis conflict.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed tabletop thickness, apron and left-leg connection are coherent. Other supports are cropped or hidden, not demonstrably missing. The small notebook and cropped table dimensions do not establish a scale error.&quot;,
+    &quot;consequence&quot;: &quot;No visible construction or depth-aware scale contradiction; hidden joins remain unverified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed lower chassis meets the wood consistently across its visible footprint, with soft contact shading and no clear gap or penetration. The rear underside is concealed; the projecting output tray is not the supporting base.&quot;,
+    &quot;consequence&quot;: &quot;No supported floating, intersection or lighting-integration defect.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div></details><details><summary>Comment on this image / judges</summary><textarea data-case="17_tassel_Front_CloseUp_1" data-sha="085a88e3d0479073fbd3819749bed18ae781a846904902ab415245327fda9cd3" data-image="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/17_tassel_Front_CloseUp_1.jpg" placeholder="Name the judge/criterion you agree or disagree with, and the visible evidence."></textarea></details></article></section><section class="study-row"><h2>31_adf_printer_Front_Wide_1</h2><p>Criterion labels (not global ground truth): {&quot;orientation_alignment&quot;: &quot;no_material_defect&quot;, &quot;scale_perspective&quot;: &quot;no_new_material_defect&quot;}</p><details><summary>Original scene prompt and product reference</summary><p>A bright, open modern corporate office with an office desk holding a stack of plain papers with indistinct markings beside a letter tray, set up for a simple meeting. Clean shelving, an upholstered office chair, a leafy plant, and framed wall art depicting abstract shapes add natural depth through the room. Warm natural lighting creates a polished, inviting atmosphere.</p><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/31_adf_printer_Front_Wide_0.jpg" alt="Original product reference" style="max-width:450px;width:100%;height:auto"></details><article class="scene" data-scene="31_adf_printer_Front_Wide_1" data-sha="31184de587671426eb010e14254a5dceb8466ec966992ab0d99396ccbadebbef"><strong>V15.6</strong><img loading="lazy" data-src="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/31_adf_printer_Front_Wide_1.jpg" alt="31_adf_printer_Front_Wide_1"><a href="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/31_adf_printer_Front_Wide_1.jpg" target="_blank" rel="noopener">Full image</a><div class="judge review"><strong>Astra P1 / v3_2_r4: REVIEW | 100/100</strong><p>The selected component assessments identify no visible placement defect. The two source assessments disagreed on the overall verdict.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The full image and supplied tiles show a suitable wood-top desk, with the printer allocated to its left portion and connected paper-handling supplies beside it. The chair and papers do not establish that the printer has displaced an occupied workstation. The remaining clear surface is usable space, not affirmative display-like isolation; no staging concern is retained. The desk&#x27;s far end and some supports remain hidden.&quot;,
+    &quot;consequence&quot;: &quot;The visible support role, room siting and surface allocation are coherent for a printer and adjoining paperwork.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The front panels and display face the exposed working edge, with a modest unobstructed wood strip across the printer&#x27;s front. The paper stack and tray are lateral rather than intrusions into this operating strip. The right-hand chair leaves visible standing space at the printer side; its lack of direct alignment is harmless for standing printer use. No access concern is retained. Rear servicing clearance and panel-opening travel are not exposed.&quot;,
+    &quot;consequence&quot;: &quot;Ordinary front access and access to the top output area appear available; concealed service clearances are not certified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Across the readable front footprint, the printer&#x27;s lower width boundary tracks the desk&#x27;s working edge, leaving a nearly even exposed strip that widens only slightly to the right. The upper chassis width, desk perimeter and black frame are distinguishable and visually compatible. The recorded depth-slope difference is visible, but the desk&#x27;s exposed left end is substantially left of the chassis rather than a corresponding boundary at its location; perspective variation and the compatible extended front relationship rebut an alignment concern. The hidden rear base and right desk end limit further comparison. The neighboring chair and shelving establish no independent directional or grouping conflict.&quot;,
+    &quot;consequence&quot;: &quot;No visibly awkward product-to-support registration or furniture-layout conflict is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The printer&#x27;s size is plausible relative to the desk, adjacent papers and foreground chair after accounting for depth; the paper stack alone is not treated as a dimensional ruler. The desk&#x27;s exposed thickness band, left corner, apron and left leg continue coherently. Separately, the chair&#x27;s rounded upper back, upholstered side contour and visible sloping arm return show no localized projection or discontinuity. The shelving&#x27;s visible uprights and shelf joins are also coherent. No scale or furniture-contour concern is retained; the chair seat/base and remaining desk supports are concealed.&quot;,
+    &quot;consequence&quot;: &quot;The assessable scale and furniture geometry do not require correction.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed lower front boundary meets the wood along a narrow dark seam without a resolved open gap, and the visible left lower housing shows no apparent penetration. Its side terminates behind and above the projecting front rail, but Image B contains the same stepped outline; that intrinsic recess rebuts a floating-base interpretation. The visible shading is compatible with contact, and no awkward intersection with the papers or tray is present. No contact concern is retained. The underside, individual bearing points and rear contact boundary remain hidden.&quot;,
+    &quot;consequence&quot;: &quot;The exposed boundaries integrate credibly with the desk, without establishing the concealed underside contacts.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2_r4: PASS | 100/100</strong><p>The matching printer reads naturally as part of a connected paper-handling station, with a clear local standing approach and usable adjacent seated workspace. Its visible base registration, furniture contours, scale relationships and exposed contacts show no supported appearance-sensitive placement concern. Hidden support details, rear service clearance and full circulation remain unresolved rather than defective.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The desktop provides a suitable-looking support with visible margins around the printer&#x27;s exposed footprint. The neighboring paper stack and filled tray establish connected working use. The chair addresses available surface to the right rather than demonstrating a workstation displaced by the printer. Populated shelving and useful clear surface do not support an empty-storage or bare-display concern.&quot;,
+    &quot;consequence&quot;: &quot;The arrangement reads as a credible printer and paper-handling station. Concealed storage contents and the printer&#x27;s rear footprint are not inferred.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The front panels, raised display and top output opening face the accessible near side without intervening props. The paper objects remain lateral to the operating strip. The foreground chair overlaps the adjacent right-hand area, not the printer&#x27;s front, and clear carpet supports a local standing approach. Visible tabletop margins do not suggest precarious edge placement.&quot;,
+    &quot;consequence&quot;: &quot;No visible operating-side blockage or workspace crowding is supported. Rear service clearance, panel-opening travel and the complete floor route remain unverified; proximity to the wall alone does not establish obstruction.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer&#x27;s lower front edge and desktop working edge both rise gently toward the right, leaving a nearly even wood strip across the printer&#x27;s width. The steeper exposed desk-end contour and more diagonal printer-side contour do not produce conspicuously awkward registration when considered with that strip. The printer addresses the open near-side approach, while the offset chair faces the adjacent work area; neither the chair nor neighboring shelf establishes a displaced or bunched station.&quot;,
+    &quot;consequence&quot;: &quot;No supported rigid-alignment, corner-facing or station-layout concern remains. Exact rear-footprint parallelism is unresolved, and the printer&#x27;s top contours do not establish hidden base axes.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The desktop&#x27;s thickness band continues around its exposed left end, with a coherent apron-to-leg relationship. The narrow parallel edge beside the leg follows its side face rather than forming a disconnected extra member. Separately, the chair&#x27;s rounded back is continuous, and its visible left arm bends into a descending section rather than terminating as a doubled projection. The printer, paper objects and nearer chair have plausible relative sizes; the oblique desktop and tray outlines read as receding planes, not malformed rectangles.&quot;,
+    &quot;consequence&quot;: &quot;No visible furniture malformation, implausible scale or conflicting perspective is supported. The desk&#x27;s concealed supports, chair attachments and base cannot be certified, and neither the unknown paper format nor B&#x27;s render size establishes physical dimensions.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The printer&#x27;s exposed front base meets the wood along a thin dark boundary without an open background gap, with soft shading near its right corner. The lower-left cutback belongs to the printer housing and is also present in B; it is not evidence of floating above the desk. The paper stack and tray have close base shadows and visible separation from the printer. The wall frame&#x27;s shallow lower-edge shadow is consistent with ordinary frame thickness rather than visible detachment.&quot;,
+    &quot;consequence&quot;: &quot;The exposed contacts do not support floating, sinking, intersection or inconsistent shadow concerns. Individual feet, the underside and rear bearing boundary remain hidden; acceptable front contact does not verify those regions.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><details><summary>Previous judges (unchanged evidence)</summary><div class="judge pass"><strong>Astra P1 / v3_2_r3 (unchanged): PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer fits fully on the desktop&#x27;s left section beside related paper supplies. The remaining desk area remains available, with no affirmative evidence of a displaced workstation.&quot;,
+    &quot;consequence&quot;: &quot;Support suitability and surface allocation read as practical and coherent.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer faces a clear front approach. Neither the lateral paper supplies nor the right-hand chair obstructs its operating front, display or visible top output path.&quot;,
+    &quot;consequence&quot;: &quot;Standing operation appears straightforward; concealed rear clearance is not established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer&#x27;s rigid front-width edges follow the desk&#x27;s frontage convincingly, and the visible base-depth relationship does not read as skewed. The adjacent chair serves the right-hand desk area.&quot;,
+    &quot;consequence&quot;: &quot;No supported product/support misregistration or furniture-layout conflict is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Printer size is credible relative to the paper stack, tray and desk depth. The exposed tabletop thickness, apron and left-leg connection read coherently; the right end is cropped or obscured.&quot;,
+    &quot;consequence&quot;: &quot;No supported scale conflict, inconsistent supporting plane or malformed furniture is apparent.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and left lower contours meet the tabletop with close contact shading and no visible lifting or penetration. Recessed and projecting lower details agree with Image B; rear contact is hidden.&quot;,
+    &quot;consequence&quot;: &quot;The visible load-bearing relationship reads as grounded, while concealed contact remains unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2_r3 (unchanged): PASS | 100/100</strong><p>The printer matches the reference and reads as naturally supported, aligned and accessible within a purposeful document-handling station. No supported placement or furniture-appearance concern is visible. Hidden underside contact, cropped furniture supports and full service-opening clearances remain unknown.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The desktop provides a plausible support and allocation for the printer, with related document supplies beside it. The chair does not establish a displaced active workstation, and the populated surroundings do not read as a bare display.&quot;,
+    &quot;consequence&quot;: &quot;The visible arrangement supports a coherent office printing station.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer faces an accessible desk edge with a visible surface margin beneath its front. The chair is offset to the right, and neither paper prop obstructs the exposed controls, front panels or top output. Fully opened service clearances are not shown.&quot;,
+    &quot;consequence&quot;: &quot;No supported obstruction, precarious placement or pinched operating space is visible.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer&#x27;s base-width direction and visible depth direction are compatible with the desktop perspective. Its outward-facing front and the chair&#x27;s relationship to the neighboring surface form a coherent operating layout.&quot;,
+    &quot;consequence&quot;: &quot;No rigid registration conflict or discordant furniture grouping is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The printer has plausible proportions relative to the desktop, paper supplies and depth-separated chair. The exposed tabletop perimeter, thickness, apron and left-leg join are coherent, as are the visible chair contours. Cropped supports and concealed joints remain unassessed.&quot;,
+    &quot;consequence&quot;: &quot;No visible scale mismatch, inconsistent supporting plane or malformed furniture assembly is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed lower front and side rail meet the desktop with subtle contact shading and no visible gap or penetration. The stepped side profile is also present in B. The nearby paper stack is clearly separate; rear and central underside contact are hidden.&quot;,
+    &quot;consequence&quot;: &quot;The assessable base and neighboring junctions appear naturally integrated.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P1 / v3_2_r2 (unchanged): PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer fits on the left section of a wall-backed desk, with adjacent paper supplies and remaining workspace to the right. No active keyboard position is displaced.&quot;,
+    &quot;consequence&quot;: &quot;The visible allocation provides a believable equipment station without fragmenting the usable surface.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The operating front faces a clear approach edge with a modest tabletop margin. The foreground chair is to the right, while the controls, top output and drawer fronts have no visible obstruction.&quot;,
+    &quot;consequence&quot;: &quot;Routine standing operation and paper retrieval are supported by the visible arrangement.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The chassis front follows the desk&#x27;s width direction. The exposed tabletop perimeter and printer depth boundaries do not demonstrate incompatible convergence or substantial relative rotation.&quot;,
+    &quot;consequence&quot;: &quot;No consequential product-to-support alignment conflict is established.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Printer size is plausible relative to the paper stack and desk. The tabletop thickness, dark apron and visible left leg form a coherent assembly; the right support and lower chair structure are cropped.&quot;,
+    &quot;consequence&quot;: &quot;No exposed scale anomaly or material furniture deformation requires correction.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and left lower chassis sit against the tabletop with localized contact shading and no visible lifting or intersection. The rear underside is hidden.&quot;,
+    &quot;consequence&quot;: &quot;Visible contact is plausible, while concealed rear contact cannot be independently verified.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2_r2 (unchanged): PASS | 100/100</strong><p>The printer is naturally placed on the left side of an office desk, with accessible controls and output, adjacent paper supplies and usable surface remaining to the right. No material placement defect is supported by the visible evidence.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer uses the left portion of a wall-associated office desk, leaving connected workspace to the right. The adjacent chair does not establish a displaced or occupied keyboard station.&quot;,
+    &quot;consequence&quot;: &quot;The support role and visible workspace allocation are suitable for a tabletop printer.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The front panels, display and top output opening face an unobstructed approach. The chair and paper supplies remain to the right; hidden rear servicing and full drawer travel cannot be assessed.&quot;,
+    &quot;consequence&quot;: &quot;No visible obstruction prevents ordinary front-side operation or output retrieval.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Corresponding chassis and tabletop width boundaries have compatible recession. The short chassis depth cues and cropped right tabletop boundary do not establish consequential rotation; the chair&#x27;s separate pose creates no operating conflict.&quot;,
+    &quot;consequence&quot;: &quot;No material product-to-support or station-layout misalignment is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed slab, apron and left upright form a coherent arrangement without visible racking. Printer proportions are plausible beside the papers and tray, while the larger chair is nearer the camera. Rear/right frame connections and the lower chair assembly are concealed.&quot;,
+    &quot;consequence&quot;: &quot;No exposed construction defect or depth-aware scale conflict is established; concealed assembly remains unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and left lower chassis meet the wood surface without a visible gap or buried contour. Soft contact shading is compatible with the matte surface; the rear contact region is hidden.&quot;,
+    &quot;consequence&quot;: &quot;The visible base appears seated naturally, with no supported floating, intersection or shadow defect.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P1 / v3_2 first attempt: PASS | 100/100</strong><p>The selected component assessments identify no visible placement defect.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The desktop contains the printer&#x27;s footprint near its left end while retaining usable paperwork space to the right. It does not occupy the visible chair&#x27;s main working area.&quot;,
+    &quot;consequence&quot;: &quot;The arrangement supports a believable side-of-desk printing station.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The front drawers face an unobstructed near edge, and the controls and top output remain clear. The chair and paper props are to the right.&quot;,
+    &quot;consequence&quot;: &quot;No visible obstruction prevents standing operation, paper retrieval or frontal drawer access.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The rigid front/base width direction is compatible with the desk&#x27;s near and rear boundaries. The exposed left-side depth directions do not establish consequential product/table rotation.&quot;,
+    &quot;consequence&quot;: &quot;No material axis conflict is supported by the visible geometry.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;Printer size is plausible relative to the paper stack and desk. The exposed tabletop, apron and near-left leg connect coherently; most chair construction and remaining desk supports are hidden or cropped.&quot;,
+    &quot;consequence&quot;: &quot;No visible scale or furniture-construction contradiction is established; concealed connections remain unknown.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and left lower chassis meet the wood with localized contact shading and no visible air gap or penetration. The rear underside is concealed.&quot;,
+    &quot;consequence&quot;: &quot;The visible base appears seated on the desktop.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div><div class="judge pass"><strong>Astra P2 / v3_2 first attempt: PASS | 100/100</strong><p>The printer is naturally placed at the left end of a wall-side office desk, with compatible alignment and a clear operating approach. No material placement defect is supported by the visible evidence; concealed supports and rear contact remain unverified.</p><details><summary>Evidence by component</summary><pre>{
+  &quot;support_scenario&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The printer sits on a substantial desk-height surface near the left end of a wall-associated desk, with supplies beside it and workspace continuing to the right.&quot;,
+    &quot;consequence&quot;: &quot;The visible equipment allocation is suitable and does not displace an established active workstation.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;access_usability&quot;: {
+    &quot;visibility&quot;: &quot;observed&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: &quot;The display, front panels and top output face an open approach. The chair is to the right, and neither the paper stack nor the tray intervenes.&quot;,
+    &quot;consequence&quot;: &quot;No visible operating obstruction or excessive reach is established; rear servicing and full drawer travel are not demonstrated.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;orientation_alignment&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The printer&#x27;s rigid width boundaries and the tabletop&#x27;s front/rear width boundaries converge compatibly. Only the table&#x27;s left depth return is exposed, so the depth comparison is incomplete.&quot;,
+    &quot;consequence&quot;: &quot;No consequential printer-to-table rotation or station-layout conflict is supported.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;scale_perspective&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The tabletop has continuous contours and coherent thickness, with a visible frame-to-left-leg connection. The printer is plausibly sized relative to the desk and adjacent paper supplies. Other desk supports and the chair&#x27;s lower assembly are hidden or cropped.&quot;,
+    &quot;consequence&quot;: &quot;No exposed construction contradiction or depth-aware scale error is established; hidden furniture joins remain unverified.&quot;,
+    &quot;issue_codes&quot;: []
+  },
+  &quot;contact_integration&quot;: {
+    &quot;visibility&quot;: &quot;partial&quot;,
+    &quot;severity&quot;: 0,
+    &quot;confidence&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: &quot;The exposed front and left lower chassis boundaries meet the tabletop without a visible gap or penetration, with subtle shading compatible with contact. The rear underside is concealed.&quot;,
+    &quot;consequence&quot;: &quot;The assessable base appears supported, with no visible contact or shadow defect.&quot;,
+    &quot;issue_codes&quot;: []
+  }
+}</pre></details></div></details><details><summary>Comment on this image / judges</summary><textarea data-case="31_adf_printer_Front_Wide_1" data-sha="31184de587671426eb010e14254a5dceb8466ec966992ab0d99396ccbadebbef" data-image="../../../../hp-data-artifacts/hp-3p-gpt25/hp16-v6prompt-v156-vs-v164-vs-v166-vs-v166noguide-v2-e2e32-20261106T181903Z/img/31_adf_printer_Front_Wide_1.jpg" placeholder="Name the judge/criterion you agree or disagree with, and the visible evidence."></textarea></details></article></section></main><script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script><script src="imsauth.js"></script><script src="review.js"></script></body></html>

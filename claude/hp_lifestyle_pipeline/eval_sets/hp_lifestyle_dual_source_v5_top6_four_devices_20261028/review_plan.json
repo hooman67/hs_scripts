@@ -1,0 +1,388 @@
+{
+  "version": "hp-lifestyle-dual-source-v5-top6-review-plan-v1",
+  "policy": "Minimal deterministic edits only; preserve source scores, order, environments, and source evidence except for one case-sensitive quote correction.",
+  "cases": {
+    "cashmere__laptop_FrontLeftMedium": [
+      {
+        "path": "/prompts/p2/text",
+        "before": "A lived-in home workspace with a wooden desk holding an open notebook and loose papers. Soft daylight filters through relaxed curtains, with a comfortable chair keeping the room warm and casually imperfect.",
+        "after": "A lived-in home workspace with a wooden desk holding an open notebook and loose papers. Soft daylight fills the room, with a comfortable chair keeping it warm and casually imperfect.",
+        "reason": "Remove curtains so the medium view has one background detail."
+      },
+      {
+        "path": "/prompts/p2/ctech_changes",
+        "before": ["Kept the lived-in home workspace, wooden desk, open notebook, loose papers, soft daylight, relaxed curtains, comfortable chair, and casually imperfect tone.", "Deleted extra pens, coffee, plants, shelving, books, and broader room objects for the camera limit."],
+        "after": ["Kept the lived-in home workspace, wooden desk, open notebook, loose papers, soft daylight, comfortable chair, and casually imperfect tone.", "Deleted curtains, extra pens, coffee, plants, shelving, books, and broader room objects for the camera limit."],
+        "reason": "Keep the C-Tech change explanation consistent with the prompt."
+      },
+      {
+        "path": "/prompts/p18/text",
+        "before": "A modern gaming workspace with a dark desk and illuminated display shelving. Wall art and vibrant RGB lighting create an organized space with layered neon tones.",
+        "after": "A modern gaming workspace with a dark desk and illuminated display shelving. Vibrant RGB lighting creates an organized space with layered neon tones.",
+        "reason": "Remove wall art so the medium view has one background detail."
+      },
+      {
+        "path": "/prompts/p18/visual_signature/background_details",
+        "before": ["illuminated display shelving", "wall art"],
+        "after": ["illuminated display shelving"],
+        "reason": "Match the corrected prose and camera budget."
+      },
+      {
+        "path": "/prompts/p19/text",
+        "before": "A stylish gaming room with a dark wood desk positioned against a textured wall. Floating shelves displaying collectibles and vibrant RGB lighting create a dynamic yet organized space.",
+        "after": "A stylish gaming room with a dark wood desk. Floating shelves displaying collectibles and vibrant RGB lighting create a dynamic yet organized space.",
+        "reason": "Remove the textured wall so the medium view has one background detail."
+      },
+      {
+        "path": "/prompts/p19/visual_signature/background_details",
+        "before": ["textured wall", "floating shelves displaying collectibles"],
+        "after": ["floating shelves displaying collectibles"],
+        "reason": "Match the corrected prose and camera budget."
+      }
+    ],
+    "cashmere__laptop_FrontWide": [
+      {
+        "path": "/prompts/p2/text",
+        "before": "A bright, modern corporate office featuring a small table with integrated shelving as the main focal point, positioned against a wall. The table and shelves form a single cohesive furniture unit, holding briefing papers, a notebook, and a cup of pens. Surrounding desks and plants create an open, professional yet lived-in atmosphere, enhanced by warm natural light.",
+        "after": "A bright, modern corporate office featuring a small table with integrated shelving as the main focal point. The table and shelves form a single cohesive furniture unit, holding briefing papers, a notebook, and a cup of pens. Surrounding desks and plants create an open, professional yet lived-in atmosphere, enhanced by warm natural light.",
+        "reason": "Remove the wall cue so the wide view has two background details."
+      },
+      {
+        "path": "/prompts/p4/visual_signature/background_details",
+        "before": [],
+        "after": ["simple furniture"],
+        "reason": "Record the existing literal background detail in the signature."
+      },
+      {
+        "path": "/prompts/p17/text",
+        "before": "A stylish gaming room with a dark wood desk positioned against a textured wall, surrounded by floating shelves displaying collectibles. Bold wall art and vibrant RGB lighting create a dynamic yet organized space with warm neutral finishes.",
+        "after": "A stylish gaming room with a dark wood desk, surrounded by floating shelves displaying collectibles. Bold wall art and vibrant RGB lighting create a dynamic yet organized space with warm neutral finishes.",
+        "reason": "Remove the textured wall so the wide view has two background details."
+      }
+    ],
+    "elitebook__laptop_FrontLeftMedium": [
+      {
+        "path": "/prompts/p2/text",
+        "before": "A modern home workspace with a wooden desk holding a sketchbook and pen. Warm natural light, simple furniture, and houseplants create a lived-in and authentic place for ideas moving from private thinking toward discussion.",
+        "after": "A modern home workspace with a wooden desk holding a sketchbook and pen. Warm natural light and houseplants create a lived-in and authentic place for ideas moving from private thinking toward discussion.",
+        "reason": "Remove general furniture so the medium view has one background detail."
+      },
+      {
+        "path": "/prompts/p5/ctech_relationship",
+        "before": "minimal_camera_edit",
+        "after": "close_adaptation",
+        "reason": "A C-Tech score of 78 belongs to the 70–79 close-adaptation band."
+      },
+      {
+        "path": "/prompts/p10/ctech_relationship",
+        "before": "minimal_camera_edit",
+        "after": "close_adaptation",
+        "reason": "A C-Tech score of 75 belongs to the 70–79 close-adaptation band."
+      },
+      {
+        "path": "/prompts/p15/ctech_relationship",
+        "before": "minimal_camera_edit",
+        "after": "close_adaptation",
+        "reason": "A C-Tech score of 77 belongs to the 70–79 close-adaptation band."
+      },
+      {
+        "path": "/prompts/p20/text",
+        "before": "A stylish gaming room with a dark wood desk positioned against a textured wall. Floating shelves displaying collectibles and vibrant RGB lighting create a dynamic yet organized space.",
+        "after": "A stylish gaming room with a dark wood desk. Floating shelves displaying collectibles and vibrant RGB lighting create a dynamic yet organized space.",
+        "reason": "Remove the textured wall so the medium view has one background detail."
+      }
+    ],
+    "elitebook__laptop_FrontWide": [
+      {
+        "path": "/prompts/p3/text",
+        "before": "A bright, modern corporate office featuring a small table with integrated shelving as the main focal point, positioned against a wall. The table and shelves form a single cohesive furniture unit, holding an open sketchbook, neatly stacked papers, and a cup of pens. Surrounding desks and plants create an open, professional yet lived-in atmosphere, enhanced by warm natural light.",
+        "after": "A bright, modern corporate office featuring a small table with integrated shelving as the main focal point. The table and shelves form a single cohesive furniture unit, holding an open sketchbook, neatly stacked papers, and a cup of pens. Surrounding desks and plants create an open, professional yet lived-in atmosphere, enhanced by warm natural light.",
+        "reason": "Remove the wall cue so the wide view has two background details."
+      },
+      {
+        "path": "/prompts/p14/text",
+        "before": "An open modern corporate office with a desk, clean shelving, plants, and framed artwork. Layered office furnishings create natural depth, and warm natural lighting creates a polished, inviting atmosphere.",
+        "after": "An open modern corporate office with a desk, clean shelving, and plants. The shelving and plants create natural depth, while warm natural lighting creates a polished, inviting atmosphere.",
+        "reason": "Limit the wide view to shelving and plants as its two background details."
+      },
+      {
+        "path": "/prompts/p14/visual_signature/background_details",
+        "before": ["clean shelving", "plants and framed artwork"],
+        "after": ["clean shelving", "plants"],
+        "reason": "Match the corrected prose."
+      },
+      {
+        "path": "/prompts/p20/text",
+        "before": "A stylish gaming room with a dark wood desk positioned against a textured wall, surrounded by floating shelves displaying collectibles. Bold wall art and vibrant RGB lighting create a dynamic yet organized space with warm neutral finishes.",
+        "after": "A stylish gaming room with a dark wood desk, surrounded by floating shelves displaying collectibles. Bold wall art and vibrant RGB lighting create a dynamic yet organized space with warm neutral finishes.",
+        "reason": "Remove the textured wall so the wide view has two background details."
+      }
+    ],
+    "tassel__printer_FrontRightCloseUp": [
+      {
+        "path": "/debug/source_evidence/e7/quote",
+        "before": "students, young renters, and hybrid workers with light document needs",
+        "after": "Students, young renters, and hybrid workers with light document needs",
+        "reason": "Restore the source's exact capitalization for verbatim evidence validation."
+      },
+      {
+        "path": "/prompts/p3/text",
+        "before": "A modern home workspace with a simple desk holding a household form. Warm natural light, simple furniture, and warm neutral tones keep the scene lived-in and authentic.",
+        "after": "A modern home workspace with a simple desk holding a household form. Warm natural light and warm neutral tones keep the scene lived-in and authentic.",
+        "reason": "Remove furniture because this close-up permits no background details."
+      }
+    ],
+    "tassel__printer_FrontLeftMedium": [
+      {
+        "path": "/prompts/p6/visual_signature/background_details",
+        "before": [],
+        "after": ["simple furniture"],
+        "reason": "Record the existing literal background detail in the signature."
+      }
+    ],
+    "tassel__printer_FrontWide": [
+      {
+        "path": "/prompts/p3/visual_signature/background_details",
+        "before": [],
+        "after": ["simple furniture"],
+        "reason": "Record the existing literal background detail in the signature."
+      },
+      {
+        "path": "/prompts/p7/visual_signature/background_details",
+        "before": [],
+        "after": ["simple furniture"],
+        "reason": "Record the existing literal background detail in the signature."
+      },
+      {
+        "path": "/prompts/p20/text",
+        "before": "A stylish gaming room with a dark wood desk positioned against a textured wall, surrounded by floating shelves displaying collectibles. Bold wall art and vibrant RGB lighting create a dynamic yet organized space with warm neutral finishes.",
+        "after": "A stylish gaming room with a dark wood desk, surrounded by floating shelves displaying collectibles. Bold wall art and vibrant RGB lighting create a dynamic yet organized space with warm neutral finishes.",
+        "reason": "Remove the textured wall so the wide view has two background details."
+      }
+    ],
+    "magic__printer_FrontCloseUp": [
+      {
+        "path": "/prompts/p1/subsetting",
+        "before": "shared office hub",
+        "after": "corporate office desk",
+        "reason": "Use an ordinary place name in the selected prompt metadata."
+      },
+      {
+        "path": "/prompts/p1/text",
+        "before": "A bright modern corporate office desk in warm natural light, set within a shared workteam area for everyday document work. Lived-in but tidy and professional.",
+        "after": "A bright modern corporate office desk in warm natural light. Lived-in but tidy and professional.",
+        "reason": "Remove the unnatural shared-workteam phrase from the selected prompt."
+      },
+      {
+        "path": "/prompts/p1/explanation",
+        "before": "Both documents support an enterprise office and shared workteam context. The tight view preserves only the office surface and broad document-work cue; no document materials survive.",
+        "after": "Both documents support an enterprise office and shared-team context. The tight view preserves only the office surface; no document materials survive.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p2/subsetting",
+        "before": "enterprise workteam desk",
+        "after": "corporate office desk",
+        "reason": "Use an ordinary place name in the selected prompt metadata."
+      },
+      {
+        "path": "/prompts/p2/text",
+        "before": "An open modern corporate office with a simple desk in warm natural light. Polished and inviting, with a quiet shared-workteam feel.",
+        "after": "An open modern corporate office with a simple desk in warm natural light. Polished, inviting, and quietly professional.",
+        "reason": "Remove the unnatural shared-workteam phrase from the selected prompt."
+      },
+      {
+        "path": "/prompts/p2/explanation",
+        "before": "The office and shared workteam language is grounded in both documents. The prompt expresses broad shared work but omits specific documents because the camera allows no props.",
+        "after": "The office setting and shared use are grounded in both documents. The prompt omits specific documents because the camera allows no props.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p3/subsetting",
+        "before": "managed office work surface",
+        "after": "corporate office desk",
+        "reason": "Use an ordinary place name in the selected prompt metadata."
+      },
+      {
+        "path": "/prompts/p4/subsetting",
+        "before": "fleet operations workspace",
+        "after": "corporate office work surface",
+        "reason": "Use an ordinary place name in the selected prompt metadata."
+      },
+      {
+        "path": "/prompts/p4/text",
+        "before": "A polished corporate office work surface in warm natural light. Clean, orderly, and practical for a managed enterprise team.",
+        "after": "A polished corporate office work surface in warm natural light. Clean, orderly, and ready for the workday.",
+        "reason": "Remove the abstract managed-enterprise-team phrasing."
+      },
+      {
+        "path": "/prompts/p4/explanation",
+        "before": "The managed enterprise team context is source-supported. The prompt expresses the environment and broad work context without adding prohibited props.",
+        "after": "The enterprise office context is source-supported. The prompt expresses the environment and broad work context without adding prohibited props.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p5/subsetting",
+        "before": "shared workgroup table",
+        "after": "shared office table",
+        "reason": "Use an ordinary place name in the selected prompt metadata."
+      },
+      {
+        "path": "/prompts/p5/text",
+        "before": "A modern corporate office table in warm natural light, clean and practical for a shared workgroup. Lived-in but tidy and professional.",
+        "after": "A modern corporate office table in warm natural light. Lived-in but tidy, practical, and professional.",
+        "reason": "Remove the abstract shared-workgroup phrasing."
+      },
+      {
+        "path": "/prompts/p5/explanation",
+        "before": "Shared workgroup use and everyday document work are supported by both documents. The tight view removes the visible documents that would otherwise express the task more fully.",
+        "after": "Shared office use and everyday document work are supported by both documents. The tight view removes the visible documents that would otherwise express the task more fully.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p6/subsetting",
+        "before": "office document workflow area",
+        "after": "corporate office desk",
+        "reason": "Use an ordinary place name in the selected prompt metadata."
+      }
+    ],
+    "magic__printer_FrontRightCloseUp": [
+      {
+        "path": "/prompts/p2/explanation",
+        "before": "Contracts are explicitly named in both documents as business-critical office output for workteams. The prompt keeps that material in a corporate office setting.",
+        "after": "Contracts are explicitly named in both documents as important office documents for shared teams. The prompt keeps that material in a corporate office setting.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p6/explanation",
+        "before": "Meeting packets and shared workteams are named in the sources. The prompt expresses the workflow through one ordinary packet on a shared office desk.",
+        "after": "Meeting packets and shared office teams are named in the sources. The prompt shows that activity through one ordinary packet on a shared office desk.",
+        "reason": "Use plain language in the selected prompt explanation."
+      }
+    ],
+    "magic__printer_FrontLeftMedium": [
+      {
+        "path": "/prompts/p1/explanation",
+        "before": "Both documents support an enterprise office setting, shared workteams, and visible forms as business-critical document work.",
+        "after": "Both documents support an enterprise office setting, shared office teams, and visible forms as important document work.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p2/subsetting",
+        "before": "shared workteam desk",
+        "after": "shared office desk",
+        "reason": "Use an ordinary place name in the selected prompt metadata."
+      },
+      {
+        "path": "/prompts/p2/explanation",
+        "before": "The prompt directly reflects enterprise office workteams and business-critical document materials named in both sources.",
+        "after": "The prompt directly reflects enterprise office teams and important document materials named in both sources.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p4/explanation",
+        "before": "Enterprise workteam document workflow is reflected through project papers on an office desk.",
+        "after": "The enterprise office activity is reflected through project papers on an office desk.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p5/text",
+        "before": "A bright, open modern corporate office with a simple desk holding forms and project papers for daily office output. Warm natural light and a plant keep the workspace lived-in but tidy and professional.",
+        "after": "A bright, open modern corporate office with a simple desk holding forms and project papers. Warm natural light and a plant keep the workspace lived-in but tidy and professional.",
+        "reason": "Remove the abstract daily-office-output phrase from the selected prompt."
+      },
+      {
+        "path": "/prompts/p6/explanation",
+        "before": "Contracts and a meeting packet in a corporate office directly match the source-supported workteam document use case.",
+        "after": "Contracts and a meeting packet in a corporate office directly match the source-supported document use case.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p10/ctech_relationship",
+        "before": "minimal_camera_edit",
+        "after": "close_adaptation",
+        "reason": "A C-Tech score of 75 belongs to the 70–79 close-adaptation band."
+      },
+      {
+        "path": "/prompts/p11/ctech_relationship",
+        "before": "minimal_camera_edit",
+        "after": "close_adaptation",
+        "reason": "A C-Tech score of 78 belongs to the 70–79 close-adaptation band."
+      },
+      {
+        "path": "/prompts/p12/ctech_relationship",
+        "before": "minimal_camera_edit",
+        "after": "close_adaptation",
+        "reason": "A C-Tech score of 77 belongs to the 70–79 close-adaptation band."
+      },
+      {
+        "path": "/prompts/p13/ctech_relationship",
+        "before": "minimal_camera_edit",
+        "after": "close_adaptation",
+        "reason": "A C-Tech score of 78 belongs to the 70–79 close-adaptation band."
+      }
+    ],
+    "magic__printer_FrontWide": [
+      {
+        "path": "/prompts/p1/explanation",
+        "before": "Both documents support enterprise office workteams and business-critical documents; invoices and project papers survive visibly in the scene.",
+        "after": "Both documents support enterprise office teams and important documents; invoices and project papers remain visible in the scene.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p2/text",
+        "before": "A bright, modern corporate office featuring a small table with integrated shelving as the main focal point, positioned against a wall. The table and shelves form a single cohesive furniture unit, holding contracts, forms, and a cup of pens. Surrounding desks and plants create an open, professional yet lived-in atmosphere, enhanced by warm natural light.",
+        "after": "A bright, modern corporate office featuring a small table with integrated shelving as the main focal point. The table and shelves form a single cohesive furniture unit, holding contracts, forms, and a cup of pens. Surrounding desks and plants create an open, professional yet lived-in atmosphere, enhanced by warm natural light.",
+        "reason": "Remove the wall cue so the wide view has two background details."
+      },
+      {
+        "path": "/prompts/p9/text",
+        "before": "An open modern corporate office with a desk, clean shelving, plants, and framed artwork. Layered office furnishings create natural depth. Warm natural lighting creates a polished, inviting atmosphere.",
+        "after": "An open modern corporate office with a desk, clean shelving, and plants. The shelving and plants create natural depth. Warm natural lighting creates a polished, inviting atmosphere.",
+        "reason": "Limit the wide view to shelving and plants as its two background details."
+      },
+      {
+        "path": "/prompts/p9/visual_signature/background_details",
+        "before": ["clean shelving", "plants and framed artwork"],
+        "after": ["clean shelving", "plants"],
+        "reason": "Match the corrected prose."
+      },
+      {
+        "path": "/prompts/p20/text",
+        "before": "A stylish gaming room with a dark wood desk positioned against a textured wall. Floating shelves displaying collectibles and bold wall art sit around the space, while vibrant RGB lighting creates a dynamic yet organized atmosphere with warm neutral finishes.",
+        "after": "A stylish gaming room with a dark wood desk. Floating shelves displaying collectibles and bold wall art sit around the space, while vibrant RGB lighting creates a dynamic yet organized atmosphere with warm neutral finishes.",
+        "reason": "Remove the textured wall so the wide view has two background details."
+      },
+      {
+        "path": "/prompts/p5/subsetting",
+        "before": "administrative workgroup desk",
+        "after": "corporate office desk",
+        "reason": "Use an ordinary place name in the selected prompt metadata."
+      },
+      {
+        "path": "/prompts/p5/explanation",
+        "before": "The source identifies administrative and back-office workgroups and names forms and meeting packets as business-critical output.",
+        "after": "The source identifies administrative and back-office teams and names forms and meeting packets as important documents.",
+        "reason": "Use plain language in the selected prompt explanation."
+      },
+      {
+        "path": "/prompts/p6/subsetting",
+        "before": "shared office hub table",
+        "after": "shared office table",
+        "reason": "Use an ordinary place name in the selected prompt metadata."
+      },
+      {
+        "path": "/prompts/p6/ctech_explanation",
+        "before": "Same Office environment as CT13, adapted to a shared workteam paperwork moment.",
+        "after": "Same Office environment as CT13, adapted to a shared office paperwork moment.",
+        "reason": "Use plain language in the selected C-Tech explanation."
+      },
+      {
+        "path": "/prompts/p6/explanation",
+        "before": "Shared office hub language and named paperwork align with the source focus on shared workteams and common business documents.",
+        "after": "The shared office setting and named paperwork align with the source focus on office teams and common business documents.",
+        "reason": "Use plain language in the selected prompt explanation."
+      }
+    ]
+  }
+}

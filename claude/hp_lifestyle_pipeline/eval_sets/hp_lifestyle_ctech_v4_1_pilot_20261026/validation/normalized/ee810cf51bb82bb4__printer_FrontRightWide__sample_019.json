@@ -1,0 +1,186 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": false,
+  "error_count": 6,
+  "warning_count": 1,
+  "errors": [
+    {
+      "code": "literal_background_budget",
+      "detail": "3>2: ['artwork', 'collectibles', 'shelving']",
+      "candidate_id": "p5"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['artwork', 'collectibles', 'shelving'] but signature has 2 entries",
+      "candidate_id": "p5"
+    },
+    {
+      "code": "literal_background_budget",
+      "detail": "4>2: ['desks', 'plants', 'shelving', 'workstations']",
+      "candidate_id": "p11"
+    },
+    {
+      "code": "background_signature_undercount",
+      "detail": "prose names ['desks', 'plants', 'shelving', 'workstations'] but signature has 2 entries",
+      "candidate_id": "p11"
+    },
+    {
+      "code": "collection_used_as_surface",
+      "detail": "desks",
+      "candidate_id": "p11"
+    },
+    {
+      "code": "surface_not_literal",
+      "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+      "candidate_id": "p11"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 5,
+    "environments": {
+      "Home": 9,
+      "Office": 7,
+      "Café": 4,
+      "Gaming": 3,
+      "Creative Studio": 4,
+      "Education": 3
+    },
+    "relationships": {
+      "source_adjacent": 10,
+      "creative_departure": 14,
+      "source_grounded": 6
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 9,
+      "Office": 7,
+      "Education": 3,
+      "Gaming": 3,
+      "Café": 4,
+      "Creative Studio": 4
+    },
+    "relationship_counts": {
+      "source_grounded": 6,
+      "source_adjacent": 10,
+      "creative_departure": 14
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 16,
+      "close_adaptation": 10,
+      "category_extension": 4
+    },
+    "ctech_reference_counts": {
+      "CT18": 2,
+      "CT13": 2,
+      "CT11": 1,
+      "CT14": 1,
+      "CT15": 2,
+      "CT12": 2,
+      "CT05": 2,
+      "CT04": 3,
+      "CT01": 1,
+      "CT09": 2,
+      "CT02": 1,
+      "CT03": 3,
+      "CT06": 2,
+      "CT10": 2,
+      "CT16": 1,
+      "CT17": 1,
+      "CT08": 1,
+      "CT07": 1
+    },
+    "ctech_score_range": [
+      63,
+      88
+    ],
+    "distinct_subsettings": 29,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p10",
+          "p14",
+          "p22",
+          "p23",
+          "p26"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e1"
+        ],
+        "prompt_ids": [
+          "p10",
+          "p14",
+          "p18",
+          "p19",
+          "p22",
+          "p23",
+          "p24",
+          "p26",
+          "p27",
+          "p28",
+          "p30"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e2"
+        ],
+        "prompt_ids": [
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p25",
+          "p29"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e3",
+          "e5"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p7",
+          "p8",
+          "p9",
+          "p11",
+          "p12",
+          "p13",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p23",
+          "p24",
+          "p25",
+          "p28",
+          "p29"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "59ab346df874925dc13a65228cd57197a1482f73663ac8fbe8ca2ad4a92567c2"
+}

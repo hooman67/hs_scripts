@@ -1,0 +1,444 @@
+{
+  "version": "accepted-sample-selection-v1",
+  "status": "complete",
+  "scope": "final_r4_type_camera_batch_only",
+  "system_prompt_sha256": "00912f74c3ef11dece81c7e3ba7792ffafdf9f3fb12a2330923dd16c75dbd65e",
+  "canonical_manifest_path": "manifest.json",
+  "canonical_manifest_sha256": "24f7f42cf8aa43997a955c209c40b6a92ea1ec457da0e4a91440119aeddbb4f7",
+  "case_count": 24,
+  "accepted_case_count": 24,
+  "primary_successful_sample_count": 24,
+  "isolated_retry_successful_sample_count": 2,
+  "successful_sample_attempt_count": 26,
+  "api_transport_attempt_count": 27,
+  "transient_retry_event_count": 1,
+  "rejected_successful_sample_count": 2,
+  "selection_policy": "Preserve every raw attempt. Select a retry only when the initial scene failed manual scope review and the retry passes schema, deterministic citation normalization, camera resolution, device-boundary checks, and manual object-count review.",
+  "cases": [
+    {
+      "case_id": "01_rich_source_printer_back_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/01_rich_source_printer_back_closeup.json",
+      "accepted_record_sha256": "b45c8d99ba254fbf8d9e64cf8c1755716cc672a60a844c0b819a52bb1594f5cd",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/01_rich_source_printer_back_closeup"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "02_rich_source_minipc_back_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/02_rich_source_minipc_back_closeup.json",
+      "accepted_record_sha256": "05fc51aa556a4d120b9bdbfd5a4a54d921c266a3b40ce399b64da15df4aa2827",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/02_rich_source_minipc_back_closeup"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "03_rich_source_printer_front_right_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/03_rich_source_printer_front_right_medium.json",
+      "accepted_record_sha256": "ea6aca0da18ca6166965fb83a43c84866d0056abd4e5d5d1c855295af97e05fc",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/03_rich_source_printer_front_right_medium"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "04_rich_source_printer_front_right_wide",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/04_rich_source_printer_front_right_wide.json",
+      "accepted_record_sha256": "6e955c4659c00d56ea08d98ff83e194c46d78591d172a6885d69cc0054f33562",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/04_rich_source_printer_front_right_wide"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "05_rich_source_printer_top_front_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/05_rich_source_printer_top_front_closeup.json",
+      "accepted_record_sha256": "96b99887bc56aa5705094bebaf632b5c2aa062cc23eff700249d7d731fc00954",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/05_rich_source_printer_top_front_closeup"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "06_actual_laptop_front_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/06_actual_laptop_front_closeup.json",
+      "accepted_record_sha256": "0e07d52b6080c79b83a17fa006af91ec6d02531403915810163d4757d2e587e8",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/06_actual_laptop_front_closeup"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "07_actual_laptop_front_right_medium",
+      "accepted_attempt_id": "retry_2",
+      "accepted_record_path": "runs/gpt55_type_camera_retries/07_attempt2/07_actual_laptop_front_right_medium.json",
+      "accepted_record_sha256": "60333abe71a01807311b2239be6632310cc4901681f03188afc69f71e0a83c8e",
+      "accepted_output_source": {
+        "path": "runs/gpt55_type_camera_retries/07_attempt2/validated_output.json",
+        "json_pointer": ""
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": [
+        {
+          "attempt_id": "initial",
+          "record_path": "runs/gpt55_type_camera/07_actual_laptop_front_right_medium.json",
+          "record_sha256": "f18b1bffc9074df8df32314e51e5b507caf7c7d8158259902a55da30164f3b77",
+          "reason": {
+            "code": "medium_local_prop_limit_exceeded",
+            "detail": "Primary p1 requested paper notepad, capped pen, and meeting notes: three nearby objects against max_local_props=2.",
+            "reviewer": "root research agent"
+          },
+          "raw_failures": [
+            "Evidence is not a verbatim source substring: ValueProposition.long_message_best_sku"
+          ],
+          "validated_failures": [],
+          "citation_repairs": [
+            {
+              "json_pointer": "/debug/value_proposition/source_evidence/0/path",
+              "from_path": "ValueProposition.long_message_best_sku",
+              "to_path": "ValueProposition.short_message",
+              "quote": "productive work and polished collaboration anywhere"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "08_actual_laptop_front_right_wide",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/08_actual_laptop_front_right_wide.json",
+      "accepted_record_sha256": "be2ec55cf45ce458274476a27ec4e1755c57651604f377fd1f98a296a3744419",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/08_actual_laptop_front_right_wide"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "09_actual_laptop_top_front_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/09_actual_laptop_top_front_medium.json",
+      "accepted_record_sha256": "9b0fb9ffa2f56140a04ed23558cfa2f74b1fe8e00152f26f7c2c1683fc0a5482",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/09_actual_laptop_top_front_medium"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "10_actual_laptop_front_right_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/10_actual_laptop_front_right_closeup.json",
+      "accepted_record_sha256": "2bbda15f9dce068ee75137a96526f33392a5c1cebd2e03b05461b02660437023",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/10_actual_laptop_front_right_closeup"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "11_actual_printer_front_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/11_actual_printer_front_closeup.json",
+      "accepted_record_sha256": "c5cdbedd77ecac5aebd3c729e46c6ac544d1f9a364a26560ea989bbac87c6a6b",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/11_actual_printer_front_closeup"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "12_synthetic_gaming_laptop_front_right_wide",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/12_synthetic_gaming_laptop_front_right_wide.json",
+      "accepted_record_sha256": "5349e6105f4c2cc79e49ad9ead461ca045d3f34ccab76dd8d171dc8f1dbb92c4",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/12_synthetic_gaming_laptop_front_right_wide"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "13_empty_source_unknown_camera",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/13_empty_source_unknown_camera.json",
+      "accepted_record_sha256": "fab0ad5bfc37398d28e2eb913336a1dfb1642cd090bcf1f17c5e395d5850618a",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/13_empty_source_unknown_camera"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "14_technical_only_known_tight_camera",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/14_technical_only_known_tight_camera.json",
+      "accepted_record_sha256": "050e93e91d723c7928db8813f491f7e3de04f7a2b5efd54f229b86da5ef7ce75",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/14_technical_only_known_tight_camera"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "15_printer_copy_minipc_camera",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/15_printer_copy_minipc_camera.json",
+      "accepted_record_sha256": "015b6ac1df56cba936e16b0912d5bb2f6ee665e9b5a05e5eb8c33333261b9cfc",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/15_printer_copy_minipc_camera"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "16_explicit_legacy_minipc_alias",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/16_explicit_legacy_minipc_alias.json",
+      "accepted_record_sha256": "3299eea80a313e46fbaf06b8d81e9620e09e27bbdefe69b013017b3c71afa5d1",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/16_explicit_legacy_minipc_alias"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "17_actual_laptop_convertible_front_right_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/17_actual_laptop_convertible_front_right_medium.json",
+      "accepted_record_sha256": "679f10738c112e8037637cdab7f71c1010712c1bb595ae69ffdf3fc8d944cf13",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/17_actual_laptop_convertible_front_right_medium"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "18_actual_laptop_mobile_work_front_right_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/18_actual_laptop_mobile_work_front_right_medium.json",
+      "accepted_record_sha256": "a63ba2b6fb1ccb4fda44811dce5bf442c7d6c0759c60ce735cda2ce0d5b45a19",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/18_actual_laptop_mobile_work_front_right_medium"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "19_actual_printer_admin_front_right_medium",
+      "accepted_attempt_id": "retry_2",
+      "accepted_record_path": "runs/gpt55_type_camera_retries/19_attempt2/19_actual_printer_admin_front_right_medium.json",
+      "accepted_record_sha256": "e49fd054b9cd87923e934cc6bc11344beaf652b6a8b6b7a54d5b55da4218f3a9",
+      "accepted_output_source": {
+        "path": "runs/gpt55_type_camera_retries/19_attempt2/validated_output.json",
+        "json_pointer": ""
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": [
+        {
+          "attempt_id": "initial",
+          "record_path": "runs/gpt55_type_camera/19_actual_printer_admin_front_right_medium.json",
+          "record_sha256": "68fc5fd7a2ea8fb3894dba2b8fc1e0682e771c89c0f43e8f0191d9b74224ebea",
+          "reason": {
+            "code": "extra_computing_hardware_content",
+            "detail": "Primary p2 requested a phone beside the papers, contrary to the environment-only no-extra-computing-hardware boundary.",
+            "reviewer": "root research agent"
+          },
+          "raw_failures": [
+            "p2 contains generic or specific target-device wording: phone"
+          ],
+          "validated_failures": [
+            "p2 contains generic or specific target-device wording: phone"
+          ],
+          "citation_repairs": []
+        }
+      ]
+    },
+    {
+      "case_id": "20_actual_printer_copy_minipc_front_right_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/20_actual_printer_copy_minipc_front_right_medium.json",
+      "accepted_record_sha256": "be85585b4dda9f24103620f3b3705608798e68fd56697645caba46bc8b773104",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/20_actual_printer_copy_minipc_front_right_medium"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "21_actual_printer_enterprise_front_right_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/21_actual_printer_enterprise_front_right_medium.json",
+      "accepted_record_sha256": "e22b568a4e5a71eb7d0e8bc1a517f44036a99b2657cf0e14d7a64c37cd0ded1d",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/21_actual_printer_enterprise_front_right_medium"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "22_actual_printer_copy_minipc_ink_tank_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/22_actual_printer_copy_minipc_ink_tank_medium.json",
+      "accepted_record_sha256": "012f8277f3a6e03a8341eb395f0abe1cf46acbb47fc36df3eff9079a8b43e92e",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/22_actual_printer_copy_minipc_ink_tank_medium"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "23_rich_source_minipc_top_front_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/23_rich_source_minipc_top_front_medium.json",
+      "accepted_record_sha256": "1566e9ed754116396e4dcad550bbc6459fff0a5f0daf90cd31b7081cb9f27412",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/23_rich_source_minipc_top_front_medium"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    },
+    {
+      "case_id": "24_rich_source_unknown_future_type",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/24_rich_source_unknown_future_type.json",
+      "accepted_record_sha256": "8a7de3632757aa654c8aa8ffd4f51be6bedafb51e4af1480b945d7c9f22285d6",
+      "accepted_output_source": {
+        "path": "validated_outputs.json",
+        "json_pointer": "/outputs/24_rich_source_unknown_future_type"
+      },
+      "accepted_automated_audit": {
+        "raw_failures": [],
+        "validated_failures": [],
+        "citation_repairs": []
+      },
+      "rejected_attempts": []
+    }
+  ]
+}

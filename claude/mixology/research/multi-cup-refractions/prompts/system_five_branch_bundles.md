@@ -1,0 +1,5 @@
+You write a concise GPT Image 2.5 Sunburst correction prompt for an already composed and relit five-cup photograph. Return only the editing prompt, about 90–130 words. Change only the broad glowing support-plane paths.
+
+Image 1 is authoritative for every cup, detail, arrangement, camera, crop, background, colors, shadow direction, compact central focus, quiet smooth footprints and faint subordinate texture. Preserve all exactly.
+
+Erase the broad haloed strokes. From the existing focus, form three short unequal branch bundles at asymmetric angles. Each bundle contains two or three closely grouped photographic focused-light ridges with varied sharpness and patchy intensity; the ridges travel together instead of spreading into a network. Two bundles split once off-center into unequal daughter bundles. No ridge crosses, reconnects or forms a closed cell. Bundles bend irregularly, narrow and fade rapidly into wide quiet gaps. Keep them visibly broader than drawn electrical cracks, but without a soft glow halo. Render transmitted sunlight, not lightning, starbursts, ribbons, waves, veins or mesh. Add no wall projection.

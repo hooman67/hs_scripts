@@ -1,0 +1,56 @@
+{
+  "slug": "magic__printer_FrontWide__p1",
+  "control_job_id": "20261105T201941Z_a6eb8409",
+  "device_id": "magic",
+  "camera_id": "Front_Wide",
+  "prompt": "An open office area with a dedicated output table set against a pale brick wall. A stack of plain papers with indistinct markings rests beside an empty letter tray, while an upholstered office chair stands farther back in clear morning light for an orderly, busy work setting.",
+  "pr_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+  "pipeline_version": "unified-blue-scale-v21-translation-only-stage-b-placement-twin-camera-guide-only-no-mask",
+  "text_model": "gpt-6-astra",
+  "image_model": "gpt-image-2.5-sunburst-2026-09-08",
+  "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+  "control_output_sha256": "bde7761cccc88806ff9f61ff95c938f599636fb297cd07e2d3ab9c3395dc0fbe",
+  "treatment_output_sha256": "58eaa60210999ba97b0e3e4a86362743724e225cd0dab5d101c0667970f98d29",
+  "final_prompt_sha256": "ae8ae6922e35c58c1992c217f81b40b68bce2a46cbf07c3137adc57788815c29",
+  "image_calls": 1,
+  "mask_applied": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1127,
+        "prompt_tokens": 12627,
+        "total_tokens": 13754,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 152,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "mask": false
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "version": "v5-scoring-contract-smoke-review-v1",
+  "as_of": "2026-10-27",
+  "scope": "Two isolated one-document GPT-5.5 scoring-contract cases; separate from the 160 reviewed scenes",
+  "model": "gpt-5.5-2026-04-24",
+  "semantic_calls": 2,
+  "transport_retries": 0,
+  "scoring_contract_result": {
+    "passed": true,
+    "all_40_empty_document_component_groups_zero": true,
+    "all_40_scores_equal_sum_of_per_component_document_maxima": true,
+    "both_nonempty_documents_independently_exceed_50": true,
+    "elitebook_source_messaging_top_score": 60,
+    "deskjet_smart_brief_top_score": 90,
+    "missing_document_penalty_observed": false
+  },
+  "host_validation_result": {
+    "passed": false,
+    "elitebook": {
+      "raw_errors": 2,
+      "normalized_errors": 2,
+      "remaining_error_codes": {
+        "literal_background_budget": 1,
+        "background_signature_undercount": 1
+      },
+      "note": "Both remaining errors apply to p6 and concern close-up background density; they do not invalidate score aggregation."
+    },
+    "deskjet": {
+      "raw_errors": 5,
+      "normalized_errors": 2,
+      "remaining_error_codes": {
+        "ctech_extension_environment": 2
+      },
+      "note": "Normalization repaired three score-order errors. The remaining p4/p7 relationship-label errors do not invalidate score aggregation."
+    }
+  },
+  "quote_review": {
+    "exact_quote_validation": "passed for every evidence item; neither case has an evidence_quote error",
+    "empty_document_evidence_count": {
+      "elitebook_smart_brief": 0,
+      "deskjet_source_messaging": 0
+    },
+    "elitebook": {
+      "assessment": "mixed",
+      "strong_support": "The exact source quote naming home and offices supports the top scenes' setting scores.",
+      "limitation": "The top eight generic desk scenes cite abstract secure productivity and hybrid collaboration language but show no visible collaboration or activity. Their activity=10 and use_context=20 remain weakly visible even though the arithmetic is correct. Creative-studio scenes similarly infer setting from abstract content-creation language."
+    },
+    "deskjet": {
+      "assessment": "strong at the top, weaker in lower-ranked extensions",
+      "strong_support": "The top three scenes visibly include a household form, school worksheet, or return label in a home workspace and cite exact quotes naming those artifacts and household use; their 90-point scores have direct setting, activity/material, and use-context support.",
+      "limitation": "Lower-ranked café and generic office extensions infer place from student, renter, hybrid-worker, or creative-project audience language. Their lower scores reflect this weaker link."
+    }
+  },
+  "integrity": {
+    "smoke_manifest_sha256": "1bc71aafad1c52681dadc7900bff15953fdfed5fc81b243d6cc37accb69ad2ed",
+    "main_manifest_sha256_unchanged": "8ff485ef7078c6cb9ec950885bbdc0c1bd50a0ca4933fefca4d541c8857e3c8c",
+    "elitebook_attempt_sha256": "dc8b0bf73636cb6b7276c5999e81b15b77d4712cc558d8d56013fd609ea35b36",
+    "deskjet_attempt_sha256": "000e8f7f50c510241b48819a5e7d87a836553464b209a3de359729a2d0290c46",
+    "elitebook_provider_response_sha256": "593145f0af9f61791ae82374b27b2adfd9870da15f069536b4ec1ba22f584630",
+    "deskjet_provider_response_sha256": "f7df5658261fa6cefa8f41da1d0212fe8e71ceca02490e4acfd91c57486b68b8"
+  },
+  "human_review_status": "pending",
+  "launchable": false,
+  "image_generation_authorized": false
+}

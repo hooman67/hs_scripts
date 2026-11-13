@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HP V6.4 prompt writers - GPT-5.5 vs Astra</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading">Connecting to Adobe sign-in...</div>
+  <main id="content" class="hidden">
+    <header>
+<p><strong>Completed with authorized recovery:</strong> 80 original accepted prompts and 79 images were preserved. Eight failed banks were continued/repaired and 81 missing image slots were generated. This is not a new first-draw reliability trial. <a href="./original_run_20261112.html">Original failure snapshot</a> | <a href="../completion_20261112/data/recovery_history.json">Recovery history</a> | <a href="../completion_20261112/data/prompts_all_160.json">All 160 Astra prompts (JSON)</a> | <a href="../completion_20261112/data/prompts_all_160.txt">All 160 Astra prompts (TXT)</a></p>
+      <h1>HP V6.4 prompt writers - GPT-5.5 vs Astra</h1>
+      <p>16 identical input banks. Ten ranked prompts per model, followed by the unchanged PR4523 scene pipeline.</p>
+      <p class="muted">GPT-5.5: frozen baseline, medium reasoning, 16k completion budget.
+        Astra: new best-effort run, high reasoning, 32k budget. This compares configurations, not model alone.
+        Ranks are not equivalent scenes or paired random seeds.</p>
+      <p class="muted">Both downstream pipelines use three Astra planning calls plus one GPT Image 2.5 image call.
+        No judge is run. Validation acceptance is not human/image-quality approval. Original failures and authorized recovery attempts are retained.</p>
+      <p class="muted">All 160 Astra prompts now pass validation. Originally failed banks were continued or repaired under explicit authorization; all attempts and the original failure snapshot remain available.</p>
+      <p class="muted">Historical printer source/twin labels are size/context aliases, not exact SKU matches.
+        Fictional-source qualifications remain in the original shared documents.</p>
+      <p><a id="sourceLink">Frozen GPT-5.5 baseline data and generation inputs</a></p>
+      <div class="controls">
+        <label>Input <select id="bank"><option value="">All 16 inputs</option></select></label>
+        <label>Writer <select id="experiment"><option value="">Both writers</option></select></label>
+        <label>Images per row <input id="columns" type="range" min="2" max="5" value="5"><output id="columnValue">5</output></label>
+        <label><input id="showPrompts" type="checkbox"> Expand source prompts</label>
+      </div>
+      <p id="status" role="status"></p>
+      <p id="error" role="alert"></p>
+      <nav id="bankNav" aria-label="Jump to input"></nav>
+    </header>
+    <div id="groups"></div>
+  </main>
+  <dialog id="lightbox">
+    <button id="closeImage" type="button">Close</button>
+    <p id="imageLabel"></p>
+    <img id="largeImage" alt="">
+    <p><a id="originalImage" target="_blank" rel="noopener">Open full-resolution PNG</a></p>
+  </dialog>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script>
+  <script src="./completed_main_20261112.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => initializeIMS());</script>
+</body>
+</html>

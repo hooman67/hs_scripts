@@ -1,0 +1,11 @@
+visibility: public
+custom_pyenv: dev2_0
+root_pyenv: dev2_0
+deps:
+- colligo.models.test.faulty[public]
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.test.echo[public]

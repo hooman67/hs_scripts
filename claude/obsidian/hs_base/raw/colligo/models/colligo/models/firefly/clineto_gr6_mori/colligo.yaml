@@ -1,0 +1,80 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - pydantic
+custom_pyenv: ff_services_gr6
+deps:
+- adobe-torio
+- adobeone
+- atomicx
+- catpad
+- clean-fid
+- colligo.data
+- data-chef
+- dcmoe
+- decord
+- dill
+- duckdb
+- einops
+- fe-html
+- feature-registry
+- firecats
+- flash-attn
+- flashattn-hopper
+- foundry-aws-gateway
+- g5nie
+- genie
+- genie-contrib
+- imageio
+- jieba
+- lpips
+- magi-attention
+- models-t5-xxl
+- mori
+- moviepy
+- msgspec
+- omegaconf
+- opencv-contrib-python-headless
+- orion
+- pandas
+- phonemizer
+- piat
+- pillow
+- popeen
+- pyarrow
+- pykakasi
+- pypinyin
+- pyyaml
+- scikit-learn
+- scipy
+- smallperm
+- sqlglot
+- st-attn
+# Video sparse attention (VSA); `foundation_exploration.models.attention.sparse_attn_utils` imports `vs_attn`.
+- vs-attn
+- structlog
+- torch
+- torchaudio
+- torchcodec
+- torchvision
+- transformers
+- types-boto3-full
+- xxhash
+- genai_foundation
+exclude:
+- "..."
+# Vendored Mori tree; imports are satisfied at runtime (sys.path) / ff-vendored-gr6, not via pyproject deps.
+- mori_collection
+# Runtime sys.path bridge to mori_collection; import-check cannot resolve foundation_exploration.* statically.
+- utils/colligo_wrapper_for_mori_gr6.py
+- utils/conversation_builder.py
+- utils/ssr_passthrough.py
+
+# This does not change behavior of the code
+# This is useful when for any reason the tar of deps uploaded to s3 or the cache of CI agents
+# being corrupted. Bump this to cause a new value and invalidate the cache.
+# "1" is added to force rebuild with latest colligo.base that includes JOB_RESOURCE_GONE
+pyenv_cache_etag: "1"

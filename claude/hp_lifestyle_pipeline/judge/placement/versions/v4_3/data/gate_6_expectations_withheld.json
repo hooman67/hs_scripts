@@ -1,0 +1,109 @@
+{
+  "schema_version": "hp-placement-v4.3-gate-expectations-v1",
+  "records": [
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "human_comment_exact": "Your comments are correct. But maybe someone stood up and moved the chair a bit. The chair doesn't need to be in absolute perfect working position. Because chairs move. But like if the chair was facing too far away it would be bad. THis should be a review (middle or lower) severity issue not a fail",
+      "original_explicit_verdict": "review",
+      "original_expected_issue_any": [
+        "chair_displacement"
+      ],
+      "passed_to_judge": false,
+      "v4_3_gate_requirement": {
+        "verdict": "review",
+        "issues": [
+          "chair_displacement"
+        ],
+        "forbidden": [
+          "missing_required_support"
+        ]
+      }
+    },
+    {
+      "record_id": "tassel__printer_FrontWide__p1",
+      "human_comment_exact": "Should this not be a fail? it seems that the table is deformed. It's two side edges are not parallel. Also. Why would someone leave a rectangle table in the middle of the room like this? rectabngle / square tables are usually placed near walls at home. For middle of room we use round tables. The printer is placed correctly on the table tho. I agree with you.",
+      "original_explicit_verdict": "fail",
+      "original_expected_issue_any": [
+        "malformed_support_furniture",
+        "misplaced_support_furniture"
+      ],
+      "passed_to_judge": false,
+      "v4_3_gate_requirement": {
+        "verdict": "fail",
+        "issues": [
+          "misplaced_support_furniture",
+          "malformed_support_furniture"
+        ],
+        "forbidden": []
+      }
+    },
+    {
+      "record_id": "magic__printer_FrontLeftMedium__p1",
+      "human_comment_exact": "The table is missing legs. This is a fail. Make sure we specifically check for the legs of furnature to make sure they are not missing.",
+      "original_explicit_verdict": "fail",
+      "original_expected_issue_any": [
+        "missing_required_support"
+      ],
+      "passed_to_judge": false,
+      "v4_3_gate_requirement": {
+        "verdict": "fail",
+        "issues": [
+          "missing_required_support"
+        ],
+        "forbidden": []
+      }
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p2",
+      "human_comment_exact": "This is a fail. The printer looks slanted on the table and also there is a random puzzle under the table.",
+      "original_explicit_verdict": "fail",
+      "original_expected_issue_any": [
+        "device_support_axis_conflict",
+        "incoherent_prop_arrangement"
+      ],
+      "passed_to_judge": false,
+      "v4_3_gate_requirement": {
+        "verdict": "fail",
+        "issues": [
+          "device_support_axis_conflict",
+          "incoherent_prop_arrangement"
+        ],
+        "forbidden": []
+      }
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p1",
+      "human_comment_exact": "Your comments are right. Also, there is something weird about the perspective of the wall. It seems that the table should not be touching the wall give how close it is to camera. This is evident because of the cabinet behind it. That cabinet is touching teh wall also.",
+      "original_explicit_verdict": null,
+      "original_expected_issue_any": [
+        "conflicting_perspective"
+      ],
+      "passed_to_judge": false,
+      "v4_3_gate_requirement": {
+        "verdict": null,
+        "issues": [
+          "conflicting_perspective"
+        ],
+        "forbidden": []
+      }
+    },
+    {
+      "record_id": "magic__printer_FrontRightCloseUp__p2",
+      "human_comment_exact": "This is a warn because the glasses are disfiguree. Everything else is good. Maybe the table looks a bit too long.",
+      "original_explicit_verdict": "pass",
+      "original_expected_issue_any": [
+        "unrelated_rendering_artifact"
+      ],
+      "passed_to_judge": false,
+      "v4_3_gate_requirement": {
+        "verdict": "pass",
+        "issues": [],
+        "forbidden": [
+          "missing_required_support",
+          "malformed_support_furniture",
+          "conflicting_perspective"
+        ]
+      }
+    }
+  ]
+}

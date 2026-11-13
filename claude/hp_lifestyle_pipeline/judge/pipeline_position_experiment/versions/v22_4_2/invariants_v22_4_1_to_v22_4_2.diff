@@ -1,0 +1,29 @@
+--- /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/versions/v22_4_2/pre_v22_4_2_snapshot/invariants_v22_4_1.py	2026-11-05 22:05:33.095904927 -0800
++++ /home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/versions/v22_4_2/frozen_source/invariants.py	2026-11-05 22:16:30.355032407 -0800
+@@ -7,7 +7,7 @@
+ import cv2
+ import numpy as np
+ 
+-GUARD_VERSION = "full-affine-v1.3-alpha-textureless-fallback"
++GUARD_VERSION = "full-affine-v1.4-affine-failure-alpha-fallback"
+ THRESHOLDS = {
+     "min_inliers": 20,
+     "min_inlier_ratio": 0.55,
+@@ -201,8 +201,15 @@
+                                                         ransacReprojThreshold=3.6, maxIters=4000,
+                                                         confidence=0.995, refineIters=10)
+     if full is None or full_mask is None or partial is None or partial_mask is None:
+-        return {**base, "verdict": "unverifiable", "reasons": ["affine_fit_failed"],
+-                "matches": len(good)}
++        result = {**base, "verdict": "unverifiable", "reasons": ["affine_fit_failed"],
++                  "matches": len(good)}
++        if fixed_position and product_mask is not None:
++            fallback = _assess_fixed_textureless(src, dst, _decode_alpha(product_mask))
++            return json_native({**result, "primary_verdict": "unverifiable",
++                                "primary_reasons": result["reasons"],
++                                "textureless_fallback": fallback,
++                                "verdict": fallback["verdict"], "reasons": fallback["reasons"]})
++        return result
+     keep = full_mask.ravel().astype(bool)
+     inlier_source, inlier_target = source[keep], target[keep]
+     linear, translation = full[:, :2], full[:, 2]

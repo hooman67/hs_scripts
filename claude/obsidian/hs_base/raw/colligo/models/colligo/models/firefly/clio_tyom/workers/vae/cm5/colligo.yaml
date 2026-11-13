@@ -1,0 +1,21 @@
+visibility: public
+custom_pyenv: cm_5_0_0
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.firefly.clio_tyom.common[public]
+  - colligo.models.firefly.imcoding.cvae3d_encoder[public]
+  - pydantic
+deps:
+- colligo.models.build
+- colligo.models.firefly.clio_tyom.modules.data.cm5
+- colligo.models.firefly.clio_tyom.modules.types.cm5
+- colligo.models.firefly.clio_tyom.modules.vae.cm5
+- omegaconf
+- pillow
+- pyyaml
+- torch
+exclude:
+- tests

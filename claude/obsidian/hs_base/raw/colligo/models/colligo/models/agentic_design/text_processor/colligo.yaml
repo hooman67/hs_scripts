@@ -1,0 +1,22 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.agentic_design.agentic_design_bl[public]
+  - colligo.models.agentic_design.text_extraction[public]
+  - pydantic
+deps:
+- colligo.data
+- colligo.httpx
+- colligo.models.agentic_design.agentic_design_bl
+- colligo.models.agentic_design.common
+- colligo.models.agentic_design.text_extraction
+- numpy
+- opencv-contrib-python-headless
+- pybreaker
+- scikit-image
+exclude:
+- "..."
+

@@ -1,0 +1,3166 @@
+{
+  "version": "citation-path-normalized-v1",
+  "case_count": 24,
+  "outputs": {
+    "01_rich_source_printer_back_closeup": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A practical office document area with a small section of pale wooden work surface in soft daylight and a plain neutral backdrop."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Source messaging centers on recurring paperwork, forms, records, handouts, and desk-based admin work. Technical ink, handling, and connectivity claims were treated as context but not translated into visible product or hardware details.",
+        "count_explanation": "Three KSPs supplied useful, overlapping document-work cues, but the resolved tight level view allows no props, background details, or people. One local Office prompt best preserves the shared admin/document context without exceeding the view limits.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring document and color jobs"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Recurring document work supports an office document-area setting. Ink supply and refill details were omitted because they are technical claims, not visible environment cues."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, records, handouts, and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Forms, records, and handouts support the office admin context. The tight view prevents showing papers or other props directly."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "everyday admin work easier to complete at the desk"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Desk-based admin work directly supports the local work-surface setting. Multi-page handling details were simplified because no props are allowed in this view."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "nearby devices or a shared network"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "Connectivity and shared-network claims are mostly technical and would require mentioning other hardware, which is not suitable for the environment prompt or the tight no-prop view."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "paperwork, forms, records, and color documents"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "The value proposition reinforces recurring paperwork and business document management, supporting the Office environment choice without adding to the prompt count."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Pale wooden work surface added as a plausible local support material.",
+              "Soft daylight added as believable ambient light.",
+              "Plain neutral backdrop added as non-specific background tone within the no-detail limit."
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "printer_BackCloseUp",
+          "resolved_tag": "printer_BackCloseUp",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "tight",
+          "elevation": "level",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "Forms, records, handouts, and color materials reduced to general document-area context.",
+                "Ink, refill, ADF, two-sided output, and connectivity details omitted.",
+                "All props, people, and named background fixtures omitted."
+              ],
+              "explanation": "The selected printer_BackCloseUp profile is a tight level view with props<=0, background<=0, and people omitted, so the prompt retains only a local work surface, office context, plain backdrop, and light."
+            }
+          ],
+          "device_type": "printer"
+        }
+      }
+    },
+    "02_rich_source_minipc_back_closeup": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office work surface in matte laminate, with a compact stack of marked forms and a single pen. A softly blurred frosted partition suggests a busy workspace in diffuse daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Home",
+          "text": "A home administration desk with a light wood surface, a neat pile of household paperwork, and a ceramic mug. A muted wall calendar stays soft in the background under natural daylight."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Source messaging is usable and centers on recurring paperwork, forms, records, handouts, and desk-based administration. Technical product claims and product names were not used in scene prose.",
+        "count_explanation": "Three numbered KSPs contained useful visual scene cues, mainly paperwork and desk administration. Two prompts were returned because the cues overlap into office paperwork and home administration settings; KSP4 was not used for an additional prompt because connectivity is not a distinct visible scene cue.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring document and color jobs"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Recurring document work was simplified into visible paperwork rather than product operation or supply details."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, records, handouts, and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Forms and records directly support the office paperwork surface; throughput and speed claims were omitted."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "everyday admin work easier to complete at the desk"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Desk-based administration was retained as local paperwork context, while document-feeder and two-sided-printing details were omitted as product-specific."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "nearby devices or a shared network"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "The connectivity theme is not a strong visible lifestyle cue for this view, and nearby electronics were omitted to avoid adding extra hardware."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "household administration, and everyday business paperwork"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "The value proposition helped split the overlapping paperwork cues into home administration and everyday business paperwork contexts."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Matte laminate surface",
+              "Single pen",
+              "Softly blurred frosted partition",
+              "Diffuse daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Light wood surface",
+              "Ceramic mug",
+              "Muted wall calendar",
+              "Natural daylight"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "miniPC_BackCloseUp",
+          "resolved_tag": "miniPC_BackCloseUp",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "level",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "Product-specific printing features",
+                "People",
+                "Extra office fixtures",
+                "Additional supplies"
+              ],
+              "explanation": "The resolved medium, level profile allows only a local setting with at most two props and one background detail, so the scene keeps a forms stack, one pen, and a single soft partition cue."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "Full home office layout",
+                "People",
+                "Extra paperwork tools",
+                "Visible electronics"
+              ],
+              "explanation": "The scene retains household administration through a local desk, one paperwork pile, one mug, and one soft background calendar while staying within the medium, level view limits."
+            }
+          ],
+          "device_type": "miniPC"
+        }
+      }
+    },
+    "03_rich_source_printer_front_right_medium": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A practical office work surface in light wood, with a compact stack of forms and a single pen ready for routine paperwork. A softly blurred file tray adds context in diffuse daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Home",
+          "text": "A tidy home administration spot on a matte wooden table, with a slim folder of household forms and one pen. A muted wall calendar sits softly in the background under natural daylight."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source messaging is usable for local paperwork environments. KSP2 and KSP3 provide the strongest concrete cues around forms, records, handouts, multi-page tasks, and desk administration. KSP1 adds recurring page/document work. KSP4 is mainly connectivity-focused and was not visualized as extra electronics or network equipment.",
+        "count_explanation": "Three KSPs contain useful scene or activity cues, allowing up to three prompts. Two prompts were returned because office paperwork and home administration are distinct, source-supported contexts that fit the medium oblique view without crowding it.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring document and color jobs"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Recurring document work was translated into nearby paper forms and household paperwork rather than device-specific output or ink details."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, records, handouts, and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The office prompt uses forms and routine paperwork as the most concrete visual cue; handouts and color materials were not separately added to avoid exceeding the local prop limit."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "everyday admin work easier to complete at the desk"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Desk-based admin work was represented through a clear table surface, a small folder or stack of forms, and a pen."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "nearby devices or a shared network"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "The connectivity message is primarily technical. Extra electronics and network gear were omitted because prompt text must not add computing hardware or device-dependent props."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "household administration, and everyday business paperwork"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "The value proposition helped split the scene into office paperwork and home administration contexts while keeping both local and uncluttered."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Light wood work surface",
+              "Single pen",
+              "Softly blurred file tray",
+              "Diffuse daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Matte wooden table",
+              "Slim folder",
+              "Muted wall calendar",
+              "Natural daylight"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "printer_FrontRightMedium",
+          "resolved_tag": "printer_FrontRightMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "Ink and refill claims",
+                "Specific device functions",
+                "Handouts and color materials as separate props",
+                "People"
+              ],
+              "explanation": "The registered printer_FrontRightMedium profile allows a medium oblique local setting with at most two nearby props and one background detail. The prompt keeps a forms stack and pen plus one file-tray background cue."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "Specific product workflow features",
+                "Multiple users and connection paths",
+                "Extra household paperwork items",
+                "People"
+              ],
+              "explanation": "The home administration cue is retained through a folder of forms and a pen, with only one background calendar detail to respect the medium oblique view constraints."
+            }
+          ],
+          "device_type": "printer"
+        }
+      }
+    },
+    "04_rich_source_printer_front_right_wide": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office worktable in natural wood, with a compact stack of forms, a single pen, and one color proof sheet nearby. A muted filing credenza and soft daylight suggest regular paperwork without crowding the surface."
+        },
+        {
+          "id": "p2",
+          "environment": "Education",
+          "text": "A school preparation table with a lightly worn laminate surface, a neat stack of handouts, a red pen, and a small packet of sticky notes. A softly blurred bulletin board adds classroom context in diffuse daylight."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Four numbered KSPs and a ValueProposition were present. The strongest concrete scene cues were recurring paperwork, forms, records, handouts, and desk-based admin work; product names and technical specifications were not used in scene prose.",
+        "count_explanation": "U=2: KSP2 and KSP3 contain explicit, distinct activity/material cues suitable for additional prompts. KSP1 supports paperwork volume but not a distinct setting, and KSP4 is mostly connectivity/setup language, so two prompts were returned.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring document and color jobs"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used only as a supporting paperwork cue. It did not justify a separate setting because it focuses on supply continuity rather than a concrete environment."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, records, handouts, and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Forms and records informed the office paperwork surface; handouts informed the education preparation surface."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "forms, records, and everyday admin work"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Desk-based admin work was translated into a compact local office tabletop with paperwork, simplified to fit the selected wide product view."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "nearby devices or a shared network"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "Connectivity language was considered abstract for scene generation, and nearby electronics were omitted to avoid adding prohibited or product-dependent hardware."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "paperwork, forms, records, and color documents"
+            },
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "regular document queues, household administration, and everyday business paperwork"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "The ValueProposition helped keep both scenes focused on practical recurring paperwork, with office and education contexts derived from the numbered KSP cues."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Natural wood worktable",
+              "Single pen and color proof sheet",
+              "Muted filing credenza",
+              "Soft daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Lightly worn laminate preparation table",
+              "Red pen and sticky notes",
+              "Softly blurred bulletin board",
+              "Diffuse daylight"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "printer_FrontRightWide",
+          "resolved_tag": "printer_FrontRightWide",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "wide",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "No people",
+                "No electronics or shared-network hardware",
+                "Limited to three nearby props and one simple background detail"
+              ],
+              "explanation": "The wide oblique profile allows a local surface, a few nearby paperwork props, and limited background context, so the office cue was kept to forms, pen, one color sheet, and a subdued filing credenza."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "No full classroom layout",
+                "No people",
+                "Limited to three nearby props and one background detail"
+              ],
+              "explanation": "The education cue from handouts was kept local to a preparation table, with only a stack of handouts, pen, sticky notes, and a softly blurred bulletin board to stay within the selected view constraints."
+            }
+          ],
+          "device_type": "printer"
+        }
+      }
+    },
+    "05_rich_source_printer_top_front_closeup": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A tidy office work surface with a compact stack of completed forms, lit by diffuse daylight across a clean horizontal tabletop."
+        },
+        {
+          "id": "p2",
+          "environment": "Education",
+          "text": "A school preparation surface in light wood with the cropped edge of a class handout, softly lit by diffuse daylight."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Source messaging is usable for local document-work environments. The selected camera is a known tight top-oblique printer preset, so scene detail is limited to the horizontal surface and at most one flat nearby prop per prompt.",
+        "count_explanation": "Three KSPs provide concrete document, forms, records, handout, or desk-work cues, and one connectivity KSP is too abstract for an added scene. Two prompts were returned because office paperwork and education handout preparation are meaningfully distinct and compatible with the tight top-oblique view.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring document and color jobs"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Recurring document work supports the office paperwork surface. Refill and ink-value claims were omitted because they are product benefits, not visible scene cues."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, records, handouts, and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Forms and records support the office prompt; handouts support the education preparation prompt. The tight top-oblique view reduces these to a single stack or cropped handout edge."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "forms, records, and everyday admin work"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Everyday admin work at a desk was simplified to a compact stack of forms on a local work surface. Multi-page handling features were omitted as product-specific mechanisms."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "nearby devices or a shared network"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "Connectivity language is primarily technical and would require forbidden or unnecessary device props. It was not used to create an additional scene."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "paperwork, forms, records, and color documents"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "The value proposition reinforces recurring paperwork and document-management contexts, which were kept as local tabletop details rather than a broader room setup."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Tidy office work surface",
+              "Diffuse daylight",
+              "Compact stack of completed forms"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Light wood school preparation surface",
+              "Diffuse daylight",
+              "Cropped edge of a class handout"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "printer_TopFrontCloseUp",
+          "resolved_tag": "printer_TopFrontCloseUp",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "tight",
+          "elevation": "top_oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "room layout",
+                "people",
+                "connection devices",
+                "ink and refill details",
+                "multi-page mechanism details"
+              ],
+              "explanation": "The tight top-oblique profile allows only a local horizontal surface and one prop, so office admin cues were retained as a compact stack of forms with light and surface texture."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "classroom background",
+                "people",
+                "multiple supplies",
+                "visible windows",
+                "device references"
+              ],
+              "explanation": "The education cue from handouts was reduced to a cropped class handout edge on the local surface, with no wall or room-depth details because this top-oblique preset permits no background detail."
+            }
+          ],
+          "device_type": "printer"
+        }
+      }
+    },
+    "06_actual_laptop_front_closeup": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A clean shared-work table surface in soft daylight, with a simple neutral backdrop."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Known tight front close-up camera. Source messaging provides business mobility, meetings, shared workspace, customer-site, calls, and content-work cues; technical specifications and security claims were not converted into visible scene elements.",
+        "count_explanation": "Four numbered KSPs contain useful scene or activity cues, but the resolved tight level profile permits no props, background details, or people. One concise Office prompt preserves the strongest compatible shared-work context without forcing unsupported visible space.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "move through documents, meetings, and decisions"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Business mobility and work activity cues informed the shared-work surface. Documents and meetings were not shown because the view allows no props or people."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "AI-assisted tasks, calls, and content work"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "Calls and content work are useful activity cues, but they require visible props or people that exceed the tight profile, so they were omitted from the scene prose."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "work beyond controlled office environments"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "Beyond-office mobility is a useful context cue, but the camera limits prevent showing travel, customer-site, or security-related context. Security was not visualized as guards or surveillance."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "office, shared workspace, or customer site"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The shared workspace cue was retained as a simple local table setting. Meeting presence and customer-site specifics were simplified away to respect the tight view."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "polished collaboration, connected mobility"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "The value proposition reinforced a mobile business collaboration context, expressed only as a clean shared-work surface and soft daylight."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "clean shared-work table surface",
+              "soft daylight",
+              "simple neutral backdrop"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "laptop_FrontCloseUp",
+          "resolved_tag": "laptop_FrontCloseUp",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "tight",
+          "elevation": "level",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "documents",
+                "calls",
+                "content creation",
+                "meeting participants",
+                "customer-site detail",
+                "security concepts",
+                "background workplace fixtures"
+              ],
+              "explanation": "The selected profile is tight and level with props<=0, background<=0, and people omitted. The prompt keeps only a local business work surface, daylight, and a plain neutral backdrop that can coexist with the fixed view."
+            }
+          ],
+          "device_type": "laptop"
+        }
+      }
+    },
+    "07_actual_laptop_front_right_medium": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared workspace table in pale wood with a paper notepad and capped pen set beside meeting notes. A softly blurred conference-room partition adds polished business context in daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A compact customer-site worktable with a slim folder of forms and a ceramic cup. Neutral wall paneling in soft daylight keeps the mobile business setting focused and uncluttered."
+        },
+        {
+          "id": "p3",
+          "environment": "Office",
+          "text": "A creative studio workbench with a printed draft page and pencil. A small, softly defined pinboard section suggests content review without crowding the local surface."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source messaging is business-focused and supplies usable activity cues around mobile work, documents, meetings, calls, content work, shared workspaces, and customer sites. Technical security, processor, and connectivity claims were not translated into visual metaphors.",
+        "count_explanation": "Four numbered KSPs contain some explicit scene or activity cues, so up to four prompts were allowed. Three prompts were returned because the strongest compatible cues form three distinct local business settings: shared-workspace meeting, customer-site mobile work, and content-review workbench.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "mobile professionals move through documents, meetings, and decisions"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Used the mobile professional, documents, meetings, and decisions cues as local office surfaces with notes or forms. Security and AI claims were omitted as non-visual technical benefits."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "AI-assisted tasks, calls, and content work"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p3"
+            ],
+            "explanation": "Used calls and content work as meeting-note and creative review contexts. Processor and compute-engine details were omitted because they are hardware specifications rather than environment cues."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "work beyond controlled office environments"
+              }
+            ],
+            "prompt_ids": [
+              "p2"
+            ],
+            "explanation": "Used the beyond-office cue as a customer-site worktable. Security wording such as BIOS-to-browser defense was not visualized."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "office, shared workspace, or customer site"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Mapped the explicit office, shared workspace, and customer site settings into local table scenes. Camera/software feature names and framing claims were omitted from scene prose."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.short_message",
+              "quote": "productive work and polished collaboration anywhere"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3"
+          ],
+          "explanation": "Used the overall value proposition to keep all scenes in a mobile business collaboration family while avoiding product names, technical specs, and device references."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Pale wooden shared-workspace table",
+              "Paper notepad and capped pen",
+              "Softly blurred conference-room partition",
+              "Diffuse daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Compact customer-site worktable",
+              "Slim folder of forms",
+              "Ceramic cup",
+              "Neutral wall paneling in soft daylight"
+            ]
+          },
+          {
+            "prompt_id": "p3",
+            "details": [
+              "Creative studio workbench",
+              "Printed draft page and pencil",
+              "Small softly defined pinboard section"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "laptop_FrontRightMedium",
+          "resolved_tag": "laptop_FrontRightMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "No full meeting room or people",
+                "Kept to two nearby props and one background detail",
+                "Omitted technical security and AI hardware claims"
+              ],
+              "explanation": "The medium oblique profile supports a local surface, at most two props, and one subordinate background cue, so the meeting context is reduced to notepad, pen, and a softly blurred partition."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "No whole customer site or travel scene",
+                "Kept to folder, cup, and neutral wall detail",
+                "Omitted protection and connectivity metaphors"
+              ],
+              "explanation": "The customer-site cue was retained through a compact worktable with forms, while broader mobility and security messaging was simplified to avoid overfilling the medium view."
+            },
+            {
+              "prompt_id": "p3",
+              "omitted_or_simplified": [
+                "No full studio layout",
+                "Kept to printed draft, pencil, and small pinboard detail",
+                "Omitted processor and software specifics"
+              ],
+              "explanation": "Content work was expressed as a small review surface with low object density, respecting the medium oblique limits and keeping background context subordinate."
+            }
+          ],
+          "device_type": "laptop"
+        }
+      }
+    },
+    "08_actual_laptop_front_right_wide": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared workspace table in matte oak with a slim notepad, capped pen, and small ceramic cup. Soft daylight falls across the surface while a muted glass partition and blurred meeting chair suggest a quiet collaboration area."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A customer-site meeting table in light wood with a compact stack of marked documents and a single pen. Diffuse daylight and a softly out-of-focus reception wall keep the setting professional and mobile."
+        },
+        {
+          "id": "p3",
+          "environment": "Office",
+          "text": "A creative studio worktable with a flat storyboard print, a pencil, and a closed paper notebook arranged close to the main work area. Gentle daylight and a softly blurred pinboard suggest content planning without crowding the surface."
+        }
+      ],
+      "debug": {
+        "input_assessment": "All four numbered KSPs contain usable scene or activity cues: mobile work with documents and meetings, calls and content work, work beyond controlled office environments, and meeting presence in offices, shared workspaces, or customer sites. Technical AI, processor, Wi-Fi, and security claims were treated as context rather than literal scene objects.",
+        "count_explanation": "U=4 useful KSPs, so up to four prompts were allowed. Three prompts were returned because meeting, mobile, and customer-site cues overlap strongly, while content planning offered one distinct source-supported activity. ValueProposition was used for cohesion but did not increase the prompt limit.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "move through documents, meetings, and decisions"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Used the documents and meetings cue to shape professional tabletop settings with notes, marked documents, and collaboration context. Security and product-specific wording were omitted from scene prose."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "AI-assisted tasks, calls, and content work"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p3"
+            ],
+            "explanation": "Translated calls into a shared meeting workspace and content work into a creative studio planning surface. Processor and compute-engine details were omitted as non-environmental specifications."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "work beyond controlled office environments"
+              }
+            ],
+            "prompt_ids": [
+              "p2"
+            ],
+            "explanation": "Represented work beyond a controlled office as a customer-site meeting surface. Literal security imagery was omitted because the cue is abstract and could become misleading."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "office, shared workspace, or customer site"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Used the explicit shared workspace and customer-site settings. Full people, groups, and video-call hardware were omitted to keep the wide oblique view uncluttered and product-agnostic."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.short_message",
+              "quote": "productive work and polished collaboration anywhere."
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3"
+          ],
+          "explanation": "Supported the overall business mobility and collaboration tone across all prompts while avoiding product names and technical claims."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Matte oak surface",
+              "slim notepad",
+              "capped pen",
+              "small ceramic cup",
+              "muted glass partition",
+              "blurred meeting chair",
+              "soft daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Light wood meeting table",
+              "compact stack of marked documents",
+              "single pen",
+              "softly out-of-focus reception wall",
+              "diffuse daylight"
+            ]
+          },
+          {
+            "prompt_id": "p3",
+            "details": [
+              "Creative studio worktable",
+              "flat storyboard print",
+              "pencil",
+              "closed paper notebook",
+              "softly blurred pinboard",
+              "gentle daylight"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "laptop_FrontRightWide",
+          "resolved_tag": "laptop_FrontRightWide",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "wide",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "No full people or visible call setup",
+                "Meeting activity reduced to local tabletop props",
+                "Limited to three props and two background details"
+              ],
+              "explanation": "The wide oblique profile can support a modest professional setting, so the prompt keeps a table, three nearby props, and two subdued background cues without requiring extra room depth."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "Customer-site cue simplified to a local meeting surface",
+                "Security claims omitted as visuals",
+                "Limited to two props and one background detail"
+              ],
+              "explanation": "The prompt preserves mobility and customer-site context through documents, a pen, and a reception-wall cue while staying below the wide-view density ceiling."
+            },
+            {
+              "prompt_id": "p3",
+              "omitted_or_simplified": [
+                "AI and processor details omitted",
+                "Content work simplified to flat planning materials",
+                "No added people or extra equipment"
+              ],
+              "explanation": "The wide oblique profile allows a small creative work surface, but the prompt uses only low, nearby planning props and one background detail to avoid crowding the selected view."
+            }
+          ],
+          "device_type": "laptop"
+        }
+      }
+    },
+    "09_actual_laptop_top_front_medium": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared-workspace tabletop in natural wood with a slim paper notebook of meeting notes and a capped pen, lit by soft diffuse daylight."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source provides four numbered KSPs with overlapping mobile business work, meetings, documents, calls, content work, shared workspace, and beyond-office cues. Technical security, AI, processor, and connectivity claims were treated as context rather than visible scene requirements.",
+        "count_explanation": "U=4 KSPs contain usable setting or activity cues, but they substantially overlap around mobile professional work and meetings. One concise Office prompt best preserves the strongest shared-workspace and meeting-document cues within the selected medium top-oblique view.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "move through documents, meetings, and decisions"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Represented through meeting notes on a local work surface. Broader mobility and security claims were not literalized because the view supports only a local tabletop scene."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "AI-assisted tasks, calls, and content work"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "General business task and call/content-work context informed the simple meeting-notes setup. Processor and AI workload details were omitted as non-environmental technical claims."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "work beyond controlled office environments"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The shared-workspace surface suggests work outside a fixed private office. Security mechanisms and BIOS/browser language were omitted because they are not visible environmental cues."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "whether joining from an office, shared workspace, or customer site"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "This was the primary setting cue, simplified to a shared-workspace tabletop with meeting notes. People and broader room details were omitted for the top-oblique medium view."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "polished collaboration, connected mobility, and protected productivity"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "Used to keep the scene in a professional mobile-collaboration context while avoiding product, hardware, and technical specification details."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Natural wood tabletop",
+              "Slim paper notebook",
+              "Capped pen",
+              "Soft diffuse daylight"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "laptop_TopFrontMedium",
+          "resolved_tag": "laptop_TopFrontMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "top_oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "No room-depth background details",
+                "No people or visible meeting participants",
+                "No technical security, AI, processor, or connectivity visualization",
+                "Reduced meetings and mobile work to notebook notes and pen"
+              ],
+              "explanation": "The resolved profile is a medium top-oblique laptop view with up to two local props and no background details. The prompt keeps a horizontal work surface, two flat nearby props, and light only, preserving the fixed view without asking for more visible space."
+            }
+          ],
+          "device_type": "laptop"
+        }
+      }
+    },
+    "10_actual_laptop_front_right_closeup": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A quiet shared-workspace tabletop in pale wood, lit by soft daylight, with a clean neutral backdrop for a polished meeting setting."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source messaging provides business mobility, meetings, shared workspace, and protected work cues. Technical AI, processor, security, and product-specific claims were treated as context only, not scene requirements.",
+        "count_explanation": "Four KSPs contain useful setting or activity cues, but they overlap around mobile business work and meetings. The selected tight oblique profile permits no props, background details, or people, so one concise Office prompt best preserves the strongest compatible cue.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "move through documents, meetings, and decisions"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Retained the mobile professional meeting/work context as a shared-workspace surface. Documents and decisions were not shown as props due to the tight no-prop view."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "AI-assisted tasks, calls, and content work"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "Calls and content work are useful activity cues, but the view cannot support people, extra work materials, or communication props; the activity was omitted rather than forcing details."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "work beyond controlled office environments"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Simplified the beyond-office idea into a shared-workspace tabletop. Security claims were omitted because they are not visual setting cues."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "office, shared workspace, or customer site"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used the meeting and shared-workspace cue while omitting people, visible collaboration, and room details because the camera profile is tight."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "polished collaboration, connected mobility, and protected productivity"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "Supported the Office/shared-workspace direction and polished meeting tone without adding technical or product-specific elements."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Pale wooden tabletop",
+              "soft daylight",
+              "clean neutral backdrop"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "laptop_FrontRightCloseUp",
+          "resolved_tag": "laptop_FrontRightCloseUp",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "tight",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "documents, calls, and content work",
+                "visible meeting participants",
+                "office or shared-workspace room details",
+                "security and hardware claims"
+              ],
+              "explanation": "The registered tight oblique laptop profile allows only a local surface and light, with no props, background details, or people. The prompt retained a local shared-workspace tabletop and meeting tone while keeping the setting minimal."
+            }
+          ],
+          "device_type": "laptop"
+        }
+      }
+    },
+    "11_actual_printer_front_closeup": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office counter with a clean light-gray work surface, soft overhead daylight, and a plain neutral backdrop."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source messaging is coherent and centered on shared office document workflows for large teams, with security, fleet management, and capacity themes. The selected camera is a known tight, level printer view, so scene content was reduced to surface, light, and neutral context only.",
+        "count_explanation": "Four numbered KSPs include usable shared-work or document-work cues, but they overlap into one office setting. The tight profile permits no visible props or background details, so one concise prompt best preserves the view without cramming multiple scenarios.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring reports, forms, and packets flowing through busy workdays"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The shared document-work cue supports the office environment. Reports, forms, packets, and walk-up activity were omitted because the tight view allows no props or people."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "Shared print environments can reduce endpoint risk"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The shared environment cue supports an office context. Endpoint protection and authorized-user concepts are not visually staged because they are abstract and the camera profile is too tight for people or signage."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "administrators align shared print deployments with fleet visibility"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The administrative shared-deployment cue is compatible with an office setting, but fleet visibility, firmware planning, and management tools are technical concepts that were not turned into props."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "Large teams can handle changing document volumes"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The large-team document-volume cue reinforces a shared office setting. Paper stacks and departmental activity were omitted to respect the no-prop tight framing."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "recurring forms, reports, schedules, and everyday operational documents"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "The value proposition reinforces the office document-work context. Product-specific claims and operational details were simplified into a believable shared office surface."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Clean light-gray work surface",
+              "Soft overhead daylight",
+              "Plain neutral backdrop"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "printer_FrontCloseUp",
+          "resolved_tag": "printer_FrontCloseUp",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "tight",
+          "elevation": "level",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "reports, forms, packets, and paper-capacity cues",
+                "walk-up users, teams, and administrator activity",
+                "security, firmware, fleet-management, and touchscreen concepts"
+              ],
+              "explanation": "The prompt retains only a shared office surface, light, and neutral backdrop because the resolved tight, level profile permits no props, background details, or people."
+            }
+          ],
+          "device_type": "printer"
+        }
+      }
+    },
+    "12_synthetic_gaming_laptop_front_right_wide": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Gaming",
+          "text": "A relaxed home gaming desk with a dark wood surface, a soft desk mat, and one small collectible figure. A nearby shelf of favorite collectibles sits softly in the background under gentle evening light."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Source messaging provides one concrete lifestyle cue: evening gaming at home with a comfortable desk setup and collectible shelving. The value proposition supports a relaxed play context.",
+        "count_explanation": "There is 1 numbered KSP with useful explicit scene cues, so 1 prompt was returned.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "Evening gaming at home"
+              },
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "comfortable desk setup"
+              },
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "shelf of favorite collectibles"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used the home gaming desk and collectibles cues, simplified to a local desk surface with one small collectible and one background shelf detail to fit the wide oblique view limits."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.headline",
+              "quote": "A relaxing space for play"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "Used to reinforce a calm gaming atmosphere without adding extra props or a larger room story."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Dark wood surface",
+              "Soft desk mat",
+              "Gentle evening light"
+            ]
+          }
+        ],
+        "ignored_fields": [],
+        "camera": {
+          "requested_tag": "laptop_FrontRightWide",
+          "resolved_tag": "laptop_FrontRightWide",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "wide",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "Full room layout",
+                "Multiple collectibles",
+                "People or active gameplay"
+              ],
+              "explanation": "The selected wide oblique profile allows a local surface, up to three nearby props, and up to two simple background details. The scene retains the home gaming desk and collectible shelf cues while keeping the setting uncluttered and avoiding device-specific references."
+            }
+          ],
+          "device_type": "laptop"
+        }
+      }
+    },
+    "13_empty_source_unknown_camera": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Home",
+          "text": "A simple home work surface in soft natural light with a plain neutral background."
+        }
+      ],
+      "debug": {
+        "input_assessment": "No KSP or ValueProposition content was supplied, so there were no source scene cues to preserve.",
+        "count_explanation": "With no numbered KSPs present, one minimal fallback prompt was returned.",
+        "used_fallback": true,
+        "ksp_mappings": [],
+        "value_proposition": {
+          "source_evidence": [],
+          "prompt_ids": [],
+          "explanation": "No ValueProposition field was present."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Home work surface",
+              "soft natural light",
+              "plain neutral background"
+            ]
+          }
+        ],
+        "ignored_fields": [],
+        "camera": {
+          "requested_tag": "printer_UnregisteredView",
+          "resolved_tag": null,
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "unknown",
+          "framing": "unknown",
+          "elevation": "unknown",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "No named props",
+                "No people",
+                "No room fixtures",
+                "No camera-specific angle assumptions"
+              ],
+              "explanation": "The requested camera tag is not registered, so the conservative unknown-camera policy was used: a minimal surface-and-light scene only."
+            }
+          ],
+          "device_type": null
+        }
+      }
+    },
+    "14_technical_only_known_tight_camera": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Home",
+          "text": "A simple home workspace with a small section of matte wooden desktop in soft daylight and a plain neutral backdrop."
+        }
+      ],
+      "debug": {
+        "input_assessment": "KSPs and value proposition are technical or abstract, with no explicit setting, activity, people, or concrete scene materials. The known camera profile is tight and level with no props or background details, so a minimal Home workspace fallback was used.",
+        "count_explanation": "No KSPs contained useful explicit scene cues, so the response returns one fallback prompt as required.",
+        "used_fallback": true,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "32 GB RAM, 1 TB SSD"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "This is a hardware specification and does not provide a usable lifestyle setting or activity cue."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "Wi-Fi 7 and hardware-enforced encryption"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "Connectivity and security claims are abstract technical benefits; they were not converted into a setting or security-related scene."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.headline",
+              "quote": "Fast and secure technology"
+            }
+          ],
+          "prompt_ids": [],
+          "explanation": "The value proposition reinforces abstract performance and security but does not add a concrete environment cue."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Home workspace family",
+              "matte wooden desktop",
+              "soft daylight",
+              "plain neutral backdrop"
+            ]
+          }
+        ],
+        "ignored_fields": [],
+        "camera": {
+          "requested_tag": "laptop_BackCloseUp",
+          "resolved_tag": "laptop_BackCloseUp",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "tight",
+          "elevation": "level",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "hardware specifications",
+                "connectivity claim",
+                "encryption/security claim",
+                "all props",
+                "room fixtures"
+              ],
+              "explanation": "The resolved tight level profile permits only a local surface, light, and plain backdrop, with props and background details omitted. The abstract technical messaging was not visualized as scene content."
+            }
+          ],
+          "device_type": "laptop"
+        }
+      }
+    },
+    "15_printer_copy_minipc_camera": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A tidy office work surface in light wood, with a compact stack of forms and a single pen. A softly blurred file tray suggests recurring paperwork in gentle daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Home",
+          "text": "A home administration corner on a smooth wooden desk, with a small stack of household papers and one ceramic mug. A muted wall calendar sits softly out of focus."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source provides four numbered KSPs and a Value Proposition. KSP1, KSP2, and KSP3 contain concrete recurring paperwork, forms, records, handouts, admin work, and desk cues. KSP4 is mainly connectivity-focused, so its hardware/network specifics were not converted into visible props. The requested camera tag resolves exactly to a registered medium oblique miniPC profile; source product references were not used to change the selected type-camera profile.",
+        "count_explanation": "Three KSPs contain useful scene or activity cues, so up to three prompts were allowed. Two prompts were returned because the source cues overlap around recurring paperwork and admin tasks, with distinct office and home-administration contexts supported by the messaging and Value Proposition.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring document and color jobs"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Recurring document work was represented through compact paperwork stacks rather than visible output activity or supply items, which would exceed the local scene needs."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, records, handouts, and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Forms and records directly support the office paperwork setting. Handouts and color materials were simplified into a small forms stack to stay within the medium-view prop limit."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "forms, records, and everyday admin work"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Everyday admin work at a desk informed both local work-surface scenes. Manual document-handling features were omitted because the prompt should describe the environment, not product functions."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "nearby devices or a shared network"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "The cue is primarily about connectivity and nearby hardware. Extra connected items were omitted to avoid inventing additional computing hardware or turning an abstract network benefit into a visible scene."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "household administration, and everyday business paperwork"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "The Value Proposition helped separate the overlapping paperwork cues into everyday business paperwork and household administration contexts without increasing the prompt count beyond the KSP-derived limit."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Light wood surface",
+              "single pen",
+              "softly blurred file tray",
+              "gentle daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Smooth wooden desk",
+              "ceramic mug",
+              "muted wall calendar",
+              "soft daylight"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "miniPC_FrontRightMedium",
+          "resolved_tag": "miniPC_FrontRightMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "No people",
+                "No extra nearby devices",
+                "Forms condensed into one compact stack",
+                "Only one subordinate background detail"
+              ],
+              "explanation": "The medium oblique profile allows at most two nearby props and one background detail. The prompt keeps the office cue local with a forms stack and pen, plus a soft file-tray context detail."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "No visible connected hardware",
+                "Household administration reduced to papers and mug",
+                "Only one background detail"
+              ],
+              "explanation": "The medium oblique profile supports a local desk scene with two props and one simple background cue. The home context is suggested without expanding into a full room layout."
+            }
+          ],
+          "device_type": "miniPC"
+        }
+      }
+    },
+    "16_explicit_legacy_minipc_alias": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office credenza surface with a compact stack of completed forms and a single pen, backed by a softly blurred filing cabinet in gentle daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Education",
+          "text": "A school preparation table with a neat pile of handouts and a capped marker, set against a muted classroom noticeboard in soft daylight."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Source messaging is usable for local paperwork-oriented environments. Most KSPs are feature-led, but recurring documents, forms, records, handouts, admin work, desks, and shared-network context provide believable office and education cues. Product-specific names and technical details were not used in scene prose.",
+        "count_explanation": "Four numbered KSPs are present and all contain at least some concrete task or setting cue, so the response may include up to four prompts. Overlapping recurring paperwork cues were combined into two distinct, source-supported environments: office administration and education handout preparation.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring document and color jobs"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used as a recurring paperwork cue for the office forms setting. Ink, refill, and supply-path details were omitted because they are product-specific rather than environment details."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, records, handouts, and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Mapped forms and records to the office prompt and handouts to the education prompt. Production-speed and duty-cycle claims were omitted as technical copy, not scene content."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "forms, records, and everyday admin work"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used to support an everyday admin-work surface with forms and a pen. Automatic handling features were omitted to avoid describing product functions."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "nearby devices or a shared network"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used only to favor a shared office context. References to phones, laptops, wired or wireless connections, and network behavior were omitted from the scene prose."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "paperwork, forms, records, and color documents"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "Supports the overall paperwork and document-management context. Household administration was not given a separate prompt because the strongest KSP cues overlap around recurring forms, records, and handouts."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Shared office credenza surface",
+              "Single pen",
+              "Softly blurred filing cabinet",
+              "Gentle daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "School preparation table",
+              "Capped marker",
+              "Muted classroom noticeboard",
+              "Soft daylight"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "miniPC_Back_CloseUp",
+          "resolved_tag": "miniPC_BackCloseUp",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "alias",
+          "framing": "medium",
+          "elevation": "level",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "Product names and ink/refill details",
+                "Technical output, handling, and connection claims",
+                "People and active work gestures",
+                "More than two nearby props"
+              ],
+              "explanation": "The resolved profile is a medium, level view with up to two nearby props and one background detail. The prompt keeps the setting local with forms, a pen, and one subdued filing detail."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "Broader classroom layout",
+                "People or group activity",
+                "Additional supplies beyond two props",
+                "Technical feature claims"
+              ],
+              "explanation": "The education cue is reduced to a local preparation surface with handouts and one marker, plus a single background noticeboard detail appropriate for the medium, level view."
+            }
+          ],
+          "device_type": "miniPC"
+        }
+      }
+    },
+    "17_actual_laptop_convertible_front_right_medium": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A compact meeting-table setting on light wood, with a paper notebook and ceramic cup nearby. A softly blurred conference chair adds context in natural daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A creative studio work surface in pale wood, with an open sketchbook and a single pen. A muted presentation board sits softly out of focus behind it."
+        },
+        {
+          "id": "p3",
+          "environment": "Office",
+          "text": "A shared workspace counter with a slim folder and one pen, lit by calm daylight. A neutral privacy partition suggests work between locations without clutter."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source messaging provides multiple concrete work cues: sketching, presenting, collaboration, video conferencing, meetings, content creation, and mobile work across locations. Technical AI, security, and product-mode claims were treated as nonvisual or simplified into ordinary work settings.",
+        "count_explanation": "Four numbered KSPs contain at least some useful scene or activity cue, so as many as four prompts were allowed. Three prompts were returned because meetings and collaboration overlap, while sketching/presentation and mobile shared-work context are distinct enough to support separate local environments.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "sketch in tablet mode, present in tent mode, and collaborate"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Sketching, presenting, and collaboration are explicit activity cues. The prompt text keeps them as nearby paper-based work and meeting context without referring to the product or its modes."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "video conferencing, and allow advanced content creation"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Video conferencing supports the meeting-table setting, and content creation supports the creative sketch surface. AI processing and software details were omitted as technical claims rather than visible environment cues."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "Bring a clearer presence to every call."
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Calls and meeting presence support a local meeting setting. Camera, microphone, and noise-reduction feature details were not visualized."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "Work across locations with protection built into"
+              }
+            ],
+            "prompt_ids": [
+              "p3"
+            ],
+            "explanation": "Working across locations supports a shared workspace surface. Security architecture was not turned into guards, locks, or other literal security imagery."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "Move from concept to presentation"
+            },
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "video conferencing, and advanced content creation"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3"
+          ],
+          "explanation": "The value proposition ties together flexible work shifts, concept-to-presentation flow, collaboration, and mobile productivity; prompts keep these as plausible local office surfaces and activities."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Light wood tabletop, ceramic cup, conference chair, and daylight were added as ordinary meeting-setting details not specified in the source."
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Pale wood surface, open sketchbook, single pen, and muted presentation board were added to make the sketching and presentation cue tangible within a medium view."
+            ]
+          },
+          {
+            "prompt_id": "p3",
+            "details": [
+              "Shared workspace counter, slim folder, pen, daylight, and privacy partition were added as plausible mobile-work context."
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "laptop_FrontRightMedium",
+          "resolved_tag": "laptop_FrontRightMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "whole meeting participants",
+                "video-call technology",
+                "extra office furnishings"
+              ],
+              "explanation": "The medium oblique profile permits a local surface, at most two nearby props, and one subdued background detail, so the meeting cue is reduced to a notebook, cup, and soft conference-chair context."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "product work modes",
+                "full presentation setup",
+                "additional creative supplies"
+              ],
+              "explanation": "The sketching and presentation cue is retained through an open sketchbook, pen, and one soft background board while staying within the two-prop and one-background-detail ceiling."
+            },
+            {
+              "prompt_id": "p3",
+              "omitted_or_simplified": [
+                "literal security imagery",
+                "busy travel or room scene",
+                "multiple personal items"
+              ],
+              "explanation": "The mobile-work cue is simplified to a shared counter, folder, pen, and privacy partition, avoiding a crowded tabletop or expanded room layout for the medium oblique view."
+            }
+          ],
+          "device_type": "laptop"
+        }
+      }
+    },
+    "18_actual_laptop_mobile_work_front_right_medium": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A polished meeting-room table with an open paper notebook and a fine-tip marker, set against a softly blurred glass partition in natural daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A quiet shared-work counter in natural wood, with a compact stack of marked-up forms and a ceramic cup. Soft daylight and a muted seating nook suggest work between locations."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source messaging contains four numbered KSPs. Useful scene cues include sketching, presenting, collaborating, conferencing, meetings, and work across locations; technical AI, processor, security, and product-mode claims were treated as non-visual or product-specific.",
+        "count_explanation": "Four KSPs contain at least modest activity or setting cues, so up to four prompts would be allowed. Two prompts were returned because the office collaboration, meeting, mobile work, and workflow cues overlap and can be represented without overloading the medium oblique view.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "sketching in tablet mode, presenting in tent mode, and collaborating"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The sketching, presentation, and collaboration cues were simplified into a meeting-room tabletop with a notebook and marker. Product modes and touch input were omitted because prompt text must not describe the target product."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "video conferencing, and allow advanced content creation"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The conferencing and workflow activity cues support an office meeting context. Processor, AI workload, and content-creation capability details were omitted as technical product claims rather than environmental details."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "focus on the meeting instead of the setup."
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The meeting cue maps directly to the meeting-room surface. Camera, audio, framing, and voice-clarity claims were omitted because they describe product capabilities rather than the environment."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "Work across locations with protection that stays active."
+              }
+            ],
+            "prompt_ids": [
+              "p2"
+            ],
+            "explanation": "The across-locations work cue supports a shared-work counter setting. Security stack details were not visualized to avoid inventing guards, badges, or other unsupported security imagery."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "work flexibly, collaborate confidently, and stay protected across locations."
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "The value proposition reinforces flexible collaboration and protected mobile work, which informed the meeting-room and shared-work settings while omitting product names and specifications."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Polished meeting-room table",
+              "Open paper notebook",
+              "Fine-tip marker",
+              "Softly blurred glass partition",
+              "Natural daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Natural wooden shared-work counter",
+              "Compact stack of marked-up forms",
+              "Ceramic cup",
+              "Muted seating nook",
+              "Soft daylight"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "laptop_FrontRightMedium",
+          "resolved_tag": "laptop_FrontRightMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "Product-specific modes and touch input",
+                "Processor and AI feature claims",
+                "Full people or group meeting scene"
+              ],
+              "explanation": "The medium oblique profile permits a local surface, up to two nearby props, and one background detail, so the collaboration cues were reduced to a notebook, marker, and subtle meeting-room context."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "Security technology imagery",
+                "Large mobile-work location narrative",
+                "Additional supplies or room fixtures"
+              ],
+              "explanation": "The across-locations cue was retained through a shared-work counter and modest seating detail while staying within the two-prop and one-background-detail limits."
+            }
+          ],
+          "device_type": "laptop"
+        }
+      }
+    },
+    "19_actual_printer_admin_front_right_medium": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A tidy office counter in matte laminate with a compact stack of forms and a single pen. A softly blurred filing tray behind suggests routine admin work in daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Home",
+          "text": "A home office tabletop in light wood with a phone beside a small stack of color-marked papers. Soft daylight and a neutral wall keep the workspace calm."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Source messaging contains four numbered KSPs and a value proposition. Useful scene cues center on frequent document output, multi-page forms, recurring admin work, phone-based setup or shortcuts, and everyday workflow organization; hardware specifications and product naming were omitted from scene prose.",
+        "count_explanation": "Four KSPs contained usable activity cues, so up to four prompts were allowed. Two prompts were returned because the strongest cues naturally combine into an office admin-document scene and a home workspace with phone-supported task management, without overfilling the medium oblique view.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "frequent document and color printing"
+              }
+            ],
+            "prompt_ids": [
+              "p2"
+            ],
+            "explanation": "Frequent document and color output was simplified into a small stack of color-marked papers. Ink system details and refill claims are product features, not environment cues."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "Multi-page forms, records, packets, and copies"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The multi-page workflow cue supports the compact stack of forms and office admin setting. A full work area or visible person was omitted to respect the medium local view."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.mid_length",
+                "quote": "Print from phones, computers, wired networks"
+              }
+            ],
+            "prompt_ids": [
+              "p2"
+            ],
+            "explanation": "The phone cue was retained as a nearby prop. Computers, networks, and connectivity hardware were omitted because they would add device-like clutter and are not needed for the local setting."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "customizable shortcuts on your phone"
+              }
+            ],
+            "prompt_ids": [
+              "p2"
+            ],
+            "explanation": "Phone-based shortcuts and repeat tasks support the phone on a home workspace. Touchscreen and setup specifics were omitted because the prompt must not describe the target product."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "everyday print workflows stay organized"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "The value proposition helped unify the prompts around organized, recurring document work while product capabilities and branded terms were excluded from scene prose."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Matte laminate counter",
+              "Single pen",
+              "Softly blurred filing tray",
+              "Daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Light wood tabletop",
+              "Neutral wall",
+              "Soft daylight",
+              "Color-marked papers"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "printer_FrontRightMedium",
+          "resolved_tag": "printer_FrontRightMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "Full office layout",
+                "Additional paperwork supplies",
+                "People handling documents",
+                "Product-specific workflow details"
+              ],
+              "explanation": "Retained two nearby props and one subordinate background detail, fitting the medium oblique printer profile while keeping the setting local."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "Computers and network equipment",
+                "Visible app or setup interface",
+                "Extra home office accessories",
+                "Detailed room layout"
+              ],
+              "explanation": "Retained a phone and compact paper stack as the two nearby props, with only a neutral background tone so the scene can coexist with the selected view."
+            }
+          ],
+          "device_type": "printer"
+        }
+      }
+    },
+    "20_actual_printer_copy_minipc_front_right_medium": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office worktable in light wood, with a compact stack of annotated forms and a single pen. A soft-focus file tray suggests recurring document work in diffuse daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Education",
+          "text": "A school preparation table with a matte laminate surface, the cropped edge of a worksheet and one slim folder nearby. A muted bulletin board sits softly out of focus in daylight."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source contains four numbered KSPs with usable scene cues around forms, reports, learning materials, shared spaces, and page review. The selected registered camera tag resolves to a miniPC medium oblique view; product category and named printer details from the copy were not used to change the camera profile.",
+        "count_explanation": "U=4 KSPs had explicit setting or activity cues. Two prompts were returned because the strongest distinct, view-compatible scenarios are shared office document handling and education preparation; the remaining cues overlap with these rather than requiring separate environments.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "invoices, forms, learning materials, records"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Document/admin cues informed the office forms scene, while learning materials informed the education preparation scene. Ink capacity and refill-planning claims were omitted as product-specific technical messaging."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, reports, packets, and records"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Multipage document work was simplified into a compact stack of annotated forms and one pen, fitting the medium view without adding a busy workstation or manual handling activity."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "people in shared spaces"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The shared-space cue supported the office worktable context. Connectivity features and common-device references were omitted because they would imply extra hardware or product-specific workflow."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "everyday pages easier to create and review"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Page creation and review were represented through annotated forms and a worksheet. Output quality and touchscreen details were omitted as device-specific claims not suited to environmental staging."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "everyday forms, packets, records, and color documents"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "The value proposition reinforced recurring document work and everyday materials, which were used to keep both scenes coherent and practical without mentioning the target product."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Light wood worktable",
+              "Single pen",
+              "Soft-focus file tray",
+              "Diffuse daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Matte laminate school preparation surface",
+              "Slim folder",
+              "Muted bulletin board",
+              "Soft daylight"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "miniPC_FrontRightMedium",
+          "resolved_tag": "miniPC_FrontRightMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "Printer-specific product identity",
+                "Ink and connectivity details",
+                "People using devices",
+                "Busy office inventory"
+              ],
+              "explanation": "The prompt keeps only two nearby props and one subordinate background detail, matching the medium oblique miniPC profile while preserving the shared document-work cue."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "Full classroom layout",
+                "People or group activity",
+                "Multiple stacks of supplies",
+                "Visible teaching technology"
+              ],
+              "explanation": "The education cue is reduced to a local preparation surface with two simple props and one background detail, avoiding extra room depth beyond the fixed medium oblique view."
+            }
+          ],
+          "device_type": "miniPC"
+        }
+      }
+    },
+    "21_actual_printer_enterprise_front_right_medium": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office document counter in light laminate, with a compact stack of forms and a single pen. A softly blurred frosted partition suggests a busy team area in daylight."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Source messaging provides a coherent shared office document-work context across high-volume output, shared environments, teams, workflows, and fewer paper interruptions. Security and fleet-management claims were treated as nonvisual support rather than literal scene elements.",
+        "count_explanation": "Three numbered KSPs contain useful explicit scene cues for shared document work or office environments. Their cues overlap strongly, so one concise Office prompt covers the compatible setting without exceeding the medium oblique view limits. ValueProposition supports the same context but does not increase the prompt count.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "Keep shared print work moving with fewer bottlenecks."
+              },
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "Busy teams can produce everyday documents with fewer interruptions."
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used as the main office document-work cue. The prompt keeps the shared, busy-team document context while omitting product capability claims and specifications."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "without adding extra steps to everyday work."
+              },
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "shared network printing"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The security message is mostly abstract and technical. It reinforces an everyday shared office context, but endpoint protection was not visualized as guards, locks, or network graphics."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "shared printing into the systems your teams already use."
+              },
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "shared print environments"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used to support the shared office environment. Fleet consistency, firmware, and extensibility details were omitted because they are not believable local scene details."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "busy shared environments."
+              },
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "daily document demand with fewer stops."
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used through the compact stack of forms and shared document counter. Paper-capacity figures and reload claims were simplified into ordinary nearby document cues."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "large shared print environments keep everyday documents moving"
+            },
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "busy teams can produce document sets"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "Provides the overall shared office document environment, aligning the single prompt around everyday document movement and team use while omitting technical fleet-control and security specifics."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Light laminate counter added as a plausible local office support surface.",
+              "Compact stack of forms and single pen added as ordinary document-work props within the two-prop limit.",
+              "Softly blurred frosted partition added as the one permitted background detail.",
+              "Daylight added for believable illumination without requiring a visible window."
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "printer_FrontRightMedium",
+          "resolved_tag": "printer_FrontRightMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "high-volume specifications",
+                "paper-capacity figures",
+                "endpoint protection and fleet-control details",
+                "full people or team scene",
+                "extra office props and room layout"
+              ],
+              "explanation": "The resolved medium oblique printer profile allows a local setting with at most two nearby props and one subordinate background detail. The prompt retains shared document-work meaning through forms, a pen, and a simple office partition while avoiding a busy room or product-dependent details."
+            }
+          ],
+          "device_type": "printer"
+        }
+      }
+    },
+    "22_actual_printer_copy_minipc_ink_tank_medium": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office counter in smooth light wood, with a compact stack of forms and a single pen. A softly blurred filing cabinet edge suggests routine paperwork in diffuse daylight."
+        },
+        {
+          "id": "p2",
+          "environment": "Education",
+          "text": "A school preparation table with lightly worn laminate, the cropped edge of a worksheet and a small stack of graded pages in soft daylight. A muted classroom noticeboard sits softly out of focus behind."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Source messaging supplied several concrete document-work cues, including forms, records, school materials, paperwork, administrative tasks, and shared workflows. Product names, hardware capabilities, and configuration details were not used as scene content. The selected registered camera is a medium oblique miniPC view, so prompts stay local with no more than two props and one background detail each.",
+        "count_explanation": "Four numbered KSPs contained usable activity or setting cues, so the maximum prompt count was four. The cues substantially overlapped around everyday paperwork, with one distinct education cue from school materials; two concise prompts preserve the strongest distinct contexts without crowding the medium view.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "forms, records, school materials, and color documents"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Used the forms and records cue for the office paperwork surface and the school materials cue for the education preparation surface. Ink and refill claims were omitted because they are product benefits, not environmental cues."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "everyday document work with less manual effort"
+              },
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "multi-page paperwork, copies, scans, and administrative tasks"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Mapped recurring paperwork and administrative document work to a compact forms-and-pen office setting. Specific document-handling features were omitted because the prompt cannot describe the target product or its modes."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.mid_length",
+                "quote": "support everyday paper handling"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Used the everyday paper-handling cue to justify modest paper props in both settings. Product functions and feature lists were omitted as device-specific content."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "support laptops, phones, and shared workflows"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Reduced the shared-workflows cue to a shared office surface. Connected devices and access technologies were omitted because extra computing hardware and product-dependent connectivity imagery would not be appropriate scene prose."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "Print often, manage paperwork, and connect across shared devices"
+            },
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "forms, records, school materials, scans, copies, and color documents"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "The value proposition reinforces routine paperwork and school-material contexts, supporting the office and education families. Product names, ink system claims, and connectivity specifications were excluded from scene text."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "smooth light wood surface",
+              "single pen",
+              "softly blurred filing cabinet edge",
+              "diffuse daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "lightly worn laminate surface",
+              "cropped worksheet edge",
+              "small stack of graded pages",
+              "muted classroom noticeboard"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "miniPC_FrontRightMedium",
+          "resolved_tag": "miniPC_FrontRightMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "product-specific print, scan, copy, fax, ink, and connectivity claims",
+                "laptops, phones, and other extra hardware",
+                "busy shared-workspace activity or people"
+              ],
+              "explanation": "Retained only a local office counter, two nearby paper-work props, one subordinate background detail, and daylight to fit the medium oblique profile."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "full classroom layout",
+                "visible teachers or students",
+                "extra school supplies beyond two paper-based props"
+              ],
+              "explanation": "Converted school-material messaging into a compact preparation-table scene with two low-profile paper details and one soft background cue, within the medium oblique view limits."
+            }
+          ],
+          "device_type": "miniPC"
+        }
+      }
+    },
+    "23_rich_source_minipc_top_front_medium": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "An office admin surface with a compact stack of completed forms and a single pen, lit by diffuse daylight across a clean tabletop."
+        },
+        {
+          "id": "p2",
+          "environment": "Education",
+          "text": "A school preparation surface with a compact stack of marked handouts and one pencil, lit by diffuse daylight over a lightly worn tabletop."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source includes four numbered KSPs and a ValueProposition. Useful scene cues center on recurring paperwork, forms, records, handouts, admin work, and household or business paperwork. Technical ink, duty-cycle, document-handling, and connection claims were not translated into visible product or hardware details.",
+        "count_explanation": "Three KSPs supplied usable physical paperwork or desk-work cues, but their meanings overlap. Two prompts were returned to cover distinct source-supported contexts: office administration and education handout preparation. KSP4 did not add a distinct compatible scene because its useful text is mainly about connectivity and nearby devices.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring document and color jobs"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The recurring document cue supports a paperwork surface. Ink value and refill claims were omitted because they are product attributes rather than visible environment details."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, records, handouts, and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Forms and records informed the office admin surface; handouts informed the education preparation surface. Output speed and duty-cycle claims were omitted as non-visual technical details."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "forms, records, and everyday admin work"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Everyday admin work at a desk was simplified into a compact forms-and-pen surface. Auto document feeder and two-sided features were omitted because the prompt cannot describe the target device or its state."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "nearby devices or a shared network"
+              }
+            ],
+            "prompt_ids": [],
+            "explanation": "The connectivity theme is not a distinct visible setting cue for this view, and mentioning nearby computing devices would conflict with the scene-prose restrictions."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "paperwork, forms, records, and color documents"
+            },
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "household administration, and everyday business paperwork"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "The ValueProposition reinforced the paperwork and regular administration contexts used in the prompts, while device capabilities and connection methods were omitted."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Clean tabletop surface",
+              "Single pen as a low-profile office prop",
+              "Diffuse daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Lightly worn tabletop surface",
+              "Pencil as a simple preparation prop",
+              "Marked handouts to suggest lesson preparation"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "miniPC_TopFrontMedium",
+          "resolved_tag": "miniPC_TopFrontMedium",
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "exact",
+          "framing": "medium",
+          "elevation": "top_oblique",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "Room background",
+                "People",
+                "Nearby connected devices",
+                "Full work area",
+                "Product-specific handling features"
+              ],
+              "explanation": "The medium top-oblique profile allows a local horizontal surface with at most two props and no background detail, so the office cue was retained as a compact forms stack and pen."
+            },
+            {
+              "prompt_id": "p2",
+              "omitted_or_simplified": [
+                "Classroom background",
+                "People",
+                "Shelving or wall details",
+                "Full teaching scene",
+                "Product-specific handling features"
+              ],
+              "explanation": "The education cue was reduced to flat tabletop items that fit the top-oblique view: a compact handout stack and one pencil, with daylight but no visible room depth."
+            }
+          ],
+          "device_type": "miniPC"
+        }
+      }
+    },
+    "24_rich_source_unknown_future_type": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A simple office work surface in soft daylight against a plain neutral background."
+        }
+      ],
+      "debug": {
+        "input_assessment": "Source messaging contains recurring document, forms, records, handouts, and desk-admin cues suitable for an office context, but the requested camera tag is unregistered, so the scene was reduced to a minimal local surface and light treatment.",
+        "count_explanation": "Four numbered KSPs include useful or partially useful setting/activity cues, but they overlap around recurring paperwork and desk administration. The unknown-camera policy allows only one conservative surface-and-light prompt with no named props, people, or room fixtures.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring document and color jobs"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The recurring document-work cue supports an office work-surface context, but visible pages or supplies were omitted because the camera tag is unrecognized."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, records, handouts, and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Forms, records, and handouts support an administrative office setting. Specific paper props were omitted under the conservative unknown-camera policy."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "forms, records, and everyday admin work"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Everyday admin work at a desk supports the local office surface. Multi-page handling details were simplified because the resolved view is unavailable."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "phones, laptops, and desks"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "The desk/setup cue is compatible with the office surface, while connected-device and network details were omitted because they are not appropriate as visible scene requirements here."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "household administration, and everyday business paperwork"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "The value proposition reinforces regular paperwork and administration as the overall context, retained as a simple office work surface due to the unknown camera."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Plain neutral background added as a conservative, non-prop backdrop.",
+              "Soft daylight added as ordinary believable lighting compatible with a minimal office surface."
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ],
+        "camera": {
+          "requested_tag": "projector_FrontRightMedium",
+          "resolved_tag": null,
+          "profile_version": "camera-v2-draft-2026-10-22-r3",
+          "resolution": "unknown",
+          "framing": "unknown",
+          "elevation": "unknown",
+          "adjustments": [
+            {
+              "prompt_id": "p1",
+              "omitted_or_simplified": [
+                "paperwork, forms, records, and handouts",
+                "connected devices and shared-network cues",
+                "people, room fixtures, and background office details"
+              ],
+              "explanation": "Because the requested tag is not in the registered type-camera list, no angle or capacity was inferred. The prompt retains only a local office surface, plain background, and daylight, complying with the conservative unknown-camera policy."
+            }
+          ],
+          "device_type": null
+        }
+      }
+    }
+  }
+}

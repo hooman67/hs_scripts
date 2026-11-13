@@ -1,0 +1,89 @@
+# Native experiment checkouts remain local, not accidental submodules.
+/eval_sets/hp_lifestyle_v6_5_training_full160_pr4619_20261112/native/
+
+# Copied native runtimes and generated model evidence remain local/S3.
+/eval_sets/**/endpoint_pr4523/
+/eval_sets/**/pr4523_checkout/
+/eval_sets/**/baseline_live/**
+/eval_sets/**/baseline_source/**
+/eval_sets/**/input_audit/**
+/eval_sets/**/image_attempts/**
+/eval_sets/**/image_results/**
+/eval_sets/**/image_status/**
+/eval_sets/**/run/**
+/eval_sets/**/runs/**
+/eval_sets/**/results/**
+/eval_sets/**/status/**
+/eval_sets/**/journals/**
+/eval_sets/**/call_journals/**
+/eval_sets/**/completed/**
+/eval_sets/**/build_attempts/**
+/eval_sets/**/source/**
+/judge/**/evaluation/**
+/judge/**/runs/**
+/judge/**/source/**
+/judge/**/astra_*/**
+/research/**/astra/**
+
+# Keep reusable source, documentation and provenance within artifact trees.
+!**/
+!**/*.py
+!**/*.md
+!**/*.sh
+!**/.gitignore
+!**/*manifest*.json
+!**/*receipt*.json
+
+# Do not reinclude the native checkout or duplicated endpoint source.
+/eval_sets/hp_lifestyle_v6_5_training_full160_pr4619_20261112/native/
+/eval_sets/**/endpoint_pr4523/
+/eval_sets/**/pr4523_checkout/
+
+# Stream journals and model-call payloads can contain embedded images/URLs.
+**/*.jsonl
+**/*.log
+**/*.lock
+**/request.json
+**/response.json
+**/*.request.json
+**/*.response.json
+**/*_request.json
+**/*_response.json
+**/partial_output.txt
+**/geometry_text.txt
+**/heartbeat.json
+**/expansion_transport_identity.json
+**/parsed.json
+**/result.json
+**/chunks.json
+**/frames.json
+**/calls.json
+
+# Rendered report datasets and archived asset metadata are reproducible.
+**/public/data/**
+**/public/assets/**
+**/public/provenance/**
+**/public/gallery/data.json
+**/gallery/judge_*.json
+**/extension/**/data/*.json
+**/extension/**/data*.json
+**/extension/**/gallery/data*.json
+**/data/comparison*.json
+**/report/data.json
+**/public/completion_*/**
+**/public/gallery/completed_data_*.json
+**/publication/public/results.json
+**/public/records/**
+**/fe_conversion_*/manifest.json
+**/fe_source_prompts_*/source_data_generation.json
+
+# Node diagnostic dumps can include process environment values.
+/report.*.json
+
+# Artifact-tree exceptions above must not reinclude local dependencies/caches.
+**/.venv*/
+**/node_modules/
+**/.browser-cache/
+**/__pycache__/
+**/.pytest_cache/
+**/.ruff_cache/

@@ -1,0 +1,1 @@
+(function(){window.onImsReady=function(){if(typeof onAuthReady==="function")onAuthReady()};setTimeout(()=>{if(typeof onAuthReady==="function"&&!window.__reportStarted){window.__reportStarted=true;onAuthReady()}},1200)})();

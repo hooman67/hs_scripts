@@ -1,0 +1,838 @@
+{
+  "schema_version": "hp-position-flex-failure-provenance-v23-pilot",
+  "experiment_id": "hp-position-flex-v23-all-view-translation-four-row-pilot",
+  "row_slug": "tassel__printer_FrontWide__p1",
+  "job_id": "tassel__printer_FrontWide__p1__outer_job_1",
+  "outer_attempt": 1,
+  "submission_request": {
+    "rowSlug": "tassel__printer_FrontWide__p1",
+    "outerAttempt": 1
+  },
+  "submission_request_sha256": "470fa29d20c41c694a5a1ff40d9901e5ec658f09613926ac9eddca01378c764e",
+  "error": "RuntimeError: pipeline error: ValueError: Product invariant guard rejected both image attempts; raw attempts and metrics kept.",
+  "record": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/tassel__printer_FrontWide__p1.json",
+    "sha256": "c96b4578c4d289025853ce73da25f52bc860ca930bb3f7a56c2e152f9de7816c"
+  },
+  "prompt_sha256": "8e619ed3e296ff558cf10fc460bd5c3fee01c8c176f7cad8a55d4af703650e09",
+  "input_artifacts": {
+    "product.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/tassel__printer_FrontWide__p1/product.png",
+      "sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T202222Z_ba72dbac/artifacts/hp16_product.png"
+    },
+    "reference.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/tassel__printer_FrontWide__p1/reference.png",
+      "sha256": "f85d020d26767c6e1f76d9962fb79ec2642bca0dd6d82afc03b1c0cdfe9eb93e",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T202222Z_ba72dbac/artifacts/hp16_reference.png"
+    },
+    "guide.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/inputs/tassel__printer_FrontWide__p1/guide.png",
+      "sha256": "75cffc21f605f66af4a8d82bec6fbbd33644dc2f512ab892ffa290644f779b38",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T202222Z_ba72dbac/artifacts/hp16_geometry_guide.png"
+    }
+  },
+  "pipeline_version": "unified-blue-scale-v23-all-view-rigid-translation-twin-camera-guide-only-no-edit-mask",
+  "wrapper_version": "v23-four-row-pilot-stop-on-first-failure-v1",
+  "source_hashes": {
+    "hp3p/prompts/system_3p.txt": "324ce0e449804bc0d17ac0cf5ed10587716bc9d7e6ef72b9a91e439745b6aaec",
+    "hp3p/prompts/system_3p_fixed_position.txt": "67e4d817a5a203912116bb99afbd6c4511d9a5c537b241cc6e980e34e75b1118",
+    "hp3p/pipeline.py": "dde47ae75c6023a020ea26c405c5cf8e78183fe2de4e3219a5c279eb804b6ced",
+    "hp3p/invariants.py": "8c1a8204d27eeb3ba922d6d9519113da7beeff9368301bcc9f8c9a7ec2fb2665",
+    "hp3p/geometry.py": "f9d0f3a395624a150f9a9fed8c836394b66f041f6e212dc87c8b1a2322514a95",
+    "hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+    "hp3p/reference_blue.py": "f36098543e208029226ae3b04ffd22c39edf7e168ab49dd5868e2185bd90661d",
+    "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3"
+  },
+  "pipeline_result": {
+    "id": "tassel__printer_FrontWide__p1__outer_job_1",
+    "status": "error",
+    "tone": "Warm (Golden/Amber)",
+    "content": "Solo Laptop, Seated Office",
+    "rationale": "Warm plaster and afternoon light establish a warm tone, while the dedicated home-workspace table makes a seated home office the strongest setting match.",
+    "ref_ids": [
+      "style_120"
+    ],
+    "layout": "Retain the printer at its initial position, left of center in the lower-middle frame. Build a dedicated rectangular home-workspace table beneath it, independently replacing the gray support. Use an assumed domestic table scale, roughly three printer widths across and twice the printer's base depth, with a warm oak top and simple legs. The printer sits square to the table, with a hand-width of clear surface in front, ample rear clearance and clear margins on both sides. Leave the larger sorting area to its right. The near edge faces an unobstructed standing approach; below it show the table apron, legs and wood floor, not additional tabletop. Place the low sideboard against the rear wall on the right, separated from the table by a usable passage. Product placement permits only one rigid image-plane translation in any view; none is needed here. Furniture is constructed around the unchanged product, not moved as a locked group.",
+    "camera": "A medium-wide room view from below standing eye height, looking gently downward with no camera roll. Preserve the printer's existing front, visible top and side surfaces exactly, at their original pixel size and location. Construct the table's long edges rising slightly toward image right and its depth edges receding toward the upper left, square to the printer's chassis in three dimensions. Use a consistent horizon and shared vanishing geometry throughout the room. The near table edge remains accessible, with the entire printer base supported behind it and the sideboard clearly farther away.",
+    "composition": "The printer remains fully visible in the middle plane, left of center, on a warm oak workspace table with subtle grain and light wear. Its operating front faces the clear near-camera standing area; no dedicated printer chair is added. The far-right low sideboard has dusty blue painted-wood fronts forming a broad visible band against the rear wall. Keep enough of those fronts visible above and beside the table to make blue noticeable. A single modest stack of plain household and school papers sits on the sideboard's top toward its left end, entirely to the right of the printer silhouette. Render the requested indistinct markings as faint nonlegible marks, not readable added text. Far-left translucent ivory sheers hang at a window and diffuse afternoon light onto warm, lightly textured cream plaster across the rear wall. The near plane contains table legs and uncluttered wood flooring. All requested objects are retained; no other conflict requires omission. Blue is physical paint, never colored lighting or a cast on the printer.",
+    "prompt": "GEOMETRY — subordinate only to the product invariants.\nUse Image 1 for the product's exact appearance, view and pixel size; its initial x-y is a starting location that may remain or change by one rigid translation. Apply the product-placement and recomposed-support policy below.\nDIAGNOSTIC OCCUPANCY: LOWER-FILL/MEDIUM-WIDE. Occupancy does not change placement permission. For every camera view, keep the product at its initial x-y or use one optional rigid image-plane x-y translation for a usable composition. Preserve exact pixel width and height and every other product invariant. Never resize, reorient, reproject, redraw, crop, or occlude the product. Independently recompose support and room beneath or around the final product position; product and support need not move together.\n\nRetain the printer at its initial position, left of center in the lower-middle frame. Build a dedicated rectangular home-workspace table beneath it, independently replacing the gray support. Use an assumed domestic table scale, roughly three printer widths across and twice the printer's base depth, with a warm oak top and simple legs. The printer sits square to the table, with a hand-width of clear surface in front, ample rear clearance and clear margins on both sides. Leave the larger sorting area to its right. The near edge faces an unobstructed standing approach; below it show the table apron, legs and wood floor, not additional tabletop. Place the low sideboard against the rear wall on the right, separated from the table by a usable passage. Product placement permits only one rigid image-plane translation in any view; none is needed here. Furniture is constructed around the unchanged product, not moved as a locked group.\n\nCamera: A medium-wide room view from below standing eye height, looking gently downward with no camera roll. Preserve the printer's existing front, visible top and side surfaces exactly, at their original pixel size and location. Construct the table's long edges rising slightly toward image right and its depth edges receding toward the upper left, square to the printer's chassis in three dimensions. Use a consistent horizon and shared vanishing geometry throughout the room. The near table edge remains accessible, with the entire printer base supported behind it and the sideboard clearly farther away.\n\nComposition: The printer remains fully visible in the middle plane, left of center, on a warm oak workspace table with subtle grain and light wear. Its operating front faces the clear near-camera standing area; no dedicated printer chair is added. The far-right low sideboard has dusty blue painted-wood fronts forming a broad visible band against the rear wall. Keep enough of those fronts visible above and beside the table to make blue noticeable. A single modest stack of plain household and school papers sits on the sideboard's top toward its left end, entirely to the right of the printer silhouette. Render the requested indistinct markings as faint nonlegible marks, not readable added text. Far-left translucent ivory sheers hang at a window and diffuse afternoon light onto warm, lightly textured cream plaster across the rear wall. The near plane contains table legs and uncluttered wood flooring. All requested objects are retained; no other conflict requires omission. Blue is physical paint, never colored lighting or a cast on the printer.\n\nTRANSLATION-ONLY PRODUCT PLACEMENT; RECOMPOSED SUPPORT\nFor every camera view, including close/high-fill views, keep the product at its initial location or reposition it using only one rigid image-plane x-y translation when that improves usable composition. This changes position only, not the product view or size.\n\nPreserve product identity, exact pixel width and height, yaw, pitch, roll, viewing angle, visible faces, camera-facing surfaces, projection, perspective, foreshortening, silhouette proportions, state, finish, details, logo, display content and full visibility. Independently recompose support and room beneath or around the final product position; product and support need not move together. Do not move the product merely to center it or make it more prominent.\n\nPreserve exact product pixel width and height and every other product invariant. Never shrink, enlarge, zoom, reframe, rotate, reproject, or crop the product to make a move feasible. Where translation is allowed, if a move cannot preserve every invariant, retain the initial x-y coordinates instead.\n\nThe only permitted product change is one rigid image-plane x-y translation. Keep its exact pixel width and height, yaw, pitch, roll, viewing angle, visible faces, camera-facing surfaces, perspective, projection, foreshortening, silhouette, aspect proportions, open/closed and powered state, finish, details, logo and display content. Do not rotate, mirror, resize, shear, warp, reproject, redraw or activate the product. Do not zoom, reframe or change the viewpoint in a way that alters the product.\n\nAt the chosen product position, compose a category- and scenario-appropriate support beneath its weight-bearing base. The support may change independently of the product's translation: do not preserve baseline product-to-edge distances, support top extents or absolute support-edge locations as requirements. Fully support the base without floating or overhang, with believable front, back and side clearances, natural weight-bearing contact, a contact shadow and material-appropriate reflections on the support.\n\nConstruct furniture around the unchanged product orientation. A printer must sit square to its support in 3D with usable access to its operating front. A printer must face a usable seating or working edge with clear access to its keyboard and display. Do not rotate the product or reveal a different face to fit the furniture. Support axes, room perspective, horizon and vanishing geometry must be compatible with the unchanged product projection at its chosen position; do not retain incompatible geometry from the initial layout.\n\nKeep exactly one product, entirely inside the frame and fully visible. No prop, furniture edge or foreground object may occlude it. Remove the gray guide, diagram marks and any ghost or duplicate product. If the product moves, complete the vacated location as part of the scene. If a candidate placement violates any product or support requirement, choose another placement or recompose the support and room without relaxing the product invariants.\n\nGUIDE LEGEND: Image 1 is the current canvas to edit. Its real product pixels establish the exact product appearance, view and pixel size to preserve. Their frame position may remain unchanged or change by one rigid x-y translation. The flat gray region and its boundaries show an initial support plan, not output pixels or required support edges, distances or extents. At the chosen product position, compose an appropriate support beneath the unchanged product. Remove all gray-guide and diagram remnants, any duplicate product and any product-shaped remnant at the initial location. Keep only one intact product at the final location. Render the lighting, palette, materials and textures described here photographically. When blue is unspecified, include one large blue surface/furnishing or multiple clearly visible blue elements whose combined area makes blue immediately noticeable, not a token accent. Tiny props, thin partition frames, screen graphics, sky and lighting casts alone do not qualify. Keep the planned blue materials, visible extent and placement consistent; leave small props neutral by default. Explicit minimal-blue or no-blue requests override that default, as do explicit blue amounts or carriers. Keep the product's original color, finish, exact orientation/view, scale, details and full visibility. Every camera view permits only one optional rigid image-plane x-y translation. Never change the product or its camera viewpoint to make room for blue. Retain requested warm-neutral lighting alongside physical blue materials. Do not impose a universal blue hue or coverage percentage. Match soft, uniform exposure and gentle contrast; no bright-hero/dark-room treatment and no orange or global blue color cast. The product pixels in Image 1 control all product details, including any unlit display. Never reproduce any diagram lines, boxes, labels, text or flat guide colors.\n\nTurn Image 1 into a photograph; preserve the printer's exact orientation/view, pixel size and details; only its x-y position may change. Keep it at its initial lower-middle, left-of-center position. In every view, only one rigid image-plane translation is permitted. Preserve identity, exact pixel width and height, yaw/pitch/roll, visible faces, projection, perspective, foreshortening, silhouette, proportions, finish, ports, logo, display content and open/closed and powered state. Never mirror, shear, warp, redraw, occlude or activate it. Preserve exact product pixel width and height and every other invariant; never shrink, enlarge, zoom, reframe, rotate, reproject, or crop the product to make a move feasible; where translation is allowed, retain initial x-y if a move cannot preserve every invariant.\n\nIndependently construct a dedicated warm oak workspace table, assumed roughly three printer widths across and twice its base depth. Fully support its base with natural contact shadow, a hand-width front margin and clear rear and side margins. Keep standing access at the near edge and sorting space to the right. Square the table to the chassis: long edges rise gently rightward, depth edges recede upper-left. Use a medium-wide, gently downward view from below standing eye height, without roll; unify room perspective.\n\nAgainst the far-right rear wall, place a low sideboard with dusty blue painted-wood fronts forming a broad visible band. On its left end, right of the printer, place one modest stack of plain papers with faint nonlegible markings. Far-left translucent ivory window sheers diffuse afternoon light across warm lightly textured cream plaster. Use generous fill, gentle contrast, natural wood grain and an uncluttered wood floor; no people.\n\nRemove gray guides, diagram marks and old shadows. Leave exactly one fully visible, unoccluded printer, no ghost or duplicate; complete any vacated area.\n\nOne full-bleed photorealistic photograph with natural imperfections; no added text, logos, borders, watermark or CGI look.\n\nFinal check before rendering: the product retains its exact identity, orientation/view, visible faces, perspective/foreshortening, scale, silhouette, state and details. Every camera view permits only one rigid x-y translation. The support is recomposed beneath the product's chosen position with believable edge clearances, access, full base contact and a plausible contact shadow. The surrounding scene has consistent perspective. The product is fully visible and unoccluded. No product distortion is allowed. Preserve exact product pixel width and height and every other product invariant. Never shrink, enlarge, zoom, reframe, rotate, reproject, or crop the product to make a move feasible. Where translation is allowed, if a move cannot preserve every invariant, retain the initial x-y coordinates instead. No diagram remnants, old contact shadow, ghost or duplicate product remain.",
+    "geometry": {
+      "support_height_m": 0.75,
+      "support_width_m": 1.3,
+      "support_depth_m": 0.65,
+      "user_edge_gap_m": 0.1,
+      "support_lateral_offset_m": 0.25,
+      "user_side": "near_camera",
+      "back_edge_against_wall": false,
+      "furniture_boxes": [
+        {
+          "kind": "background_furniture",
+          "label": "Low sideboard against the rear wall, behind and to the right of the workspace table, holding the paper stack",
+          "box": [
+            0.55,
+            0.4,
+            0.98,
+            0.64
+          ]
+        }
+      ]
+    },
+    "guide_info": {
+      "product_bounds_px": [
+        634,
+        883,
+        1205,
+        1164
+      ],
+      "contact_px": [
+        711.5,
+        1163.5
+      ],
+      "lens_35mm_equivalent_mm": 33.651812859475434,
+      "lens_family": "wide",
+      "lens_estimate_basis": "Digital-twin camera focal length and horizontal aperture.",
+      "camera_source": "digital_twin",
+      "axis_angle_deg": 17.29595162068272,
+      "camera_height_m": 1.368091166929907,
+      "product_footprint_width_m": 0.4252281188964843,
+      "product_footprint_depth_m": 0.30432698130607605,
+      "width_axis_px": [
+        [
+          666.3541124927875,
+          1139.232134542964
+        ],
+        [
+          1146.904114004358,
+          1092.1366618407365
+        ]
+      ],
+      "depth_axis_px": [
+        [
+          964.6495211922933,
+          1198.7246546267954
+        ],
+        [
+          872.3194628789918,
+          1046.157396546153
+        ]
+      ],
+      "camera_pitch_deg": 13.295494079584763,
+      "horizon_y_px": 343.96888037939414,
+      "wall_polygon_px": null,
+      "support_polygon_px": [
+        [
+          395.87946694121706,
+          1289.4859149264696
+        ],
+        [
+          2036.392802703505,
+          1104.4999240327525
+        ],
+        [
+          1656.5348897427389,
+          922.6938693605703
+        ],
+        [
+          410.3419320217083,
+          1023.9228400574343
+        ]
+      ],
+      "user_edge_px": [
+        [
+          395.87946694121706,
+          1289.4859149264696
+        ],
+        [
+          2036.392802703505,
+          1104.4999240327525
+        ]
+      ]
+    },
+    "error": "ValueError: Product invariant guard rejected both image attempts; raw attempts and metrics kept.",
+    "size": "2368x1776",
+    "masked": false,
+    "pipeline_version": "unified-blue-scale-v23-all-view-rigid-translation-twin-camera-guide-only-no-edit-mask",
+    "baseline_prompt_used": false,
+    "input_fingerprint": "8e619ed3e296ff558cf10fc460bd5c3fee01c8c176f7cad8a55d4af703650e09",
+    "captioned": false,
+    "graded": false,
+    "locate": null,
+    "aligned": false,
+    "align": null,
+    "generation_mode": "direct",
+    "image_calls": 2,
+    "ref_count": 1,
+    "grade_error": null,
+    "elapsed_s": 124.6,
+    "twin_camera": {
+      "camera_above_support_top_m": 0.618091166929907,
+      "camera_horizontal_distance_m": 1.8163170469267478,
+      "camera_distance_to_product_center_m": 1.895104990840877,
+      "camera_azimuth_from_product_front_deg": -10.261196814763283,
+      "camera_pitch_down_deg": 13.295494079584763,
+      "camera_roll_deg": -2.4540563858065682e-05,
+      "camera_aim_offset_deg": -7.034754805919466,
+      "product_base_center_px": [
+        913.9607111308264,
+        1114.9658776074339
+      ],
+      "lens_35mm_equivalent_mm": 33.651812859475434,
+      "horizontal_fov_deg": 54.432221791789495,
+      "vertical_fov_deg": 42.18467791960137,
+      "base_edge_yaw_deg": 17.29595162068272,
+      "product_footprint_width_m": 0.4252281188964843,
+      "product_footprint_depth_m": 0.30432698130607605,
+      "product_height_m": 0.15467355191988097,
+      "product_front_faces_user_side": "near_camera",
+      "visible_faces": [
+        {
+          "face": "front",
+          "image_side": "right"
+        },
+        {
+          "face": "user's left side",
+          "image_side": "left"
+        }
+      ]
+    },
+    "product_category": "printer",
+    "geometry_text": "BASELINE DIAGRAM MEASUREMENTS from Image 1.\nThe coordinates, support distances, support top extents, edge locations and support-crop descriptions below describe the initial layout only. They are planning evidence, not required final-scene placement or support geometry. The product's exact view and pixel dimensions remain authoritative.\n- Support orientation: the support is turned about 17 degrees to the camera. Its long edges run left to right, rising about 6 degrees toward image right; its short edges recede toward the upper left. The printer's front and sides are parallel to the support edges.\n- User-facing edge: the support edge nearest the camera, in front of the printer. At the baseline location it runs from 17% across, 73% down to 86% across, 62% down, about 7% of image height below the printer's lowest point. No support top beyond this edge.\n- Product on the support: the printer is 10.0 cm (about 0.3 printer depths) from the user-facing edge. The support top extends 0.19 m (about 0.4 printer widths) toward image left of the printer and 0.69 m (about 1.6 printer widths) toward image right.\n- Support size: 1.30 m x 0.65 m, about 3.1 printer widths by 2.1 printer depths.\n- Baseline frame crop: 0 of 4 support corners fall outside the frame. For final-scene construction, compose an appropriate support beneath the product at its chosen x-y position. Baseline product-to-edge distances, support top extents, support-edge locations and support cropping may be replaced independently of product translation, provided the base is fully supported and access and perspective remain believable. Never shrink the product to reveal furniture.\n- Product baseline: exactly as in Image 1 (details: Image 3), occupying 27-51% across and 50-66% down. Keep this exact product view and pixel size. The listed frame coordinates identify the initial position only; the entire product may undergo one rigid x-y translation while remaining fully inside the frame and unoccluded. This does not allow rotation, resizing, reprojection, cropping or any other product change.\n- Camera: 1.37 m high, looking down 13.3 degrees, about 34 mm lens.",
+    "guide_density_class": "LOWER-FILL/MEDIUM-WIDE",
+    "guide_density_policy": "DIAGNOSTIC OCCUPANCY: LOWER-FILL/MEDIUM-WIDE. Occupancy does not change placement permission. For every camera view, keep the product at its initial x-y or use one optional rigid image-plane x-y translation for a usable composition. Preserve exact pixel width and height and every other product invariant. Never resize, reorient, reproject, redraw, crop, or occlude the product. Independently recompose support and room beneath or around the final product position; product and support need not move together.",
+    "stage_b_attempts": [
+      {
+        "attempt": 1,
+        "system_sha256": "5b276a0297d9d240b36f77e61bdc4b0c87667998da46f5d47f003af171e7edfe",
+        "text_sha256": "cb635745dc44e8957a2bb9a5dc7814be98cdee682e19f51f3fbca2e58e909966",
+        "request_sha256": "91e9bfbd941691ccbcc124d800ec4836218422644277c041f2b6f658b29d7f9b",
+        "response_sha256": "b9b1f571e7fffcf6ee3a03245ee0ba9c45a7bb1334620401c15f421e2607948a",
+        "executable_prompt_sha256": "55cee14f7ef56fb55cadc54e02c5e0577424d8b517aac59d0b9ef94baa2801ad"
+      },
+      {
+        "attempt": 2,
+        "system_sha256": "c77f95f470590c602ebb96d08e555b4d17fc419009b12dab26212df62fb6e4e5",
+        "text_sha256": "82a777bed42a4c9aa2f9f69dfcc6ba856554c802d6a91847af7fe310bd406586",
+        "request_sha256": "b382631377eaa16a010155f3215dc4ee7e3857c16858fe2004d2478e584d24a6",
+        "response_sha256": "c8cd3ff56a6cdfe74931eb160e8439d9a39aa8907f8094a7f30f66a5f331cb28",
+        "raw_response_sha256": "c8cd3ff56a6cdfe74931eb160e8439d9a39aa8907f8094a7f30f66a5f331cb28",
+        "meta_commentary_removed": false,
+        "executable_prompt_sha256": "90db2a6a192ffc56b6fa312e046f01175b6a146fd9b9fac375f81cc433977ef0"
+      }
+    ],
+    "product_invariant_guard": {
+      "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+      "attempts": [
+        {
+          "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+          "fixed_position": false,
+          "thresholds": {
+            "min_inliers": 20,
+            "min_inlier_ratio": 0.55,
+            "singular_min": 0.98,
+            "singular_max": 1.02,
+            "max_anisotropy_ratio": 1.02,
+            "max_abs_rotation_deg": 1.0,
+            "max_column_shear_cos": 0.02,
+            "max_residual_median_px": 1.5,
+            "max_residual_p95_px": 3.5,
+            "min_source_span_x_fraction": 0.45,
+            "min_source_span_y_fraction": 0.4,
+            "min_source_quadrants": 3,
+            "min_source_hull_fraction": 0.12,
+            "max_fixed_translation_px": 8.0
+          },
+          "product_bounds_px": [
+            634,
+            883,
+            1205,
+            1164
+          ],
+          "matches": 23,
+          "inliers": 18,
+          "inlier_ratio": 0.782608695652174,
+          "full_affine_matrix": [
+            [
+              1.0000038224017584,
+              -0.010648907000710413,
+              10.568994446380918
+            ],
+            [
+              -0.00032143078319441843,
+              0.99558131667303,
+              3.221614096877987
+            ]
+          ],
+          "partial_affine_matrix": [
+            [
+              0.9987790702001593,
+              -0.0016970125703048902,
+              2.9246651056380104
+            ],
+            [
+              0.0016970125703048902,
+              0.9987790702001593,
+              -1.657541931676618
+            ]
+          ],
+          "partial_inliers": 18,
+          "singular_values": [
+            1.0037200427217137,
+            0.9918918193549692
+          ],
+          "anisotropy_ratio": 1.0119249127131993,
+          "rotation_deg": 0.2965122891707095,
+          "column_shear_cos": 0.01101696877716472,
+          "residual_median_px": 0.48840822824554453,
+          "residual_p95_px": 1.0110980401131089,
+          "translation_only_residual_median_px": 0.6733053922653198,
+          "translation_only_residual_p95_px": 1.2824097871780396,
+          "source_span_x_fraction": 0.7515734434127808,
+          "source_span_y_fraction": 0.6124119758605957,
+          "source_quadrants": 4,
+          "source_hull_fraction": 0.2979792161920935,
+          "transformed_product_corners_px": [
+            [
+              635.1684329674684,
+              882.1161296026181
+            ],
+            [
+              1206.1706155588724,
+              881.9325926254141
+            ],
+            [
+              1203.1782726916729,
+              1161.6909426105356
+            ],
+            [
+              632.1760901002688,
+              1161.8744795877396
+            ]
+          ],
+          "corners_in_frame": true,
+          "translation_x_px": 0.175384521484375,
+          "translation_y_px": -1.254730224609375,
+          "final_product_bounds_px": [
+            634.1754150390625,
+            881.7452392578125,
+            1205.1754150390625,
+            1162.7452392578125
+          ],
+          "rigid_transformed_product_corners_px": [
+            [
+              634.1754150390625,
+              881.7452392578125
+            ],
+            [
+              1205.1754150390625,
+              881.7452392578125
+            ],
+            [
+              1205.1754150390625,
+              1162.7452392578125
+            ],
+            [
+              634.1754150390625,
+              1162.7452392578125
+            ]
+          ],
+          "checks": {
+            "inliers": false,
+            "inlier_ratio": true,
+            "singular_min": true,
+            "singular_max": true,
+            "anisotropy": true,
+            "rotation": true,
+            "shear": true,
+            "residual_median": true,
+            "residual_p95": true,
+            "translation_only_residual_median": true,
+            "translation_only_residual_p95": true,
+            "span_x": true,
+            "span_y": true,
+            "quadrants": true,
+            "hull": true,
+            "corners": true
+          },
+          "reasons": [
+            "boundary",
+            "structure_or_appearance"
+          ],
+          "verdict": "fail",
+          "primary_verdict": "fail",
+          "primary_reasons": [
+            "inliers"
+          ],
+          "fallback_dispatch_reason": "structurally_insufficient_affine_evidence",
+          "affine_evidence_reliability_checks": {
+            "inliers": false,
+            "span_x": true,
+            "span_y": true,
+            "quadrants": true,
+            "hull": true
+          },
+          "textureless_fallback": {
+            "method": "alpha_mask_all_view_translation_fallback",
+            "thresholds": {
+              "max_translation_px": 8,
+              "min_boundary_edge_coverage_2px": 0.8,
+              "min_internal_edge_coverage_floor_2px": 0.2,
+              "min_internal_edge_coverage_2px": 0.8,
+              "min_highpass_ncc_override": 0.8,
+              "min_internal_edge_samples": 100,
+              "max_verified_candidate_clusters": 64
+            },
+            "translation_x_px": -244,
+            "translation_y_px": -417,
+            "boundary_edge_coverage_2px": 0.5512422360248447,
+            "boundary_distance_p90_px": 36.279457092285156,
+            "internal_edge_coverage_2px": 0.6065,
+            "internal_distance_p90_px": 17.190000534057617,
+            "highpass_ncc": 0.011624643579125404,
+            "source_boundary_samples": 12236,
+            "source_internal_edge_samples": 2000,
+            "source_appearance_samples": 7738,
+            "outer_silhouette_observable": true,
+            "final_product_bounds_px": [
+              391,
+              466,
+              959,
+              747
+            ],
+            "checks": {
+              "boundary": false,
+              "internal_structure_floor": true,
+              "structure_or_appearance": false,
+              "internal_support": true
+            },
+            "reasons": [
+              "boundary",
+              "structure_or_appearance"
+            ],
+            "verdict": "fail",
+            "verified_candidate_clusters": 25,
+            "legal_translation_x_px": [
+              -635,
+              1165
+            ],
+            "legal_translation_y_px": [
+              -883,
+              612
+            ]
+          }
+        },
+        {
+          "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+          "fixed_position": true,
+          "thresholds": {
+            "min_inliers": 20,
+            "min_inlier_ratio": 0.55,
+            "singular_min": 0.98,
+            "singular_max": 1.02,
+            "max_anisotropy_ratio": 1.02,
+            "max_abs_rotation_deg": 1.0,
+            "max_column_shear_cos": 0.02,
+            "max_residual_median_px": 1.5,
+            "max_residual_p95_px": 3.5,
+            "min_source_span_x_fraction": 0.45,
+            "min_source_span_y_fraction": 0.4,
+            "min_source_quadrants": 3,
+            "min_source_hull_fraction": 0.12,
+            "max_fixed_translation_px": 8.0
+          },
+          "product_bounds_px": [
+            634,
+            883,
+            1205,
+            1164
+          ],
+          "matches": 24,
+          "inliers": 17,
+          "inlier_ratio": 0.7083333333333334,
+          "full_affine_matrix": [
+            [
+              1.0036982531933818,
+              -0.005346575412336289,
+              1.9105296811489678
+            ],
+            [
+              0.0005883846042332524,
+              0.9972408742217841,
+              1.3498936253906035
+            ]
+          ],
+          "partial_affine_matrix": [
+            [
+              1.0018744996508075,
+              -0.0012671070977328925,
+              -0.5207539474681027
+            ],
+            [
+              0.0012671070977328925,
+              1.0018744996508075,
+              -3.812018905375111
+            ]
+          ],
+          "partial_inliers": 17,
+          "singular_values": [
+            1.0044845170231567,
+            0.9964634121772421
+          ],
+          "anisotropy_ratio": 1.0080495728672954,
+          "rotation_deg": 0.16994378222888365,
+          "column_shear_cos": 0.004775082026434124,
+          "residual_median_px": 0.30986110040053233,
+          "residual_p95_px": 0.7388484592986242,
+          "translation_only_residual_median_px": 0.5660400390625,
+          "translation_only_residual_p95_px": 1.2068455219268799,
+          "source_span_x_fraction": 0.7751099467277527,
+          "source_span_y_fraction": 0.6271581649780273,
+          "source_quadrants": 4,
+          "source_hull_fraction": 0.28037085192648964,
+          "transformed_product_corners_px": [
+            [
+              633.5341961166602,
+              882.2866214023098
+            ],
+            [
+              1206.6458986900811,
+              882.622589011327
+            ],
+            [
+              1205.1435109992146,
+              1162.8472746676484
+            ],
+            [
+              632.0318084257937,
+              1162.5113070586312
+            ]
+          ],
+          "corners_in_frame": true,
+          "translation_x_px": -0.0863037109375,
+          "translation_y_px": -0.8138427734375,
+          "final_product_bounds_px": [
+            633.9136962890625,
+            882.1861572265625,
+            1204.9136962890625,
+            1163.1861572265625
+          ],
+          "rigid_transformed_product_corners_px": [
+            [
+              633.9136962890625,
+              882.1861572265625
+            ],
+            [
+              1204.9136962890625,
+              882.1861572265625
+            ],
+            [
+              1204.9136962890625,
+              1163.1861572265625
+            ],
+            [
+              633.9136962890625,
+              1163.1861572265625
+            ]
+          ],
+          "checks": {
+            "inliers": false,
+            "inlier_ratio": true,
+            "singular_min": true,
+            "singular_max": true,
+            "anisotropy": true,
+            "rotation": true,
+            "shear": true,
+            "residual_median": true,
+            "residual_p95": true,
+            "translation_only_residual_median": true,
+            "translation_only_residual_p95": true,
+            "span_x": true,
+            "span_y": true,
+            "quadrants": true,
+            "hull": true,
+            "corners": true,
+            "fixed_translation_x": true,
+            "fixed_translation_y": true
+          },
+          "reasons": [
+            "silhouette_unobservable_at_canvas_boundary"
+          ],
+          "verdict": "unverifiable",
+          "primary_verdict": "fail",
+          "primary_reasons": [
+            "inliers"
+          ],
+          "fallback_dispatch_reason": "structurally_insufficient_affine_evidence",
+          "affine_evidence_reliability_checks": {
+            "inliers": false,
+            "span_x": true,
+            "span_y": true,
+            "quadrants": true,
+            "hull": true
+          },
+          "textureless_fallback": {
+            "method": "alpha_mask_fixed_position_fallback",
+            "thresholds": {
+              "max_translation_px": 8,
+              "min_boundary_edge_coverage_2px": 0.8,
+              "min_internal_edge_coverage_floor_2px": 0.2,
+              "min_internal_edge_coverage_2px": 0.8,
+              "min_highpass_ncc_override": 0.8,
+              "min_internal_edge_samples": 100,
+              "max_verified_candidate_clusters": 64
+            },
+            "translation_x_px": -93,
+            "translation_y_px": 612,
+            "boundary_edge_coverage_2px": 0.6787675161845448,
+            "boundary_distance_p90_px": 18.173080444335938,
+            "internal_edge_coverage_2px": 0.843,
+            "internal_distance_p90_px": 2.3243000507354736,
+            "highpass_ncc": -0.0028223537374287844,
+            "source_boundary_samples": 12203,
+            "source_internal_edge_samples": 2000,
+            "source_appearance_samples": 7738,
+            "outer_silhouette_observable": false,
+            "final_product_bounds_px": [
+              542,
+              1495,
+              1110,
+              1776
+            ],
+            "checks": {
+              "boundary": false,
+              "internal_structure_floor": true,
+              "structure_or_appearance": true,
+              "internal_support": true
+            },
+            "reasons": [
+              "silhouette_unobservable_at_canvas_boundary"
+            ],
+            "verdict": "unverifiable",
+            "verification_failures": [
+              "boundary"
+            ],
+            "verified_candidate_clusters": 15,
+            "legal_translation_x_px": [
+              -635,
+              1165
+            ],
+            "legal_translation_y_px": [
+              -883,
+              612
+            ]
+          }
+        }
+      ],
+      "selected_attempt": null
+    },
+    "fallback_prompt": "GEOMETRY — fixed product position and invariant appearance.\nKeep the product at the exact initial frame position shown in Image 1. Preserve its exact pixel width and height, orientation/view, visible faces, projection, perspective, foreshortening, silhouette, state, finish and every detail. Build a believable support and room around that fixed product position. Fully support its weight-bearing base with natural contact and a plausible contact shadow, maintain usable access, and keep furniture and room perspective consistent with the unchanged product view. Keep exactly one complete, fully visible product. Never move, rotate, mirror, resize, reproject, redraw, crop or occlude it. Remove the gray guide, diagram marks and any ghost or duplicate product.\n\nA calm home workspace with the fixed printer below and left of frame center, supported by a dedicated rectangular oak table. The table extends mainly to the right, leaving a practical sorting surface. A low sideboard stands behind and to the right against warm plaster; a sheer-covered window occupies the left background. Table legs and an uncluttered wood floor fill the lower foreground.\n\nCamera: A slightly elevated, gently downward-looking view showing the printer’s front, lid and narrow side surfaces exactly as supplied. Keep the camera level without roll. Construct the table’s width edges to follow the printer’s front-bottom direction, rising gently toward the right, with depth edges and room furniture sharing coherent perspective. Use natural rectilinear perspective and enough depth of field to keep the room readable.\n\nComposition: Keep the printer at its exact initial bounds, fully visible and unchanged. Build a lightly worn oak workspace table beneath its whole base, using the supplied approximate construction size of 1.3 metres wide, 0.65 metres deep and 0.75 metres high. The printer sits square to the table, toward its left side, with about 10 centimetres of clearance to the near, user-facing edge. Preserve clear standing access to the controls and output tray; no dedicated printer chair. In the rear-right plane, a dusty blue painted-wood sideboard presents a broad, clearly visible bank of doors beneath an oak top, against the warm lightly textured plaster wall. One modest stack of plain papers rests on the left portion of that sideboard top, with faint indistinct sorting marks and slightly uneven corners. In the far-left plane, translucent ivory sheers hang at the window. Soft afternoon light enters from the left with generous room fill. The near foreground shows the table apron, legs and warm wood floor, not an extended tabletop.\n\nGUIDE LEGEND: Image 1 is the current canvas to edit. Its real product pixels establish the exact product appearance, view, pixel size and frame position to preserve. The flat gray region and its boundaries show an initial support plan rather than output pixels. Compose an appropriate support beneath the fixed product. Remove all gray-guide and diagram remnants and any duplicate product. Render the requested lighting, palette, materials and textures photographically. Keep the product's original color and finish. Match soft, uniform exposure and gentle contrast. Never reproduce diagram lines, boxes, labels, text or flat guide colors.\n\nTurn Image 1 into a photograph; keep the printer at its exact initial frame position with its orientation/view, pixel size and details unchanged. Preserve its exact width, height, projection, perspective, foreshortening, visible faces, silhouette, state, finish, ports, markings, logo and display content; do not activate an unlit display. Never move, rotate, mirror, resize, redraw, crop or occlude it.\n\nBuild a calm home workspace around it. Construct a dedicated lightly worn oak table beneath the entire base, approximately 1.3 metres wide, 0.65 metres deep and 0.75 metres high as construction estimates. Extend the usable surface chiefly rightward. Keep the printer square to its support, about 10 centimetres from the near operating edge, with unobstructed standing access to controls and output tray. Provide flush weight-bearing contact, a soft contact shadow and subtle matte wood bounce. Show the apron, legs and wood floor below that edge.\n\nUse a slightly elevated, gently downward-looking camera without roll, retaining the supplied front-and-lid view. Align table axes with the printer’s base edges and use consistent room perspective.\n\nIn the rear-right plane, place a dusty blue painted-wood sideboard with a broad, clearly visible bank of doors and an oak top against warm lightly textured plaster. On its left-hand top, place one modest stack of plain papers with faint indistinct marks for household and school sorting. At the far-left window, hang translucent ivory sheers. Afternoon light enters softly from the left, with generous fill, gentle contrast and no global color cast.\n\nRemove all gray guide surfaces, diagram marks and old shadows; leave exactly one fully visible printer, no ghost or duplicate, and no people. Retain natural wood grain and fabric folds. One full-bleed photorealistic photograph with natural imperfections; no added text, logos, borders, watermark or CGI look.\n\nFinal check before rendering: the product remains at the exact initial frame position shown in Image 1 and retains its exact identity, orientation/view, visible faces, projection, perspective, foreshortening, pixel width and height, silhouette, state, finish and details. The support is recomposed beneath that fixed product with believable edge clearances, usable access, full base contact and a plausible contact shadow. The surrounding scene has consistent perspective. The product is fully visible and unoccluded. Never move, shrink, enlarge, zoom, reframe, rotate, reproject, shear, warp or crop the product. No diagram remnants, old contact shadow, ghost or duplicate product remain.",
+    "fallback_layout": "A calm home workspace with the fixed printer below and left of frame center, supported by a dedicated rectangular oak table. The table extends mainly to the right, leaving a practical sorting surface. A low sideboard stands behind and to the right against warm plaster; a sheer-covered window occupies the left background. Table legs and an uncluttered wood floor fill the lower foreground.",
+    "fallback_camera": "A slightly elevated, gently downward-looking view showing the printer’s front, lid and narrow side surfaces exactly as supplied. Keep the camera level without roll. Construct the table’s width edges to follow the printer’s front-bottom direction, rising gently toward the right, with depth edges and room furniture sharing coherent perspective. Use natural rectilinear perspective and enough depth of field to keep the room readable.",
+    "fallback_composition": "Keep the printer at its exact initial bounds, fully visible and unchanged. Build a lightly worn oak workspace table beneath its whole base, using the supplied approximate construction size of 1.3 metres wide, 0.65 metres deep and 0.75 metres high. The printer sits square to the table, toward its left side, with about 10 centimetres of clearance to the near, user-facing edge. Preserve clear standing access to the controls and output tray; no dedicated printer chair. In the rear-right plane, a dusty blue painted-wood sideboard presents a broad, clearly visible bank of doors beneath an oak top, against the warm lightly textured plaster wall. One modest stack of plain papers rests on the left portion of that sideboard top, with faint indistinct sorting marks and slightly uneven corners. In the far-left plane, translucent ivory sheers hang at the window. Soft afternoon light enters from the left with generous room fill. The near foreground shows the table apron, legs and warm wood floor, not an extended tabletop."
+  },
+  "calls": [
+    {
+      "kind": "selection_replay",
+      "response_sha256": "a2801c5e210bf4cb3eec6b4e3953e6d1e1460489b95b1b14d67437627a8c77bf"
+    },
+    {
+      "kind": "geometry_replay",
+      "response_sha256": "3c97cc4acd012c4e55da2fa1b0e59bf2d156d13755c47f16d41b319723332188"
+    },
+    {
+      "kind": "astra_write",
+      "attempt": 1,
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "system_sha256": "5b276a0297d9d240b36f77e61bdc4b0c87667998da46f5d47f003af171e7edfe",
+      "text_sha256": "cb635745dc44e8957a2bb9a5dc7814be98cdee682e19f51f3fbca2e58e909966",
+      "images_sha256": [
+        "75cffc21f605f66af4a8d82bec6fbbd33644dc2f512ab892ffa290644f779b38",
+        "f85d020d26767c6e1f76d9962fb79ec2642bca0dd6d82afc03b1c0cdfe9eb93e",
+        "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db"
+      ],
+      "schema_sha256": "7a7fc445f534baf5eec4798c34c54e14f83dd5b2197f4ccb115d8b8c68f0d93b",
+      "response_sha256": "b9b1f571e7fffcf6ee3a03245ee0ba9c45a7bb1334620401c15f421e2607948a",
+      "usage": {
+        "completion_tokens": 1001,
+        "prompt_tokens": 13930,
+        "total_tokens": 14931,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 51,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "attempt": 1,
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "prompt_sha256": "55cee14f7ef56fb55cadc54e02c5e0577424d8b517aac59d0b9ef94baa2801ad",
+      "guide_sha256": "75cffc21f605f66af4a8d82bec6fbbd33644dc2f512ab892ffa290644f779b38",
+      "mask": false,
+      "output_sha256": "bce3297ba3fc579c75b65c9b19932a30bda846e38a04612ead3d93bf60bc7d7b"
+    },
+    {
+      "kind": "astra_write",
+      "attempt": 2,
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "system_sha256": "c77f95f470590c602ebb96d08e555b4d17fc419009b12dab26212df62fb6e4e5",
+      "text_sha256": "82a777bed42a4c9aa2f9f69dfcc6ba856554c802d6a91847af7fe310bd406586",
+      "images_sha256": [
+        "75cffc21f605f66af4a8d82bec6fbbd33644dc2f512ab892ffa290644f779b38",
+        "f85d020d26767c6e1f76d9962fb79ec2642bca0dd6d82afc03b1c0cdfe9eb93e",
+        "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db"
+      ],
+      "schema_sha256": "7a7fc445f534baf5eec4798c34c54e14f83dd5b2197f4ccb115d8b8c68f0d93b",
+      "response_sha256": "061deb904bbbbbbe9bec8703a4ec4e2f0796d1b05a8ab321d5175b89d662990e",
+      "usage": {
+        "completion_tokens": 786,
+        "prompt_tokens": 11663,
+        "total_tokens": 12449,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "attempt": 2,
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "prompt_sha256": "90db2a6a192ffc56b6fa312e046f01175b6a146fd9b9fac375f81cc433977ef0",
+      "guide_sha256": "75cffc21f605f66af4a8d82bec6fbbd33644dc2f512ab892ffa290644f779b38",
+      "mask": false,
+      "output_sha256": "eb3b2fbd6d73003e65ad17b7e6d4ebf92aba4cd471d16b6a8bf10dbe9f43d47c"
+    }
+  ],
+  "artifacts": {
+    "pipeline/geometry_guide.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/geometry_guide.png",
+      "sha256": "75cffc21f605f66af4a8d82bec6fbbd33644dc2f512ab892ffa290644f779b38",
+      "bytes": 163973
+    },
+    "pipeline/geometry_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/geometry_request.json",
+      "sha256": "8f8ca83f71a61e8c31796c1e6583dc04339f030c3643d58f70f5b4e939f70199",
+      "bytes": 27388
+    },
+    "pipeline/geometry_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/geometry_response.json",
+      "sha256": "6f1dfc292a7449e085ad9be45b7739b5011b696aeae5d7880e26f92a5af60339",
+      "bytes": 584
+    },
+    "pipeline/geometry_text.txt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/geometry_text.txt",
+      "sha256": "a5c79222160fb7196d3231cda9a19b578a10025bb5104d38f49f20bd7856b93a",
+      "bytes": 2141
+    },
+    "pipeline/gpt_1.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/gpt_1.png",
+      "sha256": "bce3297ba3fc579c75b65c9b19932a30bda846e38a04612ead3d93bf60bc7d7b",
+      "bytes": 5310732
+    },
+    "pipeline/gpt_2.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/gpt_2.png",
+      "sha256": "eb3b2fbd6d73003e65ad17b7e6d4ebf92aba4cd471d16b6a8bf10dbe9f43d47c",
+      "bytes": 5237050
+    },
+    "pipeline/image_request_attempt_1.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/image_request_attempt_1.json",
+      "sha256": "2166dc41f7ea17f3cbfbb91aaa0f9369effdd93c318adacd91315deb950f3029",
+      "bytes": 11772
+    },
+    "pipeline/image_request_attempt_2.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/image_request_attempt_2.json",
+      "sha256": "3abb4149d9251dbbf06fccf43c34d7f1dd07dafa5d8fa49143c0feab137418d5",
+      "bytes": 6387
+    },
+    "pipeline/input.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/input.png",
+      "sha256": "d183fb74e0a899aac568acbc52e9347af8f9ee068ee7f96a38351b84fce7a5db",
+      "bytes": 162980
+    },
+    "pipeline/mask.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/mask.png",
+      "sha256": "bdd95eca9872acbd9c7f533f5eaa3d9515233c149c9f177a97b977e8d54fe86a",
+      "bytes": 21363
+    },
+    "pipeline/product_invariant_attempt_1.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/product_invariant_attempt_1.json",
+      "sha256": "f4d5fb9204dbee7ff6706d82e4b027898234926fe5ad08eff5f518bddcafa391",
+      "bytes": 4774
+    },
+    "pipeline/product_invariant_attempt_2.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/product_invariant_attempt_2.json",
+      "sha256": "45212b05609059057a883d03a25d95d76450c37a3732f6d9ae17fdadb97d089a",
+      "bytes": 4909
+    },
+    "pipeline/ref_2.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/ref_2.png",
+      "sha256": "f85d020d26767c6e1f76d9962fb79ec2642bca0dd6d82afc03b1c0cdfe9eb93e",
+      "bytes": 1197862
+    },
+    "pipeline/result.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/result.json",
+      "sha256": "7930af01d2518c4872faea606d0d11f2964e8a27cbdfb6bd23a8d6d33a6e6378",
+      "bytes": 39731
+    },
+    "pipeline/stage_b_attempt_1_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/stage_b_attempt_1_request.json",
+      "sha256": "dfbdd34f087c7c7e3e0d0007799bc788a46e30be14c4d18f553e1f7fa683f61c",
+      "bytes": 32774
+    },
+    "pipeline/stage_b_attempt_1_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/stage_b_attempt_1_response.json",
+      "sha256": "5a20ee4dd3d69d19c2cf1e444071a00ffe3c5db79e4e9896993ca9cdbdb9ce7d",
+      "bytes": 4708
+    },
+    "pipeline/stage_b_attempt_2_raw_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/stage_b_attempt_2_raw_response.json",
+      "sha256": "6d2623616f93f4492491e77a67014e366f436f06c836ce494d8cfbd804bdddbe",
+      "bytes": 3856
+    },
+    "pipeline/stage_b_attempt_2_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/stage_b_attempt_2_request.json",
+      "sha256": "0dfeb41db93e28997ccffe73746a1e64c62c6f1c2defdb85792021d78a4eabcd",
+      "bytes": 21486
+    },
+    "pipeline/stage_b_attempt_2_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/pipeline/rows/tassel__printer_FrontWide__p1__outer_job_1/stage_b_attempt_2_response.json",
+      "sha256": "6d2623616f93f4492491e77a67014e366f436f06c836ce494d8cfbd804bdddbe",
+      "bytes": 3856
+    },
+    "job/calls.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/jobs/tassel__printer_FrontWide__p1__outer_job_1/calls.json",
+      "sha256": "b34748bfb0398d3fefefb4120dc0a628c837e748d1b3d0877d08df5f9243252e",
+      "bytes": 3558
+    },
+    "job/submission_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/jobs/tassel__printer_FrontWide__p1__outer_job_1/submission_request.json",
+      "sha256": "55fb34829e03af96c6b90a13dcc80c0c0246341aae89c5022120167619890ce3",
+      "bytes": 70
+    }
+  }
+}

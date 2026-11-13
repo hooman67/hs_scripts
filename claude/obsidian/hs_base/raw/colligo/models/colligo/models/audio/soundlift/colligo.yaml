@@ -1,0 +1,17 @@
+visibility: public
+public:
+  files:
+  - types.py
+  - constants.py
+  deps:
+  - colligo.base
+  - colligo.models.audio.common[public]
+  - colligo.models.audio.enhance_speech[public]
+  - pydantic
+deps:
+- colligo.data
+- colligo.models.audio.common
+- colligo.models.audio.core.soundlift
+- lightning
+- torch
+- torchaudio

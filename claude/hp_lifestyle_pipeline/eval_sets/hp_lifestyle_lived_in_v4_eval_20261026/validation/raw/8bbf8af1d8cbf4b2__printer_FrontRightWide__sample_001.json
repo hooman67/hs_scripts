@@ -1,0 +1,107 @@
+{
+  "validator_version": "v4-host-validator-r2",
+  "passed": true,
+  "error_count": 0,
+  "warning_count": 2,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support an omission explanation; inspect: ['e3', 'e6']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 6,
+    "environments": {
+      "Office": 14,
+      "Home": 7,
+      "Education": 2,
+      "Creative Studio": 3,
+      "Café": 2,
+      "Gaming": 2
+    },
+    "relationships": {
+      "source_grounded": 12,
+      "source_adjacent": 5,
+      "creative_departure": 13
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 7,
+      "Office": 14,
+      "Education": 2,
+      "Gaming": 2,
+      "Café": 2,
+      "Creative Studio": 3
+    },
+    "relationship_counts": {
+      "source_grounded": 12,
+      "source_adjacent": 5,
+      "creative_departure": 13
+    },
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p17",
+          "p19"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e1",
+          "e2"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p20",
+          "p21",
+          "p22"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "KSP4": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e5"
+        ],
+        "prompt_ids": [
+          "p19"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "114976c0ea6aa225e867327e64a7519e274646017ffc34d314e0914aedec50e8"
+}

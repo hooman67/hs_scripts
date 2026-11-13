@@ -1,0 +1,42 @@
+visibility: public
+public:
+  files:
+  - types
+  deps:
+  - colligo.base
+  - colligo.caplan_taxonomy
+  - colligo.models.firefly.clio[public]
+  - colligo.models.firefly.clio_common[public]
+  - colligo.models.substance3d.common[public]
+  - colligo.models.substance3d.lagrange_meshing[public]
+  - pydantic
+deps:
+- colligo.data
+- colligo.external_services.business_kit
+- colligo.external_services.ims
+- colligo.httpx
+- colligo.image
+- colligo.models.cai[public]
+- colligo.models.common.adapter_utils
+- colligo.models.di_imaging.supermasking
+- colligo.models.firefly.adobeone[public]
+- colligo.models.firefly.clio
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.cmgan[public]
+- colligo.models.firefly.diffusion.common[public]
+- colligo.models.firefly.pipelines.imaging_v3
+- colligo.models.substance3d.common
+- colligo.models.substance3d.ibl_post_process
+- colligo.models.substance3d.material_super_resolution[public]
+- colligo.models.substance3d.minlrm
+- colligo.models.substance3d.pipelines.meshlrm
+- colligo.models.substance3d.pipelines.minlrm
+- httpx
+- langcodes
+- numpy
+- pillow
+- requests-toolbelt
+- torch
+exclude:
+- scripts
+- "..."

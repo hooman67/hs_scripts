@@ -1,0 +1,1718 @@
+{
+  "version": "camera-v6.5-qualitative-20261111-r1-astra",
+  "runtime_image_analysis": false,
+  "source_registry_sha256": "59b5e2b322dcd74c21432e772f3dd11513f71c182f6114b99b15e009dbeea68b",
+  "limitations": "Framing/elevation inherited from offline V2 review; qualitative density guidance is a design hypothesis, not measured image capacity or a new analysis of the latest renders. V6.5 additions are Astra-authored offline composition guidance, not runtime product-coordinate or visibility measurement.",
+  "aliases": {
+    "laptop_Back_CloseUp": "laptop_BackCloseUp",
+    "laptop_Back_CloseUp90": "laptop_BackCloseUp90",
+    "laptop_Back_Left_CloseUp": "laptop_BackLeftCloseUp",
+    "laptop_Back_Left_Medium": "laptop_BackLeftMedium",
+    "laptop_Back_Left_MediumLow": "laptop_BackLeftMediumLow",
+    "laptop_Back_Left_Wide": "laptop_BackLeftWide",
+    "laptop_Back_Medium": "laptop_BackMedium",
+    "laptop_Back_Right_CloseUp": "laptop_BackRightCloseUp",
+    "laptop_Back_Right_Medium": "laptop_BackRightMedium",
+    "laptop_Back_Right_MediumLow": "laptop_BackRightMediumLow",
+    "laptop_Back_Right_Wide": "laptop_BackRightWide",
+    "laptop_Back_Wide": "laptop_BackWide",
+    "laptop_Front_CloseUp": "laptop_FrontCloseUp",
+    "laptop_Front_CloseUpHigh": "laptop_FrontCloseUpHigh",
+    "laptop_Front_Left_CloseUp": "laptop_FrontLeftCloseUp",
+    "laptop_Front_Left_Medium": "laptop_FrontLeftMedium",
+    "laptop_Front_Left_MediumHigh": "laptop_FrontLeftMediumHigh",
+    "laptop_Front_Left_Wide": "laptop_FrontLeftWide",
+    "laptop_Front_Medium": "laptop_FrontMedium",
+    "laptop_Front_MediumHigh": "laptop_FrontMediumHigh",
+    "laptop_Front_Right_CloseUp": "laptop_FrontRightCloseUp",
+    "laptop_Front_Right_CloseUpLow": "laptop_FrontRightCloseUpLow",
+    "laptop_Front_Right_Medium": "laptop_FrontRightMedium",
+    "laptop_Front_Right_Wide": "laptop_FrontRightWide",
+    "laptop_Front_Wide": "laptop_FrontWide",
+    "laptop_Front_WideLow": "laptop_FrontWideLow",
+    "laptop_Left_CloseUp": "laptop_LeftCloseUp",
+    "laptop_Left_CloseUp90": "laptop_LeftCloseUp90",
+    "laptop_Left_Wide": "laptop_LeftWide",
+    "laptop_Left_WideHigh": "laptop_LeftWideHigh",
+    "laptop_Right_CloseUp": "laptop_RightCloseUp",
+    "laptop_Right_CloseUp90": "laptop_RightCloseUp90",
+    "laptop_Right_Medium": "laptop_RightMedium",
+    "laptop_Right_MediumHigh": "laptop_RightMediumHigh",
+    "laptop_Right_Wide": "laptop_RightWide",
+    "laptop_Right_WideLow": "laptop_RightWideLow",
+    "laptop_Top_Front_CloseUp": "laptop_TopFrontCloseUp",
+    "laptop_Top_Front_Left_Wide": "laptop_TopFrontLeftWide",
+    "laptop_Top_Front_Medium": "laptop_TopFrontMedium",
+    "laptop_Top_Front_Right_Wide": "laptop_TopFrontRightWide",
+    "printer_Back_CloseUp": "printer_BackCloseUp",
+    "printer_Back_CloseUp90": "printer_BackCloseUp90",
+    "printer_Back_Left_CloseUp": "printer_BackLeftCloseUp",
+    "printer_Back_Left_Medium": "printer_BackLeftMedium",
+    "printer_Back_Left_MediumLow": "printer_BackLeftMediumLow",
+    "printer_Back_Left_Wide": "printer_BackLeftWide",
+    "printer_Back_Medium": "printer_BackMedium",
+    "printer_Back_Right_CloseUp": "printer_BackRightCloseUp",
+    "printer_Back_Right_Medium": "printer_BackRightMedium",
+    "printer_Back_Right_MediumLow": "printer_BackRightMediumLow",
+    "printer_Back_Right_Wide": "printer_BackRightWide",
+    "printer_Back_Wide": "printer_BackWide",
+    "printer_Front_CloseUp": "printer_FrontCloseUp",
+    "printer_Front_CloseUpHigh": "printer_FrontCloseUpHigh",
+    "printer_Front_Left_CloseUp": "printer_FrontLeftCloseUp",
+    "printer_Front_Left_Medium": "printer_FrontLeftMedium",
+    "printer_Front_Left_MediumHigh": "printer_FrontLeftMediumHigh",
+    "printer_Front_Left_Wide": "printer_FrontLeftWide",
+    "printer_Front_Medium": "printer_FrontMedium",
+    "printer_Front_MediumHigh": "printer_FrontMediumHigh",
+    "printer_Front_Right_CloseUp": "printer_FrontRightCloseUp",
+    "printer_Front_Right_CloseUpLow": "printer_FrontRightCloseUpLow",
+    "printer_Front_Right_Medium": "printer_FrontRightMedium",
+    "printer_Front_Right_Wide": "printer_FrontRightWide",
+    "printer_Front_Wide": "printer_FrontWide",
+    "printer_Front_WideLow": "printer_FrontWideLow",
+    "printer_Left_CloseUp": "printer_LeftCloseUp",
+    "printer_Left_CloseUp90": "printer_LeftCloseUp90",
+    "printer_Left_Wide": "printer_LeftWide",
+    "printer_Left_WideHigh": "printer_LeftWideHigh",
+    "printer_Right_CloseUp": "printer_RightCloseUp",
+    "printer_Right_CloseUp90": "printer_RightCloseUp90",
+    "printer_Right_Medium": "printer_RightMedium",
+    "printer_Right_MediumHigh": "printer_RightMediumHigh",
+    "printer_Right_Wide": "printer_RightWide",
+    "printer_Right_WideLow": "printer_RightWideLow",
+    "printer_Top_Front_CloseUp": "printer_TopFrontCloseUp",
+    "printer_Top_Front_Left_Wide": "printer_TopFrontLeftWide",
+    "printer_Top_Front_Medium": "printer_TopFrontMedium",
+    "printer_Top_Front_Right_Wide": "printer_TopFrontRightWide",
+    "printer_CAM_review": "printer_CAMReview",
+    "miniPC_Back_CloseUp": "miniPC_BackCloseUp",
+    "miniPC_Back_CloseUp90": "miniPC_BackCloseUp90",
+    "miniPC_Back_Left_CloseUp": "miniPC_BackLeftCloseUp",
+    "miniPC_Back_Left_Medium": "miniPC_BackLeftMedium",
+    "miniPC_Back_Left_MediumLow": "miniPC_BackLeftMediumLow",
+    "miniPC_Back_Left_Wide": "miniPC_BackLeftWide",
+    "miniPC_Back_Medium": "miniPC_BackMedium",
+    "miniPC_Back_Right_CloseUp": "miniPC_BackRightCloseUp",
+    "miniPC_Back_Right_Medium": "miniPC_BackRightMedium",
+    "miniPC_Back_Right_MediumLow": "miniPC_BackRightMediumLow",
+    "miniPC_Back_Right_Wide": "miniPC_BackRightWide",
+    "miniPC_Back_Wide": "miniPC_BackWide",
+    "miniPC_Front_CloseUp": "miniPC_FrontCloseUp",
+    "miniPC_Front_CloseUpHigh": "miniPC_FrontCloseUpHigh",
+    "miniPC_Front_Left_CloseUp": "miniPC_FrontLeftCloseUp",
+    "miniPC_Front_Left_Medium": "miniPC_FrontLeftMedium",
+    "miniPC_Front_Left_MediumHigh": "miniPC_FrontLeftMediumHigh",
+    "miniPC_Front_Left_Wide": "miniPC_FrontLeftWide",
+    "miniPC_Front_Medium": "miniPC_FrontMedium",
+    "miniPC_Front_MediumHigh": "miniPC_FrontMediumHigh",
+    "miniPC_Front_Right_CloseUp": "miniPC_FrontRightCloseUp",
+    "miniPC_Front_Right_CloseUpLow": "miniPC_FrontRightCloseUpLow",
+    "miniPC_Front_Right_Medium": "miniPC_FrontRightMedium",
+    "miniPC_Front_Right_Wide": "miniPC_FrontRightWide",
+    "miniPC_Front_Wide": "miniPC_FrontWide",
+    "miniPC_Front_WideLow": "miniPC_FrontWideLow",
+    "miniPC_Left_CloseUp": "miniPC_LeftCloseUp",
+    "miniPC_Left_CloseUp90": "miniPC_LeftCloseUp90",
+    "miniPC_Left_Wide": "miniPC_LeftWide",
+    "miniPC_Left_WideHigh": "miniPC_LeftWideHigh",
+    "miniPC_Right_CloseUp": "miniPC_RightCloseUp",
+    "miniPC_Right_CloseUp90": "miniPC_RightCloseUp90",
+    "miniPC_Right_Medium": "miniPC_RightMedium",
+    "miniPC_Right_MediumHigh": "miniPC_RightMediumHigh",
+    "miniPC_Right_Wide": "miniPC_RightWide",
+    "miniPC_Right_WideLow": "miniPC_RightWideLow",
+    "miniPC_Top_Front_CloseUp": "miniPC_TopFrontCloseUp",
+    "miniPC_Top_Front_Left_Wide": "miniPC_TopFrontLeftWide",
+    "miniPC_Top_Front_Medium": "miniPC_TopFrontMedium",
+    "miniPC_Top_Front_Right_Wide": "miniPC_TopFrontRightWide",
+    "miniPC_CAM_review": "miniPC_CAMReview"
+  },
+  "profiles": [
+    {
+      "tag": "laptop_BackCloseUp",
+      "source_camera_name": "Back_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_BackCloseUp90",
+      "source_camera_name": "Back_CloseUp90",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_BackLeftCloseUp",
+      "source_camera_name": "Back_Left_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_BackLeftMedium",
+      "source_camera_name": "Back_Left_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_BackLeftMediumLow",
+      "source_camera_name": "Back_Left_MediumLow",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "low",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_BackLeftWide",
+      "source_camera_name": "Back_Left_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_BackMedium",
+      "source_camera_name": "Back_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_BackRightCloseUp",
+      "source_camera_name": "Back_Right_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_BackRightMedium",
+      "source_camera_name": "Back_Right_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_BackRightMediumLow",
+      "source_camera_name": "Back_Right_MediumLow",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "low",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_BackRightWide",
+      "source_camera_name": "Back_Right_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_BackWide",
+      "source_camera_name": "Back_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "level",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_FrontCloseUp",
+      "source_camera_name": "Front_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_FrontCloseUpHigh",
+      "source_camera_name": "Front_CloseUpHigh",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "high",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_FrontLeftCloseUp",
+      "source_camera_name": "Front_Left_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_FrontLeftMedium",
+      "source_camera_name": "Front_Left_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_FrontLeftMediumHigh",
+      "source_camera_name": "Front_Left_MediumHigh",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "high",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_FrontLeftWide",
+      "source_camera_name": "Front_Left_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_FrontMedium",
+      "source_camera_name": "Front_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_FrontMediumHigh",
+      "source_camera_name": "Front_MediumHigh",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "high",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_FrontRightCloseUp",
+      "source_camera_name": "Front_Right_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_FrontRightCloseUpLow",
+      "source_camera_name": "Front_Right_CloseUpLow",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "low",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_FrontRightMedium",
+      "source_camera_name": "Front_Right_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_FrontRightWide",
+      "source_camera_name": "Front_Right_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_FrontWide",
+      "source_camera_name": "Front_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_FrontWideLow",
+      "source_camera_name": "Front_WideLow",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "low",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_LeftCloseUp",
+      "source_camera_name": "Left_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_LeftCloseUp90",
+      "source_camera_name": "Left_CloseUp90",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_LeftWide",
+      "source_camera_name": "Left_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_LeftWideHigh",
+      "source_camera_name": "Left_WideHigh",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "high",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_RightCloseUp",
+      "source_camera_name": "Right_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_RightCloseUp90",
+      "source_camera_name": "Right_CloseUp90",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_RightMedium",
+      "source_camera_name": "Right_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_RightMediumHigh",
+      "source_camera_name": "Right_MediumHigh",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "high",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_RightWide",
+      "source_camera_name": "Right_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_RightWideLow",
+      "source_camera_name": "Right_WideLow",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "low",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_TopFrontCloseUp",
+      "source_camera_name": "Top_Front_CloseUp",
+      "device_family": "laptop",
+      "framing": "tight",
+      "elevation": "top_oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "laptop_TopFrontLeftWide",
+      "source_camera_name": "Top_Front_Left_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "laptop_TopFrontMedium",
+      "source_camera_name": "Top_Front_Medium",
+      "device_family": "laptop",
+      "framing": "medium",
+      "elevation": "top_oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "laptop_TopFrontRightWide",
+      "source_camera_name": "Top_Front_Right_Wide",
+      "device_family": "laptop",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_BackCloseUp",
+      "source_camera_name": "Back_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_BackCloseUp90",
+      "source_camera_name": "Back_CloseUp90",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_BackLeftCloseUp",
+      "source_camera_name": "Back_Left_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_BackLeftMedium",
+      "source_camera_name": "Back_Left_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_BackLeftMediumLow",
+      "source_camera_name": "Back_Left_MediumLow",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "low",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_BackLeftWide",
+      "source_camera_name": "Back_Left_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_BackMedium",
+      "source_camera_name": "Back_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_BackRightCloseUp",
+      "source_camera_name": "Back_Right_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_BackRightMedium",
+      "source_camera_name": "Back_Right_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_BackRightMediumLow",
+      "source_camera_name": "Back_Right_MediumLow",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "low",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_BackRightWide",
+      "source_camera_name": "Back_Right_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_BackWide",
+      "source_camera_name": "Back_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "level",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_FrontCloseUp",
+      "source_camera_name": "Front_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_FrontCloseUpHigh",
+      "source_camera_name": "Front_CloseUpHigh",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "high",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_FrontLeftCloseUp",
+      "source_camera_name": "Front_Left_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_FrontLeftMedium",
+      "source_camera_name": "Front_Left_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_FrontLeftMediumHigh",
+      "source_camera_name": "Front_Left_MediumHigh",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "high",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_FrontLeftWide",
+      "source_camera_name": "Front_Left_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_FrontMedium",
+      "source_camera_name": "Front_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_FrontMediumHigh",
+      "source_camera_name": "Front_MediumHigh",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "high",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_FrontRightCloseUp",
+      "source_camera_name": "Front_Right_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_FrontRightCloseUpLow",
+      "source_camera_name": "Front_Right_CloseUpLow",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "low",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_FrontRightMedium",
+      "source_camera_name": "Front_Right_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_FrontRightWide",
+      "source_camera_name": "Front_Right_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_FrontWide",
+      "source_camera_name": "Front_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_FrontWideLow",
+      "source_camera_name": "Front_WideLow",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "low",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_LeftCloseUp",
+      "source_camera_name": "Left_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_LeftCloseUp90",
+      "source_camera_name": "Left_CloseUp90",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_LeftWide",
+      "source_camera_name": "Left_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_LeftWideHigh",
+      "source_camera_name": "Left_WideHigh",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "high",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_RightCloseUp",
+      "source_camera_name": "Right_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_RightCloseUp90",
+      "source_camera_name": "Right_CloseUp90",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_RightMedium",
+      "source_camera_name": "Right_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_RightMediumHigh",
+      "source_camera_name": "Right_MediumHigh",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "high",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_RightWide",
+      "source_camera_name": "Right_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_RightWideLow",
+      "source_camera_name": "Right_WideLow",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "low",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_TopFrontCloseUp",
+      "source_camera_name": "Top_Front_CloseUp",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "top_oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "printer_TopFrontLeftWide",
+      "source_camera_name": "Top_Front_Left_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_TopFrontMedium",
+      "source_camera_name": "Top_Front_Medium",
+      "device_family": "printer",
+      "framing": "medium",
+      "elevation": "top_oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "printer_TopFrontRightWide",
+      "source_camera_name": "Top_Front_Right_Wide",
+      "device_family": "printer",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "printer_CAMReview",
+      "source_camera_name": "CAM_review",
+      "device_family": "printer",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    },
+    {
+      "tag": "miniPC_BackCloseUp",
+      "source_camera_name": "Back_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_BackCloseUp90",
+      "source_camera_name": "Back_CloseUp90",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_BackLeftCloseUp",
+      "source_camera_name": "Back_Left_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_BackLeftMedium",
+      "source_camera_name": "Back_Left_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_BackLeftMediumLow",
+      "source_camera_name": "Back_Left_MediumLow",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "low",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_BackLeftWide",
+      "source_camera_name": "Back_Left_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_BackMedium",
+      "source_camera_name": "Back_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_BackRightCloseUp",
+      "source_camera_name": "Back_Right_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_BackRightMedium",
+      "source_camera_name": "Back_Right_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_BackRightMediumLow",
+      "source_camera_name": "Back_Right_MediumLow",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "low",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_BackRightWide",
+      "source_camera_name": "Back_Right_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_BackWide",
+      "source_camera_name": "Back_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "level",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontCloseUp",
+      "source_camera_name": "Front_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontCloseUpHigh",
+      "source_camera_name": "Front_CloseUpHigh",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "high",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontLeftCloseUp",
+      "source_camera_name": "Front_Left_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontLeftMedium",
+      "source_camera_name": "Front_Left_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontLeftMediumHigh",
+      "source_camera_name": "Front_Left_MediumHigh",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "high",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontLeftWide",
+      "source_camera_name": "Front_Left_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontMedium",
+      "source_camera_name": "Front_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontMediumHigh",
+      "source_camera_name": "Front_MediumHigh",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "high",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontRightCloseUp",
+      "source_camera_name": "Front_Right_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontRightCloseUpLow",
+      "source_camera_name": "Front_Right_CloseUpLow",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "low",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontRightMedium",
+      "source_camera_name": "Front_Right_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontRightWide",
+      "source_camera_name": "Front_Right_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontWide",
+      "source_camera_name": "Front_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_FrontWideLow",
+      "source_camera_name": "Front_WideLow",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "low",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_LeftCloseUp",
+      "source_camera_name": "Left_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_LeftCloseUp90",
+      "source_camera_name": "Left_CloseUp90",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_LeftWide",
+      "source_camera_name": "Left_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_LeftWideHigh",
+      "source_camera_name": "Left_WideHigh",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "high",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_RightCloseUp",
+      "source_camera_name": "Right_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_RightCloseUp90",
+      "source_camera_name": "Right_CloseUp90",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "level",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Do not assume a large exposed tabletop. Nearby background details may fit even when little tabletop is visible.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_RightMedium",
+      "source_camera_name": "Right_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_RightMediumHigh",
+      "source_camera_name": "Right_MediumHigh",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "high",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Favor local horizontal surfaces and low-profile objects. Do not demand full-height fixtures or people outside the view.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_RightWide",
+      "source_camera_name": "Right_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_RightWideLow",
+      "source_camera_name": "Right_WideLow",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "low",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Respect the limited exposed tabletop. Avoid arrangements that require seeing the top of every object or changing elevation.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_TopFrontCloseUp",
+      "source_camera_name": "Top_Front_CloseUp",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "top_oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_TopFrontLeftWide",
+      "source_camera_name": "Top_Front_Left_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_TopFrontMedium",
+      "source_camera_name": "Top_Front_Medium",
+      "device_family": "miniPC",
+      "framing": "medium",
+      "elevation": "top_oblique",
+      "people_policy": "optional_partial_activity",
+      "guidance": [
+        "Describe a coherent local working or living area with casually arranged approved materials and subordinate furnishings. Keep detail at C-Tech's ordinary room-description level. Avoid several distant activity areas or competing focal arrangements that would need a wider view.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Connect the useful local arrangement to subordinate furnishings and a coherent wall composition. Use plausible separation between support, wall and room furnishings, with ordinary seating access or clear standing access as appropriate. Spread visual weight through related wall bays, mounting alignment and changes in height rather than accumulating every accent at the same end. A divider must describe a credible room boundary, not an improvised narrow passage. Distinguish the printer station from any separately approved background task surface. Do not assume a product position from a SKU example, and do not certify alignment from text alone."
+      ]
+    },
+    {
+      "tag": "miniPC_TopFrontRightWide",
+      "source_camera_name": "Top_Front_Right_Wide",
+      "device_family": "miniPC",
+      "framing": "wide",
+      "elevation": "top_oblique",
+      "people_policy": "optional_if_supported_and_unobtrusive",
+      "guidance": [
+        "Retain the richer C-Tech room descriptions and natural depth, using approved and unrepeated furnishings. A wall carrying shelving and artwork can be one coherent arrangement; there is no numeric object or zone quota. Do not require the whole building or several disconnected focal areas.",
+        "Keep the scene on the visible horizontal surface; do not demand a horizon, visible windows, walls, or full-height room furnishings.",
+        "Write a furnished, inhabited place with richer C-Tech room character. Develop useful surface relationships where allowed, connected room furnishings, intentionally populated storage and a resolved wall composition. Use realistic collections and material continuity, with quieter space around the main working area and unobstructed circulation. Consider the lateral distribution of all wall and room elements together; a large empty wall is not resolved by a tiny clock, isolated hanging or lone decorative object. Broad finishes, substantial art and populated storage may work together when approved and unused. Do not fill every gap, add disconnected activity areas or force props onto a dedicated printer support. Preserve the fixed view and ordinary furniture proportions; actual framing, depth and geometry require image review."
+      ]
+    },
+    {
+      "tag": "miniPC_CAMReview",
+      "source_camera_name": "CAM_review",
+      "device_family": "miniPC",
+      "framing": "tight",
+      "elevation": "oblique",
+      "people_policy": "omit",
+      "guidance": [
+        "Keep a recognizable setting, support surface and natural light. Use approved nearby details only where plausible in this close view; partial objects or subordinate background cues may suffice. Do not require a full room, multiple work areas or a spread of props that would need a wider view. No automatic zero-prop or zero-background rule applies.",
+        "Keep depth and the angle of the fixed view; do not ask to rotate the view or reposition the primary subject to fit scene details.",
+        "Use the resolved tag only. Establish a credible support, a compact useful local relationship when surface exposure permits, and meaningful nearby room or wall character. A level close-up can accommodate background character even when tabletop exposure is small. Prefer low-profile lateral details to a tall vessel in the ordinary user approach. Preserve normal mounting height and furniture construction instead of lowering a clock, stretching a support or requesting detached upholstery to fit. Do not force the opposite side of a room, a distant activity surface, a complete frame perimeter, all chair legs or a full banquette base into view. Choose a different feasible object when its essential use or support relationship cannot plausibly be conveyed. Camera-fit statements describe intent, not verified occlusion or clearance."
+      ]
+    }
+  ]
+}

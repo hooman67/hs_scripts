@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "source_messaging": {
+      "type": "object"
+    },
+    "camera_tag": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Registered ProductType_CameraName, e.g. miniPC_FrontRightMedium or laptop_BackLeftCloseUp. No product/SKU name."
+    }
+  },
+  "required": [
+    "source_messaging",
+    "camera_tag"
+  ],
+  "additionalProperties": false
+}

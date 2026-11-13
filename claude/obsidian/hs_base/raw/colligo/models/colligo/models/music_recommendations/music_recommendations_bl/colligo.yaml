@@ -1,0 +1,14 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - pydantic
+deps:
+- colligo.models.music_recommendations.feature_extractor[public]
+- colligo.models.music_recommendations.utils
+- colligo.models.music_recommendations.video_transformer[public]
+- numpy
+- pandas
+- torch

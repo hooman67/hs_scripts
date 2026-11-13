@@ -1,0 +1,98 @@
+{
+  "version": "v3-edge-camera-metadata-repair-validation-v1",
+  "passed": true,
+  "production_eval_member": false,
+  "original_edge_status": "unresolved_raw_camera_metadata_mismatch_safe_fallback_prose_verified",
+  "raw_record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v3/eval_edges/record.json",
+  "raw_record_sha256": "82286a2df1447ffd8a58b12eba936312ca846ecbab134644b49ec753a29f520a",
+  "original_artifact_sha256": {
+    "record.json": "82286a2df1447ffd8a58b12eba936312ca846ecbab134644b49ec753a29f520a",
+    "normalized_output.json": "7a2555365e808ac87e3bc7de822cd8ec43c23be2c968c05091522c1925a95b22",
+    "normalization_log.json": "fdcd9d1fa5ba0318bc97cce74281f3d468f3096b5f62fa75d4206529b4546e14",
+    "validation.json": "0e018b7d7d0a0f292bef1ca0509eb964573a2ceeffd08b5f0e5865b64f67160e"
+  },
+  "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v3/eval_edges/normalized_output_camera_repaired.json",
+  "normalized_output_sha256": "a78711fb9a798f2b645c8a00d1153cdce4e0bd8b04fdb71fb8347e173608d6e3",
+  "normalized_output_semantic_sha256": "b2f9cd745439dfd9d46085a715b1965f7d81b7cd29df6ddfd0a7681e19a109a2",
+  "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v3/eval_edges/normalization_log_camera_repaired.json",
+  "normalization_log_sha256": "0c8a01a96f2ec1491d9a623577e475a623abafab71d05bc89353b4cd1d908a3a",
+  "camera_metadata_repair": {
+    "reason": "offline_registry_resolution",
+    "original_camera": {
+      "requested_tag": "futureType_NewView",
+      "resolved_tag": null,
+      "device_type": null,
+      "profile_version": "camera-v2-draft-2026-10-22-r3",
+      "resolution": "unknown",
+      "framing": "tight",
+      "elevation": "unspecified",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit"
+    },
+    "normalized_camera": {
+      "requested_tag": "futureType_NewView",
+      "resolved_tag": null,
+      "device_type": null,
+      "profile_version": "camera-v2-draft-2026-10-22-r3",
+      "resolution": "unknown",
+      "framing": "unknown",
+      "elevation": "unknown",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit"
+    }
+  },
+  "host_validation": {
+    "validator_version": "v3-host-validator-r2",
+    "passed": true,
+    "error_count": 0,
+    "warning_count": 1,
+    "errors": [],
+    "warnings": [
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 30,
+      "evidence": 0,
+      "environments": {
+        "Office": 8,
+        "Home": 8,
+        "Education": 7,
+        "Gaming": 7
+      },
+      "relationships": {
+        "creative_departure": 30
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 8,
+        "Office": 8,
+        "Education": 7,
+        "Gaming": 7
+      },
+      "relationship_counts": {
+        "source_grounded": 0,
+        "source_adjacent": 0,
+        "creative_departure": 30
+      },
+      "distinct_subsettings": 30,
+      "evidence_reverse_mappings": {
+        "KSP1": {
+          "evidence_ids": [],
+          "prompt_ids": []
+        },
+        "ValueProposition": {
+          "evidence_ids": [],
+          "prompt_ids": []
+        }
+      }
+    },
+    "output_semantic_sha256": "b2f9cd745439dfd9d46085a715b1965f7d81b7cd29df6ddfd0a7681e19a109a2"
+  },
+  "scene_text_changed": false
+}

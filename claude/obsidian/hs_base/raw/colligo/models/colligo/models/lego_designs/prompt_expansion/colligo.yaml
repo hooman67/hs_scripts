@@ -1,0 +1,14 @@
+visibility: public
+deps:
+- colligo.data
+- colligo.httpx
+- colligo.models.external_services.openai
+- typing-extensions
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.external_services.openai[public]
+  - colligo.models.lego_designs.pipelines[public]
+  - pydantic

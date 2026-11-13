@@ -1,0 +1,248 @@
+{
+  "schema_version": "hp-position-flex-v23.1-eight-row-pilot-freeze-v1",
+  "experiment_id": "hp-position-flex-v23.1-all-view-translation-eight-row-pilot",
+  "created_at_utc": "2026-11-06T20:25:41.119452+00:00",
+  "treatment": {
+    "pipeline_version": "unified-blue-scale-v23.1-all-view-rigid-translation-strong-low-inlier-twin-camera-guide-only-no-edit-mask",
+    "base_pr": "Adobe-Firefly/foundry#4349",
+    "base_commit": "8c358bc7989cb0e137e89db0fd325168249e2a22",
+    "source_hashes": {
+      "hp3p/prompts/system_3p.txt": "324ce0e449804bc0d17ac0cf5ed10587716bc9d7e6ef72b9a91e439745b6aaec",
+      "hp3p/prompts/system_3p_fixed_position.txt": "67e4d817a5a203912116bb99afbd6c4511d9a5c537b241cc6e980e34e75b1118",
+      "hp3p/pipeline.py": "ef1158a882dca0c8a85d01e3ed427d036282b29341fa5beeb88c9d4db39d9137",
+      "hp3p/invariants.py": "808bde48be35ba6093dc01d0cc23808f0c7f4509b62e79dce64d1033674c19a6",
+      "hp3p/geometry.py": "f9d0f3a395624a150f9a9fed8c836394b66f041f6e212dc87c8b1a2322514a95",
+      "hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+      "hp3p/reference_blue.py": "f36098543e208029226ae3b04ffd22c39edf7e168ab49dd5868e2185bd90661d",
+      "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3"
+    },
+    "wrapper_version": "v23.1-eight-row-pilot-stop-on-first-failure-v1",
+    "wrapper_source_hashes": {
+      "common.py": "36900f4fe743f6c1b983fc0438df902788d6133d8c5c39afafc488cdd504f4ec",
+      "config.py": "3e07754d27bcba0ed619692a9430b0944803b4cc676aaf5753153dcad8c7c7f5",
+      "diagnostic_prompts.py": "79cf02acfbd7556378b25a6c19c58304ba81ba184e5a7c3f35be9b6ea382b9a5",
+      "endpoint.py": "687bdd4def205fa0fdd11808efab7c6f100ecaeb105b34a204d03d17177552db",
+      "run_pilot.py": "1afedc0ac2e6cd0f7387aec7240591cac0ae3628219a82bcc0ac1293b9d52921",
+      "preflight.py": "86a4e4a858ac44ac5fbf678638c159861c1133fe89959d2474efdf2e4321850d",
+      "freeze_inputs.py": "7bf05bfd29b9b7469079650118e0b239f1d9d96296df3ef34ab7327817e093ed"
+    },
+    "policy": "Frozen V23.1 source; serial eight-row pilot; one immutable job per row; stop and preserve on first terminal failure."
+  },
+  "cohorts": {
+    "representative_v6_1": "The four original rank-1 Cashmere/Tassel V6.1 representative prompts.",
+    "movement_demand_diagnostic": "Four existing audited Cashmere/Magic movement-demand prompts from run_v22_smoke.py, replayed with their corresponding frozen V6.1 product, Stage-A and guide inputs."
+  },
+  "diagnostic_prompt_source": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/run_v22_smoke.py",
+    "sha256": "7adcf81f7b9a453d74b66e6ef72884adf7630ca9422af9bad15e6898b236a0b8"
+  },
+  "records_directory": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records",
+  "records": [
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/cashmere__laptop_FrontCloseUp__p1.json",
+      "sha256": "64ba2f6b0fe294f1cb4313ccb522ae6d29f1b0357065d2e291ef909d79104269",
+      "row_id": "cashmere__laptop_FrontCloseUp::p1",
+      "row_slug": "cashmere__laptop_FrontCloseUp__p1",
+      "source_row_slug": "cashmere__laptop_FrontCloseUp__p1",
+      "cohort": "representative_v6_1",
+      "device_id": "cashmere",
+      "digital_twin_id": "cashmere_x",
+      "device_type": "laptop",
+      "camera_id": "Front_CloseUp",
+      "camera_tag": "laptop_FrontCloseUp",
+      "bank_rank": 1,
+      "prompt": "A quiet office desk set up before a meeting, with an open unlabelled folder showing blank sheets on a pale work surface. A frosted glass partition behind the desk catches clean morning light, keeping the area composed and ready for focused work.",
+      "prompt_sha256": "d73ff4200640b286d72ad394192d70b2d544dfada62328aaff4f212eb463cdf1",
+      "source_prompt_sha256": "d73ff4200640b286d72ad394192d70b2d544dfada62328aaff4f212eb463cdf1",
+      "control_job_id": "20261105T201942Z_83c24f3f",
+      "control_image_sha256": "a05fe049075d174fb212099b5988f64d61eb4c6f5fab34382b25a09d15a17896"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/cashmere__laptop_FrontWide__p1.json",
+      "sha256": "cd6ba1b708bf85b869eaf38c60f18576bf5bfe50ca91c36a083b9a5b565365c6",
+      "row_id": "cashmere__laptop_FrontWide::p1",
+      "row_slug": "cashmere__laptop_FrontWide__p1",
+      "source_row_slug": "cashmere__laptop_FrontWide__p1",
+      "cohort": "representative_v6_1",
+      "device_id": "cashmere",
+      "digital_twin_id": "cashmere_x",
+      "device_type": "laptop",
+      "camera_id": "Front_Wide",
+      "camera_tag": "laptop_FrontWide",
+      "bank_rank": 1,
+      "prompt": "A glass-walled office planning area uses a sturdy table with two unlabelled architectural finish samples and a stone paperweight. A ribbed-glass divider and a freestanding felt privacy screen make the room feel prepared for a private discussion under cool, even light.",
+      "prompt_sha256": "2a9154658fbdb300262b94927d747407b35e959551112c68e29d6945f93a62af",
+      "source_prompt_sha256": "2a9154658fbdb300262b94927d747407b35e959551112c68e29d6945f93a62af",
+      "control_job_id": "20261105T202456Z_a0aecc9d",
+      "control_image_sha256": "0fadecd95bcca35eab528a37b2e624416c55c58838f516a71a2e11e0318a024a"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/tassel__printer_FrontCloseUp__p1.json",
+      "sha256": "b15d7ee88814123d27b3eb87001f771c689cf9c5ecb5cb2bda1fb076e1c68ecd",
+      "row_id": "tassel__printer_FrontCloseUp::p1",
+      "row_slug": "tassel__printer_FrontCloseUp__p1",
+      "source_row_slug": "tassel__printer_FrontCloseUp__p1",
+      "cohort": "representative_v6_1",
+      "device_id": "tassel",
+      "digital_twin_id": "tassel",
+      "device_type": "printer",
+      "camera_id": "Front_CloseUp",
+      "camera_tag": "printer_FrontCloseUp",
+      "bank_rank": 1,
+      "prompt": "A practical home workspace with a dedicated home-workspace table set for household paperwork. A low sideboard behind it holds a closed unlabelled household folder and folded reading glasses, while morning light passes through relaxed curtains for a calm everyday-organization feel.",
+      "prompt_sha256": "a64c021c0ba0c748820ed3d4d0abaefc50fcae8bced21ca065daa020c9057b44",
+      "source_prompt_sha256": "a64c021c0ba0c748820ed3d4d0abaefc50fcae8bced21ca065daa020c9057b44",
+      "control_job_id": "20261105T202346Z_6da34b0b",
+      "control_image_sha256": "51c593234bfa195b88210dd4152f393312aefcf120e21e454c17612cd1432f6f"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/tassel__printer_FrontWide__p1.json",
+      "sha256": "c96b4578c4d289025853ce73da25f52bc860ca930bb3f7a56c2e152f9de7816c",
+      "row_id": "tassel__printer_FrontWide::p1",
+      "row_slug": "tassel__printer_FrontWide__p1",
+      "source_row_slug": "tassel__printer_FrontWide__p1",
+      "cohort": "representative_v6_1",
+      "device_id": "tassel",
+      "digital_twin_id": "tassel",
+      "device_type": "printer",
+      "camera_id": "Front_Wide",
+      "camera_tag": "printer_FrontWide",
+      "bank_rank": 1,
+      "prompt": "A home workspace centers on a dedicated home-workspace table, with a low sideboard behind it holding a stack of plain papers with indistinct markings for school and household sorting. Afternoon light passes through translucent sheers onto warm lightly textured plaster, keeping the room practical and calm.",
+      "prompt_sha256": "8e619ed3e296ff558cf10fc460bd5c3fee01c8c176f7cad8a55d4af703650e09",
+      "source_prompt_sha256": "8e619ed3e296ff558cf10fc460bd5c3fee01c8c176f7cad8a55d4af703650e09",
+      "control_job_id": "20261105T202222Z_ba72dbac",
+      "control_image_sha256": "2b0cac6e221ec5b73492f42957983de9ebe20a585f9c824a4fa2017d0b697fe7"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/cashmere__laptop_FrontCloseUp__p1.json",
+      "sha256": "64ba2f6b0fe294f1cb4313ccb522ae6d29f1b0357065d2e291ef909d79104269",
+      "row_id": "cashmere__laptop_FrontCloseUp::p1",
+      "row_slug": "cashmere__laptop_FrontCloseUp__p1__relocation_demand",
+      "source_row_slug": "cashmere__laptop_FrontCloseUp__p1",
+      "cohort": "movement_demand_diagnostic",
+      "device_id": "cashmere",
+      "digital_twin_id": "cashmere_x",
+      "device_type": "laptop",
+      "camera_id": "Front_CloseUp",
+      "camera_tag": "laptop_FrontCloseUp",
+      "bank_rank": 1,
+      "prompt": "A close modern office scene. Place the fully visible laptop substantially farther toward image left than its current position, as far as its unchanged pixel size safely allows, so a broad clear planning area sits to its right. Build a pale wood worktable beneath the laptop at that chosen position, with believable edge clearances and its working edge facing the keyboard. Align an upholstered chair with the laptop's keyboard and keep the approach completely clear. A ribbed glass partition and soft daylight complete the scene.",
+      "prompt_sha256": "f827475da31171e06c0d69de93f711313ae1fabe4c9def2cb58079665a6d9cc3",
+      "source_prompt_sha256": "d73ff4200640b286d72ad394192d70b2d544dfada62328aaff4f212eb463cdf1",
+      "control_job_id": "20261105T201942Z_83c24f3f",
+      "control_image_sha256": "a05fe049075d174fb212099b5988f64d61eb4c6f5fab34382b25a09d15a17896"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/cashmere__laptop_FrontWide__p1.json",
+      "sha256": "cd6ba1b708bf85b869eaf38c60f18576bf5bfe50ca91c36a083b9a5b565365c6",
+      "row_id": "cashmere__laptop_FrontWide::p1",
+      "row_slug": "cashmere__laptop_FrontWide__p1__relocation_demand",
+      "source_row_slug": "cashmere__laptop_FrontWide__p1",
+      "cohort": "movement_demand_diagnostic",
+      "device_id": "cashmere",
+      "digital_twin_id": "cashmere_x",
+      "device_type": "laptop",
+      "camera_id": "Front_Wide",
+      "camera_tag": "laptop_FrontWide",
+      "bank_rank": 1,
+      "prompt": "A wide glass-walled office planning room. Move the fully visible laptop into a right-hand workstation, leaving a broad unobstructed aisle and open tabletop area on the left. Keep the laptop's exact view and pixel size. Compose a new sturdy worktable beneath it with a user-facing edge and a chair aligned directly with the keyboard. Add a felt privacy screen in the far background and cool even daylight.",
+      "prompt_sha256": "e2ed4dd125a289a157e547284d6317f815e28031c23260fc2c4e00ec42475042",
+      "source_prompt_sha256": "2a9154658fbdb300262b94927d747407b35e959551112c68e29d6945f93a62af",
+      "control_job_id": "20261105T202456Z_a0aecc9d",
+      "control_image_sha256": "0fadecd95bcca35eab528a37b2e624416c55c58838f516a71a2e11e0318a024a"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/magic__printer_FrontCloseUp__p1.json",
+      "sha256": "6e8410f722a9e5c83602ddccea887bc5967d3e2fac6424b8edc0249c02674824",
+      "row_id": "magic__printer_FrontCloseUp::p1",
+      "row_slug": "magic__printer_FrontCloseUp__p1__relocation_demand",
+      "source_row_slug": "magic__printer_FrontCloseUp__p1",
+      "cohort": "movement_demand_diagnostic",
+      "device_id": "magic",
+      "digital_twin_id": "adf_printer",
+      "device_type": "printer",
+      "camera_id": "Front_CloseUp",
+      "camera_tag": "printer_FrontCloseUp",
+      "bank_rank": 1,
+      "prompt": "A close office output station. Place the fully visible printer distinctly farther toward image right than its current position, preserving its exact view and pixel size, to leave a clear paper-sorting area on the left. Build a dedicated pale oak printer table beneath it with the complete base supported, the printer square to the table, clear standing access at the operating front, and the back of the station against a plain wall. Keep all objects beside rather than in front of the printer.",
+      "prompt_sha256": "60f23d28f7d9a492a3b483546fe0439ff1d3bd7ebb684c5c59b4bcfe8995d43a",
+      "source_prompt_sha256": "59c05ce15d81b92d9d2ecb15185a2443a55e9ee96683b79dad850be5d19e4812",
+      "control_job_id": "20261105T202223Z_eb2c14d2",
+      "control_image_sha256": "682a2fde5a4bbe83e9c6f35b6c4afeb8b4ae3dc16a5a9c31dd426efa334bdb28"
+    },
+    {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/magic__printer_FrontWide__p1.json",
+      "sha256": "35498a8c0a33bc4b90e7b45bf058c3d73622401585e9ca93b810f9bb61b5e209",
+      "row_id": "magic__printer_FrontWide::p1",
+      "row_slug": "magic__printer_FrontWide__p1__relocation_demand",
+      "source_row_slug": "magic__printer_FrontWide__p1",
+      "cohort": "movement_demand_diagnostic",
+      "device_id": "magic",
+      "digital_twin_id": "adf_printer",
+      "device_type": "printer",
+      "camera_id": "Front_Wide",
+      "camera_tag": "printer_FrontWide",
+      "bank_rank": 1,
+      "prompt": "A wide open-office output area. Relocate the fully visible printer to a right-of-center dedicated output station, leaving the left side of the room open for paper sorting and circulation. Preserve the printer's exact view and pixel size. Compose a new pale oak support table beneath it, square to the fixed printer orientation, with believable edge clearances, wall alignment and unobstructed standing access at the front. Use soft clear daylight and an orderly office background.",
+      "prompt_sha256": "8e4a0037074392977d96d977dc25f3521f2bc914bc3c005576b2d49c60011a9e",
+      "source_prompt_sha256": "233aef1655777842f05712631ebfab9ec9b1302ee41cc313b66b71f89780909b",
+      "control_job_id": "20261105T201941Z_a6eb8409",
+      "control_image_sha256": "bde7761cccc88806ff9f61ff95c938f599636fb297cd07e2d3ab9c3395dc0fbe"
+    }
+  ],
+  "records_digest": "9027051d7bd552f6ee66bd0069f291ca9427f2b1ec123b9995f15004ad260461",
+  "selected_row_slugs": [
+    "cashmere__laptop_FrontCloseUp__p1",
+    "cashmere__laptop_FrontWide__p1",
+    "tassel__printer_FrontCloseUp__p1",
+    "tassel__printer_FrontWide__p1",
+    "cashmere__laptop_FrontCloseUp__p1__relocation_demand",
+    "cashmere__laptop_FrontWide__p1__relocation_demand",
+    "magic__printer_FrontCloseUp__p1__relocation_demand",
+    "magic__printer_FrontWide__p1__relocation_demand"
+  ],
+  "expected_cells": [
+    [
+      "representative_v6_1",
+      "laptop",
+      "Front_CloseUp"
+    ],
+    [
+      "representative_v6_1",
+      "laptop",
+      "Front_Wide"
+    ],
+    [
+      "representative_v6_1",
+      "printer",
+      "Front_CloseUp"
+    ],
+    [
+      "representative_v6_1",
+      "printer",
+      "Front_Wide"
+    ],
+    [
+      "movement_demand_diagnostic",
+      "laptop",
+      "Front_CloseUp"
+    ],
+    [
+      "movement_demand_diagnostic",
+      "laptop",
+      "Front_Wide"
+    ],
+    [
+      "movement_demand_diagnostic",
+      "printer",
+      "Front_CloseUp"
+    ],
+    [
+      "movement_demand_diagnostic",
+      "printer",
+      "Front_Wide"
+    ]
+  ],
+  "freeze_payload_sha256": "f68651477b8eb3a799a767e54c474d7fba85644842fb82692e99fe5683ad1a1f"
+}

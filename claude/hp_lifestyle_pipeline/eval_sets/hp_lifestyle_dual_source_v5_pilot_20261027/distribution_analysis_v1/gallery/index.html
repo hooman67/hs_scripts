@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HP V5 Dual-Source Pilot</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="ims"></div>
+  <div id="loading" class="loading">Loading V5 text-pilot analysis…</div>
+  <main id="content" class="hidden">
+    <header class="hero">
+      <div><p class="eyebrow">HP lifestyle writer · V5 text gate</p><h1>Distribution and C-Tech reference proximity</h1><p class="lede">The 160-prompt laptop/printer close-and-wide pilot, informed by smart brief and source messaging, compared with eighteen authoritative C-Tech examples and the frozen V4.1 pilot.</p></div>
+      <nav class="downloads"><a href="../downloads/analysis.json">Analysis JSON</a><a href="../downloads/pilot_prompts.txt" download>Prompts text</a><a href="../downloads/pilot_prompts.json" download>Full pilot JSON</a><a href="../downloads/system_prompt.md" download>System prompt</a><a href="../downloads/candidate_metrics.csv">160-row metrics CSV</a><a href="../downloads/lexical_audit.json">Lexical audit</a><a href="../downloads/reference_prompts.json">Reference prompts</a></nav>
+    </header>
+
+    <section id="kpis" class="kpi-grid" aria-label="Headline metrics"></section>
+    <section class="callout"><h2>What the pilot says</h2><div id="interpretation"></div></section>
+    <section class="taxonomy-note"><strong>Review gate:</strong> this report contains the root-reviewed V5 text pilot. No V5 images were generated for this report.</section>
+
+    <section class="panel wide"><p class="eyebrow">Descriptive comparison</p><h2>Nearest C-Tech similarity: V5 versus frozen V4.1</h2><div id="baselineComparison"></div><p class="note">V5 uses different smart briefs, source messaging, and cases. This comparison provides context and does not support a causal version claim.</p></section>
+
+    <section class="panel wide"><p class="eyebrow">Feedback-pattern comparison</p><h2>Framing language and microscopic story markers</h2><div id="feedbackComparison"></div><div id="feedbackFindings" class="feedback-findings"></div><p class="note">Lexical indicators, not a complete style judgment. Counts are affected prompts, not occurrences. Expand the evidence to see candidate keys and exact matched spans.</p></section>
+
+    <section class="panel wide">
+      <div class="panel-heading"><div><p class="eyebrow">Semantic map</p><h2>Where the 160 prompts sit relative to the references</h2></div><div class="controls"><label>Color by <select id="colorBy"><option value="display_environment">environment</option><option value="ctech_relationship">reference relationship</option><option value="view_role">camera view</option></select></label><label>Show <select id="pointFilter"><option value="all">all prompts</option><option value="top6">top six per bank</option><option value="env:Office">Office</option><option value="env:Café">Café</option><option value="env:Creative Studio">Creative Studio</option><option value="env:Home">Home</option><option value="env:Education">Education</option><option value="env:Gaming">Gaming</option><option value="close_up">close-up only</option><option value="wide">wide only</option></select></label></div></div>
+      <p class="note">PCA projection of frozen MiniLM embeddings. Stars are C-Tech references; circles are reviewed V5 prompts. Hover for the exact prompt and both scores. The first two axes preserve <span id="explained"></span> of embedding variance.</p>
+      <div id="scatter" class="chart scatter" role="img" aria-label="Semantic prompt map"></div><div id="legend" class="legend"></div>
+    </section>
+
+    <section class="grid two">
+      <article class="panel"><p class="eyebrow">Breadth</p><h2>Environment distribution</h2><div id="environmentChart" class="chart"></div><p class="note">Direct counts of the six model-authored V5 environment values.</p></article>
+      <article class="panel"><p class="eyebrow">Reference strategy</p><h2>C-Tech relationship distribution</h2><div id="relationshipChart" class="chart"></div><p class="note">Minimal camera edits remain closest to the references; category extensions support required category breadth.</p></article>
+      <article class="panel"><p class="eyebrow">Dual-source grounding</p><h2>Source relevance score distribution</h2><div id="sourceScoreChart" class="chart"></div><p class="note">Fixed 0–100 score using equal document authority and the strongest useful support per rubric component.</p></article>
+      <article class="panel"><p class="eyebrow">Declared C-Tech proximity</p><h2>C-Tech score distribution</h2><div id="scoreChart" class="chart"></div><p class="note">Separate 0–100 proximity score to C-Tech prompt wording and detail style.</p></article>
+      <article class="panel"><p class="eyebrow">Measured proximity</p><h2>Nearest-reference semantic similarity</h2><div id="similarityChart" class="chart"></div><p class="note">Frozen MiniLM cosine similarity. No calibrated pass threshold exists.</p></article>
+      <article class="panel"><p class="eyebrow">Two objectives</p><h2>Source relevance versus C-Tech score</h2><div id="dualScoreChart" class="chart scatter"></div><p class="note">Each point is one prompt; top-six candidates per bank have a bright outline.</p></article>
+    </section>
+
+    <section class="panel wide"><p class="eyebrow">Selection behavior</p><h2>Top six per bank versus the complete 20-prompt banks</h2><div id="selectionComparison"></div><div id="documentSupport"></div><p class="note">The top six are selected by source relevance in each bank. Per-document support totals are diagnostic; V5 does not average documents 50/50.</p></section>
+
+    <section class="panel wide"><p class="eyebrow">Stratified comparison</p><h2>Measured similarity to the nearest C-Tech reference</h2><div id="groupTables" class="group-grid"></div></section>
+    <section class="panel wide"><p class="eyebrow">Reference coverage</p><h2>Declared and measured reference usage</h2><div id="referenceCoverage" class="chart tall"></div><div id="referenceList" class="reference-list"></div></section>
+
+    <section class="grid two">
+      <article class="panel"><p class="eyebrow">Recurring language</p><h2>Most frequent 3–5 word phrases</h2><div id="phrases"></div></article>
+      <article class="panel"><p class="eyebrow">Near repetitions</p><h2>Closest lexical prompt pairs</h2><div id="pairs"></div></article>
+    </section>
+
+    <section class="grid two">
+      <article class="panel"><p class="eyebrow">Closest examples</p><h2>Most similar to C-Tech references</h2><div id="closest"></div></article>
+      <article class="panel"><p class="eyebrow">Diversity frontier</p><h2>Farthest from C-Tech references</h2><div id="farthest"></div></article>
+    </section>
+
+    <section class="panel wide"><p class="eyebrow">Full review corpus</p><h2>All 160 candidates with their frozen dual-source inputs</h2><p class="note">Expand any candidate to inspect its prompt, both scores and explanations, review provenance, camera contract, complete smart brief, and complete source messaging.</p><div id="candidateExplorer" class="candidate-explorer"></div></section>
+
+    <section class="panel wide"><p class="eyebrow">Reading the results</p><h2>Methods and limitations</h2><div id="methods"></div></section>
+  </main>
+  <div id="tooltip" class="tooltip hidden"></div>
+  <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+  <script src="./imsauth.js"></script>
+  <script src="./data.js"></script>
+  <script src="./report.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>initializeIMS());</script>
+</body>
+</html>

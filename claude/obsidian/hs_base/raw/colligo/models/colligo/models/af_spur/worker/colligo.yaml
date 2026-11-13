@@ -1,0 +1,19 @@
+visibility: public
+custom_pyenv: af_spur
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - pydantic
+deps:
+- af-spur[ml,glm_ocr]
+- colligo.data
+- colligo.external_services.business_kit
+- colligo.external_services.ims
+- colligo.image
+- colligo.models.af_spur.types[public]
+- colligo.models.cai
+- colligo.models.common.metrics
+- colligo.models.firefall.cai
+- pyyaml

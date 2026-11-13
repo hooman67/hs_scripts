@@ -1,0 +1,333 @@
+{
+  "schema_version": "placement-addition-verifier-triggers-v1",
+  "trigger_policy": "compact observed/partial medium/high-confidence severity>=2 and either baseline unassessable/low-confidence or compact severity above baseline",
+  "source_runs": [
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v156-v164-v166-v166noguide-v2-two-pass"
+  ],
+  "expected_count": 6,
+  "expected_component_count": 6,
+  "comments_or_expectations_included": false,
+  "records": [
+    {
+      "id": "07_cashmere_x_Front_Wide__v16_6_no_geometry",
+      "source_dataset": "v156-v164-v166-v166noguide-v2-two-pass",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/07_cashmere_x_Front_Wide_4.jpg",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/07_cashmere_x_Front_Wide_0.jpg",
+        "product_type": "laptop",
+        "scene_prompt": "A bright creative studio with a medium wooden table set up for sketching a concept, with a sketchbook open to blank unmarked pages, graphite pencils, a watercolor palette, and paintbrushes in a brush holder. Warm natural light and simple studio walls keep the workspace focused, practical, and casually used.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/07_cashmere_x_Front_Wide_4.jpg",
+          "sha256": "0220952ea436b72877e113aa0c67a33252fd99b6b23ade96f359d641a0b8535c"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/07_cashmere_x_Front_Wide_0.jpg",
+          "sha256": "fad295e3bfb1b0449b59c718ca7b76e11ec1f0c852d2d75d2abcc1f62c3e443e"
+        }
+      },
+      "proposed_components": {
+        "access_usability": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "medium",
+          "evidence": "The keyboard faces the foreground chair, but the laptop is set far back from the chair-side table edge, leaving a large empty reach zone in front of it.",
+          "consequence": "A seated user would need to lean forward or pull the laptop closer to type comfortably.",
+          "issue_codes": [
+            "excessive_reach"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v156-v164-v166-v166noguide-v2-two-pass/07_cashmere_x_Front_Wide__v16_6_no_geometry/result.json",
+        "combined_result_sha256": "5665ba2e3a409c6f3299a548d7dec7f8e2f4547cb3b722f537cd123c1a43ec96",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/07_cashmere_x_Front_Wide__v16_6_no_geometry/response.json",
+          "sha256": "e31f6b273bb1714cee4cc52d3befe92d6027e78252c8bfe9868019dd78264a7a"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/07_cashmere_x_Front_Wide__v16_6_no_geometry/result.json",
+          "sha256": "85635d70a5d131316a25050f22fbbf1904bb8a134d0bdf81c0d31483fa97c333"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/07_cashmere_x_Front_Wide__v16_6_no_geometry/response.json",
+          "sha256": "8e47a3aaf99baf08f00eb937eb07f9b82d1dbdedbd69bd36914375458a338b04"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/07_cashmere_x_Front_Wide__v16_6_no_geometry/result.json",
+          "sha256": "1be397ae35e6d68560ffc04392f94b7e00160b202635c6de2eeb6a6ef3a782c5"
+        }
+      }
+    },
+    {
+      "id": "28_adf_printer_Front_Right_CloseUp__v16_6",
+      "source_dataset": "v156-v164-v166-v166noguide-v2-two-pass",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/28_adf_printer_Front_Right_CloseUp_3.jpg",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/28_adf_printer_Front_Right_CloseUp_0.jpg",
+        "product_type": "printer",
+        "scene_prompt": "A modern neighborhood caf\u00e9 with a small wooden table holding a ceramic coffee cup on a saucer, a teaspoon, and a cookie. An upholstered banquette and soft caf\u00e9 curtains sit in warm natural light, giving the table a relaxed, lived-in feel.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/28_adf_printer_Front_Right_CloseUp_3.jpg",
+          "sha256": "e388df06f7691505dae5a75b3cc010c7af6445556488f3295ed541777177586a"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/28_adf_printer_Front_Right_CloseUp_0.jpg",
+          "sha256": "0830cd05296f265d9cc35e817d6ac300b01da5315d417d1399bd26591f801bfe"
+        }
+      },
+      "proposed_components": {
+        "support_scenario": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "medium",
+          "evidence": "The support itself is a plausible cabinet, but it is placed immediately within a cozy caf\u00e9 seating area beside a banquette and patron table, with no visible office, staff, or print-station context.",
+          "consequence": "The printer reads as staged or misplaced in the customer seating zone rather than naturally installed for real use.",
+          "issue_codes": [
+            "implausible_scenario",
+            "unmotivated_position"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v156-v164-v166-v166noguide-v2-two-pass/28_adf_printer_Front_Right_CloseUp__v16_6/result.json",
+        "combined_result_sha256": "e79a7e76de170ccc607edcebef4209c161337f81f0a51e181905df02fc48fdeb",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/28_adf_printer_Front_Right_CloseUp__v16_6/response.json",
+          "sha256": "54086115d80d633a27763245124613212c55936c37f1e495269693423e19f0bc"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/28_adf_printer_Front_Right_CloseUp__v16_6/result.json",
+          "sha256": "34ff7db7bce745b9c856d6871918fbfe0d203c08570f876211f918aa3539114c"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/28_adf_printer_Front_Right_CloseUp__v16_6/response.json",
+          "sha256": "24d41a22c798d89fcdaf9835a86a78e1c4b26345eca3b21768dc6f6394fb53e6"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/28_adf_printer_Front_Right_CloseUp__v16_6/result.json",
+          "sha256": "0eee58734e14f35672b0f70fe7196dc893f6baa68467e17a51dfa4b4d2e0b408"
+        }
+      }
+    },
+    {
+      "id": "28_adf_printer_Front_Right_CloseUp__v16_6_no_geometry",
+      "source_dataset": "v156-v164-v166-v166noguide-v2-two-pass",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/28_adf_printer_Front_Right_CloseUp_4.jpg",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/28_adf_printer_Front_Right_CloseUp_0.jpg",
+        "product_type": "printer",
+        "scene_prompt": "A modern neighborhood caf\u00e9 with a small wooden table holding a ceramic coffee cup on a saucer, a teaspoon, and a cookie. An upholstered banquette and soft caf\u00e9 curtains sit in warm natural light, giving the table a relaxed, lived-in feel.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/28_adf_printer_Front_Right_CloseUp_4.jpg",
+          "sha256": "a4c9a0fd5017f953f8c0bf99148725d94737009caa012a126a0b2a66df2cbdd2"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/28_adf_printer_Front_Right_CloseUp_0.jpg",
+          "sha256": "0830cd05296f265d9cc35e817d6ac300b01da5315d417d1399bd26591f801bfe"
+        }
+      },
+      "proposed_components": {
+        "support_scenario": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "medium",
+          "evidence": "The printer is on a sturdy wooden cabinet, but that cabinet is immediately beside a caf\u00e9 banquette and patron table with coffee and cookie, with no visible staff workstation or print area context.",
+          "consequence": "The printer has physical support, but the support/location relationship feels inappropriate for normal printer use and disrupts the caf\u00e9 seating scenario.",
+          "issue_codes": [
+            "implausible_scenario",
+            "incoherent_use_arrangement"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v156-v164-v166-v166noguide-v2-two-pass/28_adf_printer_Front_Right_CloseUp__v16_6_no_geometry/result.json",
+        "combined_result_sha256": "8a920283c0d5204991ac11c90349996ba6a1b097686b90209879d90f4e5a4799",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/28_adf_printer_Front_Right_CloseUp__v16_6_no_geometry/response.json",
+          "sha256": "47fdb8d3f4db4626a50e23097cdfc67a5fe8b95115f8ca7a85dfac75c3a92268"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/28_adf_printer_Front_Right_CloseUp__v16_6_no_geometry/result.json",
+          "sha256": "ddcdbd523d508a22333f93503ed62d90f2d23d717a3bdc1018ab08f9e90b1cc9"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/28_adf_printer_Front_Right_CloseUp__v16_6_no_geometry/response.json",
+          "sha256": "18d35fce1da82b653f6388fd1842c2e5705c4446f0d9537e148af78c353e0ed0"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/28_adf_printer_Front_Right_CloseUp__v16_6_no_geometry/result.json",
+          "sha256": "6be74f296c00838c5959e93a178fac2f3bfede6373ff8902287f943a37e065dc"
+        }
+      }
+    },
+    {
+      "id": "29_adf_printer_Front_Left_Medium__v15_6",
+      "source_dataset": "v156-v164-v166-v166noguide-v2-two-pass",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/29_adf_printer_Front_Left_Medium_1.jpg",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/29_adf_printer_Front_Left_Medium_0.jpg",
+        "product_type": "printer",
+        "scene_prompt": "A bright modern corporate office with an office desk holding a tidy stack of plain papers with indistinct markings. Clean shelving, a leafy plant, and an ordinary upholstered office chair add natural depth in warm daylight, lived-in but tidy and professional.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/29_adf_printer_Front_Left_Medium_1.jpg",
+          "sha256": "336e2527bbf7e0e594802d98d465107d02d92fd20ca9ab02589d8f21520ba4f9"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/29_adf_printer_Front_Left_Medium_0.jpg",
+          "sha256": "467bc8198a772cbceac39960efbe325fa89577f91981d7ab26a107906e44e061"
+        }
+      },
+      "proposed_components": {
+        "support_scenario": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "high",
+          "evidence": "A large printer is placed on the primary desk directly associated with an office chair and paperwork, rather than on a dedicated equipment table, cabinet, or side station.",
+          "consequence": "The arrangement sacrifices the active workstation surface and makes the printer feel placed as the centerpiece of a desk rather than naturally housed as office equipment.",
+          "issue_codes": [
+            "occupied_workstation",
+            "incoherent_use_arrangement"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v156-v164-v166-v166noguide-v2-two-pass/29_adf_printer_Front_Left_Medium__v15_6/result.json",
+        "combined_result_sha256": "8abcbd9aae8e96346e5920c92c602748dea5c99d7baa3268ab8170891b4bdebc",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/29_adf_printer_Front_Left_Medium__v15_6/response.json",
+          "sha256": "08113946dc93fcea70c40980807b653e415de74b168553fcd974d21007d52bd4"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/29_adf_printer_Front_Left_Medium__v15_6/result.json",
+          "sha256": "9633de86eb3ef9f3cd62ba209cd9e241d021700ae640e6580cf226aa751bd166"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/29_adf_printer_Front_Left_Medium__v15_6/response.json",
+          "sha256": "142c845011fe6a387f611b432bd1e5184f80cedc57e957825c532e646e31d0bb"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/29_adf_printer_Front_Left_Medium__v15_6/result.json",
+          "sha256": "1f0b07b9bea2f4f9742059185a64cbc37668e3ceb5bf0aa79640b5a706303d79"
+        }
+      }
+    },
+    {
+      "id": "32_adf_printer_Front_Wide__v15_6",
+      "source_dataset": "v156-v164-v166-v166noguide-v2-two-pass",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/32_adf_printer_Front_Wide_1.jpg",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/32_adf_printer_Front_Wide_0.jpg",
+        "product_type": "printer",
+        "scene_prompt": "A bright modern corporate office with a simple desk arranged for the day: an open paper notebook with blank pages, a pen, and a desk calendar with non-readable dates. A clear water glass and a coat stand near the wall add small everyday touches. The room stays tidy, professional, and softly lit by natural light.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/32_adf_printer_Front_Wide_1.jpg",
+          "sha256": "81fe68c6df6a37ee56db2878b290fd170e32b17864b0a0535485d5fd64be5fd8"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/32_adf_printer_Front_Wide_0.jpg",
+          "sha256": "9ad3f598029fd04657bbe1262e9abad2348cebe8669a5f8de3f164ae9f14dd2f"
+        }
+      },
+      "proposed_components": {
+        "support_scenario": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "medium",
+          "evidence": "The printer is placed on a person-like active desk with notebook, pen, water glass, and calendar rather than on a dedicated printer cabinet, side credenza, or equipment table.",
+          "consequence": "The arrangement is physically usable, but the support scenario is less natural for a printer because it consumes an active work surface.",
+          "issue_codes": [
+            "occupied_workstation"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v156-v164-v166-v166noguide-v2-two-pass/32_adf_printer_Front_Wide__v15_6/result.json",
+        "combined_result_sha256": "0373b30c1cad89267d7b25ddbbc8e0bcce0b040c2e495b093afafcafa11ca4c0",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/32_adf_printer_Front_Wide__v15_6/response.json",
+          "sha256": "6d462cad01d1ee5bb88608ef4f4651b7e238dd191766663978009551a16f84cc"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/32_adf_printer_Front_Wide__v15_6/result.json",
+          "sha256": "5c3581ae369e7bc850094d0c87d9c052ed7cf3beaab8556124d81dec69e9e904"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/32_adf_printer_Front_Wide__v15_6/response.json",
+          "sha256": "9d4cbaa8130e0a0a77af926da8111972215770290f780656fb9c38a634be15ba"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/32_adf_printer_Front_Wide__v15_6/result.json",
+          "sha256": "b39d4d03640c95bf3d1e2a1f91123088938e42ade5261eee077bbeffe732edd5"
+        }
+      }
+    },
+    {
+      "id": "32_adf_printer_Front_Wide__v16_6",
+      "source_dataset": "v156-v164-v166-v166noguide-v2-two-pass",
+      "runtime_input": {
+        "generated_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/32_adf_printer_Front_Wide_3.jpg",
+        "twin_image": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/32_adf_printer_Front_Wide_0.jpg",
+        "product_type": "printer",
+        "scene_prompt": "A bright modern corporate office with a simple desk arranged for the day: an open paper notebook with blank pages, a pen, and a desk calendar with non-readable dates. A clear water glass and a coat stand near the wall add small everyday touches. The room stays tidy, professional, and softly lit by natural light.",
+        "image_stage": "scene_generation"
+      },
+      "images": {
+        "generated_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/32_adf_printer_Front_Wide_3.jpg",
+          "sha256": "e746c87666232483fcf7e59fa3238e29821b85183da6cbb2864efaf10b91382b"
+        },
+        "twin_image": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/v156_v164_v166_v166noguide_v2_20261106/img/32_adf_printer_Front_Wide_0.jpg",
+          "sha256": "9ad3f598029fd04657bbe1262e9abad2348cebe8669a5f8de3f164ae9f14dd2f"
+        }
+      },
+      "proposed_components": {
+        "support_scenario": {
+          "visibility": "observed",
+          "severity": 2,
+          "confidence": "medium",
+          "evidence": "The printer is placed on the main desk surface alongside an open notebook, pen, water glass, calendar, and plant, so the desk reads as an active work desk rather than a dedicated printer table or cabinet.",
+          "consequence": "The arrangement is usable but feels like the printer is occupying a person's primary work surface instead of being on a more appropriate printer station or side credenza.",
+          "issue_codes": [
+            "occupied_workstation"
+          ]
+        }
+      },
+      "source_provenance": {
+        "combined_result_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/experiments/two_pass/runs/v156-v164-v166-v166noguide-v2-two-pass/32_adf_printer_Front_Wide__v16_6/result.json",
+        "combined_result_sha256": "c52dc58e7eb4fb502d27faaea033143dc30b0f48fa580e38ffe096b48890207f",
+        "compact_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/32_adf_printer_Front_Wide__v16_6/response.json",
+          "sha256": "bf787a7d9a673df5d012eb60dbc8187853e7eec56285dfb0c98152c7c41f1da0"
+        },
+        "compact_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3/runs/v156-v164-v166-v166noguide-v2-full-v3/32_adf_printer_Front_Wide__v16_6/result.json",
+          "sha256": "340fbf3973897571d55faab55765b4c2514f92be48910643336583ff684d7d34"
+        },
+        "baseline_raw_response": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/32_adf_printer_Front_Wide__v16_6/response.json",
+          "sha256": "ae193e999e283a9e5448e070a48e564c9b1addd694e5ad5c30651457a1e0962c"
+        },
+        "baseline_result": {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v2/runs/v156-v164-v166-v166noguide-v2-full-v2/32_adf_printer_Front_Wide__v16_6/result.json",
+          "sha256": "424e140ad0d36d48a5e724fbd1eca62df4b18190da4f3e8199ab13a8d7d047d9"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "camera-v2-run-interruptions-v1",
+  "events": [
+    {
+      "reason": "manual_batch_stop_to_correct_density_validator_false_positive",
+      "scope": "No prompt/model/schema change; process was terminated after neutral surroundings were incorrectly classified as objects.",
+      "confirmed_preserved_response_count_before_or_during_shutdown": 11,
+      "possible_unrecorded_transport_case_ids": [
+        "22fdbf19f03d1a31__laptop_BackWide",
+        "22fdbf19f03d1a31__laptop_CAMReview"
+      ],
+      "possible_unrecorded_transport_attempt_count_upper_bound": 2,
+      "accounting_note": "The process was interrupted while two workers could have had requests in flight. No response file exists for these case IDs, so later calls must not be represented as certainly the first transport attempt."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "at_utc": "2026-11-12T03:28:44.728515+00:00",
+  "authorization": "User authorizes operational retries until generated; preserve attempts; never redraw successes or duplicate unresolved ambiguous submissions.",
+  "study_manifest_sha256": "b0f06acc2e32a7a621ecdffa5d4bddf6c2fa957621f66b1ad092a4cbed59ed94",
+  "source_code_sha256": "cdec0004c95198515119d77fc059feb1e191abc9f961234e01d0e37829ae8019",
+  "command": [
+    "/mnt/localssd/.cache/uv/builds-v0/.tmpY6SKJM/bin/python",
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_surface_diversity_v6_2_20261108/run_generation.py",
+    "--prompts",
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/source/prompts_for_runner_160.json",
+    "--prompts-sha256",
+    "c5e192585ae29341d58887a72f8c4ceefe6371af9167b4f2eb6e9449d0a22ad5",
+    "--run-dir",
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/run",
+    "--prefix",
+    "eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/run",
+    "--workers",
+    "4",
+    "--no-publish",
+    "--selection-file",
+    "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/recovery/attempt_0002/selection.json",
+    "--endpoint-base-url",
+    "http://127.0.0.1:39055",
+    "--expected-generator",
+    "GPT Image 2.5 / single reference / no grading",
+    "--expected-rewriter",
+    "Adobe-Firefly/foundry#4523 / d1e5ae5323de / unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+    "--expected-pipeline-version",
+    "unified-blue-scale-v21.3-surface-shapes-geometry-from-guide",
+    "--lineage-label",
+    "hp-pr4523-d1e5ae5323de-exact",
+    "--lineage-source-commit",
+    "d1e5ae5323dedebc3b06ed173a3731307bd0623a",
+    "--lineage-runtime-tree-sha256",
+    "4da08388491b36f6435aeea29d40b780bdd02b06b81f1a35b86999b0b6e8694e",
+    "--lineage-source-manifest-sha256",
+    "c62f172f4dd08c6f4d229079c22e1b77751a6e008e13366dab2de14d3026542f",
+    "--lineage-deployment-manifest-sha256",
+    "8701a44a54e016a2837807926f5fe10c8bb6901286471f59b9ee83b4aba972e3",
+    "--lineage-candidate-config-sha256",
+    "b69086f3856f5a90c4fd0ebff1e142de90f3dc51c807e85ad8e00fea989f4faa"
+  ],
+  "failures": [
+    {
+      "row_id": "cashmere__laptop_FrontCloseUp::p7",
+      "failed_job_id": "20261112T030639Z_ee877b6fa71f",
+      "error": "RuntimeError: ValueError: Elliptical support must contain all four product footprint corners.",
+      "client_files": {
+        "job": {
+          "original_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/run/jobs/cashmere__laptop_FrontCloseUp__p7.json",
+          "archived_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/recovery/attempt_0002/original_client/cashmere__laptop_FrontCloseUp__p7/job/cashmere__laptop_FrontCloseUp__p7.json",
+          "sha256": "a70f63fc9ac02255f7c630ce7c2f58e3550ca71f1b6f4c7f1997449dc6ed0a80"
+        },
+        "record": {
+          "original_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/run/records/cashmere__laptop_FrontCloseUp__p7.json",
+          "archived_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/recovery/attempt_0002/original_client/cashmere__laptop_FrontCloseUp__p7/record/cashmere__laptop_FrontCloseUp__p7.json",
+          "sha256": "8b970e8e980159a930abad6d081c7bb4bae8b3cb891463f739eb9e08653f393e"
+        },
+        "status": {
+          "original_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/run/status/cashmere__laptop_FrontCloseUp__p7.json",
+          "archived_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/recovery/attempt_0002/original_client/cashmere__laptop_FrontCloseUp__p7/status/cashmere__laptop_FrontCloseUp__p7.json",
+          "sha256": "c3fca0aa135b34d40535a28c352f1c447f6d5cb6a4368d25404c40258f631165"
+        }
+      },
+      "native_files_sha256": {
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T030639Z_ee877b6fa71f/02_chat_json.request.json": "c4ae066bd28bd089d050ba273808d854ed03136aeba8e7626536112c946e036e",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T030639Z_ee877b6fa71f/02_chat_json.response.json": "19ada21b389ee8a92d87cb4d6339575f4ded4d43443bfdc199594ef6cf9711d6",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T030639Z_ee877b6fa71f/job.json": "48d6464b0ec76aad0788e7e95c28db3f3033dc9a24e50466d46cb4f76f181382",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T030639Z_ee877b6fa71f/events.jsonl": "29cb4a7f2c64f62514d9c30df0185bee0dbd74449170912c3ac499c336bff3b4",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T030639Z_ee877b6fa71f/01_chat_json.response.json": "6dcdad432e9b07ea2d14cab218eaaafafc3bb0c535a1312e9c4e934491b7bdae",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T030639Z_ee877b6fa71f/01_chat_json.request.json": "e26ef64e41de3b31fd186e3d91077c3b7c02c705054bf4247ceeee892e16b6f5",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T030639Z_ee877b6fa71f/status.json": "c3fca0aa135b34d40535a28c352f1c447f6d5cb6a4368d25404c40258f631165",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T030639Z_ee877b6fa71f/hp16_product.png": "bf312f0b5652fd9523bd940395e15fab6d55b0e75b289c07d11ff52124b2616c",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T030639Z_ee877b6fa71f/calls.json": "9d6d87fbc3118f2d32d8888f28cdd51d8b8a9e60a8e4c26cee3612b1dfec149c",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T030639Z_ee877b6fa71f/result.json": "087295f21c0700118ab71c01f98d9c319a7abc6d2f211a27d5fbc23876269bba"
+      }
+    },
+    {
+      "row_id": "cashmere__laptop_FrontLeftMedium::p10",
+      "failed_job_id": "20261112T032255Z_83ae6e656ba2",
+      "error": "RuntimeError: ValueError: Image prompt mentions an image the image model does not receive: 'low apron and simple gray steel legs, with its back against the reference wall. Beyond the user-facing boundary, '",
+      "client_files": {
+        "job": {
+          "original_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/run/jobs/cashmere__laptop_FrontLeftMedium__p10.json",
+          "archived_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/recovery/attempt_0002/original_client/cashmere__laptop_FrontLeftMedium__p10/job/cashmere__laptop_FrontLeftMedium__p10.json",
+          "sha256": "13366de61a7f9be921eb46382bae61f356014c7a1419a61d8bcbcebc254192bc"
+        },
+        "record": {
+          "original_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/run/records/cashmere__laptop_FrontLeftMedium__p10.json",
+          "archived_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/recovery/attempt_0002/original_client/cashmere__laptop_FrontLeftMedium__p10/record/cashmere__laptop_FrontLeftMedium__p10.json",
+          "sha256": "983a0effe411be086e59b846a7e3963107759aac968f508265958acc4cc766d8"
+        },
+        "status": {
+          "original_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/run/status/cashmere__laptop_FrontLeftMedium__p10.json",
+          "archived_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/recovery/attempt_0002/original_client/cashmere__laptop_FrontLeftMedium__p10/status/cashmere__laptop_FrontLeftMedium__p10.json",
+          "sha256": "6a8b05f805c08e3fdfbcaa49579c8fd8d30e2147a6a3e1fd218144deb161ee98"
+        }
+      },
+      "native_files_sha256": {
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/result.json": "4b6df327c74bd127f6556ecf9c8571f7311ab201cf1cd3823cb0b2b4577960ef",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/03_chat_json.response.json": "462e00314b54bde3d21b7365aeec7966f1fb49544ec6c97abc82138fc750df6c",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/events.jsonl": "a4d4a84c502b182e8512f04ef1c30c66397f6eada185b0b383f39680abf4125e",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/job.json": "3392ac151a58f7449b078d2c45530e7bc95486a845fb70da9c3f02a4998abfe6",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/calls.json": "159ca3a5dc92b305a402f27cd81cc447bd503695a57e448326052eb5f8d68da1",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/hp16_product.png": "cdb72c908c5c7769934a9a6c90f7f6de2b1926cfc51907f916f06a718ae33075",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/02_chat_json.response.json": "b768275e3946f878c968ba924318c58aabf05abd53cde0960eab30a9a26999f1",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/01_chat_json.request.json": "5d94655c8b4744297413b014dd6d7287898e3c64b6e88ec5e6f9866bc27aaaef",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/status.json": "6a8b05f805c08e3fdfbcaa49579c8fd8d30e2147a6a3e1fd218144deb161ee98",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/03_chat_json.request.json": "6fa0eca0310837e57585aaa3b47937038d94724e02a89ab147d8f781863f8935",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/hp16_geometry_guide.png": "a764d8d72cf7cc58addadb75be0df87e16c8955a242c556acdba97e85fa739c5",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/01_chat_json.response.json": "b72777d2831d907d7324d38bb83815c31ab6fd911aa2685f47e9f8dc04ab5c65",
+        "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_5_training_full160_pr4523_20261112/endpoint_pr4523/run/jobs/20261112T032255Z_83ae6e656ba2/02_chat_json.request.json": "0f418447201d0efa5349b12b1362ad641e455547c2e0c495d5c30972251dc7e5"
+      }
+    }
+  ],
+  "successful_images_redrawn": 0,
+  "native_job_deletions": 0,
+  "recorded_before_any_new_submission": true
+}

@@ -1,0 +1,38 @@
+{
+  "version": "placement-judge-v3.1",
+  "status": "implemented_research_candidate_not_promoted_anchor_gate_failed",
+  "baseline": "selected_frozen_v3_consensus_v2_with_v2_exemplar_primary",
+  "based_on_v4": false,
+  "global_active_version_changed": false,
+  "automatic_acceptance_authorized": false,
+  "consultation_model_actual": "gpt-6-astra",
+  "consultation_route": "documented_foundry_gateway_direct_openai",
+  "judge_model_requested": "gpt-5.5",
+  "judge_model_actual": "gpt-5.5-2026-04-24",
+  "scoring_and_observation_schema_byte_identical_to_v3": true,
+  "new_chair_alignment_code_emission": "rejected_without_repair; historical_registry_retained",
+  "anchor_gate_met": false,
+  "known_false_negatives_against_user_supplied_labels": [
+    "07_cashmere_x_Front_Wide_4: required consequential laptop/table alignment failure is missed",
+    "13_elitebook_13_Front_Left_Medium_4: supplied malformed-table failure is missed; Astra also could not corroborate that geometry allegation"
+  ],
+  "correctness_claim": "Rubric implementation is verified offline; required visual-anchor correctness is NOT achieved.",
+  "targeted_resampling": false,
+  "comparison_scope": "Fresh frozen V3 and V3.1 on 128 historical supplied viewer outputs; not the parent's 90 new generations",
+  "comparison_export": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/evaluation/comparison.json",
+  "comparison_progress": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/evaluation/progress.json",
+  "comparison_complete": true,
+  "comparison_case_version_assessments": 256,
+  "comparison_successful_raw_model_responses": 530,
+  "comparison_terminal_errors": 0,
+  "comparison_model_verdict_counts_not_accuracy": {
+    "v3": {"pass": 107, "fail": 20, "review": 1},
+    "v3_1": {"pass": 113, "fail": 8, "review": 7}
+  },
+  "limitations": [
+    "User-selected development anchors, not held-out accuracy",
+    "E2E source images are outside V3 scene-stage calibration",
+    "Fresh independent model draws do not identify a causal rubric improvement",
+    "No threshold calibration or automatic acceptance approval"
+  ]
+}

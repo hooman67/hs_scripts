@@ -1,0 +1,956 @@
+[
+  {
+    "source_id": "ee810cf51bb82bb4",
+    "source_json_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+    "output": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A practical small office workspace centered on a broad wooden desk with sorted forms, records folders, color handouts, a paper notebook, pens, and a neat stack of finished pages. A corkboard with schedules, file cabinets, a rolling chair, a small plant, and daylight from a nearby window make the room feel busy, organized, and used for everyday paperwork."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source is focused on recurring printing and document workflows. Usable scene cues come from forms, records, handouts, color materials, and everyday admin work at a desk; technical ink, feeder, speed, and connectivity details were mostly omitted from the scene.",
+        "count_explanation": "U=3 useful KSPs: KSP1, KSP2, and KSP3 contain concrete document or desk-work cues. Output count is 1 because the cues overlap around recurring paperwork and administrative document handling rather than supporting distinct activities.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring document and color jobs"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Influenced the recurring paperwork and color handout materials, while ink and refill claims were not depicted."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, records, handouts, and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Provided the main office paperwork materials shown on the desk."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "forms, records, and everyday admin work easier to complete at the desk"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Supported the desk-based administrative workspace and organized document handling."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [],
+            "prompt_ids": [],
+            "explanation": "Connectivity and network details did not provide a useful scene cue beyond generic setup language, and device references were omitted."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "household administration, and everyday business paperwork"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "Helped keep the scene grounded in practical recurring paperwork rather than technical product features."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Small office setting with a broad wooden desk, corkboard, schedules, file cabinets, rolling chair, plant, and daylight from a nearby window.",
+              "Props such as pens, folders, a paper notebook, and a neat stack of finished pages were added to make the workspace believable."
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ]
+      }
+    }
+  },
+  {
+    "source_id": "160db92655412f4d",
+    "source_json_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/160db92655412f4d.json",
+    "output": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A busy department workspace centered on a broad wooden worktable with stacked forms, report packets, labeled folders, pens, and a marked-up schedule. Two coworkers sort paperwork beside simple office chairs, while filing cabinets, a noticeboard, storage shelves, and glass-walled rooms add depth. Clear weekday daylight keeps the shared work area practical and familiar."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source is centered on enterprise shared document work for large teams. Useful scene cues include recurring forms, reports, packets, schedules, large teams, and busy workdays; most security and fleet-management details are too technical for scene depiction.",
+        "count_explanation": "U=2 useful KSPs: KSP1 and KSP4. Output count is 1 because both cues describe the same shared office document-work environment, so they were combined rather than separated.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "recurring reports, forms, and packets"
+              },
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "busy workdays"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Contributed the office paperwork activity and recurring document materials."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [],
+            "prompt_ids": [],
+            "explanation": "Security and endpoint-risk language did not provide a concrete lifestyle activity or setting beyond the already covered shared office context."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [],
+            "prompt_ids": [],
+            "explanation": "Fleet management and firmware planning were technical administration concepts without a distinct visual scene cue."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "Large teams can handle changing document volumes"
+              },
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "recurring print work and varied workloads"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Reinforced the large-team, high-volume document-work setting; printing references were translated into visible paperwork without naming hardware."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "recurring forms, reports, schedules, and everyday operational documents"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "Used to keep the scene focused on operational office paperwork and schedules."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Broad wooden worktable, office chairs, filing cabinets, noticeboard, storage shelves, glass-walled rooms, two coworkers, labeled folders, pens, and daylight were invented to complete a believable office environment."
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ]
+      }
+    }
+  },
+  {
+    "source_id": "22fdbf19f03d1a31",
+    "source_json_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+    "output": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A modern shared office workspace centered on a broad meeting table with printed agendas, marked-up documents, paper notebooks, pens, and a few coffee cups. Two colleagues compare notes while a small whiteboard, glass partitions, plants, and lounge seating fill the background. Daylight from tall windows keeps the room clear and professional."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A compact creative office studio with a large wooden worktable spread with draft copy pages, storyboard sheets, sticky notes, color swatches, a spiral notebook, and pencils. Pinboards, shelves of sample books, a side cabinet, and a rolling chair add depth. Soft afternoon light and a half-finished coffee make the space feel actively used."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source is business-productivity focused. Usable scene cues include mobile professional work with documents and meetings, calls and content work, and meeting participation from office or shared spaces. Security and processor claims were mostly omitted as technical or abstract.",
+        "count_explanation": "U=3 useful KSPs: KSP1, KSP2, and KSP4. Returned 2 prompts because KSP1 and KSP4 overlap around professional meetings and document review, while KSP2 supports a distinct content-work studio scene. KSP3 did not add a concrete scene cue beyond security messaging.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "move through documents, meetings, and decisions"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used the documents and meetings cue to shape a shared professional meeting table scene."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "AI-assisted tasks, calls, and content work"
+              }
+            ],
+            "prompt_ids": [
+              "p2"
+            ],
+            "explanation": "Used the content work cue while omitting processor and AI hardware details."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [],
+            "prompt_ids": [],
+            "explanation": "Security-focused claims did not provide a concrete setting, activity, people, or work materials suitable for a distinct scene."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "whether joining from an office, shared workspace, or customer site"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used the office/shared workspace meeting context and combined it with KSP1's document-review cues."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.short_message",
+              "quote": "productive work and polished collaboration anywhere"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "Helped keep the scenes focused on professional collaboration and flexible business productivity without adding to the prompt count."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Broad meeting table, printed agendas, paper notebooks, pens, coffee cups, whiteboard, glass partitions, plants, lounge seating, two colleagues, and daylight were invented to complete the office scene."
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Creative studio setting, wooden worktable, draft copy pages, storyboard sheets, sticky notes, color swatches, pinboards, sample books, side cabinet, rolling chair, afternoon light, and coffee were invented to support the content-work cue."
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ]
+      }
+    }
+  },
+  {
+    "source_id": "d60e13e4457fd44c",
+    "source_json_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/d60e13e4457fd44c.json",
+    "output": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A modern creative office centered on a wide wooden project table with sketch pads, storyboard cards, sticky notes, pens, and printed concept sheets spread in loose clusters. Two colleagues compare marked-up drawings before a presentation, while a whiteboard, pinboard, low shelves, plants, and framed artwork add depth. Soft daylight from tall windows keeps the workspace calm and practical."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A small office meeting room focused on a clean conference table with agenda sheets, paper notebooks, pens, water glasses, and a few neatly stacked reports. Chairs are pulled in as if a remote client call is about to start. Acoustic wall panels, a glass partition, plants, and muted afternoon light make the space feel professional and lived-in."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source provides strong office-work cues around sketching, presenting, collaboration, video conferencing, and meetings. Technical AI, security, and configuration details were mostly omitted from the scene text.",
+        "count_explanation": "U=3 useful KSPs: KSP1, KSP2, and KSP3. Output count is 2 because KSP2 and KSP3 overlap around conferencing and meetings, while KSP1 supports a distinct sketch-to-presentation collaboration scene. KSP4 was not counted because its security and mobility language lacks a concrete scene cue.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "sketch in tablet mode, present in tent mode, and collaborate in PC mode"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Influenced the creative office scene with sketch materials, presentation preparation, and coworkers collaborating; device modes and product terms were omitted."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "help improve video conferencing, and allow advanced content creation"
+              }
+            ],
+            "prompt_ids": [
+              "p2"
+            ],
+            "explanation": "Contributed the conferencing and modern work context; processor, AI, operating system, and assistant details were omitted as technical copy."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "Bring a clearer presence to every call."
+              }
+            ],
+            "prompt_ids": [
+              "p2"
+            ],
+            "explanation": "Supported the meeting-room setup for a remote client call; camera, microphone, and noise-reduction feature names were omitted."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [],
+            "prompt_ids": [],
+            "explanation": "Security and protection claims are abstract and do not provide a concrete setting, activity, people, or materials for an additional scene."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "Move from concept to presentation"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "Helped keep both scenes focused on practical office work moving from ideas toward presentation and collaboration."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Modern creative office setting",
+              "Wide wooden project table",
+              "Sketch pads, storyboard cards, sticky notes, printed concept sheets, whiteboard, pinboard, shelves, plants, and framed artwork",
+              "Two colleagues comparing marked-up drawings",
+              "Tall windows and soft daylight"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Small office meeting room",
+              "Conference table with agenda sheets, paper notebooks, pens, water glasses, and stacked reports",
+              "Remote client call setup",
+              "Acoustic wall panels, glass partition, plants, chairs pulled in, and muted afternoon light"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ]
+      }
+    }
+  },
+  {
+    "source_id": "fecec52a5c57c7bb",
+    "source_json_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/fecec52a5c57c7bb.json",
+    "output": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A modern creative office centered on a broad wooden table with paper sketches, presentation printouts, sticky notes, pens, and a half-finished coffee. Two colleagues compare notes beside a whiteboard with rough diagrams. Shelving, framed artwork, plants, and large windows add depth, with bright afternoon light making the workspace feel active and collaborative."
+        },
+        {
+          "id": "p2",
+          "environment": "Office",
+          "text": "A small professional focus room with a tidy desk holding a printed meeting agenda, paper notebook, pen, water glass, and neatly stacked documents. A person reviews notes before an important video meeting. Behind them, a simple bookshelf, plant, acoustic wall panel, and soft daylight create a calm, prepared setting."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source provides strong office-work cues around sketching, presenting, collaborating, content creation, video conferencing, and meetings. Security and processor details were mostly technical and not depicted directly.",
+        "count_explanation": "U=3 useful KSPs: KSP1, KSP2, and KSP3 contain explicit scene or activity cues. Output count is 2 because sketching/presentation collaboration and prepared video meeting support two meaningfully different office scenes; KSP2 overlaps with both.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "supports sketching in tablet mode, presenting in tent mode, and collaborating in PC mode"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Used the sketching, presenting, and collaboration cues while omitting device modes and technical form-factor language."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "help improve video conferencing, and allow advanced content creation"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Used content creation to support the creative materials in p1 and video conferencing to support the meeting-prep scene in p2; processor and AI architecture details were omitted."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "Show up clearly and confidently in important conversations"
+              },
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "focus on the meeting instead of the setup"
+              }
+            ],
+            "prompt_ids": [
+              "p2"
+            ],
+            "explanation": "Used the important meeting and prepared presence cues, without depicting camera or audio features."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [],
+            "prompt_ids": [],
+            "explanation": "Security and protection claims were technical and did not provide a concrete scene cue beyond vague mobile work across locations."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "work flexibly, collaborate confidently, and stay protected across locations"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "Helped keep the scenes in a professional, flexible work context; security language was not visualized."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Modern creative office setting",
+              "Broad wooden table, sticky notes, coffee, whiteboard, shelving, framed artwork, plants, and large windows",
+              "Two colleagues comparing notes",
+              "Bright afternoon light"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Small professional focus room",
+              "Printed agenda, water glass, stacked documents, bookshelf, plant, acoustic wall panel",
+              "Person reviewing notes before the meeting",
+              "Soft daylight and calm prepared atmosphere"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ]
+      }
+    }
+  },
+  {
+    "source_id": "8bbf8af1d8cbf4b2",
+    "source_json_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/8bbf8af1d8cbf4b2.json",
+    "output": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A tidy small office admin area centered on a broad side credenza beside a wooden worktable, with stacked multi-page forms, color handouts, folders, binder clips, and pens arranged for recurring paperwork. File cabinets, labeled trays, a corkboard with a repeat-task checklist, shelves, plants, and daylight from a nearby window make the workspace feel organized and actively used."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source is mostly product capability messaging for an all-in-one ink tank printer. Usable scene context comes from frequent document and color output, multi-page forms and admin work, and repeat setup or scanning tasks; technical specs and connectivity details were omitted from the scene.",
+        "count_explanation": "U=3 useful KSPs with explicit scene cues. Output count is 1 because the cues overlap around recurring document and admin workflow, so they fit one coherent office scene rather than separate environments.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "frequent document and color printing"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Influenced the stacks of paperwork and color handouts; ink capacity and refill claims were omitted as technical marketing details."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "Multi-page forms, records, packets, and copies"
+              },
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "recurring admin work"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Provided the main office admin workflow, including multi-page forms, folders, and organized paperwork."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [],
+            "prompt_ids": [],
+            "explanation": "Connectivity options and network access are technical claims without a distinct visual scene cue, so they were not depicted."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "Everyday setup, scanning, and repeat tasks"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Contributed the repeat-task checklist and recurring workflow feel; touchscreen, app, and phone-specific control details were omitted to respect the device boundary."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "recurring document and color output"
+            },
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "everyday print workflows stay organized"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "Helped keep the scene focused on organized, frequent paperwork in a practical office setting."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Small office admin area with a broad side credenza and wooden worktable.",
+              "File cabinets, labeled trays, corkboard, shelves, plants, pens, binder clips, and daylight from a nearby window.",
+              "The arranged paperwork and actively used but tidy atmosphere were invented to complete the scene."
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ]
+      }
+    }
+  },
+  {
+    "source_id": "8189f3ad5af37a81",
+    "source_json_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/8189f3ad5af37a81.json",
+    "output": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A shared office workroom centered on a broad wooden table, with neatly stacked invoices, forms, report packets, file folders, pens, sticky notes, and labeled inbox trays. Two people review a small pile of records near a side cabinet. Bookshelves, plants, a wall calendar, large windows, and simple task lighting make the space feel busy but organized."
+        },
+        {
+          "id": "p2",
+          "environment": "Education",
+          "text": "A bright school resource room with a long table covered in lesson packets, color handouts, worksheets, binders, pencils, and a spiral notebook. Two people sort learning materials into tidy stacks while a corkboard, storage shelves, simple chairs, and tall windows fill the background. Afternoon daylight gives the room a practical, familiar feel."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source provides practical document-work cues across office administration and learning-material preparation. Technical print, connectivity, and display details were omitted from the scene text to preserve the device boundary.",
+        "count_explanation": "U=4 useful KSPs. Returned 2 prompts because the strongest cues group into two meaningfully different activities: shared office paperwork and education material preparation. Overlapping document-handling cues were combined rather than split into separate minor variations.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "invoices, forms, learning materials, records, and everyday admin needs"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Used the office admin materials for p1 and learning materials for p2; ink tank and refill claims were omitted as product-specific."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "forms, reports, packets, and records"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Used multipage paperwork, reports, packets, forms, and records as tabletop materials; all named device functions were omitted."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "people in shared spaces"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Used the shared-space cue to support collaborative office and school resource-room settings; connectivity details were not depicted."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "documents and color materials"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Used the review of everyday documents and color materials as props and activity cues; display and output-quality claims were omitted."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "everyday forms, packets, records, and color documents move through one capable device"
+            },
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "connection choices that fit shared spaces"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "Reinforced the overall context of recurring document work in shared spaces, without naming or describing the product."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Invented the shared office workroom, broad wooden table, file folders, pens, sticky notes, labeled inbox trays, side cabinet, bookshelves, plants, wall calendar, windows, and task lighting."
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "Invented the school resource room, long table, worksheets, binders, pencils, spiral notebook, corkboard, storage shelves, simple chairs, tall windows, and afternoon daylight."
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ]
+      }
+    }
+  },
+  {
+    "source_id": "324b14a617dfedba",
+    "source_json_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/324b14a617dfedba.json",
+    "output": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A busy office document preparation area centered on a broad worktable with neatly stacked forms, binder clips, labeled in-and-out baskets, paper reams, and a few marked-up packets. Two teammates compare document sets beside a side cabinet, wall calendar, noticeboard, and storage shelves, with bright daytime light giving the shared workspace an active, practical feel."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source is centered on shared office document production, high-volume everyday paperwork, and shared environments. Security and fleet-control claims are mostly technical, so only the concrete office workflow context was used.",
+        "count_explanation": "U=3: KSP1, KSP3, and KSP4 contain usable shared work, workflow, or document-area cues. Output count is 1 because the cues overlap into one shared office document preparation scene; KSP2 was too security-focused for a distinct scene.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "Keep shared print work moving"
+              },
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "Busy teams can produce everyday documents"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Contributed the busy shared office document-work context and team activity, while product and output specifications were omitted from the prompt."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [],
+            "prompt_ids": [],
+            "explanation": "Omitted because endpoint protection and firmware/security details are technical benefits without a distinct lifestyle scene cue."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "shared print environments"
+              },
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "adapt workflows over time"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Influenced the shared office workflow feel through labeled baskets and organized document flow; fleet and firmware details were omitted."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "busy shared environments"
+              },
+              {
+                "path": "KSP4.long_message_best_sku",
+                "quote": "Teams can support larger jobs and daily document demand"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Contributed the larger document sets, paper reams, and active shared area cues, while capacity specifications were omitted."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "large shared print environments keep everyday documents moving"
+            },
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "busy teams can produce document sets"
+            }
+          ],
+          "prompt_ids": [
+            "p1"
+          ],
+          "explanation": "Helped keep the scene focused on a large shared office document environment with everyday paperwork and team use."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Broad worktable, binder clips, labeled in-and-out baskets, marked-up packets, side cabinet, wall calendar, noticeboard, storage shelves, and bright daytime light were invented to complete a believable office environment."
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ]
+      }
+    }
+  },
+  {
+    "source_id": "943faef0af11484f",
+    "source_json_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/943faef0af11484f.json",
+    "output": {
+      "prompts": [
+        {
+          "id": "p1",
+          "environment": "Office",
+          "text": "A compact office administration area with a broad side counter beside a wooden desk, holding stacked intake forms, labeled folders, a clipboard, pens, sticky notes, and a half-finished mug of tea. Filing cabinets, a wall calendar, inbox trays, plants, and frosted interior windows create a practical workspace, lit by soft daylight and overhead office lights."
+        },
+        {
+          "id": "p2",
+          "environment": "Education",
+          "text": "A bright school prep room with a large worktable covered in worksheets, permission slips, color activity sheets, paper clips, pencils, and a spiral planning notebook. Shelves of books and craft bins, a bulletin board with pinned schedules, simple chairs, and tall windows make the room feel busy but orderly in clear morning light."
+        }
+      ],
+      "debug": {
+        "input_assessment": "The source is centered on frequent everyday document handling, forms, records, administrative paperwork, and school materials. Technical printer capabilities were omitted from scene text while preserving practical paper-based settings.",
+        "count_explanation": "U=3 useful KSPs. Returned 2 prompts because KSP2 and KSP3 overlap around office paperwork, while KSP1 also supports a distinct school-materials preparation scene. KSP4 was treated as technical connectivity rather than a separate scene cue.",
+        "used_fallback": false,
+        "ksp_mappings": [
+          {
+            "ksp_id": "KSP1",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP1.long_message_best_sku",
+                "quote": "forms, records, school materials, and color documents"
+              }
+            ],
+            "prompt_ids": [
+              "p1",
+              "p2"
+            ],
+            "explanation": "Document materials informed both the office paperwork scene and the education prep scene."
+          },
+          {
+            "ksp_id": "KSP2",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP2.long_message_best_sku",
+                "quote": "multi-page paperwork, copies, scans, and administrative tasks"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Administrative paperwork influenced the office environment with forms, folders, trays, and organizational props."
+          },
+          {
+            "ksp_id": "KSP3",
+            "eligible_for_additional_prompt": true,
+            "source_evidence": [
+              {
+                "path": "KSP3.long_message_best_sku",
+                "quote": "Create copies, digitize pages, send fax documents, and manage routine output"
+              }
+            ],
+            "prompt_ids": [
+              "p1"
+            ],
+            "explanation": "Routine document handling reinforced the same office paperwork scene; technical functions were omitted from the prompt text."
+          },
+          {
+            "ksp_id": "KSP4",
+            "eligible_for_additional_prompt": false,
+            "source_evidence": [],
+            "prompt_ids": [],
+            "explanation": "Connectivity and shared access claims did not provide a concrete setting or activity beyond technical workflow language."
+          }
+        ],
+        "value_proposition": {
+          "source_evidence": [
+            {
+              "path": "ValueProposition.long_message_best_sku",
+              "quote": "forms, records, school materials, scans, copies, and color documents"
+            }
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2"
+          ],
+          "explanation": "Used to keep the scenes focused on recurring document work across office and school-material contexts."
+        },
+        "creative_additions": [
+          {
+            "prompt_id": "p1",
+            "details": [
+              "Compact office administration area",
+              "Broad side counter and wooden desk",
+              "Labeled folders, clipboard, sticky notes, mug, filing cabinets, wall calendar, inbox trays, plants, frosted windows, and mixed daylight with overhead office lighting"
+            ]
+          },
+          {
+            "prompt_id": "p2",
+            "details": [
+              "School prep room",
+              "Large worktable",
+              "Permission slips, activity sheets, paper clips, pencils, spiral planning notebook, craft bins, bulletin board, simple chairs, tall windows, and morning light"
+            ]
+          }
+        ],
+        "ignored_fields": [
+          "_chatSession"
+        ]
+      }
+    }
+  }
+]

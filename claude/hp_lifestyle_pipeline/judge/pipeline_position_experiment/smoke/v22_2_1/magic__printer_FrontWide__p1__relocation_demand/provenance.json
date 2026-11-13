@@ -1,0 +1,53 @@
+{
+  "slug": "magic__printer_FrontWide__p1__relocation_demand",
+  "base_slug": "magic__printer_FrontWide__p1",
+  "mode": "relocation_demand",
+  "device_id": "magic",
+  "camera_id": "Front_Wide",
+  "prompt": "A wide open-office output area. Relocate the fully visible printer to a right-of-center dedicated output station, leaving the left side of the room open for paper sorting and circulation. Preserve the printer's exact view and pixel size. Compose a new pale oak support table beneath it, square to the fixed printer orientation, with believable edge clearances, wall alignment and unobstructed standing access at the front. Use soft clear daylight and an orderly office background.",
+  "pipeline_version": "unified-blue-scale-v22.2.1-unambiguous-high-fill-lock-twin-camera-guide-only-no-mask",
+  "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+  "output_sha256": "2562081175a07cc60606e6ffb730916f758ff71151c9d67ec01cd5360fa00341",
+  "final_prompt_sha256": "8f946ee7fdc6faf8b1857f94b5a4325ee460ca2bbbcfbec641307344a4631bf6",
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 962,
+        "prompt_tokens": 14268,
+        "total_tokens": 15230,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 75,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "mask": false
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "snapshot_version": 1,
+  "status": "superseded_pending_audit_path_rule_tightening",
+  "created_at": "2026-10-22T23:23:54.784357+00:00",
+  "reason": "The r3 type-camera batch preserved one exact quote under the wrong source copy-variant path; raw outputs remain unaltered while the audit instruction is tightened.",
+  "api_calls_during_archive": false,
+  "case_count": 24,
+  "record_count": 24,
+  "prompt_count": 39,
+  "automated_validation": {
+    "passed": 23,
+    "failed": 1,
+    "failure_cases": [
+      {
+        "case_id": "10_actual_laptop_front_right_closeup",
+        "failures": [
+          "Evidence is not a verbatim source substring: ValueProposition.long_message_best_sku"
+        ]
+      }
+    ]
+  },
+  "model": [
+    "gpt-5.5-2026-04-24"
+  ],
+  "system_prompt_sha256": "512745e7394d7b6ae679d3ee384dc3c1f64e9f26a8657ed30cbea48f682ba7e5",
+  "snapshots": {
+    "system_prompt.md": {
+      "sha256": "512745e7394d7b6ae679d3ee384dc3c1f64e9f26a8657ed30cbea48f682ba7e5",
+      "bytes": 40127
+    },
+    "system_prompt.template.md": {
+      "sha256": "672d807edc380107dccb4e12d588be94e13c156e633e18056931684a54327ab3",
+      "bytes": 12809
+    },
+    "input.schema.json": {
+      "sha256": "9515b6aabcfce9a6d1ff43fcf9e861aa3bd5819bfce68a7a07960e8972588c24",
+      "bytes": 404
+    },
+    "output.schema.json": {
+      "sha256": "397ff3526546937a5e7416e9a5cf2ed45dc0600a65a361d1ffe7e0c7c363d9ca",
+      "bytes": 6800
+    },
+    "camera_profiles.json": {
+      "sha256": "59b5e2b322dcd74c21432e772f3dd11513f71c182f6114b99b15e009dbeea68b",
+      "bytes": 117073
+    },
+    "build_system_prompt.py": {
+      "sha256": "83350c92f9ef1fca2516804004341504272b60773fbac40bad8b870107e350ae",
+      "bytes": 7580
+    },
+    "camera_profile_resolver.py": {
+      "sha256": "130aa657bcab7c5d5b86a4af5972cbdf9479b5af610361159e8397fb45e983be",
+      "bytes": 8176
+    },
+    "build_sample_review.py": {
+      "sha256": "4dc64d6b4a468414681f6b98547c06d873bd79b854072ccfe9d79ca216496417",
+      "bytes": 35145
+    },
+    "test_camera_profile_tools.py": {
+      "sha256": "afec67d5771399fe998f42caf1b962d5020f8611bcf76890551cc5954a06f169",
+      "bytes": 7174
+    }
+  },
+  "eval_artifacts": {
+    "manifest_sha256": "24f7f42cf8aa43997a955c209c40b6a92ea1ec457da0e4a91440119aeddbb4f7",
+    "validation_sha256": "5b977d4338a6b03ce8c281ac4b504051f38c140caa0440eae6be415915cc1013",
+    "run_summary_sha256": "fa4cf13dc48cb64128ba622a5a7d304e3eac777e4f702a2175663001538557d4"
+  },
+  "hash_inventory": "SHA256SUMS"
+}

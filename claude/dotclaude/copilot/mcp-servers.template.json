@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "foundry-pluto": {
+      "type": "stdio",
+      "command": "~/.foundry-jobs/uv/bin/uv",
+      "args": ["--directory", "~/.foundry-jobs/code", "run", "foundry-jobs-mcp"],
+      "tools": ["*"]
+    },
+    "microsoft-agent": {
+      "type": "stdio",
+      "command": "~/.claude/hoshyari/microsoft_agent_v2/venv/bin/python",
+      "args": ["-m", "microsoft_agent.server"],
+      "tools": ["*"]
+    },
+    "excel": {
+      "type": "stdio",
+      "command": "~/.local/bin/uvx",
+      "args": ["excel-mcp-server", "stdio"],
+      "tools": ["*"]
+    },
+    "obsidian": {
+      "type": "http",
+      "url": "http://127.0.0.1:27123/mcp/",
+      "headersFromClaude": ["Authorization"],
+      "tools": ["*"]
+    },
+    "glean": {
+      "type": "http",
+      "url": "https://mcp.adobe.io/mcp/",
+      "tools": ["*"]
+    }
+  }
+}

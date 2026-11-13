@@ -1,0 +1,162 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage_status",
+    "unable_reason",
+    "results"
+  ],
+  "properties": {
+    "stage_status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "unable"
+      ]
+    },
+    "unable_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "unreadable_image",
+        "target_not_identifiable",
+        "product_type_conflict",
+        "fundamentally_unjudgeable_product_support"
+      ]
+    },
+    "results": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 14,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "test_id",
+          "decision",
+          "severity",
+          "observability",
+          "observed_subtype",
+          "direct_evidence",
+          "counterevidence",
+          "visibility_limit",
+          "region"
+        ],
+        "properties": {
+          "test_id": {
+            "type": "string",
+            "enum": [
+              "support_role",
+              "support_room_placement",
+              "device_surface_position",
+              "prop_activity_relation",
+              "operating_access",
+              "user_position",
+              "device_support_axes",
+              "furniture_room_axes",
+              "product_scale",
+              "load_path",
+              "support_anatomy",
+              "shared_perspective",
+              "support_contact",
+              "shadows_reflections"
+            ]
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "confirmed",
+              "rejected",
+              "uncertain"
+            ]
+          },
+          "severity": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "observability": {
+            "type": "string",
+            "enum": [
+              "visible",
+              "partial",
+              "hidden"
+            ]
+          },
+          "observed_subtype": {
+            "type": "string",
+            "enum": [
+              "not_applicable",
+              "blocked",
+              "chair_displacement",
+              "excessive_reach",
+              "floating",
+              "incoherent_use_zone",
+              "incompatible_support",
+              "inconsistent_reflection",
+              "inconsistent_shadow",
+              "misplaced_furniture",
+              "no_feasible_user_position",
+              "occupied_personal_workstation",
+              "sinking_or_intersection",
+              "unsupported"
+            ]
+          },
+          "direct_evidence": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 360
+          },
+          "counterevidence": {
+            "type": "string",
+            "maxLength": 360
+          },
+          "visibility_limit": {
+            "type": "string",
+            "maxLength": 360
+          },
+          "region": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/region"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "box"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 360
+        },
+        "box": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  }
+}

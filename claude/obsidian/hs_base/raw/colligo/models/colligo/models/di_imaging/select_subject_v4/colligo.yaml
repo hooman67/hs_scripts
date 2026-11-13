@@ -1,0 +1,22 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - pydantic
+deps:
+- colligo.models.di_imaging.generic_segformer[public]
+- colligo.models.di_imaging.matting[public]
+- colligo.models.di_imaging.portrait_segformer[public]
+- colligo.models.di_imaging.svd[public]
+- colligo.models.di_imaging.trimap[public]
+- colligo.models.di_imaging.urm[public]
+- numba
+- numpy
+- opencv-contrib-python-headless
+- patchify
+- pillow
+- scikit-image
+- scikit-learn
+- torch

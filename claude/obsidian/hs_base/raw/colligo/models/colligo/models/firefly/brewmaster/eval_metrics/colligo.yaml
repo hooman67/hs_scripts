@@ -1,0 +1,84 @@
+visibility: public
+# ADOBE CONFIDENTIAL
+# ___________________
+#
+#  Copyright 2025 Adobe
+#  All Rights Reserved.
+#
+# NOTICE: All information contained herein is, and remains
+# the property of Adobe and its suppliers, if any. The intellectual
+# and technical concepts contained herein are proprietary to Adobe
+# and its suppliers and are protected by all applicable intellectual
+# property laws, including trade secret and copyright laws.
+# Dissemination of this information or reproduction of this material
+# is strictly forbidden unless prior written permission is obtained
+# from Adobe.
+
+name: eval
+description: "Colligo Evaluation Service - Automated evaluation for GenAI models"
+version: "0.1.0"
+type: "service"
+
+dependencies:
+- torch
+- torchvision
+- scipy
+- scikit-learn
+- nltk
+- rouge-score
+- bert-score
+- sentence-transformers
+- opencv-python
+- clip-by-openai
+- aesthetic-predictor
+
+optional_dependencies:
+- transformers
+- accelerate
+- diffusers
+- PIL
+- numpy
+- pandas
+
+test_dependencies:
+- pytest
+- pytest-cov
+- pytest-mock
+
+entry_points:
+  console_scripts:
+  - colligo-eval = colligo.eval.cli:main
+
+config:
+  default_task_taxonomy: "config/task_taxonomy.json"
+  default_metrics_registry: "config/metrics_registry.json"
+  cache_dir: "~/.colligo/eval/cache"
+  log_level: "INFO"
+  max_concurrent_evaluations: 10
+  timeout_seconds: 3600
+
+features:
+- task_taxonomy
+- metrics_registry
+- batch_evaluation
+- distributed_evaluation
+- result_caching
+- metric_aggregation
+deps:
+- clip
+- huggingface-hub
+- numpy
+- opencv-contrib-python-headless
+- pillow
+- pylibs.colligo.eval.config.metrics_registry
+- pylibs.colligo.eval.config.task_taxonomy
+- pylibs.colligo.eval.config.yaml_loader
+- pylibs.colligo.eval.metrics.base
+- pylibs.colligo.eval.validation.basic_validation
+- pylibs.colligo.eval.validation.comprehensive_validation
+- pylibs.colligo.eval.validation.video_metrics_validation
+- pyyaml
+- scipy
+- torch
+- torchvision
+- videojedi

@@ -1,0 +1,139 @@
+{
+  "version": "hp-v4-diversity-analysis-local-validation-v1",
+  "status": "passed",
+  "output": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/reports/hp_lifestyle_lived_in_v4_eval_20261026/diversity_analysis_v1",
+  "environment_counts": {
+    "Café": 65,
+    "Creative Studio": 78,
+    "Education": 55,
+    "Gaming": 39,
+    "Home": 92,
+    "Office": 211
+  },
+  "relationship_counts": {
+    "creative_departure": 245,
+    "source_adjacent": 135,
+    "source_grounded": 160
+  },
+  "source_relevance_score_histogram": [
+    {
+      "label": "0-9",
+      "count": 161
+    },
+    {
+      "label": "10-19",
+      "count": 21
+    },
+    {
+      "label": "20-29",
+      "count": 15
+    },
+    {
+      "label": "30-39",
+      "count": 53
+    },
+    {
+      "label": "40-49",
+      "count": 50
+    },
+    {
+      "label": "50-59",
+      "count": 46
+    },
+    {
+      "label": "60-69",
+      "count": 34
+    },
+    {
+      "label": "70-79",
+      "count": 25
+    },
+    {
+      "label": "80-89",
+      "count": 50
+    },
+    {
+      "label": "90-99",
+      "count": 64
+    },
+    {
+      "label": "100",
+      "count": 21
+    }
+  ],
+  "reference_similarity_quantiles": {
+    "p00": 0.25407,
+    "p10": 0.374227,
+    "p25": 0.411838,
+    "p50": 0.469835,
+    "p75": 0.519976,
+    "p90": 0.603909,
+    "p100": 0.781558
+  },
+  "exact_duplicate_prompt_groups": 0,
+  "canonical_duplicate_prompt_groups": 0,
+  "js_syntax": {
+    "status": "skipped",
+    "reason": "no JavaScript runtime is installed; DOM/data contracts were checked statically"
+  },
+  "browser_render": {
+    "status": "not_performed",
+    "reason": "no supported browser is installed on this host"
+  },
+  "published": true,
+  "checks": [
+    "build manifest is the V4 native-environment version",
+    "build manifest records 540 prompts, 10 references, and 540 CSV rows",
+    "artifact bytes and SHA match: downloads/analysis.json",
+    "artifact bytes and SHA match: downloads/candidate_metrics.csv",
+    "artifact bytes and SHA match: downloads/lexical_audit.json",
+    "artifact bytes and SHA match: downloads/reference_prompts.json",
+    "artifact bytes and SHA match: gallery/data.js",
+    "artifact bytes and SHA match: gallery/imsauth.js",
+    "artifact bytes and SHA match: gallery/index.html",
+    "artifact bytes and SHA match: gallery/report.js",
+    "artifact bytes and SHA match: gallery/style.css",
+    "analysis input hash matches current frozen generation_prompts",
+    "analysis input hash matches current frozen accepted_prompt_cases",
+    "analysis input hash matches current frozen selection_manifest",
+    "analysis input hash matches current frozen lexical_audit",
+    "analysis contains exactly 540 point records",
+    "analysis contains exactly 10 reference records",
+    "native environment distribution covers the exact six categories and sums to 540",
+    "display compatibility alias has the exact native environment distribution",
+    "all 540 point rows preserve native environment without relabeling",
+    "source-relevance histogram sums to 540",
+    "source-relationship distribution sums to 540",
+    "reference similarity is grouped over all six native environments",
+    "nearest-reference assignments sum to 540",
+    "semantic method records the frozen MiniLM revision",
+    "semantic model loading is forced offline",
+    "semantic proximity is explicitly not labeled image quality",
+    "candidate CSV contains 540 unique candidate keys",
+    "candidate CSV and analysis JSON contain the same candidate keys",
+    "gallery data uses the expected JavaScript wrapper",
+    "gallery data and downloadable analysis JSON are semantically identical",
+    "every JavaScript DOM ID exists in gallery HTML",
+    "download link resolves locally: ../downloads/analysis.json",
+    "download link resolves locally: ../downloads/candidate_metrics.csv",
+    "download link resolves locally: ../downloads/lexical_audit.json",
+    "download link resolves locally: ../downloads/reference_prompts.json",
+    "gallery has no stale V3 or post-hoc taxonomy claims",
+    "publisher allowlist exactly matches build artifacts plus source manifest",
+    "publication record has the expected version",
+    "publication record confirms the isolated prefix was empty",
+    "publication record confirms the active image gallery was untouched",
+    "publication record has the exact allowlisted object count",
+    "publication record contains exactly the allowlisted objects",
+    "publication record matches local artifact: downloads/analysis.json",
+    "publication record matches local artifact: downloads/candidate_metrics.csv",
+    "publication record matches local artifact: downloads/lexical_audit.json",
+    "publication record matches local artifact: downloads/reference_prompts.json",
+    "publication record matches local artifact: gallery/data.js",
+    "publication record matches local artifact: gallery/imsauth.js",
+    "publication record matches local artifact: gallery/index.html",
+    "publication record matches local artifact: gallery/report.js",
+    "publication record matches local artifact: gallery/style.css",
+    "publication record matches local artifact: source_manifest.json"
+  ]
+}

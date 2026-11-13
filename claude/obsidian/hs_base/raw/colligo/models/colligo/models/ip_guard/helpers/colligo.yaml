@@ -1,0 +1,29 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.firefly.vllm_serve[public]
+  - pydantic
+deps:
+- aiohttp
+- colligo.aiohttp
+- colligo.data
+- colligo.external_services.mts
+- colligo.models.common.adapter_utils
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.segmentation.sam3_image[public]
+- colligo.models.ip_guard.worker.pipeline[public]
+- colligo.models.ip_guard.worker.retrieval[public]
+- faiss-gpu-cu12
+- httpx
+- imagehash
+- lingua-language-detector
+- numpy
+- pandas
+- pillow
+- pyarrow
+- torch
+- torchvision
+- transformers

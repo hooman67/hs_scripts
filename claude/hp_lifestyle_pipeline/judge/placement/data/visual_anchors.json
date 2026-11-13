@@ -1,0 +1,45 @@
+{
+  "status": "Development demonstrations, not test labels or calibrated severity scores",
+  "examples": [
+    {
+      "asset_id": "comparison-row-02-v14",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_02/v14_final.png",
+      "sha256": "043e475a622c1ad87a00d97d45974926e60d8fd390930ef4fdf64f6d97817ce1",
+      "s3_url": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/02/v14_final.png",
+      "kind": "development_human_defect_anchor",
+      "guidance": "C-Tech flags: \"v14 - Scene should be oriented in the same angle as the placed product\". Treat the visible product-versus-table angular mismatch as an orientation_alignment defect (furniture_axis_conflict), even though there is enough clear table area to put a laptop down. Distinguish alignment quality from mere physical possibility."
+    },
+    {
+      "asset_id": "comparison-row-08-v14",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_08/v14_final.png",
+      "sha256": "6b1c60973c2c45ce5376e26331939e1426be3a5a80b2e176b2db1b1437f1411d",
+      "s3_url": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/08/v14_final.png",
+      "kind": "development_human_defect_anchor",
+      "guidance": "C-Tech flags: \"Product needs to be closer to the table edge.\" Treat the deep placement relative to the laptop working side and chair-side approach as an access_usability defect (excessive_reach). A large attractive conference table does not excuse an awkward seated reach."
+    },
+    {
+      "asset_id": "comparison-row-21-v13",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/comparison/row_21/v13_final.png",
+      "sha256": "827f4461f364139fa03cf63cce66574dc5843f8ad429d294b2850fd762449d64",
+      "s3_url": "s3://foundry-hp-enterprise-adobe-assets/hp-data-artifacts/hp-3p-gpt25/hp-v13-v14-laptop-printer30-20261103T015107Z-viewer/originals/21/v13_final.png",
+      "kind": "development_human_defect_anchor",
+      "guidance": "C-Tech flags: \"v13 product is floating\". Inspect how the laptop base plane sits relative to the table plane: a low corner and some shadow are not sufficient evidence that the entire load-bearing base is convincingly supported. This is a contact_integration defect (floating), not simply a styling preference."
+    },
+    {
+      "asset_id": "printer-reference-style_279",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/references/HP_Lifestyle_DSv2_graded_279.png",
+      "sha256": "ed8d1850eaa86fb6cfcc0c4317eee49f1078917627492fdaf7e93900b75e3376",
+      "s3_url": "s3://foundry-dropbox-hp-enterprise/HP_Lifestyle_Dataset_v3/HP_Lifestyle_DSv2_graded_279.png",
+      "kind": "researcher_interpreted_reference",
+      "guidance": "Reference photograph: a printer on its own cabinet, operating front facing the standing user and an open paper-output path. This illustrates natural printer access without a chair. It is an explanatory support/access example, not a human-labeled perfect overall score."
+    },
+    {
+      "asset_id": "printer-reference-style_342",
+      "local_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/local_runs/placement_assets/references/HP_Lifestyle_DSv2_graded_342.png",
+      "sha256": "2398fd8895a61b1608e43c3f62a72f1327bc64e96f2641ef689d66ab97c8b68f",
+      "s3_url": "s3://foundry-dropbox-hp-enterprise/HP_Lifestyle_Dataset_v3/HP_Lifestyle_DSv2_graded_342.png",
+      "kind": "researcher_interpreted_reference",
+      "guidance": "Reference photograph: the printer is on a separate table in the background while laptop activity uses the foreground table. A neighboring workspace is compatible with natural printer placement when its support and approach are separate. Some printer details are too distant to score confidently."
+    }
+  ]
+}

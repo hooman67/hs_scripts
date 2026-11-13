@@ -1,0 +1,69 @@
+visibility: public
+has_build_module: true
+public:
+  files:
+  - types/__init__.py
+  - types/audio.py
+  - types/inputs.py
+  - types/safety_precheck.py
+  - types/scap.py
+  - types/segmentation.py
+  - types/supported_model.py
+  - types/video_metrics.py
+  - types/video_request.py
+  - types/workflows.py
+  deps:
+  - colligo.base
+  - colligo.models.firefly.clio_common[public]
+  - colligo.models.firefly.segmentation.sam3_image[public]
+  - colligo.models.firefly.smoothtalk_audio[public]
+  - colligo.models.prompt_forge_llm.worker[public]
+  - pydantic
+deps:
+- aiohttp
+- av
+- boto3
+- colligo.data
+- colligo.data
+- colligo.external_services.acp
+- colligo.external_services.business_kit
+- colligo.external_services.cai
+- colligo.external_services.common
+- colligo.external_services.ims
+- colligo.fastapi
+- colligo.image
+- colligo.models.cai
+- colligo.models.common.adapter_utils
+- colligo.models.common.metrics
+- colligo.models.dentro.model_zoo
+- colligo.models.dentro.pylib
+- colligo.models.firefly.clineto_gr6_mori[public]
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.diffusion.flux_klein[public]
+- colligo.models.firefly.load_testing
+- colligo.models.firefly.mori_lipsync[public]
+- colligo.models.firefly.nsfw_adobe_one[public]
+- colligo.models.firefly.pipelines.clineto
+- colligo.models.firefly.pipelines.common
+- colligo.models.firefly.qwen_vlm_v18[public]
+- colligo.models.firefly.service_common.persistence
+- colligo.models.firefly.smoothtalk_transcribe[public]
+- colligo.models.firefly.vllm_serve[public]
+- colligo.models.ip_guard.worker.pipeline[public]
+- colligo.models.prompt_forge.worker[public]
+- colligo.sdk
+- decord
+- ffmpeg-python
+- httpx
+- numpy
+- openai
+- pillow
+- pyyaml
+- scenedetect
+- torch
+- torchvision
+- typing-extensions
+exclude:
+- configs
+- "..."

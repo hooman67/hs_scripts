@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-23",
+  "status": "root_visual_approval_complete",
+  "scope": "Four fixed current durable reference renders for the authorized V3 108-image evaluation: one matching close-up/wide pair for laptop and one for printer.",
+  "selection_constraints": {
+    "same_product_within_device_type": true,
+    "matching_view_direction_within_pair": "Front_Right",
+    "contrast_dimension": "CloseUp versus Wide",
+    "preserve_original_aspect_ratio": true,
+    "source_device_types": [
+      "laptop",
+      "printer"
+    ],
+    "excluded_device_types": [
+      "miniPC"
+    ],
+    "sampling_note": "Purposive four-render evaluation sample; it is not a claim that these products represent every current SKU."
+  },
+  "source_evidence": {
+    "camera_catalog_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/camera_aware/data/camera_catalog.json",
+    "camera_catalog_sha256": "68c3f4f9c7a2bc9f7c707f8ea009d56366e7a19dca1a65446189be303e90e9ab",
+    "alpha_metrics_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/camera_aware/data/camera_alpha_mask_metrics.json",
+    "alpha_metrics_sha256": "ecdcbd31c546c65f32fbc9c60a9c6f0454af02bce1b60f41152527fa9a212426",
+    "camera_profiles_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v2/camera_profiles.json",
+    "camera_profiles_sha256": "59b5e2b322dcd74c21432e772f3dd11513f71c182f6114b99b15e009dbeea68b",
+    "camera_profile_version": "camera-v2-draft-2026-10-22-r3",
+    "camera_profile_status": "draft_for_text_evaluation"
+  },
+  "pairs": [
+    {
+      "pair_id": "laptop_koki_front_right_closeup_wide",
+      "effective_device_type": "laptop",
+      "device_id": "camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop",
+      "device_asset_name_from_folder": "Koki-Omnibook_Eclipes-Gray.laptop.usdz",
+      "selection_reasoning": {
+        "claim_status": "VERIFIED_VISUAL_REVIEW_2026-10-23",
+        "observations": [
+          "Both renders show the same Koki laptop from the same front-right oblique direction.",
+          "Both products are fully inside the canvas with no alpha-mask edge contact.",
+          "The close-up has 0.40303518 alpha-weighted occupancy and the wide view has 0.04578756, an 8.802286x controlled product-fill contrast.",
+          "Both originals are 1024x576 RGBA PNGs, so the pair shares an exact 16:9 aspect ratio."
+        ],
+        "limitation": "Only this proposed laptop pair was visually reviewed for this bounded selection; no claim is made that Koki is the best representative across all laptop products."
+      },
+      "renders": [
+        {
+          "role": "close_up",
+          "source_camera_name": "Front_Right_CloseUp",
+          "camera_tag": "laptop_FrontRightCloseUp",
+          "profile_resolution": "exact",
+          "effective_profile": {
+            "framing": "tight",
+            "elevation": "oblique",
+            "max_local_props": 0,
+            "max_background_details": 0,
+            "people_policy": "omit"
+          },
+          "source_png_absolute_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/HP_scenes/extracted/Shared/camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop/camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop_Front_Right_CloseUp.png",
+          "source_zip_filename": "Shared/camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop/camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop_Front_Right_CloseUp.png",
+          "source_png_sha256": "3ff25b4d1cbcca2debd6a1446256919f59a56fb94f4985cdb750614b00237bb8",
+          "source_png_bytes": 99901,
+          "source_width_px": 1024,
+          "source_height_px": 576,
+          "source_aspect_ratio": "16:9",
+          "alpha_validity": "genuine_varying_transparency",
+          "alpha_weighted_occupancy_fraction": 0.40303518,
+          "alpha_nonzero_bbox_edge_contact_any": false,
+          "review_composite_absolute_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/HP_scenes/review/v3_four_render_candidates/laptop__Koki-Omnibook_Eclipes-Gray__Front_Right_CloseUp.png"
+        },
+        {
+          "role": "wide",
+          "source_camera_name": "Front_Right_Wide",
+          "camera_tag": "laptop_FrontRightWide",
+          "profile_resolution": "exact",
+          "effective_profile": {
+            "framing": "wide",
+            "elevation": "oblique",
+            "max_local_props": 3,
+            "max_background_details": 2,
+            "people_policy": "optional_if_supported_and_unobtrusive"
+          },
+          "source_png_absolute_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/HP_scenes/extracted/Shared/camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop/camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop_Front_Right_Wide.png",
+          "source_zip_filename": "Shared/camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop/camera_laptop.locator_Koki-Omnibook_Eclipes-Gray.laptop_Front_Right_Wide.png",
+          "source_png_sha256": "c6e0cf71f75a55562146a49a0d55c5b61ab8c236ec154b404645a7fab9d7834d",
+          "source_png_bytes": 21140,
+          "source_width_px": 1024,
+          "source_height_px": 576,
+          "source_aspect_ratio": "16:9",
+          "alpha_validity": "genuine_varying_transparency",
+          "alpha_weighted_occupancy_fraction": 0.04578756,
+          "alpha_nonzero_bbox_edge_contact_any": false,
+          "review_composite_absolute_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/HP_scenes/review/v3_four_render_candidates/laptop__Koki-Omnibook_Eclipes-Gray__Front_Right_Wide.png"
+        }
+      ]
+    },
+    {
+      "pair_id": "printer_magic_front_right_closeup_wide",
+      "effective_device_type": "printer",
+      "device_id": "camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer",
+      "device_asset_name_from_folder": "Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer.usdz",
+      "selection_reasoning": {
+        "claim_status": "VERIFIED_VISUAL_REVIEW_2026-10-23",
+        "observations": [
+          "Both renders show the same Magic printer from the same front-right oblique direction.",
+          "Both products are fully inside the canvas with no alpha-mask edge contact.",
+          "The close-up has 0.38969770 alpha-weighted occupancy and the wide view has 0.10807471, a 3.605818x controlled product-fill contrast.",
+          "Both originals are 1024x576 RGBA PNGs, so the pair shares an exact 16:9 aspect ratio.",
+          "Magic is the only effective printer product represented in the current durable high-resolution catalog; the mislabeled Messi assets are effective miniPC and remain excluded."
+        ]
+      },
+      "renders": [
+        {
+          "role": "close_up",
+          "source_camera_name": "Front_Right_CloseUp",
+          "camera_tag": "printer_FrontRightCloseUp",
+          "profile_resolution": "exact",
+          "effective_profile": {
+            "framing": "tight",
+            "elevation": "oblique",
+            "max_local_props": 1,
+            "max_background_details": 0,
+            "people_policy": "omit"
+          },
+          "source_png_absolute_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/HP_scenes/extracted/Shared/camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer/camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer_Front_Right_CloseUp.png",
+          "source_zip_filename": "Shared/camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer/camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer_Front_Right_CloseUp.png",
+          "source_png_sha256": "6cee85f6a0d48c2b64e93c81ca00ad9437ccae0e1ed65324874b0eb91975d2b7",
+          "source_png_bytes": 130836,
+          "source_width_px": 1024,
+          "source_height_px": 576,
+          "source_aspect_ratio": "16:9",
+          "alpha_validity": "genuine_varying_transparency",
+          "alpha_weighted_occupancy_fraction": 0.3896977,
+          "alpha_nonzero_bbox_edge_contact_any": false,
+          "review_composite_absolute_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/HP_scenes/review/v3_four_render_candidates/printer__Magic_Printers-6500_dn_CMF-Atmosphere_Blues__Front_Right_CloseUp.png"
+        },
+        {
+          "role": "wide",
+          "source_camera_name": "Front_Right_Wide",
+          "camera_tag": "printer_FrontRightWide",
+          "profile_resolution": "exact",
+          "effective_profile": {
+            "framing": "wide",
+            "elevation": "oblique",
+            "max_local_props": 3,
+            "max_background_details": 2,
+            "people_policy": "optional_if_supported_and_unobtrusive"
+          },
+          "source_png_absolute_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/HP_scenes/extracted/Shared/camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer/camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer_Front_Right_Wide.png",
+          "source_zip_filename": "Shared/camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer/camera_printer.locator_Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer_Front_Right_Wide.png",
+          "source_png_sha256": "917ad50f81d97c676d22ea0724d536a1d59f71edd7d87afe27c25eb8fb227743",
+          "source_png_bytes": 50431,
+          "source_width_px": 1024,
+          "source_height_px": 576,
+          "source_aspect_ratio": "16:9",
+          "alpha_validity": "genuine_varying_transparency",
+          "alpha_weighted_occupancy_fraction": 0.10807471,
+          "alpha_nonzero_bbox_edge_contact_any": false,
+          "review_composite_absolute_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/local_data/HP_scenes/review/v3_four_render_candidates/printer__Magic_Printers-6500_dn_CMF-Atmosphere_Blues__Front_Right_Wide.png"
+        }
+      ]
+    }
+  ],
+  "approval_gate": {
+    "root_visual_approval_required_before_v3_generation": true,
+    "approved": true,
+    "approval_scope": "root visual approval of the four fixed reference renders; this is not user approval or an endpoint launch authorization",
+    "approved_at_date": "2026-10-23",
+    "generation_started": false
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "placement-two-pass-policy-v1",
+  "policy_version": "placement-v2-compact-v3-ensemble-v1",
+  "purpose": "Catch additional confident compact-V3 defects without losing frozen V2 checks; evaluate false positives before promotion.",
+  "stages": {
+    "baseline_v2": {
+      "protocol_version": "placement-judge-v2-request-v3",
+      "model": "gpt-5.5",
+      "reasoning_effort": "high",
+      "visual_anchors": true,
+      "frozen_anchor_manifest_expected_count": 7
+    },
+    "compact_v3": {
+      "protocol_version": "placement-judge-v3-request-v1",
+      "model": "gpt-5.5",
+      "reasoning_effort": "high",
+      "visual_anchors": false
+    }
+  },
+  "component_merge": [
+    "Among positive-severity, assessable, medium/high-confidence components, choose the highest severity.",
+    "Break equal-severity ties in favor of baseline_v2.",
+    "When neither stage has a confirmed positive component, keep baseline_v2 if it is assessable; otherwise use compact_v3.",
+    "This retains a baseline_v2 low-confidence severity >=2 when compact_v3 has no confirmed positive component."
+  ],
+  "product_match_merge": "mismatch if either stage is mismatch; otherwise uncertain if either stage is uncertain; otherwise match",
+  "scene_reading_source": "compact_v3",
+  "scoring_policy": "placement-scoring-policy-v3",
+  "numeric_thresholds": "unchanged from canonical V3 scoring"
+}

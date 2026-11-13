@@ -1,0 +1,62 @@
+{
+  "schema_version": "hp-position-flex-v23-four-row-pilot-progress-v1",
+  "experiment_id": "hp-position-flex-v23-all-view-translation-four-row-pilot",
+  "freeze_sha256": "19cb1066741def4927f7d0465417dad3f2922a0dc637d2adedf9afb41cfb24aa",
+  "pipeline_version": "unified-blue-scale-v23-all-view-rigid-translation-twin-camera-guide-only-no-edit-mask",
+  "wrapper_version": "v23-four-row-pilot-stop-on-first-failure-v1",
+  "source_hashes": {
+    "hp3p/prompts/system_3p.txt": "324ce0e449804bc0d17ac0cf5ed10587716bc9d7e6ef72b9a91e439745b6aaec",
+    "hp3p/prompts/system_3p_fixed_position.txt": "67e4d817a5a203912116bb99afbd6c4511d9a5c537b241cc6e980e34e75b1118",
+    "hp3p/pipeline.py": "dde47ae75c6023a020ea26c405c5cf8e78183fe2de4e3219a5c279eb804b6ced",
+    "hp3p/invariants.py": "8c1a8204d27eeb3ba922d6d9519113da7beeff9368301bcc9f8c9a7ec2fb2665",
+    "hp3p/geometry.py": "f9d0f3a395624a150f9a9fed8c836394b66f041f6e212dc87c8b1a2322514a95",
+    "hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+    "hp3p/reference_blue.py": "f36098543e208029226ae3b04ffd22c39edf7e168ab49dd5868e2185bd90661d",
+    "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3"
+  },
+  "total": 4,
+  "done": [
+    "cashmere__laptop_FrontCloseUp__p1",
+    "cashmere__laptop_FrontWide__p1",
+    "tassel__printer_FrontCloseUp__p1"
+  ],
+  "rows": {
+    "cashmere__laptop_FrontCloseUp__p1": {
+      "ordinal": 1,
+      "job_id": "cashmere__laptop_FrontCloseUp__p1__outer_job_1",
+      "image_calls": 1,
+      "guard_verdicts": [
+        "pass"
+      ],
+      "selected_image_attempt": 1,
+      "provenance_sha256": "a92ee0c7dd36749a812c8c16265e4e4f3d81147fee9222a901b9d7b217cc9411"
+    },
+    "cashmere__laptop_FrontWide__p1": {
+      "ordinal": 2,
+      "job_id": "cashmere__laptop_FrontWide__p1__outer_job_1",
+      "image_calls": 1,
+      "guard_verdicts": [
+        "pass"
+      ],
+      "selected_image_attempt": 1,
+      "provenance_sha256": "c38098ac62c2b07c9ed30e69228cee3d2d75bc25daea4e602507b0cb3d092c5c"
+    },
+    "tassel__printer_FrontCloseUp__p1": {
+      "ordinal": 3,
+      "job_id": "tassel__printer_FrontCloseUp__p1__outer_job_1",
+      "image_calls": 1,
+      "guard_verdicts": [
+        "pass"
+      ],
+      "selected_image_attempt": 1,
+      "provenance_sha256": "aff7a3dd5a6e92bc028273da88957988a947e755308e9cda6958bcf4b7b90c60"
+    }
+  },
+  "first_failure": {
+    "ordinal": 4,
+    "row_slug": "tassel__printer_FrontWide__p1",
+    "error": "RuntimeError: RuntimeError: pipeline error: ValueError: Product invariant guard rejected both image attempts; raw attempts and metrics kept.",
+    "status_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_all_view_translation/run/jobs/tassel__printer_FrontWide__p1__outer_job_1/status.json"
+  },
+  "complete": false
+}

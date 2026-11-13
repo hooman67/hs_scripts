@@ -1,0 +1,201 @@
+{
+  "guard_version": "full-affine-v1.6-all-view-translation-alpha-fallback",
+  "fixed_position": true,
+  "thresholds": {
+    "min_inliers": 20,
+    "min_inlier_ratio": 0.55,
+    "singular_min": 0.98,
+    "singular_max": 1.02,
+    "max_anisotropy_ratio": 1.02,
+    "max_abs_rotation_deg": 1.0,
+    "max_column_shear_cos": 0.02,
+    "max_residual_median_px": 1.5,
+    "max_residual_p95_px": 3.5,
+    "min_source_span_x_fraction": 0.45,
+    "min_source_span_y_fraction": 0.4,
+    "min_source_quadrants": 3,
+    "min_source_hull_fraction": 0.12,
+    "max_fixed_translation_px": 8.0
+  },
+  "product_bounds_px": [
+    634,
+    883,
+    1205,
+    1164
+  ],
+  "matches": 24,
+  "inliers": 17,
+  "inlier_ratio": 0.7083333333333334,
+  "full_affine_matrix": [
+    [
+      1.0036982531933818,
+      -0.005346575412336289,
+      1.9105296811489678
+    ],
+    [
+      0.0005883846042332524,
+      0.9972408742217841,
+      1.3498936253906035
+    ]
+  ],
+  "partial_affine_matrix": [
+    [
+      1.0018744996508075,
+      -0.0012671070977328925,
+      -0.5207539474681027
+    ],
+    [
+      0.0012671070977328925,
+      1.0018744996508075,
+      -3.812018905375111
+    ]
+  ],
+  "partial_inliers": 17,
+  "singular_values": [
+    1.0044845170231567,
+    0.9964634121772421
+  ],
+  "anisotropy_ratio": 1.0080495728672954,
+  "rotation_deg": 0.16994378222888365,
+  "column_shear_cos": 0.004775082026434124,
+  "residual_median_px": 0.30986110040053233,
+  "residual_p95_px": 0.7388484592986242,
+  "translation_only_residual_median_px": 0.5660400390625,
+  "translation_only_residual_p95_px": 1.2068455219268799,
+  "source_span_x_fraction": 0.7751099467277527,
+  "source_span_y_fraction": 0.6271581649780273,
+  "source_quadrants": 4,
+  "source_hull_fraction": 0.28037085192648964,
+  "transformed_product_corners_px": [
+    [
+      633.5341961166602,
+      882.2866214023098
+    ],
+    [
+      1206.6458986900811,
+      882.622589011327
+    ],
+    [
+      1205.1435109992146,
+      1162.8472746676484
+    ],
+    [
+      632.0318084257937,
+      1162.5113070586312
+    ]
+  ],
+  "corners_in_frame": true,
+  "translation_x_px": -0.0863037109375,
+  "translation_y_px": -0.8138427734375,
+  "final_product_bounds_px": [
+    633.9136962890625,
+    882.1861572265625,
+    1204.9136962890625,
+    1163.1861572265625
+  ],
+  "rigid_transformed_product_corners_px": [
+    [
+      633.9136962890625,
+      882.1861572265625
+    ],
+    [
+      1204.9136962890625,
+      882.1861572265625
+    ],
+    [
+      1204.9136962890625,
+      1163.1861572265625
+    ],
+    [
+      633.9136962890625,
+      1163.1861572265625
+    ]
+  ],
+  "checks": {
+    "inliers": false,
+    "inlier_ratio": true,
+    "singular_min": true,
+    "singular_max": true,
+    "anisotropy": true,
+    "rotation": true,
+    "shear": true,
+    "residual_median": true,
+    "residual_p95": true,
+    "translation_only_residual_median": true,
+    "translation_only_residual_p95": true,
+    "span_x": true,
+    "span_y": true,
+    "quadrants": true,
+    "hull": true,
+    "corners": true,
+    "fixed_translation_x": true,
+    "fixed_translation_y": true
+  },
+  "reasons": [
+    "silhouette_unobservable_at_canvas_boundary"
+  ],
+  "verdict": "unverifiable",
+  "primary_verdict": "fail",
+  "primary_reasons": [
+    "inliers"
+  ],
+  "fallback_dispatch_reason": "structurally_insufficient_affine_evidence",
+  "affine_evidence_reliability_checks": {
+    "inliers": false,
+    "span_x": true,
+    "span_y": true,
+    "quadrants": true,
+    "hull": true
+  },
+  "textureless_fallback": {
+    "method": "alpha_mask_fixed_position_fallback",
+    "thresholds": {
+      "max_translation_px": 8,
+      "min_boundary_edge_coverage_2px": 0.8,
+      "min_internal_edge_coverage_floor_2px": 0.2,
+      "min_internal_edge_coverage_2px": 0.8,
+      "min_highpass_ncc_override": 0.8,
+      "min_internal_edge_samples": 100,
+      "max_verified_candidate_clusters": 64
+    },
+    "translation_x_px": -93,
+    "translation_y_px": 612,
+    "boundary_edge_coverage_2px": 0.6787675161845448,
+    "boundary_distance_p90_px": 18.173080444335938,
+    "internal_edge_coverage_2px": 0.843,
+    "internal_distance_p90_px": 2.3243000507354736,
+    "highpass_ncc": -0.0028223537374287844,
+    "source_boundary_samples": 12203,
+    "source_internal_edge_samples": 2000,
+    "source_appearance_samples": 7738,
+    "outer_silhouette_observable": false,
+    "final_product_bounds_px": [
+      542,
+      1495,
+      1110,
+      1776
+    ],
+    "checks": {
+      "boundary": false,
+      "internal_structure_floor": true,
+      "structure_or_appearance": true,
+      "internal_support": true
+    },
+    "reasons": [
+      "silhouette_unobservable_at_canvas_boundary"
+    ],
+    "verdict": "unverifiable",
+    "verification_failures": [
+      "boundary"
+    ],
+    "verified_candidate_clusters": 15,
+    "legal_translation_x_px": [
+      -635,
+      1165
+    ],
+    "legal_translation_y_px": [
+      -883,
+      612
+    ]
+  }
+}

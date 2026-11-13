@@ -1,0 +1,321 @@
+{
+  "version": "v4.1-raw-normalized-audit-v1",
+  "case_id": "ee810cf51bb82bb4__printer_FrontRightCloseUp",
+  "request_sha256": "c6ba31741249ce096ae3e5562ebe8481d37b588a44695b2a8fa733a831197543",
+  "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/records/attempts/ee810cf51bb82bb4__printer_FrontRightCloseUp/sample_016.json",
+  "raw_record_sha256": "1961e859f879c2078762a1e2c8dbf110241fbfea093423fde5b21bc4669df906",
+  "raw_validation": {
+    "validator_version": "v4.1-host-validator-r2",
+    "passed": false,
+    "error_count": 3,
+    "warning_count": 2,
+    "errors": [
+      {
+        "code": "score_order",
+        "detail": "C-Tech score, then source-relevance tie-breaker, are not descending",
+        "candidate_id": "p12"
+      },
+      {
+        "code": "surface_not_literal",
+        "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+        "candidate_id": "p1"
+      },
+      {
+        "code": "surface_not_literal",
+        "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+        "candidate_id": "p5"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "unused_source_evidence",
+        "detail": "Unused evidence may support an omission explanation; inspect: ['e4', 'e5']"
+      },
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 30,
+      "evidence": 7,
+      "environments": {
+        "Home": 7,
+        "Office": 8,
+        "Café": 5,
+        "Creative Studio": 4,
+        "Gaming": 3,
+        "Education": 3
+      },
+      "relationships": {
+        "source_grounded": 9,
+        "creative_departure": 21
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 7,
+        "Office": 8,
+        "Education": 3,
+        "Gaming": 3,
+        "Café": 5,
+        "Creative Studio": 4
+      },
+      "relationship_counts": {
+        "source_grounded": 9,
+        "source_adjacent": 0,
+        "creative_departure": 21
+      },
+      "ctech_relationship_counts": {
+        "minimal_camera_edit": 24,
+        "close_adaptation": 3,
+        "category_extension": 3
+      },
+      "ctech_reference_counts": {
+        "CT18": 3,
+        "CT03": 4,
+        "CT13": 2,
+        "CT05": 1,
+        "CT06": 2,
+        "CT01": 2,
+        "CT02": 1,
+        "CT17": 2,
+        "CT08": 1,
+        "CT07": 2,
+        "CT10": 2,
+        "CT09": 2,
+        "CT12": 1,
+        "CT11": 1,
+        "CT14": 2,
+        "CT15": 1,
+        "CT04": 1
+      },
+      "ctech_score_range": [
+        65,
+        88
+      ],
+      "distinct_subsettings": 23,
+      "evidence_reverse_mappings": {
+        "KSP1": {
+          "evidence_ids": [],
+          "prompt_ids": []
+        },
+        "KSP2": {
+          "evidence_ids": [
+            "e1",
+            "e6"
+          ],
+          "prompt_ids": [
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p25",
+            "p26",
+            "p27",
+            "p28",
+            "p29"
+          ]
+        },
+        "KSP3": {
+          "evidence_ids": [
+            "e2"
+          ],
+          "prompt_ids": [
+            "p4",
+            "p5",
+            "p7",
+            "p27",
+            "p29"
+          ]
+        },
+        "KSP4": {
+          "evidence_ids": [],
+          "prompt_ids": []
+        },
+        "ValueProposition": {
+          "evidence_ids": [
+            "e3",
+            "e7"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p21",
+            "p22",
+            "p25",
+            "p30"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "aa821b44f0796b79adaebb904a8fac9c03184a3a7e2729883c4c46f731af1fcb"
+  },
+  "normalized_validation": {
+    "validator_version": "v4.1-host-validator-r2",
+    "passed": false,
+    "error_count": 2,
+    "warning_count": 2,
+    "errors": [
+      {
+        "code": "surface_not_literal",
+        "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+        "candidate_id": "p1"
+      },
+      {
+        "code": "surface_not_literal",
+        "detail": "signature names a focal surface but prose has no singular desk/table/work surface",
+        "candidate_id": "p5"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "unused_source_evidence",
+        "detail": "Unused evidence may support an omission explanation; inspect: ['e4', 'e5']"
+      },
+      {
+        "code": "human_scene_review_required",
+        "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+      }
+    ],
+    "counts": {
+      "prompts": 30,
+      "evidence": 7,
+      "environments": {
+        "Home": 7,
+        "Office": 8,
+        "Café": 5,
+        "Creative Studio": 4,
+        "Gaming": 3,
+        "Education": 3
+      },
+      "relationships": {
+        "source_grounded": 9,
+        "creative_departure": 21
+      }
+    },
+    "derived_audit": {
+      "environment_counts": {
+        "Home": 7,
+        "Office": 8,
+        "Education": 3,
+        "Gaming": 3,
+        "Café": 5,
+        "Creative Studio": 4
+      },
+      "relationship_counts": {
+        "source_grounded": 9,
+        "source_adjacent": 0,
+        "creative_departure": 21
+      },
+      "ctech_relationship_counts": {
+        "minimal_camera_edit": 24,
+        "close_adaptation": 3,
+        "category_extension": 3
+      },
+      "ctech_reference_counts": {
+        "CT18": 3,
+        "CT03": 4,
+        "CT13": 2,
+        "CT05": 1,
+        "CT06": 2,
+        "CT01": 2,
+        "CT02": 1,
+        "CT17": 2,
+        "CT08": 1,
+        "CT10": 2,
+        "CT07": 2,
+        "CT09": 2,
+        "CT12": 1,
+        "CT11": 1,
+        "CT14": 2,
+        "CT15": 1,
+        "CT04": 1
+      },
+      "ctech_score_range": [
+        65,
+        88
+      ],
+      "distinct_subsettings": 23,
+      "evidence_reverse_mappings": {
+        "KSP1": {
+          "evidence_ids": [],
+          "prompt_ids": []
+        },
+        "KSP2": {
+          "evidence_ids": [
+            "e1",
+            "e6"
+          ],
+          "prompt_ids": [
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p25",
+            "p26",
+            "p27",
+            "p28",
+            "p29"
+          ]
+        },
+        "KSP3": {
+          "evidence_ids": [
+            "e2"
+          ],
+          "prompt_ids": [
+            "p4",
+            "p5",
+            "p7",
+            "p27",
+            "p29"
+          ]
+        },
+        "KSP4": {
+          "evidence_ids": [],
+          "prompt_ids": []
+        },
+        "ValueProposition": {
+          "evidence_ids": [
+            "e3",
+            "e7"
+          ],
+          "prompt_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p9",
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p21",
+            "p22",
+            "p25",
+            "p30"
+          ]
+        }
+      }
+    },
+    "output_semantic_sha256": "d03df2b3eb0debb6af3d14d77991fb875257c407fa3d2d169f7fcbb50896cd05"
+  },
+  "normalized_output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/normalized_outputs/ee810cf51bb82bb4__printer_FrontRightCloseUp__sample_016.json",
+  "normalized_output_file_sha256": "0ab02ff30b95b97ae0f2e00258238cd621d0cbf0e50886b28666d37b72ce6d70",
+  "normalized_output_semantic_sha256": "d03df2b3eb0debb6af3d14d77991fb875257c407fa3d2d169f7fcbb50896cd05",
+  "normalization_log_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_ctech_v4_1_pilot_20261026/normalization_logs/ee810cf51bb82bb4__printer_FrontRightCloseUp__sample_016.json",
+  "normalization_log_file_sha256": "7d645a49bdd2cbdb3c5b73b4840b1332a17fe8befd9646db34e3d247d8e5f57d"
+}

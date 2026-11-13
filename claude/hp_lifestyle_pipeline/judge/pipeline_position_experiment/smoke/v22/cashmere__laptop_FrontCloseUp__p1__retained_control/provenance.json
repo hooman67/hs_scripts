@@ -1,0 +1,53 @@
+{
+  "slug": "cashmere__laptop_FrontCloseUp__p1__retained_control",
+  "base_slug": "cashmere__laptop_FrontCloseUp__p1",
+  "mode": "retained_control",
+  "device_id": "cashmere",
+  "camera_id": "Front_CloseUp",
+  "prompt": "A quiet office desk set up before a meeting, with an open unlabelled folder showing blank sheets on a pale work surface. A frosted glass partition behind the desk catches clean morning light, keeping the area composed and ready for focused work.",
+  "pipeline_version": "unified-blue-scale-v22-recomposed-support-stage-b-placement-twin-camera-guide-only-no-mask",
+  "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+  "output_sha256": "049ecccaba8e6ce80745cff9d13556cc796c4a2da986a75b2741eed03694f723",
+  "final_prompt_sha256": "3f02e10b1fda20dbd4121fcbf3adc56fd0ae7953202253d2baa1ad0d5ee605ce",
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 971,
+        "prompt_tokens": 13331,
+        "total_tokens": 14302,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 98,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "2c327b66bae27ebd8432b84ffaa82d10387adb98a32189a1b75df5061e67940d",
+      "mask": false
+    }
+  ]
+}

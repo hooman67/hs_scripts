@@ -1,0 +1,157 @@
+{
+  "validator_version": "v3-host-validator-r2",
+  "passed": false,
+  "error_count": 4,
+  "warning_count": 1,
+  "errors": [
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p20"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p21"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p22"
+    },
+    {
+      "code": "ungrounded_nonzero_score",
+      "detail": "nonzero relevance requires relevant source evidence",
+      "candidate_id": "p23"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 9,
+    "environments": {
+      "Office": 16,
+      "Home": 7,
+      "Education": 4,
+      "Gaming": 3
+    },
+    "relationships": {
+      "source_grounded": 8,
+      "source_adjacent": 10,
+      "creative_departure": 12
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 7,
+      "Office": 16,
+      "Education": 4,
+      "Gaming": 3
+    },
+    "relationship_counts": {
+      "source_grounded": 8,
+      "source_adjacent": 10,
+      "creative_departure": 12
+    },
+    "distinct_subsettings": 30,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e1",
+          "e2"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p14",
+          "p16",
+          "p17",
+          "p18",
+          "p19"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e3",
+          "e4"
+        ],
+        "prompt_ids": [
+          "p7",
+          "p8",
+          "p13",
+          "p15"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e5"
+        ],
+        "prompt_ids": [
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p14",
+          "p16",
+          "p17",
+          "p18",
+          "p19"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [
+          "e6",
+          "e7"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p13",
+          "p16",
+          "p17"
+        ]
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e8",
+          "e9"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p17"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "d2eb432b10515197b36c84971a11a3ae3def24e46a39b14285f67b560a01d00e"
+}

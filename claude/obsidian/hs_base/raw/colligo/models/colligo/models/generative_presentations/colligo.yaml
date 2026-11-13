@@ -1,0 +1,66 @@
+visibility: public
+public:
+  files:
+  - types.py
+  - io/types.py
+  - doc_extraction/types.py
+  - image_provider/types.py
+  - section_extraction/types.py
+  - blueprint_generation/types.py
+  - slide_generation/types.py
+  - semantic_inference/types.py
+  - template_recommendation/types.py
+  - utils/s3_storage/types.py
+  - utils/vectordb/types.py
+  - utils/keywords_extractor/types.py
+  - utils/prompty/types.py
+  - utils/dentro/types.py
+  deps:
+  - colligo.base
+  - colligo.models.external_services.openai[public]
+  - colligo.models.firefly.clio_common[public]
+  - colligo.models.image_providers.firefly[public]
+  - colligo.models.image_providers.stock[public]
+  - pydantic
+deps:
+- basic_colormath
+- colligo.data
+- colligo.external_services.business_kit
+- colligo.external_services.entitlements
+- colligo.fastapi
+- colligo.httpx
+- colligo.image
+- colligo.models.dentro.pylib[public]
+- colligo.models.dentro.worker.models.phi_3_text[public]
+- colligo.models.external_services.openai
+- colligo.models.firefly.autocaption
+- colligo.models.firefly.prompty[public]
+- colligo.models.image_providers.firefly
+- colligo.models.image_providers.stock
+- colligo.models.masking.select_subject_v1[public]
+- colligo.models.text2design.adobeone
+- colligo.rhode
+- httpx
+- keybert
+- networkx
+- numpy
+- opencv-contrib-python-headless
+- pillow
+- pybreaker
+- requests-toolbelt
+- sentence-transformers
+- torch
+- torchvision
+exclude:
+# local development files
+- image_provider/main.py
+- utils/static_model_loader.py
+- main.py
+- doc_extraction/main.py
+- section_extraction/main.py
+- blueprint_generation/main.py
+- slide_generation/main.py
+- template_recommendation/main.py
+# build files
+- deploy/types.py
+- '...'

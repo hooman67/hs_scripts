@@ -1,0 +1,53 @@
+{
+  "slug": "magic__printer_FrontWide__p1__retained_control",
+  "base_slug": "magic__printer_FrontWide__p1",
+  "mode": "retained_control",
+  "device_id": "magic",
+  "camera_id": "Front_Wide",
+  "prompt": "An open office area with a dedicated output table set against a pale brick wall. A stack of plain papers with indistinct markings rests beside an empty letter tray, while an upholstered office chair stands farther back in clear morning light for an orderly, busy work setting.",
+  "pipeline_version": "unified-blue-scale-v22-recomposed-support-stage-b-placement-twin-camera-guide-only-no-mask",
+  "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+  "output_sha256": "6171a3c87e1adb048ebccbc464f10db0d3446fced8b8830b6638cb7fc6ee16a7",
+  "final_prompt_sha256": "4e93b7e553d6df276030066714aa9410a6cae7383b81da7c7954faaf15ab97fc",
+  "image_calls": 1,
+  "masked": false,
+  "calls": [
+    {
+      "kind": "selection_replay"
+    },
+    {
+      "kind": "geometry_replay"
+    },
+    {
+      "kind": "astra_write",
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1064,
+        "prompt_tokens": 13448,
+        "total_tokens": 14512,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 148,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "mask": false
+    }
+  ]
+}

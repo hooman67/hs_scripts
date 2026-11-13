@@ -1,0 +1,18 @@
+visibility: public
+public:
+  files:
+  - types.py
+  - ocr_service/bounding_box/types.py
+  deps:
+  - colligo.base
+  - colligo.models.agentic_design.agentic_design_bl[public]
+  - pydantic
+deps:
+- colligo.models.agentic_design.text_grouping[public]
+- numpy
+- paddleocr
+- paddlepaddle
+- pillow
+- rapidfuzz
+exclude:
+- "..."

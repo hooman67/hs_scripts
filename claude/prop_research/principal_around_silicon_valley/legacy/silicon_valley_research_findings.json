@@ -1,0 +1,170 @@
+{
+  "research_summary": {
+    "date_conducted": "2026-06-22",
+    "research_scope": "3-bedroom median home prices Silicon Valley 2025-2026",
+    "cities_target": 10,
+    "search_angles_attempted": 5,
+    "data_collection_challenges": "Network restrictions blocked access to primary real estate databases (Zillow, Redfin, MLS boards, Realtor.com). Wikipedia and open sources provided limited historical data only."
+  },
+
+  "cities_data": [
+    {
+      "city": "San Jose",
+      "median_3br_price": "Not available (2025-2026)",
+      "historical_data": {
+        "price": "Ranked 5th most expensive housing market (2017)",
+        "note": "Historical: 936% housing-cost increase between 1976-2001"
+      },
+      "source": "Wikipedia",
+      "publication_date": null,
+      "confidence": "low",
+      "data_status": "No recent 2025-2026 data available"
+    },
+    {
+      "city": "Cupertino",
+      "median_3br_price": "Entry-level ~$2.0M-$2.6M (2022 peak)",
+      "details": {
+        "small_homes": "$2.0M+",
+        "mid_size": "$3.0M+",
+        "large_executive": "$4.0M-$7.0M+"
+      },
+      "source": "Wikipedia (2022 market peak data)",
+      "publication_date": "2022",
+      "confidence": "medium",
+      "data_status": "Outdated - 2022 data, not current 2025-2026"
+    },
+    {
+      "city": "San Mateo",
+      "median_3br_price": "$1,463,900",
+      "source": "Wikipedia",
+      "publication_date": "February 2018",
+      "rental_context": "$2,242/month median rent (2018)",
+      "confidence": "low",
+      "data_status": "Significantly outdated (2018 data)"
+    },
+    {
+      "city": "Redwood City",
+      "median_3br_price": "$1,424,200",
+      "source": "Wikipedia (2020 Census)",
+      "publication_date": "2020",
+      "confidence": "low",
+      "data_status": "6+ years old, not current market"
+    },
+    {
+      "city": "Los Gatos",
+      "median_3br_price": "Not available",
+      "median_household_income": "$198,117 (2022)",
+      "source": "Wikipedia",
+      "publication_date": null,
+      "confidence": "low",
+      "data_status": "No housing price data available"
+    },
+    {
+      "city": "Saratoga",
+      "median_3br_price": "Not available (specific prices)",
+      "rankings": "Most expensive housing market in US (2016 Coldwell Banker)",
+      "median_household_income": "$241,348 (2023)",
+      "source": "Wikipedia",
+      "publication_date": null,
+      "confidence": "low",
+      "data_status": "Qualitative ranking only, no specific prices"
+    },
+    {
+      "city": "Mountain View",
+      "median_3br_price": "Not available",
+      "source": "Wikipedia",
+      "publication_date": null,
+      "housing_notes": "Affordable housing shortage, Google developing 10,000+ units",
+      "confidence": "low",
+      "data_status": "No pricing data available"
+    },
+    {
+      "city": "Milpitas",
+      "median_3br_price": "Not available",
+      "median_household_income": "$176,822 (2023)",
+      "source": "Wikipedia",
+      "publication_date": null,
+      "confidence": "low",
+      "data_status": "No housing price data available"
+    },
+    {
+      "city": "Morgan Hill",
+      "median_3br_price": "Not available",
+      "market_status": "Ranked in top 500 most expensive places in US",
+      "median_household_income": "$159,758 (2023)",
+      "source": "Wikipedia",
+      "publication_date": null,
+      "confidence": "low",
+      "data_status": "No specific pricing data"
+    },
+    {
+      "city": "Gilroy",
+      "median_3br_price": "$778,300",
+      "note": "Average home cost",
+      "median_household_income": "$116,206 (2023)",
+      "source": "Wikipedia",
+      "publication_date": null,
+      "confidence": "low",
+      "data_status": "Publication date unclear, likely 2020-2023 estimate"
+    }
+  ],
+
+  "data_quality_assessment": {
+    "overall_confidence": "LOW",
+    "reasons": [
+      "Primary data sources (Zillow, Redfin, MLS boards) blocked by network restrictions",
+      "Wikipedia data is outdated (2018-2022 primarily)",
+      "No access to current 2025-2026 market reports",
+      "Most cities lack specific 3-bedroom price data",
+      "Cross-source verification impossible due to data scarcity"
+    ],
+    "data_recency": {
+      "pre_2020": 2,
+      "2020_2022": 2,
+      "2022_2024": 1,
+      "2025_2026": 0,
+      "unavailable": 5
+    }
+  },
+
+  "research_limitations": {
+    "blocked_sources": [
+      "Zillow.com (403 Forbidden)",
+      "Redfin.com (404/403)",
+      "Realtor.com (unsafe domain)",
+      "MLS boards (SCCAMLS, SMCAMLS - unsafe)",
+      "Investopedia (unable to fetch)",
+      "NerdWallet, Bankrate (404)",
+      "WorldPopulationReview (404)",
+      "Trulia, Homesnap (unsafe domains)",
+      "Reddit, Numbeo (unsafe domains)"
+    ],
+    "accessible_sources": [
+      "Wikipedia (but outdated)",
+      "California Open Data (insufficient housing price data)"
+    ]
+  },
+
+  "market_trends_observed": {
+    "expensive_cities": [
+      "Saratoga - Most expensive housing market in US (2016 ranking)",
+      "Cupertino - $2.0M+ entry-level pricing",
+      "San Mateo - $1.46M median (2018)"
+    ],
+    "affordability_gradient": "North Bay (Gilroy: $778K) < South Valley (Morgan Hill, San Jose) < Peninsula/Mountain Area (Cupertino, Saratoga, Los Gatos)",
+    "income_levels": "Median household income ranges $116K-$241K across cities",
+    "housing_shortage": "Mountain View, Bay Area experiencing significant affordable housing shortages"
+  },
+
+  "recommendations_for_complete_research": {
+    "required_approach": "Direct access to restricted services would require:",
+    "steps": [
+      "1. Use MCP tools for authenticated access to Zillow, Redfin APIs",
+      "2. Contact local MLS boards directly for market reports",
+      "3. Access California ATTOM real estate database",
+      "4. Consult CoreLogic market reports (often published in real estate trade publications)",
+      "5. Review NAR (National Association of Realtors) Bay Area market reports",
+      "6. Check local real estate brokerage websites for current listings and market data"
+    ]
+  }
+}

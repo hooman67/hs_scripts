@@ -1,0 +1,662 @@
+{
+  "version": "hp-lifestyle-spatial-composition-v6.2-four-devices-snapshot-v1",
+  "revision": "v6.2-pilot-20261106-r2",
+  "prepared_at_utc": "2026-11-06T23:04:17.406324+00:00",
+  "status": "prepared_no_model_calls",
+  "source_eval": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028",
+    "manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/manifest.json",
+    "manifest_sha256": "832b2995cb9448c966b1d835b6fc73c66445e17123f1fc528ac6e4f2056daddb",
+    "inputs_copied_byte_for_byte": true
+  },
+  "scope": {
+    "device_count": 4,
+    "views_per_device": 4,
+    "case_count": 16,
+    "candidates_per_case": 10,
+    "selected_per_case": 6,
+    "candidate_count": 160,
+    "selected_prompt_count": 96,
+    "selection_rule": "first six candidates after the V6.2 runtime stable descending source-relevance and C-Tech-score ordering",
+    "model": "gpt-5.5",
+    "max_concurrency": 2,
+    "semantic_calls_per_case": "one initial call plus at most one V6.2 repair",
+    "image_generation_authorized": false
+  },
+  "device_source_mapping": [
+    {
+      "device_id": "cashmere",
+      "device_display_name": "Cashmere",
+      "device_type": "laptop",
+      "source_pair": "cashmere",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html"
+    },
+    {
+      "device_id": "elitebook",
+      "device_display_name": "EliteBook",
+      "device_type": "laptop",
+      "source_pair": "elitebook",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html"
+    },
+    {
+      "device_id": "tassel",
+      "device_display_name": "Tassel",
+      "device_type": "printer",
+      "source_pair": "deskjet_2955",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html"
+    },
+    {
+      "device_id": "magic",
+      "device_display_name": "Magic",
+      "device_type": "printer",
+      "source_pair": "laserjet",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/viewer.html"
+    }
+  ],
+  "catalog": {
+    "source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging_v1_to_v6/versions/v6_2/approved-v6.2-20261106.catalog.json",
+    "frozen_path": "runtime/v6_2/approved_catalog.json",
+    "source_sha256": "c8d099b8fd32d065c4fcd4082becb7a6da7179389b901249e6ff0db0ace26dfc",
+    "frozen_sha256": "c8d099b8fd32d065c4fcd4082becb7a6da7179389b901249e6ff0db0ace26dfc",
+    "approved_entries": 260,
+    "revision": "v6.2-spatial-composition-20261106-r1"
+  },
+  "authorized_text_case_ids": [
+    "cashmere__laptop_FrontCloseUp",
+    "cashmere__laptop_BackRightCloseUp",
+    "cashmere__laptop_FrontLeftMedium",
+    "cashmere__laptop_FrontWide",
+    "elitebook__laptop_FrontCloseUp",
+    "elitebook__laptop_BackRightCloseUp",
+    "elitebook__laptop_FrontLeftMedium",
+    "elitebook__laptop_FrontWide",
+    "tassel__printer_FrontCloseUp",
+    "tassel__printer_FrontRightCloseUp",
+    "tassel__printer_FrontLeftMedium",
+    "tassel__printer_FrontWide",
+    "magic__printer_FrontCloseUp",
+    "magic__printer_FrontRightCloseUp",
+    "magic__printer_FrontLeftMedium",
+    "magic__printer_FrontWide"
+  ],
+  "cases": [
+    {
+      "case_id": "cashmere__laptop_FrontCloseUp",
+      "group_id": "cashmere__laptop",
+      "pair_id": "cashmere",
+      "device_id": "cashmere",
+      "device_display_name": "Cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontCloseUp",
+      "source_camera_name": "Front_CloseUp",
+      "view_role": "tight",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Cashmere",
+        "camera_name": "Front_CloseUp"
+      },
+      "source_pair": "cashmere",
+      "product_identity_conflict": true,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/cashmere__laptop_FrontRightCloseUp.json",
+      "source_input_sha256": "cc5e575ad5ce579fdf6046e4dc9aa4ebd3d1fd400cc2029f6cb821fc5b231c6f",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/cashmere__laptop_FrontCloseUp.json",
+      "input_source_sha256": "7f026c427658deddbce151f37b225b2e85021ae83945a9a45ccacce008ab108b",
+      "frozen_input_path": "inputs/cashmere__laptop_FrontCloseUp.json",
+      "frozen_input_sha256": "7f026c427658deddbce151f37b225b2e85021ae83945a9a45ccacce008ab108b",
+      "input_semantic_sha256": "a5688092cb06516c81ae5322371d5ddc9b031042cd32a2b4f7c1ff309cc201a6"
+    },
+    {
+      "case_id": "cashmere__laptop_BackRightCloseUp",
+      "group_id": "cashmere__laptop",
+      "pair_id": "cashmere",
+      "device_id": "cashmere",
+      "device_display_name": "Cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_BackRightCloseUp",
+      "source_camera_name": "Back_Right_CloseUp",
+      "view_role": "tight",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Cashmere",
+        "camera_name": "Back_Right_CloseUp"
+      },
+      "source_pair": "cashmere",
+      "product_identity_conflict": true,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/cashmere__laptop_FrontRightCloseUp.json",
+      "source_input_sha256": "cc5e575ad5ce579fdf6046e4dc9aa4ebd3d1fd400cc2029f6cb821fc5b231c6f",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/cashmere__laptop_BackRightCloseUp.json",
+      "input_source_sha256": "6417bffb3e549a532b96abb84ab3368e8298ae9393e97a007c1e1ae46f06a92c",
+      "frozen_input_path": "inputs/cashmere__laptop_BackRightCloseUp.json",
+      "frozen_input_sha256": "6417bffb3e549a532b96abb84ab3368e8298ae9393e97a007c1e1ae46f06a92c",
+      "input_semantic_sha256": "6083bf58a5ac6620d41b5062478c69889dc967b2a4cf702c6ee9c881c686a09d"
+    },
+    {
+      "case_id": "cashmere__laptop_FrontLeftMedium",
+      "group_id": "cashmere__laptop",
+      "pair_id": "cashmere",
+      "device_id": "cashmere",
+      "device_display_name": "Cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontLeftMedium",
+      "source_camera_name": "Front_Left_Medium",
+      "view_role": "medium",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Cashmere",
+        "camera_name": "Front_Left_Medium"
+      },
+      "source_pair": "cashmere",
+      "product_identity_conflict": true,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/cashmere__laptop_FrontRightCloseUp.json",
+      "source_input_sha256": "cc5e575ad5ce579fdf6046e4dc9aa4ebd3d1fd400cc2029f6cb821fc5b231c6f",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/cashmere__laptop_FrontLeftMedium.json",
+      "input_source_sha256": "d09cd869efdd53f99e16719fb33405992072805bb88543c82941ed415d18238b",
+      "frozen_input_path": "inputs/cashmere__laptop_FrontLeftMedium.json",
+      "frozen_input_sha256": "d09cd869efdd53f99e16719fb33405992072805bb88543c82941ed415d18238b",
+      "input_semantic_sha256": "67acdc9bd58bd908317dda2d677ec6035ab04a487416c82197ff5b12ad8ab932"
+    },
+    {
+      "case_id": "cashmere__laptop_FrontWide",
+      "group_id": "cashmere__laptop",
+      "pair_id": "cashmere",
+      "device_id": "cashmere",
+      "device_display_name": "Cashmere",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontWide",
+      "source_camera_name": "Front_Wide",
+      "view_role": "wide",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Cashmere",
+        "camera_name": "Front_Wide"
+      },
+      "source_pair": "cashmere",
+      "product_identity_conflict": true,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/cashmere__laptop_FrontRightCloseUp.json",
+      "source_input_sha256": "cc5e575ad5ce579fdf6046e4dc9aa4ebd3d1fd400cc2029f6cb821fc5b231c6f",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/cashmere__laptop_FrontWide.json",
+      "input_source_sha256": "10c2420a6c39d56f2f3ee7420e317292dbef72b7bb3dd6650e27bb7eb91845ff",
+      "frozen_input_path": "inputs/cashmere__laptop_FrontWide.json",
+      "frozen_input_sha256": "10c2420a6c39d56f2f3ee7420e317292dbef72b7bb3dd6650e27bb7eb91845ff",
+      "input_semantic_sha256": "4965837dc6fbe5f2baebc1d6068005659b173eff3a58d31b356d662d2a910e71"
+    },
+    {
+      "case_id": "elitebook__laptop_FrontCloseUp",
+      "group_id": "elitebook__laptop",
+      "pair_id": "elitebook",
+      "device_id": "elitebook",
+      "device_display_name": "EliteBook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontCloseUp",
+      "source_camera_name": "Front_CloseUp",
+      "view_role": "tight",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "EliteBook",
+        "camera_name": "Front_CloseUp"
+      },
+      "source_pair": "elitebook",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/elitebook__laptop_FrontRightCloseUp.json",
+      "source_input_sha256": "ad041affb68d886cecafd9216b5704926eb503fd133690102d2ffd7874150356",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/elitebook__laptop_FrontCloseUp.json",
+      "input_source_sha256": "e444c0e15cacd71d616f1e0adb8bd7638872f9481e12d857bf65c5063b8086aa",
+      "frozen_input_path": "inputs/elitebook__laptop_FrontCloseUp.json",
+      "frozen_input_sha256": "e444c0e15cacd71d616f1e0adb8bd7638872f9481e12d857bf65c5063b8086aa",
+      "input_semantic_sha256": "79369f6bd18ef10056b05d2b732035debbc7e31ac4234d1755eb90d494ec8ce8"
+    },
+    {
+      "case_id": "elitebook__laptop_BackRightCloseUp",
+      "group_id": "elitebook__laptop",
+      "pair_id": "elitebook",
+      "device_id": "elitebook",
+      "device_display_name": "EliteBook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_BackRightCloseUp",
+      "source_camera_name": "Back_Right_CloseUp",
+      "view_role": "tight",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "EliteBook",
+        "camera_name": "Back_Right_CloseUp"
+      },
+      "source_pair": "elitebook",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/elitebook__laptop_FrontRightCloseUp.json",
+      "source_input_sha256": "ad041affb68d886cecafd9216b5704926eb503fd133690102d2ffd7874150356",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/elitebook__laptop_BackRightCloseUp.json",
+      "input_source_sha256": "192972483e4a8720e6cee7ead704fc97be8071cbba72b38a357457f126712e4b",
+      "frozen_input_path": "inputs/elitebook__laptop_BackRightCloseUp.json",
+      "frozen_input_sha256": "192972483e4a8720e6cee7ead704fc97be8071cbba72b38a357457f126712e4b",
+      "input_semantic_sha256": "9ceec097e7d4f86b0abbaba11e9be218490ed949cc7e9bd37aa3eeba20fde2dc"
+    },
+    {
+      "case_id": "elitebook__laptop_FrontLeftMedium",
+      "group_id": "elitebook__laptop",
+      "pair_id": "elitebook",
+      "device_id": "elitebook",
+      "device_display_name": "EliteBook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontLeftMedium",
+      "source_camera_name": "Front_Left_Medium",
+      "view_role": "medium",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "EliteBook",
+        "camera_name": "Front_Left_Medium"
+      },
+      "source_pair": "elitebook",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/elitebook__laptop_FrontRightCloseUp.json",
+      "source_input_sha256": "ad041affb68d886cecafd9216b5704926eb503fd133690102d2ffd7874150356",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/elitebook__laptop_FrontLeftMedium.json",
+      "input_source_sha256": "6b4d8413dca5f47e37df2303ebe745bfb5a44f3b2aa4369ad25010880005d863",
+      "frozen_input_path": "inputs/elitebook__laptop_FrontLeftMedium.json",
+      "frozen_input_sha256": "6b4d8413dca5f47e37df2303ebe745bfb5a44f3b2aa4369ad25010880005d863",
+      "input_semantic_sha256": "3b5268ae2573ba141be69b7ade4e9d26b725dc329c8ee69b5507c11f7f8fc0d9"
+    },
+    {
+      "case_id": "elitebook__laptop_FrontWide",
+      "group_id": "elitebook__laptop",
+      "pair_id": "elitebook",
+      "device_id": "elitebook",
+      "device_display_name": "EliteBook",
+      "device_type": "laptop",
+      "camera_tag": "laptop_FrontWide",
+      "source_camera_name": "Front_Wide",
+      "view_role": "wide",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "EliteBook",
+        "camera_name": "Front_Wide"
+      },
+      "source_pair": "elitebook",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/elitebook__laptop_FrontRightCloseUp.json",
+      "source_input_sha256": "ad041affb68d886cecafd9216b5704926eb503fd133690102d2ffd7874150356",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/elitebook__laptop_FrontWide.json",
+      "input_source_sha256": "3167ec42a06e855d8323dcf886b44e6eb3da9133b00987d74f91d05e14d00832",
+      "frozen_input_path": "inputs/elitebook__laptop_FrontWide.json",
+      "frozen_input_sha256": "3167ec42a06e855d8323dcf886b44e6eb3da9133b00987d74f91d05e14d00832",
+      "input_semantic_sha256": "fa0aa2e4be2ef65812d7400b0a61692a1dcaf1acad5d8e4d99b39b238362346e"
+    },
+    {
+      "case_id": "tassel__printer_FrontCloseUp",
+      "group_id": "tassel__printer",
+      "pair_id": "deskjet_2955",
+      "device_id": "tassel",
+      "device_display_name": "Tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontCloseUp",
+      "source_camera_name": "Front_CloseUp",
+      "view_role": "tight",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Tassel",
+        "camera_name": "Front_CloseUp"
+      },
+      "source_pair": "deskjet_2955",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/deskjet_2955__printer_FrontRightCloseUp.json",
+      "source_input_sha256": "8dfb44e6d83b2d11c6358adb1c3e58f065eab31fa9d2c569d4ac6b42085c70d3",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/tassel__printer_FrontCloseUp.json",
+      "input_source_sha256": "7ca6818bf4da3f6619c6047882218a432b7e33938ae793e39eff08943ac7e9b8",
+      "frozen_input_path": "inputs/tassel__printer_FrontCloseUp.json",
+      "frozen_input_sha256": "7ca6818bf4da3f6619c6047882218a432b7e33938ae793e39eff08943ac7e9b8",
+      "input_semantic_sha256": "dcd5e8f0c8d2b922106af1c54180d975b7eaf7891990f16381a5d3fc69c3fa11"
+    },
+    {
+      "case_id": "tassel__printer_FrontRightCloseUp",
+      "group_id": "tassel__printer",
+      "pair_id": "deskjet_2955",
+      "device_id": "tassel",
+      "device_display_name": "Tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "source_camera_name": "Front_Right_CloseUp",
+      "view_role": "tight",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Tassel",
+        "camera_name": "Front_Right_CloseUp"
+      },
+      "source_pair": "deskjet_2955",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/deskjet_2955__printer_FrontRightCloseUp.json",
+      "source_input_sha256": "8dfb44e6d83b2d11c6358adb1c3e58f065eab31fa9d2c569d4ac6b42085c70d3",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/tassel__printer_FrontRightCloseUp.json",
+      "input_source_sha256": "8dfb44e6d83b2d11c6358adb1c3e58f065eab31fa9d2c569d4ac6b42085c70d3",
+      "frozen_input_path": "inputs/tassel__printer_FrontRightCloseUp.json",
+      "frozen_input_sha256": "8dfb44e6d83b2d11c6358adb1c3e58f065eab31fa9d2c569d4ac6b42085c70d3",
+      "input_semantic_sha256": "baf332572a70cdbe54425e08ec690a465fc39ca68f96d9e291f4c01ad51e0f72"
+    },
+    {
+      "case_id": "tassel__printer_FrontLeftMedium",
+      "group_id": "tassel__printer",
+      "pair_id": "deskjet_2955",
+      "device_id": "tassel",
+      "device_display_name": "Tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontLeftMedium",
+      "source_camera_name": "Front_Left_Medium",
+      "view_role": "medium",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Tassel",
+        "camera_name": "Front_Left_Medium"
+      },
+      "source_pair": "deskjet_2955",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/deskjet_2955__printer_FrontRightCloseUp.json",
+      "source_input_sha256": "8dfb44e6d83b2d11c6358adb1c3e58f065eab31fa9d2c569d4ac6b42085c70d3",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/tassel__printer_FrontLeftMedium.json",
+      "input_source_sha256": "890193aac9f4cac1c02191fa478a697dbcd113300a47b6d590d00a153dd6aa7d",
+      "frozen_input_path": "inputs/tassel__printer_FrontLeftMedium.json",
+      "frozen_input_sha256": "890193aac9f4cac1c02191fa478a697dbcd113300a47b6d590d00a153dd6aa7d",
+      "input_semantic_sha256": "f6a053988c83db2c75be717084d578655eadf619965e877cab24de42f95d70db"
+    },
+    {
+      "case_id": "tassel__printer_FrontWide",
+      "group_id": "tassel__printer",
+      "pair_id": "deskjet_2955",
+      "device_id": "tassel",
+      "device_display_name": "Tassel",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontWide",
+      "source_camera_name": "Front_Wide",
+      "view_role": "wide",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/weifengc/four_sku_40cam_studio05_20261028T1839Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Tassel",
+        "camera_name": "Front_Wide"
+      },
+      "source_pair": "deskjet_2955",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/deskjet_2955__printer_FrontRightCloseUp.json",
+      "source_input_sha256": "8dfb44e6d83b2d11c6358adb1c3e58f065eab31fa9d2c569d4ac6b42085c70d3",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/tassel__printer_FrontWide.json",
+      "input_source_sha256": "fa3a51dc05d883c8d38fba174444dfe08ead636269dd4e4ec1b4f6eb19312b5a",
+      "frozen_input_path": "inputs/tassel__printer_FrontWide.json",
+      "frozen_input_sha256": "fa3a51dc05d883c8d38fba174444dfe08ead636269dd4e4ec1b4f6eb19312b5a",
+      "input_semantic_sha256": "ae72b059a6decf26d908773a93eadd06997225032dd7b0cb81e4142e65f8a827"
+    },
+    {
+      "case_id": "magic__printer_FrontCloseUp",
+      "group_id": "magic__printer",
+      "pair_id": "laserjet",
+      "device_id": "magic",
+      "device_display_name": "Magic",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontCloseUp",
+      "source_camera_name": "Front_CloseUp",
+      "view_role": "tight",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Magic",
+        "camera_name": "Front_CloseUp"
+      },
+      "source_pair": "laserjet",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/laserjet__printer_FrontRightCloseUp.json",
+      "source_input_sha256": "116e6ff206c5d9fa52ff0b39fc4a7fef702a09a3b68c04c8ee57a60164d55930",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/magic__printer_FrontCloseUp.json",
+      "input_source_sha256": "24b32f97be8a093aa4a91b83a6918fdc58b81273fe502a936d6fd401491311c8",
+      "frozen_input_path": "inputs/magic__printer_FrontCloseUp.json",
+      "frozen_input_sha256": "24b32f97be8a093aa4a91b83a6918fdc58b81273fe502a936d6fd401491311c8",
+      "input_semantic_sha256": "a9cb59f4528f0e37d6cbb80a9fe0c29bc6b7f92f6dd2baa185d92eaba8101f54"
+    },
+    {
+      "case_id": "magic__printer_FrontRightCloseUp",
+      "group_id": "magic__printer",
+      "pair_id": "laserjet",
+      "device_id": "magic",
+      "device_display_name": "Magic",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontRightCloseUp",
+      "source_camera_name": "Front_Right_CloseUp",
+      "view_role": "tight",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Magic",
+        "camera_name": "Front_Right_CloseUp"
+      },
+      "source_pair": "laserjet",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/laserjet__printer_FrontRightCloseUp.json",
+      "source_input_sha256": "116e6ff206c5d9fa52ff0b39fc4a7fef702a09a3b68c04c8ee57a60164d55930",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/magic__printer_FrontRightCloseUp.json",
+      "input_source_sha256": "116e6ff206c5d9fa52ff0b39fc4a7fef702a09a3b68c04c8ee57a60164d55930",
+      "frozen_input_path": "inputs/magic__printer_FrontRightCloseUp.json",
+      "frozen_input_sha256": "116e6ff206c5d9fa52ff0b39fc4a7fef702a09a3b68c04c8ee57a60164d55930",
+      "input_semantic_sha256": "eba87185ebef9c1cb9ae493fed11d566a21426c8b04bd07496cd1568c7d2edbc"
+    },
+    {
+      "case_id": "magic__printer_FrontLeftMedium",
+      "group_id": "magic__printer",
+      "pair_id": "laserjet",
+      "device_id": "magic",
+      "device_display_name": "Magic",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontLeftMedium",
+      "source_camera_name": "Front_Left_Medium",
+      "view_role": "medium",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Magic",
+        "camera_name": "Front_Left_Medium"
+      },
+      "source_pair": "laserjet",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/laserjet__printer_FrontRightCloseUp.json",
+      "source_input_sha256": "116e6ff206c5d9fa52ff0b39fc4a7fef702a09a3b68c04c8ee57a60164d55930",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/magic__printer_FrontLeftMedium.json",
+      "input_source_sha256": "6507f31f792bf48667302c493daa25abbb3d933e6806efc7c9224a67dffadc70",
+      "frozen_input_path": "inputs/magic__printer_FrontLeftMedium.json",
+      "frozen_input_sha256": "6507f31f792bf48667302c493daa25abbb3d933e6806efc7c9224a67dffadc70",
+      "input_semantic_sha256": "1f2800163bac876e3de6435c0745fdd3f15ec6e0c28473a4516a7f0963ea4af5"
+    },
+    {
+      "case_id": "magic__printer_FrontWide",
+      "group_id": "magic__printer",
+      "pair_id": "laserjet",
+      "device_id": "magic",
+      "device_display_name": "Magic",
+      "device_type": "printer",
+      "camera_tag": "printer_FrontWide",
+      "source_camera_name": "Front_Wide",
+      "view_role": "wide",
+      "render_gallery_url": "https://foundry-aws-corp.adobe.io/asset/foundry-hp-enterprise-adobe-assets/training_logs/camera_printer_native_lighting_minus1EV_all_20261026/white_gallery_20261026T232039Z/viewer.html",
+      "render_lookup": {
+        "device_name": "Magic",
+        "camera_name": "Front_Wide"
+      },
+      "source_pair": "laserjet",
+      "product_identity_conflict": false,
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_pilot_20261027/inputs/laserjet__printer_FrontRightCloseUp.json",
+      "source_input_sha256": "116e6ff206c5d9fa52ff0b39fc4a7fef702a09a3b68c04c8ee57a60164d55930",
+      "input_source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_dual_source_v5_top6_four_devices_20261028/inputs/magic__printer_FrontWide.json",
+      "input_source_sha256": "bcde94349a85582828b624a9b02f2578a1cf9ae91540b43fdc654a4cb7acf069",
+      "frozen_input_path": "inputs/magic__printer_FrontWide.json",
+      "frozen_input_sha256": "bcde94349a85582828b624a9b02f2578a1cf9ae91540b43fdc654a4cb7acf069",
+      "input_semantic_sha256": "6633d1d89710a6a73607a3eceac449019a9a2b76b698b9f4157056fdd150dd3e"
+    }
+  ],
+  "snapshot_assets": {
+    "inputs/cashmere__laptop_BackRightCloseUp.json": {
+      "bytes": 69368,
+      "sha256": "6417bffb3e549a532b96abb84ab3368e8298ae9393e97a007c1e1ae46f06a92c"
+    },
+    "inputs/cashmere__laptop_FrontCloseUp.json": {
+      "bytes": 69364,
+      "sha256": "7f026c427658deddbce151f37b225b2e85021ae83945a9a45ccacce008ab108b"
+    },
+    "inputs/cashmere__laptop_FrontLeftMedium.json": {
+      "bytes": 69367,
+      "sha256": "d09cd869efdd53f99e16719fb33405992072805bb88543c82941ed415d18238b"
+    },
+    "inputs/cashmere__laptop_FrontWide.json": {
+      "bytes": 69361,
+      "sha256": "10c2420a6c39d56f2f3ee7420e317292dbef72b7bb3dd6650e27bb7eb91845ff"
+    },
+    "inputs/elitebook__laptop_BackRightCloseUp.json": {
+      "bytes": 45163,
+      "sha256": "192972483e4a8720e6cee7ead704fc97be8071cbba72b38a357457f126712e4b"
+    },
+    "inputs/elitebook__laptop_FrontCloseUp.json": {
+      "bytes": 45159,
+      "sha256": "e444c0e15cacd71d616f1e0adb8bd7638872f9481e12d857bf65c5063b8086aa"
+    },
+    "inputs/elitebook__laptop_FrontLeftMedium.json": {
+      "bytes": 45162,
+      "sha256": "6b4d8413dca5f47e37df2303ebe745bfb5a44f3b2aa4369ad25010880005d863"
+    },
+    "inputs/elitebook__laptop_FrontWide.json": {
+      "bytes": 45156,
+      "sha256": "3167ec42a06e855d8323dcf886b44e6eb3da9133b00987d74f91d05e14d00832"
+    },
+    "inputs/magic__printer_FrontCloseUp.json": {
+      "bytes": 50258,
+      "sha256": "24b32f97be8a093aa4a91b83a6918fdc58b81273fe502a936d6fd401491311c8"
+    },
+    "inputs/magic__printer_FrontLeftMedium.json": {
+      "bytes": 50261,
+      "sha256": "6507f31f792bf48667302c493daa25abbb3d933e6806efc7c9224a67dffadc70"
+    },
+    "inputs/magic__printer_FrontRightCloseUp.json": {
+      "bytes": 50263,
+      "sha256": "116e6ff206c5d9fa52ff0b39fc4a7fef702a09a3b68c04c8ee57a60164d55930"
+    },
+    "inputs/magic__printer_FrontWide.json": {
+      "bytes": 50255,
+      "sha256": "bcde94349a85582828b624a9b02f2578a1cf9ae91540b43fdc654a4cb7acf069"
+    },
+    "inputs/tassel__printer_FrontCloseUp.json": {
+      "bytes": 44708,
+      "sha256": "7ca6818bf4da3f6619c6047882218a432b7e33938ae793e39eff08943ac7e9b8"
+    },
+    "inputs/tassel__printer_FrontLeftMedium.json": {
+      "bytes": 44711,
+      "sha256": "890193aac9f4cac1c02191fa478a697dbcd113300a47b6d590d00a153dd6aa7d"
+    },
+    "inputs/tassel__printer_FrontRightCloseUp.json": {
+      "bytes": 44713,
+      "sha256": "8dfb44e6d83b2d11c6358adb1c3e58f065eab31fa9d2c569d4ac6b42085c70d3"
+    },
+    "inputs/tassel__printer_FrontWide.json": {
+      "bytes": 44705,
+      "sha256": "fa3a51dc05d883c8d38fba174444dfe08ead636269dd4e4ec1b4f6eb19312b5a"
+    },
+    "runtime/v6_2/README.md": {
+      "bytes": 7883,
+      "sha256": "36c7fe143658e4ea2939a3a69ed244d391dc47548950be5ff1a7a17f851dc193"
+    },
+    "runtime/v6_2/__init__.py": {
+      "bytes": 76,
+      "sha256": "585c4b5f1f7bd88c1df62b1c995c9613f2e2d65fc2ffd4d8ea7ffdda13435f20"
+    },
+    "runtime/v6_2/approved-v6.2-20261106.catalog.json": {
+      "bytes": 125641,
+      "sha256": "c8d099b8fd32d065c4fcd4082becb7a6da7179389b901249e6ff0db0ace26dfc"
+    },
+    "runtime/v6_2/approved_catalog.json": {
+      "bytes": 125641,
+      "sha256": "c8d099b8fd32d065c4fcd4082becb7a6da7179389b901249e6ff0db0ace26dfc"
+    },
+    "runtime/v6_2/build_assets.py": {
+      "bytes": 5362,
+      "sha256": "f28a2f00874982de2db1ad763f60ea43c91c1bfac6b312803df662e5ecd70f1c"
+    },
+    "runtime/v6_2/build_v62_catalog.py": {
+      "bytes": 2194,
+      "sha256": "2ca8f7d84dafcdb0236cbce7f1ee235f2dc225323aadfb8d75d039a2cb9bc920"
+    },
+    "runtime/v6_2/camera.py": {
+      "bytes": 2393,
+      "sha256": "015618eb78e1fc751a372b5c36567301d05023f369eccebf43d41c165fbf3e54"
+    },
+    "runtime/v6_2/camera_profiles.json": {
+      "bytes": 93278,
+      "sha256": "78fb2fcc4b0c0de4bff9f6a3166ea088635928c85ba7214183001f9a25dd35c0"
+    },
+    "runtime/v6_2/catalog.py": {
+      "bytes": 15759,
+      "sha256": "c3dedea7588af88dc9afcb6dfbb31924a4b23ae843d052fb664c1f08cd19a32a"
+    },
+    "runtime/v6_2/cli.py": {
+      "bytes": 4946,
+      "sha256": "cfd3f342224ad1d135514204b766e4358f0c65b86b2fffa868faa1644a2f5432"
+    },
+    "runtime/v6_2/compile_approved_markdown.py": {
+      "bytes": 15165,
+      "sha256": "013af929d0fea9d5920870b85d7da5da3f93c6402a79692fe05d9c4f086f52a4"
+    },
+    "runtime/v6_2/content_policy.py": {
+      "bytes": 12395,
+      "sha256": "e9303d9eb8878fd4e214fbb2258736501c1d949e8a723f9a5477926e2b757b8a"
+    },
+    "runtime/v6_2/input.schema.json": {
+      "bytes": 388,
+      "sha256": "5701b6b85b19191a18f730dafd1633e390bacae8690e541c1eabbc2ca2cce07c"
+    },
+    "runtime/v6_2/model_output.schema.json": {
+      "bytes": 7192,
+      "sha256": "ea588c40d21c1e45ced28cf58306752f7e9e1d84404cc370aab4062305cd58d0"
+    },
+    "runtime/v6_2/prop_lexicon.json": {
+      "bytes": 115553,
+      "sha256": "1db29f0d0d39e2a40cd45b79ae37e24c05cd07ece0ff256b198eada4840aa31e"
+    },
+    "runtime/v6_2/provider.py": {
+      "bytes": 7066,
+      "sha256": "a40d1df65c9b2e55eed7ad85cced560ef2b378cbf2f6f7e3e34178141bfa4a28"
+    },
+    "runtime/v6_2/reference_library.json": {
+      "bytes": 7586,
+      "sha256": "38e5ca6e41abe4602888e2eac4f5586227ff84999a71de80e788ccbfdd38345b"
+    },
+    "runtime/v6_2/runtime.py": {
+      "bytes": 24753,
+      "sha256": "f31e2345d0e5c260ba1aac9040f736d04b510657589568d049804068af8f73f9"
+    },
+    "runtime/v6_2/system_prompt.md": {
+      "bytes": 33823,
+      "sha256": "bcae155fe387d7876e4e8b66f9ce79589ee0be0fdd246ffe563c3e7b239d69e3"
+    },
+    "runtime/v6_2/tests/test_cli.py": {
+      "bytes": 1783,
+      "sha256": "b720fb1d9db7b863a6e21c82de3925b0f183dd98a475cef821a95fb0da745d2c"
+    },
+    "runtime/v6_2/tests/test_content_policy.py": {
+      "bytes": 8717,
+      "sha256": "def9ae61ec4ec0d2d1e9823bc785848dcc8f9f6de51b6655dafb13e6efb40c03"
+    },
+    "runtime/v6_2/tests/test_late_ctech_rules.py": {
+      "bytes": 5049,
+      "sha256": "9187a1855c2d69258576d62a60dbf870ab6a62e2755334635729103b86e83edc"
+    },
+    "runtime/v6_2/tests/test_provider.py": {
+      "bytes": 7515,
+      "sha256": "0c439ec54bb3235230e2053aeaad6afc3f2e8d48cc2024c2ef95515063193fb4"
+    },
+    "runtime/v6_2/tests/test_runtime.py": {
+      "bytes": 16273,
+      "sha256": "f7415b1e8df35ba7e4e8e6b355374a5c655b898a67e396bc1a0b722d9ccd596d"
+    },
+    "runtime/v6_2/tests/test_v62_catalog.py": {
+      "bytes": 1543,
+      "sha256": "c63266cee6b5c4720dbd2e699d28236fdf8c047e0cd62af6b2792630005a9cd9"
+    },
+    "runtime/v6_2/tests/test_validation.py": {
+      "bytes": 32799,
+      "sha256": "cc4df57e29af26a4e4e6b61ba5452aa542975291e76f08c580bb04066879a654"
+    },
+    "runtime/v6_2/validation.py": {
+      "bytes": 56155,
+      "sha256": "b25ebcaf3f649c215708ca919fa0bd42275c09a192f59348bb8aeae1ec1d096e"
+    },
+    "scripts/probe_gpt55.py": {
+      "bytes": 3054,
+      "sha256": "613246b69cb9860bbe7f53235932868d55ca0cea5523c9176c829031de88ec90"
+    }
+  }
+}

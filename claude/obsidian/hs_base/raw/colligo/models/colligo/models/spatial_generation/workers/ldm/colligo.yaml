@@ -1,0 +1,35 @@
+has_build_module: true
+custom_pyenv: 3diva_ttt_fe_gen6
+visibility:
+- colligo.models.spatial_generation.pipelines.gen6_pano_generation
+- colligo.models.spatial_generation.pipelines.gen6_ibl_generation
+- colligo.models.spatial_generation.pipelines.generation_3d
+- colligo.models.spatial_generation.pipelines.gen6_image_generation
+- colligo.models.spatial_generation.common
+public:
+  files: [types.py]
+  deps: [colligo.base, 'colligo.models.spatial_generation.common[public]']
+deps:
+- adobeone
+- data-chef
+- dcmoe
+- decord
+- dill
+- flash-attn
+- foundation-exploration[gen6-conversational-inference]
+- genie
+- magi-attention
+- models-t5-xxl
+- mori
+- omegaconf
+- orion-core
+- pandas
+- pyarrow
+- pyyaml
+- scikit-learn
+- st-attn
+- structlog
+- torch
+- transformers
+- types-boto3-full
+- vs-attn

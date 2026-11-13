@@ -1,0 +1,684 @@
+{
+  "schema_version": "hp-position-flex-row-provenance-v23.1-pilot",
+  "experiment_id": "hp-position-flex-v23.1-all-view-translation-eight-row-pilot",
+  "row_slug": "magic__printer_FrontWide__p1__relocation_demand",
+  "job_id": "magic__printer_FrontWide__p1__relocation_demand__outer_job_1",
+  "outer_attempt": 1,
+  "submission_request": {
+    "rowSlug": "magic__printer_FrontWide__p1__relocation_demand",
+    "outerAttempt": 1
+  },
+  "submission_request_sha256": "05f9109f5461669b1e8d1cc497753d87467d6e84aaf48b5d04f0adae39f27e8f",
+  "row_id": "magic__printer_FrontWide::p1::movement_demand_diagnostic",
+  "record": {
+    "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_phrase_diversity_v6_1_four_devices_20261103/generation_gpt_image2_scene_v1/run/records/magic__printer_FrontWide__p1.json",
+    "sha256": "35498a8c0a33bc4b90e7b45bf058c3d73622401585e9ca93b810f9bb61b5e209"
+  },
+  "cohort": "movement_demand_diagnostic",
+  "source_row_slug": "magic__printer_FrontWide__p1",
+  "prompt_sha256": "8e4a0037074392977d96d977dc25f3521f2bc914bc3c005576b2d49c60011a9e",
+  "control_job_id": "20261105T201941Z_a6eb8409",
+  "input_artifacts": {
+    "product.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/inputs/magic__printer_FrontWide__p1__relocation_demand/product.png",
+      "sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T201941Z_a6eb8409/artifacts/hp16_product.png"
+    },
+    "reference.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/inputs/magic__printer_FrontWide__p1__relocation_demand/reference.png",
+      "sha256": "306af9106e7f6e68057e52cb8b44b8edf109944b9922e995957feee13b053cc0",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T201941Z_a6eb8409/artifacts/hp16_reference.png"
+    },
+    "guide.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/inputs/magic__printer_FrontWide__p1__relocation_demand/guide.png",
+      "sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "source_url": "https://pluto-prod-dongshenga-dylan-hp-new-9nmp4k-2-0-8016.or2.colligo.dev/api/jobs/20261105T201941Z_a6eb8409/artifacts/hp16_geometry_guide.png"
+    }
+  },
+  "pipeline_version": "unified-blue-scale-v23.1-all-view-rigid-translation-strong-low-inlier-twin-camera-guide-only-no-edit-mask",
+  "wrapper_version": "v23.1-eight-row-pilot-stop-on-first-failure-v1",
+  "source_hashes": {
+    "hp3p/prompts/system_3p.txt": "324ce0e449804bc0d17ac0cf5ed10587716bc9d7e6ef72b9a91e439745b6aaec",
+    "hp3p/prompts/system_3p_fixed_position.txt": "67e4d817a5a203912116bb99afbd6c4511d9a5c537b241cc6e980e34e75b1118",
+    "hp3p/pipeline.py": "ef1158a882dca0c8a85d01e3ed427d036282b29341fa5beeb88c9d4db39d9137",
+    "hp3p/invariants.py": "808bde48be35ba6093dc01d0cc23808f0c7f4509b62e79dce64d1033674c19a6",
+    "hp3p/geometry.py": "f9d0f3a395624a150f9a9fed8c836394b66f041f6e212dc87c8b1a2322514a95",
+    "hp3p/grade.py": "22169e7fc7fe3ebfd561bb3edd04edf4f1c630752444b752d388305c35bafbf6",
+    "hp3p/reference_blue.py": "f36098543e208029226ae3b04ffd22c39edf7e168ab49dd5868e2185bd90661d",
+    "requirements.txt": "cd1f9bbe9fb6526781e998279b6649e4b02b8a6f21a30e868386a7b86ba118b3"
+  },
+  "stage_b_attempts": [
+    {
+      "attempt": 1,
+      "system_sha256": "668b7cd3de2ae63bf1d48c6cf233844175159831871a2904dbfac72e831afbca",
+      "text_sha256": "888e69a140e1b6b228e36da6e3ed73626d308482697fd150086c0279aa0f4a89",
+      "request_sha256": "8668199d5c7482677d6764d941899c4707495788e2f2672cd6381477a7db7433",
+      "response_sha256": "27ed5f05be247cfea0da26b1fc939626a0b04f658dce858cb962e0ad0593d62d",
+      "executable_prompt_sha256": "3b34dd9e26d8f72205c1a72530fc36c6947176f095718ba74dbc4ddbf2818b67"
+    },
+    {
+      "attempt": 2,
+      "system_sha256": "18d8d5beddfd90e6bad1185d69fc9df76ec898f898a25bb4ccd2ad16d7bfe2d9",
+      "text_sha256": "f2417422a3ef0bbc81ce03353b27feaf128767ed5396cb0e50ac6eeac60cfac4",
+      "request_sha256": "c8cd11d32c8851c8a4f885695a63b8fc40310ee77f6f94ede890623aed055387",
+      "response_sha256": "9eafe9f929d3804b91e018b410e934b59e341f89097103d580a31716838a192c",
+      "raw_response_sha256": "9eafe9f929d3804b91e018b410e934b59e341f89097103d580a31716838a192c",
+      "meta_commentary_removed": false,
+      "executable_prompt_sha256": "2e2038604b78c16f3cc74f9ed31f5acffbae8be49cbed3dbc3bc366ef356dfee"
+    }
+  ],
+  "image_calls": 2,
+  "product_invariant_guard": {
+    "guard_version": "full-affine-v1.7-strong-low-inlier-exception",
+    "attempts": [
+      {
+        "guard_version": "full-affine-v1.7-strong-low-inlier-exception",
+        "fixed_position": false,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.5,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          629,
+          633,
+          1203,
+          1206
+        ],
+        "matches": 31,
+        "inliers": 17,
+        "inlier_ratio": 0.5483870967741935,
+        "full_affine_matrix": [
+          [
+            0.9874029455582882,
+            -0.0388023314349308,
+            912.7678082775636
+          ],
+          [
+            0.04915577642325202,
+            1.0195390495692573,
+            -278.7064901666798
+          ]
+        ],
+        "partial_affine_matrix": [
+          [
+            0.9944604300081327,
+            -0.05706646688574244,
+            920.701972620809
+          ],
+          [
+            0.05706646688574244,
+            0.9944604300081327,
+            -266.10980328871943
+          ]
+        ],
+        "partial_inliers": 18,
+        "singular_values": [
+          1.0213156415999127,
+          0.987552895797327
+        ],
+        "anisotropy_ratio": 1.034188291023466,
+        "rotation_deg": 2.5094922395689014,
+        "column_shear_cos": 0.011701221018632703,
+        "residual_median_px": 1.2575773352032726,
+        "residual_p95_px": 2.194946329271797,
+        "translation_only_residual_median_px": 2.78486704826355,
+        "translation_only_residual_p95_px": 18.64783477783203,
+        "source_span_x_fraction": 0.6264790296554565,
+        "source_span_y_fraction": 0.2697501480579376,
+        "source_quadrants": 2,
+        "source_hull_fraction": 0.06342714527251117,
+        "transformed_product_corners_px": [
+          [
+            1509.2823852354159,
+            397.5807115808856
+          ],
+          [
+            2076.0516759858733,
+            425.79612724783226
+          ],
+          [
+            2053.8179400736576,
+            1009.9920026510166
+          ],
+          [
+            1487.0486493232004,
+            981.7765869840701
+          ]
+        ],
+        "corners_in_frame": true,
+        "translation_x_px": 866.318115234375,
+        "translation_y_px": -206.9166259765625,
+        "final_product_bounds_px": [
+          1495.318115234375,
+          426.0833740234375,
+          2069.318115234375,
+          999.0833740234375
+        ],
+        "rigid_transformed_product_corners_px": [
+          [
+            1495.318115234375,
+            426.0833740234375
+          ],
+          [
+            2069.318115234375,
+            426.0833740234375
+          ],
+          [
+            2069.318115234375,
+            999.0833740234375
+          ],
+          [
+            1495.318115234375,
+            999.0833740234375
+          ]
+        ],
+        "checks": {
+          "inliers": false,
+          "inlier_ratio": false,
+          "singular_min": true,
+          "singular_max": false,
+          "anisotropy": false,
+          "rotation": false,
+          "shear": true,
+          "residual_median": true,
+          "residual_p95": true,
+          "translation_only_residual_median": false,
+          "translation_only_residual_p95": false,
+          "span_x": true,
+          "span_y": false,
+          "quadrants": false,
+          "hull": false,
+          "corners": true
+        },
+        "strong_low_inlier_evidence": {
+          "eligible": false,
+          "checks": {
+            "inlier_range": true,
+            "inlier_ratio": false,
+            "span_x": false,
+            "span_y": false,
+            "quadrants": false,
+            "hull": false,
+            "all_non_count_invariants": false
+          },
+          "thresholds": {
+            "min_inliers": 17,
+            "max_inliers": 19,
+            "min_inlier_ratio": 0.7,
+            "min_source_span_x_fraction": 0.7,
+            "min_source_span_y_fraction": 0.6,
+            "min_source_quadrants": 4,
+            "min_source_hull_fraction": 0.25
+          }
+        },
+        "accepted_inlier_evidence": false,
+        "reasons": [
+          "boundary",
+          "structure_or_appearance"
+        ],
+        "verdict": "fail",
+        "primary_verdict": "fail",
+        "primary_reasons": [
+          "inliers",
+          "inlier_ratio",
+          "singular_max",
+          "anisotropy",
+          "rotation",
+          "translation_only_residual_median",
+          "translation_only_residual_p95",
+          "span_y",
+          "quadrants",
+          "hull"
+        ],
+        "fallback_dispatch_reason": "structurally_insufficient_affine_evidence",
+        "affine_evidence_reliability_checks": {
+          "inliers": false,
+          "span_x": true,
+          "span_y": false,
+          "quadrants": false,
+          "hull": false
+        },
+        "textureless_fallback": {
+          "method": "alpha_mask_all_view_translation_fallback",
+          "thresholds": {
+            "max_translation_px": 8,
+            "min_boundary_edge_coverage_2px": 0.8,
+            "min_internal_edge_coverage_floor_2px": 0.2,
+            "min_internal_edge_coverage_2px": 0.8,
+            "min_highpass_ncc_override": 0.8,
+            "min_internal_edge_samples": 100,
+            "max_verified_candidate_clusters": 64
+          },
+          "translation_x_px": -609,
+          "translation_y_px": -15,
+          "boundary_edge_coverage_2px": 0.4790874524714829,
+          "boundary_distance_p90_px": 45.84002685546875,
+          "internal_edge_coverage_2px": 0.25289629838937555,
+          "internal_distance_p90_px": 59.210052490234375,
+          "highpass_ncc": -0.0016239546239376068,
+          "source_boundary_samples": 4734,
+          "source_internal_edge_samples": 3539,
+          "source_appearance_samples": 16859,
+          "outer_silhouette_observable": true,
+          "final_product_bounds_px": [
+            20,
+            618,
+            594,
+            1190
+          ],
+          "checks": {
+            "boundary": false,
+            "internal_structure_floor": true,
+            "structure_or_appearance": false,
+            "internal_support": true
+          },
+          "reasons": [
+            "boundary",
+            "structure_or_appearance"
+          ],
+          "verdict": "fail",
+          "verified_candidate_clusters": 25,
+          "legal_translation_x_px": [
+            -629,
+            1165
+          ],
+          "legal_translation_y_px": [
+            -633,
+            571
+          ]
+        }
+      },
+      {
+        "guard_version": "full-affine-v1.7-strong-low-inlier-exception",
+        "fixed_position": true,
+        "thresholds": {
+          "min_inliers": 20,
+          "min_inlier_ratio": 0.55,
+          "singular_min": 0.98,
+          "singular_max": 1.02,
+          "max_anisotropy_ratio": 1.02,
+          "max_abs_rotation_deg": 1.0,
+          "max_column_shear_cos": 0.02,
+          "max_residual_median_px": 1.5,
+          "max_residual_p95_px": 3.5,
+          "min_source_span_x_fraction": 0.45,
+          "min_source_span_y_fraction": 0.4,
+          "min_source_quadrants": 3,
+          "min_source_hull_fraction": 0.12,
+          "max_fixed_translation_px": 8.0
+        },
+        "product_bounds_px": [
+          629,
+          633,
+          1203,
+          1206
+        ],
+        "matches": 43,
+        "inliers": 34,
+        "inlier_ratio": 0.7906976744186046,
+        "full_affine_matrix": [
+          [
+            1.0019557529050425,
+            -0.0005884164934567395,
+            -1.7528747499588144
+          ],
+          [
+            0.0013842745380575649,
+            0.9955986337481464,
+            1.8513076552534982
+          ]
+        ],
+        "partial_affine_matrix": [
+          [
+            1.0003358253860744,
+            0.00045591338826339513,
+            -0.9401966502393608
+          ],
+          [
+            -0.00045591338826339513,
+            1.0003358253860744,
+            -0.2624572649628418
+          ]
+        ],
+        "partial_inliers": 34,
+        "singular_values": [
+          1.0019810517879522,
+          0.9955743089335733
+        ],
+        "anisotropy_ratio": 1.0064352231640463,
+        "rotation_deg": 0.05658260641148399,
+        "column_shear_cos": 0.0007905538518641371,
+        "residual_median_px": 0.3520048227367169,
+        "residual_p95_px": 0.9436578625769301,
+        "translation_only_residual_median_px": 0.4687798023223877,
+        "translation_only_residual_p95_px": 1.2626665830612183,
+        "source_span_x_fraction": 0.8897722959518433,
+        "source_span_y_fraction": 0.5509253740310669,
+        "source_quadrants": 4,
+        "source_hull_fraction": 0.3508982609471677,
+        "transformed_product_corners_px": [
+          [
+            628.1048261869548,
+            632.9359515022684
+          ],
+          [
+            1203.227428354449,
+            633.7305250871135
+          ],
+          [
+            1202.8902657036983,
+            1204.2085422248012
+          ],
+          [
+            627.767663536204,
+            1203.4139686399562
+          ]
+        ],
+        "corners_in_frame": true,
+        "translation_x_px": -0.04595947265625,
+        "translation_y_px": -0.3067626953125,
+        "final_product_bounds_px": [
+          628.9540405273438,
+          632.6932373046875,
+          1202.9541015625,
+          1205.6932373046875
+        ],
+        "rigid_transformed_product_corners_px": [
+          [
+            628.9540405273438,
+            632.6932373046875
+          ],
+          [
+            1202.9541015625,
+            632.6932373046875
+          ],
+          [
+            1202.9541015625,
+            1205.6932373046875
+          ],
+          [
+            628.9540405273438,
+            1205.6932373046875
+          ]
+        ],
+        "checks": {
+          "inliers": true,
+          "inlier_ratio": true,
+          "singular_min": true,
+          "singular_max": true,
+          "anisotropy": true,
+          "rotation": true,
+          "shear": true,
+          "residual_median": true,
+          "residual_p95": true,
+          "translation_only_residual_median": true,
+          "translation_only_residual_p95": true,
+          "span_x": true,
+          "span_y": true,
+          "quadrants": true,
+          "hull": true,
+          "corners": true,
+          "fixed_translation_x": true,
+          "fixed_translation_y": true
+        },
+        "strong_low_inlier_evidence": {
+          "eligible": false,
+          "checks": {
+            "inlier_range": false,
+            "inlier_ratio": true,
+            "span_x": true,
+            "span_y": false,
+            "quadrants": true,
+            "hull": true,
+            "all_non_count_invariants": true
+          },
+          "thresholds": {
+            "min_inliers": 17,
+            "max_inliers": 19,
+            "min_inlier_ratio": 0.7,
+            "min_source_span_x_fraction": 0.7,
+            "min_source_span_y_fraction": 0.6,
+            "min_source_quadrants": 4,
+            "min_source_hull_fraction": 0.25
+          }
+        },
+        "accepted_inlier_evidence": true,
+        "reasons": [],
+        "verdict": "pass"
+      }
+    ],
+    "selected_attempt": 2,
+    "selected_localization": {
+      "translation_x_px": -0.04595947265625,
+      "translation_y_px": -0.3067626953125,
+      "final_product_bounds_px": [
+        628.9540405273438,
+        632.6932373046875,
+        1202.9541015625,
+        1205.6932373046875
+      ]
+    }
+  },
+  "calls": [
+    {
+      "kind": "selection_replay",
+      "response_sha256": "95726bc9d5bb77ff9231a4e79d4bcacf65ffc01254bfc49d4cdde83e99fc1050"
+    },
+    {
+      "kind": "geometry_replay",
+      "response_sha256": "9783d24710ac8faad42ed26ea8e73e78bc4c7e43542add7613a49e2af31ead0b"
+    },
+    {
+      "kind": "astra_write",
+      "attempt": 1,
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "system_sha256": "668b7cd3de2ae63bf1d48c6cf233844175159831871a2904dbfac72e831afbca",
+      "text_sha256": "888e69a140e1b6b228e36da6e3ed73626d308482697fd150086c0279aa0f4a89",
+      "images_sha256": [
+        "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+        "306af9106e7f6e68057e52cb8b44b8edf109944b9922e995957feee13b053cc0",
+        "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970"
+      ],
+      "schema_sha256": "7a7fc445f534baf5eec4798c34c54e14f83dd5b2197f4ccb115d8b8c68f0d93b",
+      "response_sha256": "ff8ad8c178d8e33e3b0ae8940254c83c3036e8fde6076487996a00dbba716c43",
+      "usage": {
+        "completion_tokens": 1017,
+        "prompt_tokens": 13905,
+        "total_tokens": 14922,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 125,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "attempt": 1,
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "prompt_sha256": "3b34dd9e26d8f72205c1a72530fc36c6947176f095718ba74dbc4ddbf2818b67",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "mask": false,
+      "output_sha256": "b29ab87c0cee300a6cc88ae31aa8c9cc59fc7761cc5d985158c392497b2cb420"
+    },
+    {
+      "kind": "astra_write",
+      "attempt": 2,
+      "model": "gpt-6-astra",
+      "finish_reason": "stop",
+      "system_sha256": "18d8d5beddfd90e6bad1185d69fc9df76ec898f898a25bb4ccd2ad16d7bfe2d9",
+      "text_sha256": "f2417422a3ef0bbc81ce03353b27feaf128767ed5396cb0e50ac6eeac60cfac4",
+      "images_sha256": [
+        "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+        "306af9106e7f6e68057e52cb8b44b8edf109944b9922e995957feee13b053cc0",
+        "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970"
+      ],
+      "schema_sha256": "7a7fc445f534baf5eec4798c34c54e14f83dd5b2197f4ccb115d8b8c68f0d93b",
+      "response_sha256": "68c047f86e4579209bdc0ca2cffa7e6545a71f8f19f4129951814434bc688137",
+      "usage": {
+        "completion_tokens": 818,
+        "prompt_tokens": 11638,
+        "total_tokens": 12456,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 66,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "kind": "image_edit",
+      "attempt": 2,
+      "model": "gpt-image-2.5-sunburst-2026-09-08",
+      "size": "2368x1776",
+      "prompt_sha256": "2e2038604b78c16f3cc74f9ed31f5acffbae8be49cbed3dbc3bc366ef356dfee",
+      "guide_sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "mask": false,
+      "output_sha256": "ed722710278d59550e942c35876a49dbd5489f11358331e405ce3dabe90810c7"
+    }
+  ],
+  "artifacts": {
+    "pipeline/geometry_guide.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/geometry_guide.png",
+      "sha256": "5154fa51d098c8cc45194bfa644e347062a16162219d3dd8bf80fff0a8ba27ca",
+      "bytes": 254871
+    },
+    "pipeline/geometry_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/geometry_request.json",
+      "sha256": "13fc4355b3308d7f63d0c74853d9da422a007f435350f498523b27648ad4391e",
+      "bytes": 27539
+    },
+    "pipeline/geometry_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/geometry_response.json",
+      "sha256": "770f0ed7815574ee3d2b91d46a68ea4803cd27e6e9f1f452bcc3b8a250f31445",
+      "bytes": 580
+    },
+    "pipeline/geometry_text.txt": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/geometry_text.txt",
+      "sha256": "b3a8c7e7509e8d3122e9e27eebae0908edff1aee6bb095a15be3ef1059039f5b",
+      "bytes": 2141
+    },
+    "pipeline/gpt_1.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/gpt_1.png",
+      "sha256": "b29ab87c0cee300a6cc88ae31aa8c9cc59fc7761cc5d985158c392497b2cb420",
+      "bytes": 5511398
+    },
+    "pipeline/gpt_2.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/gpt_2.png",
+      "sha256": "ed722710278d59550e942c35876a49dbd5489f11358331e405ce3dabe90810c7",
+      "bytes": 5289426
+    },
+    "pipeline/image_request_attempt_1.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/image_request_attempt_1.json",
+      "sha256": "c53bb78d82ed29f107f4debd933619b59b1cd8b00b8e88d5bc0daf53e2bbec98",
+      "bytes": 11561
+    },
+    "pipeline/image_request_attempt_2.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/image_request_attempt_2.json",
+      "sha256": "309ddbc99fb2b6d22e8489ad990143f340ed79b3f601cd27fc1c67505d47376a",
+      "bytes": 6295
+    },
+    "pipeline/input.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/input.png",
+      "sha256": "468f6e63a08e584a4a9214ddc865c06288ede4b5ee54aef13810de2e6d8c8970",
+      "bytes": 256408
+    },
+    "pipeline/mask.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/mask.png",
+      "sha256": "8cf9b59c08fcb13c54e4c2a138aa3c53f02bbedb841b172d878f589186169695",
+      "bytes": 18805
+    },
+    "pipeline/ours.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/ours.png",
+      "sha256": "ed722710278d59550e942c35876a49dbd5489f11358331e405ce3dabe90810c7",
+      "bytes": 5289426
+    },
+    "pipeline/product_invariant_attempt_1.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/product_invariant_attempt_1.json",
+      "sha256": "667b34b136e46498c9b54c942675756cbc238650620485deef31757129bd0fdb",
+      "bytes": 5540
+    },
+    "pipeline/product_invariant_attempt_2.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/product_invariant_attempt_2.json",
+      "sha256": "60299ba82628625a2604ea583466149363a03b0a4a04933bfcd8ae5cad565d66",
+      "bytes": 3675
+    },
+    "pipeline/ref_2.png": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/ref_2.png",
+      "sha256": "306af9106e7f6e68057e52cb8b44b8edf109944b9922e995957feee13b053cc0",
+      "bytes": 1226458
+    },
+    "pipeline/result.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/result.json",
+      "sha256": "57ea9a994b800b9adf4b3c54050374b5a71744bc8a874aa273baeaf8afef40c2",
+      "bytes": 38974
+    },
+    "pipeline/stage_b_attempt_1_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/stage_b_attempt_1_request.json",
+      "sha256": "4967b96571b39c6822350e4116d140e64b8b4392aadda8d029bb41b2c2b0e167",
+      "bytes": 33105
+    },
+    "pipeline/stage_b_attempt_1_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/stage_b_attempt_1_response.json",
+      "sha256": "c45410dc4739f19f28b4a8facb5751fbec1f9758db44926d2bc18488c59bc1cd",
+      "bytes": 4497
+    },
+    "pipeline/stage_b_attempt_2_raw_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/stage_b_attempt_2_raw_response.json",
+      "sha256": "9d108ee3e442b0b83e3233e3183c7cd04f5061f8a2f89c7f3546f36ad241fe3d",
+      "bytes": 3764
+    },
+    "pipeline/stage_b_attempt_2_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/stage_b_attempt_2_request.json",
+      "sha256": "6c731db3aeef88e593ed0e401eedcf7bbf85a12b21cea7bc1f0943dc71a1305f",
+      "bytes": 21817
+    },
+    "pipeline/stage_b_attempt_2_response.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/pipeline/rows/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/stage_b_attempt_2_response.json",
+      "sha256": "9d108ee3e442b0b83e3233e3183c7cd04f5061f8a2f89c7f3546f36ad241fe3d",
+      "bytes": 3764
+    },
+    "job/calls.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/jobs/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/calls.json",
+      "sha256": "b2e58b1a4f5cb763322c0b2626b6617ec2f47dd05701b25aae63b59db375a603",
+      "bytes": 3560
+    },
+    "job/submission_request.json": {
+      "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/pipeline_position_experiment/pilot_v23_1_all_view_translation/run/jobs/magic__printer_FrontWide__p1__relocation_demand__outer_job_1/submission_request.json",
+      "sha256": "f5a59c5d0641c2955a9504b6bbe94212b2fcae1420b55ccbcaecc7adc5d3f3fd",
+      "bytes": 88
+    }
+  }
+}

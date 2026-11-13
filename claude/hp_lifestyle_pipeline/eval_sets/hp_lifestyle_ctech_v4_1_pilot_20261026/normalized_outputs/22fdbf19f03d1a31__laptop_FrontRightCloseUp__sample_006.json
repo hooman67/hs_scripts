@@ -1,0 +1,1269 @@
+{
+  "prompts": [
+    {
+      "id": "p1",
+      "environment": "Office",
+      "subsetting": "modern corporate office work surface",
+      "text": "An open modern corporate office with a desk. Warm natural lighting creates a polished, inviting atmosphere.",
+      "ctech_reference_id": "CT01",
+      "ctech_reference_score": 88,
+      "ctech_relationship": "minimal_camera_edit",
+      "ctech_changes": [
+        "Camera-fit edit of CT01; see ctech_explanation."
+      ],
+      "ctech_explanation": "The final text preserves CT01's office setting, desk, sentence order, and warm natural lighting while deleting background décor and depth cues for the tight crop.",
+      "source_relevance_score": 55,
+      "relationship": "source_grounded",
+      "score_components": {
+        "setting": 30,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 15
+      },
+      "evidence_ids": [
+        "e1",
+        "e2",
+        "e5"
+      ],
+      "explanation": "The office setting is explicitly supported, and the uncluttered desk suggests broad mobile business work, but the tight view cannot show documents or meetings.",
+      "creative_departures": [],
+      "visual_signature": {
+        "surface": "desk",
+        "light": "warm natural lighting",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Deleted the office décor, shelving, plants, artwork, and architectural depth to respect the zero-background tight view.",
+        "Source cues for documents, meetings, and decisions cannot be materially shown without props or people."
+      ]
+    },
+    {
+      "id": "p2",
+      "environment": "Office",
+      "subsetting": "deep corporate office work surface",
+      "text": "An open modern corporate office with a single work surface. Warm natural lighting creates a polished, inviting atmosphere.",
+      "ctech_reference_id": "CT02",
+      "ctech_reference_score": 86,
+      "ctech_relationship": "minimal_camera_edit",
+      "ctech_changes": [
+        "Camera-fit edit of CT02; see ctech_explanation."
+      ],
+      "ctech_explanation": "The prompt keeps CT02's corporate office and warm polished light but reduces the workstation field and deletes background-depth inventory for camera fit.",
+      "source_relevance_score": 55,
+      "relationship": "source_grounded",
+      "score_components": {
+        "setting": 30,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 15
+      },
+      "evidence_ids": [
+        "e1",
+        "e2",
+        "e5"
+      ],
+      "explanation": "An office work surface aligns with the source's office and mobile-professional work context, though no source-named materials survive the tight crop.",
+      "creative_departures": [],
+      "visual_signature": {
+        "surface": "single work surface",
+        "light": "warm natural lighting",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Multiple workstations, décor, and architectural details were omitted for the zero-background close-up.",
+        "The view cannot carry visible documents, meeting participation, or collaboration materials."
+      ]
+    },
+    {
+      "id": "p3",
+      "environment": "Office",
+      "subsetting": "bright corporate office surface",
+      "text": "A bright, open modern corporate office work surface with warm natural light. Lived-in but tidy and professional.",
+      "ctech_reference_id": "CT03",
+      "ctech_reference_score": 85,
+      "ctech_relationship": "minimal_camera_edit",
+      "ctech_changes": [
+        "Camera-fit edit of CT03; see ctech_explanation."
+      ],
+      "ctech_explanation": "This is a tight crop reduction of CT03, retaining the bright corporate office tone, warm natural light, and tidy professional ending while deleting all props and furnishings.",
+      "source_relevance_score": 55,
+      "relationship": "source_grounded",
+      "score_components": {
+        "setting": 30,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 15
+      },
+      "evidence_ids": [
+        "e1",
+        "e2",
+        "e5"
+      ],
+      "explanation": "The corporate office setting is directly supported by the source; visible activity and materials are necessarily reduced to broad work context.",
+      "creative_departures": [],
+      "visual_signature": {
+        "surface": "modern corporate office work surface",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Notebooks, papers, chairs, plants, workstation details, and personal touches were removed to meet the zero-prop and zero-background limits.",
+        "Documents, meetings, and decisions from the source are only implied as business context."
+      ]
+    },
+    {
+      "id": "p4",
+      "environment": "Home",
+      "subsetting": "lived-in home workspace desk",
+      "text": "A lived-in home workspace with a wooden desk. Soft daylight filters across the room. Warm, layered, and casually imperfect rather than styled or modern.",
+      "ctech_reference_id": "CT05",
+      "ctech_reference_score": 84,
+      "ctech_relationship": "minimal_camera_edit",
+      "ctech_changes": [
+        "Camera-fit edit of CT05; see ctech_explanation."
+      ],
+      "ctech_explanation": "The prompt preserves CT05's lived-in home workspace, wooden desk, soft daylight, and casually imperfect tone, with props and residential background elements removed.",
+      "source_relevance_score": 30,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 10
+      },
+      "evidence_ids": [
+        "e1",
+        "e4"
+      ],
+      "explanation": "Home work is a plausible adjacent expression of working from more places and beyond controlled offices, but home itself is not explicitly named.",
+      "creative_departures": [
+        "Residential home workspace inferred from broad mobility messaging."
+      ],
+      "visual_signature": {
+        "surface": "wooden desk",
+        "light": "soft daylight",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "All home-workspace props, windows, curtains, chair, plants, shelving, books, and residential objects were omitted for the tight view.",
+        "The source's documents and meeting movement are not visible without props or people."
+      ]
+    },
+    {
+      "id": "p5",
+      "environment": "Home",
+      "subsetting": "modern home workspace surface",
+      "text": "A modern home workspace with a simple work surface and warm natural light. Lived-in and authentic with subtle imperfections, warm neutral tones.",
+      "ctech_reference_id": "CT06",
+      "ctech_reference_score": 83,
+      "ctech_relationship": "minimal_camera_edit",
+      "ctech_changes": [
+        "Camera-fit edit of CT06; see ctech_explanation."
+      ],
+      "ctech_explanation": "This keeps CT06's modern home workspace, warm natural light, authentic tone, imperfections, and warm neutrals while changing the furniture collection into one support surface and deleting objects.",
+      "source_relevance_score": 30,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 10
+      },
+      "evidence_ids": [
+        "e1",
+        "e4"
+      ],
+      "explanation": "The scene fits the broader mobility and beyond-office context, but the specific residential setting and materials are invented.",
+      "creative_departures": [
+        "Home workspace inferred from broad work-from-more-places language."
+      ],
+      "visual_signature": {
+        "surface": "simple work surface",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Books, notebooks, papers, plants, and everyday objects were removed for the no-prop crop.",
+        "No visible documents, calls, or decisions can be shown in this camera profile."
+      ]
+    },
+    {
+      "id": "p6",
+      "environment": "Creative Studio",
+      "subsetting": "bright creative office work surface",
+      "text": "A bright, modern creative office work surface with warm natural light. Lived-in and authentic with subtle imperfections.",
+      "ctech_reference_id": "CT10",
+      "ctech_reference_score": 80,
+      "ctech_relationship": "minimal_camera_edit",
+      "ctech_changes": [
+        "Camera-fit edit of CT10; see ctech_explanation."
+      ],
+      "ctech_explanation": "The final text retains CT10's bright creative office, warm natural light, lived-in authenticity, and imperfections while reducing desks to one support surface and deleting props.",
+      "source_relevance_score": 30,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 10
+      },
+      "evidence_ids": [
+        "e3",
+        "e6"
+      ],
+      "explanation": "Creative office work is adjacent to the source's content-work and advanced content-creation cues, though no creative materials can appear.",
+      "creative_departures": [
+        "Creative office subsetting inferred from content-work language."
+      ],
+      "visual_signature": {
+        "surface": "modern creative office work surface",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Sketchbooks, papers, books, plants, and creative materials were omitted to respect the zero-prop limit.",
+        "The source's calls and content work are not visibly materialized."
+      ]
+    },
+    {
+      "id": "p7",
+      "environment": "Home",
+      "subsetting": "modern residential wooden desk",
+      "text": "A modern home workspace with a wooden desk. Soft natural light creates a calm, lived-in atmosphere.",
+      "ctech_reference_id": "CT04",
+      "ctech_reference_score": 80,
+      "ctech_relationship": "minimal_camera_edit",
+      "ctech_changes": [
+        "Camera-fit edit of CT04; see ctech_explanation."
+      ],
+      "ctech_explanation": "The prompt keeps CT04's modern home workspace and wooden desk while deleting all props and background furnishings; light is added for close-up plausibility.",
+      "source_relevance_score": 30,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 10
+      },
+      "evidence_ids": [
+        "e1",
+        "e4"
+      ],
+      "explanation": "A home workspace is adjacent to mobile work beyond the office, but the residential setting is not explicitly stated in the source.",
+      "creative_departures": [
+        "Residential setting inferred from broad mobility messaging."
+      ],
+      "visual_signature": {
+        "surface": "wooden desk",
+        "light": "soft natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Notebook, spiral pad, pen, paper stack, mug, windows, curtains, chair, plants, shelving, and residential furnishings were omitted.",
+        "Specific source activities such as meetings and document movement cannot be shown."
+      ]
+    },
+    {
+      "id": "p8",
+      "environment": "Creative Studio",
+      "subsetting": "modern creative office wooden table",
+      "text": "A modern creative office with a medium wooden table. Soft natural light creates a focused workspace atmosphere.",
+      "ctech_reference_id": "CT09",
+      "ctech_reference_score": 80,
+      "ctech_relationship": "minimal_camera_edit",
+      "ctech_changes": [
+        "Camera-fit edit of CT09; see ctech_explanation."
+      ],
+      "ctech_explanation": "The creative office and wooden table remain from CT09, while design props and background-depth furnishings are deleted and a simple light cue is added.",
+      "source_relevance_score": 30,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 10
+      },
+      "evidence_ids": [
+        "e3",
+        "e6"
+      ],
+      "explanation": "The creative office is adjacent to source content-work cues, but the setting and visible materials are mostly invented because the crop cannot show them.",
+      "creative_departures": [
+        "Creative studio environment inferred from content creation messaging."
+      ],
+      "visual_signature": {
+        "surface": "medium wooden table",
+        "light": "soft natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Notebook, pen, design materials, artwork, cabinet, plants, bookshelves, windows, and furnishings were removed.",
+        "No visible content-work materials survive the tight camera."
+      ]
+    },
+    {
+      "id": "p9",
+      "environment": "Café",
+      "subsetting": "neighborhood café wooden table",
+      "text": "A warm small wooden café table. Soft natural light keeps the tabletop inviting.",
+      "ctech_reference_id": "CT07",
+      "ctech_reference_score": 80,
+      "ctech_relationship": "minimal_camera_edit",
+      "ctech_changes": [
+        "Camera-fit edit of CT07; see ctech_explanation."
+      ],
+      "ctech_explanation": "The small wooden café table from CT07 is preserved, while all tabletop props and café background elements are removed for the close-up; light is added.",
+      "source_relevance_score": 25,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 5
+      },
+      "evidence_ids": [
+        "e1",
+        "e4"
+      ],
+      "explanation": "A café table is a plausible adjacent work-from-more-places setting, but the source does not explicitly name cafés and no work materials are visible.",
+      "creative_departures": [
+        "Café setting inferred from broad mobility and beyond-office language."
+      ],
+      "visual_signature": {
+        "surface": "warm small wooden café table",
+        "light": "soft natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Notebook, pen, coffee cup, artwork, shelving, plants, seating, and large windows were deleted.",
+        "The camera cannot show mobile work activity or collaboration materials."
+      ]
+    },
+    {
+      "id": "p10",
+      "environment": "Café",
+      "subsetting": "modern coffee shop lived-in table",
+      "text": "A modern coffee shop workspace focused on a lived-in table. Soft ambient daylight gives the surface an easy, everyday feel.",
+      "ctech_reference_id": "CT08",
+      "ctech_reference_score": 80,
+      "ctech_relationship": "minimal_camera_edit",
+      "ctech_changes": [
+        "Camera-fit edit of CT08; see ctech_explanation."
+      ],
+      "ctech_explanation": "The coffee shop workspace and lived-in table remain from CT08, with the full object cluster deleted and light added for a plausible tight scene.",
+      "source_relevance_score": 25,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 5
+      },
+      "evidence_ids": [
+        "e1",
+        "e4"
+      ],
+      "explanation": "The café work surface is adjacent to working from more places, but it is not named in the source and contains no visible work materials.",
+      "creative_departures": [
+        "Coffee shop subsetting inferred from broad mobility messaging."
+      ],
+      "visual_signature": {
+        "surface": "lived-in table",
+        "light": "soft ambient daylight",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Cup, notebook, papers, pen, glasses, plate, crumbs, and water glass were removed for the zero-prop limit.",
+        "Specific source cues for meetings, calls, and documents are not visible."
+      ]
+    },
+    {
+      "id": "p11",
+      "environment": "Office",
+      "subsetting": "shared workspace surface",
+      "text": "A bright shared workspace work surface with warm natural light. Lived-in but tidy and professional.",
+      "ctech_reference_id": "CT03",
+      "ctech_reference_score": 75,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT03; see ctech_explanation."
+      ],
+      "ctech_explanation": "This adapts CT03's structure and professional tone to the source-supported shared workspace while deleting all furniture and prop inventory.",
+      "source_relevance_score": 55,
+      "relationship": "source_grounded",
+      "score_components": {
+        "setting": 30,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 15
+      },
+      "evidence_ids": [
+        "e1",
+        "e5"
+      ],
+      "explanation": "Shared workspace is explicitly named in the source and the work surface supports broad mobile-professional productivity, with no visible materials allowed.",
+      "creative_departures": [],
+      "visual_signature": {
+        "surface": "shared workspace work surface",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Workstations, chairs, notebooks, papers, plants, and personal touches were removed.",
+        "Polished collaboration cannot be represented with people or call materials in this tight view."
+      ]
+    },
+    {
+      "id": "p12",
+      "environment": "Office",
+      "subsetting": "customer-site meeting surface",
+      "text": "A polished customer-site meeting surface in warm natural lighting, tidy and professional.",
+      "ctech_reference_id": "CT01",
+      "ctech_reference_score": 74,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT01; see ctech_explanation."
+      ],
+      "ctech_explanation": "The prompt follows CT01's polished workplace-light logic but changes the office desk into a source-supported customer-site meeting surface and removes background depth.",
+      "source_relevance_score": 55,
+      "relationship": "source_grounded",
+      "score_components": {
+        "setting": 30,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 15
+      },
+      "evidence_ids": [
+        "e2",
+        "e5"
+      ],
+      "explanation": "Customer site and meetings are explicitly supported, though the close-up can only show a meeting surface rather than participants or materials.",
+      "creative_departures": [],
+      "visual_signature": {
+        "surface": "customer-site meeting surface",
+        "light": "warm natural lighting",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Office shelving, décor, plants, artwork, furnishings, and architectural depth were deleted.",
+        "Meeting presence is reduced to setting language because people and props are not permitted."
+      ]
+    },
+    {
+      "id": "p13",
+      "environment": "Office",
+      "subsetting": "private meeting room table",
+      "text": "A bright modern meeting room table with warm natural light. Lived-in but tidy and professional.",
+      "ctech_reference_id": "CT03",
+      "ctech_reference_score": 74,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT03; see ctech_explanation."
+      ],
+      "ctech_explanation": "The sentence shape, warm light, and tidy professional tone are CT03-derived, adapted from workstation office to meeting room table.",
+      "source_relevance_score": 55,
+      "relationship": "source_grounded",
+      "score_components": {
+        "setting": 30,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 15
+      },
+      "evidence_ids": [
+        "e2",
+        "e5"
+      ],
+      "explanation": "The meeting room table reflects the source's meeting and office cues, but no meeting materials or people can appear.",
+      "creative_departures": [],
+      "visual_signature": {
+        "surface": "modern meeting room table",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Workstation furnishings, notebooks, papers, plants, and personal touches were omitted.",
+        "The source's polished meeting presence cannot include a participant in this camera profile."
+      ]
+    },
+    {
+      "id": "p14",
+      "environment": "Office",
+      "subsetting": "mobile professional touch-down surface",
+      "text": "A bright, modern touch-down work surface with warm natural light. Tidy, professional, and ready for focused decisions.",
+      "ctech_reference_id": "CT03",
+      "ctech_reference_score": 73,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT03; see ctech_explanation."
+      ],
+      "ctech_explanation": "The prompt keeps CT03's bright workplace, warm light, and professional close, with wording adapted toward mobile decision work and all objects removed.",
+      "source_relevance_score": 45,
+      "relationship": "source_grounded",
+      "score_components": {
+        "setting": 20,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 15
+      },
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "explanation": "A touch-down surface is a broader office-adjacent expression of mobile professional work and decisions, but the exact setting is inferred.",
+      "creative_departures": [
+        "Touch-down work surface inferred as a mobile-professional subsetting."
+      ],
+      "visual_signature": {
+        "surface": "modern touch-down work surface",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "All CT03 furniture and objects were removed for the prop limit.",
+        "Documents and decisions cannot be physically represented."
+      ]
+    },
+    {
+      "id": "p15",
+      "environment": "Office",
+      "subsetting": "quiet protected-work surface",
+      "text": "An open modern corporate office with a clean work surface. Warm natural lighting creates a polished, inviting atmosphere for protected work.",
+      "ctech_reference_id": "CT01",
+      "ctech_reference_score": 72,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT01; see ctech_explanation."
+      ],
+      "ctech_explanation": "This keeps CT01's office and lighting language while swapping the desk for a clean work surface and adding a source-derived protected-work context.",
+      "source_relevance_score": 55,
+      "relationship": "source_grounded",
+      "score_components": {
+        "setting": 30,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 15
+      },
+      "evidence_ids": [
+        "e1",
+        "e3",
+        "e5"
+      ],
+      "explanation": "Office work and protected productivity are source-supported, but the scene contains no source-named documents or collaboration materials.",
+      "creative_departures": [],
+      "visual_signature": {
+        "surface": "clean work surface",
+        "light": "warm natural lighting",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Shelving, plants, artwork, décor, furnishings, and architectural depth were removed.",
+        "Security and AI workflow cues remain abstract because device features cannot be shown in the environment prompt."
+      ]
+    },
+    {
+      "id": "p16",
+      "environment": "Home",
+      "subsetting": "portable-work home desk",
+      "text": "A lived-in home workspace with a clear wooden desk. Soft daylight settles across the room. Warm and casually imperfect rather than styled or modern.",
+      "ctech_reference_id": "CT05",
+      "ctech_reference_score": 72,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT05; see ctech_explanation."
+      ],
+      "ctech_explanation": "The home workspace, wooden desk, daylight, and imperfect tone come from CT05; the desk is cleared and all room elements are removed.",
+      "source_relevance_score": 30,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 10
+      },
+      "evidence_ids": [
+        "e1",
+        "e4"
+      ],
+      "explanation": "The home desk is an adjacent mobile-work setting, not an explicitly sourced location.",
+      "creative_departures": [
+        "Home setting inferred from broad work-from-more-places language."
+      ],
+      "visual_signature": {
+        "surface": "clear wooden desk",
+        "light": "soft daylight",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "All notebooks, pads, papers, pens, coffee, chair, plants, shelving, books, and residential objects were omitted.",
+        "Sensitive work and meetings cannot be represented with visible materials."
+      ]
+    },
+    {
+      "id": "p17",
+      "environment": "Home",
+      "subsetting": "compact home work surface",
+      "text": "A modern home workspace with a compact work surface and warm natural light. Lived-in and authentic with warm neutral tones.",
+      "ctech_reference_id": "CT06",
+      "ctech_reference_score": 71,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT06; see ctech_explanation."
+      ],
+      "ctech_explanation": "This remains close to CT06's home workspace, warm light, lived-in authenticity, and warm neutrals, while reducing the support and deleting all objects.",
+      "source_relevance_score": 30,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 10
+      },
+      "evidence_ids": [
+        "e1",
+        "e4"
+      ],
+      "explanation": "A compact home work surface fits the broader mobility idea but is not directly named by the source.",
+      "creative_departures": [
+        "Residential work surface inferred from mobility context."
+      ],
+      "visual_signature": {
+        "surface": "compact work surface",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Books, notebooks, papers, plants, and everyday objects were omitted.",
+        "No source-specific documents, calls, or collaboration details can be visible."
+      ]
+    },
+    {
+      "id": "p18",
+      "environment": "Office",
+      "subsetting": "secure decision surface",
+      "text": "A refined workplace decision surface in warm natural lighting, polished and inviting.",
+      "ctech_reference_id": "CT01",
+      "ctech_reference_score": 70,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT01; see ctech_explanation."
+      ],
+      "ctech_explanation": "The prompt compresses CT01 into a tight, polished workplace surface and retains warm natural lighting while adding a source-aligned decision cue.",
+      "source_relevance_score": 45,
+      "relationship": "source_grounded",
+      "score_components": {
+        "setting": 20,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 15
+      },
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "explanation": "The decision-focused workplace aligns with source business decisions and protected work, but the setting is broader than the explicit office/shared/customer-site list.",
+      "creative_departures": [
+        "Decision surface phrasing invented to carry source context without props."
+      ],
+      "visual_signature": {
+        "surface": "refined workplace decision surface",
+        "light": "warm natural lighting",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Office décor, furnishings, and depth were removed.",
+        "Documents and decision artifacts cannot be shown under the prop ceiling."
+      ]
+    },
+    {
+      "id": "p19",
+      "environment": "Creative Studio",
+      "subsetting": "content-work studio table",
+      "text": "A modern creative office with a clear medium wooden table. Soft natural light creates a focused content-work atmosphere.",
+      "ctech_reference_id": "CT09",
+      "ctech_reference_score": 70,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT09; see ctech_explanation."
+      ],
+      "ctech_explanation": "The creative office and wooden table remain from CT09, adapted toward source content work while clearing the table and deleting depth elements.",
+      "source_relevance_score": 30,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 10
+      },
+      "evidence_ids": [
+        "e3",
+        "e6"
+      ],
+      "explanation": "Content work is source-supported, but the creative office setting is inferred and no content materials can be shown.",
+      "creative_departures": [
+        "Creative office subsetting inferred from content-work and content-creation language."
+      ],
+      "visual_signature": {
+        "surface": "clear medium wooden table",
+        "light": "soft natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Notebook, pen, design materials, artwork, cabinet, plants, bookshelves, windows, and furnishings were omitted.",
+        "AI-assisted tasks and calls remain contextual rather than visible."
+      ]
+    },
+    {
+      "id": "p20",
+      "environment": "Creative Studio",
+      "subsetting": "bright creative review surface",
+      "text": "A bright, modern creative office with warm natural light and a clear review surface. Lived-in and authentic with subtle imperfections.",
+      "ctech_reference_id": "CT10",
+      "ctech_reference_score": 70,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT10; see ctech_explanation."
+      ],
+      "ctech_explanation": "This keeps CT10's bright creative office, warm light, and authentic imperfect tone, changing desks to a single review surface and removing props.",
+      "source_relevance_score": 30,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 10
+      },
+      "evidence_ids": [
+        "e3",
+        "e6"
+      ],
+      "explanation": "Reviewing content is adjacent to source content work, but the visible studio setting and materials are mostly invented or omitted.",
+      "creative_departures": [
+        "Creative review subsetting inferred from content-work messaging."
+      ],
+      "visual_signature": {
+        "surface": "clear review surface",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Sketchbooks, papers, books, plants, and creative materials were omitted.",
+        "No visible content or collaboration artifacts can fit."
+      ]
+    },
+    {
+      "id": "p21",
+      "environment": "Café",
+      "subsetting": "quiet café work table",
+      "text": "A warm small wooden café table in soft natural light, inviting and ready for a quick work break.",
+      "ctech_reference_id": "CT07",
+      "ctech_reference_score": 70,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT07; see ctech_explanation."
+      ],
+      "ctech_explanation": "The café table remains CT07-derived, with props and background deleted and a light/work-break phrase added.",
+      "source_relevance_score": 25,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 5
+      },
+      "evidence_ids": [
+        "e1",
+        "e4"
+      ],
+      "explanation": "A café work break is adjacent to working from more places but is not an explicit source setting.",
+      "creative_departures": [
+        "Café work-break setting inferred from broad mobility language."
+      ],
+      "visual_signature": {
+        "surface": "warm small wooden café table",
+        "light": "soft natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Notebook, pen, cup, café artwork, shelving, plants, seating, and windows were removed.",
+        "The source's actual meeting and document cues are not visible."
+      ]
+    },
+    {
+      "id": "p22",
+      "environment": "Café",
+      "subsetting": "modern coffee shop table",
+      "text": "A modern coffee shop workspace focused on a clean lived-in table. Gentle daylight keeps the surface relaxed and practical.",
+      "ctech_reference_id": "CT08",
+      "ctech_reference_score": 70,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT08; see ctech_explanation."
+      ],
+      "ctech_explanation": "The coffee shop workspace and lived-in table focus follow CT08, with a cleaned surface, deleted props, and added daylight.",
+      "source_relevance_score": 25,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 5
+      },
+      "evidence_ids": [
+        "e1",
+        "e4"
+      ],
+      "explanation": "The café setting is a plausible mobile-work extension, but it lacks explicit source support and visible materials.",
+      "creative_departures": [
+        "Coffee shop environment inferred from work-from-more-places messaging."
+      ],
+      "visual_signature": {
+        "surface": "clean lived-in table",
+        "light": "gentle daylight",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Coffee cup, notebook, papers, pen, glasses, plate, crumbs, and water glass were removed.",
+        "Calls and content work cannot be expressed through objects in this crop."
+      ]
+    },
+    {
+      "id": "p23",
+      "environment": "Café",
+      "subsetting": "mobile work café counter",
+      "text": "A warm neighborhood café work surface in gentle daylight, pared back and inviting.",
+      "ctech_reference_id": "CT07",
+      "ctech_reference_score": 70,
+      "ctech_relationship": "close_adaptation",
+      "ctech_changes": [
+        "Close adaptation of CT07; see ctech_explanation."
+      ],
+      "ctech_explanation": "This remains based on CT07's warm neighborhood café table but changes the support wording, deletes all objects and background, and adds simple light.",
+      "source_relevance_score": 25,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 5
+      },
+      "evidence_ids": [
+        "e1",
+        "e4"
+      ],
+      "explanation": "A café work surface is a reasonable mobility-adjacent scene but lacks explicit source support.",
+      "creative_departures": [
+        "Neighborhood café invented as a beyond-office location."
+      ],
+      "visual_signature": {
+        "surface": "warm neighborhood café work surface",
+        "light": "gentle daylight",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Notebook, pen, cup, and café background details were omitted.",
+        "Meetings, calls, and sensitive documents cannot be made visible."
+      ]
+    },
+    {
+      "id": "p24",
+      "environment": "Education",
+      "subsetting": "quiet library study surface",
+      "text": "A modern library study surface with warm natural light. Lived-in and authentic with subtle imperfections, warm neutral tones.",
+      "ctech_reference_id": "CT06",
+      "ctech_reference_score": 66,
+      "ctech_relationship": "category_extension",
+      "ctech_changes": [
+        "Extended CT06 into Education; see ctech_explanation."
+      ],
+      "ctech_explanation": "The prompt extends CT06's warm, authentic, imperfect tone into an Education setting while retaining only a local study surface and light.",
+      "source_relevance_score": 0,
+      "relationship": "creative_departure",
+      "score_components": {
+        "setting": 0,
+        "activity": 0,
+        "materials": 0,
+        "use_context": 0
+      },
+      "evidence_ids": [],
+      "explanation": "The source does not support a library, school, or study context, and no source materials are visible.",
+      "creative_departures": [
+        "Education setting invented as category coverage.",
+        "Library study surface not supported by source evidence."
+      ],
+      "visual_signature": {
+        "surface": "modern library study surface",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "All CT06 objects were removed for camera limits.",
+        "No source-supported business documents or meetings are shown."
+      ]
+    },
+    {
+      "id": "p25",
+      "environment": "Education",
+      "subsetting": "classroom preparation surface",
+      "text": "A bright classroom preparation surface with warm natural light. Tidy, calm, and practical.",
+      "ctech_reference_id": "CT03",
+      "ctech_reference_score": 65,
+      "ctech_relationship": "category_extension",
+      "ctech_changes": [
+        "Extended CT03 into Education; see ctech_explanation."
+      ],
+      "ctech_explanation": "This Education extension borrows CT03's bright warm-light structure and tidy ending but changes the environment and deletes all office objects.",
+      "source_relevance_score": 0,
+      "relationship": "creative_departure",
+      "score_components": {
+        "setting": 0,
+        "activity": 0,
+        "materials": 0,
+        "use_context": 0
+      },
+      "evidence_ids": [],
+      "explanation": "No source field supports classroom preparation or education.",
+      "creative_departures": [
+        "Classroom setting invented for category diversity.",
+        "Teaching-preparation context not source-supported."
+      ],
+      "visual_signature": {
+        "surface": "classroom preparation surface",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Workstations, chairs, notebooks, papers, plants, and personal touches were deleted.",
+        "Source cues for mobile business productivity are not represented."
+      ]
+    },
+    {
+      "id": "p26",
+      "environment": "Gaming",
+      "subsetting": "domestic gaming table",
+      "text": "A lived-in home gaming table with warm natural light. Authentic with subtle imperfections and warm neutral tones.",
+      "ctech_reference_id": "CT06",
+      "ctech_reference_score": 65,
+      "ctech_relationship": "category_extension",
+      "ctech_changes": [
+        "Extended CT06 into Gaming; see ctech_explanation."
+      ],
+      "ctech_explanation": "The scene extends CT06's home warmth, authenticity, and imperfections into a Gaming environment while keeping the tight local surface empty.",
+      "source_relevance_score": 0,
+      "relationship": "creative_departure",
+      "score_components": {
+        "setting": 0,
+        "activity": 0,
+        "materials": 0,
+        "use_context": 0
+      },
+      "evidence_ids": [],
+      "explanation": "The source contains no gaming setting, gaming activity, or gaming materials.",
+      "creative_departures": [
+        "Gaming category invented for coverage.",
+        "Domestic gaming table not source-supported."
+      ],
+      "visual_signature": {
+        "surface": "home gaming table",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Books, notebooks, papers, plants, and everyday objects were removed.",
+        "Business mobility and meeting cues are omitted in favor of an unsupported gaming scene."
+      ]
+    },
+    {
+      "id": "p27",
+      "environment": "Gaming",
+      "subsetting": "quiet gaming nook surface",
+      "text": "A modern home gaming surface in soft natural light, lived-in and tidy rather than theatrical.",
+      "ctech_reference_id": "CT05",
+      "ctech_reference_score": 64,
+      "ctech_relationship": "category_extension",
+      "ctech_changes": [
+        "Extended CT05 into Gaming; see ctech_explanation."
+      ],
+      "ctech_explanation": "This category extension uses CT05's lived-in home tone and soft light but changes the use to gaming and removes all props and room detail.",
+      "source_relevance_score": 0,
+      "relationship": "creative_departure",
+      "score_components": {
+        "setting": 0,
+        "activity": 0,
+        "materials": 0,
+        "use_context": 0
+      },
+      "evidence_ids": [],
+      "explanation": "Gaming is unrelated to the provided business-productivity messaging.",
+      "creative_departures": [
+        "Gaming environment invented.",
+        "Gaming nook use context not supported by source evidence."
+      ],
+      "visual_signature": {
+        "surface": "modern home gaming surface",
+        "light": "soft natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Notebook, pad, papers, pens, coffee, chair, plants, shelving, books, and residential objects were omitted.",
+        "Source-supported office and meeting contexts are not expressed."
+      ]
+    },
+    {
+      "id": "p28",
+      "environment": "Education",
+      "subsetting": "campus study table",
+      "text": "A warm campus study table in soft natural light, quiet and practical for focused work.",
+      "ctech_reference_id": "CT07",
+      "ctech_reference_score": 63,
+      "ctech_relationship": "category_extension",
+      "ctech_changes": [
+        "Extended CT07 into Education; see ctech_explanation."
+      ],
+      "ctech_explanation": "The prompt extends CT07's small table focus into an Education setting, preserving warmth while deleting all café props and background.",
+      "source_relevance_score": 0,
+      "relationship": "creative_departure",
+      "score_components": {
+        "setting": 0,
+        "activity": 0,
+        "materials": 0,
+        "use_context": 0
+      },
+      "evidence_ids": [],
+      "explanation": "A campus study setting is not supported by the source; focused work is generic and not source-specific here.",
+      "creative_departures": [
+        "Campus study setting invented.",
+        "Education context not supported by evidence."
+      ],
+      "visual_signature": {
+        "surface": "warm campus study table",
+        "light": "soft natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Café notebook, pen, cup, artwork, shelving, plants, seating, and windows were removed.",
+        "Source business-collaboration cues are not visible."
+      ]
+    },
+    {
+      "id": "p29",
+      "environment": "Gaming",
+      "subsetting": "minimal game-night table",
+      "text": "A modern game-night table focused on a lived-in surface. Soft ambient daylight gives the surface an easy, everyday feel.",
+      "ctech_reference_id": "CT08",
+      "ctech_reference_score": 63,
+      "ctech_relationship": "category_extension",
+      "ctech_changes": [
+        "Extended CT08 into Gaming; see ctech_explanation."
+      ],
+      "ctech_explanation": "This Gaming extension follows CT08's table-focused structure and lived-in mood, with the object cluster deleted and light added.",
+      "source_relevance_score": 0,
+      "relationship": "creative_departure",
+      "score_components": {
+        "setting": 0,
+        "activity": 0,
+        "materials": 0,
+        "use_context": 0
+      },
+      "evidence_ids": [],
+      "explanation": "Game-night context has no support in the source messaging.",
+      "creative_departures": [
+        "Gaming scene invented for category coverage.",
+        "Game-night surface not source-supported."
+      ],
+      "visual_signature": {
+        "surface": "lived-in surface",
+        "light": "soft ambient daylight",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "All CT08 tabletop objects were removed.",
+        "No source-supported professional workflow appears."
+      ]
+    },
+    {
+      "id": "p30",
+      "environment": "Creative Studio",
+      "subsetting": "minimal content studio surface",
+      "text": "A bright content studio work surface with warm natural light, lived-in and authentic with subtle imperfections.",
+      "ctech_reference_id": "CT10",
+      "ctech_reference_score": 60,
+      "ctech_relationship": "category_extension",
+      "ctech_changes": [
+        "Extended CT10 into Creative Studio; see ctech_explanation."
+      ],
+      "ctech_explanation": "The prompt is still visibly CT10-derived through bright creative setting, warm natural light, and lived-in imperfect tone, but it narrows the setting to a content studio surface and deletes all materials.",
+      "source_relevance_score": 30,
+      "relationship": "source_adjacent",
+      "score_components": {
+        "setting": 10,
+        "activity": 10,
+        "materials": 0,
+        "use_context": 10
+      },
+      "evidence_ids": [
+        "e3",
+        "e6"
+      ],
+      "explanation": "Content work is source-supported, while the studio environment and lack of visible materials keep this adjacent rather than grounded.",
+      "creative_departures": [
+        "Content studio environment inferred from content-work messaging."
+      ],
+      "visual_signature": {
+        "surface": "content studio work surface",
+        "light": "warm natural light",
+        "local_props": [],
+        "background_details": [],
+        "people": []
+      },
+      "camera_omissions": [
+        "Desks, sketchbooks, papers, books, plants, and creative materials were removed.",
+        "The actual content work cannot be shown with no props or people."
+      ]
+    }
+  ],
+  "debug": {
+    "source_evidence": [
+      {
+        "id": "e1",
+        "message_id": "KSP1",
+        "path": "KSP1.long_message_best_sku",
+        "quote": "Work smarter from more places while sensitive work stays protected."
+      },
+      {
+        "id": "e2",
+        "message_id": "KSP1",
+        "path": "KSP1.long_message_best_sku",
+        "quote": "move through documents, meetings, and decisions"
+      },
+      {
+        "id": "e3",
+        "message_id": "KSP2",
+        "path": "KSP2.long_message_best_sku",
+        "quote": "AI-assisted tasks, calls, and content work"
+      },
+      {
+        "id": "e4",
+        "message_id": "KSP3",
+        "path": "KSP3.long_message_best_sku",
+        "quote": "work beyond controlled office environments"
+      },
+      {
+        "id": "e5",
+        "message_id": "KSP4",
+        "path": "KSP4.long_message_best_sku",
+        "quote": "whether joining from an office, shared workspace, or customer site"
+      },
+      {
+        "id": "e6",
+        "message_id": "ValueProposition",
+        "path": "ValueProposition.long_message_best_sku",
+        "quote": "polished collaboration, connected mobility, and protected productivity"
+      }
+    ],
+    "ksp_mappings": [
+      {
+        "ksp_id": "KSP1",
+        "explanation": "Contributed the main mobility, protected-work, documents, meetings, and decisions context; visible expression is limited because this tight profile allows no props or people."
+      },
+      {
+        "ksp_id": "KSP2",
+        "explanation": "Contributed calls and content-work context for creative-studio-adjacent prompts; processor and AI feature claims were omitted as technical specifications not visible in lifestyle environments."
+      },
+      {
+        "ksp_id": "KSP3",
+        "explanation": "Contributed the beyond-controlled-office cue supporting adjacent home and café settings; security feature details were omitted because they are not environmental props."
+      },
+      {
+        "ksp_id": "KSP4",
+        "explanation": "Contributed explicit office, shared workspace, customer site, and meeting context; camera-specific meeting visuals were omitted because people and props are not allowed."
+      }
+    ],
+    "value_proposition": {
+      "explanation": "Contributed broad secure mobility, polished collaboration, content work, and protected productivity cues. Product identifiers and technical specifications were not used as scene content."
+    },
+    "input_assessment": "The source messaging is coherent and business-focused, with strongest lifestyle cues around mobile professionals, offices, shared workspaces, customer sites, meetings, documents, calls, content work, and working beyond controlled offices. The selected camera profile is a tight oblique laptop view with zero local props, zero background details, and no people, so the bank relies on support surfaces, setting labels, and light rather than visible work artifacts.",
+    "count_explanation": "Exactly 30 distinct alternatives are provided. For the resolved tight profile, every final paragraph was audited to contain one focal support surface, a light cue, zero local props, zero background details, and no people. Categories include Home, Office, Education, Gaming, Café, and Creative Studio; Education and Gaming are explicit creative departures because the source does not support them.",
+    "used_fallback": false,
+    "ignored_fields": [
+      "_chatSession"
+    ],
+    "diversity_summary": "The bank starts with close C-Tech office, home, café, and creative-studio reductions, then gradually adapts toward source-supported shared workspace, customer-site, meeting, content-work, and protected-work surfaces, followed by required category extensions for Education and Gaming.",
+    "limitations": [
+      "No runtime image or exact product inspection was available; camera handling is based only on the offline registry.",
+      "The selected tight view allows no visible props, background details, or people, which sharply limits visible source relevance and room diversity.",
+      "Technical claims such as AI support, security, processor details, wireless connectivity, and camera features were not converted into fictional visible capabilities.",
+      "Source-supported documents, meetings, calls, and content work could not be shown materially because papers, participants, and other props are disallowed by the camera profile.",
+      "Host finalizer set empty-evidence candidates to zero source relevance, recomputed source component sums, clamped C-Tech scores to the declared relationship's fixed rubric band, repaired uniquely verifiable evidence paths, replaced unreliable clause-level C-Tech diffs with deterministic relationship summaries, and reranked the bank by C-Tech reference score with source relevance as the tie-breaker."
+    ],
+    "camera": {
+      "requested_tag": "laptop_FrontRightCloseUp",
+      "resolved_tag": "laptop_FrontRightCloseUp",
+      "device_type": "laptop",
+      "profile_version": "camera-v2-draft-2026-10-22-r3",
+      "resolution": "exact",
+      "framing": "tight",
+      "elevation": "oblique",
+      "max_local_props": 0,
+      "max_background_details": 0,
+      "people_policy": "omit"
+    }
+  }
+}

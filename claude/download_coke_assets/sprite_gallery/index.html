@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TCCC Sprite DAM Assets</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <!-- IMS auth bar (sign-in button appears here) -->
+        <div id="ims"></div>
+        <!-- Loading state -->
+        <div id="loading" class="loading-screen">Loading...</div>
+        <!-- Main content (hidden until auth) -->
+        <div id="content" class="hidden">
+            <div class="header-bar">
+                <h1>TCCC Sprite DAM Assets</h1>
+                <div class="subtitle">5,086 images / 81.9 GB &mdash; products + marketing campaigns &mdash; foundry-tccc-enterprise-adobe-assets</div>
+                <div class="controls">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search filenames or folders...">
+                    <label style="font-size:11px;color:#888;">Size</label>
+                    <input type="range" class="size-slider" id="sizeSlider" min="100" max="500" value="220">
+                </div>
+            </div>
+            <div class="folder-nav" id="folderNav"></div>
+            <div class="gallery" id="gallery"></div>
+        </div>
+        <!-- Lightbox modal -->
+        <div id="assetModal" class="modal" onclick="if(event.target===this)closeModal()">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <button class="nav-btn nav-prev" onclick="navModal(-1)">&lsaquo;</button>
+            <button class="nav-btn nav-next" onclick="navModal(1)">&rsaquo;</button>
+            <img id="modalImage" src="" alt="Full size">
+            <div class="modal-info" id="modalInfo"></div>
+        </div>
+        <!-- Scripts -->
+        <script src="https://auth-stg1.services.adobe.com/imslib/imslib.js"></script>
+        <script src="./imsauth.js"></script>
+        <script src="./data.js"></script>
+        <script src="./main.js"></script>
+        <script>
+            // Kick off IMS auth
+            document.addEventListener("DOMContentLoaded", () => {
+                initializeIMS();
+            });
+        </script>
+    </body>
+</html>

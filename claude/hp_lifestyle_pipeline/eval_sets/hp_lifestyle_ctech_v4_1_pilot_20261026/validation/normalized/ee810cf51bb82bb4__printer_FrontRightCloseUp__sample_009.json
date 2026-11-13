@@ -1,0 +1,152 @@
+{
+  "validator_version": "v4.1-host-validator-r1",
+  "passed": true,
+  "error_count": 0,
+  "warning_count": 2,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unused_source_evidence",
+      "detail": "Unused evidence may support an omission explanation; inspect: ['e5', 'e6']"
+    },
+    {
+      "code": "human_scene_review_required",
+      "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+    }
+  ],
+  "counts": {
+    "prompts": 30,
+    "evidence": 7,
+    "environments": {
+      "Home": 9,
+      "Café": 5,
+      "Office": 7,
+      "Creative Studio": 4,
+      "Gaming": 2,
+      "Education": 3
+    },
+    "relationships": {
+      "source_grounded": 6,
+      "source_adjacent": 10,
+      "creative_departure": 14
+    }
+  },
+  "derived_audit": {
+    "environment_counts": {
+      "Home": 9,
+      "Office": 7,
+      "Education": 3,
+      "Gaming": 2,
+      "Café": 5,
+      "Creative Studio": 4
+    },
+    "relationship_counts": {
+      "source_grounded": 6,
+      "source_adjacent": 10,
+      "creative_departure": 14
+    },
+    "ctech_relationship_counts": {
+      "minimal_camera_edit": 18,
+      "close_adaptation": 9,
+      "category_extension": 3
+    },
+    "ctech_reference_counts": {
+      "CT06": 2,
+      "CT17": 1,
+      "CT08": 1,
+      "CT03": 3,
+      "CT05": 2,
+      "CT18": 2,
+      "CT10": 3,
+      "CT11": 1,
+      "CT12": 2,
+      "CT14": 1,
+      "CT15": 1,
+      "CT13": 2,
+      "CT04": 2,
+      "CT01": 2,
+      "CT02": 1,
+      "CT07": 1,
+      "CT09": 2,
+      "CT16": 1
+    },
+    "ctech_score_range": [
+      64,
+      88
+    ],
+    "distinct_subsettings": 29,
+    "evidence_reverse_mappings": {
+      "KSP1": {
+        "evidence_ids": [
+          "e4"
+        ],
+        "prompt_ids": [
+          "p7",
+          "p8",
+          "p17",
+          "p27",
+          "p30"
+        ]
+      },
+      "KSP2": {
+        "evidence_ids": [
+          "e1"
+        ],
+        "prompt_ids": [
+          "p19",
+          "p20",
+          "p22",
+          "p25",
+          "p26",
+          "p27",
+          "p28",
+          "p29"
+        ]
+      },
+      "KSP3": {
+        "evidence_ids": [
+          "e2"
+        ],
+        "prompt_ids": [
+          "p4",
+          "p19",
+          "p23"
+        ]
+      },
+      "KSP4": {
+        "evidence_ids": [],
+        "prompt_ids": []
+      },
+      "ValueProposition": {
+        "evidence_ids": [
+          "e3",
+          "e7"
+        ],
+        "prompt_ids": [
+          "p1",
+          "p2",
+          "p4",
+          "p5",
+          "p6",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p23",
+          "p24",
+          "p25",
+          "p26",
+          "p27",
+          "p28",
+          "p29"
+        ]
+      }
+    }
+  },
+  "output_semantic_sha256": "51786bb9b039d9281a003a8fa5fabae52d1646ffac8a729e295d5bc7e7097ddb"
+}

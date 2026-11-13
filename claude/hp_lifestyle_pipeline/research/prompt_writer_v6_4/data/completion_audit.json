@@ -1,0 +1,442 @@
+{
+  "verified_at_utc": "2026-11-10T21:29:22.635868+00:00",
+  "passed": true,
+  "snapshot": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_v6_4_four_devices_20261110/revisions/v6.4-structured-sources-20261110-r1",
+  "snapshot_manifest_sha256": "65539b5b41adc51a284de0395d08ccd05ccb8277de5c1fecf51e8a2229319b25",
+  "completed_at_utc": "2026-11-10T21:28:17.273961+00:00",
+  "counts": {
+    "prompts": 160,
+    "distinct_texts": 160,
+    "banks": 16,
+    "prompts_per_device": {
+      "cashmere": 40,
+      "elitebook": 40,
+      "tassel": 40,
+      "magic": 40
+    },
+    "successful_banks": 16,
+    "failed_banks": 0,
+    "initial_successes": 4,
+    "repaired_successes": 12,
+    "semantic_calls": 28,
+    "known_transport_attempts": 28,
+    "prompt_tokens_including_cache": 1402938,
+    "completion_tokens_including_reasoning": 216207
+  },
+  "models": {
+    "gpt-5.5-2026-04-24": 28
+  },
+  "environments": {
+    "Office": 54,
+    "Home": 32,
+    "Café": 15,
+    "Gaming": 7,
+    "Creative Studio": 28,
+    "Education": 24
+  },
+  "initial_error_codes": {
+    "repetition_group_reused": 1,
+    "undeclared_known_prop": 11,
+    "unnatural_place_phrase": 6,
+    "clock_text_treatment": 1,
+    "shelf_contents_undeclared": 1,
+    "printer_support_surface_missing": 11,
+    "printer_surface_implausible": 5,
+    "legible_text_request": 1,
+    "printer_support_personal_prop": 2,
+    "shelf_population_missing": 2
+  },
+  "normalization_all_attempts": {
+    "actions": {
+      "remove_invalid_evidence": 39,
+      "zero_ungrounded_component": 12
+    },
+    "invalid_evidence_reasons": {
+      "path_missing": 1,
+      "quote_not_verbatim": 38
+    }
+  },
+  "normalization_final_attempts": {
+    "banks_with_changes": 9,
+    "actions": {
+      "remove_invalid_evidence": 20,
+      "zero_ungrounded_component": 6
+    },
+    "invalid_evidence_reasons": {
+      "path_missing": 1,
+      "quote_not_verbatim": 19
+    }
+  },
+  "validation_warning_codes": {
+    "declared_prop_lexicon_match_unverified": 44,
+    "unknown_prose_objects_unverified": 16
+  },
+  "verified_frozen_assets": 49,
+  "verified_v63_baseline_files": 29,
+  "verified_v64_release_files": 30,
+  "checks": {
+    "all_source_document_objects_equal_selected_originals": true,
+    "all_camera_render_bindings_unchanged": true,
+    "all_raw_requests_contain_exact_documents_in_user_role": true,
+    "all_outputs_revalidated_and_finalization_reproduced": true,
+    "all_final_texts_equal_actual_raw_model_texts": true,
+    "all_prompt_hashes_and_plain_text_export_verified": true,
+    "no_model_substitution_or_terminal_bank_resampling": true,
+    "one_initial_plus_at_most_one_repair": true
+  },
+  "export_file_sha256": {
+    "prompts_all_160.json": "0cb47111c80337359064c0e0b63a2d0f39f0021f2d23622a0f2e7fed117a452f",
+    "prompts_all_160.txt": "bffbf7e29db835bdd75dccfae2ec0769425e147de423ca33b9e9e2ca90f869fa"
+  },
+  "banks": [
+    {
+      "case_id": "cashmere__laptop_FrontCloseUp",
+      "prompts": 10,
+      "semantic_calls": 1,
+      "initial_errors": [],
+      "normalization_change_count": 1,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "cashmere__laptop_BackRightCloseUp",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "repetition_group_reused",
+          "path": "/prompts",
+          "detail": "group 'task_seating' is used by prompts [1, 6]"
+        }
+      ],
+      "normalization_change_count": 6,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "cashmere__laptop_FrontLeftMedium",
+      "prompts": 10,
+      "semantic_calls": 1,
+      "initial_errors": [],
+      "normalization_change_count": 1,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "cashmere__laptop_FrontWide",
+      "prompts": 10,
+      "semantic_calls": 1,
+      "initial_errors": [],
+      "normalization_change_count": 0,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "elitebook__laptop_FrontCloseUp",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/3/text",
+          "detail": "support furniture 'table' has no approved catalogue entry"
+        },
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/4/text",
+          "detail": "known object 'seating' requires repetition group(s) ['task_seating']"
+        }
+      ],
+      "normalization_change_count": 0,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "elitebook__laptop_BackRightCloseUp",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "unnatural_place_phrase",
+          "path": "/prompts/1/text",
+          "detail": "unnatural phrase: content creation"
+        }
+      ],
+      "normalization_change_count": 12,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "elitebook__laptop_FrontLeftMedium",
+      "prompts": 10,
+      "semantic_calls": 1,
+      "initial_errors": [],
+      "normalization_change_count": 0,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "elitebook__laptop_FrontWide",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "clock_text_treatment",
+          "path": "/prompts/0/text",
+          "detail": "An approved analog clock must explicitly be unnumbered and unbranded in its own description, without readable numerals or lettering."
+        }
+      ],
+      "normalization_change_count": 8,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "tassel__printer_FrontCloseUp",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "shelf_contents_undeclared",
+          "path": "/prompts/2/prop_ids",
+          "detail": "selected shelving or pegboard requires at least one additional declared content family"
+        }
+      ],
+      "normalization_change_count": 0,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "tassel__printer_FrontRightCloseUp",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/2/text",
+          "detail": "{\"row_id\": 2, \"sentence_end\": 96, \"sentence_start\": 0}"
+        },
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/6/text",
+          "detail": "{\"row_id\": 6, \"sentence_end\": 115, \"sentence_start\": 0}"
+        },
+        {
+          "code": "printer_surface_implausible",
+          "path": "/prompts/7/text",
+          "detail": "{\"end\": 23, \"phrase\": \"cabinet\", \"row_id\": 7, \"start\": 16}"
+        },
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/9/text",
+          "detail": "{\"row_id\": 9, \"sentence_end\": 89, \"sentence_start\": 0}"
+        },
+        {
+          "code": "unnatural_place_phrase",
+          "path": "/prompts/5/text",
+          "detail": "unnatural phrase: office support point"
+        },
+        {
+          "code": "legible_text_request",
+          "path": "/prompts/6/text",
+          "detail": "Avoid requests for readable text; use plain or non-legible visual alternatives."
+        },
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/7/text",
+          "detail": "support furniture 'cabinet' has no approved catalogue entry"
+        },
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/7/text",
+          "detail": "support furniture 'cabinet' has no approved catalogue entry"
+        },
+        {
+          "code": "unnatural_place_phrase",
+          "path": "/prompts/8/text",
+          "detail": "unnatural phrase: support surface"
+        }
+      ],
+      "normalization_change_count": 0,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "tassel__printer_FrontLeftMedium",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/4/text",
+          "detail": "{\"row_id\": 4, \"sentence_end\": 125, \"sentence_start\": 0}"
+        },
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/7/text",
+          "detail": "{\"row_id\": 7, \"sentence_end\": 143, \"sentence_start\": 0}"
+        },
+        {
+          "code": "printer_support_personal_prop",
+          "path": "/prompts/6/text",
+          "detail": "personal, leisure, learning, or creative activity props must stay off the dedicated printer support"
+        }
+      ],
+      "normalization_change_count": 2,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "tassel__printer_FrontWide",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/9/text",
+          "detail": "{\"row_id\": 9, \"sentence_end\": 107, \"sentence_start\": 0}"
+        },
+        {
+          "code": "printer_support_personal_prop",
+          "path": "/prompts/8/text",
+          "detail": "personal, leisure, learning, or creative activity props must stay off the dedicated printer support"
+        }
+      ],
+      "normalization_change_count": 0,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "magic__printer_FrontCloseUp",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "printer_surface_implausible",
+          "path": "/prompts/9/text",
+          "detail": "{\"end\": 20, \"phrase\": \"cabinets\", \"row_id\": 9, \"start\": 12}"
+        },
+        {
+          "code": "unnatural_place_phrase",
+          "path": "/prompts/3/text",
+          "detail": "unnatural phrase: handoffs"
+        },
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/9/text",
+          "detail": "support furniture 'Fitted base cabinets' has no approved catalogue entry"
+        }
+      ],
+      "normalization_change_count": 0,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "magic__printer_FrontRightCloseUp",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/3/text",
+          "detail": "{\"row_id\": 3, \"sentence_end\": 127, \"sentence_start\": 0}"
+        },
+        {
+          "code": "printer_surface_implausible",
+          "path": "/prompts/5/text",
+          "detail": "{\"end\": 34, \"phrase\": \"tall residential storage cabinet\", \"row_id\": 5, \"start\": 2, \"unsafe_end\": 6, \"unsafe_phrase\": \"tall\", \"unsafe_start\": 2}"
+        },
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/6/text",
+          "detail": "{\"row_id\": 6, \"sentence_end\": 106, \"sentence_start\": 0}"
+        },
+        {
+          "code": "unnatural_place_phrase",
+          "path": "/prompts/2/text",
+          "detail": "unnatural phrase: handoffs"
+        },
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/5/text",
+          "detail": "known object 'tall residential storage cabinet' requires repetition group(s) ['closed_storage']"
+        },
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/5/text",
+          "detail": "support furniture 'cabinet' has no approved catalogue entry"
+        },
+        {
+          "code": "shelf_population_missing",
+          "path": "/prompts/6/text",
+          "detail": "selected shelving or pegboard must explicitly hold or display declared contents"
+        },
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/9/text",
+          "detail": "support furniture 'cabinet' has no approved catalogue entry"
+        }
+      ],
+      "normalization_change_count": 3,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "magic__printer_FrontLeftMedium",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "printer_surface_implausible",
+          "path": "/prompts/4/text",
+          "detail": "{\"end\": 30, \"phrase\": \"workspace sideboard\", \"row_id\": 4, \"start\": 11}"
+        },
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/9/text",
+          "detail": "{\"row_id\": 9, \"sentence_end\": 159, \"sentence_start\": 0}"
+        },
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/4/text",
+          "detail": "support furniture 'sideboard' has no approved catalogue entry"
+        },
+        {
+          "code": "shelf_population_missing",
+          "path": "/prompts/5/text",
+          "detail": "selected shelving or pegboard must explicitly hold or display declared contents"
+        },
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/7/text",
+          "detail": "known object 'seating' requires repetition group(s) ['task_seating']"
+        }
+      ],
+      "normalization_change_count": 12,
+      "actual_final_raw_response_texts_unchanged": true
+    },
+    {
+      "case_id": "magic__printer_FrontWide",
+      "prompts": 10,
+      "semantic_calls": 2,
+      "initial_errors": [
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/6/text",
+          "detail": "{\"row_id\": 6, \"sentence_end\": 119, \"sentence_start\": 0}"
+        },
+        {
+          "code": "printer_surface_implausible",
+          "path": "/prompts/7/text",
+          "detail": "{\"end\": 20, \"phrase\": \"cabinets\", \"row_id\": 7, \"start\": 12}"
+        },
+        {
+          "code": "printer_support_surface_missing",
+          "path": "/prompts/8/text",
+          "detail": "{\"row_id\": 8, \"sentence_end\": 89, \"sentence_start\": 0}"
+        },
+        {
+          "code": "unnatural_place_phrase",
+          "path": "/prompts/2/text",
+          "detail": "unnatural phrase: handoffs"
+        },
+        {
+          "code": "undeclared_known_prop",
+          "path": "/prompts/7/text",
+          "detail": "support furniture 'Fitted base cabinets' has no approved catalogue entry"
+        }
+      ],
+      "normalization_change_count": 6,
+      "actual_final_raw_response_texts_unchanged": true
+    }
+  ],
+  "limitations": [
+    "Deterministic text validation is not human approval or image-quality evidence.",
+    "Printer source assignments match relative size/context, not exact specifications or function."
+  ]
+}

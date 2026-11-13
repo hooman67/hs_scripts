@@ -1,0 +1,21 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.cai[public]
+  - colligo.models.filix3.common[public]
+  - colligo.models.substance3d.common[public]
+deps:
+- colligo.httpx
+- colligo.image
+- colligo.models.common.adapter_utils
+- colligo.models.filix3.common
+- colligo.models.filix3.workers.cvae[public]
+- colligo.models.filix3.workers.dit_upscalegs[public]
+- colligo.models.firefly.adobeone[public]
+- colligo.models.firefly.clio_common
+- colligo.models.firefly.pipelines.substance3d
+- colligo.models.substance3d.common
+- torch

@@ -1,0 +1,1909 @@
+{
+  "version": "v3-two-probe-review-v1",
+  "status": "both_complete_both_validator_rejected_human_review_required",
+  "system_prompt_sha256": "35166de71a92cf59792bd497bb180e0fdbcb87d2a7208f0b9a59d740e07bea4f",
+  "successful_model_responses": 2,
+  "invalid_request_attempts_with_no_response": 2,
+  "accepted_cases": 0,
+  "probes": [
+    {
+      "case_id": "d60e13e4457fd44c__laptop_FrontRightCloseUp",
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_diversity_v3_eval_20261023/records/attempts/d60e13e4457fd44c__laptop_FrontRightCloseUp/sample_002.json",
+      "record_sha256": "196323f831809fe4803b64e7caf58456555240c9d0318173a2db5d9f163f41fb",
+      "validation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_diversity_v3_eval_20261023/validation/revalidation/d60e13e4457fd44c__laptop_FrontRightCloseUp__sample_002.json",
+      "validation_sha256": "fb2460f603d7b00bda22cd8ec614ee2d38acaacf4c0629864b1bb085ce3d8479",
+      "validator_passed": false,
+      "validation_errors": [
+        {
+          "code": "ungrounded_nonzero_score",
+          "detail": "nonzero relevance requires relevant source evidence",
+          "candidate_id": "p26"
+        },
+        {
+          "code": "ungrounded_nonzero_score",
+          "detail": "nonzero relevance requires relevant source evidence",
+          "candidate_id": "p27"
+        },
+        {
+          "code": "vp_prompt_reverse_mapping",
+          "detail": "ValueProposition"
+        }
+      ],
+      "validation_warnings": [
+        {
+          "code": "human_scene_review_required",
+          "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+        }
+      ],
+      "elapsed_seconds": 88.147,
+      "model": "gpt-5.5-2026-04-24",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 9214,
+        "prompt_tokens": 17552,
+        "total_tokens": 26766,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 2468,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 9,
+          "engine_ttft_ms": 281,
+          "engine_ttlt_ms": 85619,
+          "pre_inference_ms": 295,
+          "service_tbt_ms": 9,
+          "service_ttft_ms": 824,
+          "service_ttlt_ms": 86157,
+          "user_visible_ttft_ms": 529
+        }
+      },
+      "candidate_count": 30,
+      "candidates": [
+        {
+          "id": "p1",
+          "rank": 1,
+          "environment": "Office",
+          "subsetting": "shared meeting table",
+          "text": "A clean meeting table in a shared workplace, with a satin laminate surface, softened overhead light, and a plain neutral backdrop kept calm and distraction-free.",
+          "score": 55,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e2"
+          ],
+          "visual_signature": {
+            "surface": "satin laminate meeting table",
+            "light": "softened overhead light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p2",
+          "rank": 2,
+          "environment": "Office",
+          "subsetting": "collaboration table",
+          "text": "A lightly worn maple collaboration table in a quiet workplace, touched by soft side light and backed by an uncluttered neutral tone.",
+          "score": 55,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e1"
+          ],
+          "visual_signature": {
+            "surface": "lightly worn maple collaboration table",
+            "light": "soft side light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p3",
+          "rank": 3,
+          "environment": "Office",
+          "subsetting": "concept review surface",
+          "text": "A refined concept review surface in a shared office, smooth pale oak catching gentle daylight against a plain, distraction-free background.",
+          "score": 55,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e1",
+            "e5"
+          ],
+          "visual_signature": {
+            "surface": "smooth pale oak concept review surface",
+            "light": "gentle daylight",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p4",
+          "rank": 4,
+          "environment": "Office",
+          "subsetting": "presentation prep table",
+          "text": "A compact presentation prep table with a smooth ash finish, lit by even workplace light and kept spare against a simple muted backdrop.",
+          "score": 55,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e1"
+          ],
+          "visual_signature": {
+            "surface": "smooth ash presentation prep table",
+            "light": "even workplace light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p5",
+          "rank": 5,
+          "environment": "Office",
+          "subsetting": "idea-to-presentation workspace",
+          "text": "A tidy idea-to-presentation workspace with a matte birch worktop, low ambient office light, and a clean neutral surround.",
+          "score": 55,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e5"
+          ],
+          "visual_signature": {
+            "surface": "matte birch worktop",
+            "light": "low ambient office light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p6",
+          "rank": 6,
+          "environment": "Office",
+          "subsetting": "quiet meeting alcove",
+          "text": "A quiet meeting alcove surface in brushed laminate, with diffuse ceiling light falling evenly across a restrained, uncluttered setting.",
+          "score": 55,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e2"
+          ],
+          "visual_signature": {
+            "surface": "brushed laminate meeting alcove surface",
+            "light": "diffuse ceiling light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p7",
+          "rank": 7,
+          "environment": "Office",
+          "subsetting": "business hot-desk",
+          "text": "A business hot-desk surface with subtle edge wear, balanced overhead light, and a plain background suited to work between locations.",
+          "score": 45,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 20,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "business hot-desk surface with subtle edge wear",
+            "light": "balanced overhead light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p8",
+          "rank": 8,
+          "environment": "Office",
+          "subsetting": "call-ready work surface",
+          "text": "A call-ready work surface in a professional shared space, satin gray laminate warmed by soft indirect light and kept visually quiet.",
+          "score": 45,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 20,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e2"
+          ],
+          "visual_signature": {
+            "surface": "satin gray laminate work surface",
+            "light": "soft indirect light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p9",
+          "rank": 9,
+          "environment": "Office",
+          "subsetting": "creative studio counter",
+          "text": "A pared-back creative studio counter with a sealed concrete finish, angled daylight, and a calm blank surround for focused content work.",
+          "score": 40,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 20,
+            "materials": 0,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e6"
+          ],
+          "visual_signature": {
+            "surface": "sealed concrete creative studio counter",
+            "light": "angled daylight",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p10",
+          "rank": 10,
+          "environment": "Office",
+          "subsetting": "content review worktop",
+          "text": "A content review worktop in smooth white laminate, softly lit from one side, with a plain backdrop that keeps attention on the workspace.",
+          "score": 40,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 20,
+            "materials": 0,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e6"
+          ],
+          "visual_signature": {
+            "surface": "smooth white laminate content review worktop",
+            "light": "soft one-sided light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p11",
+          "rank": 11,
+          "environment": "Office",
+          "subsetting": "organization workspace",
+          "text": "A focused organization workspace with a fine-grain walnut surface, steady ambient light, and a quiet neutral field around it.",
+          "score": 35,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e7"
+          ],
+          "visual_signature": {
+            "surface": "fine-grain walnut workspace surface",
+            "light": "steady ambient light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p12",
+          "rank": 12,
+          "environment": "Office",
+          "subsetting": "workflow desk surface",
+          "text": "A minimal workflow desk surface in smooth beech, with restrained daylight skimming the grain and a clear, unbusy surrounding tone.",
+          "score": 35,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e7"
+          ],
+          "visual_signature": {
+            "surface": "smooth beech workflow desk surface",
+            "light": "restrained daylight skimming the grain",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p13",
+          "rank": 13,
+          "environment": "Office",
+          "subsetting": "mobile work touchdown",
+          "text": "A mobile work touchdown surface with a durable matte finish, clean overhead light, and a simple background kept free of clutter.",
+          "score": 35,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e3"
+          ],
+          "visual_signature": {
+            "surface": "durable matte touchdown surface",
+            "light": "clean overhead light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p14",
+          "rank": 14,
+          "environment": "Office",
+          "subsetting": "shared department counter",
+          "text": "A shared department counter with softly worn laminate, mild daylight, and a plain office tone that feels practical and orderly.",
+          "score": 35,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "softly worn laminate department counter",
+            "light": "mild daylight",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p15",
+          "rank": 15,
+          "environment": "Office",
+          "subsetting": "flex workspace counter",
+          "text": "A flex workspace counter in satin oak veneer, lit by gentle morning light, with a spare neutral surround suggesting work between locations.",
+          "score": 35,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e3"
+          ],
+          "visual_signature": {
+            "surface": "satin oak veneer flex workspace counter",
+            "light": "gentle morning light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p16",
+          "rank": 16,
+          "environment": "Office",
+          "subsetting": "quiet business workspace",
+          "text": "A quiet business workspace surface with a smooth charcoal laminate finish, even diffused light, and a plain, professional surrounding tone.",
+          "score": 35,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "smooth charcoal laminate business workspace surface",
+            "light": "even diffused light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p17",
+          "rank": 17,
+          "environment": "Office",
+          "subsetting": "transit workspace ledge",
+          "text": "A transit workspace ledge with a hardwearing resin surface, cool diffuse light, and a plain backdrop for a between-locations feel.",
+          "score": 35,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e3"
+          ],
+          "visual_signature": {
+            "surface": "hardwearing resin transit workspace ledge",
+            "light": "cool diffuse light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p18",
+          "rank": 18,
+          "environment": "Office",
+          "subsetting": "small project workspace",
+          "text": "A small project workspace surface in matte bamboo, with soft reflected light and a clean surrounding tone suited to shifting workdays.",
+          "score": 35,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e3"
+          ],
+          "visual_signature": {
+            "surface": "matte bamboo project workspace surface",
+            "light": "soft reflected light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p19",
+          "rank": 19,
+          "environment": "Home",
+          "subsetting": "residential work nook",
+          "text": "A residential work nook surface in pale laminate, with soft afternoon light and a calm blank background for focused work at home.",
+          "score": 30,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e3"
+          ],
+          "visual_signature": {
+            "surface": "pale laminate residential work surface",
+            "light": "soft afternoon light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p20",
+          "rank": 20,
+          "environment": "Home",
+          "subsetting": "kitchen work counter",
+          "text": "A modest home work counter with a smooth quartz surface, natural side light, and a simple neutral surrounding tone.",
+          "score": 30,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e3"
+          ],
+          "visual_signature": {
+            "surface": "smooth quartz home work counter",
+            "light": "natural side light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p21",
+          "rank": 21,
+          "environment": "Home",
+          "subsetting": "apartment work surface",
+          "text": "A compact apartment work surface in warm wood veneer, lit by filtered daylight and set against a plain softly shaded background.",
+          "score": 30,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e3"
+          ],
+          "visual_signature": {
+            "surface": "warm wood veneer apartment work surface",
+            "light": "filtered daylight",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p22",
+          "rank": 22,
+          "environment": "Home",
+          "subsetting": "dining table work spot",
+          "text": "A dining table work spot with a gently worn oak surface, quiet morning light, and a plain residential tone kept uncluttered.",
+          "score": 30,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e3"
+          ],
+          "visual_signature": {
+            "surface": "gently worn oak dining table work surface",
+            "light": "quiet morning light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p23",
+          "rank": 23,
+          "environment": "Home",
+          "subsetting": "guest-room work shelf",
+          "text": "A narrow guest-room work shelf with a smooth painted finish, soft shaded light, and a simple background for temporary work.",
+          "score": 30,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e3"
+          ],
+          "visual_signature": {
+            "surface": "smooth painted guest-room work shelf",
+            "light": "soft shaded light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p24",
+          "rank": 24,
+          "environment": "Education",
+          "subsetting": "seminar presentation surface",
+          "text": "A seminar presentation surface with a smooth maple finish, even institutional light, and a plain surrounding tone kept orderly.",
+          "score": 20,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e1",
+            "e5"
+          ],
+          "visual_signature": {
+            "surface": "smooth maple seminar presentation surface",
+            "light": "even institutional light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p25",
+          "rank": 25,
+          "environment": "Education",
+          "subsetting": "class preparation table",
+          "text": "A class preparation table in lightly scuffed laminate, softly lit from above, with a calm blank background for idea review.",
+          "score": 20,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e5"
+          ],
+          "visual_signature": {
+            "surface": "lightly scuffed laminate class preparation table",
+            "light": "soft overhead light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p26",
+          "rank": 26,
+          "environment": "Education",
+          "subsetting": "library study surface",
+          "text": "A library study surface with satin birch grain, muted daylight, and a quiet neutral field that keeps the local area uncluttered.",
+          "score": 10,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 0
+          },
+          "evidence_ids": [],
+          "visual_signature": {
+            "surface": "satin birch library study surface",
+            "light": "muted daylight",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p27",
+          "rank": 27,
+          "environment": "Education",
+          "subsetting": "training room table",
+          "text": "A training room table with a matte gray surface, balanced ceiling light, and a plain background kept practical and spare.",
+          "score": 10,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 10,
+            "materials": 0,
+            "use_context": 0
+          },
+          "evidence_ids": [],
+          "visual_signature": {
+            "surface": "matte gray training room table",
+            "light": "balanced ceiling light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p28",
+          "rank": 28,
+          "environment": "Gaming",
+          "subsetting": "home gaming nook",
+          "text": "A smooth charcoal laminate surface in a home gaming nook, picked out by subdued side light against a plain darkened surround.",
+          "score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 0,
+            "materials": 0,
+            "use_context": 0
+          },
+          "evidence_ids": [],
+          "visual_signature": {
+            "surface": "smooth charcoal laminate gaming-nook surface",
+            "light": "subdued side light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p29",
+          "rank": 29,
+          "environment": "Gaming",
+          "subsetting": "casual play desk",
+          "text": "A casual play desk surface with a satin black finish, low ambient light, and a clean plain background without extra objects.",
+          "score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 0,
+            "materials": 0,
+            "use_context": 0
+          },
+          "evidence_ids": [],
+          "visual_signature": {
+            "surface": "satin black casual play desk surface",
+            "light": "low ambient light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        },
+        {
+          "id": "p30",
+          "rank": 30,
+          "environment": "Gaming",
+          "subsetting": "streamlined game corner",
+          "text": "A streamlined game-corner surface in dark woodgrain, with soft indirect light and a quiet blank surround kept minimal.",
+          "score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 0,
+            "materials": 0,
+            "use_context": 0
+          },
+          "evidence_ids": [],
+          "visual_signature": {
+            "surface": "dark woodgrain game-corner surface",
+            "light": "soft indirect light",
+            "local_props": [],
+            "background_details": [],
+            "people": []
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ee810cf51bb82bb4__printer_FrontRightWide",
+      "record_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_diversity_v3_eval_20261023/records/attempts/ee810cf51bb82bb4__printer_FrontRightWide/sample_002.json",
+      "record_sha256": "13c5f9336962baac1ab0815304cb240c5242d81590d87f9a5e5dee2eced00e6a",
+      "validation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/eval_sets/hp_lifestyle_diversity_v3_eval_20261023/validation/revalidation/ee810cf51bb82bb4__printer_FrontRightWide__sample_002.json",
+      "validation_sha256": "9449a2aa730220898136b4977b8896d878ede758ff67d50eff7022532aa8223d",
+      "validator_passed": false,
+      "validation_errors": [
+        {
+          "code": "ksp_evidence_reverse_mapping",
+          "detail": "KSP1"
+        },
+        {
+          "code": "ksp_prompt_reverse_mapping",
+          "detail": "KSP3"
+        },
+        {
+          "code": "ksp_evidence_reverse_mapping",
+          "detail": "KSP4"
+        },
+        {
+          "code": "ksp_prompt_reverse_mapping",
+          "detail": "KSP4"
+        },
+        {
+          "code": "vp_evidence_reverse_mapping",
+          "detail": "ValueProposition"
+        },
+        {
+          "code": "vp_prompt_reverse_mapping",
+          "detail": "ValueProposition"
+        },
+        {
+          "code": "environment_count",
+          "detail": "diversity summary does not match candidates"
+        },
+        {
+          "code": "relationship_count",
+          "detail": "diversity summary does not match candidates"
+        }
+      ],
+      "validation_warnings": [
+        {
+          "code": "unused_source_evidence",
+          "detail": "Unused evidence may support an omission explanation; inspect: ['e7']"
+        },
+        {
+          "code": "human_scene_review_required",
+          "detail": "Prop/background inventories are model self-reports; inspect candidate prose before selection or image launch."
+        }
+      ],
+      "elapsed_seconds": 113.962,
+      "model": "gpt-5.5-2026-04-24",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 11673,
+        "prompt_tokens": 17359,
+        "total_tokens": 29032,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 3989,
+          "rejected_prediction_tokens": 0,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 9,
+          "engine_ttft_ms": 422,
+          "engine_ttlt_ms": 111300,
+          "pre_inference_ms": 221,
+          "service_tbt_ms": 9,
+          "service_ttft_ms": 1129,
+          "service_ttlt_ms": 111994,
+          "user_visible_ttft_ms": 908
+        }
+      },
+      "candidate_count": 30,
+      "candidates": [
+        {
+          "id": "p1",
+          "rank": 1,
+          "environment": "Office",
+          "subsetting": "shared admin worktable",
+          "text": "A shared office admin worktable with a neat forms packet and a tabbed records folder, one cropped hand aligning the pages. A wall mail sorter and cork memo board sit softly behind in clean daylight, suggesting a regular document queue without clutter.",
+          "score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 30,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "shared office admin worktable",
+            "light": "clean daylight",
+            "local_props": [
+              "forms packet",
+              "tabbed records folder"
+            ],
+            "background_details": [
+              "wall mail sorter",
+              "cork memo board"
+            ],
+            "people": [
+              "one cropped hand aligning pages"
+            ]
+          }
+        },
+        {
+          "id": "p2",
+          "rank": 2,
+          "environment": "Home",
+          "subsetting": "household administration counter",
+          "text": "A home household admin counter with a forms packet and records envelope, while a cropped hand separates the top pages. A simple dining chair and soft fabric curtain sit in the background, with late-afternoon light keeping the paperwork area calm.",
+          "score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 30,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "home household admin counter",
+            "light": "late-afternoon light",
+            "local_props": [
+              "forms packet",
+              "records envelope"
+            ],
+            "background_details": [
+              "simple dining chair",
+              "soft fabric curtain"
+            ],
+            "people": [
+              "cropped hand separating pages"
+            ]
+          }
+        },
+        {
+          "id": "p3",
+          "rank": 3,
+          "environment": "Office",
+          "subsetting": "business paperwork table",
+          "text": "A business paperwork table with a signed forms packet and color pages, one cropped hand sliding them into a plain folder. A low file cabinet and frosted partition add restrained office depth in soft overhead daylight.",
+          "score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 30,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e1",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "business paperwork table",
+            "light": "soft overhead daylight",
+            "local_props": [
+              "signed forms packet",
+              "color pages",
+              "plain folder"
+            ],
+            "background_details": [
+              "low file cabinet",
+              "frosted partition"
+            ],
+            "people": [
+              "one cropped hand sliding pages"
+            ]
+          }
+        },
+        {
+          "id": "p4",
+          "rank": 4,
+          "environment": "Home",
+          "subsetting": "weekly household paperwork nook",
+          "text": "A compact household paperwork nook with a records folder and recurring forms stack, one cropped hand squaring the corners. A narrow wall calendar and woven chair sit behind, lit by gentle morning light across a lightly worn wood surface.",
+          "score": 100,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 30,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "lightly worn wood surface",
+            "light": "gentle morning light",
+            "local_props": [
+              "records folder",
+              "recurring forms stack"
+            ],
+            "background_details": [
+              "narrow wall calendar",
+              "woven chair"
+            ],
+            "people": [
+              "cropped hand squaring paperwork"
+            ]
+          }
+        },
+        {
+          "id": "p5",
+          "rank": 5,
+          "environment": "Office",
+          "subsetting": "back-office document station",
+          "text": "A back-office document station on a matte laminate table with an inbound forms tray, a records binder, and a single color document. A row of mail slots sits behind in even workplace light, kept tidy but actively used.",
+          "score": 90,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e1",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "matte laminate table",
+            "light": "even workplace light",
+            "local_props": [
+              "inbound forms tray",
+              "records binder",
+              "single color document"
+            ],
+            "background_details": [
+              "row of mail slots"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p6",
+          "rank": 6,
+          "environment": "Home",
+          "subsetting": "kitchen command counter",
+          "text": "A kitchen command counter arranged for household administration, with a forms packet, records envelope, and color notice resting on pale stone. A peg rail and simple dining chair sit softly behind in diffuse daylight.",
+          "score": 90,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "pale stone counter",
+            "light": "diffuse daylight",
+            "local_props": [
+              "forms packet",
+              "records envelope",
+              "color notice"
+            ],
+            "background_details": [
+              "peg rail",
+              "simple dining chair"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p7",
+          "rank": 7,
+          "environment": "Office",
+          "subsetting": "front-desk admin counter",
+          "text": "A front-desk admin counter with intake forms and a slim records folder on a satin laminate surface. Mail cubbies and a muted privacy panel create practical office depth under clear daytime light.",
+          "score": 90,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "satin laminate counter",
+            "light": "clear daytime light",
+            "local_props": [
+              "intake forms",
+              "slim records folder"
+            ],
+            "background_details": [
+              "mail cubbies",
+              "muted privacy panel"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p8",
+          "rank": 8,
+          "environment": "Home",
+          "subsetting": "dining-table filing session",
+          "text": "A dining table used for household filing, with a forms stack, a records folder, and a pencil laid on warm oak. A small calendar strip and upholstered chair sit in the background, washed with relaxed afternoon daylight.",
+          "score": 90,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "warm oak dining table",
+            "light": "relaxed afternoon daylight",
+            "local_props": [
+              "forms stack",
+              "records folder",
+              "pencil"
+            ],
+            "background_details": [
+              "small calendar strip",
+              "upholstered chair"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p9",
+          "rank": 9,
+          "environment": "Office",
+          "subsetting": "conference-prep side table",
+          "text": "A conference-prep side table with a multi-page forms packet, color charts, and a plain project folder. A quiet whiteboard edge and fabric chair sit behind, with soft meeting-room light and a purposeful, uncluttered feel.",
+          "score": 90,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e1",
+            "e3",
+            "e4",
+            "e5"
+          ],
+          "visual_signature": {
+            "surface": "conference-prep side table",
+            "light": "soft meeting-room light",
+            "local_props": [
+              "multi-page forms packet",
+              "color charts",
+              "plain project folder"
+            ],
+            "background_details": [
+              "quiet whiteboard edge",
+              "fabric chair"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p10",
+          "rank": 10,
+          "environment": "Office",
+          "subsetting": "small business counter",
+          "text": "A small business counter with a document queue tray, a records folder, and loose color pages on a clean composite surface. Closed storage and a modest wall notice sit behind in practical overhead light.",
+          "score": 90,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e1",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "clean composite counter",
+            "light": "practical overhead light",
+            "local_props": [
+              "document queue tray",
+              "records folder",
+              "loose color pages"
+            ],
+            "background_details": [
+              "closed storage",
+              "modest wall notice"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p11",
+          "rank": 11,
+          "environment": "Office",
+          "subsetting": "shared workroom table",
+          "text": "A shared workroom table with recurring forms, a records binder, and color-coded page tabs spread lightly on smooth maple. Mail slots and a cork strip sit behind, lit by balanced daylight for a multi-user document area.",
+          "score": 90,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e1",
+            "e3",
+            "e4",
+            "e6"
+          ],
+          "visual_signature": {
+            "surface": "smooth maple table",
+            "light": "balanced daylight",
+            "local_props": [
+              "recurring forms",
+              "records binder",
+              "color-coded page tabs"
+            ],
+            "background_details": [
+              "mail slots",
+              "cork strip"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p12",
+          "rank": 12,
+          "environment": "Home",
+          "subsetting": "sideboard document tray",
+          "text": "A home sideboard set up for household administration, with a shallow document tray of forms and a records envelope on painted wood. A key hook and small calendar add lived-in background detail in soft entryway light.",
+          "score": 90,
+          "relationship": "source_grounded",
+          "score_components": {
+            "setting": 30,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 20
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "painted wood sideboard",
+            "light": "soft entryway light",
+            "local_props": [
+              "shallow document tray of forms",
+              "records envelope"
+            ],
+            "background_details": [
+              "key hook",
+              "small calendar"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p13",
+          "rank": 13,
+          "environment": "Education",
+          "subsetting": "classroom handout preparation table",
+          "text": "A classroom preparation table with a handout stack and color materials, one cropped hand straightening the sets. A low shelf of folders and a plain chair sit softly behind in gentle school-day daylight.",
+          "score": 75,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 30,
+            "materials": 20,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e1",
+            "e5"
+          ],
+          "visual_signature": {
+            "surface": "classroom preparation table",
+            "light": "gentle school-day daylight",
+            "local_props": [
+              "handout stack",
+              "color materials"
+            ],
+            "background_details": [
+              "low shelf of folders",
+              "plain chair"
+            ],
+            "people": [
+              "cropped hand straightening sets"
+            ]
+          }
+        },
+        {
+          "id": "p14",
+          "rank": 14,
+          "environment": "Education",
+          "subsetting": "library handout table",
+          "text": "A quiet library worktable with a multi-page handout packet and a slim records folder, one cropped hand aligning the packet edge. A blurred book cart sits behind under calm, diffuse overhead light.",
+          "score": 75,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 30,
+            "materials": 20,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e5"
+          ],
+          "visual_signature": {
+            "surface": "quiet library worktable",
+            "light": "calm diffuse overhead light",
+            "local_props": [
+              "multi-page handout packet",
+              "slim records folder"
+            ],
+            "background_details": [
+              "blurred book cart"
+            ],
+            "people": [
+              "cropped hand aligning packet"
+            ]
+          }
+        },
+        {
+          "id": "p15",
+          "rank": 15,
+          "environment": "Education",
+          "subsetting": "tutoring prep table",
+          "text": "A tutoring prep table with a forms packet and color handouts, one cropped hand sorting the top sheet. A modest supply shelf and simple chair sit behind, with soft daylight keeping the local surface readable.",
+          "score": 75,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 30,
+            "materials": 20,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e1",
+            "e4",
+            "e5"
+          ],
+          "visual_signature": {
+            "surface": "tutoring prep table",
+            "light": "soft daylight",
+            "local_props": [
+              "forms packet",
+              "color handouts"
+            ],
+            "background_details": [
+              "modest supply shelf",
+              "simple chair"
+            ],
+            "people": [
+              "cropped hand sorting sheet"
+            ]
+          }
+        },
+        {
+          "id": "p16",
+          "rank": 16,
+          "environment": "Education",
+          "subsetting": "school office counter",
+          "text": "A school office counter with enrollment-style forms and a records folder, one cropped hand setting the pages square. A low cubby unit and neutral wall panel sit behind in steady institutional light.",
+          "score": 75,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 30,
+            "materials": 20,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e2",
+            "e4",
+            "e5"
+          ],
+          "visual_signature": {
+            "surface": "school office counter",
+            "light": "steady institutional light",
+            "local_props": [
+              "enrollment-style forms",
+              "records folder"
+            ],
+            "background_details": [
+              "low cubby unit",
+              "neutral wall panel"
+            ],
+            "people": [
+              "cropped hand setting pages square"
+            ]
+          }
+        },
+        {
+          "id": "p17",
+          "rank": 17,
+          "environment": "Education",
+          "subsetting": "workshop handout station",
+          "text": "A workshop handout station on a sturdy seminar table with color materials and a clean forms packet, one cropped hand lifting the corner. A stackable chair and shallow shelf sit behind in bright, even daylight.",
+          "score": 75,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 30,
+            "materials": 20,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e1",
+            "e4",
+            "e5"
+          ],
+          "visual_signature": {
+            "surface": "sturdy seminar table",
+            "light": "bright even daylight",
+            "local_props": [
+              "color materials",
+              "clean forms packet"
+            ],
+            "background_details": [
+              "stackable chair",
+              "shallow shelf"
+            ],
+            "people": [
+              "cropped hand lifting page corner"
+            ]
+          }
+        },
+        {
+          "id": "p18",
+          "rank": 18,
+          "environment": "Office",
+          "subsetting": "café work table",
+          "text": "A café work table used for a short paperwork session, with a forms packet, records folder, and color page on lightly worn wood. A tiled counter edge sits behind in soft morning light.",
+          "score": 60,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "lightly worn wood café table",
+            "light": "soft morning light",
+            "local_props": [
+              "forms packet",
+              "records folder",
+              "color page"
+            ],
+            "background_details": [
+              "tiled counter edge"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p19",
+          "rank": 19,
+          "environment": "Office",
+          "subsetting": "creative studio paperwork table",
+          "text": "A creative studio paperwork table with a project forms packet, color materials, and a thin records folder on sealed plywood. A pinned art board and stool sit behind, catching clear side daylight.",
+          "score": 60,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "sealed plywood table",
+            "light": "clear side daylight",
+            "local_props": [
+              "project forms packet",
+              "color materials",
+              "thin records folder"
+            ],
+            "background_details": [
+              "pinned art board",
+              "stool"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p20",
+          "rank": 20,
+          "environment": "Office",
+          "subsetting": "community paperwork table",
+          "text": "A community paperwork table with sign-in forms, handouts, and a records envelope on a folding surface. A cork notice board and stacked chair sit behind in practical fluorescent light.",
+          "score": 60,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e1",
+            "e2",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "folding table surface",
+            "light": "practical fluorescent light",
+            "local_props": [
+              "sign-in forms",
+              "handouts",
+              "records envelope"
+            ],
+            "background_details": [
+              "cork notice board",
+              "stacked chair"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p21",
+          "rank": 21,
+          "environment": "Education",
+          "subsetting": "faculty lounge table",
+          "text": "A faculty lounge table with handouts, a forms packet, and color materials arranged on gray laminate. A notice board and simple lounge chair sit in the background, with mild afternoon light across the surface.",
+          "score": 60,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e1",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "gray laminate table",
+            "light": "mild afternoon light",
+            "local_props": [
+              "handouts",
+              "forms packet",
+              "color materials"
+            ],
+            "background_details": [
+              "notice board",
+              "simple lounge chair"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p22",
+          "rank": 22,
+          "environment": "Education",
+          "subsetting": "after-school program table",
+          "text": "An after-school program table with permission forms and color handouts on a scuffed laminate surface. A low shelf of bins and a stackable chair sit softly behind in even room light.",
+          "score": 60,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 10,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e1",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "scuffed laminate surface",
+            "light": "even room light",
+            "local_props": [
+              "permission forms",
+              "color handouts"
+            ],
+            "background_details": [
+              "low shelf of bins",
+              "stackable chair"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p23",
+          "rank": 23,
+          "environment": "Gaming",
+          "subsetting": "home play nook with admin papers",
+          "text": "A home play nook with a charcoal tabletop, a small household forms stack, and a simple game controller set to one side. A soft fabric chair back sits behind in subdued evening light.",
+          "score": 50,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 20,
+            "materials": 15,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "charcoal tabletop",
+            "light": "subdued evening light",
+            "local_props": [
+              "small household forms stack",
+              "simple game controller"
+            ],
+            "background_details": [
+              "soft fabric chair back"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p24",
+          "rank": 24,
+          "environment": "Gaming",
+          "subsetting": "casual gaming desk with records folder",
+          "text": "A casual gaming surface with a records folder, a short forms packet, and a matte game controller on dark laminate. A plain acoustic panel sits behind, lit by gentle side light.",
+          "score": 50,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 20,
+            "materials": 15,
+            "use_context": 15
+          },
+          "evidence_ids": [
+            "e2",
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "dark laminate gaming surface",
+            "light": "gentle side light",
+            "local_props": [
+              "records folder",
+              "short forms packet",
+              "matte game controller"
+            ],
+            "background_details": [
+              "plain acoustic panel"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p25",
+          "rank": 25,
+          "environment": "Home",
+          "subsetting": "craft table with household paperwork",
+          "text": "A home craft table with household forms, a color page, and a fabric swatch on unfinished pine. A woven basket and simple chair sit in the background, warmed by late-day light.",
+          "score": 50,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 30,
+            "activity": 10,
+            "materials": 5,
+            "use_context": 5
+          },
+          "evidence_ids": [
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "unfinished pine craft table",
+            "light": "late-day light",
+            "local_props": [
+              "household forms",
+              "color page",
+              "fabric swatch"
+            ],
+            "background_details": [
+              "woven basket",
+              "simple chair"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p26",
+          "rank": 26,
+          "environment": "Office",
+          "subsetting": "reception table with light paperwork",
+          "text": "A reception table with a small forms stack and color brochure on polished veneer. A lobby chair and discreet wall panel sit behind in calm daylight, giving the area a professional but lightly used feel.",
+          "score": 50,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 20,
+            "activity": 10,
+            "materials": 10,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e1",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "polished veneer reception table",
+            "light": "calm daylight",
+            "local_props": [
+              "small forms stack",
+              "color brochure"
+            ],
+            "background_details": [
+              "lobby chair",
+              "discreet wall panel"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p27",
+          "rank": 27,
+          "environment": "Home",
+          "subsetting": "entry table with paperwork",
+          "text": "A narrow home entry table with a folded form, a color flyer, and a ceramic dish on painted wood. A coat peg and muted wall calendar sit behind in soft, indirect daylight.",
+          "score": 45,
+          "relationship": "source_adjacent",
+          "score_components": {
+            "setting": 30,
+            "activity": 10,
+            "materials": 5,
+            "use_context": 0
+          },
+          "evidence_ids": [
+            "e3",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "painted wood entry table",
+            "light": "soft indirect daylight",
+            "local_props": [
+              "folded form",
+              "color flyer",
+              "ceramic dish"
+            ],
+            "background_details": [
+              "coat peg",
+              "muted wall calendar"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p28",
+          "rank": 28,
+          "environment": "Gaming",
+          "subsetting": "tournament note table",
+          "text": "A gaming nook table with a bracket-style handout, a pencil, and a game controller on smooth black laminate. A padded chair edge sits behind in low, relaxed room light.",
+          "score": 45,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 20,
+            "materials": 20,
+            "use_context": 5
+          },
+          "evidence_ids": [
+            "e1"
+          ],
+          "visual_signature": {
+            "surface": "smooth black laminate table",
+            "light": "low relaxed room light",
+            "local_props": [
+              "bracket-style handout",
+              "pencil",
+              "game controller"
+            ],
+            "background_details": [
+              "padded chair edge"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p29",
+          "rank": 29,
+          "environment": "Gaming",
+          "subsetting": "streaming-style hobby corner",
+          "text": "A hobby gaming corner with a satin desk mat, a single color page, and a compact game controller on a clean dark surface. A plain wall panel sits behind in soft blue-gray evening light.",
+          "score": 20,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 0,
+            "materials": 10,
+            "use_context": 10
+          },
+          "evidence_ids": [
+            "e1",
+            "e4"
+          ],
+          "visual_signature": {
+            "surface": "clean dark surface with satin desk mat",
+            "light": "soft blue-gray evening light",
+            "local_props": [
+              "single color page",
+              "compact game controller"
+            ],
+            "background_details": [
+              "plain wall panel"
+            ],
+            "people": []
+          }
+        },
+        {
+          "id": "p30",
+          "rank": 30,
+          "environment": "Gaming",
+          "subsetting": "minimal game room surface",
+          "text": "A minimal game room surface in smooth charcoal laminate with a controller resting beside a small blank notepad. A low fabric chair back sits behind in muted ambient light.",
+          "score": 0,
+          "relationship": "creative_departure",
+          "score_components": {
+            "setting": 0,
+            "activity": 0,
+            "materials": 0,
+            "use_context": 0
+          },
+          "evidence_ids": [],
+          "visual_signature": {
+            "surface": "smooth charcoal laminate surface",
+            "light": "muted ambient light",
+            "local_props": [
+              "controller",
+              "small blank notepad"
+            ],
+            "background_details": [
+              "low fabric chair back"
+            ],
+            "people": []
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,776 @@
+{
+  "version": "camera-aware-v2-bounded-text-eval-2026-10-22",
+  "case_count": 22,
+  "model": "gpt-5.5",
+  "settings": {
+    "reasoning_effort": "medium",
+    "max_completion_tokens": 8000,
+    "temperature": "omitted",
+    "strict_json_schema": true
+  },
+  "image_generation": false,
+  "input_schema_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v2/input.schema.json",
+  "input_schema_sha256": "bfea8b17cd3c9125a5781c002b3e66dbc66868d7a770c042cfcb73490d227af0",
+  "camera_profiles_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/versions/v2/camera_profiles.json",
+  "camera_profiles_sha256": "db77622a56357097b56a15e755e89b1ce1139f24e71d371b713f667ea42833c7",
+  "source_manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_manifest.json",
+  "edge_manifest_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_manifest.json",
+  "laptop_source_selection": {
+    "source_id": "22fdbf19f03d1a31",
+    "rationale": "Actual source contains concrete mobile-work and meeting cues suitable for comparing tight, medium, wide, and top-oblique behavior."
+  },
+  "cases": [
+    {
+      "case_id": "01_rich_printer_magic_back_closeup",
+      "source_id": "ee810cf51bb82bb4",
+      "product_name": "Magic",
+      "camera_tag": "Printer_Back_CloseUp",
+      "purpose": "Rich actual printer messaging under a tight level view.",
+      "input_path": "inputs/01_rich_printer_magic_back_closeup.json",
+      "input_raw_sha256": "41991b0dfbaa9dc0304ef5ff58054e4096faf1e795961be7bc7c6c0b0ef41c6c",
+      "input_semantic_sha256": "d15009e1a42d2fb0e3097249325295c35a503cb4a03369f0826223ca478a4a53",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Back_CloseUp",
+        "resolved_tag": "Printer_Back_CloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "requested_product": "Magic",
+        "resolved_product": "Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "02_rich_printer_messi_back_closeup",
+      "source_id": "ee810cf51bb82bb4",
+      "product_name": "Messi",
+      "camera_tag": "Printer_Back_CloseUp",
+      "purpose": "Same source and camera as case 01; exercise the Messi close-view override.",
+      "input_path": "inputs/02_rich_printer_messi_back_closeup.json",
+      "input_raw_sha256": "aa1e1c8dae5cf05f4a53b9b53ad887b31a0c2bc9294eb88360e7d80f666d1804",
+      "input_semantic_sha256": "586df2b469dcf2339616c26352fd38556f8477fd512f71f041a26aa96ee258b8",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Back_CloseUp",
+        "resolved_tag": "Printer_Back_CloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "level",
+        "requested_product": "Messi",
+        "resolved_product": "Messi_Ceramic-White.printer.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "03_rich_printer_magic_front_right_medium",
+      "source_id": "ee810cf51bb82bb4",
+      "product_name": "Magic",
+      "camera_tag": "Printer_Front_Right_Medium",
+      "purpose": "Same rich source under a medium oblique view.",
+      "input_path": "inputs/03_rich_printer_magic_front_right_medium.json",
+      "input_raw_sha256": "8d284c843f7d2a5c300b1dd534bccbb28e688f078794fdef1118185857482352",
+      "input_semantic_sha256": "f15cf3e89e5312fe84c08b5a19f2b2658079833bea33f6a837db1062fe93e035",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Front_Right_Medium",
+        "resolved_tag": "Printer_Front_Right_Medium",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "requested_product": "Magic",
+        "resolved_product": "Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "04_rich_printer_magic_front_right_wide",
+      "source_id": "ee810cf51bb82bb4",
+      "product_name": "Magic",
+      "camera_tag": "Printer_Front_Right_Wide",
+      "purpose": "Same rich source under a wide oblique view.",
+      "input_path": "inputs/04_rich_printer_magic_front_right_wide.json",
+      "input_raw_sha256": "bbb48142b4717a969c28cf374a00d7019615cfd30ff70aaafc54efa343de35a1",
+      "input_semantic_sha256": "7cb06625ddfad1e4a549df9d7a6b9edc921b9aceb691117c52760057c4fecd84",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Front_Right_Wide",
+        "resolved_tag": "Printer_Front_Right_Wide",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "requested_product": "Magic",
+        "resolved_product": "Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "05_rich_printer_magic_top_front_closeup",
+      "source_id": "ee810cf51bb82bb4",
+      "product_name": "Magic",
+      "camera_tag": "Printer_Top_Front_CloseUp",
+      "purpose": "Same rich source under a tight top-oblique view.",
+      "input_path": "inputs/05_rich_printer_magic_top_front_closeup.json",
+      "input_raw_sha256": "d03e69638683e22e9d781e13b5867acc470c4943c61cbbf9057d3d5f99ffe059",
+      "input_semantic_sha256": "fa723bc327bfa0bd1c7b9691f6599cda28bd720bfa20d224cc9ac66931ebecac",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Top_Front_CloseUp",
+        "resolved_tag": "Printer_Top_Front_CloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "top_oblique",
+        "requested_product": "Magic",
+        "resolved_product": "Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "06_actual_laptop_koki_front_closeup",
+      "source_id": "22fdbf19f03d1a31",
+      "product_name": "Koki",
+      "camera_tag": "Laptop_Front_CloseUp",
+      "purpose": "Actual mobile-work and meeting cues under a tight level view.",
+      "input_path": "inputs/06_actual_laptop_koki_front_closeup.json",
+      "input_raw_sha256": "9f2d6ab604f7615a73347b7cb318eb222543f98d43a5d81502ecbc0b7e1f6404",
+      "input_semantic_sha256": "12503723bd33ef07e76e6e4a84d0ffe951f158f5ebe568a5dacf0b1272f18f08",
+      "source_kind": "actual",
+      "source_semantic_sha256": "22fdbf19f03d1a31516a6638b1ba12df246cbe7ac63637d8e2e77e293f14eed4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2613589805017517007.zip",
+          "member": "Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "member": null,
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Laptop_Front_CloseUp",
+        "resolved_tag": "Laptop_Front_CloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "requested_product": "Koki",
+        "resolved_product": "Koki-Omnibook_Eclipes-Gray.laptop.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "07_actual_laptop_koki_front_right_medium",
+      "source_id": "22fdbf19f03d1a31",
+      "product_name": "Koki",
+      "camera_tag": "Laptop_Front_Right_Medium",
+      "purpose": "Same actual laptop source under a medium oblique view.",
+      "input_path": "inputs/07_actual_laptop_koki_front_right_medium.json",
+      "input_raw_sha256": "dd5e7ff6c45e9261eece9891bd939e0064487cb2f4c6c563faf222e9b62f229e",
+      "input_semantic_sha256": "b4f03ba2a7783333ffe64883a732435bda7580c39b5aac68103a0c803db30ecd",
+      "source_kind": "actual",
+      "source_semantic_sha256": "22fdbf19f03d1a31516a6638b1ba12df246cbe7ac63637d8e2e77e293f14eed4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2613589805017517007.zip",
+          "member": "Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "member": null,
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Laptop_Front_Right_Medium",
+        "resolved_tag": "Laptop_Front_Right_Medium",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "requested_product": "Koki",
+        "resolved_product": "Koki-Omnibook_Eclipes-Gray.laptop.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "08_actual_laptop_koki_front_right_wide",
+      "source_id": "22fdbf19f03d1a31",
+      "product_name": "Koki",
+      "camera_tag": "Laptop_Front_Right_Wide",
+      "purpose": "Same actual laptop source under a wide oblique view.",
+      "input_path": "inputs/08_actual_laptop_koki_front_right_wide.json",
+      "input_raw_sha256": "c644a5aeb3cc2a685ee5b8024da9d55db59279de4d4fb2e0d6fd6935b04a3e97",
+      "input_semantic_sha256": "dfe89eff1607777a7d9fac133ebac13c5a57a2eed48c08c07f5dd05a07ee6ec6",
+      "source_kind": "actual",
+      "source_semantic_sha256": "22fdbf19f03d1a31516a6638b1ba12df246cbe7ac63637d8e2e77e293f14eed4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2613589805017517007.zip",
+          "member": "Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "member": null,
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Laptop_Front_Right_Wide",
+        "resolved_tag": "Laptop_Front_Right_Wide",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "requested_product": "Koki",
+        "resolved_product": "Koki-Omnibook_Eclipes-Gray.laptop.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "09_actual_laptop_koki_top_front_medium",
+      "source_id": "22fdbf19f03d1a31",
+      "product_name": "Koki",
+      "camera_tag": "Laptop_Top_Front_Medium",
+      "purpose": "Same actual laptop source under a medium top-oblique view.",
+      "input_path": "inputs/09_actual_laptop_koki_top_front_medium.json",
+      "input_raw_sha256": "cd27b84cce7035814e9154bb8247e24ce73503074b9d87cb84752a4122386227",
+      "input_semantic_sha256": "6ff9f668ebc418476ffdf46b748691a55470c06c0fdd04aa5de11387192f0b1f",
+      "source_kind": "actual",
+      "source_semantic_sha256": "22fdbf19f03d1a31516a6638b1ba12df246cbe7ac63637d8e2e77e293f14eed4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2613589805017517007.zip",
+          "member": "Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "member": null,
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Laptop_Top_Front_Medium",
+        "resolved_tag": "Laptop_Top_Front_Medium",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "top_oblique",
+        "requested_product": "Koki",
+        "resolved_product": "Koki-Omnibook_Eclipes-Gray.laptop.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "10_actual_laptop_viktor_front_right_closeup",
+      "source_id": "22fdbf19f03d1a31",
+      "product_name": "Viktor",
+      "camera_tag": "Laptop_Front_Right_CloseUp",
+      "purpose": "Actual laptop source under the especially tight Viktor override.",
+      "input_path": "inputs/10_actual_laptop_viktor_front_right_closeup.json",
+      "input_raw_sha256": "d1b3c0bdf827fa92859137c81d352897c101ce5370c00b2b0bc0a5ce19f93af8",
+      "input_semantic_sha256": "8acf418210d534aaedf897dcdbf3eb81072be7b0f8ea5590fddcb7154dc1c047",
+      "source_kind": "actual",
+      "source_semantic_sha256": "22fdbf19f03d1a31516a6638b1ba12df246cbe7ac63637d8e2e77e293f14eed4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/22fdbf19f03d1a31.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2613589805017517007.zip",
+          "member": "Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 2f9616d5-0c90-479d-89dd-4c8b3e0f02fe.json",
+          "member": null,
+          "sha256": "87351342e53250fae2bacf8a57be3be70f3d03e594bf6140bb910c830ced3ca9"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Laptop_Front_Right_CloseUp",
+        "resolved_tag": "Laptop_Front_Right_CloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "oblique",
+        "requested_product": "Viktor",
+        "resolved_product": "Viktor_Sahara-Silver.laptop.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "11_actual_printer_tassel_front_closeup",
+      "source_id": "160db92655412f4d",
+      "product_name": "Tassel",
+      "camera_tag": "Printer_Front_CloseUp",
+      "purpose": "Second actual printer source with the PDF-only Tassel registry entry.",
+      "input_path": "inputs/11_actual_printer_tassel_front_closeup.json",
+      "input_raw_sha256": "5f1f88a4f02cfc3aea84b9ed0fbc9d2705d28a89a9c3e877b8bd503d71453345",
+      "input_semantic_sha256": "438b3b96fc6802fd17b066829bad717faab4c388afb036b1f0ff9645c9a8242b",
+      "source_kind": "actual",
+      "source_semantic_sha256": "160db92655412f4d41d349bbf6f930adc248c6485b804ff4cade8824355b5710",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/160db92655412f4d.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2299778737384020264.zip",
+          "member": "Source Messaging - 71bd2bda-ecc2-4841-bd21-30a6c05673a9.json",
+          "sha256": "afdf3ed48a702c2d4bb475ddd54274754fda7bebf6d542c6abb3c41624428943"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Front_CloseUp",
+        "resolved_tag": "Printer_Front_CloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "requested_product": "Tassel",
+        "resolved_product": "Tassel_ConnectivityFacet-Wireless.printer.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "12_synthetic_gaming_cheddar_front_right_wide",
+      "source_id": "048217039fd093b2",
+      "product_name": "Cheddar",
+      "camera_tag": "Laptop_Front_Right_Wide",
+      "purpose": "Synthetic grounded Gaming cues under a known wide laptop view.",
+      "input_path": "inputs/12_synthetic_gaming_cheddar_front_right_wide.json",
+      "input_raw_sha256": "2b67741813b00812a8f4b99d68dfeb6a003993f39e2dadfe032db676f1fafccb",
+      "input_semantic_sha256": "73daac251459c36be483f6ac27385166bf439e6ac08158bde40cc44897bed6fb",
+      "source_kind": "synthetic",
+      "source_semantic_sha256": "048217039fd093b2ad6819c601d3e2293a8616e943eeb6b605d56e3063d9a56f",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/gaming.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/gaming.json",
+          "member": null,
+          "synthetic": true
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Laptop_Front_Right_Wide",
+        "resolved_tag": "Laptop_Front_Right_Wide",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "wide",
+        "elevation": "oblique",
+        "requested_product": "Cheddar",
+        "resolved_product": "Cheddar-13_NaturalSilver.laptop.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "13_empty_source_unknown_camera",
+      "source_id": "44136fa355b3678a",
+      "product_name": "Magic",
+      "camera_tag": "Printer_Unregistered_View",
+      "purpose": "Empty source plus unknown camera must use the conservative minimal fallback.",
+      "input_path": "inputs/13_empty_source_unknown_camera.json",
+      "input_raw_sha256": "668d28944f2236be9d4298ddc5754dc8ad9abc09908d0288d7196fa0ee7292a1",
+      "input_semantic_sha256": "d82300a54459013135a546936a12997f8c06dd25c611ed8766c1453d94af535e",
+      "source_kind": "synthetic",
+      "source_semantic_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/empty.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/empty.json",
+          "member": null,
+          "synthetic": true
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Unregistered_View",
+        "resolved_tag": null,
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "unknown",
+        "framing": "unknown",
+        "elevation": "unknown",
+        "requested_product": "Magic",
+        "resolved_product": "Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "14_technical_only_known_tight_camera",
+      "source_id": "49aa979045b3b3d6",
+      "product_name": "Koki",
+      "camera_tag": "Laptop_Back_CloseUp",
+      "purpose": "Technical-only source under a known tight camera must not invent a technical scene.",
+      "input_path": "inputs/14_technical_only_known_tight_camera.json",
+      "input_raw_sha256": "1c43221ec3e1e2336f1cd312ab004bdc80851dda02d7265ef3170cc03698fd0b",
+      "input_semantic_sha256": "53af3123f37206ffbf4acb723351eefe551d3706208fd407a2f985c1211f5180",
+      "source_kind": "synthetic",
+      "source_semantic_sha256": "49aa979045b3b3d63ccf450a1267d24a849fe23da3777dcc2281b1f951911bdf",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/technical_only.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/edge_cases/technical_only.json",
+          "member": null,
+          "synthetic": true
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Laptop_Back_CloseUp",
+        "resolved_tag": "Laptop_Back_CloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "requested_product": "Koki",
+        "resolved_product": "Koki-Omnibook_Eclipes-Gray.laptop.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "15_known_type_conflict_magic_laptop_camera",
+      "source_id": "ee810cf51bb82bb4",
+      "product_name": "Magic",
+      "camera_tag": "Laptop_Back_CloseUp",
+      "purpose": "Known printer product with a known laptop camera must resolve as incompatible.",
+      "input_path": "inputs/15_known_type_conflict_magic_laptop_camera.json",
+      "input_raw_sha256": "a9da453e292578696b7bc658d3ff951014ed9ea664b2a7d39904f456da499b8a",
+      "input_semantic_sha256": "8efbbb838b545dd836b801234af8a36f1ad805a10c993ffb313303a9e0b4cda2",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Laptop_Back_CloseUp",
+        "resolved_tag": "Laptop_Back_CloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "unknown",
+        "elevation": "unknown",
+        "requested_product": "Magic",
+        "resolved_product": "Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer.usdz",
+        "product_resolution": "incompatible"
+      }
+    },
+    {
+      "case_id": "16_unknown_product_known_printer_camera",
+      "source_id": "ee810cf51bb82bb4",
+      "product_name": "Unregistered_Product",
+      "camera_tag": "Printer_Back_CloseUp",
+      "purpose": "Unknown product with a known camera must use the conservative camera base.",
+      "input_path": "inputs/16_unknown_product_known_printer_camera.json",
+      "input_raw_sha256": "3ab6114f20d62e1f85515e882cf1768919472470a56bdf8d3b8056857b4e1886",
+      "input_semantic_sha256": "751484e7da07a89980b5ca5311e801e5818634e87b8b0568eb6fbf72e07f21f3",
+      "source_kind": "actual",
+      "source_semantic_sha256": "ee810cf51bb82bb4ef2eb98d5c2c99b442822692029d25d7977e2c53d32d6a25",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/ee810cf51bb82bb4.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK1048202654963318374.zip",
+          "member": "Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - d2bde90b-5fb6-4e04-b75a-b07d1e579cce.json",
+          "member": null,
+          "sha256": "6aa2a350d6b3b5a687b55c99c044a4163310104b55df379bf9bb4c838363a8b4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Back_CloseUp",
+        "resolved_tag": "Printer_Back_CloseUp",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "tight",
+        "elevation": "level",
+        "requested_product": "Unregistered_Product",
+        "resolved_product": null,
+        "product_resolution": "unknown"
+      }
+    },
+    {
+      "case_id": "17_actual_laptop_cashmere_front_right_medium",
+      "source_id": "d60e13e4457fd44c",
+      "product_name": "Cashmere",
+      "camera_tag": "Laptop_Front_Right_Medium",
+      "purpose": "Previously uncovered actual convertible-laptop source under a medium oblique view.",
+      "input_path": "inputs/17_actual_laptop_cashmere_front_right_medium.json",
+      "input_raw_sha256": "5c1d50f3fc1afe9d7fed7e1e1fe81595ee7a72db242895ec888dca9c393f8d5c",
+      "input_semantic_sha256": "60454fb0f7273f3b23b84ce25bcd343242526055131e2164746857d013e90a13",
+      "source_kind": "actual",
+      "source_semantic_sha256": "d60e13e4457fd44cf5b7f89a6e754211bfe13d5dcd4c368f30d484ab85c65812",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/d60e13e4457fd44c.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2703900895627379394.zip",
+          "member": "Source Messaging - 8e56189b-2c04-4066-bd8c-08fb6359588d.json",
+          "sha256": "a61986ad16478088e9290cb1ebb44520e91e206c45b6b5e2cc11f12b3a354ca6"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 8e56189b-2c04-4066-bd8c-08fb6359588d.json",
+          "member": null,
+          "sha256": "a61986ad16478088e9290cb1ebb44520e91e206c45b6b5e2cc11f12b3a354ca6"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Laptop_Front_Right_Medium",
+        "resolved_tag": "Laptop_Front_Right_Medium",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "requested_product": "Cashmere",
+        "resolved_product": "Cashmere-ElitebookX-14_Atmospheric-Blue.laptop.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "18_actual_laptop_cheddar_front_right_medium",
+      "source_id": "fecec52a5c57c7bb",
+      "product_name": "Cheddar",
+      "camera_tag": "Laptop_Front_Right_Medium",
+      "purpose": "Previously uncovered actual mobile-work laptop source under a medium oblique view.",
+      "input_path": "inputs/18_actual_laptop_cheddar_front_right_medium.json",
+      "input_raw_sha256": "86ba92602d75078017c8c872fca4b93d90301f6e5d5d46624c1e5f4e371093f3",
+      "input_semantic_sha256": "894549da15db55e8bbfc829ed2a489a67d4c5f1cc4abb289136b3d29a42fe0fb",
+      "source_kind": "actual",
+      "source_semantic_sha256": "fecec52a5c57c7bb45dedfc39771fa53a1af96e1abdde37fa8a1bb3420af2fb4",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/fecec52a5c57c7bb.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK2745132682490047977.zip",
+          "member": "Source Messaging - 44b611c4-b58f-4614-a9e0-81a3d669f1d3.json",
+          "sha256": "fd5ba38ec95e50344ac856198f7dccdb6ce43a6f946c5fcd8b3ae9bb2a32ccaa"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Laptop_Front_Right_Medium",
+        "resolved_tag": "Laptop_Front_Right_Medium",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "requested_product": "Cheddar",
+        "resolved_product": "Cheddar-13_NaturalSilver.laptop.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "19_actual_printer_magic_front_right_medium",
+      "source_id": "8bbf8af1d8cbf4b2",
+      "product_name": "Magic",
+      "camera_tag": "Printer_Front_Right_Medium",
+      "purpose": "Previously uncovered actual ink-tank printer source under a medium oblique view.",
+      "input_path": "inputs/19_actual_printer_magic_front_right_medium.json",
+      "input_raw_sha256": "749067a68237d200747fd6c07e49d859bcb4660a7cc3d7976a80cd4737226d76",
+      "input_semantic_sha256": "f3ff9ef6779f3f196e0d339c1cbcc1690b9af628a986ed1b5ecb3d2b0fc69c04",
+      "source_kind": "actual",
+      "source_semantic_sha256": "8bbf8af1d8cbf4b2d70c755d9cec9030e658408f2076733d8407fbf710863935",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/8bbf8af1d8cbf4b2.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK4748855972432039582.zip",
+          "member": "Source Messaging - 8a8e84ff-69e1-4581-a1ca-8eb411354a2a.json",
+          "sha256": "fe8d1dc26056d55824e19fce50385c446f6a307feed7d72c0cc85916d07bb688"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Front_Right_Medium",
+        "resolved_tag": "Printer_Front_Right_Medium",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "requested_product": "Magic",
+        "resolved_product": "Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "20_actual_printer_messi_front_right_medium",
+      "source_id": "8189f3ad5af37a81",
+      "product_name": "Messi",
+      "camera_tag": "Printer_Front_Right_Medium",
+      "purpose": "Previously uncovered actual shared-space printer source under a medium oblique view.",
+      "input_path": "inputs/20_actual_printer_messi_front_right_medium.json",
+      "input_raw_sha256": "6d96bb8b09532d60a12f30a1131c99797a68d6374043d9c6613d4e4ad40dc608",
+      "input_semantic_sha256": "e674f69f73dee0826312d0d44ea0faaa0fe1feaddbdfc5d216c60207ecafb5ae",
+      "source_kind": "actual",
+      "source_semantic_sha256": "8189f3ad5af37a814b680c32ab1023a762aefbfc1c75d0f5d958ff4a6849dd2d",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/8189f3ad5af37a81.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK881963376314406021.zip",
+          "member": "Source Messaging - cb0d856e-5f4e-4928-bb04-1dd770c491d1.json",
+          "sha256": "3be81e2250494efef3678e51095f9356e52c32ce744c5659b6b05e3a3f5b8d06"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Front_Right_Medium",
+        "resolved_tag": "Printer_Front_Right_Medium",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "requested_product": "Messi",
+        "resolved_product": "Messi_Ceramic-White.printer.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "21_actual_printer_magic_enterprise_front_right_medium",
+      "source_id": "324b14a617dfedba",
+      "product_name": "Magic",
+      "camera_tag": "Printer_Front_Right_Medium",
+      "purpose": "Previously uncovered actual enterprise-printer source under a medium oblique view.",
+      "input_path": "inputs/21_actual_printer_magic_enterprise_front_right_medium.json",
+      "input_raw_sha256": "fa6a8903d7ef9eea25b37eb3305cadeb4cda27f2d92726f4e04db93bfd8096d4",
+      "input_semantic_sha256": "9b63267e4b9ea06219a285c929135adaf8399c7100896e1d49b1e92102c0d853",
+      "source_kind": "actual",
+      "source_semantic_sha256": "324b14a617dfedbaa74ed0f14b93d038737a01c1fa6180a9af37de60905f53a9",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/324b14a617dfedba.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK901460674462796743.zip",
+          "member": "Source Messaging - 27735f23-c479-4d5b-8951-cdf900133f0b.json",
+          "sha256": "8ba3311a2196b3f0059c6f703fc260dc14f0fce1889420fe80a99c4e4c0087f4"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Front_Right_Medium",
+        "resolved_tag": "Printer_Front_Right_Medium",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "requested_product": "Magic",
+        "resolved_product": "Magic_Printers-6500_dn_CMF-Atmosphere_Blues.printer.usdz",
+        "product_resolution": "alias"
+      }
+    },
+    {
+      "case_id": "22_actual_printer_messi_ink_tank_front_right_medium",
+      "source_id": "943faef0af11484f",
+      "product_name": "Messi",
+      "camera_tag": "Printer_Front_Right_Medium",
+      "purpose": "Previously uncovered actual ink-tank all-in-one source under a medium oblique view.",
+      "input_path": "inputs/22_actual_printer_messi_ink_tank_front_right_medium.json",
+      "input_raw_sha256": "e48ba726b349e11728def96930422dc0399d8ff8ebfe7fe984e6058cf423e246",
+      "input_semantic_sha256": "58447acc50e22d9e333ccfafc018b6c134b0a9c1bf7db79fc448ed6d224be89b",
+      "source_kind": "actual",
+      "source_semantic_sha256": "943faef0af11484f5bee2a60f6bb25ac7d70ee4ab00c220b2ff1e599e2eb58cf",
+      "source_input_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/research/source_messaging/data/source_json/943faef0af11484f.json",
+      "source_origins": [
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/ATSK9166360275256369928.zip",
+          "member": "Source Messaging - 784a9ea4-d2b6-4465-a642-ea40c1f18408.json",
+          "sha256": "f2736e7d3a5802d1e78591be6f3c003446d458c22981b6ee3b990962920a91ac"
+        },
+        {
+          "path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/input_output_hp_rewriter_10_03_26/inputs/Source Messaging - 784a9ea4-d2b6-4465-a642-ea40c1f18408 (1).json",
+          "member": null,
+          "sha256": "f2736e7d3a5802d1e78591be6f3c003446d458c22981b6ee3b990962920a91ac"
+        }
+      ],
+      "expected_camera": {
+        "requested_tag": "Printer_Front_Right_Medium",
+        "resolved_tag": "Printer_Front_Right_Medium",
+        "profile_version": "camera-v2-draft-2026-10-22",
+        "resolution": "exact",
+        "framing": "medium",
+        "elevation": "oblique",
+        "requested_product": "Messi",
+        "resolved_product": "Messi_Ceramic-White.printer.usdz",
+        "product_resolution": "alias"
+      }
+    }
+  ]
+}

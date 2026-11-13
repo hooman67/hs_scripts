@@ -1,0 +1,38 @@
+visibility: public
+public:
+  files:
+  - types.py
+  - base_llm_types.py
+  deps:
+  - colligo.base
+  - colligo.models.firefall.pipelines.gen_3p[public]
+  - colligo.models.firefly.clio_common[public]
+  - pydantic
+deps:
+- anthropic
+- anyio
+- colligo.data
+- colligo.external_services.business_kit
+- colligo.fastapi
+- colligo.models.firefall.firefall_router
+- colligo.models.firefall.notification
+- colligo.models.firefall.pipelines.gen_3p
+- colligo.models.firefall.policy_service
+- colligo.models.firefall.utils
+- colligo.models.firefly.service_common.persistence
+- google-api-core
+- google-auth
+- google-cloud-aiplatform
+- grpcio
+- httpx
+- langchain-anthropic
+- langchain-core
+- langchain-openai
+- langchain_google_vertexai
+- openai
+- pillow
+- proto-plus
+- typing-extensions
+exclude:
+- scripts
+- "..."

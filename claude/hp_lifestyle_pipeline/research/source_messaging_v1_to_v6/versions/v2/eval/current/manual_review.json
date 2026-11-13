@@ -1,0 +1,627 @@
+{
+  "as_of": "2026-10-22",
+  "reviewer": "root research agent",
+  "status": "researcher_accepted_for_Hooman_text_review_not_user_approved",
+  "case_count": 24,
+  "prompt_count": 39,
+  "method": "Read every selected scene paragraph, source mappings, profile and offline reference evidence. Count separate requested visible objects; surface/light and plain background tone excluded. A notebook containing notes is one prop; separate notes plus notebook are two. One compact paper stack is one prop. Review scope is text compatibility, not rendered geometry.",
+  "accepted_samples_sha256": "66c51392f8336c519f15755627b582f5b927a2871f08cd4cfb2ec9f0314884d7",
+  "limitations": [
+    "Object counts are human judgments, not measurements of available rendered space.",
+    "Most medium samples use their full 2-prop/1-background ceiling; image validation may require stricter profiles.",
+    "Two initial scene samples failed review and were regenerated; selected24 is not a first-call success-rate estimate.",
+    "No generated images were produced for this camera V2."
+  ],
+  "rejected_attempts": [
+    {
+      "case_id": "07_actual_laptop_front_right_medium",
+      "attempt_id": "initial",
+      "record_path": "runs/gpt55_type_camera/07_actual_laptop_front_right_medium.json",
+      "record_sha256": "f18b1bffc9074df8df32314e51e5b507caf7c7d8158259902a55da30164f3b77",
+      "reason": {
+        "code": "medium_local_prop_limit_exceeded",
+        "detail": "Primary p1 requested paper notepad, capped pen, and meeting notes: three nearby objects against max_local_props=2.",
+        "reviewer": "root research agent"
+      },
+      "raw_failures": [
+        "Evidence is not a verbatim source substring: ValueProposition.long_message_best_sku"
+      ],
+      "validated_failures": [],
+      "citation_repairs": [
+        {
+          "json_pointer": "/debug/value_proposition/source_evidence/0/path",
+          "from_path": "ValueProposition.long_message_best_sku",
+          "to_path": "ValueProposition.short_message",
+          "quote": "productive work and polished collaboration anywhere"
+        }
+      ]
+    },
+    {
+      "case_id": "19_actual_printer_admin_front_right_medium",
+      "attempt_id": "initial",
+      "record_path": "runs/gpt55_type_camera/19_actual_printer_admin_front_right_medium.json",
+      "record_sha256": "68fc5fd7a2ea8fb3894dba2b8fc1e0682e771c89c0f43e8f0191d9b74224ebea",
+      "reason": {
+        "code": "extra_computing_hardware_content",
+        "detail": "Primary p2 requested a phone beside the papers, contrary to the environment-only no-extra-computing-hardware boundary.",
+        "reviewer": "root research agent"
+      },
+      "raw_failures": [
+        "p2 contains generic or specific target-device wording: phone"
+      ],
+      "validated_failures": [
+        "p2 contains generic or specific target-device wording: phone"
+      ],
+      "citation_repairs": []
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "01_rich_source_printer_back_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/01_rich_source_printer_back_closeup.json",
+      "accepted_record_sha256": "b45c8d99ba254fbf8d9e64cf8c1755716cc672a60a844c0b819a52bb1594f5cd",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "c6555447865b7db8e47bd98b405e1a8142cb1d535aafc96a8ddc693d87f389d2",
+          "local_props": 0,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "02_rich_source_minipc_back_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/02_rich_source_minipc_back_closeup.json",
+      "accepted_record_sha256": "05fc51aa556a4d120b9bdbfd5a4a54d921c266a3b40ce399b64da15df4aa2827",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "f4b27a7e9343231344fc09d5d4481c832d933c95671aebf6e37b17a9f7b5ddd9",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "481271b7e33e61b48f9ce8b5ec29da453ea1a40afaef62f253042467c50e1860",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "03_rich_source_printer_front_right_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/03_rich_source_printer_front_right_medium.json",
+      "accepted_record_sha256": "ea6aca0da18ca6166965fb83a43c84866d0056abd4e5d5d1c855295af97e05fc",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "e8b30e4c697d0100b284529d37d31646bd064f5e72a91cf23f4a6544a0f35857",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "35458b6de6d489b16dae1164081c973e51af3587a16fe0a207ce3ba0936ba02f",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "04_rich_source_printer_front_right_wide",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/04_rich_source_printer_front_right_wide.json",
+      "accepted_record_sha256": "6e955c4659c00d56ea08d98ff83e194c46d78591d172a6885d69cc0054f33562",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "369d08137e0ab76be59a6f7ab609798e80ecb34627cdba74473ff8a43c73664f",
+          "local_props": 3,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "68467c8cf67fe95ff8edff2e0a23028861ebd6300e9a6808ccedce5b8aad7a41",
+          "local_props": 3,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "05_rich_source_printer_top_front_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/05_rich_source_printer_top_front_closeup.json",
+      "accepted_record_sha256": "96b99887bc56aa5705094bebaf632b5c2aa062cc23eff700249d7d731fc00954",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "fc981561aac01fede423310e54395a161b5a1d64a85861f7dec31a5aae8a6420",
+          "local_props": 1,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "80a8c095f47451aedbddbc3312d484823b12e50a9d535397339b67b55454111a",
+          "local_props": 1,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "06_actual_laptop_front_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/06_actual_laptop_front_closeup.json",
+      "accepted_record_sha256": "0e07d52b6080c79b83a17fa006af91ec6d02531403915810163d4757d2e587e8",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "9c2deec5d9b121bc8f2962ad723642fc894aaf171f4914cc20e0bf6a58aac079",
+          "local_props": 0,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "07_actual_laptop_front_right_medium",
+      "accepted_attempt_id": "retry_2",
+      "accepted_record_path": "runs/gpt55_type_camera_retries/07_attempt2/07_actual_laptop_front_right_medium.json",
+      "accepted_record_sha256": "60333abe71a01807311b2239be6632310cc4901681f03188afc69f71e0a83c8e",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "5fe5536fc49b33d944db4058fbc22bda556685b3e21a969a2bf2798fbafc51ca",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "2d9ce71ee5c2a742f7689719fbe2a7fd7c8a034c9f06a30c426dfa7795998cc9",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "08_actual_laptop_front_right_wide",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/08_actual_laptop_front_right_wide.json",
+      "accepted_record_sha256": "be2ec55cf45ce458274476a27ec4e1755c57651604f377fd1f98a296a3744419",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "86e05b2bb7c740bd1bd87d6159dffb311ecb3943c9030ddf4712c88a3ee8b92b",
+          "local_props": 3,
+          "named_background_details": 2,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "a441a1b86b8691d6e7a93eff1fcd42fc248ae7fff20d08020399a60ab192fac9",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p3",
+          "text_sha256": "8fe88ec8840ade54cad909d3dbc82d104ddafb40088a30d098fa08da586af002",
+          "local_props": 3,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "09_actual_laptop_top_front_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/09_actual_laptop_top_front_medium.json",
+      "accepted_record_sha256": "9b0fb9ffa2f56140a04ed23558cfa2f74b1fe8e00152f26f7c2c1683fc0a5482",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "0a0c0ebdb7c72351d0cc3e508bdd1a582b897ad5a3524882cce44c4353a85bea",
+          "local_props": 2,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "10_actual_laptop_front_right_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/10_actual_laptop_front_right_closeup.json",
+      "accepted_record_sha256": "2bbda15f9dce068ee75137a96526f33392a5c1cebd2e03b05461b02660437023",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "9aafbedf294182dd1069c353aa477289e91a67956140aae48fcd1eb0810b8f07",
+          "local_props": 0,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "11_actual_printer_front_closeup",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/11_actual_printer_front_closeup.json",
+      "accepted_record_sha256": "c5cdbedd77ecac5aebd3c729e46c6ac544d1f9a364a26560ea989bbac87c6a6b",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "1a9ca3ad5800d25bf522be98e4b6b4c44d39ecc521ef3576d508b1db9ad37f2f",
+          "local_props": 0,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "12_synthetic_gaming_laptop_front_right_wide",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/12_synthetic_gaming_laptop_front_right_wide.json",
+      "accepted_record_sha256": "5349e6105f4c2cc79e49ad9ead461ca045d3f34ccab76dd8d171dc8f1dbb92c4",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "79de1b566cd19687c6a2961ba036c8922bed8572d15783bd9af7ab48c2c0945b",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "13_empty_source_unknown_camera",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/13_empty_source_unknown_camera.json",
+      "accepted_record_sha256": "fab0ad5bfc37398d28e2eb913336a1dfb1642cd090bcf1f17c5e395d5850618a",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "d27708bcf28a2ceb80c2e0a2a65b00ad8ead3634874cd1bddf962d996f22433a",
+          "local_props": 0,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "14_technical_only_known_tight_camera",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/14_technical_only_known_tight_camera.json",
+      "accepted_record_sha256": "050e93e91d723c7928db8813f491f7e3de04f7a2b5efd54f229b86da5ef7ce75",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "3d928c29b834d3f0c563c4355c375352d864a5ce7a2758c03f9319a8ae1f4bb3",
+          "local_props": 0,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "15_printer_copy_minipc_camera",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/15_printer_copy_minipc_camera.json",
+      "accepted_record_sha256": "015b6ac1df56cba936e16b0912d5bb2f6ee665e9b5a05e5eb8c33333261b9cfc",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "5a77b564bf98bacb91c2fd58f66614a09895dadf464f09893964ff542a536439",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "f3c9d8896197914d2acca41324174850de6ff00c7ed4ff00987cd967a3e8724c",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "16_explicit_legacy_minipc_alias",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/16_explicit_legacy_minipc_alias.json",
+      "accepted_record_sha256": "3299eea80a313e46fbaf06b8d81e9620e09e27bbdefe69b013017b3c71afa5d1",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "c844bd78e41b2eacff732a217ca7550f9b8e3602d5a56e7617a3e546f0482589",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "b5b5326bb334969a36e0fef7271db9a20af39aaba8a681bf328432668e14d852",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "17_actual_laptop_convertible_front_right_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/17_actual_laptop_convertible_front_right_medium.json",
+      "accepted_record_sha256": "679f10738c112e8037637cdab7f71c1010712c1bb595ae69ffdf3fc8d944cf13",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "95a2426233a11c86eed824b4f36e492f6bb56ef087b209e388960737371f80b3",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "41db5507f3cb9cd62b6f16157318cdb3313c4487e7607bd6095d80efa7fd92e1",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p3",
+          "text_sha256": "66f446c6ec99a473c33fe0af0138caba3d845d749b21dac24cc5dcc4855cb49e",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "18_actual_laptop_mobile_work_front_right_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/18_actual_laptop_mobile_work_front_right_medium.json",
+      "accepted_record_sha256": "a63ba2b6fb1ccb4fda44811dce5bf442c7d6c0759c60ce735cda2ce0d5b45a19",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "227f09b9d84b354cd54e207da2cf930146d2054db6975dda135b0993c607d24a",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "2a7163dcdcf21a6774ac278b24eb9660989b531553e2c76b879ec804ef4e4432",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "19_actual_printer_admin_front_right_medium",
+      "accepted_attempt_id": "retry_2",
+      "accepted_record_path": "runs/gpt55_type_camera_retries/19_attempt2/19_actual_printer_admin_front_right_medium.json",
+      "accepted_record_sha256": "e49fd054b9cd87923e934cc6bc11344beaf652b6a8b6b7a54d5b55da4218f3a9",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "3c245e450c8bed42a457d74cb6507c557f9cf22af5d830a2b64150a9e7e5d834",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "20_actual_printer_copy_minipc_front_right_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/20_actual_printer_copy_minipc_front_right_medium.json",
+      "accepted_record_sha256": "be85585b4dda9f24103620f3b3705608798e68fd56697645caba46bc8b773104",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "3477b84c69a286bef669270b4986e9416932faa1af5670d673e42b3596a24d20",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "a152cfbd130b6d450f300e743d377f79c93bb207192d132b66a4597b6baa1374",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "21_actual_printer_enterprise_front_right_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/21_actual_printer_enterprise_front_right_medium.json",
+      "accepted_record_sha256": "e22b568a4e5a71eb7d0e8bc1a517f44036a99b2657cf0e14d7a64c37cd0ded1d",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "0fbf57c5bb884d6c69a23a1574a851bc732153fae8c1cc180f25fe2fb73d304c",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "22_actual_printer_copy_minipc_ink_tank_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/22_actual_printer_copy_minipc_ink_tank_medium.json",
+      "accepted_record_sha256": "012f8277f3a6e03a8341eb395f0abe1cf46acbb47fc36df3eff9079a8b43e92e",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "d1c4c09ce86e88d169f086eddedb3b12c05216957ef1766e220f82f1f8963812",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "94e0f0ce3b5e584b475058ec55fb8d7325274190c8d2b90a8b2fc55bc1fd2bbc",
+          "local_props": 2,
+          "named_background_details": 1,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "23_rich_source_minipc_top_front_medium",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/23_rich_source_minipc_top_front_medium.json",
+      "accepted_record_sha256": "1566e9ed754116396e4dcad550bbc6459fff0a5f0daf90cd31b7081cb9f27412",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "1cabff9412d1652b130dbaef073e1d2cb8c4deb1ca123a3fbb40c125d5fa340e",
+          "local_props": 2,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        },
+        {
+          "id": "p2",
+          "text_sha256": "769f4295e50e1d4adb6b83cb247411d5966ef4f035bc501de529c7f677a681d9",
+          "local_props": 2,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    },
+    {
+      "case_id": "24_rich_source_unknown_future_type",
+      "accepted_attempt_id": "initial",
+      "accepted_record_path": "runs/gpt55_type_camera/24_rich_source_unknown_future_type.json",
+      "accepted_record_sha256": "8a7de3632757aa654c8aa8ffd4f51be6bedafb51e4af1480b945d7c9f22285d6",
+      "status": "accepted_for_text_review",
+      "prompts": [
+        {
+          "id": "p1",
+          "text_sha256": "c57295d7555a87249f240041f85e8ce15cf306c9f695ea4c91465e18eb668738",
+          "local_props": 0,
+          "named_background_details": 0,
+          "device_boundary_pass": true,
+          "elevation_scope_pass": true,
+          "compatible_source_context": true
+        }
+      ]
+    }
+  ]
+}

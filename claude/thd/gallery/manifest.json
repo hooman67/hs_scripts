@@ -1,0 +1,1753 @@
+{
+ "title": "Door-Lock Rewriter — Seedance experiments",
+ "subtitle": "Recreating shot 0003 (measure the lock backset) from the THD how-to article. Each round appends below.",
+ "sections": [
+  {
+   "id": "target",
+   "label": "TARGET — original human shot 0003",
+   "kind": "target",
+   "note": "Man in a denim shirt, red pencil over ear, crouched at a white glass-panel exterior door, measuring the lock BACKSET (edge-of-door to bore centre, ~2-3/8\") with a yellow Stanley tape. Camera is behind/hinge-side (we see his back and 3/4 profile). 8.575s, 1920x1080, 29.97fps. Fidelity goal: match composition (camera angle, framing, door layout, the short backset action) — identity aside.",
+   "video": "assets/target_shot0003.mp4",
+   "frames": [
+    "assets/target_f0.jpg",
+    "assets/target_f4.jpg",
+    "assets/target_f8.jpg"
+   ]
+  },
+  {
+   "id": "round1",
+   "label": "ROUND 1 — the reference axis",
+   "params": "mode varies · 8s · 720p · 16:9 · audio off · no on-screen text",
+   "shared_prompt_note": "All three share one 5-line prompt (subject → beats → camera → talent → look+negatives). Ref variants append a 'keep ... exactly like the reference image' clause.",
+   "prompt": "A man in a light blue denim work shirt, a red carpenter's pencil tucked over one ear, crouches at the inside of a white exterior door and measures the backset of the lock with a yellow-and-black tape measure, holding the tape from the edge of the door across to the centre of the door knob.\nIn order: he pulls the tape measure blade across the face of the door toward the knob; then he leans in and reads the measurement at the edge of the door.\nMedium shot from his left side, showing his profile, his hands and the two stainless locks. Static shot; the camera does not pan, tilt or zoom.\nThe man is visible from the chest up, working steadily with both hands.\nPhotoreal Home Depot how-to footage. Bright natural 5500K daylight through the door's glass pane and a nearby window, a green fiddle-leaf fig plant and a bright, clean room behind him. The door carries a stainless steel deadbolt above a stainless steel knob, with a tall frosted glass panel and white blinds to the right. No on-screen text, no captions, no watermarks, no added logos, no competitor brands.",
+   "experiments": [
+    {
+     "id": "A",
+     "approach": "ref — article step-1 image (visible face)",
+     "status": "rejected",
+     "error": "HTTP 422 content_policy_violation — \"The images or videos provided may contain likenesses of real people\" (partner_validation_failed). No video rendered.",
+     "refs": [
+      "assets/ref_article_step1.jpg"
+     ]
+    },
+    {
+     "id": "B",
+     "approach": "ref — shot frame, back-of-head / face hidden",
+     "status": "rejected",
+     "error": "HTTP 422 content_policy_violation — SAME rejection as A. Key finding: even a face-hidden frame with a person present trips ByteDance partner validation. Any real person in a reference is blocked.",
+     "refs": [
+      "assets/ref_facehidden.jpg"
+     ]
+    },
+    {
+     "id": "C",
+     "approach": "t2v — text only, no reference",
+     "status": "ok",
+     "note": "Strong baseline with ZERO reference: denim shirt + red pencil, white glass-panel door, stainless deadbolt over knob, black/yellow tape, fiddle-leaf fig, bright side-lit room, static profile. Diverges: camera views his FACE from the room side (original shoots his back/hinge-side); door layout mirrored; the tape is stretched a foot across the door face rather than the short ~2-3/8\" backset.",
+     "video": "assets/round1_C_t2v.mp4",
+     "frames": [
+      "assets/round1_C_f0.jpg",
+      "assets/round1_C_f2.jpg",
+      "assets/round1_C_f4.jpg"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "round2_inputs",
+   "label": "ROUND 2 — RESULTS (person-free plates + short-backset prompt)",
+   "params": "8s · 720p · 16:9 · audio off · WINNER = G1 (paint-out plate, original camera): near shot-for-shot twin",
+   "shared_prompt_note": "R3 blocks any real person in a reference, so the fix is person-free PLATES: paint the man out (keeps full framing) or crop him out (loses it). The plate sets the scene/hardware exactly; the prompt re-adds the man and corrects Round 1's error (a SHORT ~2-3/8\" backset, not a foot-long stretch). Camera is carried by which plate we use.",
+   "experiments": [
+    {
+     "id": "G1",
+     "approach": "ref = PAINT-OUT plate (shot frame) — original / hinge-side camera",
+     "status": "ok",
+     "note": "★ WINNER. Near shot-for-shot twin of the target: camera behind his left shoulder (we see his BACK/3-4, exactly like the original), and the door hardware, latch bolt, blinds and plant are the plate's real pixels. The paint-out plate carried BOTH fidelity AND composition — R2 worked FOR us. Remaining gap: the tape is still stretched ~4-5 in across the lockset rather than the true ~2-3/8 in backset.",
+     "video": "assets/round2_G1.mp4",
+     "frames": [
+      "assets/round2_G1_f0.jpg",
+      "assets/round2_G1_f2.jpg",
+      "assets/round2_G1_f4.jpg"
+     ],
+     "refs": [
+      "assets/plate_paint_shot.png"
+     ],
+     "prompt": "A man in a light blue denim work shirt, a red carpenter's pencil tucked over one ear, crouches close to a white glass-panel door and measures the lock backset with a yellow-and-black tape measure: he holds the tape flat against the face of the door and reads the short distance — only a couple of inches — from the edge of the door to the centre of the knob.\nIn order: he hooks the tape at the edge of the door beside the latch; then he leans in and reads the measurement at the centre of the knob.\nMedium shot from behind his left shoulder on the hinge side of the door, looking past his back and arm toward the two locks. Static shot; the camera does not pan, tilt or zoom.\nThe man is visible from the chest up, working steadily with both hands.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the white door, the stainless steel deadbolt above the stainless steel knob, the frosted glass panel with white blinds, the green fiddle-leaf fig plant, the walls and the lighting exactly as in the reference image; add the man in front of the door. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "G2",
+     "approach": "ref = PAINT-OUT plate (article still) — front-profile camera",
+     "status": "ok",
+     "note": "Faithful to its plate's front-profile composition (face visible) with the plate's hardware/room. DEFECT: an invented red wordmark appeared on his shirt — ungrounded text on clothing, a brand-safety fail (the exact 'RGRKI/FLGRO' failure mode). Front-profile also drifts further from the target's hinge-side camera than G1.",
+     "video": "assets/round2_G2.mp4",
+     "frames": [
+      "assets/round2_G2_f0.jpg",
+      "assets/round2_G2_f2.jpg",
+      "assets/round2_G2_f4.jpg"
+     ],
+     "refs": [
+      "assets/plate_paint_article.png"
+     ],
+     "prompt": "A man in a light blue denim work shirt, a red carpenter's pencil tucked over one ear, crouches close to a white glass-panel door and measures the lock backset with a yellow-and-black tape measure: he holds the tape flat against the face of the door and reads the short distance — only a couple of inches — from the edge of the door to the centre of the knob.\nIn order: he hooks the tape at the edge of the door beside the latch; then he leans in and reads the measurement at the centre of the knob.\nMedium shot from the room side, showing his face in profile, his hands and the two locks. Static shot; the camera does not pan, tilt or zoom.\nThe man is visible from the chest up, working steadily with both hands.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the white door, the stainless steel deadbolt above the stainless steel knob, the frosted glass panel with white blinds, the green fiddle-leaf fig plant, the walls and the lighting exactly as in the reference image; add the man in front of the door. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "G3",
+     "approach": "ref = CROP plate (hands still present) — original camera",
+     "status": "ok",
+     "note": "Two findings. (1) R3: bare HANDS in a reference are NOT rejected (this rendered) — R3 blocks bodies/faces/heads but tolerates disembodied hands. (2) Composition: the tight door crop FOUGHT the framing exactly as predicted — the model produced a face-side/front view, not the intended hinge-side back view. Crop is the wrong tool when the shot has a person in a specific pose.",
+     "video": "assets/round2_G3.mp4",
+     "frames": [
+      "assets/round2_G3_f0.jpg",
+      "assets/round2_G3_f2.jpg",
+      "assets/round2_G3_f4.jpg"
+     ],
+     "refs": [
+      "assets/plate_crop.jpg"
+     ],
+     "prompt": "A man in a light blue denim work shirt, a red carpenter's pencil tucked over one ear, crouches close to a white glass-panel door and measures the lock backset with a yellow-and-black tape measure: he holds the tape flat against the face of the door and reads the short distance — only a couple of inches — from the edge of the door to the centre of the knob.\nIn order: he hooks the tape at the edge of the door beside the latch; then he leans in and reads the measurement at the centre of the knob.\nMedium shot from behind his left shoulder on the hinge side of the door, looking past his back and arm toward the two locks. Static shot; the camera does not pan, tilt or zoom.\nThe man is visible from the chest up, working steadily with both hands.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the white door, the stainless steel deadbolt above the stainless steel knob, the frosted glass panel with white blinds, the green fiddle-leaf fig plant, the walls and the lighting exactly as in the reference image; add the man in front of the door. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "G4",
+     "approach": "t2v (no reference) — refined prompt, original camera",
+     "status": "ok",
+     "note": "The control, and the punchline: even with 'behind his left shoulder, hinge side' spelled out, pure text put the camera on his FACE side again — it did NOT reproduce the hinge-side back view. So the composition win in G1 came from the PLATE, not the words. Hardware is invented (plausible but not the real door).",
+     "video": "assets/round2_G4.mp4",
+     "frames": [
+      "assets/round2_G4_f0.jpg",
+      "assets/round2_G4_f2.jpg",
+      "assets/round2_G4_f4.jpg"
+     ],
+     "refs": [],
+     "prompt": "A man in a light blue denim work shirt, a red carpenter's pencil tucked over one ear, crouches close to a white glass-panel door and measures the lock backset with a yellow-and-black tape measure: he holds the tape flat against the face of the door and reads the short distance — only a couple of inches — from the edge of the door to the centre of the knob.\nIn order: he hooks the tape at the edge of the door beside the latch; then he leans in and reads the measurement at the centre of the knob.\nMedium shot from behind his left shoulder on the hinge side of the door, looking past his back and arm toward the two locks. Static shot; the camera does not pan, tilt or zoom.\nThe man is visible from the chest up, working steadily with both hands.\nPhotoreal Home Depot how-to footage. Bright natural 5500K daylight through the door's glass pane and a nearby window, a green fiddle-leaf fig plant and a bright, clean room behind him. The door carries a stainless steel deadbolt above a stainless steel knob, with a tall frosted glass panel and white blinds to the right. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round3",
+   "label": "ROUND 3 — get the MEASUREMENT right (ref-mode, front plate)",
+   "params": "8s · 720p · 16:9 · audio off · one measurement per clip · plain-shirt negative (fixed G2's invented logo)",
+   "shared_prompt_note": "Goal per Hooman: show WHAT is being measured (the 3 article measurements). Camera angle no longer matters; measurement clarity does. Finding: Seedance ALWAYS fully extends the tape blade — the requested short span (2-3/8 in etc.) never overrides that prior. Next lever = crop the plate to a macro so the over-extended blade falls out of frame (R2: framing follows the reference).",
+   "experiments": [
+    {
+     "id": "V1_backset",
+     "approach": "ref = front plate (knob installed) — measure the BACKSET (edge → knob centre, ~2-3/8 in)",
+     "status": "ok",
+     "note": "Right idea, wrong execution: the blade OVER-EXTENDS a foot past the knob onto the glass, so it reads as a generic wide measurement, not the short backset. Hardware + plain shirt perfect.",
+     "video": "assets/round3_V1_backset.mp4",
+     "frames": [
+      "assets/round3_V1_backset_f2.jpg",
+      "assets/round3_V1_backset_f4.jpg",
+      "assets/round3_V1_backset_f6.jpg"
+     ],
+     "refs": [
+      "assets/plate_paint_article.png"
+     ],
+     "prompt": "A man in a plain light-blue denim work shirt, a red carpenter's pencil tucked over one ear, crouches close to the white glass-panel door and measures the lock BACKSET. He hooks the metal end of a yellow tape measure on the edge of the door right beside the latch and pulls the blade only two or three inches across the face of the door to the centre of the door knob, reading about two and three-eighths inches.\nIn order: he sets the tape's hook on the edge of the door by the latch; then he reads the short distance at the centre of the knob.\nMedium close shot from the room side, framed on his hands, the tape measure and the lockset. Static shot; the camera does not pan, tilt or zoom.\nThe man is visible from the chest up and keeps his fingers clear of the tape's markings so the numbers stay readable.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the white door, the stainless steel deadbolt and door knob, the frosted glass panel with white blinds, the green fiddle-leaf fig plant, the walls and the lighting exactly as in the reference image; add the man in front of the door. His denim shirt is a plain solid colour with no text, no logo, no wordmark and no writing anywhere. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "V2_thickness",
+     "approach": "ref = front plate — measure door THICKNESS (across the slab edge, ~1-3/8 in)",
+     "status": "ok",
+     "note": "Missed the concept: ran the tape VERTICALLY down the door edge instead of across the ~1-3/8 in slab depth. Hard from a face-on camera — likely needs a plate looking at the open door's edge.",
+     "video": "assets/round3_V2_thickness.mp4",
+     "frames": [
+      "assets/round3_V2_thickness_f2.jpg",
+      "assets/round3_V2_thickness_f4.jpg",
+      "assets/round3_V2_thickness_f6.jpg"
+     ],
+     "refs": [
+      "assets/plate_paint_article.png"
+     ],
+     "prompt": "A man in a plain light-blue denim work shirt, a red carpenter's pencil tucked over one ear, crouches close to the white glass-panel door and measures the THICKNESS of the door slab. He holds a yellow tape measure flat against the narrow front edge of the door and reads the thickness straight across the edge, from the front face to the back face of the door, about one and three-eighths inches.\nIn order: he sets the tape on the front edge of the door; then he reads the thickness across the edge.\nMedium close shot from the room side, framed on his hands, the tape measure and the lockset. Static shot; the camera does not pan, tilt or zoom.\nThe man is visible from the chest up and keeps his fingers clear of the tape's markings so the numbers stay readable.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the white door, the stainless steel deadbolt and door knob, the frosted glass panel with white blinds, the green fiddle-leaf fig plant, the walls and the lighting exactly as in the reference image; add the man in front of the door. His denim shirt is a plain solid colour with no text, no logo, no wordmark and no writing anywhere. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "V3_diameter",
+     "approach": "ref = BORE plate (knob painted out → empty hole) — measure the hole DIAMETER (~2-1/8 in)",
+     "status": "ok",
+     "note": "Empty-bore plate worked and he measures at the hole, but same over-extension past it. Partial — the feature (empty bore) reads clearly.",
+     "video": "assets/round3_V3_diameter.mp4",
+     "frames": [
+      "assets/round3_V3_diameter_f2.jpg",
+      "assets/round3_V3_diameter_f4.jpg",
+      "assets/round3_V3_diameter_f6.jpg"
+     ],
+     "refs": [
+      "assets/plate_bore_article.png"
+     ],
+     "prompt": "A man in a plain light-blue denim work shirt, a red carpenter's pencil tucked over one ear, crouches close to the white glass-panel door and measures the DIAMETER of the round bore hole cut in the door. He lays a yellow tape measure straight across the open round hole in the face of the door, from one edge of the hole to the opposite edge, reading about two and one-eighth inches across.\nIn order: he lays the tape across the round hole; then he reads the diameter from edge to edge.\nMedium close shot from the room side, framed on his hands, the tape measure and the lockset. Static shot; the camera does not pan, tilt or zoom.\nThe man is visible from the chest up and keeps his fingers clear of the tape's markings so the numbers stay readable.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the white door, the stainless steel deadbolt, the empty round bore hole in the door, the frosted glass panel with white blinds, the green fiddle-leaf fig plant, the walls and the lighting exactly as in the reference image; add the man in front of the door. His denim shirt is a plain solid colour with no text, no logo, no wordmark and no writing anywhere. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round4",
+   "label": "ROUND 4 — fix the tape: macro-crop (A) vs positional i2v (B)",
+   "params": "8s · 720p · 16:9 · audio off · A = ref macro-crop · B = i2v first-frame · NEITHER fixed the tape over-extension",
+   "shared_prompt_note": "Two levers against the 'tape always fully extends' prior. A: crop the plate to a macro so the blade would fall off-frame — but the model just re-introduces the tape BODY from a frame edge. B: use the plate as the literal FIRST frame — its positional lock only holds when frame 0 has no person (bore plate held; knob plate did not). Neither made the measurement read short or legible. Numerals are always garbled (unfixable text prior). → led to Round 5: a reference plate that ALREADY shows a short tape.",
+   "experiments": [
+    {
+     "id": "A1_backset_macro",
+     "approach": "ref = MACRO-CROP plate (door edge + knob) — backset",
+     "status": "ok",
+     "note": "Macro crop framed the knob well, but the model still brought the tape BODY + hand in from the right frame edge, so the blade spans the full frame — still over-extended, not the short backset. Feature clear; hardware + plain sleeve good; numerals garbled.",
+     "refs": [
+      "assets/plate_macro_backset.png"
+     ],
+     "video": "assets/round4_A1_backset_macro.mp4",
+     "frames": [
+      "assets/round4_A1_f0.jpg",
+      "assets/round4_A1_f1.jpg",
+      "assets/round4_A1_f2.jpg",
+      "assets/round4_A1_f3.jpg"
+     ],
+     "prompt": "Extreme close-up of a hand measuring the BACKSET of a door lock. The metal hook of a yellow tape measure catches on the edge of a white door right beside the latch, and the blade reaches only a short distance to the centre of the stainless steel door knob, reading about two and three-eighths inches.\nIn order: the hook is set on the edge of the door by the latch; then the tape is held steady and the short reading at the centre of the knob is shown.\nExtreme close-up, macro framing that fills the frame with the door edge, the tape and the base of the knob. Static shot; the camera does not pan, tilt or zoom.\nOnly the hands and forearms enter the frame.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the white door, the stainless steel knob, the door edge and the latch exactly as in the reference image. The sleeve is plain denim with no text, no logo and no writing. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "A2_diameter_macro",
+     "approach": "ref = MACRO-CROP plate (bore hole) — diameter",
+     "status": "ok",
+     "note": "Slightly better: hook at the left edge of the round hole, blade across it (~2in plausible), but still over-extends past the hole to the tape body at right. Round hole unmistakably the measured feature.",
+     "refs": [
+      "assets/plate_macro_diameter.png"
+     ],
+     "video": "assets/round4_A2_diameter_macro.mp4",
+     "frames": [
+      "assets/round4_A2_f0.jpg",
+      "assets/round4_A2_f1.jpg",
+      "assets/round4_A2_f2.jpg",
+      "assets/round4_A2_f3.jpg"
+     ],
+     "prompt": "Extreme close-up of a hand measuring the DIAMETER of the round bore hole cut in a white door. A yellow tape measure lies straight across the open round hole, from one edge of the hole to the opposite edge, reading about two and one-eighth inches across.\nIn order: the tape is laid across the round hole; then the reading from edge to edge of the hole is shown.\nExtreme close-up, macro framing that fills the frame with the round bore hole and the tape. Static shot; the camera does not pan, tilt or zoom.\nOnly the hands and forearms enter the frame.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the white door, the empty round bore hole and the door edge exactly as in the reference image. The sleeve is plain denim with no text, no logo and no writing. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "B1_backset_i2v",
+     "approach": "i2v (plate = literal FIRST frame), knob plate — backset",
+     "status": "ok",
+     "note": "Positional first-frame lock FAILED: frame 0 already shows the man + tape (not the clean plate), so the lock was overridden. Tape over-extends; readout illegible. A small dark chest emblem appeared (mild logo risk).",
+     "refs": [
+      "assets/plate_paint_article.png"
+     ],
+     "video": "assets/round4_B1_backset_i2v.mp4",
+     "frames": [
+      "assets/round4_B1_f0.jpg",
+      "assets/round4_B1_f1.jpg",
+      "assets/round4_B1_f2.jpg",
+      "assets/round4_B1_f3.jpg"
+     ],
+     "prompt": "A man in a plain light-blue denim work shirt, a red carpenter's pencil tucked over one ear, crouches close to the white glass-panel door and measures the lock BACKSET. He hooks the metal end of a yellow tape measure on the edge of the door right beside the latch and pulls the blade only two or three inches across the face of the door to the centre of the door knob, reading about two and three-eighths inches.\nIn order: he sets the tape's hook on the edge of the door by the latch; then he reads the short distance at the centre of the knob.\nMedium close shot from the room side, framed on his hands, the tape measure and the lockset. Static shot; the camera does not pan, tilt or zoom.\nThe man is visible from the chest up and keeps his fingers clear of the tape's markings so the numbers stay readable.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the white door, the stainless steel deadbolt and door knob, the frosted glass panel with white blinds, the green fiddle-leaf fig plant, the walls and the lighting exactly as in the reference image; add the man in front of the door. His denim shirt is a plain solid colour with no text, no logo, no wordmark and no writing anywhere. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "B2_diameter_i2v",
+     "approach": "i2v (plate = literal FIRST frame), bore plate — diameter",
+     "status": "ok",
+     "note": "Positional first-frame lock WORKED: opens exactly on the clean empty-bore plate, then the man materializes in naturally (better continuity than global-ref). But tape still over-extends across the door; diameter not legible. Clean plain shirt.",
+     "refs": [
+      "assets/plate_bore_article.png"
+     ],
+     "video": "assets/round4_B2_diameter_i2v.mp4",
+     "frames": [
+      "assets/round4_B2_f0.jpg",
+      "assets/round4_B2_f1.jpg",
+      "assets/round4_B2_f2.jpg",
+      "assets/round4_B2_f3.jpg"
+     ],
+     "prompt": "A man in a plain light-blue denim work shirt, a red carpenter's pencil tucked over one ear, crouches close to the white glass-panel door and measures the DIAMETER of the round bore hole cut in the door. He lays a yellow tape measure straight across the open round hole in the face of the door, from one edge of the hole to the opposite edge, reading about two and one-eighth inches across.\nIn order: he lays the tape across the round hole; then he reads the diameter from edge to edge.\nMedium close shot from the room side, framed on his hands, the tape measure and the lockset. Static shot; the camera does not pan, tilt or zoom.\nThe man is visible from the chest up and keeps his fingers clear of the tape's markings so the numbers stay readable.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the white door, the stainless steel deadbolt, the empty round bore hole in the door, the frosted glass panel with white blinds, the green fiddle-leaf fig plant, the walls and the lighting exactly as in the reference image; add the man in front of the door. His denim shirt is a plain solid colour with no text, no logo, no wordmark and no writing anywhere. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round5",
+   "label": "ROUND 5 — THE FIX: pre-built SHORT-TAPE reference plate + hold-steady",
+   "params": "8s · 720p · 16:9 · audio off · WINNER = C2 (short-tape plate + i2v)",
+   "shared_prompt_note": "Reframed idea after rounds 3-4: don't ask the model to CREATE a short measurement (it always over-extends). Instead build a reference plate (via nano-banana) that ALREADY shows a correctly-placed short tape at the feature, then prompt 'hold steady, almost no motion' so it doesn't re-extend (R2: content follows the reference). Works in both modes; i2v is the most faithful. Caveat: rendered tape NUMERALS stay garbled up close — this fixes span/placement, not legibility; keep the tape mid-distance and add the real number as a post graphic.",
+   "experiments": [
+    {
+     "id": "C1_backset_ref",
+     "approach": "SHORT-TAPE plate + ref-mode — backset",
+     "status": "ok",
+     "note": "Short-tape plate (a hand already holding a correctly-placed short tape) + 'hold steady, no motion' prompt. Tape STAYS short all 8s — no re-extension. Ref mode reframes tighter than the plate but the short measurement persists. Hardware/plain sleeve held.",
+     "refs": [
+      "assets/plate_shorttape_backset.png"
+     ],
+     "video": "assets/round5_C1_backset_ref.mp4",
+     "frames": [
+      "assets/round5_C1_backset_ref_f0.jpg",
+      "assets/round5_C1_backset_ref_f1.jpg",
+      "assets/round5_C1_backset_ref_f2.jpg",
+      "assets/round5_C1_backset_ref_f3.jpg"
+     ],
+     "prompt": "A hand holds a yellow tape measure steady against a white door, measuring the short backset from the edge of the door beside the latch to the centre of the stainless knob, exactly as shown in the reference image. The tape stays exactly in place and does NOT extend or move; there is almost no motion - the hand simply holds it steady while the short measurement is shown. Extreme close-up on the door edge, the tape and the knob. Static shot; the camera does not pan, tilt or zoom. Only a hand and forearm are in frame. Photoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the door, the knob, the tape and its SHORT position exactly as in the reference image. Plain denim sleeve, no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "C2_backset_i2v",
+     "approach": "SHORT-TAPE plate + i2v (first-frame lock) — backset  ★",
+     "status": "ok",
+     "note": "★ THE FIX. Frame 0 = the plate exactly; the short tape (door edge → across the knob, case in hand, NOT crossing the glass) holds stable through the whole clip with minimal motion. i2v preserves the plate's placement + framing better than ref. This is a clean, correct-looking backset measurement — the tape no longer shoots across the door.",
+     "refs": [
+      "assets/plate_shorttape_backset.png"
+     ],
+     "video": "assets/round5_C2_backset_i2v.mp4",
+     "frames": [
+      "assets/round5_C2_backset_i2v_f0.jpg",
+      "assets/round5_C2_backset_i2v_f1.jpg",
+      "assets/round5_C2_backset_i2v_f2.jpg",
+      "assets/round5_C2_backset_i2v_f3.jpg"
+     ],
+     "prompt": "A hand holds a yellow tape measure steady against a white door, measuring the short backset from the edge of the door beside the latch to the centre of the stainless knob, exactly as shown in the reference image. The tape stays exactly in place and does NOT extend or move; there is almost no motion - the hand simply holds it steady while the short measurement is shown. Extreme close-up on the door edge, the tape and the knob. Static shot; the camera does not pan, tilt or zoom. Only a hand and forearm are in frame. Photoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the door, the knob, the tape and its SHORT position exactly as in the reference image. Plain denim sleeve, no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "C3_diameter_i2v",
+     "approach": "SHORT-TAPE plate + i2v — bore diameter",
+     "status": "ok",
+     "note": "Same recipe for the diameter: tape lies across the bore hole (hook at the hole's rim), hole visible under it, holds stable, no over-extension across the door. Plate took 2 edit tries (attempt 1 ran the blade past the hole; fixed by anchoring the hook at the hole's LEFT rim).",
+     "refs": [
+      "assets/plate_shorttape_diameter.png"
+     ],
+     "video": "assets/round5_C3_diameter_i2v.mp4",
+     "frames": [
+      "assets/round5_C3_diameter_i2v_f0.jpg",
+      "assets/round5_C3_diameter_i2v_f1.jpg",
+      "assets/round5_C3_diameter_i2v_f2.jpg",
+      "assets/round5_C3_diameter_i2v_f3.jpg"
+     ],
+     "prompt": "A hand holds a yellow tape measure steady, laid flat across the round bore hole in a white door, measuring the short diameter of that circular hole from its left rim to its right rim, exactly as shown in the reference image. The tape stays exactly in place and does NOT extend or move; there is almost no motion - the hand simply holds it steady while the short measurement across the hole is shown. Extreme close-up on the round bore hole and the tape. Static shot; the camera does not pan, tilt or zoom. Only a hand and forearm are in frame. Photoreal Home Depot how-to footage, bright natural 5500K daylight. Keep the door, the round bore hole, the tape and its SHORT position exactly as in the reference image. Plain denim sleeve, no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round6",
+   "label": "ROUND 6 — MOTION via multiple KEYFRAMES (vendor @ImageN method)",
+   "params": "8s · 720p · 16:9 · audio off · WINNER = K1 (3 ordered keyframes) · fal reference-to-video HONORS @Image keyframe directives",
+   "shared_prompt_note": "Correcting round 5's 'hold steady' mistake: the shot is motion through beats. Per the ByteDance vendor guide (sd25-pe, Keyframe Anchors), pass the real beat frames as ordered reference images (image_urls order = @Image1..N) and declare roles verbatim in the prompt. Face-free crops (hands+tape+lockset) keep it R3-safe. Result: real hand motion AND the tape stays short (the middle keyframe anchors it). This is the reproducible recipe for beat-based action. i2v first+last alone (K2) is NOT enough — the unconstrained midpoint over-extends.",
+   "experiments": [
+    {
+     "id": "K1_keyframes_ref",
+     "approach": "★ 3 ordered KEYFRAMES (vendor @Image1/2/3) — reference-to-video",
+     "status": "ok",
+     "note": "★ THE MOTION FIX. Three real beat frames passed as image_urls=[kf1,kf2,kf3] with the vendor's verbatim directives ('Use @Image1 as the first frame', '@Image2 defines the second keyframe', 'Use @Image3 as the last frame', 'Use @Image1 through @Image3 as keyframes in that order'). fal's reference-to-video HONORS them: the clip opens on kf1, passes through kf2, ends on kf3 with genuine hand MOTION — and the tape stays correctly SHORT the whole time (the middle keyframe kf2 anchors it, killing the over-extension). R3-clean (face-free crops), no invented logo. Caveat: kf3 shows the tape being lowered, so it ends 'measure then lower' rather than a clean read-hold — pick/ýreorder a 'held across knob' last frame for a cleaner ending.",
+     "refs": [
+      "assets/round6_kf1.png",
+      "assets/round6_kf2.png",
+      "assets/round6_kf3.png"
+     ],
+     "video": "assets/round6_K1_keyframes_ref.mp4",
+     "frames": [
+      "assets/round6_K1_f0.png",
+      "assets/round6_K1_f1.png",
+      "assets/round6_K1_f2.png",
+      "assets/round6_K1_f3.png"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order.\nUse @Image1 as the first frame.\nThis first frame defines the starting composition: a pair of hands bringing a yellow tape measure to the lockset of a white glass-panel door, the tape's hook set against the edge of the door beside the latch and the case held near the stainless knob; close-up on the lockset.\n@Image2 defines the second keyframe: the hands hold the tape steady across the face of the door from the edge to the centre of the knob, measuring the short backset.\nUse @Image3 as the last frame.\nThis last frame defines the ending composition: the hands steady the tape at the knob with the short backset held and read, same close-up framing.\nThe shot passes through the states defined by @Image1, @Image2, and @Image3 in order, using continuous natural hand motion to transition between stages; the tape stays a short span across the lockset and does not extend across the door or onto the glass panel.\nMaintain continuity in the white door, the stainless steel deadbolt and knob, the yellow-and-black tape measure, the hands and plain denim sleeve, the frosted glass panel with blinds, and the fixed close-up camera axis.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. The sleeve is plain denim with no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "K2_firstlast_i2v",
+     "approach": "i2v first+last only (kf1 → kf3, no middle) — control",
+     "status": "ok",
+     "note": "FAILS. With only first (kf1) and last (kf3) frames and NO middle constraint, the interpolation invents a big 'pull the blade out' motion at the midpoint — at t2.7 the tape stretches clear across the door and glass, then retracts to reach kf3. Proves the middle keyframe in K1 is what prevents over-extension. Motion + R3 fine, but the measurement is wrong mid-clip.",
+     "refs": [
+      "assets/round6_kf1.png",
+      "assets/round6_kf3.png"
+     ],
+     "video": "assets/round6_K2_firstlast_i2v.mp4",
+     "frames": [
+      "assets/round6_K2_f0.png",
+      "assets/round6_K2_f1.png",
+      "assets/round6_K2_f2.png",
+      "assets/round6_K2_f3.png"
+     ],
+     "prompt": "The shot opens on a pair of hands bringing a yellow tape measure to the lockset of a white glass-panel door, the hook against the door edge beside the latch and the case near the stainless knob, close-up on the lockset. After a continuous, natural measuring motion the hands settle into the final frame, steadying the tape across from the door edge to the centre of the knob with the short backset held and read. The tape stays a short span across the lockset and does NOT extend across the door or onto the glass panel. Maintain continuity in the white door, the stainless deadbolt and knob, the yellow-and-black tape measure, the hands and plain denim sleeve, the frosted glass panel, and the fixed close-up camera. Photoreal Home Depot how-to footage, bright natural 5500K daylight. The sleeve is plain denim with no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round7",
+   "label": "ROUND 7 — polish shot 0003 (a): add the door-closing motion",
+   "params": "8s · 720p · 16:9 · audio off · 3 ordered keyframes + door swings toward camera mid-measure",
+   "shared_prompt_note": "Hooman's note: in beat3 the start of the tape goes out of frame; in the real video the person closes the door slightly toward the camera to reveal the measurement. Added that motion via prompt (as a mid-action event, kept out of the last-frame definition so it doesn't fight the kf3 anchor), plus a wider crop so the hook stays in frame. v2 with the TIP-sliver removed + stronger door swing is rendering.",
+   "experiments": [
+    {
+     "id": "A1_door_motion",
+     "approach": "3 keyframes (winning method) + DOOR-CLOSING motion + wider crop to keep the tape hook in frame",
+     "status": "ok",
+     "note": "Polish of the winner. Wider face-free crop now keeps the tape's HOOK (start of tape) in frame the whole clip. There IS a slight door-toward-camera reveal (more door face/jamb by t4-7.8) but it's subtle. Tape stays short. TWO issues: (1) a sliver of the source TIP orange graphic at the crop bottom got reproduced (orange blob + caption line, visible at t0) — being fixed in v2 by trimming the crop bottom; (2) the ending drifts to 'tape lowered at the latch' (inherited from beat3). v2 (rendering now) trims the TIP and strengthens the door swing.",
+     "refs": [
+      "assets/round7_v1_kf1.png",
+      "assets/round7_v1_kf2.png",
+      "assets/round7_v1_kf3.png"
+     ],
+     "video": "assets/round7_A1_door_motion.mp4",
+     "frames": [
+      "assets/round7_A1_f0.jpg",
+      "assets/round7_A1_f1.jpg",
+      "assets/round7_A1_f2.jpg",
+      "assets/round7_A1_f3.jpg",
+      "assets/round7_A1_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order.\nUse @Image1 as the first frame.\nThis first frame defines the starting composition: a pair of hands holding a yellow tape measure against the lockset of a white glass-panel door, the hook end of the tape caught on the edge of the door beside the latch and the case in the hand near the stainless knob; close-up on the lockset.\n@Image2 defines the second keyframe: the hands hold the tape steady across the short distance from the door edge to the centre of the knob, measuring the backset.\nUse @Image3 as the last frame.\nThis last frame defines the ending composition: the hands keep the tape held across the lockset with the short backset still shown.\nThe shot passes through the states defined by @Image1, @Image2 and @Image3 in order with continuous natural hand motion. Partway through, as he measures, he gently pulls the door a few degrees toward the camera so the lockset turns to face the viewer and the measurement is easier to see; the camera itself stays fixed. Throughout, the hook end of the tape at the door edge — the beginning of the tape — stays fully within the frame, and the tape stays a short span across the lockset, never extending across the door or onto the glass panel.\nMaintain continuity in the white door, the stainless steel deadbolt and knob, the yellow-and-black tape measure, the hands and bare forearm, and the frosted glass panel with blinds.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "A2_door_motion_v2",
+     "approach": "v2 — TIP sliver removed (tighter crop) + STRONGER door swing",
+     "status": "ok",
+     "note": "★ Best shot 0003 so far. TIP orange graphic is GONE; the tape hook stays in frame; the tape stays short throughout; and the door-toward-camera reveal is more visible than v1 (by t4-7.8 the door face turns to the viewer, more jamb visible, knob more frontal). Remaining: the ending still drifts to 'tape held at the latch' rather than a clean 'read across to the knob' — that is inherited from beat3 (the tape is being lowered there). To get a crisp read-hold ending we'd swap kf3 for a frame where the tape is still held across to the knob. Minor: a small hair sliver enters top-left at t4 (output-only, not an R3/policy issue).",
+     "refs": [
+      "assets/round7_v2_kf1.png",
+      "assets/round7_v2_kf2.png",
+      "assets/round7_v2_kf3.png"
+     ],
+     "video": "assets/round7_A2_door_motion_v2.mp4",
+     "frames": [
+      "assets/round7_A2_f0.jpg",
+      "assets/round7_A2_f1.jpg",
+      "assets/round7_A2_f2.jpg",
+      "assets/round7_A2_f3.jpg",
+      "assets/round7_A2_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order.\nUse @Image1 as the first frame.\nThis first frame defines the starting composition: a pair of hands holding a yellow tape measure against the lockset of a white glass-panel door, the hook end of the tape caught on the edge of the door beside the latch and the case in the hand near the stainless knob; close-up on the lockset.\n@Image2 defines the second keyframe: the hands hold the tape steady across the short distance from the door edge to the centre of the knob, measuring the backset.\nUse @Image3 as the last frame.\nThis last frame defines the ending composition: the hands keep the tape held across the lockset with the short backset still shown.\nThe shot passes through the states defined by @Image1, @Image2 and @Image3 in order with continuous natural hand motion. Partway through, he clearly swings the door a few inches toward the camera — the door visibly rotates toward the viewer — so the lockset turns to face the camera and the measurement is easier to see; the camera itself stays fixed. Throughout, the hook end of the tape at the door edge — the beginning of the tape — stays fully within the frame, and the tape stays a short span across the lockset, never extending across the door or onto the glass panel.\nMaintain continuity in the white door, the stainless steel deadbolt and knob, the yellow-and-black tape measure, the hands and bare forearm, and the frosted glass panel with blinds.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round8",
+   "label": "ROUND 8 — WIDE shot via split-role refs (composition plate + tape-pose crop)",
+   "params": "8s · 720p · 16:9 · audio off · @Image1 wide plate = camera/scene · @Image2 crop = tape pose · person via prompt",
+   "shared_prompt_note": "Hooman's idea: keep the correct tape info from the close keyframes but in a WIDER shot like the original. Method (vendor multi-asset roles): @Image1 = wide person-free plate for composition/camera; @Image2 = the tight crop used ONLY for the tape+hand pose ('without changing the composition of @Image1'); the person is inserted via the prompt. VERIFIED: the short backset pose transfers cleanly into the wide frame, no over-extension. W1=front (clearest measurement), W2=hinge (closest to original camera).",
+   "experiments": [
+    {
+     "id": "W1_wide_front",
+     "approach": "@Image1 = WIDE front plate (composition) + @Image2 = kf1 (tape pose) — person via prompt",
+     "status": "ok",
+     "note": "★ WIDE version works. t0 opens on the wide empty-door plate (composition from @Image1); a full man is inserted measuring, tape holds the CORRECT SHORT backset pose from @Image2 (no over-extension). Clearest read of the measurement for 4 of 5 frames. WEAKNESS: at t7.8 it collapses to a tight hands-only crop (the head leaves frame) — it does NOT hold the wide framing to the end. Door swing is slight. Clean/R3-safe.",
+     "refs": [
+      "assets/round8_W1_img1_plate.png",
+      "assets/round8_img2_kf1.png"
+     ],
+     "video": "assets/round8_W1_wide_front.mp4",
+     "frames": [
+      "assets/round8_W1_wide_front_f0.jpg",
+      "assets/round8_W1_wide_front_f1.jpg",
+      "assets/round8_W1_wide_front_f2.jpg",
+      "assets/round8_W1_wide_front_f3.jpg",
+      "assets/round8_W1_wide_front_f4.jpg"
+     ],
+     "prompt": "Use @Image1 as the first frame.\nThis first frame defines the composition, scene, camera framing and lighting of the shot — a wider view of the man's workspace at a white glass-panel door with a stainless deadbolt above a stainless knob. Keep this framing and scene.\nUse @Image2 for the exact position and pose of the yellow tape measure and the hands making a short BACKSET measurement over the lockset — the hook caught on the edge of the door beside the latch and the blade only a short span to the centre of the knob — without changing the first-frame composition defined by @Image1.\nThe shot begins naturally from the first frame defined by @Image1. A man in a plain denim shirt with a red carpenter's pencil over his ear crouches into frame and measures the door-lock backset, his hands holding the yellow tape exactly as positioned in @Image2 — a short span across the lockset that never extends across the door or onto the glass panel. Partway through, he gently swings the door a few inches toward the camera so the lockset turns to face the viewer and the measurement is easier to see; the camera itself stays fixed.\nMaintain continuity in the white door, the stainless deadbolt and knob, the yellow-and-black tape measure, the plant, the frosted glass panel with blinds, and the lighting; keep the tape's short measured position from @Image2.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. His shirt is plain denim with no text, no logo and no writing. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "W2_wide_hinge",
+     "approach": "@Image1 = WIDE hinge-side plate (composition) + @Image2 = kf1 (tape pose)",
+     "status": "ok",
+     "note": "★ STRONGER WIDE DELIVERABLE. Hinge-side plate → the medium shot closest to the original video (man enters from left, back/3-4 to camera). HOLDS the wide medium framing for the entire 8s (unlike W1, which zooms in at the end), person in frame throughout, tape stays SHORT across the knob the whole clip. Door swing slight. Clean/R3-safe. Recommended wide take.",
+     "refs": [
+      "assets/round8_W2_img1_plate.png",
+      "assets/round8_img2_kf1.png"
+     ],
+     "video": "assets/round8_W2_wide_hinge.mp4",
+     "frames": [
+      "assets/round8_W2_wide_hinge_f0.jpg",
+      "assets/round8_W2_wide_hinge_f1.jpg",
+      "assets/round8_W2_wide_hinge_f2.jpg",
+      "assets/round8_W2_wide_hinge_f3.jpg",
+      "assets/round8_W2_wide_hinge_f4.jpg"
+     ],
+     "prompt": "Use @Image1 as the first frame.\nThis first frame defines the composition, scene, camera framing and lighting of the shot — a wider view of the man's workspace at a white glass-panel door with a stainless deadbolt above a stainless knob. Keep this framing and scene.\nUse @Image2 for the exact position and pose of the yellow tape measure and the hands making a short BACKSET measurement over the lockset — the hook caught on the edge of the door beside the latch and the blade only a short span to the centre of the knob — without changing the first-frame composition defined by @Image1.\nThe shot begins naturally from the first frame defined by @Image1. A man in a plain denim shirt with a red carpenter's pencil over his ear crouches into frame and measures the door-lock backset, his hands holding the yellow tape exactly as positioned in @Image2 — a short span across the lockset that never extends across the door or onto the glass panel. Partway through, he gently swings the door a few inches toward the camera so the lockset turns to face the viewer and the measurement is easier to see; the camera itself stays fixed.\nMaintain continuity in the white door, the stainless deadbolt and knob, the yellow-and-black tape measure, the plant, the frosted glass panel with blinds, and the lighting; keep the tape's short measured position from @Image2.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. His shirt is plain denim with no text, no logo and no writing. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round9",
+   "label": "ROUND 9 — FINALIZE shot 0003: wide camera + 3-beat motion (4 refs)",
+   "params": "8s · 720p · 16:9 · audio off · WINNER = F_hinge · 1 wide plate (camera) + 3 ordered beat crops (motion)",
+   "shared_prompt_note": "Correcting round 8 (which dropped 2 of the 3 beats): use FOUR refs — @Image1 = wide plate for camera/composition (framing LOCKED for the whole clip, no zoom), @Image2/@Image3/@Image4 = the 3 beat crops used ONLY for the tape/hand pose per beat, without changing @Image1's framing. Gives round-7-v2's beat motion in round-8's wide camera. F_hinge holds the wide frame all 8s; F_front collapses to a close-up + shows a tape brand logo → prefer the hinge/back-angled wide plate.",
+   "experiments": [
+    {
+     "id": "F_hinge",
+     "approach": "★ FINALIZED — @Image1 wide HINGE plate (camera) + @Image2/3/4 = 3 beat crops (motion)",
+     "status": "ok",
+     "note": "★ FINAL shot 0003. Combines round-7-v2 beat MOTION with round-8 WIDE camera via 4 refs (1 wide plate + 3 ordered beat crops). HOLDS the wide medium framing the full 8s (no W1-style collapse), genuine 3-beat measuring motion, tape stays the correct SHORT backset (edge → knob, never across the glass), full person inserted, and the framing closest to the original video. Door swing is still slight. Clean/R3-safe, no competitor logo. This is the recommended deliverable.",
+     "refs": [
+      "assets/round9_wide_hinge.png",
+      "assets/round9_kf1.png",
+      "assets/round9_kf2.png",
+      "assets/round9_kf3.png"
+     ],
+     "video": "assets/round9_F_hinge.mp4",
+     "frames": [
+      "assets/round9_F_hinge_f0.png",
+      "assets/round9_F_hinge_f1.png",
+      "assets/round9_F_hinge_f2.png",
+      "assets/round9_F_hinge_f3.png",
+      "assets/round9_F_hinge_f4.png"
+     ],
+     "prompt": "Use @Image1 as the first frame.\nThis first frame sets the composition, camera position, scene and framing: a wider medium shot of the man at a white glass-panel door with a stainless deadbolt above a stainless knob, a frosted glass panel with blinds, a plant, and bright daylight. Keep this WIDE medium framing and camera for the entire shot; do NOT zoom in to a close-up.\nA man in a plain denim shirt with a red carpenter's pencil over his ear crouches at the door and measures the door-lock backset. His hands and the yellow tape measure move through three beats in order, taking their position and pose from @Image2, then @Image3, then @Image4:\n@Image2 is beat 1: the hook is caught on the edge of the door beside the latch and the tape is brought a short span across toward the knob.\n@Image3 is beat 2: the hands hold the tape steady across the short distance from the door edge to the centre of the knob, measuring the backset.\n@Image4 is beat 3: the hands keep the tape at the lockset with the short backset still shown.\nUse @Image2, @Image3 and @Image4 only for the position and pose of the hands and the yellow tape over the lockset — a short span that never extends across the door or onto the glass panel — without changing the wide composition, camera or framing defined by @Image1.\nThe action flows continuously through beats 1, 2 and 3 with natural hand motion. Partway through, he clearly turns the door a few inches toward the camera so the lockset faces the viewer and the measurement is easier to see; the camera itself stays fixed and the wide medium framing is kept the whole time.\nMaintain continuity in the white door, the stainless deadbolt and knob, the yellow-and-black tape measure, the man's denim shirt and red pencil, the plant, and the frosted glass panel.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. His shirt is plain denim with no text, no logo and no writing. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "F_front",
+     "approach": "same 4-ref method, wide FRONT plate — comparison (disqualified)",
+     "status": "ok",
+     "note": "Disqualified. Same 4-ref setup with the FRONT plate: starts wide but COLLAPSES to a tight close-up by t6 (repeats round-8 W1), the tape over-extends onto the glass, and a legible 'STANLEY 30 FT' logo appears on the tape body (brand violation). Confirms the FRONT wide plate is prone to zoom-collapse; the HINGE/back-angled plate holds framing.",
+     "refs": [
+      "assets/round9_wide_front.png",
+      "assets/round9_kf1.png",
+      "assets/round9_kf2.png",
+      "assets/round9_kf3.png"
+     ],
+     "video": "assets/round9_F_front.mp4",
+     "frames": [
+      "assets/round9_F_front_f0.png",
+      "assets/round9_F_front_f1.png",
+      "assets/round9_F_front_f2.png",
+      "assets/round9_F_front_f3.png",
+      "assets/round9_F_front_f4.png"
+     ],
+     "prompt": "Use @Image1 as the first frame.\nThis first frame sets the composition, camera position, scene and framing: a wider medium shot of the man at a white glass-panel door with a stainless deadbolt above a stainless knob, a frosted glass panel with blinds, a plant, and bright daylight. Keep this WIDE medium framing and camera for the entire shot; do NOT zoom in to a close-up.\nA man in a plain denim shirt with a red carpenter's pencil over his ear crouches at the door and measures the door-lock backset. His hands and the yellow tape measure move through three beats in order, taking their position and pose from @Image2, then @Image3, then @Image4:\n@Image2 is beat 1: the hook is caught on the edge of the door beside the latch and the tape is brought a short span across toward the knob.\n@Image3 is beat 2: the hands hold the tape steady across the short distance from the door edge to the centre of the knob, measuring the backset.\n@Image4 is beat 3: the hands keep the tape at the lockset with the short backset still shown.\nUse @Image2, @Image3 and @Image4 only for the position and pose of the hands and the yellow tape over the lockset — a short span that never extends across the door or onto the glass panel — without changing the wide composition, camera or framing defined by @Image1.\nThe action flows continuously through beats 1, 2 and 3 with natural hand motion. Partway through, he clearly turns the door a few inches toward the camera so the lockset faces the viewer and the measurement is easier to see; the camera itself stays fixed and the wide medium framing is kept the whole time.\nMaintain continuity in the white door, the stainless deadbolt and knob, the yellow-and-black tape measure, the man's denim shirt and red pencil, the plant, and the frosted glass panel.\nPhotoreal Home Depot how-to footage, bright natural 5500K daylight. His shirt is plain denim with no text, no logo and no writing. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round10",
+   "label": "ROUND 10 — prompt-fix: honor all 3 beats IN the wide frame (role-assignment test)",
+   "params": "8s · 720p · 16:9 · audio off · finding: WIDE PLATE MUST BE @Image1 (first frame) to hold framing",
+   "shared_prompt_note": "Round 9 broke the keyframe mechanism by demoting the crops to loose pose-refs. This pass restores the vendor ordered-keyframe directives + describes 3 distinct measurements, testing where the wide plate goes. FINDING: wide plate as @Image1 first frame (Va) HOLDS the wide frame + person + motion but the tight beat keyframes blur (scale mismatch); crops-first with wide as a trailing @Image4 override (Vb) keeps the 3 distinct beats but ignores the wide override and stays close-cropped + shows a brand logo. Next: keep Va's wide-first-frame structure and sharpen the 3 distinct beat directives.",
+   "experiments": [
+    {
+     "id": "Va",
+     "approach": "wide plate = @Image1 FIRST FRAME (camera) + 3 crops = @Image2/3/4 ordered keyframes",
+     "status": "ok",
+     "note": "★ Holds the goal partially. WIDE medium framing HELD the full 8s + full person visible + continuous measuring motion + tape short + clean (no logo). WEAKNESS: the 3 beats blur into edge/vertical measuring variations rather than the crisp across-the-lock → lock-to-edge → thickness trio; the tight beat keyframes get down-weighted by the dominant wide first-frame (scale mismatch). Structural WIN: putting the wide plate as @Image1 first frame is what forces the held wide framing.",
+     "refs": [
+      "assets/round9_wide_hinge.png",
+      "assets/round9_kf1.png",
+      "assets/round9_kf2.png",
+      "assets/round9_kf3.png"
+     ],
+     "video": "assets/round10_Va.mp4",
+     "frames": [
+      "assets/round10_Va_f0.png",
+      "assets/round10_Va_f1.png",
+      "assets/round10_Va_f2.png",
+      "assets/round10_Va_f3.png",
+      "assets/round10_Va_f4.png"
+     ],
+     "prompt": "Use @Image1 through @Image4 as keyframes in that order.\nUse @Image1 as the first frame. This first frame defines the composition, camera position, scene and the WIDE medium framing: a man's workspace at a white glass-panel door with a stainless deadbolt above a stainless knob, a plant to the left, bright daylight. Keep this wide medium framing for the entire shot.\n@Image2 defines the second keyframe: the man holds the yellow tape measure across the lockset, measuring the backset across the face of the lock — the hook at the door edge and the blade a short span across to the knob.\n@Image3 defines the third keyframe: the man measures the distance from the lock to the edge of the door, the tape held at the door edge beside the latch.\nUse @Image4 as the last frame. This last frame defines the man measuring the door's thickness at the edge, holding the tape flat against the door by the latch.\nThe shot passes through the states defined by @Image1, @Image2, @Image3 and @Image4 in order, using continuous natural hand and arm motion to move between the three measurements. @Image2, @Image3 and @Image4 are CLOSE views of the lockset — reproduce the hand and tape positions they show, but render everything at the WIDE medium scale and framing of @Image1; do NOT crop or zoom in to the close framing.\nA man in a plain denim shirt with a red carpenter's pencil over his ear performs the measurements and stays visible in the wide shot; the tape span stays short and never extends across the door onto the glass.\nMaintain continuity in the white door, the stainless deadbolt and knob, the yellow-and-black tape measure, the man's denim shirt, the plant, and the frosted glass panel. Photoreal Home Depot how-to footage, bright natural 5500K daylight. Plain denim, no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "Vb",
+     "approach": "3 crops = @Image1/2/3 keyframes + wide plate = @Image4 framing override",
+     "status": "ok",
+     "note": "Instructive failure. The 3 beats ARE distinct here (backset-across → lock-to-edge → thickness), BUT it stays in the CLOSE crop framing the whole clip — the trailing @Image4 wide 'override' is IGNORED (hands-only, no wide shot, no full person), and a legible STANLEY logo shows on the tape. Confirms the role rule: the wide plate must be @Image1 first frame to control framing; a trailing override does nothing.",
+     "refs": [
+      "assets/round9_kf1.png",
+      "assets/round9_kf2.png",
+      "assets/round9_kf3.png",
+      "assets/round9_wide_hinge.png"
+     ],
+     "video": "assets/round10_Vb.mp4",
+     "frames": [
+      "assets/round10_Vb_f0.png",
+      "assets/round10_Vb_f1.png",
+      "assets/round10_Vb_f2.png",
+      "assets/round10_Vb_f3.png",
+      "assets/round10_Vb_f4.png"
+     ],
+     "prompt": "Use @Image1, @Image2 and @Image3 as keyframes in that order, showing three measuring beats.\nUse @Image1 as the first frame. @Image1 = beat 1: the yellow tape held across the lockset measuring the backset across the face of the lock (hook at the door edge, short span to the knob).\n@Image2 defines the second keyframe = beat 2: the tape measuring the distance from the lock to the edge of the door, held at the door edge by the latch.\nUse @Image3 as the last frame = beat 3: the tape held flat at the door edge measuring the door's thickness.\n@Image4 defines the wider medium camera framing, scene and composition — a man's workspace at the white glass-panel door. Render the WHOLE shot in this wider medium framing of @Image4, NOT the close framing of the keyframe images @Image1-@Image3; reproduce the hand and tape positions from @Image1-@Image3 but at the wide medium scale of @Image4.\nThe shot passes through beats 1, 2 and 3 in order with continuous natural motion. A man in a plain denim shirt with a red carpenter's pencil over his ear performs the three measurements and stays visible in the wide shot; the tape span stays short and never extends across the door onto the glass.\nMaintain continuity in the white door, the stainless deadbolt and knob, the yellow-and-black tape measure, the man's denim shirt, the plant, and the frosted glass panel. Photoreal Home Depot how-to footage, bright natural 5500K daylight. Plain denim, no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round11",
+   "label": "ROUND 11 — wide + all-3-beats: prompt-sharpen (exp1) vs wide beat-keyframes (exp2)",
+   "params": "8s · 720p · 16:9 · audio off · WINNER = exp2 (wide beat keyframes, body-covered/hands-kept)",
+   "shared_prompt_note": "Fixing round 10's blurred beats. exp1 keeps the wide-plate+tight-crop structure with sharpened beat text (beats still blur — scale ceiling). exp2 makes ALL keyframes wide by covering the person's body but KEEPING real hands+tape in the 3 wide beat frames, then ordered-keyframing them — natural hands + held wide frame + motion. KEY REALISATION: the 3 source beats are moments of ONE backset measurement, so they can't read as 3 different measurements; the article's diameter/edge/thickness are actually SEPARATE shots, not beats of shot 0003.",
+   "experiments": [
+    {
+     "id": "exp1_wide_3beats",
+     "approach": "EXP 1 — wide plate @Image1 + 3 tight crops @Image2/3/4, sharpened beat text",
+     "status": "ok",
+     "note": "Wide framing HELD all 8s + full person + clean, and there is orientation variation, BUT the three sharpened measurements (hole-diameter / edge-to-plate / thickness) did NOT cleanly separate — t4≈t6 duplicate the middle beat and the door-thickness-at-edge never renders (model keeps everything on the door face). The tight crops get down-weighted under the dominant wide first-frame (scale mismatch ceiling).",
+     "refs": [
+      "assets/round9_wide_hinge.png",
+      "assets/round9_kf1.png",
+      "assets/round9_kf2.png",
+      "assets/round9_kf3.png"
+     ],
+     "video": "assets/round11_exp1.mp4",
+     "frames": [
+      "assets/round11_exp1_f0.png",
+      "assets/round11_exp1_f1.png",
+      "assets/round11_exp1_f2.png",
+      "assets/round11_exp1_f3.png",
+      "assets/round11_exp1_f4.png"
+     ],
+     "prompt": "Use @Image1 through @Image4 as keyframes in that order.\nUse @Image1 as the first frame. This first frame defines the composition, camera position, scene and the WIDE medium framing: a man's workspace at a white glass-panel door with a stainless deadbolt above a stainless knob, a plant to the left, bright daylight. Keep this wide medium framing for the entire shot; do not zoom in.\n@Image2 defines the second keyframe — MEASUREMENT 1, the diameter of the knob's hole: the man holds the yellow tape horizontally ACROSS the round knob plate (the rose) that sits on the face of the door, measuring across it.\n@Image3 defines the third keyframe — MEASUREMENT 2, the backset: the man holds the tape from the EDGE of the door to the left edge of the knob plate, measuring that distance.\nUse @Image4 as the last frame — MEASUREMENT 3, the door thickness: the man holds the tape horizontally across the door's EDGE, from the front face to the back face of the door, measuring how thick the door is.\nThe shot passes through the states defined by @Image1, @Image2, @Image3 and @Image4 in order with continuous natural hand and arm motion. These are THREE DIFFERENT measurements, not the same one repeated. @Image2, @Image3 and @Image4 are CLOSE views of the lockset; reproduce the hand and tape positions they show but render everything at the WIDE medium scale and framing of @Image1 and do NOT crop or zoom in.\nA man in a plain denim shirt with a red carpenter's pencil over his ear performs the three measurements and stays visible in the wide shot; the tape stays short and never extends across the door onto the glass.\nMaintain continuity in the white door, the stainless deadbolt and knob, the yellow-and-black tape measure, the man's denim shirt, the plant, and the frosted glass panel. Photoreal Home Depot how-to footage, bright natural 5500K daylight. Plain denim, no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "exp2b_wide_beatframes",
+     "approach": "★ EXP 2 — 3 WIDE beat keyframes (person's body covered, real hands kept)",
+     "status": "ok",
+     "note": "★ Best wide take. Built 3 wide beat keyframes by covering the man's head+torso while KEEPING his real hands+tape (Hooman's fix for the stretched-hands problem) — no separate wide plate. Result: WIDE framing held all 8s, full person, NATURAL hands, tape stays short, real measuring motion — the round-7-v2 motion now in a wide frame. Limitation: the 3 beats read as one continuous backset measurement rather than 3 distinct ones, because the SOURCE shot 0003 IS a single backset measurement (3 positioning moments), not 3 different measurements. The refs below are the person-covered wide beat plates.",
+     "refs": [
+      "assets/round11_wbeat1.png",
+      "assets/round11_wbeat2.png",
+      "assets/round11_wbeat3.png"
+     ],
+     "video": "assets/round11_exp2b.mp4",
+     "frames": [
+      "assets/round11_exp2b_f0.jpg",
+      "assets/round11_exp2b_f1.jpg",
+      "assets/round11_exp2b_f2.jpg",
+      "assets/round11_exp2b_f3.jpg",
+      "assets/round11_exp2b_f4.jpg"
+     ],
+     "prompt": "Use @Image1, @Image2 and @Image3 as keyframes in that order.\nUse @Image1 as the first frame. This first frame defines the wide medium composition, camera position and scene, and the first beat of a door-lock measurement.\n@Image2 defines the second keyframe: the second beat of the measurement.\nUse @Image3 as the last frame: the third beat of the measurement.\nThe shot passes through the states defined by @Image1, @Image2 and @Image3 in order with continuous natural hand and arm motion, keeping the SAME fixed wide camera framing throughout; do not zoom or pan.\nA man in a plain denim shirt with a red carpenter's pencil over his ear performs the measurement with a yellow tape measure at the lockset; his hands and the tape follow the positions shown in the keyframes, and the tape stays a short span across the lockset without extending across the door onto the glass.\nMaintain continuity in the white door, the stainless steel deadbolt and knob, the yellow-and-black tape measure, the man's denim shirt, the plant, and the frosted glass panel. Photoreal Home Depot how-to footage, bright natural 5500K daylight. Plain denim, no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round12",
+   "label": "ROUND 12 — ★ FINAL wide shot 0003: all 3 measurements (16s)",
+   "params": "16s · 720p · 16:9 · audio off · wide beat keyframes (v2) + explicit per-beat directives",
+   "shared_prompt_note": "Correcting an earlier misread: shot 0003 has THREE distinct measurements (knob-plate width / edge-to-plate / door-thickness-at-edge), and Round 7 v2 (tight) already captured all three. The WIDE exp2b at 8s blended them and dropped thickness. Fix: same wide beat keyframes (person-covered, hands kept) but LONGER duration (16s) + explicit per-beat directives + 'settle briefly on each'. Result recovers all three in the held wide frame.",
+   "experiments": [
+    {
+     "id": "exp2c_wide_16s_3beats",
+     "approach": "★ wide beat keyframes (v2) + 16s + explicit 3 measurements",
+     "status": "ok",
+     "note": "★ FINAL wide shot 0003. Holds the wide medium frame all 16s + full person + natural hands, and now progresses through all THREE distinct measurements: t3 tape across the knob plate (width) -> t8 edge-to-plate -> t13/t15.5 tape at the door's narrow EDGE (thickness). Longer duration + explicit per-beat directives recovered the thickness beat that the 8s version dropped. Beats still subtle (all lockset-region) and generated identity drifts slightly frame-to-frame, but all three read. Refs = the 3 person-covered wide beat plates (shown in round 11).",
+     "refs": [
+      "assets/round11_wbeat1.png",
+      "assets/round11_wbeat2.png",
+      "assets/round11_wbeat3.png"
+     ],
+     "video": "assets/round12_exp2c.mp4",
+     "frames": [
+      "assets/round12_exp2c_f0.jpg",
+      "assets/round12_exp2c_f1.jpg",
+      "assets/round12_exp2c_f2.jpg",
+      "assets/round12_exp2c_f3.jpg",
+      "assets/round12_exp2c_f4.jpg"
+     ],
+     "prompt": "Use @Image1, @Image2 and @Image3 as keyframes in that order. Keep a fixed WIDE medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — MEASUREMENT 1: the man holds the yellow tape horizontally across the round stainless knob plate on the face of the door, measuring the width of the plate.\n@Image2 defines the second keyframe — MEASUREMENT 2: he holds the tape from the edge of the door across to the left edge of the knob plate, measuring that distance.\nUse @Image3 as the last frame — MEASUREMENT 3: he holds the tape across the narrow EDGE of the door, from the front face to the back face of the door, measuring the door's thickness.\nThe shot moves slowly and clearly through these THREE DIFFERENT measurements in order, settling briefly on each one so all three read distinctly, with continuous natural hand and arm motion. A man in a plain denim shirt with a red carpenter's pencil over his ear performs them and stays visible in the wide shot; the tape stays a short span at the lockset and never sprawls across the door onto the glass.\nMaintain continuity in the white door, the stainless steel deadbolt and knob, the yellow-and-black tape measure, the man's denim shirt, the plant, and the frosted glass panel. Photoreal Home Depot how-to footage, bright natural 5500K daylight. Plain denim, no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round13",
+   "label": "ROUND 13 — ★★ FINAL wide shot 0003 (beat1 overshoot fixed)",
+   "params": "16s · 720p · 16:9 · audio off · same v2 keyframes as round 12 + explicit beat1 constraint",
+   "shared_prompt_note": "Round 12 (exp2c) was near-perfect but beat1's tape drifted past the right edge of the knob plate during the 16s interpolation. Keyframe wbeat1_v2 was correct, so fixed PROMPT-ONLY: added an explicit beat1 constraint ('tape ends AT the right edge of the knob plate; blade must NOT extend past it onto the glass'). Same keyframes, same 16s.",
+   "experiments": [
+    {
+     "id": "exp2d_wide_16s_beat1fix",
+     "approach": "★★ wide v2 keyframes + 16s + beat1 'ends at plate edge' constraint",
+     "status": "ok",
+     "note": "★★ FINAL wide shot 0003. Beat1 tape now STOPS at the right edge of the knob plate (no overshoot onto the glass) — fixed prompt-only, keyframe untouched. Beats 2 (edge-to-plate) and 3 (thickness at the door's narrow edge) still read; wide medium framing held all 16s; full person, natural hands, no logo. Minor residual: generated identity drifts slightly frame-to-frame. Supersedes round 12 exp2c.",
+     "refs": [
+      "assets/round11_wbeat1.png",
+      "assets/round11_wbeat2.png",
+      "assets/round11_wbeat3.png"
+     ],
+     "video": "assets/round13_exp2d.mp4",
+     "frames": [
+      "assets/round13_exp2d_f0.jpg",
+      "assets/round13_exp2d_f1.jpg",
+      "assets/round13_exp2d_f2.jpg",
+      "assets/round13_exp2d_f3.jpg",
+      "assets/round13_exp2d_f4.jpg"
+     ],
+     "prompt": "Use @Image1, @Image2 and @Image3 as keyframes in that order. Keep a fixed WIDE medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — MEASUREMENT 1: the man holds the yellow tape horizontally across the round stainless knob plate, exactly as in @Image1. The tape ends AT the right edge of the round knob plate and stays that short — the yellow blade must NOT extend past the right edge of the plate toward the glass at any point during this beat.\n@Image2 defines the second keyframe — MEASUREMENT 2: he holds the tape from the edge of the door across to the left edge of the knob plate, measuring that distance.\nUse @Image3 as the last frame — MEASUREMENT 3: he holds the tape across the narrow EDGE of the door, from the front face to the back face of the door, measuring the door's thickness.\nThe shot moves slowly and clearly through these THREE DIFFERENT measurements in order, settling briefly on each so all three read distinctly, with continuous natural hand and arm motion. A man in a plain denim shirt with a red carpenter's pencil over his ear performs them and stays visible in the wide shot; in every beat the tape stays a short span at the lockset and never sprawls across the door onto the glass panel.\nMaintain continuity in the white door, the stainless steel deadbolt and knob, the yellow-and-black tape measure, the man's denim shirt, the plant, and the frosted glass panel. Photoreal Home Depot how-to footage, bright natural 5500K daylight. Plain denim, no text or logo. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round14_sketch",
+   "label": "ROUND 14 — SKETCH-DRIVEN (no exact frames from the source)",
+   "params": "8s · 720p · refs = 1 photoreal style plate (@Image1) + 3 beat SKETCHES (@Image2/3/4)",
+   "shared_prompt_note": "Experiment: how close to round 13 can we get WITHOUT any exact frame from the original video? Convert the 3 beat frames to line SKETCHES (positions only), and supply ONE photoreal person-free plate for style + camera; re-render photoreal. This is the vendor 'blockout/storyboard' idea — non-photoreal structure refs + a style ref.",
+   "experiments": [
+    {
+     "id": "sketch_shot0003",
+     "approach": "@Image1 = photoreal style/camera plate + @Image2/3/4 = line-sketches of beats 1/2/3 → re-rendered photoreal",
+     "status": "ok",
+     "note": "★ ~80-85% of round 13, with ZERO exact source frames. Fully PHOTOREAL (no sketch bleed-through), full man visible, tape stays short at the lockset, real door/hardware/camera from the style plate. Gets realism + staging + 2 of 3 beats; LOSES the exact thickness beat (substitutes a vertical face measure) and ends retracting the tape. Man on the right (matches the plate camera) vs round 13's left over-shoulder. Takeaway: authored/generated SKETCHES can drive the action while one photoreal ref supplies the look — a route that needs no source footage (looser per-beat geometry is the cost).",
+     "refs": [
+      "assets/round14_styleplate.png",
+      "assets/round14_sk1.png",
+      "assets/round14_sk2.png",
+      "assets/round14_sk3.png"
+     ],
+     "video": "assets/round14_sketch.mp4",
+     "frames": [
+      "assets/round14_sketch_f0.png",
+      "assets/round14_sketch_f1.png",
+      "assets/round14_sketch_f2.png",
+      "assets/round14_sketch_f3.png",
+      "assets/round14_sketch_f4.png"
+     ],
+     "prompt": "Use @Image1 as the first frame. @Image1 is a PHOTOREAL reference that defines the visual style, the camera angle and the real scene — a white glass-panel door with a stainless deadbolt and knob in bright daylight. Render the ENTIRE video photoreal in this style and from this camera.\n@Image2, @Image3 and @Image4 are line-drawing SKETCHES, in order, that show ONLY the positions of the man's hands and the yellow tape measure for three measurement beats at the lockset: @Image2 = tape held across the round knob plate; @Image3 = tape from the door edge to the knob plate; @Image4 = tape across the door's narrow edge to measure thickness. Reproduce these hand and tape positions and their order, but render everything PHOTOREAL in the style of @Image1 — do NOT produce any sketch or line-drawing look in the final video.\nA full man in a plain denim work shirt performs the three measurements, fully visible (head, torso, arms), moving naturally through the beats; the tape stays a short span at the lockset. Keep the white door, the stainless deadbolt and knob, and the daylight photoreal and consistent. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round15_sketch_v2",
+   "label": "ROUND 15 — SKETCH-DRIVEN v2: make the model HONOR the sketch tape positions",
+   "params": "8s · 720p · testing where the sketches vs the photoreal plate go in the ref order",
+   "shared_prompt_note": "Round 14 ignored the sketches (tape over-extended). Fix: the SKETCHES must be the ORDERED KEYFRAMES (they carry the exact tape position/length), with the photoreal plate as an appearance-only reference — not the first frame. V_sb applies this and honors the short tape; V_sa (plate still first) still over-extends. Same 'first-frame dominates' lesson as Round 10.",
+   "experiments": [
+    {
+     "id": "sketch_Vsb",
+     "approach": "★ sketches = @Image1-3 ORDERED KEYFRAMES + plate = @Image4 appearance-only",
+     "status": "ok",
+     "note": "★ FIX. Tape now stays SHORT and follows the sketch positions (no over-extension) AND the output is fully PHOTOREAL (appearance from @Image4, no sketch bleed). This is the right structure for sketch-driven shots: sketches drive geometry as ordered keyframes; a trailing appearance ref supplies realism. Next: longer duration to separate the 3 distinct beats (incl. thickness), same as the real-frame path needed 16s.",
+     "refs": [
+      "assets/round14_sk1.png",
+      "assets/round14_sk2.png",
+      "assets/round14_sk3.png",
+      "assets/round14_styleplate.png"
+     ],
+     "video": "assets/round15_sketch_Vsb.mp4",
+     "frames": [
+      "assets/round15_sketch_Vsb_f0.jpg",
+      "assets/round15_sketch_Vsb_f1.jpg",
+      "assets/round15_sketch_Vsb_f2.jpg",
+      "assets/round15_sketch_Vsb_f3.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order. @Image1, @Image2 and @Image3 are line-drawing SKETCHES that define the exact composition and the exact tape-and-hand geometry at three beats — reproduce each precisely, especially the SHORT length of the tape and where its blade ends on the door; do not extend the tape beyond the sketch or onto the glass.\nUse @Image1 as the first frame — beat 1: the tape held a short span across the round knob plate.\n@Image2 defines the second keyframe — beat 2: the tape from the door edge to the knob plate.\nUse @Image3 as the last frame — beat 3: the tape laid across the door's narrow front edge (thickness).\n@Image4 is a PHOTOREAL appearance reference: render the ENTIRE video photorealistically in the style, lighting and materials of @Image4 (real white door, stainless deadbolt and knob, denim shirt, daylight). Do NOT adopt the line-drawing/sketch look of @Image1-@Image3 — they are only structure/position guides.\nThe shot passes through the three states in order with continuous natural motion; a full man in a plain denim work shirt performs them, fully visible. The tape stays short exactly as in the sketches. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "sketch_Vsa",
+     "approach": "plate = @Image1 first frame (style) + sketches = @Image2-4 authority",
+     "status": "ok",
+     "note": "Partial: better early (short) but STILL OVER-EXTENDS in the later beat — keeping the plate as the first frame down-weights the sketches (the Round-10 'first-frame dominates' effect). Photoreal, but does not honor the sketch positions throughout.",
+     "refs": [
+      "assets/round14_styleplate.png",
+      "assets/round14_sk1.png",
+      "assets/round14_sk2.png",
+      "assets/round14_sk3.png"
+     ],
+     "video": "assets/round15_sketch_Vsa.mp4",
+     "frames": [
+      "assets/round15_sketch_Vsa_f0.jpg",
+      "assets/round15_sketch_Vsa_f1.jpg",
+      "assets/round15_sketch_Vsa_f2.jpg",
+      "assets/round15_sketch_Vsa_f3.jpg"
+     ],
+     "prompt": "Use @Image1 as the first frame. @Image1 is a PHOTOREAL reference — use it ONLY for the visual style, the camera angle, the real white glass-panel door with stainless deadbolt and knob, and the daylight. Render the ENTIRE video photorealistically in this style; never produce a sketch or line-drawing look.\n@Image2, @Image3 and @Image4 are line-drawing SKETCHES and they are the AUTHORITY for the hand-and-tape geometry, in this order. For each sketch COPY EXACTLY where the yellow tape measure sits relative to the door: where its hook/end is anchored, the direction the blade runs, and — most important — HOW SHORT the blade is and exactly where it ends. The tape's length and end point in the video must match the sketch. Do NOT extend the tape past where the sketch shows it ending; it never sprawls across the door face or onto the glass panel.\nThe shot passes through three measuring beats in order: beat 1 = @Image2 (tape a short span across the round knob plate); beat 2 = @Image3 (tape from the door edge to the knob plate); beat 3 = @Image4 (tape laid across the door's narrow front edge to measure thickness). Settle briefly on each so all three read.\nA full man in a plain denim work shirt performs the measurements, fully visible (head, torso, arms). Keep the door, stainless hardware and daylight photoreal and consistent with @Image1. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round16_sketch_16s",
+   "label": "ROUND 16 — sketch-driven V_sb @ 16s (nail the 3 distinct beats)",
+   "params": "16s · 720p · sketches @Image1-3 ordered keyframes + plate @Image4 appearance",
+   "shared_prompt_note": "Push the winning sketch structure (round 15 V_sb) to 16s with explicit distinct per-beat directives, to separate the 3 measurements the way 16s did on the real-frame path.",
+   "experiments": [
+    {
+     "id": "sketch_Vsb_16s",
+     "approach": "sketches as ordered keyframes + plate appearance, 16s, explicit distinct beats",
+     "status": "ok",
+     "note": "Over-extension SOLVED — tape stays short and honors the sketch positions across all 16s; fully photoreal; full man early. BUT the 3 distinct beats still BLEND (reads as 'measuring at the lockset' rather than plate-width -> edge-to-plate -> thickness; the thickness/edge beat doesn't clearly render) and the framing tightens to a close-up by the end. Root cause: sk1/sk2/sk3 are similar lockset poses, so the model blends them — to separate the beats the SKETCHES themselves need to be more visually distinct (esp. a clear tape-across-the-door-edge thickness sketch).",
+     "refs": [
+      "assets/round14_sk1.png",
+      "assets/round14_sk2.png",
+      "assets/round14_sk3.png",
+      "assets/round14_styleplate.png"
+     ],
+     "video": "assets/round16_sketch_16s.mp4",
+     "frames": [
+      "assets/round16_sketch_16s_f0.jpg",
+      "assets/round16_sketch_16s_f1.jpg",
+      "assets/round16_sketch_16s_f2.jpg",
+      "assets/round16_sketch_16s_f3.jpg",
+      "assets/round16_sketch_16s_f4.jpg",
+      "assets/round16_sketch_16s_f5.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order. @Image1, @Image2 and @Image3 are line-drawing SKETCHES that define the exact composition and the exact tape-and-hand geometry at three DIFFERENT measurement beats — reproduce each precisely, especially the SHORT length of the tape and exactly where its blade ends on the door; never extend the tape beyond the sketch or onto the glass panel.\nUse @Image1 as the first frame — BEAT 1: the yellow tape held a short span horizontally across the round knob plate, measuring the plate width.\n@Image2 defines the second keyframe — BEAT 2: the tape held from the edge of the door across to the left edge of the knob plate, measuring that distance.\nUse @Image3 as the last frame — BEAT 3: the tape laid across the narrow front EDGE of the door, from the front face to the back face, measuring the door's thickness.\n@Image4 is a PHOTOREAL appearance reference: render the ENTIRE video photorealistically in the style, lighting and materials of @Image4 (real white door, stainless deadbolt and knob, denim shirt, daylight). Do NOT adopt the line-drawing/sketch look of @Image1-@Image3 — they are only structure/position guides.\nThe shot moves slowly through BEAT 1, then BEAT 2, then BEAT 3 in order, settling briefly on each so all three DIFFERENT measurements read distinctly, with continuous natural motion. A full man in a plain denim work shirt performs them, fully visible (head, torso, arms); the tape stays short exactly as in the sketches. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "round17_beat2fix",
+   "label": "ROUND 17 — sketch V_sb @16s, beat2 wording fixed",
+   "params": "16s · sketches @Image1-3 + plate @Image4 · beat2 = 'tape STOPS at the plate's near rim'",
+   "shared_prompt_note": "Beat2 was wrong (tape ran into the middle of the knob plate) due to ambiguous wording ('across to the left edge'). Fixed the beat2 directive: hook at the door edge, blade STOPS exactly at the near rim of the plate, does not continue onto/into it. (The clearer sketches sk1c/2c/3c are staged here too, for the next run if wanted.)",
+   "experiments": [
+    {
+     "id": "sketch_Vsb_16s_beat2fix",
+     "approach": "beat2 wording fixed (tape stops at plate near rim); current sketches",
+     "status": "ok",
+     "note": "Beat2 FIXED — the tape runs from the door edge and stops at the plate's near rim (short edge-to-plate gap), no longer into the middle of the plate. Photoreal, full man, tape short throughout. Confirms the beat2 error was prompt ambiguity, not the sketch. (Order note: thickness still tends to appear before edge-to-plate — minor.)",
+     "refs": [
+      "assets/round14_sk1.png",
+      "assets/round14_sk2.png",
+      "assets/round14_sk3.png",
+      "assets/round14_styleplate.png"
+     ],
+     "video": "assets/round17_sketch_beat2fix.mp4",
+     "frames": [
+      "assets/round17_beat2fix_f0.jpg",
+      "assets/round17_beat2fix_f1.jpg",
+      "assets/round17_beat2fix_f2.jpg",
+      "assets/round17_beat2fix_f3.jpg",
+      "assets/round17_beat2fix_f4.jpg",
+      "assets/round17_beat2fix_f5.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order. @Image1, @Image2 and @Image3 are line-drawing SKETCHES that define the exact composition and the exact tape-and-hand geometry at three DIFFERENT measurement beats — reproduce each precisely, especially the SHORT length of the tape and exactly where its blade ends; never extend the tape beyond the sketch or onto the glass panel.\nUse @Image1 as the first frame — BEAT 1: the yellow tape held a short span horizontally across the round knob plate, measuring the plate's width.\n@Image2 defines the second keyframe — BEAT 2: measuring the gap between the door edge and the knob plate. The tape's hook is anchored at the vertical edge of the door and the blade runs a short distance to the right, STOPPING exactly at the near rim of the round knob plate — the tape ENDS where the plate begins. It must NOT continue onto, over, or into the middle of the knob plate.\nUse @Image3 as the last frame — BEAT 3: the tape laid across the narrow front EDGE of the door (front face to back face), measuring the door's thickness.\n@Image4 is a PHOTOREAL appearance reference: render the ENTIRE video photorealistically in the style, lighting and materials of @Image4 (real white door, stainless deadbolt and knob, denim shirt, daylight). Do NOT adopt the line-drawing/sketch look of @Image1-@Image3 — they are only structure/position guides.\nThe shot moves slowly through BEAT 1, then BEAT 2, then BEAT 3 in that order, settling briefly on each so all three DIFFERENT measurements read distinctly. A full man in a plain denim work shirt performs them, fully visible (head, torso, arms); the tape stays short exactly as in the sketches. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "sketch_Vsb_16s_light",
+     "approach": "✅ APPROVED FINAL — beat2fix prompt verbatim + ONE light between-beats clause",
+     "status": "ok",
+     "note": "✅ APPROVED (2026-08-24) — this is the final shot 0003 recreation; Hooman: \"the result of this one are fantastic. We are done with this shot.\" Lesson: the earlier heavy anti-retract paragraph and the thicker sketches BOTH made it worse; the win was keeping the beat2fix prompt + thin sketches unchanged and adding just one short clause ('the hand keeps the tape out and slides it between measurements rather than winding it back in'). Lighter touch wins.",
+     "refs": [
+      "assets/round14_sk1.png",
+      "assets/round14_sk2.png",
+      "assets/round14_sk3.png",
+      "assets/plate_paint_shot.png"
+     ],
+     "video": "assets/round17_light.mp4",
+     "frames": [
+      "assets/round17_light_f0.jpg",
+      "assets/round17_light_f1.jpg",
+      "assets/round17_light_f2.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image3 as keyframes in that order. @Image1, @Image2 and @Image3 are line-drawing SKETCHES that define the exact composition and the exact tape-and-hand geometry at three DIFFERENT measurement beats — reproduce each precisely, especially the SHORT length of the tape and exactly where its blade ends; never extend the tape beyond the sketch or onto the glass panel.\nUse @Image1 as the first frame — BEAT 1: the yellow tape held a short span horizontally across the round knob plate, measuring the plate's width.\n@Image2 defines the second keyframe — BEAT 2: measuring the gap between the door edge and the knob plate. The tape's hook is anchored at the vertical edge of the door and the blade runs a short distance to the right, STOPPING exactly at the near rim of the round knob plate — the tape ENDS where the plate begins. It must NOT continue onto, over, or into the middle of the knob plate.\nUse @Image3 as the last frame — BEAT 3: the tape laid across the narrow front EDGE of the door (front face to back face), measuring the door's thickness.\n@Image4 is a PHOTOREAL appearance reference: render the ENTIRE video photorealistically in the style, lighting and materials of @Image4 (real white door, stainless deadbolt and knob, denim shirt, daylight). Do NOT adopt the line-drawing/sketch look of @Image1-@Image3 — they are only structure/position guides.\nThe shot moves slowly through BEAT 1, then BEAT 2, then BEAT 3 in that order, settling briefly on each so all three DIFFERENT measurements read distinctly; between measurements the hand keeps the tape out and slides it to the next spot rather than winding it back in. A full man in a plain denim work shirt performs them, fully visible (head, torso, arms); the tape stays short exactly as in the sketches. No on-screen text, no captions, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0007_divider",
+   "kind": "divider",
+   "label": "SHOT 0007 — Remove the doorknob (via the rewriter pipeline)",
+   "note": "New shot, generated with pipeline/rewriter_pipeline.py from configs/shot0007.json. Same format: TARGET, then the pipeline result."
+  },
+  {
+   "id": "target0007",
+   "kind": "target",
+   "label": "TARGET — original human shot 0007",
+   "note": "STEP 3: Remove the doorknob. A man in a denim shirt (exterior side, sunny porch) uses a blue-handled screwdriver to unscrew the two mounting screws of the stainless DEFIANT doorknob, other hand steadying it. ~7.1s, 1920x1080. Two beats: unscrew top screw -> knob/rose separates.",
+   "video": "assets/target_shot0007.mp4",
+   "frames": [
+    "assets/target0007_f0.jpg",
+    "assets/target0007_f1.jpg",
+    "assets/target0007_f2.jpg"
+   ]
+  },
+  {
+   "id": "shot0007_pipeline",
+   "label": "PIPELINE RESULT — shot 0007 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 ordered keyframes · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "First end-to-end pipeline run: auto-extracted 2 beat frames, auto cover-body'd them (head+torso removed, hands+screwdriver kept, STEP-3 graphic stripped), auto-composed the vendor @Image keyframe prompt in the THD register, generated at 5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0007_v1",
+     "approach": "cover-body wide beat keyframes (auto) — unscrew top screw -> knob separates",
+     "status": "ok",
+     "note": "Action faithful: blue screwdriver unscrews the top screw then the knob/rose loosens and separates; real door, stainless DEFIANT knob + deadbolt, sunny porch/fence all preserved; no on-screen graphics; R3-clean. DEVIATION from target: came out HANDS-ONLY (forearms reaching in) rather than the full man visible — the body-covered keyframes weren't re-expanded into a person. Fixing that is the same refinement path as shot 3 (stronger 'full person visible' framing or a wide person plate). Good first pipeline output.",
+     "refs": [
+      "assets/shot0007_kf1.png",
+      "assets/shot0007_kf2.png"
+     ],
+     "video": "assets/shot0007_result.mp4",
+     "frames": [
+      "assets/shot0007_result_f0.jpg",
+      "assets/shot0007_result_f1.jpg",
+      "assets/shot0007_result_f2.jpg",
+      "assets/shot0007_result_f3.jpg",
+      "assets/shot0007_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — a hand drives a blue-handled screwdriver into the top mounting screw of the stainless doorknob and turns it counter-clockwise to unscrew it, while the other hand steadies the knob.\nUse @Image2 as the last frame — the last screw backs out and the loosened doorknob with its round rose plate comes away from the door. the screwdriver stays engaged with the screw and the hands stay at the doorknob.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt uses a blue-handled screwdriver to remove an exterior doorknob, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door, the stainless steel deadbolt above the stainless doorknob, and the bright sunny porch with a white railing, a wood fence and green foliage behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "shot0007_sketch",
+     "approach": "SKETCH METHOD (no exact source frames) — 2 beat sketches @Image1-2 + photoreal style plate @Image3",
+     "status": "ok",
+     "note": "Sketch-method variant of shot 0007 (config method=\"sketch\"): the 2 beat frames were converted to line-art sketches (geometry/position) and one frame was painted person-free for a photoreal appearance plate; no exact source frames used. Result is photoreal (did NOT adopt the sketch look), FULL man in denim visible, blue screwdriver unscrewing the top mounting screw (beat 1) then the knob + rose plate pulling away from the door (beat 2). Scene/hardware (white door, stainless DEFIANT knob + deadbolt, sunny porch/fence) preserved. Notably this fixes the hands-only deviation of the cover_body version above — the full person renders here. Minor: a faint second knob assembly can appear. Compare against the cover_body result above.",
+     "refs": [
+      "assets/shot0007_sk1.png",
+      "assets/shot0007_sk2.png",
+      "assets/shot0007_styleplate.png"
+     ],
+     "video": "assets/shot0007_sketch.mp4",
+     "frames": [
+      "assets/shot0007_sketch_f0.jpg",
+      "assets/shot0007_sketch_f1.jpg",
+      "assets/shot0007_sketch_f2.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order. @Image1-@Image2 are line-drawing SKETCHES that define the exact composition and the exact hand-and-tool geometry at each beat — reproduce each precisely, keep the tool the SHORT length shown and do not extend it beyond the sketch.\nUse @Image1 as the first frame — BEAT 1: a hand drives a blue-handled screwdriver into the top mounting screw of the stainless doorknob and turns it counter-clockwise to unscrew it, while the other hand steadies the knob.\nUse @Image2 as the last frame — BEAT 2: the last screw backs out and the loosened doorknob with its round rose plate comes away from the door. the screwdriver stays engaged with the screw and the hands stay at the doorknob.\n@Image3 is a PHOTOREAL appearance reference: render the ENTIRE video photorealistically in its style, lighting and materials; do NOT adopt the line-drawing/sketch look of the keyframes — they are only structure/position guides.\nThe shot moves through the 2 beats in order, settling briefly on each. Between beats the hand and tool move smoothly and directly from one position to the next, with NO extra back-and-forth, resetting, or retracting motions.\nA man in a plain denim work shirt uses a blue-handled screwdriver to remove an exterior doorknob, working with both hands; the man is FULLY VISIBLE in frame — head, face, plain denim shirt torso and both arms — performing the beats, not just hands.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door, the stainless steel deadbolt above the stainless doorknob, and the bright sunny porch with a white railing, a wood fence and green foliage behind consistent and photoreal. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0010_divider",
+   "kind": "divider",
+   "label": "SHOT 0010 — A man in a plain denim work shirt pulls the old latch bolt out of the ",
+   "note": "Generated with the rewriter pipeline (configs/shot0010.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0010",
+   "kind": "target",
+   "label": "TARGET — original human shot 0010",
+   "note": "A man in a plain denim work shirt pulls the old latch bolt out of the door edge, working with both hands; the man. 1.8s source. Beats: one finger steadies the round bore hole in the door face whi → the brass latch bolt slides free of the door edge, leaving t",
+   "video": "assets/target_shot0010.mp4",
+   "frames": [
+    "assets/target0010_f0.jpg",
+    "assets/target0010_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0010_pipeline",
+   "label": "PIPELINE RESULT — shot 0010 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=none · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0010_v1",
+     "approach": "none keyframes (2 beat(s)) — hands",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt pulls the old latch bolt out of the door edge, working with both hands; the man",
+     "refs": [],
+     "video": "assets/shot0010_result.mp4",
+     "frames": [
+      "assets/shot0010_result_f0.jpg",
+      "assets/shot0010_result_f1.jpg",
+      "assets/shot0010_result_f2.jpg",
+      "assets/shot0010_result_f3.jpg",
+      "assets/shot0010_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed close camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — one finger steadies the round bore hole in the door face while the other hand grips the stainless steel latch faceplate on the door edge and begins pulling the latch out of its mortise.\nUse @Image2 as the last frame — the brass latch bolt slides free of the door edge, leaving the empty rectangular latch mortise exposed. the hands stay at the door edge pulling the latch straight out.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt pulls the old latch bolt out of the door edge, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with the round bore hole in its face and the rectangular latch mortise on the door edge, and the bright sunny porch with a white railing and warm wood decking behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0011_divider",
+   "kind": "divider",
+   "label": "SHOT 0011 — A man in a plain denim work shirt uses a blue-handled screwdriver to r",
+   "note": "Generated with the rewriter pipeline (configs/shot0011.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0011",
+   "kind": "target",
+   "label": "TARGET — original human shot 0011",
+   "note": "A man in a plain denim work shirt uses a blue-handled screwdriver to remove the stainless deadbolt from the door, working with both hands; the man. 3.8s source. Beats: a hand drives a blue-handled screwdriver into the top mounti → the screwdriver keeps turning and the deadbolt mounting scre",
+   "video": "assets/target_shot0011.mp4",
+   "frames": [
+    "assets/target0011_f0.jpg",
+    "assets/target0011_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0011_pipeline",
+   "label": "PIPELINE RESULT — shot 0011 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0011_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — blue-handled screwdriver",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt uses a blue-handled screwdriver to remove the stainless deadbolt from the door, working with both hands; the man",
+     "refs": [
+      "assets/shot0011_kf1.png",
+      "assets/shot0011_kf2.png"
+     ],
+     "video": "assets/shot0011_result.mp4",
+     "frames": [
+      "assets/shot0011_result_f0.jpg",
+      "assets/shot0011_result_f1.jpg",
+      "assets/shot0011_result_f2.jpg",
+      "assets/shot0011_result_f3.jpg",
+      "assets/shot0011_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — a hand drives a blue-handled screwdriver into the top mounting screw of the stainless steel deadbolt and turns it counter-clockwise, while the other hand steadies the door edge below.\nUse @Image2 as the last frame — the screwdriver keeps turning and the deadbolt mounting screw backs out of its round rose plate. the screwdriver stays engaged with the deadbolt screw and the other hand stays at the door edge.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt uses a blue-handled screwdriver to remove the stainless deadbolt from the door, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with the stainless steel DEFIANT deadbolt and its round rose plate, the door edge with the empty rectangular latch mortise below, and the bright sunny porch with a white railing, a wood fence and green foliage behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0012_divider",
+   "kind": "divider",
+   "label": "SHOT 0012 — A man in a plain denim work shirt removes the old latch mechanism from",
+   "note": "Generated with the rewriter pipeline (configs/shot0012.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0012",
+   "kind": "target",
+   "label": "TARGET — original human shot 0012",
+   "note": "A man in a plain denim work shirt removes the old latch mechanism from the door bore with a blue-handled screwdriver, working with both hands; the man. 1.5s source. Beats: a hand grips the loosened round stainless doorknob rose on t → the hand drives a blue-handled screwdriver into the bore hol",
+   "video": "assets/target_shot0012.mp4",
+   "frames": [
+    "assets/target0012_f0.jpg",
+    "assets/target0012_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0012_pipeline",
+   "label": "PIPELINE RESULT — shot 0012 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=none · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0012_v1",
+     "approach": "none keyframes (2 beat(s)) — blue-handled screwdriver",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt removes the old latch mechanism from the door bore with a blue-handled screwdriver, working with both hands; the man",
+     "refs": [],
+     "video": "assets/shot0012_result.mp4",
+     "frames": [
+      "assets/shot0012_result_f0.jpg",
+      "assets/shot0012_result_f1.jpg",
+      "assets/shot0012_result_f2.jpg",
+      "assets/shot0012_result_f3.jpg",
+      "assets/shot0012_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed close camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — a hand grips the loosened round stainless doorknob rose on the white door face and pulls it away, exposing the round bore hole with the brass latch mechanism inside.\nUse @Image2 as the last frame — the hand drives a blue-handled screwdriver into the bore hole to release the old latch, and the freed latch mechanism begins to slide out of the door. the screwdriver stays inside the bore hole and both hands stay at the doorknob bore.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt removes the old latch mechanism from the door bore with a blue-handled screwdriver, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with its round bore hole on the front face, the stainless steel Defiant deadbolt latch faceplate mounted in the door edge to the right, and the bright sunny porch with a white railing behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0013_divider",
+   "kind": "divider",
+   "label": "SHOT 0013 — A man in a plain denim work shirt inserts a new exterior deadbolt cyli",
+   "note": "Generated with the rewriter pipeline (configs/shot0013.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0013",
+   "kind": "target",
+   "label": "TARGET — original human shot 0013",
+   "note": "A man in a plain denim work shirt inserts a new exterior deadbolt cylinder into the door bore, working with both hands; the man. 1.6s source. Beats: the man holds the new stainless exterior deadbolt cylinder w → he pushes the deadbolt cylinder into the upper bore hole so ",
+   "video": "assets/target_shot0013.mp4",
+   "frames": [
+    "assets/target0013_f0.jpg",
+    "assets/target0013_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0013_pipeline",
+   "label": "PIPELINE RESULT — shot 0013 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0013_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — hands",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt inserts a new exterior deadbolt cylinder into the door bore, working with both hands; the man",
+     "refs": [
+      "assets/shot0013_kf1.png",
+      "assets/shot0013_kf2.png"
+     ],
+     "video": "assets/shot0013_result.mp4",
+     "frames": [
+      "assets/shot0013_result_f0.jpg",
+      "assets/shot0013_result_f1.jpg",
+      "assets/shot0013_result_f2.jpg",
+      "assets/shot0013_result_f3.jpg",
+      "assets/shot0013_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — the man holds the new stainless exterior deadbolt cylinder with its tailpiece and aligns it to the upper round bore hole on the front face of the white door, his other hand steadying the door edge.\nUse @Image2 as the last frame — he pushes the deadbolt cylinder into the upper bore hole so its tailpiece passes through toward the latch, seating the cylinder flush against the door face. both hands stay at the upper bore hole and the cylinder stays aligned to the hole.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt inserts a new exterior deadbolt cylinder into the door bore, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with two round bore holes on its front face and the stainless steel Defiant deadbolt latch installed in the door edge, the glass window pane on the door, and the bright porch with a white railing, green foliage and a fence behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0014_divider",
+   "kind": "divider",
+   "label": "SHOT 0014 — A man in a plain denim work shirt installs the new deadbolt latch into",
+   "note": "Generated with the rewriter pipeline (configs/shot0014.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0014",
+   "kind": "target",
+   "label": "TARGET — original human shot 0014",
+   "note": "A man in a plain denim work shirt installs the new deadbolt latch into the door edge with a blue-handled screwdriver, working with both hands; the man. 4.9s source. Beats: a hand slides the new stainless deadbolt latch into the mort → the fingers press the deadbolt latch faceplate flush into th",
+   "video": "assets/target_shot0014.mp4",
+   "frames": [
+    "assets/target0014_f0.jpg",
+    "assets/target0014_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0014_pipeline",
+   "label": "PIPELINE RESULT — shot 0014 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0014_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — blue-handled screwdriver",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt installs the new deadbolt latch into the door edge with a blue-handled screwdriver, working with both hands; the man",
+     "refs": [
+      "assets/shot0014_kf1.png",
+      "assets/shot0014_kf2.png"
+     ],
+     "video": "assets/shot0014_result.mp4",
+     "frames": [
+      "assets/shot0014_result_f0.jpg",
+      "assets/shot0014_result_f1.jpg",
+      "assets/shot0014_result_f2.jpg",
+      "assets/shot0014_result_f3.jpg",
+      "assets/shot0014_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed close camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — a hand slides the new stainless deadbolt latch into the mortise pocket on the white door edge, its bolt entering the bore, while the other hand holds a blue-handled screwdriver ready at the faceplate.\nUse @Image2 as the last frame — the fingers press the deadbolt latch faceplate flush into the door-edge mortise and steady it from the bore-hole side, the blue-handled screwdriver poised at the top mounting screw. both hands stay at the door edge and the latch faceplate stays seated in the mortise.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt installs the new deadbolt latch into the door edge with a blue-handled screwdriver, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door edge with its round bore hole on the door face and the stainless steel Defiant deadbolt latch faceplate seated in the edge mortise, and the bright sunny porch with a white railing behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0015_divider",
+   "kind": "divider",
+   "label": "SHOT 0015 — A man in a plain denim work shirt installs the new deadbolt latch into",
+   "note": "Generated with the rewriter pipeline (configs/shot0015.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0015",
+   "kind": "target",
+   "label": "TARGET — original human shot 0015",
+   "note": "A man in a plain denim work shirt installs the new deadbolt latch into the door edge with a blue-handled screwdriver, working with both hands; the man. 4.6s source. Beats: the man holds the new deadbolt latch with its dark faceplate → he presses the deadbolt latch faceplate flush into the door-",
+   "video": "assets/target_shot0015.mp4",
+   "frames": [
+    "assets/target0015_f0.jpg",
+    "assets/target0015_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0015_pipeline",
+   "label": "PIPELINE RESULT — shot 0015 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0015_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — blue-handled screwdriver",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt installs the new deadbolt latch into the door edge with a blue-handled screwdriver, working with both hands; the man",
+     "refs": [
+      "assets/shot0015_kf1.png",
+      "assets/shot0015_kf2.png"
+     ],
+     "video": "assets/shot0015_result.mp4",
+     "frames": [
+      "assets/shot0015_result_f0.jpg",
+      "assets/shot0015_result_f1.jpg",
+      "assets/shot0015_result_f2.jpg",
+      "assets/shot0015_result_f3.jpg",
+      "assets/shot0015_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — the man holds the new deadbolt latch with its dark faceplate and slides it into the mortise pocket on the white door edge, the bolt entering the door, his other hand bracing a blue-handled screwdriver.\nUse @Image2 as the last frame — he presses the deadbolt latch faceplate flush into the door-edge mortise and steadies it with his fingers, the blue-handled screwdriver poised to drive the top mounting screw. both hands stay at the door edge and the latch faceplate stays seated in the mortise.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt installs the new deadbolt latch into the door edge with a blue-handled screwdriver, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door edge with two round bore holes on the door face and the mortise pocket cut into the edge, and the bright sunny window and porch with green foliage and a white railing behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0016_divider",
+   "kind": "divider",
+   "label": "SHOT 0016 — A man in a plain denim work shirt drives the screws that fasten a blac",
+   "note": "Generated with the rewriter pipeline (configs/shot0016.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0016",
+   "kind": "target",
+   "label": "TARGET — original human shot 0016",
+   "note": "A man in a plain denim work shirt drives the screws that fasten a black latch faceplate into the edge of a white door using a blue-handled screwdriver, working with both hands; the man. 6.3s source. Beats: the tip of a blue-handled screwdriver seats into the lower s → the screwdriver keeps turning and the screw sinks flush, sea",
+   "video": "assets/target_shot0016.mp4",
+   "frames": [
+    "assets/target0016_f0.jpg",
+    "assets/target0016_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0016_pipeline",
+   "label": "PIPELINE RESULT — shot 0016 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0016_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — blue-handled screwdriver",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt drives the screws that fasten a black latch faceplate into the edge of a white door using a blue-handled screwdriver, working with both hands; the man",
+     "refs": [
+      "assets/shot0016_kf1.png",
+      "assets/shot0016_kf2.png"
+     ],
+     "video": "assets/shot0016_result.mp4",
+     "frames": [
+      "assets/shot0016_result_f0.jpg",
+      "assets/shot0016_result_f1.jpg",
+      "assets/shot0016_result_f2.jpg",
+      "assets/shot0016_result_f3.jpg",
+      "assets/shot0016_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed close camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — the tip of a blue-handled screwdriver seats into the lower screw of the black latch faceplate on the edge of the white door and begins turning it clockwise to drive it in, while the other hand steadies the door edge.\nUse @Image2 as the last frame — the screwdriver keeps turning and the screw sinks flush, seating the black latch faceplate tight against the edge of the door. the screwdriver tip stays engaged in the latch faceplate screw and both hands stay at the door edge.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt drives the screws that fasten a black latch faceplate into the edge of a white door using a blue-handled screwdriver, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with its round bored latch hole showing brass inside, the black rectangular latch faceplate on the door edge, and the bright sunny porch with a white railing and pale washed-out background behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0017_divider",
+   "kind": "divider",
+   "label": "SHOT 0017 — A man in a plain denim work shirt seats the black exterior knob assemb",
+   "note": "Generated with the rewriter pipeline (configs/shot0017.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0017",
+   "kind": "target",
+   "label": "TARGET — original human shot 0017",
+   "note": "A man in a plain denim work shirt seats the black exterior knob assembly into the bored hole of a white door, pushing its brass cylinder and spindle through the latch while steadying the latch faceplate on the door edge, working with both hands; the man. 1.8s source. Beats: the right hand presses a black exterior knob assembly agains",
+   "video": "assets/target_shot0017.mp4",
+   "frames": [
+    "assets/target0017_f0.jpg"
+   ]
+  },
+  {
+   "id": "shot0017_pipeline",
+   "label": "PIPELINE RESULT — shot 0017 (v1)",
+   "params": "5s · 720p · 16:9 · person_mode=cover_body · 1 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0017_v1",
+     "approach": "cover_body keyframes (1 beat(s)) — hands",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt seats the black exterior knob assembly into the bored hole of a white door, pushing its brass cylinder and spindle through the latch while steadying the latch faceplate on the door edge, working with both hands; the man",
+     "refs": [
+      "assets/shot0017_kf1.png"
+     ],
+     "video": "assets/shot0017_result.mp4",
+     "frames": [
+      "assets/shot0017_result_f0.jpg",
+      "assets/shot0017_result_f1.jpg",
+      "assets/shot0017_result_f2.jpg",
+      "assets/shot0017_result_f3.jpg",
+      "assets/shot0017_result_f4.jpg"
+     ],
+     "prompt": "Keep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — the right hand presses a black exterior knob assembly against the round bored hole on the face of the white door so its brass cylinder and spindle pass through into the latch, while the left hand steadies the black latch faceplate on the door edge.\nA man in a plain denim work shirt seats the black exterior knob assembly into the bored hole of a white door, pushing its brass cylinder and spindle through the latch while steadying the latch faceplate on the door edge, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with a round bored hole showing brass inside and a smaller latch cutout above, the black latch faceplate on the door edge, the black exterior knob with its brass cylinder, and the bright interior with a large fiddle-leaf fig plant and a sunny window behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0018_divider",
+   "kind": "divider",
+   "label": "SHOT 0018 — A man in a plain denim work shirt joins the two halves of a black knob",
+   "note": "Generated with the rewriter pipeline (configs/shot0018.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0018",
+   "kind": "target",
+   "label": "TARGET — original human shot 0018",
+   "note": "A man in a plain denim work shirt joins the two halves of a black knob lockset through a white door, guiding the exterior knob's brass posts and spindle into the bore to mate with the interior knob, working with both hands; the man. 3.3s source. Beats: the left hand presents the black exterior knob, its brass mo → the left hand pushes the exterior knob into the bore so its ",
+   "video": "assets/target_shot0018.mp4",
+   "frames": [
+    "assets/target0018_f0.jpg",
+    "assets/target0018_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0018_pipeline",
+   "label": "PIPELINE RESULT — shot 0018 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0018_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — hands",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt joins the two halves of a black knob lockset through a white door, guiding the exterior knob's brass posts and spindle into the bore to mate with the interior knob, working with both hands; the man",
+     "refs": [
+      "assets/shot0018_kf1.png",
+      "assets/shot0018_kf2.png"
+     ],
+     "video": "assets/shot0018_result.mp4",
+     "frames": [
+      "assets/shot0018_result_f0.jpg",
+      "assets/shot0018_result_f1.jpg",
+      "assets/shot0018_result_f2.jpg",
+      "assets/shot0018_result_f3.jpg",
+      "assets/shot0018_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed close camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — the left hand presents the black exterior knob, its brass mounting posts and spindle pointing toward the round bored hole in the white door, while the right hand steadies the black interior knob against the other side of the door.\nUse @Image2 as the last frame — the left hand pushes the exterior knob into the bore so its brass posts and spindle pass through the door and mate with the interior knob, seating the round rose flush against the door face. both hands stay on the two black knobs at the bored hole and the black latch faceplate stays on the door edge.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt joins the two halves of a black knob lockset through a white door, guiding the exterior knob's brass posts and spindle into the bore to mate with the interior knob, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with a round bored hole showing brass inside, the black latch faceplate with two screws on the door edge, the black interior and exterior knobs with brass mounting posts, and the bright washed-out porch background exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0019_divider",
+   "kind": "divider",
+   "label": "SHOT 0019 — A man in a plain denim work shirt drives the mounting screws that fast",
+   "note": "Generated with the rewriter pipeline (configs/shot0019.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0019",
+   "kind": "target",
+   "label": "TARGET — original human shot 0019",
+   "note": "A man in a plain denim work shirt drives the mounting screws that fasten a black interior door knob to a white door using a blue-handled screwdriver, steadying the exterior knob with his other hand, working with both hands; the man. 7.2s source. Beats: the right hand drives a blue-handled screwdriver into the up → the screwdriver moves down to the lower mounting screw of th",
+   "video": "assets/target_shot0019.mp4",
+   "frames": [
+    "assets/target0019_f0.jpg",
+    "assets/target0019_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0019_pipeline",
+   "label": "PIPELINE RESULT — shot 0019 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0019_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — blue-handled screwdriver",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt drives the mounting screws that fasten a black interior door knob to a white door using a blue-handled screwdriver, steadying the exterior knob with his other hand, working with both hands; the man",
+     "refs": [
+      "assets/shot0019_kf1.png",
+      "assets/shot0019_kf2.png"
+     ],
+     "video": "assets/shot0019_result.mp4",
+     "frames": [
+      "assets/shot0019_result_f0.jpg",
+      "assets/shot0019_result_f1.jpg",
+      "assets/shot0019_result_f2.jpg",
+      "assets/shot0019_result_f3.jpg",
+      "assets/shot0019_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — the right hand drives a blue-handled screwdriver into the upper mounting screw of the black interior knob and turns it clockwise to fasten the knob to the white door, while the left hand reaches around and steadies the black exterior knob on the other side.\nUse @Image2 as the last frame — the screwdriver moves down to the lower mounting screw of the black interior knob and turns it, seating the round knob base flush against the door. the screwdriver stays engaged with a knob mounting screw and the left hand stays on the exterior knob.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt drives the mounting screws that fasten a black interior door knob to a white door using a blue-handled screwdriver, steadying the exterior knob with his other hand, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with a round bored hole showing bare brass and an empty latch cutout above it, the black interior and exterior knobs, and the bright sunny porch with a white railing and green foliage behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0020_divider",
+   "kind": "divider",
+   "label": "SHOT 0020 — A man in a plain denim work shirt seats a black spring-latch bolt into",
+   "note": "Generated with the rewriter pipeline (configs/shot0020.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0020",
+   "kind": "target",
+   "label": "TARGET — original human shot 0020",
+   "note": "A man in a plain denim work shirt seats a black spring-latch bolt into the edge of an exterior door, working with both hands; the man. 4.1s source. Beats: a hand positions the black latch faceplate and its silver sp → the thumb presses the black latch faceplate flush against th",
+   "video": "assets/target_shot0020.mp4",
+   "frames": [
+    "assets/target0020_f0.jpg",
+    "assets/target0020_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0020_pipeline",
+   "label": "PIPELINE RESULT — shot 0020 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0020_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — hands",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt seats a black spring-latch bolt into the edge of an exterior door, working with both hands; the man",
+     "refs": [
+      "assets/shot0020_kf1.png",
+      "assets/shot0020_kf2.png"
+     ],
+     "video": "assets/shot0020_result.mp4",
+     "frames": [
+      "assets/shot0020_result_f0.jpg",
+      "assets/shot0020_result_f1.jpg",
+      "assets/shot0020_result_f2.jpg",
+      "assets/shot0020_result_f3.jpg",
+      "assets/shot0020_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — a hand positions the black latch faceplate and its silver spring bolt into the shallow mortise cut into the edge of the white door, aligning it over the screw holes.\nUse @Image2 as the last frame — the thumb presses the black latch faceplate flush against the door edge so the silver bolt seats fully into the mortise. the hand stays pressed against the latch faceplate on the door edge and the latch stays seated in the mortise.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt seats a black spring-latch bolt into the edge of an exterior door, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with a bare-wood cross-bore hole drilled through its face, the white door edge and jamb, the black latch faceplate with its silver bolt, and the bright sunny white porch behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0021_divider",
+   "kind": "divider",
+   "label": "SHOT 0021 — A man in a plain denim work shirt uses a blue-handled screwdriver to f",
+   "note": "Generated with the rewriter pipeline (configs/shot0021.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0021",
+   "kind": "target",
+   "label": "TARGET — original human shot 0021",
+   "note": "A man in a plain denim work shirt uses a blue-handled screwdriver to fasten the latch faceplate into the edge of an exterior door, working with both hands; the man. 2.5s source. Beats: a hand sets the tip of a blue-handled screwdriver onto the t → the hand turns the blue-handled screwdriver clockwise to dri",
+   "video": "assets/target_shot0021.mp4",
+   "frames": [
+    "assets/target0021_f0.jpg",
+    "assets/target0021_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0021_pipeline",
+   "label": "PIPELINE RESULT — shot 0021 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0021_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — blue-handled screwdriver",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt uses a blue-handled screwdriver to fasten the latch faceplate into the edge of an exterior door, working with both hands; the man",
+     "refs": [
+      "assets/shot0021_kf1.png",
+      "assets/shot0021_kf2.png"
+     ],
+     "video": "assets/shot0021_result.mp4",
+     "frames": [
+      "assets/shot0021_result_f0.jpg",
+      "assets/shot0021_result_f1.jpg",
+      "assets/shot0021_result_f2.jpg",
+      "assets/shot0021_result_f3.jpg",
+      "assets/shot0021_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — a hand sets the tip of a blue-handled screwdriver onto the top screw of the black latch faceplate on the edge of the white door while the other hand steadies the screwdriver shaft.\nUse @Image2 as the last frame — the hand turns the blue-handled screwdriver clockwise to drive the screw and tighten the black latch faceplate against the door edge. the screwdriver tip stays engaged with the faceplate screw and both hands stay at the door edge.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt uses a blue-handled screwdriver to fasten the latch faceplate into the edge of an exterior door, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door, the black latch faceplate on the door edge, the bare-wood cross-bore hole on the door face, the black door knob below, and the bright sunny porch with green foliage and a white railing behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0022_divider",
+   "kind": "divider",
+   "label": "SHOT 0022 — A man in a plain denim work shirt installs an exterior door-lock cylin",
+   "note": "Generated with the rewriter pipeline (configs/shot0022.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0022",
+   "kind": "target",
+   "label": "TARGET — original human shot 0022",
+   "note": "A man in a plain denim work shirt installs an exterior door-lock cylinder, threading its brass tailpiece through the door into the latch, working with both hands; the man. 6.5s source. Beats: the right hand holds the black exterior lock cylinder by its → the right hand pushes the black lock cylinder toward the doo",
+   "video": "assets/target_shot0022.mp4",
+   "frames": [
+    "assets/target0022_f0.jpg",
+    "assets/target0022_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0022_pipeline",
+   "label": "PIPELINE RESULT — shot 0022 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=none · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0022_v1",
+     "approach": "none keyframes (2 beat(s)) — hands",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt installs an exterior door-lock cylinder, threading its brass tailpiece through the door into the latch, working with both hands; the man",
+     "refs": [],
+     "video": "assets/shot0022_result.mp4",
+     "frames": [
+      "assets/shot0022_result_f0.jpg",
+      "assets/shot0022_result_f1.jpg",
+      "assets/shot0022_result_f2.jpg",
+      "assets/shot0022_result_f3.jpg",
+      "assets/shot0022_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed close camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — the right hand holds the black exterior lock cylinder by its round rose and aligns its brass tailpiece with the bare-wood cross-bore hole in the door face while the left fingers steady the door.\nUse @Image2 as the last frame — the right hand pushes the black lock cylinder toward the door so the brass tailpiece slides through the cross-bore into the latch and the black rose comes flush against the door face. the hands stay on the black cylinder and the door face; the black latch faceplate and its silver bolt stay seated in the door edge.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt installs an exterior door-lock cylinder, threading its brass tailpiece through the door into the latch, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door, the black latch faceplate with its silver spring bolt on the door edge, the bare-wood cross-bore hole through the door face, the black lock cylinder with its brass tailpiece, and the bright sunny white porch with a railing behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0023_divider",
+   "kind": "divider",
+   "label": "SHOT 0023 — A man in a plain denim work shirt aligns the black interior half of a ",
+   "note": "Generated with the rewriter pipeline (configs/shot0023.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0023",
+   "kind": "target",
+   "label": "TARGET — original human shot 0023",
+   "note": "A man in a plain denim work shirt aligns the black interior half of a deadbolt onto an exterior door, working with both hands; the man. 1.7s source. Beats: the man holds the black interior deadbolt thumbturn assembly",
+   "video": "assets/target_shot0023.mp4",
+   "frames": [
+    "assets/target0023_f0.jpg"
+   ]
+  },
+  {
+   "id": "shot0023_pipeline",
+   "label": "PIPELINE RESULT — shot 0023 (v1)",
+   "params": "5s · 720p · 16:9 · person_mode=cover_body · 1 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0023_v1",
+     "approach": "cover_body keyframes (1 beat(s)) — hands",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt aligns the black interior half of a deadbolt onto an exterior door, working with both hands; the man",
+     "refs": [
+      "assets/shot0023_kf1.png"
+     ],
+     "video": "assets/shot0023_result.mp4",
+     "frames": [
+      "assets/shot0023_result_f0.jpg",
+      "assets/shot0023_result_f1.jpg",
+      "assets/shot0023_result_f2.jpg",
+      "assets/shot0023_result_f3.jpg",
+      "assets/shot0023_result_f4.jpg"
+     ],
+     "prompt": "Keep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — the man holds the black interior deadbolt thumbturn assembly up in both hands, its two brass mounting posts and tailpiece facing the door, and aligns it with the black exterior deadbolt cylinder already mounted on the white door. both hands stay on the black thumbturn assembly and the black exterior deadbolt and door knob stay mounted on the door.\nA man in a plain denim work shirt aligns the black interior half of a deadbolt onto an exterior door, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door, the black exterior deadbolt cylinder mounted above the black door knob, the black latch faceplates on the door edge, and the bright sunny porch with green foliage and a white railing behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0024_divider",
+   "kind": "divider",
+   "label": "SHOT 0024 — A man in a plain denim work shirt seats the round black interior thumb",
+   "note": "Generated with the rewriter pipeline (configs/shot0024.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0024",
+   "kind": "target",
+   "label": "TARGET — original human shot 0024",
+   "note": "A man in a plain denim work shirt seats the round black interior thumb-turn half of a deadbolt onto the door, aligning it over the latch and pressing it flush, working with both hands; the man. 3.4s source. Beats: both hands hold the round black interior thumb-turn half of  → the man presses the black thumb-turn plate flush against the",
+   "video": "assets/target_shot0024.mp4",
+   "frames": [
+    "assets/target0024_f0.jpg",
+    "assets/target0024_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0024_pipeline",
+   "label": "PIPELINE RESULT — shot 0024 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0024_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — hands",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt seats the round black interior thumb-turn half of a deadbolt onto the door, aligning it over the latch and pressing it flush, working with both hands; the man",
+     "refs": [
+      "assets/shot0024_kf1.png",
+      "assets/shot0024_kf2.png"
+     ],
+     "video": "assets/shot0024_result.mp4",
+     "frames": [
+      "assets/shot0024_result_f0.jpg",
+      "assets/shot0024_result_f1.jpg",
+      "assets/shot0024_result_f2.jpg",
+      "assets/shot0024_result_f3.jpg",
+      "assets/shot0024_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — both hands hold the round black interior thumb-turn half of the deadbolt against the white door face and align its spindle with the hole above the extended latch.\nUse @Image2 as the last frame — the man presses the black thumb-turn plate flush against the door and holds it steady over the latch. the hands stay on the black thumb-turn plate at the door; the deadbolt stays seated at the same spot on the door edge.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt seats the round black interior thumb-turn half of a deadbolt onto the door, aligning it over the latch and pressing it flush, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door, the silver deadbolt latch bolt in the door edge and the black exterior deadbolt to the right, and the bright sunny porch with a white railing and green foliage behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0025_divider",
+   "kind": "divider",
+   "label": "SHOT 0025 — A man in a plain denim work shirt uses a blue-handled screwdriver to d",
+   "note": "Generated with the rewriter pipeline (configs/shot0025.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0025",
+   "kind": "target",
+   "label": "TARGET — original human shot 0025",
+   "note": "A man in a plain denim work shirt uses a blue-handled screwdriver to drive the mounting screws of the black interior deadbolt onto the door, working with both hands; the man. 2.9s source. Beats: the man sets the tip of a blue-handled screwdriver into the  → the man turns the screwdriver clockwise to drive the mountin",
+   "video": "assets/target_shot0025.mp4",
+   "frames": [
+    "assets/target0025_f0.jpg",
+    "assets/target0025_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0025_pipeline",
+   "label": "PIPELINE RESULT — shot 0025 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0025_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — blue-handled screwdriver",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt uses a blue-handled screwdriver to drive the mounting screws of the black interior deadbolt onto the door, working with both hands; the man",
+     "refs": [
+      "assets/shot0025_kf1.png",
+      "assets/shot0025_kf2.png"
+     ],
+     "video": "assets/shot0025_result.mp4",
+     "frames": [
+      "assets/shot0025_result_f0.jpg",
+      "assets/shot0025_result_f1.jpg",
+      "assets/shot0025_result_f2.jpg",
+      "assets/shot0025_result_f3.jpg",
+      "assets/shot0025_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — the man sets the tip of a blue-handled screwdriver into the top mounting screw of the black interior deadbolt plate while the other hand steadies the deadbolt.\nUse @Image2 as the last frame — the man turns the screwdriver clockwise to drive the mounting screw and tighten the black deadbolt plate flush against the white door. the screwdriver stays engaged with the deadbolt screw and both hands stay at the deadbolt.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt uses a blue-handled screwdriver to drive the mounting screws of the black interior deadbolt onto the door, working with both hands; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door, the black interior deadbolt with its round black exterior deadbolt beside it and the black doorknob below, and the sunny setting with a large green fiddle-leaf plant and porch behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0026_divider",
+   "kind": "divider",
+   "label": "SHOT 0026 — A man in a plain denim work shirt turns the black interior thumb-turn ",
+   "note": "Generated with the rewriter pipeline (configs/shot0026.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0026",
+   "kind": "target",
+   "label": "TARGET — original human shot 0026",
+   "note": "A man in a plain denim work shirt turns the black interior thumb-turn of the deadbolt to throw the bolt and test the lock, working with his hand; the man. 2.1s source. Beats: the man's fingers grip the black thumb-turn lever of the dea → the man rotates the black thumb-turn and the silver deadbolt",
+   "video": "assets/target_shot0026.mp4",
+   "frames": [
+    "assets/target0026_f0.jpg",
+    "assets/target0026_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0026_pipeline",
+   "label": "PIPELINE RESULT — shot 0026 (v1)",
+   "params": "10s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0026_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — hands",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt turns the black interior thumb-turn of the deadbolt to throw the bolt and test the lock, working with his hand; the man",
+     "refs": [
+      "assets/shot0026_kf1.png",
+      "assets/shot0026_kf2.png"
+     ],
+     "video": "assets/shot0026_result.mp4",
+     "frames": [
+      "assets/shot0026_result_f0.jpg",
+      "assets/shot0026_result_f1.jpg",
+      "assets/shot0026_result_f2.jpg",
+      "assets/shot0026_result_f3.jpg",
+      "assets/shot0026_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed close camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — the man's fingers grip the black thumb-turn lever of the deadbolt on the white door face.\nUse @Image2 as the last frame — the man rotates the black thumb-turn and the silver deadbolt bolt extends out from the door edge, locking it. the fingers stay on the black thumb-turn and the deadbolt stays at the same spot on the door edge.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt turns the black interior thumb-turn of the deadbolt to throw the bolt and test the lock, working with his hand; the man stays visible in the shot; movements are natural and unhurried.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door, the black deadbolt thumb-turn, the silver deadbolt bolt in the door edge and the black exterior deadbolt to the right, and the bright sunny porch with a white railing behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0027_divider",
+   "kind": "divider",
+   "label": "SHOT 0027 — SKIPPED — not a hands-on how-to step: front half is a wide full-body '",
+   "note": "Generated with the rewriter pipeline (configs/shot0027.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0027",
+   "kind": "target",
+   "label": "TARGET — original human shot 0027",
+   "note": "SKIPPED — not a hands-on how-to step: front half is a wide full-body 'test the finished door' establishing shot (the whole person is the subject, so cover_body would erase it), back half is a Home Depot logo / homedepot.com/howto brand outro card",
+   "video": "assets/target_shot0027.mp4",
+   "frames": [
+    "assets/target0027_f0.jpg",
+    "assets/target0027_f1.jpg",
+    "assets/target0027_f2.jpg"
+   ]
+  },
+  {
+   "id": "shot0027_pipeline",
+   "label": "PIPELINE RESULT — shot 0027",
+   "params": "SKIPPED / not generated",
+   "experiments": [
+    {
+     "id": "shot0027_v1",
+     "approach": "pipeline",
+     "status": "rejected",
+     "error": "no output mp4 (skipped or failed)",
+     "refs": []
+    }
+   ]
+  },
+  {
+   "id": "shot0008_divider",
+   "kind": "divider",
+   "label": "SHOT 0008 — A man in a plain denim work shirt removes the loosened exterior doorkn",
+   "note": "Generated with the rewriter pipeline (configs/shot0008.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0008",
+   "kind": "target",
+   "label": "TARGET — original human shot 0008",
+   "note": "A man in a plain denim work shirt removes the loosened exterior doorknob, pulling the knob and its rose plate off the door, working with both hands; the man. 3.9s source. Beats: one hand holds a blue-handled screwdriver while the other ha → At the very end of the shot: the loosened doorknob and its r",
+   "video": "assets/target_shot0008.mp4",
+   "frames": [
+    "assets/target0008_f0.jpg",
+    "assets/target0008_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0008_pipeline",
+   "label": "PIPELINE RESULT — shot 0008 (v1)",
+   "params": "4s · 720p · 16:9 · person_mode=cover_body · 2 keyframes (beats 0.5s/2.9s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0008_v1",
+     "approach": "cover_body keyframes (beats re-timed to 0.5s / 2.9s) — knob worked free -> knob+rose plate pull away exposing bore hole",
+     "status": "ok",
+     "note": "REGENERATED to fix bad keyframes. The prior version's cover_body edits mangled shot 0008's busy two-handed frames: kf1 dropped the knob and kf2 hallucinated a hand screwing the deadbolt latch plate (wrong beat). Re-timing the beats to 0.5s and 2.9s produced clean, correct keyframes — kf1: screwdriver at the spindle with the other hand on the intact knob; kf2: the knob pulling away with the brass spindle drawing out and the bore hole exposed. The new video matches: works the spindle free, then the knob + rose plate separate revealing the bare bore hole and DEFIANT latch. 4s to match the source length.",
+     "refs": [
+      "assets/shot0008_kf1.png",
+      "assets/shot0008_kf2.png"
+     ],
+     "video": "assets/shot0008_result.mp4",
+     "frames": [
+      "assets/shot0008_result_f0.jpg",
+      "assets/shot0008_result_f1.jpg",
+      "assets/shot0008_result_f2.jpg",
+      "assets/shot0008_result_f3.jpg",
+      "assets/shot0008_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed close camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — one hand holds a blue-handled screwdriver near the door-edge bore hole while the other hand grips the stainless doorknob on the face of the door, working the knob and its spindle free.\nUse @Image2 as the last frame — the loosened stainless doorknob and its round rose plate pull away from the door in the hands, the brass spindle drawing out of the door and the bare round bore hole becoming visible.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt removes the loosened exterior doorknob, pulling the knob and its rose plate off the door, working with both hands; the man is FULLY VISIBLE in frame — his head and face, his plain denim shirt torso and both arms are all in shot as he works, not just his hands. The reference keyframes show only his hands and the hardware; generate the rest of his body and head naturally around them. Do not render disembodied hands.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with the round bore hole, the stainless steel deadbolt latch plate stamped DEFIANT on the door edge, and the bright sunny porch with a white railing behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    },
+    {
+     "id": "shot0008_sketch",
+     "approach": "SKETCH METHOD (no exact source frames) — 2 beat sketches @Image1-2 + photoreal style plate @Image3",
+     "status": "ok",
+     "note": "Sketch-method variant of shot 0008 (method=\"sketch\"): beat frames -> line sketches for geometry + one person-free photoreal plate for appearance. Shows the stainless knob + rose plate separating from the door with the brass spindle drawing out and the bore hole exposed; denim sleeves present, screwdriver at the DEFIANT latch. Framed to hands/forearms (head not shown). Compare against the cover_body result above.",
+     "refs": [
+      "assets/shot0008_sk1.png",
+      "assets/shot0008_sk2.png",
+      "assets/shot0008_styleplate.png"
+     ],
+     "video": "assets/shot0008_sketch.mp4",
+     "frames": [
+      "assets/shot0008_sketch_f0.jpg",
+      "assets/shot0008_sketch_f1.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order. @Image1-@Image2 are line-drawing SKETCHES that define the exact composition and the exact hand-and-tool geometry at each beat — reproduce each precisely, keep the tool the SHORT length shown and do not extend it beyond the sketch.\nUse @Image1 as the first frame — BEAT 1: one hand holds a blue-handled screwdriver while the other hand grips the stainless doorknob and works the spindle free through the round cross-hole in the door edge.\nUse @Image2 as the last frame — BEAT 2: At the very end of the shot: the loosened doorknob and its rose plate pull away from the door, exposing the brass spindle and the bare round bore hole.\n@Image3 is a PHOTOREAL appearance reference: render the ENTIRE video photorealistically in its style, lighting and materials; do NOT adopt the line-drawing/sketch look of the keyframes — they are only structure/position guides.\nThe shot moves through the 2 beats in order, settling briefly on each. Between beats the hand and tool move smoothly and directly from one position to the next, with NO extra back-and-forth, resetting, or retracting motions.\nA man in a plain denim work shirt removes the loosened exterior doorknob, pulling the knob and its rose plate off the door, working with both hands; the man is FULLY VISIBLE in frame — head, face, plain denim shirt torso and both arms — performing the beats, not just hands.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with the round bore hole, the stainless steel deadbolt latch plate stamped DEFIANT on the door edge, and the bright sunny porch with a white railing behind consistent and photoreal. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  },
+  {
+   "id": "shot0009_divider",
+   "kind": "divider",
+   "label": "SHOT 0009 — A man in a plain denim work shirt uses a blue-handled screwdriver to u",
+   "note": "Generated with the rewriter pipeline (configs/shot0009.json). TARGET then pipeline result."
+  },
+  {
+   "id": "target0009",
+   "kind": "target",
+   "label": "TARGET — original human shot 0009",
+   "note": "A man in a plain denim work shirt uses a blue-handled screwdriver to unscrew the latch faceplate on the door edge, working with both hands; the man. 2.7s source. Beats: a hand drives a blue-handled screwdriver into the mounting s → At the very end of the shot: the screwdriver keeps turning a",
+   "video": "assets/target_shot0009.mp4",
+   "frames": [
+    "assets/target0009_f0.jpg",
+    "assets/target0009_f1.jpg"
+   ]
+  },
+  {
+   "id": "shot0009_pipeline",
+   "label": "PIPELINE RESULT — shot 0009 (v1)",
+   "params": "4s · 720p · 16:9 · person_mode=cover_body · 2 keyframe(s) · auto-built by rewriter_pipeline.py",
+   "shared_prompt_note": "End-to-end pipeline: auto-extracted beat frames, R3-safe keyframes, vendor @Image keyframe prompt in the THD register, ~5s/beat.",
+   "experiments": [
+    {
+     "id": "shot0009_v1",
+     "approach": "cover_body keyframes (2 beat(s)) — blue-handled screwdriver",
+     "status": "ok",
+     "note": "A man in a plain denim work shirt uses a blue-handled screwdriver to unscrew the latch faceplate on the door edge, working with both hands; the man",
+     "refs": [
+      "assets/shot0009_kf1.png",
+      "assets/shot0009_kf2.png"
+     ],
+     "video": "assets/shot0009_result.mp4",
+     "frames": [
+      "assets/shot0009_result_f0.jpg",
+      "assets/shot0009_result_f1.jpg",
+      "assets/shot0009_result_f2.jpg",
+      "assets/shot0009_result_f3.jpg",
+      "assets/shot0009_result_f4.jpg"
+     ],
+     "prompt": "Use @Image1 through @Image2 as keyframes in that order.\nKeep a fixed medium camera framing for the entire shot; do not zoom or pan.\nUse @Image1 as the first frame — a hand drives a blue-handled screwdriver into the mounting screw of the lower latch faceplate on the door edge and turns it counter-clockwise, while the other hand steadies the door edge.\nUse @Image2 as the last frame — At the very end of the shot: the screwdriver keeps turning and the latch faceplate screw backs out of the door edge.\nThe shot moves through these 2 beats in order, settling briefly on each so each reads distinctly, with continuous natural hand and arm motion.\nA man in a plain denim work shirt uses a blue-handled screwdriver to unscrew the latch faceplate on the door edge, working with both hands; the man is FULLY VISIBLE in frame — his head and face, his plain denim shirt torso and both arms are all in shot as he works, not just his hands. The reference keyframes show only his hands and the hardware; generate the rest of his body and head naturally around them. Do not render disembodied hands.\nPhotoreal Home Depot how-to footage, bright natural daylight, clean and crisp. Keep the white door with the two stainless steel DEFIANT latch faceplates on the door edge (deadbolt latch above, doorknob latch below) and the round bore hole, and the bright sunny porch with a white railing, a wood fence and green foliage behind exactly as in the reference frames. Plain denim shirt with no text or logo. No on-screen text, no captions, no step labels, no watermarks, no added logos, no competitor brands."
+    }
+   ]
+  }
+ ]
+}

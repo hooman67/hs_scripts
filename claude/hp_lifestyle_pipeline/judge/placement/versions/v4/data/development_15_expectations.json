@@ -1,0 +1,159 @@
+{
+  "schema_version": "placement-v4-development-expectations-v1",
+  "annotation_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v4/astra/evidence/reviewer_0.json",
+  "annotation_sha256": "d466958fc707f504f70ec0c7273a433dfc84826aa36a1cbb46a0df201b51a1f3",
+  "verdict_labeled_count": 13,
+  "unlabeled_verdict_record_ids": [
+    "tassel__printer_FrontRightCloseUp__p1",
+    "elitebook__laptop_BackRightCloseUp__p3"
+  ],
+  "records": [
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p1",
+      "human_comment_exact": "Your comments are correct. But maybe someone stood up and moved the chair a bit. The chair doesn't need to be in absolute perfect working position. Because chairs move. But like if the chair was facing too far away it would be bad. THis should be a review (middle or lower) severity issue not a fail",
+      "explicit_verdict": "review",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "chair_displacement"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "tassel__printer_FrontWide__p1",
+      "human_comment_exact": "Should this not be a fail? it seems that the table is deformed. It's two side edges are not parallel. Also. Why would someone leave a rectangle table in the middle of the room like this? rectabngle / square tables are usually placed near walls at home. For middle of room we use round tables. The printer is placed correctly on the table tho. I agree with you.",
+      "explicit_verdict": "fail",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "malformed_support_furniture",
+        "misplaced_support_furniture"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "cashmere__laptop_FrontLeftMedium__p1",
+      "human_comment_exact": "Your comments are correct. But maybe someone stood up and moved the chair a bit. The chair doesn't need to be in absolute perfect working position. Because chairs move. But like if the chair was facing too far away it would be bad. THis should be a review (middle or lower) severity issue not a fail",
+      "explicit_verdict": "review",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "chair_displacement"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p1",
+      "human_comment_exact": "Fail this because of my previous comment about rectangle vs round tables in terms of placement in rooms.",
+      "explicit_verdict": "fail",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "misplaced_support_furniture"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "elitebook__laptop_FrontCloseUp__p1",
+      "human_comment_exact": "I agree with your comments. But this is a warning. It is possible that there is a chair but we just don't see it because of closeup shot.",
+      "explicit_verdict": "review",
+      "verdict_labeled": true,
+      "expected_issue_any": [],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p1",
+      "human_comment_exact": "Your comments are right. Also, there is something weird about the perspective of the wall. It seems that the table should not be touching the wall give how close it is to camera. This is evident because of the cabinet behind it. That cabinet is touching teh wall also.",
+      "explicit_verdict": null,
+      "verdict_labeled": false,
+      "expected_issue_any": [
+        "conflicting_perspective"
+      ],
+      "interpretation_note": "No absolute verdict inferred from comment."
+    },
+    {
+      "record_id": "magic__printer_FrontLeftMedium__p1",
+      "human_comment_exact": "The table is missing legs. This is a fail. Make sure we specifically check for the legs of furnature to make sure they are not missing.",
+      "explicit_verdict": "fail",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "missing_required_support"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "tassel__printer_FrontLeftMedium__p2",
+      "human_comment_exact": "To me this is a fail there is too much gap between the wall and the printer. Even if we account for cables being connected.",
+      "explicit_verdict": "fail",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "unmotivated_device_position"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p2",
+      "human_comment_exact": "I agree with your comments. But the chair is not the biggest issue. The table leg is missing also.",
+      "explicit_verdict": "fail",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "missing_required_support"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "elitebook__laptop_FrontWide__p2",
+      "human_comment_exact": "don't be too strcit on the chair. This should be a pass. \nAlthough i agre ethat the angle of the table (the way it is placed in the room) is a bit weird. But this is a warning not a fail",
+      "explicit_verdict": "pass",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "furniture_layout_conflict"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "tassel__printer_FrontCloseUp__p2",
+      "human_comment_exact": "This is a fail. The printer looks slanted on the table and also there is a random puzzle under the table.",
+      "explicit_verdict": "fail",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "device_support_axis_conflict",
+        "incoherent_prop_arrangement"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "magic__printer_FrontRightCloseUp__p2",
+      "human_comment_exact": "This is a warn because the glasses are disfiguree. Everything else is good. Maybe the table looks a bit too long.",
+      "explicit_verdict": "pass",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "unrelated_rendering_artifact"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "tassel__printer_FrontRightCloseUp__p2",
+      "human_comment_exact": "The placement of the table in the room is weird. Also random puzzle on the floor. This is a fail",
+      "explicit_verdict": "fail",
+      "verdict_labeled": true,
+      "expected_issue_any": [
+        "misplaced_support_furniture",
+        "incoherent_prop_arrangement"
+      ],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    },
+    {
+      "record_id": "elitebook__laptop_BackRightCloseUp__p3",
+      "human_comment_exact": "Don't be too string on chair placmenet.",
+      "explicit_verdict": null,
+      "verdict_labeled": false,
+      "expected_issue_any": [],
+      "interpretation_note": "No absolute verdict inferred from comment."
+    },
+    {
+      "record_id": "elitebook__laptop_FrontLeftMedium__p3",
+      "human_comment_exact": "too string on chair. this is a pass.",
+      "explicit_verdict": "pass",
+      "verdict_labeled": true,
+      "expected_issue_any": [],
+      "interpretation_note": "Verdict is explicit or directly resolved by the comment."
+    }
+  ]
+}

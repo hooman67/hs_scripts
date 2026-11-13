@@ -1,0 +1,28 @@
+visibility: public
+custom_pyenv: cm_5_0_0
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.firefly.clio_tyom.common[public]
+  - colligo.models.firefly.clio_tyom.workers.text_encoders.cm5[public]
+deps:
+- colligo.models.build
+- colligo.models.external_services.cme[public]
+- colligo.models.firefly.clio_tyom.checkpoint_utils
+- colligo.models.firefly.clio_tyom.common
+- colligo.models.firefly.clio_tyom.configs
+- colligo.models.firefly.clio_tyom.context_utils
+- colligo.models.firefly.clio_tyom.modules.data.cm5
+- colligo.models.firefly.clio_tyom.modules.lr_schedulers
+- colligo.models.firefly.clio_tyom.modules.surgery.cm5
+- colligo.models.firefly.clio_tyom.modules.training.cm5
+- colligo.models.firefly.clio_tyom.modules.utils.cm5
+- colligo.models.firefly.clio_tyom.training.common
+- numpy
+- omegaconf
+- torch
+- wandb
+exclude:
+- tests

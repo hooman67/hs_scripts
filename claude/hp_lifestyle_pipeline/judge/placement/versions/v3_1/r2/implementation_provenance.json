@@ -1,0 +1,103 @@
+{
+  "lineage": "Selected frozen V3 consensus -> r1 C-Tech semantics -> sole r2 evidence-envelope amendment.",
+  "v4_runtime_or_rules_imported": false,
+  "semantic_revisions": 1,
+  "astra_model_returned": "gpt-6-astra",
+  "astra_metadata": {
+    "finished_utc": "2026-11-10T05:00:29.188528+00:00",
+    "model_returned": "gpt-6-astra",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8304,
+      "prompt_tokens": 52545,
+      "total_tokens": 60849,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 4608,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  "judging_models_returned": [
+    "gpt-5.5-2026-04-24"
+  ],
+  "unchanged_runtime_function_bodies": [
+    "sha",
+    "json_sha",
+    "load",
+    "write_json",
+    "verify_freeze",
+    "wire_schema",
+    "component_schema",
+    "validate_components",
+    "reject_retired_code",
+    "validate_new_observation",
+    "select_anchors",
+    "image_parts",
+    "identity_matches",
+    "trigger_names",
+    "aggregate_stages",
+    "judge",
+    "main"
+  ],
+  "scoring_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/scoring.py",
+  "scoring_sha256": "d7061d8252b67c1b75dd6f6e680b05ab74545a3d9776763cc152bc6fd48c6006",
+  "observation_schema_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/observation_schema.json",
+  "observation_schema_sha256": "ea14e105bc76e3cd5be3c39be30328459f879fc1f0fad7e513329f5676f9a231",
+  "outer_envelope_version": "placement-evidence-envelope-v3.1-r2",
+  "protocol_freeze_sha256": "3b0edc28126363f37fa06561eb724ed208c34773121103cd7ac27cc4ab4488e7",
+  "transforms": [
+    {
+      "source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/run_judge.py",
+      "source_sha256": "d3866844153fea309198676fc8b6846d8994029f3f9ab7fc0f4a0b03a71d645c",
+      "output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/run_judge.py",
+      "output_sha256": "f6a87a0798c051f51c1062844a953bbfd7c9529554025e6da389c05b0aca0970",
+      "diff_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/deltas/runtime.diff",
+      "diff_sha256": "86dfd4d7c0b4e48e838bdec4435ca899586b660d0ee5f59ee52ed859775e3bb8"
+    },
+    {
+      "source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/prompts/baseline.md",
+      "source_sha256": "2129c48ba4d962618414f7e1158bf0d62657694724f73e0246459125b13a31c3",
+      "output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/prompts/baseline.md",
+      "output_sha256": "5abb4dc0b2c797326c9d0989ceb16d0a4b1703dc6107aff7fc2346cc1b528972",
+      "diff_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/deltas/baseline.diff",
+      "diff_sha256": "df427c02040f378cd3d70afb83d895fb80752733543258c9cb45b811ae270678"
+    },
+    {
+      "source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/prompts/compact.md",
+      "source_sha256": "c6c92217ee0ed486dcf8d68d19d880456d6be2982f77da5280fc038fca6da310",
+      "output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/prompts/compact.md",
+      "output_sha256": "238da3399a18cdbd88efc1e91e5ab1ca12009e30442db41f7168fe0d1358c735",
+      "diff_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/deltas/compact.diff",
+      "diff_sha256": "d1831750f57cc0163aa9f9f89f1e4c9ab5a546e82bc8ae3468b77487df410400"
+    },
+    {
+      "source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/prompts/proposal.md",
+      "source_sha256": "6845787107bb9ee1fd92d2eae2b6dbb609f2ab289719b82c69aeffb514526259",
+      "output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/prompts/proposal.md",
+      "output_sha256": "53f8a1d1d8882da371b8746a0d0eba1b6f3e5e9e75762428a54b352d734b0cf9",
+      "diff_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/deltas/proposal.diff",
+      "diff_sha256": "d0edf4e5de59fbd571d48b7cd8df821839193507b00ef6611888c84115a63394"
+    },
+    {
+      "source_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/prompts/independent.md",
+      "source_sha256": "b0ac8ff41968b62bb4d807e1218b84ec772c50e00d306c842b89878245022f2f",
+      "output_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/prompts/independent.md",
+      "output_sha256": "8797b97d5e7c8afe8974e8f9dd20cbae0382d7f6d276a85b7b00b9f538750391",
+      "diff_path": "/home/colligo/hs_scripts/claude/hp_lifestyle_pipeline/judge/placement/versions/v3_1/r2/deltas/independent.diff",
+      "diff_sha256": "c1d93d012fd6a01fefab6a663c0d31e4bba0f6ba68b052ab2c7a75ce989db864"
+    }
+  ],
+  "calibration_labels_passed_to_model": false,
+  "semantic_resamples": 0,
+  "raw_output_repair": false
+}

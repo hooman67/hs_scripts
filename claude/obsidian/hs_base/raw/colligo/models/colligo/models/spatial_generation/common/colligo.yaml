@@ -1,0 +1,26 @@
+custom_pyenv: 3diva_ttt_fe_gen6
+visibility: public
+public:
+  files:
+  - types.py
+  - conversational_types.py
+  - guidance.py
+  - pipeline_raw_types.py
+  - progress_utils.py
+  deps:
+  - colligo.base
+  - colligo.caplan_taxonomy
+  - pydantic
+deps:
+- av
+- colligo.data
+- colligo.external_services.mts
+- colligo.image
+- colligo.models.audio.common[public]
+- colligo.models.common.adapter_utils
+- colligo.models.spatial_generation.workers.ldm[public]
+- numpy
+- pillow
+- scipy
+- torch
+- torchaudio

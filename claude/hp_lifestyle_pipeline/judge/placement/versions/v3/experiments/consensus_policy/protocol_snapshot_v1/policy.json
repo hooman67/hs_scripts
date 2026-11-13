@@ -1,0 +1,32 @@
+{
+  "schema_version": "placement-consensus-additions-policy-v1",
+  "policy_version": "placement-consensus-additions-decision-v1",
+  "development_status": "posthoc_policy_developed_with_partial_new_image_inspection_not_heldout_validation",
+  "scope": "Every component selected by the frozen new-material trigger policy; no per-case model selection.",
+  "confirmed_consensus": {
+    "requirements": [
+      "Both proposal-aware and names-only checks are observed or partial.",
+      "Both checks have medium or high confidence and severity at least 2.",
+      "The checks share at least one issue code."
+    ],
+    "component": "Use minimum severity and confidence, partial visibility if either check is partial, shared issue codes only, and application-derived evidence quoting both checks."
+  },
+  "rejected_addition": {
+    "requirements": [
+      "Either check is confidently clear or minor (observed/partial, medium/high confidence, severity 0 or 1); or",
+      "Both checks are confidently material but have disjoint issue codes."
+    ],
+    "component": "Keep the baseline V2 component.",
+    "final_decision": "Do not auto-fail; record disagreement and cap high reported confidence to medium."
+  },
+  "unconfirmed_addition": {
+    "requirements": [
+      "A check is unobservable or reports low-confidence material and there is no confidently clear counter-assessment; or",
+      "The pair does not satisfy another resolution rule."
+    ],
+    "component": "Keep the baseline V2 component.",
+    "final_decision": "If baseline and merged verdicts are pass, defer to review with explicit uncertainty; preserve an existing fail."
+  },
+  "nontrigger_components": "Use the existing deterministic two-pass policy unchanged.",
+  "disclosure": "The policy was selected after root inspection of the four NEW160 trigger cases. NEW160 consensus output is a posthoc development probe, not held-out validation."
+}

@@ -1,0 +1,19 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.filix3.common[public]
+deps:
+- colligo.image
+- colligo.models.common.adapter_utils
+- colligo.models.filix3.common
+- colligo.models.filix3.workers.cvae[public]
+- colligo.models.filix3.workers.dit_mirai[public]
+- colligo.models.filix3.workers.t5[public]
+- numpy
+- opencv-contrib-python-headless
+- pillow
+- torch
+- torchvision

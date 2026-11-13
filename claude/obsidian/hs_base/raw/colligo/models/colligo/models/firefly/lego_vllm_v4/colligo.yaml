@@ -1,0 +1,30 @@
+visibility: public
+public:
+  files:
+  - types.py
+  deps:
+  - colligo.base
+  - colligo.models.firefly.lego_mllm[public]
+
+
+# LegoVLLM v4: Clean vLLM 0.18+ implementation (no backward compatibility).
+# Uses vLLM 0.18 + PyTorch 2.10+cu128 + FlashInfer backend.
+# For vLLM 0.17, use lego_vllm_v3.
+
+  - pydantic
+custom_pyenv: vllm_0_18_0
+
+deps:
+- colligo.models.common.adapter_utils
+- colligo.models.firefly.lego_mllm
+- deep-gemm
+- flashinfer-cubin
+- flashinfer-jit-cache
+- flashinfer-python
+- guidance
+- opentelemetry-propagator-b3
+- pillow
+- torch
+- torchvision
+- vllm
+- xgrammar

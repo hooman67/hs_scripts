@@ -1,0 +1,28 @@
+visibility: public
+custom_pyenv: cm_5_0_0
+public:
+  files:
+  - types
+  deps:
+  - colligo.base
+  - colligo.models.firefly.clio_common[public]
+  - colligo.models.firefly.diffusion.common[public]
+  - colligo.models.lego_designs.text_encoder[public]
+  - pydantic
+deps:
+- clio.core_models.encoders
+- colligo.models.build
+- colligo.models.firefly.clio_common
+- einops
+- flashattn-hopper
+- frameworks-aoti
+- liger-kernel
+- mori
+- numpy
+- omegaconf
+- pyyaml
+- torch
+- transformers
+- triton
+exclude:
+- gen45/export
