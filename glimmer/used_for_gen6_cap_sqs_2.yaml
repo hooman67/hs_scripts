@@ -1,0 +1,68 @@
+callbacks: {}
+
+model:
+  target: glimmer.modules.image_captioning.module.ImageCaptioningGlimmerModule
+  params:
+      base_url: "http://localhost:8000/v1"
+      # base_url: "http://pluto-prod-achicu-test-vllm-mix-h1-sd6hrm-0:8000/v1"
+      # base_url: "http://pluto-prod-raushah-colligo-vllm-se-0:8000/v1"
+      # base_url: "http://pluto-prod-achicu-colligo-vllm-tes-dmc8el-1-0:8000/v1"
+      # model_path: "BCCard/Qwen2.5-VL-32B-Instruct-FP8-Dynamic"
+      # model_path: "Qwen/Qwen3-VL-235B-A22B-Instruct"
+      # model_path: "Qwen/Qwen3-VL-32B-Instruct"
+      model_path: "Qwen/Qwen3-VL-32B-Instruct-FP8"
+      output_unique_identifier_ids: ['unique_id']
+      max_tokens: 4096
+      temperature: 0.1
+      top_p: 0.9
+      top_k: 1
+      seed: 17
+      concurrency: 80
+      writer:
+        overwrite_mode: overwrite
+        outputs:
+          - feature_name: asml_image_qwen3_32B_captions_v2
+            primary_key: unique_id
+            feature_version: 2025-10-24-0000
+      # writer:
+      #   outputs:
+      #   - output_location: /mnt/localssd/hs_image_captioning/
+      #   # - rendition: hs-vllm-test-new-glimmer
+      #     extension: json
+
+
+
+data:
+  sqs_receive_batch: 2
+  sqs_visibility_timeout_seconds: 120
+  sqs_local_prefetch: 2
+
+  num_workers: 0
+  batch_size: 1 #row-group size as no effect on the batch size
+  num_threads: 2 #8
+  data_source: >
+    select asset_id, strImagehash from read_parquet(
+      's3://disco-feature-store/features-main/lean_and_long/gen6/train/version_timestamp=2025-10-23Z0000/*.parquet',
+      hive_partitioning = false,
+      filename = true
+    )
+    WHERE
+      strOrigin NOT LIKE '%frame%'
+      AND (s3_image_key LIKE '%.jpg' OR s3_image_key LIKE '%.png')
+      AND channels != 2
+      AND CASE
+        WHEN is_gentech THEN upload_date > '2024-01-01 00:00:00'
+        ELSE upload_date < '2026-01-01 00:00:00'
+      END
+  stages:
+    - in:
+        image_hash: strImagehash
+      operator: glimmer.modules.image_captioning.stages.convert_image_to_base64
+      out: image_base64
+    - ['@let', ['asset_id', 'str(asset_id)']]
+    - sink:
+        in:
+          unique_id: asset_id
+          image_base64: image_base64
+          stringImghash: strImagehash
+

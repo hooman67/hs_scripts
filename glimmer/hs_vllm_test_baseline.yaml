@@ -1,0 +1,42 @@
+
+callbacks: {}
+
+model:
+  target: glimmer.modules.image_captioning.module.ImageCaptioningGlimmerModule
+  params:
+      base_url: "http://localhost:8000/v1"
+      # base_url: "http://pluto-prod-achicu-test-vllm-mix-h1-sd6hrm-0:8000/v1"
+      # base_url: "http://pluto-prod-raushah-colligo-vllm-se-0:8000/v1"
+      # base_url: "http://pluto-prod-achicu-colligo-vllm-tes-dmc8el-1-0:8000/v1"
+      model_path: "BCCard/Qwen2.5-VL-32B-Instruct-FP8-Dynamic"
+      output_unique_identifier_ids: ['unique_id']
+      max_tokens: 700
+      concurrency: 32 # 2-4 x CPU cores
+      temperature: 0.1
+      top_p: 0.9
+      top_k: 1
+      seed: 17
+      # batch_concurrency: 80
+      # writer:
+      #   outputs:
+      #   # - output_location: /mnt/localssd/hs_image_captioning/
+      #   - rendition: hs-vllm-test-baseline
+      #     extension: json
+
+# -num_cpu_processes 32
+data:
+  num_workers: 2
+  batch_size: 1
+  num_threads: 2 #8
+  data_source: >
+    select unique_id from read_parquet('s3://disco-feature-store/non_gentech.parquet') limit 1000000
+  stages:
+    - in:
+        image_hash: unique_id
+      operator: glimmer.modules.image_captioning.stages.convert_image_to_base64
+      out: image_base64
+    - sink:
+        in:
+          unique_id: unique_id
+          image_base64: image_base64
+

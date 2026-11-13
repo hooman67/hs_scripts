@@ -1,0 +1,74 @@
+import time
+import os
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+import subprocess
+from datetime import datetime
+
+class GitAutoCommitHandler(FileSystemEventHandler):
+    def __init__(self, repo_path):
+        self.repo_path = repo_path
+        self.last_modified = {}
+        self.cooldown = 2  # Seconds to wait before committing after a change
+
+    def on_modified(self, event):
+        if event.is_directory:
+            return
+        
+        # Skip hidden files and the .git directory
+        if "/." in event.src_path:
+            return
+
+        current_time = time.time()
+        
+        # Check if we've recently handled this file
+        if event.src_path in self.last_modified:
+            if current_time - self.last_modified[event.src_path] < self.cooldown:
+                return
+        
+        self.last_modified[event.src_path] = current_time
+        
+        # Wait briefly to let file operations complete
+        time.sleep(self.cooldown)
+        
+        try:
+            # Get relative path for commit message
+            rel_path = os.path.relpath(event.src_path, self.repo_path)
+            
+            # Run git commands
+            subprocess.run(['git', 'add', event.src_path], cwd=self.repo_path)
+            
+            # Create commit message with timestamp
+            timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            commit_message = f"Auto-commit: Updated {rel_path} at {timestamp}"
+            
+            subprocess.run(['git', 'commit', '-m', commit_message], cwd=self.repo_path)
+            subprocess.run(['git', 'push'], cwd=self.repo_path)
+            
+            print(f"Committed and pushed changes to {rel_path}")
+            
+        except Exception as e:
+            print(f"Error handling file {event.src_path}: {str(e)}")
+
+def start_monitoring(repo_path):
+    event_handler = GitAutoCommitHandler(repo_path)
+    observer = Observer()
+    observer.schedule(event_handler, repo_path, recursive=True)
+    observer.start()
+    
+    print(f"Started monitoring {repo_path}")
+    print("Press Ctrl+C to stop")
+    
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        observer.stop()
+        print("\nStopped monitoring")
+    
+    observer.join()
+
+if __name__ == "__main__":
+    # Get the repository path (assumes script is in the repo root)
+    repo_path = os.path.dirname(os.path.abspath(__file__))
+    start_monitoring(repo_path) 

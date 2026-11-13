@@ -1,0 +1,82 @@
+callbacks: {}
+
+model:
+  target: glimmer.modules.image_captioning.module.ImageCaptioningGlimmerModule
+  params:
+      base_url: "http://localhost:8000/v1"
+      # base_url: "http://pluto-prod-achicu-test-vllm-mix-h1-sd6hrm-0:8000/v1"
+      # base_url: "http://pluto-prod-raushah-colligo-vllm-se-0:8000/v1"
+      # base_url: "http://pluto-prod-achicu-colligo-vllm-tes-dmc8el-1-0:8000/v1"
+      # model_path: "BCCard/Qwen2.5-VL-32B-Instruct-FP8-Dynamic"
+      # model_path: "Qwen/Qwen3-VL-235B-A22B-Instruct"
+      # model_path: "Qwen/Qwen3-VL-32B-Instruct"
+      model_path: "Qwen/Qwen3-VL-32B-Instruct-FP8"
+      output_unique_identifier_ids: ['unique_id']
+      max_tokens: 4096
+      temperature: 0.1
+      top_p: 0.9
+      top_k: 1
+      seed: 17
+      concurrency: 80
+      writer:
+        overwrite_mode: overwrite
+        outputs:
+          - feature_name: asml_image_qwen3_32B_test
+            primary_key: unique_id
+            feature_version: 2025-10-23-0000
+      # writer:
+      #   outputs:
+      #   - output_location: /mnt/localssd/hs_image_captioning/
+      #   # - rendition: hs-vllm-test-new-glimmer
+      #     extension: json
+
+
+data:
+  sqs_receive_batch: 10
+  sqs_visibility_timeout_seconds: 120
+  # sqs_inflight_cap_per_process: 100
+
+  num_workers: 0
+  batch_size: 80 #row-group size as no effect on the batch size
+  num_threads: 2 #8
+  data_source: >
+    select asset_id, strImagehash from read_parquet(
+      's3://disco-feature-store/features-main/lean_and_long/clio4/train/version_timestamp=2025-03-17Z0731/*.parquet',
+      hive_partitioning = false,
+      filename = true
+    )
+    WHERE
+      -- Filter out video frames
+      (s3_image_key LIKE '%.jpg' OR s3_image_key LIKE '%.png')
+      -- Filter out 2-channel images, only accept grayscale, RGB, and RGBA images
+      AND channels != 2
+      -- Filter out data before 2024-01-01 for gentech data and after 2022-01-00 for non-gentech data
+      -- since gentech data after 2024-01-01 is with better quality, and non-gentech
+      -- data after 2022-01-00 is mixed with large amount of gentech data
+      AND CASE
+        WHEN is_gentech THEN upload_date > '2024-01-01 00:00:00'
+        ELSE upload_date < '2022-01-01 00:00:00'
+      END
+      -- Filter out photo images before 2012 based on guidance from the Stock curation team.
+      -- 2012 was when they got a lot more strict and careful about moderating for quality,
+      -- and thus anything before 2012 is not good quality.
+      AND CASE
+        -- When content_type_id is present
+        WHEN content_type_id = 1 THEN (upload_date > '2012-12-31 23:59:59')
+        -- When content_type_id is not present, use max logic
+        WHEN content_type_id IS NULL AND GREATEST(photo, illustration, vector) = photo THEN (upload_date > '2012-12-31 23:59:59')
+        -- Else don't filter
+        ELSE TRUE
+      END
+      limit 1000000
+  stages:
+    - in:
+        image_hash: strImagehash
+      operator: glimmer.modules.image_captioning.stages.convert_image_to_base64
+      out: image_base64
+    - ['@let', ['asset_id', 'str(asset_id)']]
+    - sink:
+        in:
+          unique_id: asset_id
+          image_base64: image_base64
+

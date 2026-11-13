@@ -1,0 +1,54 @@
+
+callbacks: {}
+
+model:
+  target: glimmer.modules.image_captioning.module.ImageCaptioningGlimmerModule
+  params:
+      base_url: "http://localhost:8000/v1"
+      # base_url: "http://pluto-prod-achicu-test-vllm-mix-h1-sd6hrm-0:8000/v1"
+      # base_url: "http://pluto-prod-raushah-colligo-vllm-se-0:8000/v1"
+      # base_url: "http://pluto-prod-achicu-colligo-vllm-tes-dmc8el-1-0:8000/v1"
+      model_path: "BCCard/Qwen2.5-VL-32B-Instruct-FP8-Dynamic"
+      output_unique_identifier_ids: ['unique_id']
+      max_tokens: 700
+      concurrency: 1
+
+      # temperature: 0.1
+      # top_p: 0.9
+      # top_k: 1
+
+      temperature: 0.5
+      top_k: 20
+      top_p: 0.92
+
+      seed: 17
+      batch_concurrency: 80
+
+      writer:
+        outputs:
+        - rendition: qwen2dot5-32b-instruct-fp8-image-structured-captions
+          extension: json
+
+
+data:
+  num_workers: 2
+  batch_size: 1
+  num_threads: 8
+  data_source: >
+    select *
+      from read_parquet('s3://disco-feature-store/features-main/lean_and_long/train/version_timestamp=2025-09-05Z0000/*.parquet')
+      WHERE
+        (s3_image_key LIKE '%.jpg' OR s3_image_key LIKE '%.png' OR s3_image_key LIKE '%.jpeg') AND
+        (genai_score <= 0.5 OR genai_score IS NULL) AND
+        (convnext_genai_score <= 0.5 OR convnext_genai_score IS NULL) AND
+        (is_gentech = FALSE OR is_gentech IS NULL) AND adobe_aesthetic_score <= 0.6
+  stages:
+    - in:
+        image_hash: unique_id
+      operator: glimmer.modules.image_captioning.stages.convert_image_to_base64
+      out: image_base64
+    - sink:
+        in:
+          unique_id: unique_id
+          image_base64: image_base64
+

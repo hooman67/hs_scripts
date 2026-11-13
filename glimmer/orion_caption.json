@@ -1,0 +1,61 @@
+{
+  "source": {
+    "type": "RemoteQueueSource",
+    "batch_size": 1024,
+    "config": {
+      "sample_url_source_field": "sample_url",
+      "sample_target_field": "b64_image",
+      "b64_encode": true,
+      "aws_sqs_queue_url": "https://sqs.us-west-2.amazonaws.com/760168217311/hs_exploration_queue4",
+      "aws_region_name": "us-west-2",
+      "visibility_timeout_seconds": 300,
+      "wait_time_seconds": 20
+    }
+  },
+  "transform": {
+    "type": "SequentialTransform",
+    "config": {
+      "transforms": [
+        {
+          "type": "MLDPImageLoaderTransform",
+          "config": {
+            "image_hash_source_key": "unique_id",
+            "image_target_key": "b64_image",
+            "scale": 1024,
+            "encode_base64": true
+          }
+        },
+        {
+          "type": "ImageCaptionTransform",
+          "config": {
+            "imageb64_source_key": "b64_image",
+            "caption_target_key": "caption",
+            "vllm_service_settings": {
+              "service_url": "http://127.0.0.1:8000/v1/vllm_serve/",
+              "model": "BCCard/Qwen2.5-VL-32B-Instruct-FP8-Dynamic",
+              "max_tokens": 700,
+              "temperature": 0.1,
+              "top_p": 0.9,
+              "top_k": 1,
+              "seed": 17,
+                "timeout_seconds": 120,
+                "http2": true,
+                "pool_maxsize": 20,                 
+                "max_keepalive_connections": 20,   
+                "keepalive_expiry_seconds": 45,
+                "trust_env": false,
+                "max_retries": 3,
+                "retry_backoff_base_seconds": 0.5,
+                "semaphore_limit": 20        
+            }
+          }
+        }
+      ]
+    }
+  },
+  "sink": {
+    "type": "DevNullSink",
+    "config": {},
+    "enrichments": []
+  }
+}

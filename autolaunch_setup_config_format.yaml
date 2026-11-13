@@ -1,0 +1,74 @@
+# setup config for AutoX + AutoGen
+
+#user info
+LDAP: hshariati
+
+####################################################
+#ruai info
+runai_info:
+  runai_project: autogen
+  node_pool: h100-1
+  num_jobs_per_command: 2
+  num_gpus_per_job: 4
+  docker_image: docker-matrix-experiments-snapshot.dr-uw2.adobeitc.com/colligo/colligo-dev:v26
+  job_name: autox-colligo-demo
+####################################################
+
+####################################################
+# code info
+# 1.colligo-env-branch will default to colligo main
+# 2.repo-sensei-path will default to None
+# 3.colligo env is created from colligo-env-branch
+# 4.Source codes are taken from repo-sensei-path if provided else from colligo-env-branch
+repo_sensei_path: /sensei-fs/projects/colligo
+colligo_env_branch: hshariati/some-branch
+####################################################
+
+####################################################
+#setup and command scripts
+#setup_script_path the script that will be run on your runai machine
+#to setup the env that can run your command provided in command_script_paths
+#command_script_paths list of commands that receive 4 parameters:
+# --ckpt <ckpt-path> and --outdir <save-to> respectively specifying the path to ckpt
+# and the path where the output csv is saved.
+#the command must produce a .csv file with input and output columns marked with
+# input_ and output_ for example a csv can have these columns:
+# input_prompt, input_shot_angle, output_pre_ssr, output_post_ssr
+# Also, your command can include --total_splits and --split_index as input parameters
+# which will be populated by us. We will pass num_jobs_per_command to your command as total_splits
+# and the index 0, 1, ..., (total_splits - 1) as the --split_index
+# usage of thse parameters inside of your code is optional as long as your code accepts them
+setup_script_path: /sensei-fs/setup/colligo_setup.sh
+command_script_paths:
+  - /sensei-fs/setup/command1.txt
+  - /sensei-fs/setup/command2.txt
+####################################################
+
+
+####################################################
+#model deployment setup
+#these are specific to colligo setup only and are not used by autogen
+#make_local_deploy is optional it will default to False
+#colligo_dev_yaml_path is mandatory. If make_local_deploy is not provided
+#we hit the remote endpoint provided by colligo_dev_yaml_path for everything
+#if you provide make_local_deploy as True, then we locally deploy your
+#colligo_dev_yaml_path (and hit local host). This will hit the remote endpoint
+#or local endpoint for each model as specified in your colligo_dev_yaml_path
+make_local_deploy: False
+colligo_dev_yaml_path: /sensei-fs/users/siddhantg/colligo.dev.yaml
+####################################################
+
+####################################################
+#wandb specificiations
+wandb_project: sampling
+####################################################
+
+
+
+####################################################
+#Used by AutoGen only
+####################################################
+autogen_ckpt_folder_path: /sensei-fs/users/siddhantg/
+autogen_ckpt_start: 33042
+autogen_ckpt_divisable_by: 100
+####################################################
