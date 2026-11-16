@@ -89,6 +89,15 @@ State assumptions about GQA/MQA, padding/block overhead, prefix sharing and arch
 not total GPU memory. Separate attention IO optimization from KV allocation/paging. Explain which
 measurements would distinguish compute, memory, communication and queueing bottlenecks.
 
+**Bounded lesson 2 packet prepared November 15:** learn from
+`/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/learning/first-pass/ML_INFERENCE_GUIDE.md`,
+then attempt
+`/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/learning/first-pass/ML_INFERENCE_EXERCISE.md`.
+It uses a small local tensor calculation and explicitly synthetic model/serving inputs, so no
+new GPU setup is required. First make the brief stage-1 design attempt if it has not been done;
+packet preparation does not establish completion of either stage. Review the representative
+attempt and important gaps, then begin the planned recurring coding stage.
+
 Use the existing notes and quizzes selectively. Learn unfamiliar concepts through a worked example
 with definitions before attempting an explanation. For familiar concepts, attempt first, read to
 repair a specific gap, then explain again without notes.

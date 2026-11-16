@@ -1,5 +1,32 @@
 # Decisions Log
 
+## 2026-11-15 — answer study questions before background document updates
+
+- **[USER-CONFIRMED — 2026-11-15]** Answer each study-document question immediately in the main
+  thread, then delegate the already-authorized automatic collapsible Q&A addition to a separate
+  background agent. Do not interrupt Hooman with progress notes or routine completion notices for
+  that background update. The updater must retain both the question and answer, insert them beside
+  the relevant passage, and preserve every existing byte, including date and update lines.
+
+## 2026-11-15 — automatically retain follow-up questions and clarifications
+
+- **[CONFIRMED BY HOOMAN]** Save subsequent study-document questions and their explanations as
+  closed-by-default collapsible sections containing both question and answer. Do not wait for
+  another request to save each one. Insert beside the relevant passage without changing existing
+  text, examples, dates or formatting. This standing workflow is also in the global instructions.
+- **[ADDITION COMPLETED]** Added the duplicate-notification/deletion explanation and the earlier
+  expired-lease claim clarification in section 6. The original paragraph and SQL remain intact.
+
+## 2026-11-15 — additions must preserve the material Hooman has read
+
+- **[CONFIRMED BY HOOMAN]** Requests to add notes or collapsible questions/answers authorize
+  insertion only. Do not change existing wording, examples, structure, formatting or date lines
+  unless explicitly requested. This applies beyond this lesson and is recorded in the canonical
+  global instructions. Hooman needs the original material to remain stable while learning.
+- **[CORRECTION COMPLETED]** Restored the first review guide's original update line and retained
+  both requested additions. Removing just those added blocks reproduces the pre-addition guide
+  exactly; the original section prose and SQL were not replaced. No exercise completion is inferred.
+
 ## 2026-11-12 — clarify authentication within the first lesson
 
 - **[USER REQUEST]** Explain how the API authenticates a caller and obtains the customer tenant.

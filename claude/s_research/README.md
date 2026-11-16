@@ -61,3 +61,5 @@ The project succeeds when Hooman can choose and implement a clearly sized, budge
 - `/home/colligo/hs_scripts/claude/s_research/research/food/RESEARCH_PLAN.md` — food-specific questions, evidence gates, stages, and stopping rule.
 - `/home/colligo/hs_scripts/claude/s_research/research/food/SUMMARY.md` — canonical food research, calorie model, staged shopping list, safety, and validation.
 - `/home/colligo/hs_scripts/claude/s_research/research/food/COSTCO_14_DAY_SHOPPING_LIST.md` — printable exact 14-day Costco-first list, shelf-life guidance, food-group audit, and nutrition-upgrade options.
+
+- /Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/SUMMARY.md — proposed Priority 1–3 medicine reserve, neonatal/pediatric limits, exact formulation selectors, Amazon search links, quantities, clinician-only/veterinary options and source audit; open for the medicine phase begun 2026-11-15.

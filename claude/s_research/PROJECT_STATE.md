@@ -1,5 +1,19 @@
 # Project State
 
+## Current checkpoint — 2026-11-15: medicine reserve
+
+[USER-CONFIRMED SCOPE] Hooman considers food/water/cooking/navigation research complete for now and requested a medicine shopping proposal for approximately 90 days of disrupted access. Existing prescriptions and bleeding/trauma supplies are outside this batch. No additional prior-topic purchase or physical completion is inferred.
+
+[RESEARCH COMPLETE; PURCHASES PROPOSED] Medicine M0–M3 is complete: current safety/label review, Priority 1–3 quantities and product selectors, explicit neonatal/pediatric boundaries, breastfeeding/interaction screening, optional clinician-only antibiotics/antiemetics, veterinary information, water dependencies, and an audit of accessible/blocked sources. Amazon sellers, stock, price and received expiry remain unverified; links are clearly labelled Amazon searches.
+
+Canonical result: /Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/SUMMARY.md
+
+Next exact step: privately have a pharmacist screen the Priority 1–2 list against current prescriptions and feeding context; obtain a pediatrician-written dose card for the exact selected liquid concentrations and a newborn urgent-care plan; decide with a clinician whether any prescription standby medicines are appropriate. Before purchase/use, verify package labels, seller, expiry and counts. No medicine purchase, prescription or individual clinical approval is inferred.
+
+Storage: local macOS checkout resolves to /Users/ana.rodrigues/Desktop/hooman/hs_scripts; no Pluto scratch is used. Remote backup of this new batch and Pluto host storage verification are not claimed. Precise child ages/weights and private health information are not added to tracked files.
+
+The unchanged sections below retain the previous checkpoint and action history.
+
 As of: 2026-11-07
 
 ## Current status

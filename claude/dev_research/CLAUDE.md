@@ -132,6 +132,8 @@ only the relevant topic after that. There is one current curriculum and one posi
 | Study sequence, gates and model/delegation contract | `/home/colligo/hs_scripts/claude/dev_research/learning/LEARNING_PLAN.md` |
 | The current first exercise | `/home/colligo/hs_scripts/claude/dev_research/learning/first-pass/STUDY_GUIDE.md` |
 | Concept-first tutorial; interview rehearsal in a separate section | `/home/colligo/hs_scripts/claude/dev_research/learning/first-pass/REVIEW_GUIDE.md` |
+| Lesson 2: ML/inference explanation, worked memory estimate and closed answer key | `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/learning/first-pass/ML_INFERENCE_GUIDE.md` |
+| Lesson 2: local tensor, evaluation, memory and supplied-trace assignment | `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/learning/first-pass/ML_INFERENCE_EXERCISE.md` |
 | HTTP connections, polling, SSE, WebSockets and webhooks; six local Python examples | `/home/colligo/hs_scripts/claude/dev_research/learning/first-pass/http_protocol.md` |
 | LinkedIn copy, profile corrections and application handoff | `/home/colligo/hs_scripts/claude/dev_research/positioning/POSITIONING.md` |
 | Current résumé | `/home/colligo/hs_scripts/claude/dev_research/positioning/HOOMAN_SHARIATI_RESUME.md` |

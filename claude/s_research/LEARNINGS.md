@@ -1,5 +1,12 @@
 # Durable Learnings
 
+## Medicine findings — 2026-11-15
+
+- `[VERIFIED]` — AAP says a baby 3 months or younger with a rectal temperature at or above 100.4°F / 38°C needs immediate pediatric assessment. Scope: young-infant fever; owning fever reducers does not create a neonatal home-treatment plan. Source: https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-and-Your-Baby.aspx. Retrieved 2026-11-15.
+- `[VERIFIED]` — NIDDK prioritizes hydration/electrolyte replacement for diarrhea, advises infant ORS use only after clinical advice, and generally advises against OTC anti-diarrhea medicines for infants/toddlers/young children or people with fever/bloody stool. Scope: acute diarrhea, not every cause of gastrointestinal symptoms. Source: https://www.niddk.nih.gov/health-information/digestive-diseases/diarrhea/treatment. Retrieved 2026-11-15.
+- `[VERIFIED / SCOPE DIFFERENCE RETAINED]` — AAD supports cooling and then plain petroleum jelly/nonstick dressing for first-degree burns and advises against routine topical antibiotics; NHS acute-burn guidance emphasizes 20-minute cooling and no acute creams/oils. Scope: superficial thermal-burn care; serious/infant/chemical/electrical burns require assessment. Sources: https://www.aad.org/public/everyday-care/injured-skin/burns/treat-minor-burns and https://www.nhs.uk/conditions/burns-and-scalds/. Retrieved 2026-11-15.
+- `[RESEARCHER DECISION / ASSUMED QUANTITIES]` — Ninety-day pharmacy disruption is modeled with modest stock for occasional episodes, not continuous medication. ORS packets require their exact volume of existing potable water and do not create or disinfect water. Calculations, quantities, source limits and conditional prescription/veterinary options are in /Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/SUMMARY.md.
+
 As of 2026-11-07.
 
 ## User context

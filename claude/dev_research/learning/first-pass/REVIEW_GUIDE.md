@@ -863,6 +863,26 @@ An **outbox row** is one such reminder. It is not another message broker or an A
 `sent_at = null` means our sender has not recorded successful sending. `event_id` identifies this
 notification record; it is different from the client's submission key.
 
+**Why have an `event_id` instead of just `job_id` and `sent_at`?**
+
+If each job has only one outbox row, **`job_id` and `sent_at` are sufficient**. Make `job_id`
+unique, and it identifies both the job and its one notification. A separate `event_id` is not
+required for that simpler design.
+
+This walkthrough uses a separate ID because one job can need several distinct notifications:
+the initial dispatch, then a later recovery dispatch if work stops making progress. If we retain
+both reminders, they could look like this:
+
+| event_id | job_id | sent_at |
+|---|---|---|
+| notice-901 | job-742 | 10:00 |
+| notice-902 | job-742 | null |
+
+The first reminder has been recorded as sent; the second still needs sending. `job_id` identifies
+the shared work, while `event_id` lets the sender update the particular reminder it sent. The names
+and time above are illustrative. Retrying delivery of **the same reminder** keeps its ID; creating
+**a new reminder** gets another ID. Neither the ID nor `sent_at` prevents duplicate delivery.
+
 In one PostgreSQL transaction, our API inserts the job—with its idempotency key/hash—and the outbox
 row. The following is an outline, not complete SQL:
 
@@ -962,6 +982,36 @@ rules cancel it.” A **heartbeat** is the worker's periodic update showing it i
 renewing its lease. Two minutes and a 30-second heartbeat are illustrative choices, not production
 recommendations; renewal must continue during long video/model computation.
 
+<details>
+<summary>Question: What if a job takes longer than its lease?</summary>
+
+**Question:** This rule of always accepting the result of latest attempt makes me wonder what
+happens if a job genuinely takes longer than expected. We reject the correct results of worker A
+because its attempt is now old and worker B owns the new attempt. But then the same thing happens
+to B, so we keep rejecting correct results just because they come too late.
+
+**Answer:** Yes—repeated lease expiry could cause that loop. A long-running job should avoid it by
+renewing its lease throughout processing. The lease duration is the time allowed between successful
+renewals, not the total time allowed for the job. For example, A has a two-minute lease and sends a
+heartbeat every 30 seconds: at 10:00:00 it claims attempt 1, deadline 10:02:00; at 10:00:30 it
+renews, deadline 10:02:30; at 10:01:00 it renews, deadline 10:03:00; renewals continue during
+processing and move the deadline forward. These intervals are illustrative. A can work for 20
+minutes and remain attempt 1. B cannot take over while A's database lease remains valid, even if B
+receives a duplicate SQS notification. A separately renews SQS visibility.
+
+If A and then B repeatedly lose their leases, the result-selection rule alone will not ensure
+completion. Keep heartbeat execution responsive during long computation: a blocking CPU/GPU call
+must not prevent renewal code from running. Allow realistic timing margins for scheduling delays,
+network latency, and brief database interruptions. Detect repeated failures and bound retries:
+repeated expiry should trigger investigation rather than endless replacement attempts.
+
+Separately, a stuck worker could keep renewing forever; a job deadline or progress timeout can stop
+that, and this is a different policy from the renewable ownership lease. The concern is valid when
+renewals repeatedly fail; ordinary long processing should keep the same attempt alive. Ownership
+checks prevent stale publication; responsive renewal and recovery make eventual completion possible.
+
+</details>
+
 A worker **claims** a job by changing the database row only if it is waiting or its previous lease
 expired. A **conditional update** applies a change only when its condition is still true. The
 condition and update must be evaluated as one protected database operation, not separated by video
@@ -1001,9 +1051,75 @@ after this short transaction commits successfully. An optional attempts table ca
 
 </details>
 
+<details>
+<summary>Question: Can a worker claim a RUNNING job when its lease has expired?</summary>
+
+**Question:** Does `OR (status = 'RUNNING' AND lease_until <= clock_timestamp())` mean a worker
+can claim the job if its status is running and the lease has already expired?
+
+**Answer:** Yes. The row can still say `RUNNING` after the previous owner's lease expires;
+passing the deadline does not automatically change that status. The condition allows a worker
+to claim a new attempt for the same job. The successful update assigns the claiming worker,
+increments `attempt_no`, and sets a fresh lease deadline. It does not continue the expired attempt.
+`<=` includes the exact expiration instant. Start work only after the claim transaction commits.
+Expiry does not prove the old worker has stopped; the guarded updates reject its late results.
+
+</details>
+
 If another owner is still active, do not start work or delete a nonterminal job's notification.
 Leave the message to become visible again, or use `ChangeMessageVisibility` to defer it for a bounded
 delay. If the job is terminal, the receiver deletes its own obsolete receipt.
+
+<details>
+<summary>Question: Why keep a notification when another worker already owns the job?</summary>
+
+**Question:** If the job is `RUNNING` and its lease has not expired, should this worker leave the
+message to become visible again, or change visibility to try again later? Why not delete it as an
+incomplete duplicate, since another worker must already have received an SQS message for this job?
+
+**Answer:** Yes: if the database shows another owner with an unexpired lease, this worker should
+not start processing. It can let the message become visible again, or extend visibility for a
+short, bounded delay before another receive.
+
+An unexpired lease means **another worker still has permission**, not that it is definitely
+healthy. It may have crashed moments after renewing its lease. Also, there may be **only one SQS
+message**, received again after its visibility timeout. Receiving it does not prove a separate
+message exists elsewhere.
+
+Consider this illustrative example:
+
+| Time | What happens |
+|---|---|
+| 0 seconds | A receives message M and claims the job with a lease lasting until 120 seconds. SQS hides M for 30 seconds. |
+| 10 seconds | A crashes. Its database lease remains unexpired. |
+| 30 seconds | M becomes visible again. |
+| 31 seconds | B receives the same M, checks the database, and sees A's unexpired lease. B cannot claim yet. |
+| After 120 seconds | A's lease has expired. When the notification is available and received again, a receiver can claim a new attempt. |
+
+**If B deletes M at 31 seconds, it removes the notification that could trigger later recovery.**
+A crashed, and there was no second message. A database recovery scan must now notice the unfinished
+job and send another notification.
+
+Keeping M preserves a queue-based recovery path:
+
+```text
+Owner disappears → message returns → lease eventually expires → new attempt
+```
+
+Even when there are two separate messages, another worker owning the job does not prove its
+notification will remain available or that it will finish.
+
+**Deleting can still be a valid design.** The alternative described later in this section deletes
+after a durable claim and relies on database leases plus a reliable recovery scan. It reduces
+repeated queue deliveries, but makes that scan responsible for recovering unfinished jobs.
+Keeping the message gives another recovery path; it is not universally better.
+
+SQS deletion has **no incomplete status**. `DeleteMessage` removes the notification using its
+receipt handle. The job's `RUNNING`, `SUCCEEDED`, or other status remains a separate database
+record. Once the database records a terminal outcome, no further execution is needed, so receivers
+can safely delete leftover notifications.
+
+</details>
 
 For a retryable processing failure, the valid owner conditionally returns the job to `QUEUED`,
 stops renewing visibility, and lets the message return after a retry delay. A permanent failure
@@ -1038,6 +1154,50 @@ attempt number and unexpired lease. An expired owner must stop; it cannot renew 
 lease or quietly continue under its old attempt. A renewal or completion whose time check happens
 after expiry must fail, even if its request was sent before expiry. To run again, the worker must
 claim a new attempt.
+
+<details>
+<summary>Question: Why reject a late result if nobody has taken over?</summary>
+
+**Question:** A worker is ready to submit success, but its lease has expired. Its attempt number
+is still correct: no other worker has claimed the job since expiry. Why can't we accept its result?
+
+**Answer:** We can allow that under a different, explicitly defined completion policy. Lease
+expiry does not by itself prove that the output is incorrect or that a newer attempt exists.
+The current tutorial chooses the stricter rule: **expiry ends permission to publish**, even
+before another worker takes over. That is a design choice, not a universal database requirement.
+
+Under this strict rule, heartbeats, progress and completion all require an unexpired lease.
+This gives ownership one consistent deadline. Its cost is that a finished result can be rejected
+even when nobody has replaced the worker.
+
+A valid alternative is **allow late completion while the worker is still the current owner**.
+Expiry makes the job eligible for takeover, but completion may still win if the database checks
+all of these in the same short, locked operation:
+
+- The job is still `RUNNING`, so cancellation or another terminal outcome has not won.
+- `owner_id` still matches the worker.
+- `attempt_no` still matches that execution.
+- Any separate job deadline and output-validity requirements are still satisfied.
+
+For that alternative, the completion check would not require an unexpired lease. The check and
+success update must happen together under the same row lock used by takeover; reading the attempt
+number first and submitting success later would leave a race.
+
+| Which operation wins the protected database transition? | Outcome under the late-completion alternative |
+|---|---|
+| A completes while its owner and attempt still match | Record `SUCCEEDED`; a later claimant finds the job terminal and cannot take it over. |
+| B takes over first and increments `attempt_no` | A's completion fails the attempt check, even if A's output was already ready. |
+| Cancellation changes the job state first | A's completion fails the `RUNNING` check. |
+
+This can preserve useful finished work without allowing an older attempt to overwrite a newer
+one. It remains specific to the guarded database result selection: output isolation and other
+external side effects still need their own protections, as section 7 explains.
+
+The distinction is **permission until expiry** versus **late completion permitted until
+superseded or cancelled**. The tutorial keeps the first policy. This Q&A explains the second
+without changing the existing rule or SQL. This is design reasoning, not a deployed-system test.
+
+</details>
 
 <details>
 <summary>Optional implementation detail: the guarded completion update</summary>
@@ -1077,6 +1237,60 @@ cost money, but it must not let the old worker replace the accepted result.
 SQS visibility answers **“when may this notification be received again?”** The database lease
 answers **“which attempt may update this job?”** Neither automatically renews the other. Our worker
 must maintain both, and stop acting as owner when its database ownership is lost.
+
+<details>
+<summary>Question: Can SQS message visibility replace the database lease? Why do we need both?</summary>
+
+**Question:** What is the relationship between the RDS lease and SQS message visibility?
+Could we use message visibility as the lease instead of maintaining both?
+
+**Answer:** SQS visibility controls delivery of a particular message. The lease in PostgreSQL,
+hosted on RDS, controls ownership of the logical job. Our application defines and checks that
+lease; RDS does not automatically connect it to SQS.
+
+In the normal flow:
+
+```text
+A receives a message about job-742
+    → SQS temporarily hides that message
+    → A claims job-742 in PostgreSQL
+    → PostgreSQL records owner A, attempt 1, and a lease deadline
+    → A processes the video and renews both timers
+    → A records success using the database ownership checks
+    → A deletes its SQS message
+```
+
+**Hiding a message does not establish exclusive job ownership.** One job can have several
+messages: the outbox sender might send twice after a crash, or recovery might create another
+notification. Hiding the first message does not hide the second:
+
+```text
+Message M1 → job-742 → received by A and temporarily hidden
+Message M2 → job-742 → received by B
+```
+
+Both workers hear about the same job, but the database claim lets only one acquire valid ownership.
+SQS Standard can also deliver the same message more than once during its visibility timeout.
+
+**The timers can expire independently.** If visibility expires after 30 seconds but A's database
+lease remains valid for two minutes, B can receive the message, check PostgreSQL, and avoid starting
+another execution. If A's database lease expires while its message remains hidden, A loses permission
+to update the job; recovery can arrange another notification. These durations are illustrative.
+
+**The database also protects the final decision.** If A pauses and B takes over, A's late result
+must pass checks for the current owner, attempt number, unexpired lease and job state together.
+PostgreSQL rejects an old attempt's update. SQS visibility cannot enforce that database write,
+and database checks alone cannot protect an unrelated S3 upload; section 7 handles those bytes.
+
+**Both are not mandatory in every system.** A simpler consumer can use visibility plus processing
+that safely tolerates duplicates, without a separate database lease. This design keeps durable job
+ownership, recovery, cancellation and final-result selection in PostgreSQL. The lease and guarded
+writes protect those rules; neither timer guarantees only one physical computation.
+
+The SQS behavior is supported by the existing primary references in section 13. The combined
+design and examples are teaching choices, not a new live-queue experiment.
+
+</details>
 
 A reconciler also finds expired running jobs or stranded waiting jobs and, in a short database
 transaction, makes eligible work runnable and creates a new outbox notification. It rechecks the
@@ -1137,6 +1351,73 @@ rules. Choose a concrete strategy; merely calling a filename “immutable” doe
   a current, nonterminal attempt's uploads alone. Keep enough job/attempt metadata to make this
   decision before deleting that metadata. This prevents cleanup racing an authorized completion.
 
+<details>
+<summary>Question: How can an S3 upload have no job attached?</summary>
+
+**Question:** How could this happen? How can we have an S3 upload with no job attached? We have
+the job to know where to upload, no?
+
+**Answer:** Yes—the worker already knows the job. “Orphan” here means that the database has not
+selected the uploaded object as the job's official result. It does not necessarily mean the object
+has no associated job ID.
+
+Uploading and recording success are two separate operations: (1) worker loads job-742 and claims
+attempt 1, (2) uploads its output to S3, (3) records `SUCCEEDED` and that exact output version in
+PostgreSQL. Between steps 2 and 3, the S3 video exists while job-742 remains `RUNNING` with selected
+output null. The worker knows the producing job, and its object name may contain
+`job-742/attempt-1`, but no job's selected-output fields point to it yet.
+
+This may be temporary during normal processing or persist after failure: a worker crashes after
+upload but before recording success; or it loses ownership before finalizing, a new attempt takes
+over, and its update is rejected, leaving its upload unselected.
+
+Unreferenced right now is insufficient reason for deletion because a valid worker may be about to
+select that output; cleanup could delete the file just before the database publishes its reference.
+Cleanup therefore checks whether the producing attempt is permanently unable to select that upload,
+e.g. a newer attempt replaced it or the job is already terminal, and always preserves the selected
+version.
+
+A more precise reading of the existing sentence is: “An uploaded object that no job currently
+selects as its official output is an orphan candidate.” The job can exist throughout the sequence.
+
+</details>
+
+<details>
+<summary>Question: Why not clean up S3 only after a job is terminal?</summary>
+
+**Question:** That makes sense. But why are we complicating our S3 cleanup policy? Why can't it
+be as simple as only doing cleanup for a terminal job, either succeeded or failed?
+
+**Answer:** Yes—cleaning up only after a job becomes terminal is a valid, simpler policy. It avoids
+checking whether individual attempts have lost ownership while the job is still running. Once the
+job is terminal, no attempt is allowed to publish a new result.
+
+| Job status | Action under the terminal-job-only cleanup alternative |
+|---|---|
+| `QUEUED`, `RUNNING`, `CANCEL_REQUESTED` | Leave uploads alone. |
+| `SUCCEEDED` | Delete unused uploads and preserve the exact selected output version until its retention period ends. |
+| `FAILED` or `CANCELLED` | Delete unused uploads. |
+
+The more complicated rule permits deleting an old attempt's unused uploads before the entire job
+finishes. Its benefit is earlier storage reclamation, e.g. multiple retries uploading large videos
+during a long job. That is an optimization, not a requirement for correct result selection.
+
+Simpler policy limits: jobs must eventually become terminal; a permanently stuck `RUNNING` job
+would retain uploads indefinitely, so recovery, retry limits or a job deadline must resolve it.
+Cleanup may need another pass: a late worker can finish uploading after the job becomes terminal;
+it cannot publish that result, but later cleanup must find it.
+
+The selected output is the essential exception: cleanup of `SUCCEEDED` does not mean deleting the
+result while customers are still entitled to download it. For this teaching example,
+terminal-job-only cleanup is a reasonable baseline; cleaning abandoned attempts during an active
+job adds complexity only when reclaiming storage sooner matters.
+
+This is a design alternative, not a replacement for the cleanup policy above or a new runtime
+experiment. It does not record a production-policy choice by Hooman. The existing grace-period,
+metadata and selected-version protections remain in place.
+
+</details>
+
 These two writes—S3 upload and database update—are not one shared transaction. We arrange them so
 partial completion leaves an extra private file to clean up, rather than an incorrect public result.
 The same reasoning matters for emails, billing or external callbacks: those effects would need
@@ -1172,15 +1453,231 @@ Our cancellation handler/controller is application code that follows through on 
 records `CANCELLED`; repeated cancel calls return the current outcome. Waiting jobs can be cancelled
 without ever running. A reconciler must handle cancellation even if the worker is dead.
 
+<details>
+<summary>Question: Why do we need a separate cancellation controller?</summary>
+
+**Question:** Why do we even need the cancellation controller? Why can't a worker that sees
+`CANCEL_REQUESTED` commit `CANCELLED`? Why need a separate process for cancelling?
+
+**Answer:** A worker can do that. We do not need a separate process just to change
+`CANCEL_REQUESTED` to `CANCELLED`. It can conditionally update the job row only if it is still
+`CANCEL_REQUESTED`, then delete its SQS notification under the tutorial's terminal-only
+acknowledgement rule. If another process already finalized cancellation, it observes terminal state.
+
+“Cancellation controller” names a responsibility, not necessarily a separate deployment; its code
+could run in the worker, API, or existing reconciliation loop. A fallback is useful because
+cancellation must finish when no worker observes it: a worker may crash, a job may be waiting for
+assignment, or a notification may be unavailable. Relying exclusively on an executing worker can
+leave `CANCEL_REQUESTED` unresolved.
+
+The two-path arrangement is:
+
+```text
+Worker sees CANCEL_REQUESTED
+  → conditionally change the database job state to CANCELLED
+  → under the tutorial policy, delete its current SQS receipt
+
+No worker sees CANCEL_REQUESTED
+  → reconciliation loop discovers the pending database state
+  → conditionally change the database job state to CANCELLED
+  → a live or later receiver can acknowledge its own notification
+```
+
+Practical arrangement: worker sees cancellation → finalize immediately; worker never sees it →
+reconciliation loop finalizes it.
+
+An even simpler option for the stated contract is direct conditional API transition to `CANCELLED`,
+with physical stopping requested separately. `CANCELLED` means successful publication is prevented,
+not that every instruction stopped, so a pending cancellation state is not inherently necessary.
+`CANCEL_REQUESTED` is useful when additional cancellation work must finish before declaring the
+application outcome complete, e.g. coordinating external systems or confirming resource release in
+a different contract.
+
+A separate cancellation process is not essential here. The tutorial separates the responsibility
+to make recovery explicit; implement it in a worker plus fallback or simplify into the API if the
+contract permits. “Commit `CANCELLED`” here means conditionally changing the database job state; it
+does not change the contents of an SQS message.
+
+These are implementation alternatives and explanations, not a selected policy, a new deployment,
+or runtime verification. The original state machine, cancellation definition and terminal-only
+acknowledgement rule remain unchanged.
+
+</details>
+
 The cancellation controller usually does not have the worker's SQS receipt handle. A receiver
 finding `CANCEL_REQUESTED` must defer the notification and avoid starting work. After the database
 records `CANCELLED`, a live worker or the next receiver can delete its own current receipt. This
 keeps the same “delete after a terminal outcome” rule for cancellation.
 
+<details>
+<summary>Question: Why not delete the SQS message at CANCEL_REQUESTED?</summary>
+
+**Question:** Best-effort stopping says `CANCELLED` prevents successful publication but does not
+prove GPU execution stopped. Why can't a worker seeing `CANCEL_REQUESTED` in RDS just delete its
+SQS receipt? Why keep it and check later, probably at the next heartbeat, for `CANCELLED`?
+
+**Answer:** It can delete its SQS message at `CANCEL_REQUESTED` if another durable mechanism
+guarantees that cancellation will finish. SQS does not require waiting for `CANCELLED`. The tutorial
+chooses one consistent acknowledgement rule: delete notifications after the database records a
+terminal outcome. This is a conservative policy, not an SQS requirement.
+
+`CANCEL_REQUESTED` means cancellation is saved and successful publication is blocked, but our
+cancellation controller still must record the final outcome; `CANCELLED` means the application has
+recorded that terminal outcome. The tutorial's flow is:
+
+```text
+RUNNING
+  → cancellation wins the guarded database transition
+CANCEL_REQUESTED
+  → cancellation controller or reconciler finishes the durable transition
+CANCELLED
+  → a live worker or later receiver deletes its own current SQS receipt
+```
+
+If a worker deletes the message while cancellation is pending, then disappears, something else
+must still discover pending cancellation and finish the transition. A reliable controller scanning
+PostgreSQL can do this; with that guarantee, early deletion is a valid alternative.
+
+Keeping the message until terminal status preserves another notification a later receiver can
+inspect; it does not itself finish cancellation, and the controller still must do that work. The
+worker need not hold the receipt or check on every heartbeat. Under the tutorial's policy it can
+defer the message or let visibility expire. A later receiver gets its own handle, observes
+`CANCELLED`, and deletes its notification.
+
+This does not require waiting for every GPU instruction to stop: `DeleteMessage` does not stop
+computation; `CANCELLED` does not certify physical stopping; once `CANCEL_REQUESTED` is recorded,
+the guarded success update already prevents publication. Early deletion can be safe when durable
+cancellation recovery is independent of that message, rather than when the GPU has physically
+stopped.
+
+This is acknowledgement-policy reasoning, not a replacement for the tutorial's terminal-only
+message deletion rule, a production-policy choice, or a runtime experiment. SQS alone does not
+finish cancellation. Because the job is no longer `RUNNING`, heartbeat, progress and success
+updates that require `RUNNING` do not remain valid after `CANCEL_REQUESTED`.
+
+</details>
+
 **Best-effort stopping** means we request that computation stop, but an already-running GPU operation
 or unreachable process may continue temporarily. In this contract, `CANCELLED` means the job will
 not publish a successful result; it does not certify that every physical instruction has stopped.
 The terminal states are stable—retries cannot resurrect a cancelled job.
+
+<details>
+<summary>Question: How should we stop GPU work during cancellation?</summary>
+
+**Question:** How should we approach stopping a worker in the middle of an operation for
+cancellation? If I have a process running on the GPU, do I kill the process, or what?
+
+**Answer:** Usually first ask the job to stop cooperatively. If it does not stop, terminate its
+process only if that process is isolated to the job.
+
+First distinguish two things:
+
+- The **worker process** is the Python/application process running on the CPU. It launches work,
+  uses a CUDA context and reacts to cancellation controls.
+- A **GPU kernel** is a function that the worker has launched on the GPU. The CPU-side process can
+  stop submitting more kernels, but an operation already executing on the GPU may finish before
+  the application can act.
+
+The intended flow is:
+
+```text
+Cancellation request
+  → block official result publication in the database
+  → tell the job to stop
+  → job checks at a safe boundary
+  → stop launching more GPU work and exit
+  → if still stuck, terminate only an isolated job process
+```
+
+A cooperative loop can look like this:
+
+```python
+for batch in video_batches:
+    if cancellation_requested(job_id):
+        break
+    process_batch_on_gpu(batch)
+```
+
+Checks can occur between video batches, diffusion denoising steps or generation steps.
+**Cancellation latency** is the time between the request and the work actually stopping. Smaller
+work units create more safe boundaries and usually reduce that latency. A shared flag, event,
+control connection or database poll can carry the request, but the control path must remain
+responsive during computation.
+
+This loop is conceptual. It omits exception handling, cleanup, partial-output handling, final state
+updates and signal coordination. It also does not interrupt a GPU operation already in flight.
+Ordinary PyTorch's documented CUDA interface enqueues asynchronous GPU operations and provides
+synchronization; it does not provide a general undo/stop operation for an arbitrary already-launched
+kernel. The practical cooperative action is to stop submitting further work at a safe boundary.
+
+For stronger isolation, use a supervisor plus a child process dedicated to one job:
+
+```text
+Supervisor
+  → starts isolated child job process
+  → requests cooperative stop
+  → waits a bounded grace period
+  → sends SIGTERM if the child is still alive
+  → if still alive, escalates to SIGKILL
+  → observes process exit and reconciles resources and partial outputs
+```
+
+`SIGTERM` is not guaranteed to be cooperative: the child may use the default terminating action,
+install a handler, delay handling or be stuck. `SIGKILL` cannot run application cleanup. Python's
+process documentation also warns that termination can skip `finally`/exit handlers, corrupt pipes
+or queues, strand locks and leave descendant processes running, so a supervisor must manage any
+additional processes and recover durable state rather than relying on child cleanup.
+
+Unix signals target the CPU-side process or process group associated with the GPU work; they are not
+a promise of immediate GPU-kernel preemption. When a CUDA context is destroyed, the CUDA driver
+cleans the resources associated with that context, but these interfaces do not promise that sending
+an OS signal instantly stops device execution or instantly releases every allocation. A shared GPU
+reset is not the cancellation mechanism for one job.
+
+| Execution arrangement | Preferred cancellation approach |
+|---|---|
+| Our own batch/step loop | Check cancellation at safe boundaries and stop launching more work. |
+| Dedicated process for one job | Request cooperative stop, then terminate that isolated process after a bounded grace period if necessary. |
+| Shared inference server serving many jobs | Use the engine's request-level abort/cancellation API; killing the process would interrupt unrelated jobs. |
+
+For example, current vLLM exposes `AsyncLLM.abort(request_id)` and its scheduler handles an external
+finish signal, removes that request and frees its request state. That is an example of an
+engine-supported per-request boundary, not a claim that every engine behaves identically. Work
+already executing in a shared GPU step may still return before the engine observes the abort; the
+engine must ignore stale output and stop scheduling the request rather than kill every tenant's
+server process.
+
+Supervisor plus isolated job process is a practical design for this video-service example when
+forced stopping matters, but shared model serving needs request-level boundaries. Preventing
+official result publication and reclaiming computation are separate tasks. This is design guidance,
+not a cancellation policy Hooman selected, an implementation, or a runtime experiment.
+
+**Evidence and limits, checked November 15, 2026:**
+
+- PyTorch [CUDA semantics: asynchronous execution](https://docs.pytorch.org/docs/2.15/notes/cuda.html#asynchronous-execution)
+  says GPU operations are enqueued asynchronously and documents synchronization. The statement
+  about no general PyTorch kernel-undo operation is scoped to this ordinary documented interface;
+  it is not a claim about every lower-level CUDA mechanism or engine.
+- NVIDIA's CUDA Programming Guide [asynchronous-execution section](https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html)
+  says kernel launches return before completion and documents synchronization/query operations;
+  destroying a busy stream completes its work before destruction. The CUDA Driver API
+  [`cuCtxDestroy`](https://docs.nvidia.com/cuda/cuda-driver-api/group__CUDA__CTX.html#_CPPv412cuCtxDestroy9CUcontext)
+  documents cleanup of resources associated with a context, not instantaneous cancellation timing.
+- Python's [`multiprocessing.Process.terminate` and `kill`](https://docs.python.org/3/library/multiprocessing.html#multiprocessing.Process.terminate)
+  documents POSIX `SIGTERM`/`SIGKILL`, skipped cleanup and descendant-process limits. POSIX
+  [`kill()`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/kill.html) defines sending a
+  signal to a process or process group; it does not provide a GPU-completion guarantee.
+- vLLM's current [`AsyncLLM.abort`](https://docs.vllm.ai/en/stable/api/vllm/v1/engine/async_llm.html#vllm.v1.engine.async_llm.AsyncLLM.abort)
+  and scheduler [`finish_requests`](https://docs.vllm.ai/en/stable/api/vllm/v1/core/sched/scheduler.html#vllm.v1.core.sched.scheduler.Scheduler.finish_requests)
+  provide one primary-source example of request-level abort and request-state cleanup.
+
+The previously recorded internal endpoint source at
+`/home/colligo/colligo/pylibs/colligo/fastapi/endpoints/v3_async_jobs.py` is not accessible from
+this Mac checkout, so no current internal worker-stop, signal or GPU-cleanup behavior was verified.
+No process was signalled, no GPU work was launched or reset, and no cancellation path was executed.
+
+</details>
 
 Check tenant access for both status and cancellation. Knowing a job ID is not permission to view
 or cancel it.
@@ -1250,6 +1747,325 @@ Use one coherent baseline first. These alternatives explain why the choices are 
 | Worker execution | Our program on EC2 or ECS with suitable machines | AWS Batch can manage batch job scheduling. That changes who manages dispatch/retries; do not add SQS and a second scheduler without assigning their responsibilities clearly. **Fargate** runs containers without our managing the underlying machines, but does not support GPU resource requirements. GPU container workloads need a suitable environment such as GPU-equipped EC2 workers. |
 | Progress reporting | Client polls our status endpoint | A **callback** is an HTTP request our service sends to an endpoint the client supplies; it can notify the client without repeated status queries, but our code then needs authenticated delivery, retries and duplicate handling. SQS worker messages and customer callbacks are different communication paths. |
 
+<details>
+<summary>Question: Can you explain these alternatives in more detail?</summary>
+
+The table is a map of alternative ways to fill responsibilities, not a list of products to stack
+together. A design generally chooses a coherent owner for each responsibility:
+
+```text
+durable job state   -> PostgreSQL or DynamoDB
+work dispatch       -> SQS, a database queue, RabbitMQ, or a deliberately designed Kafka flow
+container execution -> ECS on EC2/Fargate, or a batch scheduler such as AWS Batch
+```
+
+The boundaries still matter after a product swap. No queue or scheduler automatically makes a
+PostgreSQL state change, an S3 upload and an external submission one atomic operation.
+
+#### 1. DynamoDB: what does deliberate key/access-pattern design look like?
+
+**User question:** Dynamodb stores key/values does it mean it cannot be queried the way postgreSql
+is? Is dynamo still a RDS (relational database)? “It needs deliberate key/access-pattern design
+rather than the same SQL.” Give me example/details on what this would look like.
+
+**Answer:** DynamoDB is a nonrelational database, separate from Amazon RDS. RDS is a managed
+relational-database service that offers engines including PostgreSQL and MySQL. A DynamoDB item is
+not limited to one opaque scalar value: it can have named attributes containing strings, numbers,
+lists, nested maps and other supported types.
+
+A DynamoDB table identifies an item with a **partition key**, or with a composite primary key made
+from a partition key and a **sort key**. The partition-key value is input to DynamoDB's internal
+placement function; it should not be confused with one fixed physical disk partition. Items with
+the same partition-key value can be grouped and ordered by sort key.
+
+An illustrative job item could be:
+
+```json
+{
+  "PK": "TENANT#acme",
+  "SK": "JOB#job-742",
+  "status": "RUNNING",
+  "owner": "worker-A",
+  "attempt": 1,
+  "lease_deadline": "2026-11-15T10:03:00Z",
+  "input_key": "inputs/acme/video-91",
+  "selected_output_version": null
+}
+```
+
+An exact `GetItem` can load that job from its two key values. A `Query` can read items for
+`PK = TENANT#acme`, optionally narrowing their sort keys—for example, keys beginning with `JOB#`.
+But suppose the application must answer “give me Acme's queued jobs, oldest first.” PostgreSQL can
+express the desired rows first and let indexes support the query:
+
+```sql
+SELECT *
+FROM jobs
+WHERE tenant_id = 'acme' AND status = 'QUEUED'
+ORDER BY created_at
+LIMIT 20;
+```
+
+With DynamoDB, that access pattern normally motivates an alternate index whose keys are written
+with each eligible item, for example:
+
+```text
+queue_pk = TENANT#acme#STATE#QUEUED
+queue_sk = 2026-11-15T10:00:00Z#job-742
+```
+
+The worker queries that exact `queue_pk` and reads the lowest sort keys first. A global secondary
+index is an alternate key view and is eventually consistent, so seeing `job-742` there is only a
+candidate-selection result. A conditional update of the authoritative job item—checking its
+current state, attempt and lease rules—decides whether the claim succeeds.
+
+`Query` is key-oriented: it requires a partition-key value and can apply a sort-key condition.
+`Scan` examines every item or index entry, and applying a filter afterward does not make those
+reads free. DynamoDB supports conditional writes, transactions and a SQL-compatible PartiQL
+syntax, but only a DynamoDB-specific subset; this is not PostgreSQL's general join and ad hoc query
+model. The job, idempotency mapping and outbox can be distinct DynamoDB items written in one
+transaction. Sending to SQS remains outside that database transaction, just as it does with
+PostgreSQL.
+
+Primary sources checked November 15, 2026: [DynamoDB core components](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html),
+[Query](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html),
+[Scan](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html),
+[read consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html),
+[transactions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html),
+[PartiQL support](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.html), and
+[Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html).
+
+#### 2. What does “measure database load and recovery behavior” mean?
+
+**User question:** More details on how to do this and why exactly we are doing this and the
+implications: Measure database load and recovery behavior.
+
+**Answer:** In the database-queue alternative, workers repeatedly ask PostgreSQL for eligible work:
+
+```text
+find eligible row -> claim in a short transaction -> commit -> process outside the transaction
+        ^                                                        |
+        +---------------- back off and poll again ----------------+
+```
+
+This can remove a component: job acceptance and dispatch eligibility live in the same database,
+so there is no separate PostgreSQL-to-SQS send gap. The implication is that the job database now
+also carries queue polling and claim traffic. Empty polling can become the dominant load when many
+workers are idle.
+
+For scale intuition only, not a measured result: 100 idle workers polling every 0.1 seconds can
+issue about 1,000 polls per second. Polling once per second reduces that to about 100 polls per
+second, but a newly eligible job may wait longer to be noticed. Backoff with jitter, notifications
+used only as hints, and appropriate indexes are possible ways to change that tradeoff.
+
+Measure at least these scenarios before relying on the design:
+
+| Scenario | Exercise | Observe |
+|---|---|---|
+| Idle | Workers find no jobs | Polls/second, CPU, reads, connections and backoff behavior |
+| Steady work | Jobs arrive near normal rate | Claims/second, claim latency, lock waits, submit/status latency and oldest eligible job age |
+| Burst | Many jobs and workers contend | Queue-drain rate, transaction latency, connection saturation, CPU/I/O and fairness |
+| Worker failure | Crash after a committed claim | Lease expiry, reclaim delay, duplicate execution and rejection of stale publication |
+| Database interruption | Make PostgreSQL temporarily unavailable in a controlled environment | Whether submissions and claims fail safely, and whether eligible jobs resume after recovery |
+| Ambiguous completion | Lose the response after the guarded success commit | Whether a retry reads the terminal outcome rather than creating a second official result |
+
+An index should support the exact eligibility/order predicate so each poll does not rescan a large
+history of terminal jobs. Database and application measurements should be read together: low query
+latency is not success if jobs become stranded, and high throughput is not correctness if a stale
+worker can publish. These are proposed design tests and metrics; no benchmark or failure drill was
+run for this guide.
+
+Primary sources checked November 15, 2026: PostgreSQL documents the statistics views used to
+inspect server activity in [the cumulative statistics system](https://www.postgresql.org/docs/current/monitoring-stats.html)
+and explains index tradeoffs in [Indexes](https://www.postgresql.org/docs/current/indexes.html).
+
+#### 3. Is `FOR UPDATE SKIP LOCKED` an alternative to locking the row?
+
+**User question:** How is this an alternative to “locking the row in db for our: Worker selection
+from a DB queue”? `FOR UPDATE SKIP LOCKED` lets database-queue consumers lock eligible rows while
+skipping rows another consumer locked.
+
+**Answer:** It is not an alternative to row locking. `SKIP LOCKED` changes what a worker does when
+a candidate row is already locked by another transaction.
+
+With SQS, the notification already names one job, so the claim transaction can target that row:
+
+```sql
+SELECT job_id
+FROM jobs
+WHERE job_id = :job_id
+FOR UPDATE;
+```
+
+With a PostgreSQL queue, the database must choose an eligible row:
+
+```sql
+SELECT job_id
+FROM jobs
+WHERE status = 'QUEUED'
+ORDER BY created_at, job_id
+LIMIT 1
+FOR UPDATE SKIP LOCKED;
+```
+
+Normal two-worker flow:
+
+```text
+worker A: locks oldest eligible row -> marks RUNNING/owner/attempt/lease -> commits
+worker B: sees A's short row lock -> skips it -> can lock the next eligible row
+```
+
+The selection and the update that marks the row claimed must occur in the **same transaction**.
+Selecting a row, committing without marking it, and updating later would let another worker select
+the same unclaimed job. Once the claim commits, release the PostgreSQL row lock before the long
+video operation. The durable, renewable application lease—not a transaction held open for the
+video—then represents ownership.
+
+The SQL above illustrates queued selection. A complete recovery design also makes expired
+`RUNNING` rows eligible under the lease policy and still guards the claim update. `SKIP LOCKED`
+skips PostgreSQL row locks held by concurrent transactions; it does not skip or replace application
+leases stored in columns.
+
+Primary source checked November 15, 2026: PostgreSQL states that `SKIP LOCKED` skips selected rows
+that cannot be locked immediately, produces an inconsistent view unsuitable for general-purpose
+work, and can avoid contention among consumers of a queue-like table in
+[`SELECT`](https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDATE-SHARE).
+
+#### 4. RabbitMQ, Amazon MQ and Kafka
+
+**User question:** Teach me more about Rabit MQ and amazon MQ and Kafka: RabbitMQ, possibly via
+Amazon MQ, is another broker option when its routing/protocol features matter. Operating it
+yourself adds maintenance. Kafka is a retained event log useful for replay and multiple readers;
+it is not an automatic improvement for a simple worker queue.
+
+**Answer:** A **message broker** accepts messages from producers and delivers them through configured
+routes to consumers. RabbitMQ's central routing object is an **exchange**:
+
+```text
+producer -> exchange --binding/routing rule--> queue -> consumer -> acknowledgement
+```
+
+A topic exchange matches dot-separated routing keys. For example, a queue bound with
+`video.gpu.*` can match `video.gpu.resize`. A fanout exchange ignores the routing key and sends a
+copy to every bound queue. That is useful when distinct queues need separate copies, whereas a
+work queue normally has competing consumers for one queue.
+
+A **publisher confirm** tells the producer what happened on the producer-to-broker side. A
+**consumer acknowledgement** tells the broker that a delivered message was handled on the
+broker-to-consumer side. RabbitMQ documents these as independent mechanisms; a publisher confirm
+does not prove that a consumer completed the video. Consumer failures or lost connections can
+cause requeueing and redelivery, so business operations still need duplicate handling.
+
+Amazon MQ is AWS-managed hosting for RabbitMQ and Apache ActiveMQ Classic. AWS manages broker
+setup, operation, maintenance and version upgrades. The application still owns its topology,
+routing, acknowledgement, retry and capacity choices. Amazon MQ is not SQS, and it is not managed
+Kafka.
+
+Kafka uses a different core model: a topic is a retained, partitioned log of records. Each record
+has a position called an **offset**. Consumers in one **consumer group** divide partitions for
+parallel processing and track their positions; a separate group has an independent position. For
+example, billing, analytics and audit groups can each read the same events. Reading or checkpointing
+an offset does not delete the record; topic retention permits later replay. Ordering is defined
+within a partition, not across every partition in a topic. Amazon Managed Streaming for Apache
+Kafka (Amazon MSK) is AWS's managed Kafka service.
+
+| Need | Usually the more natural starting point |
+|---|---|
+| Simple managed delivery of work notifications | SQS |
+| Broker routing patterns or messaging protocols | RabbitMQ |
+| Managed RabbitMQ or ActiveMQ broker hosting | Amazon MQ |
+| Retained stream, replay and independent reader groups | Kafka, or Amazon MSK on AWS |
+
+These are fit comparisons, not a selection of a new queue. None makes RDS updates, S3 writes or
+external business side effects atomic by itself.
+
+Primary sources checked November 15, 2026: RabbitMQ [exchanges and bindings](https://www.rabbitmq.com/docs/exchanges)
+and [publisher confirms versus consumer acknowledgements](https://www.rabbitmq.com/docs/confirms);
+AWS [What is Amazon MQ?](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html)
+and [What is Amazon MSK?](https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html);
+Apache Kafka [introduction](https://kafka.apache.org/44/getting-started/introduction/) and
+[consumer design](https://kafka.apache.org/44/design/design/#the-consumer).
+
+#### 5. EC2, ECS, Fargate and AWS Batch
+
+**User question:** Give me more infor about “aws batch” and also Fargate. And ECS (if needed): AWS
+Batch can manage batch job scheduling. That changes who manages dispatch/retries; do not add SQS
+and a second scheduler without assigning their responsibilities clearly. Fargate runs containers
+without our managing the underlying machines, but does not support GPU resource requirements. GPU
+container workloads need a suitable environment such as GPU-equipped EC2 workers.
+
+**Answer:** Start by separating the layers:
+
+| Layer | Meaning here |
+|---|---|
+| Container | Packaged application code, runtime and dependencies |
+| EC2 | Virtual-machine compute; suitable EC2 instance families can provide GPUs |
+| ECS | Service that schedules and runs container **tasks**; a task is one or more containers described together |
+| Fargate | Serverless compute capacity for supported ECS tasks, so we do not manage the underlying hosts; GPU resource requirements are not supported |
+| AWS Batch | Batch-job queueing and scheduling layer that runs containerized jobs on configured compute environments |
+
+ECS tasks can run on EC2 capacity or Fargate. For an ECS GPU task, use suitable GPU-capable EC2
+container instances and declare the GPU requirement. Fargate is attractive for supported CPU
+workloads because AWS supplies the compute capacity, but it is not the GPU path described by the
+current ECS task-definition documentation.
+
+AWS Batch adds batch-specific objects and policy:
+
+- A **job definition** describes the container image, command, vCPU, memory, environment and roles.
+- A **job queue** holds submitted jobs until the scheduler can run them and can express priority.
+- A **compute environment** supplies eligible capacity and is associated with job queues.
+- A **retry strategy** tells Batch which failed executions it may try again.
+
+Batch supports GPU jobs on supported GPU-equipped EC2 capacity. It schedules the requested GPU
+resources to a container; this does not turn Fargate into GPU compute.
+
+The architectural change is easiest to see as two alternative flows:
+
+```text
+current teaching flow:
+PostgreSQL outbox -> dispatcher -> SQS -> long-running worker on suitable compute
+
+possible Batch flow:
+PostgreSQL outbox -> idempotent dispatcher -> Batch SubmitJob -> Batch queue/scheduler -> job container
+```
+
+Here, “idempotent dispatcher” describes the application's goal of one logical job and one official
+result; it does not guarantee exactly one Batch submission. If Batch accepts a request but its
+response is lost, retrying can create multiple Batch jobs. Each launched container must pass the
+application's conditional database job/attempt claim before doing work; a duplicate defers or exits
+according to that contract. Persisting a returned Batch job ID helps tracking, but cannot by itself
+resolve an accepted submission whose ID was never received. The [`SubmitJob` API](https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html)
+does not document a client idempotency token, and a repeated job name is not a uniqueness guarantee.
+This clarification does not select a new dispatch policy.
+
+The Batch `jobId` returned by `SubmitJob` is different from the application's `job-742`; store the
+mapping. The application still owns tenant authorization, request idempotency, official-output
+selection and reconciliation of an ambiguous submission response. Do not assume an arbitrary
+repeated `SubmitJob` request is deduplicated merely because the job name is repeated.
+
+SQS and Batch can both appear in one design, but only with explicit duties—for example, SQS as a
+submission reminder and Batch as the compute scheduler. Then define which system owns dispatch
+retry, Batch retry and recovery so their retries do not create uncontrolled overlapping work.
+Batch changes who schedules compute; it does not remove the application's atomicity and
+idempotency problems.
+
+Primary sources checked November 15, 2026: AWS [What is Amazon ECS?](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html),
+[ECS GPU task definitions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html),
+[ECS task-definition parameters](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#container_definition_resource_requirements),
+[What is AWS Batch?](https://docs.aws.amazon.com/batch/latest/userguide/what-is-batch.html),
+[job definitions](https://docs.aws.amazon.com/batch/latest/userguide/job_definitions.html),
+[job queues](https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html),
+[compute environments](https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html),
+[automated retries](https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html),
+[GPU jobs](https://docs.aws.amazon.com/batch/latest/userguide/gpu-jobs.html), and
+[`SubmitJob`](https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html).
+
+**Evidence boundary:** All identifiers, SQL, rates and flows above are teaching examples. No
+service was deployed, benchmarked or failure-tested for this clarification, and these alternatives
+do not record a production-policy decision.
+
+</details>
+
 ### What would the implementation contain?
 
 These responsibilities can share a deployment; each box does not need its own separate program:
@@ -1279,6 +2095,82 @@ You do not need to memorize table fields or cloud product names. Close the guide
 5. What stops an old worker from selecting the final output? What stops it overwriting the actual file?
 6. Which database change wins when cancellation and completion race?
 
+<details>
+<summary>Question: How do my answers to the six understanding checks hold up?</summary>
+
+**User request:** Check my answer to these questions.
+
+**Reviewer summary:** The answers capture the main design. The main corrections are SQS ordering,
+the service outside the transaction and S3 versioning.
+
+### 1. Separate video, job record and notification
+
+**User response:** video object is too large to put in db so needs s3. SQS is for queuing / ordering
+messages and messages need to stay small, job record needs a database to maintain consistency, etc.
+
+**Reviewer feedback:** Mostly correct: S3 fits large bytes, PostgreSQL searchable metadata and
+state/transaction rules, and SQS notification delivery. SQS Standard does not guarantee order.
+Large files can be stored in a database; object storage is a workload choice.
+
+### 2. Lost submit response and safe retry
+
+**User response:** the user/client generates the idempotency key and holds on to it. They can
+submit the job with the same key. If it's already been recorded by us we won't create a duplicate
+record.
+
+**Reviewer feedback:** Correct: the client retains and reuses the idempotency key. The key is
+tenant-scoped, the normalized request is compared, changed input gives a conflict, and database
+uniqueness covers concurrent retries.
+
+### 3. Records committed together and the outside service
+
+**User response:** the record in the job table and the one in outbox need to happen together in one
+transaction.
+
+**Reviewer feedback:** Correct but incomplete: the job and outbox rows commit together; SQS sending
+is outside the PostgreSQL transaction even if a network call is placed between `BEGIN` and `COMMIT`.
+
+### 4. Why a queue message can be processed more than once
+
+**User response:** Worker A takes it but dies before renewing visibility timeout, so worker B takes
+the message, but then worker A resumes.
+
+**Reviewer feedback:** This is a valid redelivery example if A pauses or becomes unreachable; a
+dead process cannot resume. B receiving after visibility expiry still must pass the database claim.
+Other causes include SQS Standard duplicate delivery and sender retries after a successful send but
+failure to record that success.
+
+### 5. Selecting the final output and protecting the file
+
+**User response:** only the output from the worker with the latest attempt with an unexpired lease
+can be selected (put the final version in job table). We can have per-attempt and per-upload
+destinations in S3. Although in the basic implementation database versions can do this job too.
+
+**Reviewer feedback:** The current owner, attempt number, valid lease and `RUNNING` state are checked
+together. Attempt/upload-specific paths separate outputs. The version mechanism is S3 object
+versioning, not database versioning: PostgreSQL stores the selected S3 version ID and downloads
+specify it. Naming alone does not enforce immutability.
+
+### 6. Cancellation versus completion
+
+**User response:** whichever transaction gets committed first. If completion gets committed first,
+the cancellation request is rejected. If cancellation gets committed first the result updates get
+blocked.
+
+**Reviewer feedback:** Correct under this design: conditional transitions lock or update the same
+row. Success first makes cancellation report that the job is already complete; cancellation first
+causes completion's `RUNNING` predicate to fail. Commit order alone cannot protect unconditional
+writes.
+
+**Key distinction:** receiving a message, owning a job and publishing an output are separate events
+and permissions.
+
+These responses and comments were supplied in conversation. Their format does not establish that
+the answers were unaided or closed-book, that the companion design exercise is complete, or that
+the concepts have been mastered.
+
+</details>
+
 If an answer is unclear, revisit that story and diagram. These are understanding checks, not proof
 that you have already passed a timed interview. Once the picture makes sense, attempt the prompt in
 `/home/colligo/hs_scripts/claude/dev_research/learning/first-pass/STUDY_GUIDE.md`.
@@ -1301,6 +2193,276 @@ or introduce every mechanism in the opening minute.
    versus earlier acknowledgement plus recovery scans. Explain why the chosen contract fits.
 6. **Extend if asked:** fairness, rollout/migration, region recovery, pipeline reproducibility and
    ownership across teams. Do not pretend these are already implemented by the diagram.
+
+<details>
+<summary>Question: What could a strong spoken interview answer sound like?</summary>
+
+**Request being answered:** Add a closed-by-default interview sample under this presentation
+guidance while the next lesson proceeds separately.
+
+This is a rehearsal model, not a claim that the speaker deployed this system, measured its
+performance or completed the companion exercise. It is one coherent answer to the fixed exercise,
+not a universally “perfect” script.
+
+### Spoken sample
+
+**Me:** “Before I choose the components, I want to clarify a few promises.
+
+“First, the 99.9% monthly target is for submission and status APIs. Is there also a deadline by
+which an accepted video must finish, such as 99% within an hour? Second, does ‘survives restarts’
+include losing an entire AWS Region, or ordinary process, host and Availability Zone failures in
+one Region? Third, is cancellation allowed to mean ‘prevent an official result and stop compute as
+soon as practical,’ rather than guaranteed instantaneous GPU preemption? Finally, may the service
+run a transform more than once internally as long as the customer sees one logical job and one
+official result?”
+
+**Interviewer, using the fixed exercise:** “The 99.9% target applies to the two APIs. There is no
+separate job-completion target in the prompt, so state a reasonable assumption rather than inventing
+one. Design one Region for ordinary restarts and lost responses; discuss regional recovery only if
+asked. Cancellation is best effort, and duplicate execution is acceptable if stale results never
+become official.”
+
+**Me:** “Great. I’ll design for durable eventual processing after acceptance, but I will not call
+that a quantified completion SLA. I’ll make queue age and completion latency observable so a real
+product target can be set from workload measurements. I’ll start with a single-Region, Multi-AZ
+design; that is a proposal for the API availability target, not proof that the boxes alone achieve
+99.9%, and it does not cover loss of the Region.
+
+“Here is the first-pass architecture.”
+
+```text
+                                      status reads / cancel
+client -----------------------------> API ----------------------+
+  |                                    |                         |
+  | submit: input reference +          | one transaction         v
+  | transform + idempotency key        +--------------> PostgreSQL
+  |                                                       jobs + outbox
+  |                                                            |
+  | 202 after commit: job ID + status URL                       v
+  |                                                      outbox sender
+  |                                                            |
+  |                                                            v
+  |                                                           SQS
+  |                                                            |
+  |                                  +-------------------------+|
+  |                                  v                          |
+  +--> private S3 input ----------> CPU/GPU workers <-----------+
+                                         |
+                                         +--> private S3 per-attempt output/version
+                                         |
+                                         +--> guarded PostgreSQL completion
+```
+
+**Me:** “PostgreSQL is the authoritative job state. S3 stores the large input and output bytes.
+SQS carries small work notifications, not the job truth. Stateless API instances, redundant outbox
+senders and worker capacity can run across Availability Zones; the database and other dependencies
+also need appropriate Multi-AZ configurations and tested recovery. I would measure the actual API
+availability rather than infer it from this diagram.
+
+“On submit, the API authenticates the tenant, authorizes the referenced private S3 input, validates
+the transform as untrusted input and requires a client-retained idempotency key scoped to that
+tenant. In one PostgreSQL transaction it inserts the job and an outbox row. A unique constraint on
+tenant plus idempotency key handles concurrent retries. If the same key arrives with the same
+normalized request, I return the original job; if its input or transform differs, I return a
+conflict rather than silently changing the job.
+
+“Only after the transaction commits do I return `202 Accepted` with the job ID and status URL.
+Therefore, if the database commit succeeds but the response is lost, the client retries the same
+key and discovers the same job.
+
+“The outbox sender reads committed unsent rows and sends the job ID to SQS. That network call cannot
+join the PostgreSQL transaction. A sender crash can therefore cause a retry and a duplicate SQS
+notification; the worker path must be safe under duplicate delivery. The sender records progress,
+but PostgreSQL remains the authority for whether the business job exists.
+
+“When a worker receives a message, it briefly locks or conditionally updates that job row. It may
+claim a queued job, or reclaim an expired running job under the recovery policy. The claim records
+an owner ID, increments the attempt and sets a renewable database lease. The worker commits and
+releases the row lock before downloading gigabytes or running a two-to-sixty-minute pipeline.
+
+“During processing it renews two independent timers: the database ownership lease and the SQS
+visibility timeout. A valid database lease decides who may publish; SQS visibility merely reduces
+concurrent delivery of that notification. A long-running job remains on the same attempt as long
+as its renewal loop stays responsive. Receiving a duplicate message does not itself grant
+ownership.
+
+“On success, the worker uploads to an attempt- and upload-specific S3 destination with bucket
+versioning enabled. Then it performs one guarded PostgreSQL update that selects the exact S3
+version only if the job is still `RUNNING`, this worker and attempt are current, and the database
+lease has not expired. If the predicate fails, its upload is not official. If it succeeds, the job
+becomes terminal `SUCCEEDED`; only after that database commit does the worker delete its own SQS
+receipt.
+
+“The status API authorizes the tenant and reads the job row. For a succeeded job it creates access
+to the exact selected private S3 version, rather than whatever object happens to be latest under a
+name. Output bytes are retained for 30 days and job metadata for 90 days. Cleanup always preserves
+the selected version through its output-retention period. For an unselected upload, cleanup waits
+for the existing grace period, uses producing-job and attempt metadata, rechecks PostgreSQL, and
+deletes only when that attempt is permanently unable to publish it. That avoids racing a valid
+worker between upload and database finalization.”
+
+**Interviewer:** “Give me one sizing estimate.”
+
+**Me:** “The prompt gives a steady arrival rate but not a mean execution time, so I’ll explicitly
+assume ten minutes, or 600 seconds, only for this estimate. Little’s Law gives roughly:
+
+```text
+2 jobs/second × 600 seconds = 1,200 concurrent executions
+```
+
+“That is not 1,200 GPUs. Jobs have heterogeneous CPU, GPU, memory and I/O requirements, and the
+runtime range is two to sixty minutes. I would classify transforms into resource pools, measure
+their runtime distributions and bottlenecks, and then translate concurrent work into instance and
+accelerator capacity with headroom. The arithmetic is a planning input, not an empirical result.”
+
+**Interviewer:** “What does the ten-minute burst do?”
+
+**Me:** “If arrivals are 50 per second for 600 seconds and the fleet can actually complete only
+about 2 per second, backlog grows by approximately:
+
+```text
+(50 - 2) jobs/second × 600 seconds = 28,800 jobs
+```
+
+“When arrivals return to 2 per second, a fleet whose full throughput is 2 per second has no spare
+capacity to drain that backlog. I need temporary or permanent spare capacity, autoscaling whose
+startup time fits the burst, or explicit admission control and a communicated waiting-time policy.
+By contrast, `50 × 600 = 30,000` would be the concurrent-work estimate only if 50 per second were
+sustained with a ten-minute mean and enough compute to start work at that rate. It is not the right
+description of a finite burst constrained by a 2-per-second fleet.”
+
+**Me:** “Now I’ll walk the principal failures because they determine the correctness rules.
+
+“One: the client loses the submit response. The tenant-scoped idempotency key and unique constraint
+return the already committed job.
+
+“Two: the job commits but no notification is sent. The outbox row was committed with the job, so a
+sender retry can deliver it. I also run a durable reconciliation path over PostgreSQL for accepted
+`QUEUED` jobs and reclaimable expired `RUNNING` jobs whose work has no effective notification. That
+recovery cannot rely only on SQS because notification retention is finite and a message can end up
+in a dead-letter queue while the business job still exists. Reconciliation can safely create
+another reminder because a reminder does not bypass the database claim.
+
+“Three: worker A pauses, its database lease expires, worker B claims a newer attempt, and then A
+resumes. A can consume compute and even upload bytes, but its guarded completion fails because its
+owner, attempt or lease is stale. Attempt-specific destinations prevent A from overwriting B’s
+bytes, and selecting an exact S3 version prevents a later upload from changing the published result.
+
+“Four: a worker uploads and crashes before recording success. The job remains nonterminal, so its
+lease can expire and recovery can start another attempt. The upload is an orphan candidate, but
+cleanup does not delete it merely because the database has not selected it yet; it applies the
+grace, attempt-state and final selected-version checks I described.
+
+“Terminal states never return to `RUNNING`. Every success transition includes the true current
+state and ownership predicates; commit order by itself would not protect an unconditional write.”
+
+**Interviewer:** “How does cancellation race completion?”
+
+**Me:** “The cancel API conditionally transitions a nonterminal job to `CANCEL_REQUESTED` on the
+same authoritative row. The success update requires `RUNNING`, so if cancellation commits first,
+successful publication is blocked. If guarded success commits first, cancellation observes
+`SUCCEEDED` and reports the documented already-complete outcome. Those are the two valid race
+results.
+
+“A worker that observes `CANCEL_REQUESTED` can stop launching new work at safe boundaries and may
+finalize `CANCELLED`. A durable fallback—such as the existing reconciliation loop—must finish the
+transition if no worker observes it. I call that the cancellation-controller responsibility; it
+does not require a separate deployment. Under this design, the SQS receipt is deleted after the
+database has a terminal outcome. Earlier acknowledgement could also be safe if independent
+database recovery were guaranteed, but I am keeping one conservative rule here.
+
+“`CANCELLED` means the application will not publish a successful result. It does not prove that an
+already launched GPU kernel stopped instantly. I would first request cooperative stopping between
+batches or generation steps. If forced stopping matters, I would isolate one job in a child
+process, ask it to stop, and let a supervisor terminate that process after a bounded grace period.
+That resource-reclamation mechanism is separate from the guarded publication rule.”
+
+**Interviewer:** “What principal trade-off are you making?”
+
+**Me:** “I chose SQS plus a PostgreSQL outbox over having every worker poll PostgreSQL as the queue.
+A database queue is a reasonable simpler baseline: workers can use a short transaction with
+`FOR UPDATE SKIP LOCKED`, and it avoids a separate SQS send. Its cost is that idle polling, claims
+and queue scans share connections, CPU and I/O with submission and status state.
+
+“SQS gives managed work delivery, long polling and a buffer between dispatch and heterogeneous
+workers. The outbox handles the database-to-queue gap without pretending it is a distributed
+transaction. The cost is an extra sender, at-least-once notifications and explicit reconciliation.
+For this high-concurrency, long-running workload I would start with that separation, then validate
+it with measured database, queue-age and recovery behavior rather than claim it is always better.
+
+“I also chose PostgreSQL because unique constraints, job-plus-outbox transactions and guarded
+updates express these invariants directly and are familiar to the team. DynamoDB can implement a
+sound design with deliberate partition/sort keys, conditional writes and transactions, but it is
+not the same SQL query model. I would switch only if known access patterns and measured scaling or
+operational needs justified that redesign.”
+
+**Me:** “Finally, I would protect the service boundary: every API request and object reference is
+tenant-authorized, S3 remains private, download access names the selected version, workers receive
+narrow IAM permissions, and media plus transform parameters are validated rather than executed as
+arbitrary commands.
+
+“That gives one durable logical job despite lost responses, duplicate notifications and late
+workers. The central invariant is that receiving a notification, owning an attempt and publishing
+the official output are three separate permissions.”
+
+*[I pause here. I do not volunteer every extension unless the interviewer asks.]*
+
+### Optional interviewer-triggered extensions
+
+These are continuations of the imagined dialogue, not features claimed by the opening design.
+
+**Interviewer:** “How would you prevent one tenant or job type from taking the fleet?”
+
+**Me:** “I would create resource classes for CPU, GPU type, memory and I/O, then add per-tenant
+admission or concurrency limits and a fair scheduler within each class. I would monitor oldest-job
+age by tenant, not only global queue depth. Exact weights and limits need product priorities and
+measured runtimes; I would not infer them from the tenant count alone.”
+
+**Interviewer:** “How would you roll this out without breaking existing clients?”
+
+**Me:** “I would version the API and job schema compatibly, use expand-and-contract database
+migrations, make workers tolerate the old and new record shapes during the transition, and canary
+new pipeline versions. I would preserve idempotency semantics across versions so a retry does not
+become a new job merely because deployment changed.”
+
+**Interviewer:** “Now include loss of a Region.”
+
+**Me:** “That is a separate contract. I would first ask for recovery-point and recovery-time
+objectives. Then I would design cross-Region availability for job metadata, inputs, outputs and the
+authority that assigns or accepts idempotency keys and attempt ownership. Copying objects alone is
+insufficient if the failover Region cannot determine authoritative job state. I would document
+which accepted writes can be lost at the chosen RPO, how DNS or clients fail over, and how split
+brain is prevented. None of that is supplied by the single-Region diagram.”
+
+**Interviewer:** “Can a retried ML pipeline reproduce identical output?”
+
+**Me:** “I would pin and record the pipeline version, container or artifact digest, model version,
+transform configuration and seed where applicable. That improves auditability and best-effort
+reproducibility, but I would not promise bitwise identity when GPU kernels, codecs or external model
+services are nondeterministic. The API promise remains one selected official output.”
+
+**Interviewer:** “Who owns all these boundaries?”
+
+**Me:** “I would assign explicit contracts: the API team owns tenant authorization and submission
+semantics; the state/dispatch owner owns schema, outbox and reconciliation; the compute team owns
+worker leases, resource classes and cooperative stopping; the storage owner owns private access,
+version retention and cleanup. Shared dashboards and runbooks would connect their service-level
+signals. Those are proposed ownership boundaries, not evidence that such teams already exist.”
+
+### Teaching notes — not part of the spoken opener
+
+- The answer asks about a completion target rather than silently treating 99.9% API availability
+  as a promise that every video finishes within a deadline.
+- The ten-minute mean is labeled as an added sizing assumption. `1,200` is concurrent executions,
+  not an accelerator count; the burst calculation exposes the need for drain capacity.
+- The normal path appears before failures. Each later mechanism repairs a named failure rather than
+  arriving as an unexplained product list.
+- SQS is not treated as the job system of record. PostgreSQL recovery continues after finite queue
+  retention or dead-letter handling.
+- Logical cancellation, physical compute stopping and queue acknowledgement are kept separate.
+- Optional extensions are held until prompted, keeping the opening answer coherent and bounded.
+
+</details>
 
 The previous roughly 20/30/40-minute cues are optional pacing practice, not the teaching sequence.
 For self-review, use 0 = cannot explain yet, 1 = needs substantial help, 2 = independently explains

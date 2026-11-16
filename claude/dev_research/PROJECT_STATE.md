@@ -1,6 +1,6 @@
 # Project State — Live Checkpoint
 
-Last updated: **2026-11-12**, Codex receipt-handle learning follow-up (prior work preserved).
+Last updated: **2026-11-15**, Codex queue-visibility/database-lease Q&A (prior work preserved).
 
 ## Contents
 
@@ -15,6 +15,155 @@ Last updated: **2026-11-12**, Codex receipt-handle learning follow-up (prior wor
 - [Next exact step](#next-exact-step)
 
 ## Current status
+
+**Latest request, November 15 — parallel document additions and the next lesson:** the section 12
+interview rehearsal sample is now saved beside the six-point presentation list, and section 10's
+five-question alternatives expansion was independently reviewed. A Batch clarification was inserted:
+an ambiguous accepted `SubmitJob` retry can launch duplicate Batch containers; each must acquire
+application database ownership before work. All existing review-guide bytes, table and update/date
+lines were preserved. These are teaching additions, not evidence of deployment or adopted policy.
+
+**Lesson 2 prepared, November 15 — bounded ML/inference fundamentals:** the new guide and exercise
+are at the absolute Mac paths indexed in `CLAUDE.md` and the learning plan. They explain tensors,
+training/evaluation, causal generation, prefill/decode, GQA/KV memory, bandwidth/batching and trace
+boundaries, with a closed answer key separate from the assignment. Official PyTorch, Hugging Face,
+scikit-learn, vLLM, NVIDIA and original attention/GQA sources were checked. Model sizes and trace
+timestamps are synthetic; arithmetic and structure were checked, with no live benchmark or endpoint.
+Current internal monorepo access was unavailable at the checked Mac paths. No human completion,
+mastery, curriculum advancement or current GPU allocation is inferred.
+
+**Current exact next step:** after reading the two requested additions, make one short unaided
+video-job design attempt using the existing `STUDY_GUIDE.md`; identify any reopened-guide parts.
+Then read `ML_INFERENCE_GUIDE.md` and execute `ML_INFERENCE_EXERCISE.md`: local matrix arithmetic,
+learning/evaluation scenarios, KV/weight memory estimate and supplied serving-trace analysis.
+Bring the diagram, calculations/code, trace table and remaining questions for review before
+starting the planned timed-coding stage. The older next-action paragraphs remain historical
+resume context; this paragraph records the latest requested packet and immediate action.
+
+**Workflow preference recorded, November 15 — answer first, update quietly:** answer every study-
+document question immediately in the main thread, then delegate the authorized automatic
+collapsible Q&A insertion to a separate background agent without user-facing progress or routine
+completion interruptions. The updater retains both question and answer beside the relevant
+passage and preserves all existing bytes, including date lines. No study guide was changed because
+this request contained no new technical Q&A.
+
+**Latest alternatives-table expansion saved, November 15:** added one section 10 clarification
+covering DynamoDB key/access-pattern design, database-queue load and recovery measurement,
+`FOR UPDATE SKIP LOCKED`, RabbitMQ/Amazon MQ/Kafka, and EC2/ECS/Fargate/AWS Batch. Bounded official
+AWS, PostgreSQL, RabbitMQ and Apache Kafka sources support the explanations. All examples and load
+figures are illustrative; no product choice, benchmark, failure drill, deployment, exercise
+completion or mastery is recorded. Verified insertion-only preservation against fresh snapshots.
+
+**Latest answer review saved, November 15 — six concept checks:** Hooman supplied answers to all
+six section 11 understanding questions and received item-by-item feedback. The main corrections
+cover SQS Standard ordering, SQS being outside the PostgreSQL job/outbox transaction, paused versus
+dead workers, complete guarded-publication predicates, and S3 rather than database object versions.
+The saved review also distinguishes receiving a notification, owning a job and publishing output.
+The response format is unknown, so this is not labeled unaided or closed-book and does not establish
+mastery, completion of the companion design exercise or permission to advance the curriculum.
+Verified insertion-only changes against fresh snapshots. Next: revisit the corrected distinctions,
+then attempt or continue the companion design prompt when Hooman is ready.
+
+**Latest clarification saved, November 15 — stopping GPU work is separate from publication:**
+added Hooman's cancellation tangent beside section 8's best-effort paragraph, including cooperative
+safe-boundary checks, isolated-process escalation, shared-engine request aborts, a flow, conceptual
+pseudocode and an execution-arrangement table. Bounded current PyTorch, NVIDIA CUDA, Python/POSIX
+and vLLM primary documentation supports the scoped mechanics; the recorded internal endpoint was
+unavailable from this Mac. No GPU work, signal, reset or cancellation path was run. This is design
+guidance, not an adopted cancellation policy or deployment, and the original cancellation semantics
+remain unchanged. Verified insertion-only changes against fresh snapshots. Next: distinguish
+logical cancellation from physical resource reclamation, then continue section 9.
+
+**Latest clarification saved, November 15 — cancellation controller is a responsibility:** added
+Hooman's question, conceptual conditional transition and two-path flow beside section 8's controller
+discussion. A worker may finalize `CANCEL_REQUESTED → CANCELLED`; reconciliation is the fallback
+when no worker observes the request. The responsibility can live in a worker, API or reconciliation
+loop, and committing `CANCELLED` changes the database state rather than an SQS message. These are
+alternatives, not an adopted deployment or policy; the existing state machine, cancellation meaning
+and terminal-only acknowledgement rule remain unchanged. Verified insertion-only changes against
+fresh snapshots. Next: continue section 8's receipt and best-effort stopping discussion.
+
+**Latest clarification saved, November 15 — cancellation completion and queue acknowledgement:**
+added Hooman's question, state-flow diagram and supplied alternatives beside section 8's receipt
+paragraph. The tutorial keeps deletion after the terminal `CANCELLED` outcome; early deletion at
+`CANCEL_REQUESTED` is safe only when an independent durable controller will discover and finish
+pending cancellation. Queue retention does not finish cancellation, deletion does not stop GPU
+work, and guarded publication is already blocked after the cancellation transition. This is design
+reasoning, not a selected policy or runtime test; the original acknowledgement and cancellation
+rules remain unchanged. Verified insertion-only changes against fresh snapshots. Next: continue
+section 8's state race and best-effort stopping discussion.
+
+**Latest clarification saved, November 15 — terminal-only cleanup is a simpler alternative:**
+added Hooman's question, a status/action table and the supplied limits beside section 7's cleanup
+discussion. The alternative leaves active-job uploads alone, removes unused terminal-job uploads,
+and preserves a successful job's exact selected version through its retention period. It may retain
+stuck-job data and require a later pass for uploads completed after terminalization. This is design
+reasoning, not a selected production policy or runtime test; the guide's existing grace, metadata
+and selected-version protections remain unchanged. Verified insertion-only changes against fresh
+snapshots. Next: continue section 7's two-write failure cases and then cancellation.
+
+**Latest clarification saved, November 15 — an orphan upload can still name its job:** added
+Hooman's question and explanation beside section 7's existing cleanup paragraph. It distinguishes
+the producing job/attempt from the database's selected official output: an upload can exist between
+the S3 write and guarded PostgreSQL success update, or remain unselected after a crash or ownership
+loss. Cleanup must not race a still-authorized finalization and must preserve the selected version.
+This is an illustrative flow, not a deployed test or adopted policy change. The original wording,
+lease rules and output-selection design remain unchanged. Checked insertion-only changes against
+pre-edit snapshots. Next: continue section 7's two-write failure cases and then cancellation.
+
+**Latest clarification saved, November 15 — long jobs renew rather than age out:** added Hooman's
+question and the supplied explanation beside section 6's lease/heartbeat definition. The example
+keeps attempt 1 alive by renewing a two-minute lease every 30 seconds, distinguishes the database
+lease from SQS visibility, and records responsive renewal, timing margins, bounded retries and a
+separate stuck-job deadline/progress policy. The intervals are illustrative; no runtime test or
+human mastery is claimed. Existing lease checks, strict completion rule, SQL and guide text remain
+unchanged. Checked this batch against pre-edit snapshots. Next: continue the guarded-completion
+example and section 7 after discussing any remaining lease questions.
+
+**Latest clarification saved, November 15 — late success before takeover:** added a collapsible
+question/answer beside section 6's expiry rule. Explained that the tutorial deliberately rejects
+completion after expiry, while an alternative can accept late completion if a locked, atomic
+transition still matches the running job, owner and attempt. Takeover or cancellation winning
+first rejects that completion. This is a design alternative, not an adopted policy or runtime
+test. Existing rule and SQL remain unchanged. Checked insertion-only changes against this batch's
+snapshots. Next: discuss expiry versus supersession, then continue guarded completion and section 7.
+
+**Latest request completed, November 15 — automatic collapsible Q&A:** Hooman requested the
+notification-retention clarification and instructed that subsequent study questions and answers
+be saved automatically as collapsible additions. Added that Q&A beside the quoted paragraph and
+the earlier expired-lease question beside the claim example. Recorded the standing workflow in
+global instructions and the decisions log. Checked this batch against snapshots of the current
+documents: additions only, with the original guide text, SQL and date line preserved. No new
+queue experiment or exercise completion is inferred. Next: continue section 6's takeover and
+guarded-completion example; save future clarifications in the same way.
+
+**Latest instruction and correction, November 15:** Hooman requires document additions to leave
+all existing material untouched unless he explicitly requests edits. The guide's update line
+was changed during the two additions; restored it and retained the requested outbox note and
+collapsible visibility/lease Q&A. Verified that removing only these added blocks reproduces the
+pre-addition guide byte for byte. Recorded the rule in global instructions and the decisions log.
+Future additions must have insertion-only diffs, including no incidental date/formatting changes.
+The lesson resume point below remains available; no completed study or new exercise is inferred.
+
+**Completed November 15 queue-visibility/database-lease follow-up:** saved Hooman's question and
+the explanation in a closed-by-default details section under section 6's two-timer discussion.
+It covers the normal flow, multiple messages for one job, duplicate delivery, independently
+expiring timers, guarded finalization and when a simpler consumer can omit a database lease.
+The separate chat question about `RUNNING` with an expired lease was answered: the claim creates
+a new attempt for the same job, not a continuation of the old attempt. Existing source evidence
+was reused; no new queue experiment, deployment or completed human exercise is claimed.
+Reviewed the added text, checked details/fence structure and Git whitespace, and preserved the
+earlier outbox note. Next: continue section 6's takeover and guarded-completion example.
+
+**Completed November 15 outbox-identifier clarification:** Hooman asked why the outbox needs
+`event_id` rather than just `job_id` and `sent_at`, then requested that the explanation be saved.
+Added the note beside section 5's existing table in the first review guide. A unique `job_id` is
+sufficient when there is one notification row per job; separate IDs allow distinct initial and
+recovery reminders for the same job. Retrying the same reminder retains its ID. This clarifies
+the existing teaching design; it is not a schema implementation or evidence of exercise completion.
+Reviewed the added text and checked Git whitespace. Work was performed in the Mac checkout at
+`/Users/ana.rodrigues/Desktop/hooman/hs_scripts`; Pluto storage/backup status was not reverified.
+Next: continue section 5's sending flow, then section 6's worker ownership and recovery checks.
 
 **Completed November 12 receipt-handle clarification:** expanded section 3 at the first receipt-
 handle mention with a 0/30/31/40-second two-worker example. The same message gets a new handle on
@@ -283,6 +432,12 @@ was also observed by successful worker completion.
 - Any future sponsorship wording broader than the already answered application-purpose statement.
 
 ## Next exact step
+
+Continue section 6's claim and takeover example: a `RUNNING` row with an expired lease is eligible
+for a new attempt, which increments `attempt_no`. Follow the guarded-completion update to see why
+the expired attempt cannot publish. The new collapsible two-timer Q&A and section 5's outbox-ID
+note are available for review. No first-exercise completion is established; retain the earlier
+follow-up paths below as needed.
 
 Read section 3's “Why can a receipt handle become old?” and follow message M through deliveries R1
 and R2. A later receive creates the new handle; visibility renewal does not. Then connect that

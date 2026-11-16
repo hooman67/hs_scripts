@@ -91,3 +91,24 @@ Whenever an `aws` CLI command needs credentials (any Foundry S3 bucket, e.g.
   re-run `/aws-creds` to refresh, then re-source.
 - Pluto token is stored in `credentials.yaml` under `foundry_aws.pluto_token` (expires
   2026-11-27). To rotate, replace it there or drop a fresh raw token into `~/Downloads/creds.txt`.
+
+## Document additions must preserve existing text
+
+Hooman's explicit instruction, 2026-11-15: when asked to add a note, question/answer, or collapsible
+section to an existing document, **only insert the requested material**. Leave all existing text,
+examples, headings, order, formatting, and update/date lines untouched. Do not rewrite, clarify,
+correct, or reorganize existing material unless Hooman explicitly asks for that edit. He reads the
+original and returns to it after asking questions; changing it disrupts his learning. Verify the
+diff contains only insertions for an addition request. Flag any needed correction separately.
+
+For follow-up questions about study documents, automatically save the question and clarification
+as a closed-by-default collapsible question/answer beside the relevant passage. Hooman confirmed
+this standing workflow on 2026-11-15; a separate request to save each subsequent Q&A is not needed.
+Keep both the question and answer, and preserve all existing text under the insertion-only rule.
+
+When Hooman asks a study-document question, answer it immediately in the main thread before
+starting the document update. Then delegate the authorized automatic collapsible Q&A addition to
+a separate background agent. The updater must retain both the question and answer, insert them
+beside the relevant passage, and preserve every existing byte, including date and update lines.
+Do not interrupt Hooman with progress notes or routine completion notices for these background
+document updates.

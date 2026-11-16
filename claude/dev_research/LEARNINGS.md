@@ -1,5 +1,124 @@
 # Learnings
 
+## 2026-11-15 — inference memory and timing require explicit boundaries
+
+- **[PRIMARY-DOC-SUPPORTED TEACHING PACKET — checked November 15]** PyTorch and Hugging Face
+  documentation supports the distinction between learned parameters and inference state, batched
+  projection shapes, chat serialization and per-layer K/V caching. Original attention/GQA papers
+  support scaled causal attention and sharing K/V heads. The derived full-context KV payload is
+  `2 × layers × KV_heads × head_dimension × total_cached_tokens × element_bytes`; allocator,
+  activations and workspaces are separate. These are scoped teaching mechanisms, not measured
+  hardware capacity or human performance. Exact links and assumptions are in the new lesson 2 guide.
+- **[PRIMARY-DOC-SUPPORTED MEASUREMENT CLARIFICATION — vLLM metrics, checked November 15]** Client
+  TTFT includes work before the first delivered token; queue and engine timings use different
+  boundaries. The supplied trace explicitly uses `(last − first)/(N − 1)` for mean token interval,
+  and aggregate throughput needs its own observation window. Its four invented timelines cannot
+  establish p99 or service capacity. No current Adobe implementation or serving run was inspected.
+- **[PRIMARY-DOC-SUPPORTED DISPATCH CLARIFICATION — AWS Batch SubmitJob, checked November 15]**
+  Repeated submission with the same job name is not an API idempotency guarantee. An accepted
+  request with a lost response can be retried as a second Batch job; application database claims
+  must protect the one-logical-job contract. The existing diagram was preserved and clarified
+  additively. No Batch job was submitted or cancellation/dispatch policy adopted.
+
+## 2026-11-15 — cancellation separates publication safety from compute reclamation
+
+- **[PRIMARY-DOC-SUPPORTED TEACHING CLARIFICATION — PyTorch, CUDA, Python/POSIX and vLLM,
+  checked November 15]** Cooperative cancellation stops new GPU submissions at responsive safe
+  boundaries; an already-launched asynchronous operation may finish. Forced process termination is
+  suitable only when the process is isolated to the job and requires supervisor-managed cleanup,
+  descendant handling and durable reconciliation. Shared servers need engine-level request aborts;
+  current vLLM provides one such version-specific example. CUDA context destruction cleans its
+  resources but OS signals do not certify instantaneous kernel cessation or allocation release.
+  The internal endpoint path was unavailable from this Mac and no runtime cancellation experiment
+  was performed. This is design guidance, not a user-adopted policy or evidence of implementation.
+
+## 2026-11-15 — a cancellation controller is a durable responsibility, not a required service
+
+- **[TEACHING CLARIFICATION — first review guide, section 8 Q&A]** A worker can conditionally
+  transition `CANCEL_REQUESTED` to `CANCELLED` and then acknowledge its own notification under the
+  tutorial's current rule. A fallback reconciliation path is still needed when no worker observes
+  pending cancellation. The same responsibility may run in a worker, API or existing loop; a
+  separate deployment is not inherently required. A direct API transition is another contract
+  option when no intermediate cancellation work must finish. These are unadopted design alternatives,
+  not deployment or runtime findings; changing job state does not mutate the SQS message.
+
+## 2026-11-15 — early cancellation acknowledgement needs independent durable recovery
+
+- **[DESIGN ALTERNATIVE — first review guide, section 8 Q&A]** SQS does not require waiting for
+  `CANCELLED` before deleting a receipt. Deletion at `CANCEL_REQUESTED` can be safe only when a
+  durable controller independently discovers pending cancellations and records their terminal
+  outcomes. Keeping the notification preserves another inspection trigger but does not perform
+  cancellation; deleting it does not stop computation. Once cancellation wins, guarded success
+  publication and `RUNNING`-conditioned heartbeat/progress updates are no longer valid. This is
+  illustrative policy reasoning, not a user-adopted change or runtime verification.
+
+## 2026-11-15 — terminal-only object cleanup trades simplicity for later reclamation
+
+- **[DESIGN ALTERNATIVE — first review guide, section 7 Q&A]** Waiting until a job is terminal
+  avoids deciding which active-job attempts are permanently unable to finalize. It can safely
+  remove unused uploads after terminalization while preserving the exact selected successful
+  output for its retention period. The tradeoff is retained storage for stuck active jobs and a
+  need to rediscover uploads that finish after the terminal transition. Early abandoned-attempt
+  cleanup is a reclamation optimization, not a prerequisite for guarded result selection. This
+  alternative is not user-adopted or runtime-tested and does not replace the guide's current policy.
+
+## 2026-11-15 — an orphan upload is unselected, not necessarily jobless
+
+- **[TEACHING CLARIFICATION — first review guide, section 7 Q&A]** The worker and object path can
+  identify the producing job and attempt while no job row yet selects that exact S3 version as its
+  official output. This window exists between upload and the guarded success update, and can persist
+  after a crash or rejected stale-owner update. Current nonselection alone is unsafe evidence for
+  deletion because finalization may still be in progress; cleanup must establish that the producing
+  attempt can no longer finalize and preserve the selected version. This is illustrative design
+  reasoning, not a deployment observation, new cleanup policy or human-mastery claim.
+
+## 2026-11-15 — renewable leases bound missed heartbeats, not total job duration
+
+- **[TEACHING CLARIFICATION — first review guide, section 6 Q&A]** A long-running attempt can
+  remain current by renewing before expiry; the lease interval bounds time between successful
+  renewals rather than total processing time. Renewal code must stay responsive during blocking
+  work and allow operational margin. Repeated expiries need bounded recovery and investigation,
+  while a separate job deadline or progress timeout handles workers that renew indefinitely.
+  A heartbeat renews ownership but does not prove meaningful progress. The timeline is illustrative,
+  not an executed test; the tutorial's strict expiry and guarded-completion checks remain unchanged.
+
+## 2026-11-15 — lease expiry and supersession are distinct completion policies
+
+- **[DESIGN REASONING — first review guide, section 6 Q&A]** Strict expiry rejects late completion
+  even without a replacement owner. A different policy can allow late result selection while
+  state, owner and attempt still match in the same protected database operation. Takeover and
+  cancellation must use the same serialization boundary. The alternative can save completed work,
+  but does not protect unrelated external effects or change the tutorial's selected policy.
+  This is an illustrative design analysis, not observed production behavior or a user decision.
+
+## 2026-11-15 — an unexpired lease does not establish worker health
+
+- **[TEACHING CLARIFICATION — existing queue semantics and illustrative failure trace]** A
+  worker may crash while its database lease remains valid, and a later receiver may receive the
+  same SQS message rather than a second message. Deleting it can remove the queue-based recovery
+  trigger. Early deletion remains an alternative when durable database recovery is responsible
+  for unfinished work. The question, answer and timeline are preserved as a collapsible section
+  beside the relevant paragraph. This is a design explanation, not a new experiment.
+
+## 2026-11-15 — message visibility and job ownership protect different records
+
+- **[TEACHING CLARIFICATION — existing AWS evidence and illustrative database design]** A job
+  can have multiple queue messages, so hiding one message cannot establish ownership of the job.
+  SQS visibility and the database lease expire and renew independently. The tutorial's guarded
+  database writes enforce current ownership and state; a simpler duplicate-safe consumer can omit
+  a separate database lease when its contract permits. Saved as a collapsible question/answer in
+  section 6 of the first review guide. No new queue experiment or human mastery is inferred.
+
+## 2026-11-15 — a job and its notification need not share an identifier
+
+- **[DESIGN CLARIFICATION — user-requested note]** One outbox row per job can use a unique
+  `job_id` without a separate `event_id`. Retaining multiple initial/recovery notifications for
+  the same job needs a way to distinguish those rows; the tutorial uses separate event IDs.
+  Retries of one reminder retain its ID. This is schema reasoning for the illustrative design,
+  not a deployed-system finding or a duplicate-delivery guarantee. The explanation is saved beside
+  section 5's outbox example in
+  `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/learning/first-pass/REVIEW_GUIDE.md`.
+
 ## 2026-11-12 — queue identity is separate from delivery identity
 
 - **[VERIFIED — AWS DeleteMessage and visibility documentation, November 12]** Each receive of

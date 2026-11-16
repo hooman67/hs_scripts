@@ -2,6 +2,24 @@
 
 Entries are newest first.
 
+## 2026-11-15 — Prioritized medicine reserve; trauma supplies deferred
+
+Status: `[CONFIRMED RESEARCH SCOPE; SHOPPING PROPOSAL NOT PURCHASED]`
+
+Decision: Move from the completed food/water/cooking/navigation research discussion to medicines for occasional illnesses and minor injuries during approximately 90 days of disrupted access. Humans take priority; include separate veterinary information. The user wants Priority 1, 2, and 3 choices and prefers Amazon. Existing prescriptions and bleeding/trauma supplies are outside this batch; no fixed budget is imposed.
+
+Researcher proposal: Use a small single-ingredient core for rehydration, adult/toddler pain relief, superficial-burn skin protection and essential measurement/irrigation. Add allergy, constipation and skin/eye symptom coverage, with narrower medicines and prescription standby treatment conditional on clinician plans. A 90-day access horizon is not 90 days of continuous medication.
+
+Rationale and evidence: Current federal/pediatric/dermatology guidance and exact submitted US drug labels, with NHS breastfeeding cross-checks, are indexed in /Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/SUMMARY.md.
+
+Alternatives considered: preassembled medicine kits, multi-symptom medicines, routine antibiotic/numbing burn creams, multiple sedating medicines and a universal antibiotic bundle. These add uncertainty or duplication without solving individual suitability.
+
+Remaining uncertainty: pharmacist/pediatrician/clinician approval, exact product labels and received expiry, Amazon sellers/stock/price, actual illness consumption and any desired veterinary reserve. No purchase or prescription is inferred.
+
+Reversibility: High before purchase; ordinary unopened OTC stock can be rotated according to its labels.
+
+Revisit trigger: changed age/weight, feeding context, prescription, allergy/condition, label, package substitution, expiry, storage damage or actual usage beyond the illustrative reserve model.
+
 ## 2026-11-07 — Match food to the planned three-tank water horizon
 
 Status: `[FOOD PURCHASE PARTIALLY IMPLEMENTED; ADD-ON PROPOSED]`
