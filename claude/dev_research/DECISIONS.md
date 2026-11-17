@@ -1,5 +1,34 @@
 # Decisions Log
 
+## 2026-11-16 — file and tutorial questions are answered in the document
+
+- **[USER-CONFIRMED — latest main-thread instruction]** Put answers to questions about the file
+  or tutorial Hooman is reading directly into that document, rather than posting the answers in
+  chat. He may send several questions while work proceeds; retain and track all of them without
+  letting a new message replace unfinished questions. This explicitly supersedes November 15's
+  answer-in-chat-first preference and the earlier side-chat-only scope note below.
+- Continue closed-by-default question/answer additions beside the relevant passage, preserve
+  existing document bytes, and serialize shared-file writes. Background updating keeps the main
+  thread available; no routine answer, progress or completion messages are needed in chat.
+- The canonical global instructions were updated to the latest rule. Historical decisions remain
+  below as provenance rather than current instructions. No lesson completion is inferred.
+
+## 2026-11-16 — Mac job-search tooling preferences and durable side-chat handoff
+
+- **[CONFIRMED BY HOOMAN]** Inspect and explain `hooman67/job-search` and `hooman67/md-viewer`,
+  including replication/setup requirements, and save the findings in project notes for the main
+  session. Tool use is Mac-only; cover all call types; no recordings/transcripts exist yet;
+  local transcription is preferred; a persistent local viewer is desirable but manual startup
+  is acceptable if simpler.
+- **[AGENT DECISION]** Keep one canonical repo-review summary at
+  `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/research/job-search-tooling/SUMMARY.md`,
+  and index it from the charter and live handoff. Preserve existing notes and date lines.
+- **[PROPOSAL — NOT YET CONFIRMED]** MacWhisper with local models; retain current career evidence
+  and curriculum; adopt operational company/application records; replace cloud audio transcription;
+  make Google integration optional; adapt Claude-specific skills for Codex; optionally use a
+  LaunchAgent for the viewer. No purchase, installation, migration or external action occurred.
+
+
 ## 2026-11-15 — answer study questions before background document updates
 
 - **[USER-CONFIRMED — 2026-11-15]** Answer each study-document question immediately in the main

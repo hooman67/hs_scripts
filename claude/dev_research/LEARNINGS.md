@@ -1,5 +1,25 @@
 # Learnings
 
+## 2026-11-16 — job-search workflow and Markdown viewer source review
+
+- **[VERIFIED — REPOSITORY SOURCE]** `hooman67/job-search` is a Markdown/agent workflow plus uv
+  helpers. Its `record-call` skill processes existing recordings; the Python helper calls OpenAI,
+  while the agent separately performs digestion and Drive archival. Recording and continuous
+  ingestion are not built-in services. Its original external-application/profile actions are manual.
+- **[VERIFIED — REPOSITORY SOURCE]** `hooman67/md-viewer` 0.18.0 runs standalone with Python 3.13+
+  and uv. Notes and Edit saves mutate source Markdown. The README understates current write
+  capability. Browser CDNs and remote PlantUML rendering mean local serving is not fully offline.
+- **[PRIMARY-VENDOR-DOC-SUPPORTED PROPOSAL]** MacWhisper supports local transcription, system
+  audio and Pro local speaker recognition/watch-folder/CLI features. These were not tested;
+  phone-only audio capture remains a separate boundary. Local transcription does not imply
+  cloud-agent digestion is local.
+- **[USER-CONFIRMED / CURRENT-MAC CHECK]** Mac only, all calls, no existing recordings, local
+  transcription preferred, persistent viewer optional. Observed arm64/24 GiB/macOS 15.7.4;
+  uv and the viewer were not installed at inspected paths. Recheck before setup.
+- **Evidence and exact pinned revisions:**
+  `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/research/job-search-tooling/SUMMARY.md`.
+
+
 ## 2026-11-15 — inference memory and timing require explicit boundaries
 
 - **[PRIMARY-DOC-SUPPORTED TEACHING PACKET — checked November 15]** PyTorch and Hugging Face

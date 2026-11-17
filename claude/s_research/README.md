@@ -63,3 +63,7 @@ The project succeeds when Hooman can choose and implement a clearly sized, budge
 - `/home/colligo/hs_scripts/claude/s_research/research/food/COSTCO_14_DAY_SHOPPING_LIST.md` — printable exact 14-day Costco-first list, shelf-life guidance, food-group audit, and nutrition-upgrade options.
 
 - /Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/SUMMARY.md — proposed Priority 1–3 medicine reserve, neonatal/pediatric limits, exact formulation selectors, Amazon search links, quantities, clinician-only/veterinary options and source audit; open for the medicine phase begun 2026-11-15.
+
+- /Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/SUMMARY.md — start at "Medical risks first — 2026-11-17" for the 90-day likelihood/severity inventory, newborn/postpartum overlays, dog risks and evidence limits; historical shopping ranks below are superseded pending risk-to-options mapping.
+
+- /Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/SUMMARY.md — response-option tables now cover every risk ID, plus systemic-antibiotic candidates, equipment/formulation dependencies and availability-based P1/P2/P3; exact procurement remains proposed.

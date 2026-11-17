@@ -106,9 +106,14 @@ as a closed-by-default collapsible question/answer beside the relevant passage. 
 this standing workflow on 2026-11-15; a separate request to save each subsequent Q&A is not needed.
 Keep both the question and answer, and preserve all existing text under the insertion-only rule.
 
-When Hooman asks a study-document question, answer it immediately in the main thread before
-starting the document update. Then delegate the authorized automatic collapsible Q&A addition to
-a separate background agent. The updater must retain both the question and answer, insert them
-beside the relevant passage, and preserve every existing byte, including date and update lines.
-Do not interrupt Hooman with progress notes or routine completion notices for these background
-document updates.
+Hooman's latest instruction, 2026-11-16: when he asks questions about a file or tutorial he is
+reading, put the answers directly into that document rather than answering them in chat. This
+supersedes the November 15 instruction to answer in the main thread first. Retain each question
+and answer in a closed-by-default collapsible section beside the relevant passage, preserving
+every existing byte, including date and update lines. Delegate the authorized document update to
+a background agent so Hooman can continue asking questions; serialize writes to the same document.
+Accumulate every incoming question in a durable pending-question list in the project's live
+checkpoint, and mark it complete only after its document addition is verified. A later question
+adds to that list rather than replacing unfinished questions. Keep chat quiet: do not post the
+answers, progress notes or routine completion notices. Ask only if missing context is genuinely
+needed to place or answer a question. Other conversation requests may still be answered in chat.

@@ -1,0 +1,703 @@
+{
+  "as_of": "2026-11-17",
+  "status": "researcher proposal; no purchase or treatment plan",
+  "horizon_days": 90,
+  "denominator": "at least one human in the household during a disruption, conceptually; numerical probability unavailable",
+  "clinical_expertise": "doctors available per user; medicines/equipment/transport may be constrained",
+  "bands": {
+    "A": "More likely routine problems over a 90-day disruption",
+    "B": "Plausible illnesses and complications; likelihood rises with particular failures",
+    "C": "Generally less frequent serious complications and unrelated acute illness",
+    "D": "Exposure-dependent emergencies — these can move to the top"
+  },
+  "risks": [
+    {
+      "id": "R01",
+      "likelihood_band": "A",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Stress, interrupted sleep and exhaustion",
+      "severity": "Usually functional; impaired judgment can cause accidents",
+      "trigger_and_timing": "Throughout; displacement and caregiving load",
+      "evidence_ids": [
+        "nih_disasters",
+        "samhsa_disasters"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R02",
+      "likelihood_band": "A",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Headaches, back pain, muscle aches and overuse injuries",
+      "severity": "Usually mild; headache can also signal another serious problem",
+      "trigger_and_timing": "Throughout; cleanup, carrying supplies, poor sleep",
+      "evidence_ids": [
+        "who_earthquake_topic",
+        "epmc_northridge_ed_abstract"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R03",
+      "likelihood_band": "A",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Small cuts, scrapes, blisters and splinters",
+      "severity": "Usually mild; a portal for infection",
+      "trigger_and_timing": "Especially earthquake damage and cleanup",
+      "evidence_ids": [
+        "epmc_northridge_ed_abstract",
+        "disaster_wounds_2015_fulltext"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R04",
+      "likelihood_band": "A",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Bruises, minor falls, sprains and strains",
+      "severity": "Mild to disabling; falls can cause major injuries",
+      "trigger_and_timing": "Early event and later cleanup; darkness and fatigue",
+      "evidence_ids": [
+        "epmc_northridge_ed_abstract",
+        "who_earthquake_topic"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R05",
+      "likelihood_band": "A",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Diaper rash, chafing, dry or cracked skin, irritant dermatitis",
+      "severity": "Usually mild; skin breakdown can become infected",
+      "trigger_and_timing": "Throughout; limited washing, diapers, moisture and friction",
+      "evidence_ids": [
+        "who_floods"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R06",
+      "likelihood_band": "A",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Constipation, hemorrhoid discomfort and diet-related indigestion",
+      "severity": "Usually mild; severe abdominal symptoms have other causes",
+      "trigger_and_timing": "Days to weeks; changed food, fluid intake and activity",
+      "evidence_ids": [
+        "nih_dehydration"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R07",
+      "likelihood_band": "A",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Ordinary viral respiratory illness: colds, cough, sore throat and fever",
+      "severity": "Usually mild; children may develop breathing or feeding problems",
+      "trigger_and_timing": "Any time; likelihood rises with crowding and sick contacts",
+      "evidence_ids": [
+        "epidemics_disasters_2007_fulltext"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R08",
+      "likelihood_band": "A",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Mild allergy symptoms, insect-bite irritation, itchy eyes and nasal irritation",
+      "severity": "Usually mild; distinguish from anaphylaxis or eye injury",
+      "trigger_and_timing": "Throughout; exposure to allergens, dust and insects",
+      "evidence_ids": [
+        "who_earthquake_topic",
+        "airnow_smoke"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R09",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Acute diarrhea or gastroenteritis, including foodborne or waterborne illness",
+      "severity": "Mild to severe; dehydration or invasive infection may follow",
+      "trigger_and_timing": "Food spoilage, unsafe water, poor hand hygiene or sick contacts",
+      "evidence_ids": [
+        "epidemics_disasters_2007_fulltext",
+        "who_floods"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R10",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Nausea and vomiting, including illness or evacuation motion sickness",
+      "severity": "Mild to severe; inability to retain fluid raises risk",
+      "trigger_and_timing": "Any time; diagnosis matters because causes differ",
+      "evidence_ids": [
+        "nih_dehydration"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R11",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Mild to moderate dehydration",
+      "severity": "Can progress to life-threatening fluid/electrolyte loss",
+      "trigger_and_timing": "Low intake, fever, diarrhea, vomiting or hot conditions",
+      "evidence_ids": [
+        "nih_dehydration",
+        "aap_dehydration_refresh"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R12",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Bacterial wound infection, cellulitis, abscess and other infected skin lesions",
+      "severity": "Potentially serious; may spread or cause sepsis",
+      "trigger_and_timing": "Days after injury; rises with deep/dirty wounds and delayed care",
+      "evidence_ids": [
+        "disaster_wounds_2015_fulltext",
+        "idsa_ssti_2014",
+        "sepsis_medline"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R13",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Small thermal burns, scalds and sunburn",
+      "severity": "Usually limited; burns damage the skin barrier",
+      "trigger_and_timing": "Emergency cooking, hot liquids, sun and cleanup",
+      "evidence_ids": [
+        "who_earthquake_topic"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R14",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Loose grit in eyes, corneal scratches and persistent eye irritation",
+      "severity": "Can threaten vision depending on injury",
+      "trigger_and_timing": "Rubble, dust, ash, debris or rubbing the eye",
+      "evidence_ids": [
+        "who_earthquake_topic"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R15",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Fungal skin infection, athlete’s foot, ringworm or yeast-associated rash",
+      "severity": "Usually localized; persistent moisture and hygiene loss matter",
+      "trigger_and_timing": "Weeks; damp footwear, skin folds and close contact",
+      "evidence_ids": [
+        "who_floods"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R16",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Urinary tract infection, potentially progressing to kidney infection",
+      "severity": "Localized to serious systemic illness",
+      "trigger_and_timing": "Ordinary illness can occur during the disruption",
+      "evidence_ids": [
+        "sepsis_medline"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R17",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Dental pain, broken tooth/filling or dental abscess",
+      "severity": "Pain to spreading infection",
+      "trigger_and_timing": "Any time; delayed dental access prolongs problems",
+      "evidence_ids": [
+        "nih_dental_abscess"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R18",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Ear infection and other localized respiratory complications",
+      "severity": "Usually treatable; diagnosis and child age matter",
+      "trigger_and_timing": "During or after respiratory illness",
+      "evidence_ids": [
+        "epidemics_disasters_2007_fulltext"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R19",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Conjunctivitis or another eye infection",
+      "severity": "Mild to vision-threatening depending on cause; newborn illness differs",
+      "trigger_and_timing": "Contact spread, contamination or ordinary illness",
+      "evidence_ids": [
+        "epidemics_disasters_2007_fulltext"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R20",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Pneumonia, bronchiolitis or another significant respiratory infection",
+      "severity": "Potentially serious, especially in an infant",
+      "trigger_and_timing": "Any time; rises with infectious exposure and delayed care",
+      "evidence_ids": [
+        "epidemics_disasters_2007_fulltext",
+        "sepsis_medline"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R21",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Interrupted prescription treatment or damaged/lost medicines and medical aids",
+      "severity": "Severity depends on the medicine/condition; risk accumulates",
+      "trigger_and_timing": "Quake damage, refill loss, heat, refrigeration or power failure",
+      "evidence_ids": [
+        "who_earthquake_topic",
+        "epmc_northridge_medications_abstract"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R22",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Inadequate calories, poor diet tolerance and nutritional imbalance",
+      "severity": "From weakness to impaired recovery/growth",
+      "trigger_and_timing": "Weeks to months if stores cannot meet actual needs",
+      "evidence_ids": [
+        "who_floods"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R23",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Persistent anxiety, depression or trauma symptoms impairing function",
+      "severity": "Can become disabling; distinct from immediate normal distress",
+      "trigger_and_timing": "Days to months; displacement, loss and isolation",
+      "evidence_ids": [
+        "nih_disasters",
+        "samhsa_disasters"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R24",
+      "likelihood_band": "B",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Lice, scabies and other infestation problems",
+      "severity": "Usually not fatal; spreads and impairs comfort/skin health",
+      "trigger_and_timing": "Rises with shelter crowding and prolonged close contact",
+      "evidence_ids": [
+        "epidemics_disasters_2007_fulltext"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R25",
+      "likelihood_band": "C",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Sepsis and septic shock from wound, lung, urinary, dental or other infection",
+      "severity": "Life-threatening; may progress rapidly",
+      "trigger_and_timing": "Downstream of infection; lower than localized illness, not negligible",
+      "evidence_ids": [
+        "sepsis_medline",
+        "disaster_wounds_2015_fulltext"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R26",
+      "likelihood_band": "C",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Severe dehydration, dangerous electrolyte disturbance or acute kidney injury",
+      "severity": "Life-threatening; may develop quickly in children",
+      "trigger_and_timing": "Downstream of fluid loss, heat or other illness",
+      "evidence_ids": [
+        "nih_dehydration",
+        "aap_dehydration_refresh"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R27",
+      "likelihood_band": "C",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Anaphylaxis or another severe allergic reaction",
+      "severity": "Immediately life-threatening",
+      "trigger_and_timing": "Foods, medicines, insects or new exposures; no known allergy required",
+      "evidence_ids": [
+        "nih_poison"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R28",
+      "likelihood_band": "C",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Appendicitis, bowel obstruction or another acute surgical abdominal problem",
+      "severity": "Potentially life-threatening; symptom medicines do not resolve it",
+      "trigger_and_timing": "Can occur as ordinary illness within any 90-day period",
+      "evidence_ids": [
+        "nih_disasters"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R29",
+      "likelihood_band": "C",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Heart attack, stroke, dangerous arrhythmia, seizure or other acute neurologic/cardiac illness",
+      "severity": "Potentially life-threatening or disabling",
+      "trigger_and_timing": "Ordinary disease plus stress, heat, dehydration or care disruption",
+      "evidence_ids": [
+        "who_floods",
+        "who_earthquake_topic"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R30",
+      "likelihood_band": "C",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Significant gastrointestinal bleeding or severe invasive diarrheal illness",
+      "severity": "Potentially life-threatening",
+      "trigger_and_timing": "Underlying illness, selected infections or medicine-related harm",
+      "evidence_ids": [
+        "epidemics_disasters_2007_fulltext",
+        "nih_poison"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R31",
+      "likelihood_band": "C",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Tetanus or infection/exposure requiring urgent prevention after an animal bite",
+      "severity": "Potentially fatal; local organism, vaccine status and exposure matter",
+      "trigger_and_timing": "Deep contaminated wounds or relevant animal exposure",
+      "evidence_ids": [
+        "medline_tetanus",
+        "disaster_wounds_2015_fulltext"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R32",
+      "likelihood_band": "C",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Suicidal crisis, severe psychiatric deterioration or dangerous withdrawal if dependence exists",
+      "severity": "Life-threatening; individual history substantially changes likelihood",
+      "trigger_and_timing": "Any time; withdrawal applies only when relevant",
+      "evidence_ids": [
+        "samhsa_disasters"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R33",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Fractures, dislocations and open fractures",
+      "severity": "Serious; open fractures also create infection risk",
+      "trigger_and_timing": "Building damage, falling objects, falls or vehicle accidents",
+      "evidence_ids": [
+        "who_earthquake_topic",
+        "disaster_wounds_2015_fulltext"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R34",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Crush injury, compartment syndrome and rhabdomyolysis",
+      "severity": "Limb- or life-threatening; kidney/electrolyte complications",
+      "trigger_and_timing": "Entrapment, heavy debris or prolonged compression",
+      "evidence_ids": [
+        "disaster_wounds_2015_fulltext"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R35",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Head injury, concussion, spinal injury and internal trauma",
+      "severity": "Mild to fatal; external appearance can underestimate injury",
+      "trigger_and_timing": "Collapse, falls, impacts or crashes",
+      "evidence_ids": [
+        "who_earthquake_topic"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R36",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Major external/internal bleeding and traumatic shock",
+      "severity": "Immediately life-threatening",
+      "trigger_and_timing": "Trauma; existing bleeding-kit purchasing review remains deferred",
+      "evidence_ids": [
+        "who_earthquake_topic",
+        "disaster_wounds_2015_fulltext"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R37",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Major burns, smoke inhalation and airway injury",
+      "severity": "Life-threatening or permanently disabling",
+      "trigger_and_timing": "Structure fire, wildfire, fuel incident or hot-fluid exposure",
+      "evidence_ids": [
+        "who_earthquake_topic"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R38",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Smoke-related respiratory symptoms or asthma/bronchospasm",
+      "severity": "Irritation to severe breathing difficulty",
+      "trigger_and_timing": "Wildfire smoke/ash; can move high in the order during exposure",
+      "evidence_ids": [
+        "airnow_smoke"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R39",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Heat exhaustion and heat stroke",
+      "severity": "From illness to life-threatening emergency",
+      "trigger_and_timing": "Hot season, cooling failure and exertion; children vulnerable",
+      "evidence_ids": [
+        "nih_heat"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R40",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Hypothermia and cold/wet exposure",
+      "severity": "Potentially fatal; infants lose heat readily",
+      "trigger_and_timing": "Cold conditions, displacement, wet clothing or loss of heat",
+      "evidence_ids": [
+        "nih_hypothermia"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R41",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Carbon monoxide poisoning",
+      "severity": "Potentially fatal; headache/nausea can be mistaken for routine illness",
+      "trigger_and_timing": "Unsafe fuel-burning appliance, generator, vehicle or fire exposure",
+      "evidence_ids": [
+        "nih_co"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R42",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Chemical poisoning, chemical skin/eye burns or hazardous dust exposure",
+      "severity": "Mild to fatal or vision-threatening",
+      "trigger_and_timing": "Broken containers, industrial releases, contaminated water or cleanup",
+      "evidence_ids": [
+        "who_earthquake_topic",
+        "nih_poison"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R43",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Electric shock and electrical burns",
+      "severity": "Immediately life-threatening or disabling",
+      "trigger_and_timing": "Damaged wiring, downed lines or equipment near water",
+      "evidence_ids": [
+        "who_floods"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R44",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Drowning, aspiration or contaminated floodwater injury",
+      "severity": "Immediately life-threatening; infection can follow exposure",
+      "trigger_and_timing": "Floods, water containers or unsafe rescue/evacuation",
+      "evidence_ids": [
+        "who_floods"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R45",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Accidental medication overdose, toxic ingestion, choking or swallowed dangerous objects",
+      "severity": "Potentially fatal, particularly in young children",
+      "trigger_and_timing": "Disrupted childproofing, dosing mistakes, loose medicines/batteries",
+      "evidence_ids": [
+        "nih_poison"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    },
+    {
+      "id": "R46",
+      "likelihood_band": "D",
+      "likelihood_confidence": "ASSUMED",
+      "problem": "Assault-related injury or sexual violence and its medical consequences",
+      "severity": "Potentially severe; location and exposure determine risk",
+      "trigger_and_timing": "Unsafe displacement/evacuation settings; frequency unverified",
+      "evidence_ids": [
+        "nih_disasters"
+      ],
+      "note": "Sources support broad hazards/clinical mechanisms. Specific diagnosis likelihood and fine ordering are not verified. Rows include correlated downstream complications; do not sum."
+    }
+  ],
+  "newborn_postpartum_overlays": [
+    {
+      "id": "N01",
+      "role": "Newborn",
+      "problem": "Feeding/latch problems, insufficient intake, dehydration and low blood glucose",
+      "likelihood_and_urgency": "Feeding difficulty is a plausible early issue; serious inadequate intake can progress quickly",
+      "evidence_ids": [
+        "aap_dehydration_refresh",
+        "nih_dehydration"
+      ],
+      "likelihood_confidence": "ASSUMED"
+    },
+    {
+      "id": "N02",
+      "role": "Newborn",
+      "problem": "Jaundice, excessive weight loss and missed early follow-up",
+      "likelihood_and_urgency": "Physiologic jaundice and dangerous jaundice must be distinguished; household probabilities not estimated",
+      "evidence_ids": [
+        "aap_newborn_fever_refresh"
+      ],
+      "likelihood_confidence": "ASSUMED"
+    },
+    {
+      "id": "N03",
+      "role": "Newborn",
+      "problem": "Fever, neonatal infection/sepsis or meningitis",
+      "likelihood_and_urgency": "Lower-frequency but critical; fever or poor feeding may be the first sign",
+      "evidence_ids": [
+        "aap_newborn_fever_refresh",
+        "sepsis_medline"
+      ],
+      "likelihood_confidence": "ASSUMED"
+    },
+    {
+      "id": "N04",
+      "role": "Newborn",
+      "problem": "Breathing difficulty/apnea, temperature instability and unsafe-sleep suffocation risk",
+      "likelihood_and_urgency": "Exposure/illness dependent; urgent and distinct from adult symptom management",
+      "evidence_ids": [
+        "aap_dehydration_refresh",
+        "nih_hypothermia"
+      ],
+      "likelihood_confidence": "ASSUMED"
+    },
+    {
+      "id": "N05",
+      "role": "Newborn",
+      "problem": "Interrupted feeding support, routine newborn care or access to neonatal treatment",
+      "likelihood_and_urgency": "Care disruption raises consequences of otherwise manageable problems",
+      "evidence_ids": [
+        "who_earthquake_topic"
+      ],
+      "likelihood_confidence": "ASSUMED"
+    },
+    {
+      "id": "M01",
+      "role": "Postpartum, if applicable",
+      "problem": "Pain, constipation, hemorrhoids and ordinary recovery needs",
+      "likelihood_and_urgency": "Common recovery needs; distinguish normal recovery from complications",
+      "evidence_ids": [
+        "nhs_postnatal",
+        "nih_postpartum"
+      ],
+      "likelihood_confidence": "ASSUMED"
+    },
+    {
+      "id": "M02",
+      "role": "Breastfeeding, if applicable",
+      "problem": "Nipple pain, engorgement, mastitis or breast abscess",
+      "likelihood_and_urgency": "Plausible; worsening infection can need systemic treatment",
+      "evidence_ids": [
+        "nhs_mastitis"
+      ],
+      "likelihood_confidence": "ASSUMED"
+    },
+    {
+      "id": "M03",
+      "role": "Postpartum, if applicable",
+      "problem": "Perineal/cesarean wound infection or uterine infection",
+      "likelihood_and_urgency": "Plausible to serious; disrupted washing and follow-up add vulnerability",
+      "evidence_ids": [
+        "nhs_postnatal",
+        "who_earthquake_topic"
+      ],
+      "likelihood_confidence": "ASSUMED"
+    },
+    {
+      "id": "M04",
+      "role": "Postpartum, if applicable",
+      "problem": "Postpartum hemorrhage, pre-eclampsia or a blood clot/pulmonary embolism",
+      "likelihood_and_urgency": "Less frequent but potentially fatal; trauma bandages do not cover these mechanisms",
+      "evidence_ids": [
+        "nhs_postnatal"
+      ],
+      "likelihood_confidence": "ASSUMED"
+    },
+    {
+      "id": "M05",
+      "role": "Postpartum, if applicable",
+      "problem": "Postpartum depression or psychosis",
+      "likelihood_and_urgency": "Depression and psychosis have different likelihoods and urgency; do not conflate them",
+      "evidence_ids": [
+        "nih_postpartum",
+        "samhsa_disasters"
+      ],
+      "likelihood_confidence": "ASSUMED"
+    }
+  ],
+  "limitations": [
+    "No matched 90-day San Jose household incidence dataset found in this bounded source set.",
+    "Exact ordering within bands is not established.",
+    "Generic disaster clinic samples are selected; short historical outages do not model 90 days.",
+    "Some specific diagnosis examples are clinical completeness prompts, not independently verified incidence claims.",
+    "No doctor availability implies hospital, cold-chain, oxygen, laboratory or surgical capability."
+  ],
+  "next_phase": "Map prevention, recognition, treatment options, medicines, non-drug equipment, dependencies and shortage consequences per risk; assign procurement priorities afterwards."
+}

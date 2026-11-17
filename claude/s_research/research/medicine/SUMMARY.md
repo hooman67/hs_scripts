@@ -1,5 +1,410 @@
 # Household Medicine Reserve
 
+> Response options and derived P1/P2/P3 priorities have now been added: [open the new tables](#response-options-and-availability-priorities--2026-11-17). Earlier pending-next-phase text is retained as history.
+
+## Medical risks first — 2026-11-17
+
+**Current approach:** enumerate what can happen during 90 days of emergency conditions, estimate relative likelihood, then map response options and derive supply priorities. **The November 15 shopping priorities below are retained as historical proposals and are superseded as the basis for procurement decisions.** The earlier criterion mixed clinical importance with suitability for unsupervised use. Doctors are available according to the user; prescription status must be a procurement field, not a reason to lower medical importance. This phase makes no new shopping, stock-count or dosing recommendation.
+
+Quick navigation: [likelihood method](#likelihood-method-and-confidence) · [human risk inventory](#human-risk-inventory) · [newborn and postpartum overlays](#newborn-and-postpartum-overlays) · [progression and timing](#progression-and-timing) · [dog](#dog-risk-appendix) · [sources and gaps](#risk-inventory-sources-and-gaps) · [next phase](#next-phase-options-for-each-problem).
+
+### Likelihood method and confidence
+
+`USER-CONFIRMED`: 90-day emergency horizon; humans first with dog information secondary; doctors available; create the risk inventory before choosing medicines. The existing trauma bag is not audited here. Bleeding is included as a medical hazard while its supply review remains deferred.
+
+`ASSUMED`: sheltering at home where safe, with possible evacuation; San Jose earthquake damage, water/sanitation loss, power/utility loss, wildfire smoke, heat and interrupted resupply/care are separate scenarios. Two adult and young-child roles are included, with newborn and possible postpartum/breastfeeding needs treated separately. No new diagnosis, medication requirement or completed purchase is inferred. Clinician availability does not establish functioning hospitals, labs, oxygen, surgical facilities, IV-care resources or refrigeration.
+
+**Probability means the chance of at least one household member experiencing a problem during those 90 days, given a disruption.** No matched dataset was identified that supports percentages or a reliable 1-through-46 ordering for this household. All likelihood bands here are `ASSUMED` planning judgments; the cited sources verify broad hazards and clinical mechanisms, not this ordering. Within-band order is for readability. Common mild diagnoses are grouped; severe complications have separate rows so they cannot disappear inside a minor-symptom category. Rows are correlated and overlapping, so counts/probabilities must not be added.
+
+A/B/C run from relatively more likely to generally less frequent in a household with protected water, basic hygiene and no major direct injury. **D is not a fourth/lower probability tier**: its hazards depend on exposure. A person in collapsing debris, severe smoke, extreme heat or contaminated floodwater has a very different order. Reorder for the actual event; do not average incompatible scenarios into a fabricated score. Likelihood is separate from severity, time to harm and the consequences of missing treatment.
+
+### Human risk inventory
+
+#### A. More likely routine problems over a 90-day disruption
+
+| ID | Problem | Consequence | What raises the likelihood / timing |
+|---|---|---|---|
+| R01 | Stress, interrupted sleep and exhaustion | Usually functional; impaired judgment can cause accidents | Throughout; displacement and caregiving load |
+| R02 | Headaches, back pain, muscle aches and overuse injuries | Usually mild; headache can also signal another serious problem | Throughout; cleanup, carrying supplies, poor sleep |
+| R03 | Small cuts, scrapes, blisters and splinters | Usually mild; a portal for infection | Especially earthquake damage and cleanup |
+| R04 | Bruises, minor falls, sprains and strains | Mild to disabling; falls can cause major injuries | Early event and later cleanup; darkness and fatigue |
+| R05 | Diaper rash, chafing, dry or cracked skin, irritant dermatitis | Usually mild; skin breakdown can become infected | Throughout; limited washing, diapers, moisture and friction |
+| R06 | Constipation, hemorrhoid discomfort and diet-related indigestion | Usually mild; severe abdominal symptoms have other causes | Days to weeks; changed food, fluid intake and activity |
+| R07 | Ordinary viral respiratory illness: colds, cough, sore throat and fever | Usually mild; children may develop breathing or feeding problems | Any time; likelihood rises with crowding and sick contacts |
+| R08 | Mild allergy symptoms, insect-bite irritation, itchy eyes and nasal irritation | Usually mild; distinguish from anaphylaxis or eye injury | Throughout; exposure to allergens, dust and insects |
+
+#### B. Plausible illnesses and complications; likelihood rises with particular failures
+
+| ID | Problem | Consequence | What raises the likelihood / timing |
+|---|---|---|---|
+| R09 | Acute diarrhea or gastroenteritis, including foodborne or waterborne illness | Mild to severe; dehydration or invasive infection may follow | Food spoilage, unsafe water, poor hand hygiene or sick contacts |
+| R10 | Nausea and vomiting, including illness or evacuation motion sickness | Mild to severe; inability to retain fluid raises risk | Any time; diagnosis matters because causes differ |
+| R11 | Mild to moderate dehydration | Can progress to life-threatening fluid/electrolyte loss | Low intake, fever, diarrhea, vomiting or hot conditions |
+| R12 | Bacterial wound infection, cellulitis, abscess and other infected skin lesions | Potentially serious; may spread or cause sepsis | Days after injury; rises with deep/dirty wounds and delayed care |
+| R13 | Small thermal burns, scalds and sunburn | Usually limited; burns damage the skin barrier | Emergency cooking, hot liquids, sun and cleanup |
+| R14 | Loose grit in eyes, corneal scratches and persistent eye irritation | Can threaten vision depending on injury | Rubble, dust, ash, debris or rubbing the eye |
+| R15 | Fungal skin infection, athlete’s foot, ringworm or yeast-associated rash | Usually localized; persistent moisture and hygiene loss matter | Weeks; damp footwear, skin folds and close contact |
+| R16 | Urinary tract infection, potentially progressing to kidney infection | Localized to serious systemic illness | Ordinary illness can occur during the disruption |
+| R17 | Dental pain, broken tooth/filling or dental abscess | Pain to spreading infection | Any time; delayed dental access prolongs problems |
+| R18 | Ear infection and other localized respiratory complications | Usually treatable; diagnosis and child age matter | During or after respiratory illness |
+| R19 | Conjunctivitis or another eye infection | Mild to vision-threatening depending on cause; newborn illness differs | Contact spread, contamination or ordinary illness |
+| R20 | Pneumonia, bronchiolitis or another significant respiratory infection | Potentially serious, especially in an infant | Any time; rises with infectious exposure and delayed care |
+| R21 | Interrupted prescription treatment or damaged/lost medicines and medical aids | Severity depends on the medicine/condition; risk accumulates | Quake damage, refill loss, heat, refrigeration or power failure |
+| R22 | Inadequate calories, poor diet tolerance and nutritional imbalance | From weakness to impaired recovery/growth | Weeks to months if stores cannot meet actual needs |
+| R23 | Persistent anxiety, depression or trauma symptoms impairing function | Can become disabling; distinct from immediate normal distress | Days to months; displacement, loss and isolation |
+| R24 | Lice, scabies and other infestation problems | Usually not fatal; spreads and impairs comfort/skin health | Rises with shelter crowding and prolonged close contact |
+
+#### C. Generally less frequent serious complications and unrelated acute illness
+
+| ID | Problem | Consequence | What raises the likelihood / timing |
+|---|---|---|---|
+| R25 | Sepsis and septic shock from wound, lung, urinary, dental or other infection | Life-threatening; may progress rapidly | Downstream of infection; lower than localized illness, not negligible |
+| R26 | Severe dehydration, dangerous electrolyte disturbance or acute kidney injury | Life-threatening; may develop quickly in children | Downstream of fluid loss, heat or other illness |
+| R27 | Anaphylaxis or another severe allergic reaction | Immediately life-threatening | Foods, medicines, insects or new exposures; no known allergy required |
+| R28 | Appendicitis, bowel obstruction or another acute surgical abdominal problem | Potentially life-threatening; symptom medicines do not resolve it | Can occur as ordinary illness within any 90-day period |
+| R29 | Heart attack, stroke, dangerous arrhythmia, seizure or other acute neurologic/cardiac illness | Potentially life-threatening or disabling | Ordinary disease plus stress, heat, dehydration or care disruption |
+| R30 | Significant gastrointestinal bleeding or severe invasive diarrheal illness | Potentially life-threatening | Underlying illness, selected infections or medicine-related harm |
+| R31 | Tetanus or infection/exposure requiring urgent prevention after an animal bite | Potentially fatal; local organism, vaccine status and exposure matter | Deep contaminated wounds or relevant animal exposure |
+| R32 | Suicidal crisis, severe psychiatric deterioration or dangerous withdrawal if dependence exists | Life-threatening; individual history substantially changes likelihood | Any time; withdrawal applies only when relevant |
+
+#### D. Exposure-dependent emergencies — these can move to the top
+
+| ID | Problem | Consequence | What raises the likelihood / timing |
+|---|---|---|---|
+| R33 | Fractures, dislocations and open fractures | Serious; open fractures also create infection risk | Building damage, falling objects, falls or vehicle accidents |
+| R34 | Crush injury, compartment syndrome and rhabdomyolysis | Limb- or life-threatening; kidney/electrolyte complications | Entrapment, heavy debris or prolonged compression |
+| R35 | Head injury, concussion, spinal injury and internal trauma | Mild to fatal; external appearance can underestimate injury | Collapse, falls, impacts or crashes |
+| R36 | Major external/internal bleeding and traumatic shock | Immediately life-threatening | Trauma; existing bleeding-kit purchasing review remains deferred |
+| R37 | Major burns, smoke inhalation and airway injury | Life-threatening or permanently disabling | Structure fire, wildfire, fuel incident or hot-fluid exposure |
+| R38 | Smoke-related respiratory symptoms or asthma/bronchospasm | Irritation to severe breathing difficulty | Wildfire smoke/ash; can move high in the order during exposure |
+| R39 | Heat exhaustion and heat stroke | From illness to life-threatening emergency | Hot season, cooling failure and exertion; children vulnerable |
+| R40 | Hypothermia and cold/wet exposure | Potentially fatal; infants lose heat readily | Cold conditions, displacement, wet clothing or loss of heat |
+| R41 | Carbon monoxide poisoning | Potentially fatal; headache/nausea can be mistaken for routine illness | Unsafe fuel-burning appliance, generator, vehicle or fire exposure |
+| R42 | Chemical poisoning, chemical skin/eye burns or hazardous dust exposure | Mild to fatal or vision-threatening | Broken containers, industrial releases, contaminated water or cleanup |
+| R43 | Electric shock and electrical burns | Immediately life-threatening or disabling | Damaged wiring, downed lines or equipment near water |
+| R44 | Drowning, aspiration or contaminated floodwater injury | Immediately life-threatening; infection can follow exposure | Floods, water containers or unsafe rescue/evacuation |
+| R45 | Accidental medication overdose, toxic ingestion, choking or swallowed dangerous objects | Potentially fatal, particularly in young children | Disrupted childproofing, dosing mistakes, loose medicines/batteries |
+| R46 | Assault-related injury or sexual violence and its medical consequences | Potentially severe; location and exposure determine risk | Unsafe displacement/evacuation settings; frequency unverified |
+
+### Newborn and postpartum overlays
+
+These modify the inventory rather than adding independent probabilities. Feeding difficulty, diaper care and ordinary recovery can be relatively common; sepsis, severe jaundice and postpartum emergencies are less frequent but urgent. Specific likelihoods are `ASSUMED/UNVERIFIED`, and no private ages, weights or clinical details are stored here. Routine toddler problems already appear in the main table; fluid loss and respiratory illness can have more serious consequences in young children. Newborn medication formulations and response needs must be assessed separately in the next phase.
+
+| ID / role | Additional problem | Likelihood / urgency distinction |
+|---|---|---|
+| N01 — Newborn | Feeding/latch problems, insufficient intake, dehydration and low blood glucose | Feeding difficulty is a plausible early issue; serious inadequate intake can progress quickly |
+| N02 — Newborn | Jaundice, excessive weight loss and missed early follow-up | Physiologic jaundice and dangerous jaundice must be distinguished; household probabilities not estimated |
+| N03 — Newborn | Fever, neonatal infection/sepsis or meningitis | Lower-frequency but critical; fever or poor feeding may be the first sign |
+| N04 — Newborn | Breathing difficulty/apnea, temperature instability and unsafe-sleep suffocation risk | Exposure/illness dependent; urgent and distinct from adult symptom management |
+| N05 — Newborn | Interrupted feeding support, routine newborn care or access to neonatal treatment | Care disruption raises consequences of otherwise manageable problems |
+| M01 — Postpartum, if applicable | Pain, constipation, hemorrhoids and ordinary recovery needs | Common recovery needs; distinguish normal recovery from complications |
+| M02 — Breastfeeding, if applicable | Nipple pain, engorgement, mastitis or breast abscess | Plausible; worsening infection can need systemic treatment |
+| M03 — Postpartum, if applicable | Perineal/cesarean wound infection or uterine infection | Plausible to serious; disrupted washing and follow-up add vulnerability |
+| M04 — Postpartum, if applicable | Postpartum hemorrhage, pre-eclampsia or a blood clot/pulmonary embolism | Less frequent but potentially fatal; trauma bandages do not cover these mechanisms |
+| M05 — Postpartum, if applicable | Postpartum depression or psychosis | Depression and psychosis have different likelihoods and urgency; do not conflate them |
+
+`VERIFIED` clinical threshold: AAP says a baby three months or younger with a rectal temperature at least **38°C / 100.4°F** requires immediate pediatric contact/assessment, even if otherwise apparently well. This is a recognition requirement, not a probability estimate. Source retrieved 2026-11-17: https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-and-Your-Baby.aspx.
+
+### Progression and timing
+
+`VERIFIED` mechanisms, with `ASSUMED` planning windows:
+
+- **Injury → contaminated wound → localized infection → possible sepsis.** Wound infection is an explicit planning problem. Serious contamination/crushed tissue and delayed care change the risk; a small clean cut and a crushed dirty wound do not have the same probability. Antibiotic availability belongs in the later infection-treatment options. No claim is made that every cut becomes infected or every infection progresses to sepsis.
+- **Diarrhea/vomiting/heat/poor intake → dehydration → possible electrolyte or kidney complications.** A medicine that reduces a symptom does not establish that fluid replacement or the underlying cause is covered.
+- **Respiratory infection/smoke → feeding or breathing difficulty → possible severe illness.** The newborn/toddler consequences differ from adult discomfort.
+- **Days 0–3:** direct trauma, unsafe structures, fires, poisoning, temperature exposure and access/feeding disruption can dominate. **Days 4–14:** delayed wound infection, food/water illness and exhausted caregivers become important. **Days 15–90:** ordinary illness continues, while refill loss, skin/dental problems, nutritional problems and prolonged stress can accumulate. These are overlapping planning windows, not observed cutoffs or a guarantee that an illness waits until a particular day.
+
+Sources: WHO earthquakes; disaster wound review; NLM sepsis/dehydration; AAP infant/child guidance, listed below. The prior `Priority 3` antibiotic entry is not a valid indication that systemic infection treatment has low preparedness importance. Supply priority will be assigned after the risk-to-options mapping; antibiotics and needed supporting treatment must be assessed together.
+
+### Dog risk appendix
+
+Secondary, qualitative `ASSUMED` inventory, not veterinary dosing or a verified frequency order:
+
+- Relatively likely/plausible: stress and disrupted eating, vomiting/diarrhea, paw cuts/blisters, minor trauma, skin/ear problems and disrupted preventive care.
+- Exposure dependent: dehydration, heat illness, smoke-related breathing difficulty, chemical/medication ingestion, bites and major trauma.
+- Less frequent but critical: severe infection, gastrointestinal obstruction or bloat, severe allergic reaction and major bleeding.
+
+Animal conditions/formulations need veterinary assessment in the options phase. Existing dog illness, vaccination history, parasite prevention and medications are not inferred. AirNow explicitly includes pets as potentially affected by wildfire smoke. The prior FDA/veterinary label review remains useful for avoiding human-to-dog formulation assumptions, but it supplies no likelihood estimates.
+
+## Response options and availability priorities — 2026-11-17
+
+**This completes the requested next phase:** each risk now has prevention/recognition, medicine or other treatment, and equipment/resource options. The compact tables retain the original risk IDs; rows are combined only where the response overlaps. The later, unchanged “Next phase” paragraph records the earlier stopping point. No purchase, new diagnosis or patient-specific drug course is inferred.
+
+Navigation: [routine problems](#routine-response-options) · [illness/infection](#illness-and-infection-response-options) · [urgent illness](#urgent-illness-response-options) · [exposure injuries](#exposure-injury-response-options) · [newborn/postpartum](#newborn-and-postpartum-response-options) · [antibiotics](#antibiotic-availability-options) · [supporting resources](#resources-that-make-the-medicines-usable) · [shopping priorities](#derived-shopping-priorities) · [evidence](#response-evidence-and-completion).
+
+**Assumptions/status:** doctors are available (`USER-CONFIRMED`); the response menu, grouping and P1/P2/P3 are researcher proposals (`ASSUMED`). Source-backed treatment roles are `VERIFIED` within their cited scope. The tables give options, not a diagnosis or regimen. Actual patient, route, concentration, contraindications and course are clinical selection fields. No functioning surgical service, lab, cold chain, IV facility or oxygen supply is inferred from the presence of doctors; those are concrete resource needs to include in the inventory.
+
+### Routine response options
+
+| Problem / original IDs | Prevention and recognition | Medicine / treatment options | Equipment and supporting resources |
+|---|---|---|---|
+| **Exhaustion, stress; persistent anxiety/depression** (R01, R23) | Share caregiving and rest; recognize impaired function, hopelessness or escalating distress. | Rest, support and counseling; clinician treatment for persistent illness. Sedatives are not a routine preparedness intervention. | Safe sleep space, lighting, paper contacts, communication and caregiver backup. |
+| **Headache, aches, overuse; bruises/sprains** (R02, R04) | Reduce carrying strain and fall hazards; assess severe headache, inability to bear weight or deformity. | Acetaminophen; ibuprofen if appropriate. Rest/support for minor injury; reassess possible fracture. | Age-specific liquids, dosing devices, wrapped cold packs and simple supports; cause assessment. |
+| **Minor cuts, abrasions, blisters and splinters** (R03) | Gloves/footwear; inspect depth, retained debris, circulation and increasing redness. | Clean, protect and reassess. Plain petrolatum for suitable minor wounds; complex contamination needs wound assessment. | Accessible safe cleaning water, soap, irrigation supplies, gloves and nonstick dressings; tetanus records. |
+| **Diaper rash, chafing and damaged skin** (R05) | Frequent diaper changes and drying; recognize spreading redness, blisters or fever. | Plain petrolatum or zinc-oxide barrier; diagnosis-specific treatment for fungal/bacterial lesions. | Diapers, clean water, mild soap, drying materials and small clean topical containers. |
+| **Constipation, hemorrhoid discomfort and indigestion** (R06) | Maintain fluid/food/activity; severe pain, vomiting, distension or bleeding need another diagnosis. | PEG 3350 for appropriate constipation; other agents selected by cause. Adult famotidine is an optional acid-symptom choice. | Safe mixing liquid, food/fiber, toilet access; child-specific selection and prescription-interaction check. |
+| **Viral respiratory illness and fever** (R07) | Hygiene and reduced sick contact; recognize breathing difficulty, poor feeding and infant fever. | Acetaminophen for suitable pain/fever; saline nasal support. Antiviral options depend on diagnosis, risk and timing. | Thermometer, oral syringes, fluid/feeding support, ventilation and age-appropriate infection precautions. |
+| **Mild allergy, bites and irritation** (R08) | Reduce allergen/insect contact; distinguish itching from airway symptoms or painful/vision-changing eyes. | Loratadine for suitable allergy symptoms; hydrocortisone 1% for eligible limited dermatitis; lubricating drops for simple dryness. | Correct adult/child formulations, intact skin assessment, exposure control and clean eye products. |
+
+### Illness and infection response options
+
+| Problem / original IDs | Prevention and recognition | Medicine / treatment options | Equipment and supporting resources |
+|---|---|---|---|
+| **Diarrhea, vomiting and mild/moderate dehydration** (R09, R10, R11) | Safe food/water and hygiene; track intake, urine, alertness, blood in stool and worsening pain. | ORS/fluid replacement; ondansetron where clinically appropriate; loperamide only for eligible adult watery diarrhea. Cause-directed treatment when indicated. | Exact ORS mixing volume, potable water, clean cups, dosing devices, feeding continuation and infant assessment. |
+| **Wound infection, cellulitis and abscess** (R12) | Clean wounds early and reassess; spreading redness, pus, systemic illness or rapid worsening changes urgency. | Systemic antibiotics matched to infection; abscess drainage/debridement when required. See antibiotic options below. | Adult/child formulations; wound-cleaning supplies; clinician procedure kit and follow-up; severe-infection resources. |
+| **Small burns, scalds and sunburn** (R13) | Safer cooking/shade; assess depth, size, location and infant involvement. | Cool first; suitable superficial burns may use petrolatum/nonstick protection and analgesia. Severe burns follow R37. | Cool clean water, nonstick dressing, shade and temperature protection; cooling precedes topical products. |
+| **Eye grit, scratch and irritation** (R14) | Eye protection; recognize pain, light sensitivity, persistent grit or changed vision. | Flush loose surface material; clinician examination for abrasion/retained material. Penetrating injury requires protection without pressure. | Accessible irrigation, eye shield and ophthalmic assessment; drops do not resolve retained/penetrating objects. |
+| **Fungal/yeast-associated skin problems** (R15) | Keep skin/footwear dry; assess distribution and distinguish bacterial rash or eczema. | Clotrimazole 1% for an appropriate localized fungal infection; site/age-specific alternatives if needed. | Dry socks, clean clothing and washing/drying resources; no automatic steroid treatment of fungal rash. |
+| **Urinary or kidney infection** (R16) | Recognize painful urination; fever, flank pain, vomiting or systemic illness changes treatment needs. | Site-specific antibiotic selection. Nitrofurantoin is a lower-UTI option, not a kidney-infection/sepsis substitute. | Urine assessment/culture access when indicated, hydration, renal-function/pregnancy/lactation review and escalation resources. |
+| **Dental pain, broken tooth/filling and abscess** (R17) | Oral hygiene; recognize swelling, fever, swallowing difficulty or spreading infection. | Analgesia plus definitive dental treatment/drainage. Antibiotics when clinically indicated; pain alone does not establish that need. | Brush/floss, clean mouth-care water, dentist access and procedure supplies; antibiotics do not repair a tooth. |
+| **Ear infection** (R18) | Recognize pain/fever; examination distinguishes otitis from other causes and complications. | Pain relief; observation or systemic antibiotic according to diagnosis/severity. Amoxicillin is one candidate for selected bacterial infections. | Otoscope/exam capability, appropriate pediatric formulation and follow-up. |
+| **Conjunctivitis and eye infection** (R19) | Hand hygiene; painful red eye, light sensitivity, vision change or newborn discharge requires assessment. | Diagnosis-specific ophthalmic treatment; selected antibacterial eye medicine only when appropriate. | Ophthalmic-labelled products, clean handling and eye/neonatal assessment; skin ointments are not eye medicine. |
+| **Pneumonia, bronchiolitis and significant respiratory infection** (R20) | Recognize increased work of breathing, lethargy or poor feeding; lower exposure where possible. | Bacterial pneumonia: selected systemic antibiotic. Viral bronchiolitis: supportive care; bronchodilator only for an appropriate clinical indication. | Age-appropriate monitoring, feeding/hydration, oxygen/airway support when needed and access to respiratory care. |
+| **Interrupted prescriptions or damaged medical aids** (R21) | Record exact medicines and storage; detect lost/broken devices or refill shortfall early. | Continuity of the actual prescription; replacements matched to original medicine/device. | Private medication list, protected reserve, power/cooling if required, accessible duplicate essentials and expiry audit. |
+| **Insufficient calories or nutritional imbalance** (R22) | Track eating and child growth/feeding; recognize persistent weakness, intolerance or weight loss. | Food/feeding support first; investigate underlying disease. Specific supplements only when indicated. | Existing food/water/cooking plans, appropriate infant feeding support and growth assessment. |
+| **Lice/scabies or other infestations** (R24) | Assess exposure and rash; reduce sharing of bedding/clothes. | Confirmed infestation needs its specific antiparasitic treatment; infant, pregnancy and lactation eligibility differs. | Laundry/bedding/clothing and contact-treatment plan; species/diagnosis-specific product selection. |
+
+### Urgent illness response options
+
+| Problem / original IDs | Prevention and recognition | Medicine / treatment options | Equipment and supporting resources |
+|---|---|---|---|
+| **Sepsis and septic shock** (R25) | Recognize infection plus worsening alertness, breathing, circulation or general condition. | Prompt appropriate systemic antibiotics and source treatment; IV fluids, oxygen and further support as clinically required. | Parenteral antibiotic/infusion capacity, monitoring, labs/procedure support and a viable advanced-care route. |
+| **Severe dehydration, electrolyte disturbance or acute kidney injury** (R26) | Recognize poor intake/urine, lethargy or impaired circulation; address fluid-loss causes early. | Clinically guided fluid/electrolyte treatment; IV support for severe illness, additional renal care if required. | IV fluids/access, age-appropriate monitoring, electrolyte/renal tests and advanced care; no generic home electrolyte-correction recipe. |
+| **Anaphylaxis** (R27) | Recognize sudden airway, breathing or circulation problems after possible exposure. | Epinephrine for anaphylaxis, plus emergency assessment/support. Oral antihistamines do not replace it. | Patient-compatible epinephrine device/formulation, repeat-treatment availability and airway/oxygen support. |
+| **Appendicitis, obstruction or other surgical abdomen** (R28) | Recognize severe/progressive pain, persistent vomiting, distension or concerning examination. | Cause-specific treatment and surgery when needed; symptom relief does not resolve obstruction/appendicitis. | Examination, imaging, fluids and surgical/transport capability. |
+| **Heart attack, stroke, arrhythmia or seizure** (R29) | Recognize acute chest/neurologic symptoms or prolonged seizure; rapid assessment determines treatment. | Condition-specific emergency protocol; medicines for cardiac, stroke and seizure problems are not interchangeable. | CPR/AED capability, cardiac/glucose assessment, age-appropriate resuscitation and time-sensitive advanced care. |
+| **GI bleeding or severe invasive diarrhea** (R30) | Recognize blood/black stool, faintness, severe pain or systemic illness. | Cause-directed treatment, fluids and bleeding support; antibiotics for selected infection. Adult antidiarrheals may be inappropriate. | Circulation monitoring, labs and potential endoscopy/transfusion/advanced-care access. |
+| **Tetanus risk or relevant animal-bite exposure** (R31) | Keep vaccine records; assess contaminated wounds and animal/exposure history. | Exposure-specific tetanus vaccine/immune globulin or rabies prevention; selected bite antibiotics. | Wound care, records and actual vaccine/immune-globulin cold-chain/clinical access. Antibiotics do not replace these prophylaxes. |
+| **Suicidal crisis, psychiatric deterioration or relevant withdrawal** (R32) | Recognize immediate danger or severe behavioral change; withdrawal applies only to relevant dependence. | Crisis care and diagnosis-specific clinician treatment; supervised withdrawal treatment may require monitoring. | Continuous support/safe environment, confidential history, communication and appropriate crisis/clinical resources. |
+
+### Exposure injury response options
+
+| Problem / original IDs | Prevention and recognition | Medicine / treatment options | Equipment and supporting resources |
+|---|---|---|---|
+| **Fracture, dislocation and open fracture** (R33) | Avoid unstable structures; assess deformity, circulation and open injury. | Analgesia, stabilization and definitive treatment; open fractures may need early systemic antibiotics and surgery. | Splints, wound coverage, clinician examination/imaging and orthopedic/transport capability. |
+| **Crush injury/compartment syndrome/rhabdomyolysis** (R34) | Recognize entrapment, severe swelling or neurovascular changes; coordinate rescue and medical care. | Clinician-led resuscitation, surgical assessment and treatment of renal/electrolyte complications. | Rescue coordination, IV/monitoring resources, surgical access and possible renal support. |
+| **Head, spinal or internal injury** (R35) | Prevent falls/impacts; recognize altered consciousness, focal weakness or severe trauma. | Trauma assessment and cause-specific treatment; limit unnecessary movement with suspected spinal injury. | Airway/monitoring, careful evacuation, imaging and trauma/surgical facilities. |
+| **Major bleeding and traumatic shock** (R36) | Recognize uncontrolled bleeding and impaired circulation; injury prevention and early assessment. | Existing bleeding-control capability plus resuscitation/definitive trauma treatment as required. | Existing trauma bag, protective gloves, transport and potential IV/blood/surgery resources; supply audit deferred. |
+| **Major burn, smoke inhalation or airway injury** (R37) | Safer fuel use/escape; assess burn extent and breathing injury. | Cooling/analgesia, airway care, clinically selected fluids and burn treatment. Cream alone provides little coverage. | Clean cooling water, protective coverage, oxygen/airway capability and burn/trauma access. |
+| **Smoke symptoms and bronchospasm** (R38) | Reduce smoke exposure; distinguish irritation from worsening breathing. | Albuterol for clinically appropriate bronchospasm; additional respiratory support if needed. It does not remove smoke exposure. | Protected clean air; compatible aerosol inhaler/chamber/mask if selected; nebulizer alternative needs power and correct formulation. |
+| **Heat exhaustion/heat stroke** (R39) | Limit heat/exertion; recognize weakness or confusion in hot conditions. | Prompt cooling and appropriate fluid care; fever medicines do not treat environmental heat stroke. | Shade/cooler location, clean water/cooling materials, temperature assessment and emergency transport. |
+| **Hypothermia** (R40) | Dry shelter/clothing; recognize cold exposure, lethargy or altered function. | Warming and clinical resuscitation if severe; medication is not the primary prevention. | Dry layers/blankets, shelter, safe heat and age-appropriate temperature monitoring. |
+| **Carbon monoxide poisoning** (R41) | Safe outdoor combustion and functioning alarms; consider CO with shared headache/nausea. | End exposure safely; emergency oxygen/assessment and further treatment as indicated. | Battery-backed CO alarms, safe fuel practices, oxygen/transport capability. |
+| **Chemical poisoning or chemical eye/skin injury** (R42) | Separate chemicals and use protection; identify exposure without delaying decontamination. | Exposure-specific decontamination/poison treatment; chemical eye exposure requires immediate prolonged flushing. | Product information, poison contacts, accessible clean irrigation and clinical support; no general-purpose antidote. |
+| **Electrical injury** (R43) | Avoid live damaged equipment, wires and electricity near water. | Safe scene first; CPR/AED when indicated, cardiac/burn/trauma treatment. | Isolation of power by appropriate personnel, lighting, AED/medical assessment and transport. |
+| **Drowning, aspiration and contaminated-water injury** (R44) | Protect water access and avoid hazardous rescue; recognize breathing problems after exposure. | Safe rescue, breathing support/CPR and assessment; infection treatment only when clinically indicated. | Rescue safety, age-appropriate resuscitation, oxygen and advanced care. |
+| **Overdose, toxic ingestion, choking or dangerous swallowed object** (R45) | Locked medicines/chemicals and caregiver dose log; identify airway obstruction or ingestion promptly. | Age-appropriate choking/CPR response, poison advice and object/toxin-specific treatment; do not induce vomiting. | Locks, labelled packaging, dosing tools/log, poison information and possible airway/endoscopy resources. |
+| **Assault/sexual-violence injury** (R46) | Safer location and support; recognize injury and urgent exposure concerns. | Trauma care plus time-sensitive exposure-specific prophylaxis and confidential support. | Safe location, clinical/forensic access, relevant prophylaxis and communication. |
+
+### Newborn and postpartum response options
+
+#### Newborn response options
+
+| Problem / original IDs | Prevention and recognition | Medicine / treatment options | Equipment and supporting resources |
+|---|---|---|---|
+| **Feeding problems and interrupted neonatal care** (N01, N05) | Support feeding continuity; track intake/output and follow-up; recognize lethargy or inadequate feeding. | Feeding/lactation support; clinically selected supplemental feeding if required; fluid/glucose treatment for serious deficits. | Appropriate feeds, hygiene and clinician assessment; neonatal monitoring/IV support if needed. A manual-expression option reduces power dependence. |
+| **Jaundice/excessive weight loss** (N02) | Arrange early follow-up; recognize worsening jaundice, poor feeding or unusual sleepiness. | Feeding assessment and bilirubin-guided phototherapy when indicated; sunlight is not a substitute for a clinical treatment plan. | Weight/bilirubin assessment, feeding support and real phototherapy/power resources when prescribed. |
+| **Neonatal fever, infection/sepsis or meningitis** (N03) | Recognize fever or abnormal temperature, reduced feeding/movement or breathing change. | Urgent neonatal assessment and appropriate parenteral antimicrobials/support when indicated. Adult oral antibiotics do not define neonatal coverage. | Neonatal dosing/IV capability, cultures/testing, temperature/airway support and accessible neonatal care. |
+| **Breathing/temperature problems and unsafe sleep** (N04) | Back sleeping on a firm flat clear surface; recognize breathing/temperature instability. | Cause-specific neonatal care; safe sleep and environmental temperature control prevent exposure harm. | Safe cot/bassinet, light clothing/warmth as appropriate, clean air and neonatal resuscitation resources. |
+
+#### Postpartum response options
+
+| Problem / original IDs | Prevention and recognition | Medicine / treatment options | Equipment and supporting resources |
+|---|---|---|---|
+| **Recovery pain, constipation and hemorrhoids** (M01) | Maintain hygiene and bowel support; distinguish expected recovery from heavy bleeding or fever. | Appropriate acetaminophen/ibuprofen and bowel treatment; reassess persistent/worsening symptoms. | Pads, clean water, toilet/privacy and existing prescribed recovery medicines. |
+| **Nipple injury, engorgement, mastitis or breast abscess** (M02) | Support latch/feeding; recognize worsening focal pain, fever or persistent symptoms. | Continue appropriate feeding/hand expression, gentle support and analgesia; antibiotic/drainage for indicated bacterial disease/abscess. | Lactation support, clean cold compress and feeding supplies; clinician examination/procedure resources. |
+| **Childbirth-wound or uterine infection** (M03) | Clean recovery care; recognize fever, tenderness, wound changes or systemic illness. | Site-specific systemic antibiotics and source treatment where indicated; uterine/systemic infection may need advanced care. | Appropriate examination, adult/lactation formulation, hygiene and parenteral/procedure capability if needed. |
+| **Hemorrhage, pre-eclampsia or DVT/PE** (M04) | Recognize heavy blood loss, severe headache/vision change, calf swelling or chest/breathing symptoms. | Cause-specific obstetric/emergency treatment: hemorrhage drugs, antihypertensive/anticonvulsant or anticoagulation only for the diagnosed problem. | BP/circulation assessment; obstetric, IV/blood/surgical or thromboembolism resources. Trauma bandages do not provide complete coverage. |
+| **Postpartum depression or psychosis** (M05) | Caregiver support; recognize inability to function, self-harm thoughts or psychotic symptoms. | Mental-health treatment; psychosis/safety concerns require urgent clinical support. | Caregiver backup, safe environment and perinatal mental-health/crisis access. |
+
+The toddler’s liquids/doses/devices and the newborn’s treatment resources are separate inventory requirements. A newborn is not covered by owning children’s OTC medicines. AAP’s immediate-assessment threshold remains **rectal temperature ≥38°C / 100.4°F at age three months or younger**; poor feeding, unusual lethargy or breathing difficulty also changes urgency. The table contains no individual dose. Keep personal dose cards and health details private.
+
+### Antibiotic availability options
+
+**Systemic infection-treatment capability is Priority 1.** The following is a candidate formulary for your doctors to select according to infection site, exposure, resistance and patient. The options have different coverage; “broad spectrum” does not establish that a medicine covers every earthquake wound. Availability includes the right formulation, enough complete prescribed courses and the resources for drainage/debridement or severe illness.
+
+| Candidate | Useful clinical role | Selection / availability limits |
+|---|---|---|
+| **Cephalexin** | Selected uncomplicated streptococcal/MSSA skin/soft-tissue infections. | Does not give dependable MRSA coverage; abscesses can require drainage. Adult/child formulation and renal review. |
+| **Amoxicillin/clavulanate** | Selected infected animal/human bites and other appropriate mixed aerobic/anaerobic infections. | Specific contaminated-wound exposure may need different agents. Liquid refrigeration and short after-mixing life matter. |
+| **Amoxicillin** | Selected bacterial ear/respiratory infections when diagnosis/susceptibility supports it. | Viral illness and severe pneumonia need different responses. It is not interchangeable with amoxicillin/clavulanate. |
+| **MRSA-active option, selected by the doctors** | For relevant purulent infection/resistant-organism scenarios; TMP-SMX is one guideline-listed candidate. | Other required organism coverage, source control, age, kidney function and pregnancy/lactation determine selection. No newborn formulation inferred. |
+| **Lower-UTI option, such as nitrofurantoin if appropriate** | Selected lower urinary infection after patient/renal/feeding assessment. | Fever/flank pain or systemic illness requires a kidney-infection/sepsis plan; nitrofurantoin is not that replacement. |
+| **Separate parenteral formulary** | Severe infection, open-fracture care or neonatal infection, according to the clinical situation. | Appropriate agents plus access/infusion supplies, monitoring, diagnostics and source-control capability; neonatal and adult choices differ. |
+
+A localized abscess may need drainage, a crushed/dirty wound may need debridement, and sepsis may need parenteral treatment plus fluid/oxygen/circulation support and source control. Those needs belong alongside the antibiotic stock. Antibiotic ointment, tetanus/rabies prevention, systemic antibiotics and wound-cleaning supplies provide distinct coverage. The topical-antibiotic P3 entry below does not lower the priority of effective systemic infection treatment.
+
+### Resources that make the medicines usable
+
+| Dependency | Concrete inventory/design implication |
+|---|---|
+| **Potable mixing and cleaning water** | ORS uses its exact packet volume and does not disinfect water. Keep accessible safe water for medicines, wound/eye care and feeding support; cross-reference the water plan rather than double-counting it. |
+| **Pediatric antibiotic stability** | NLM guidance says mixed amoxicillin/clavulanate liquid needs refrigeration and disposal after 10 days; cephalexin liquid needs refrigeration and disposal after 14 days. Amoxicillin liquid guidance permits room-temperature storage and disposal after 14 days, with refrigeration preferred. Exact dispensed label controls. A prepared bottle does not give 90-day coverage. |
+| **Dry product/dispensing plan** | A pharmacist-selected powder-to-reconstitute plan may reduce opened-liquid waste, but unopened stability, exact mixing water, concentration, after-mixing life and refrigeration still require verification. No adult-pill-to-infant conversion is assumed. |
+| **No-power inhalation option** | A compatible aerosol metered-dose inhaler/chamber can reduce dependence on an electric nebulizer. Device, mask and patient technique must match; a dry-powder inhaler is not automatically compatible with a spacer. |
+| **Recognition and measurement** | Thermometers, oral mL devices and a paper dose log support the whole cache. Clinical BP/glucose/oxygen monitoring needs age-compatible devices and interpretation. |
+| **Procedure/resuscitation resources** | IV antibiotics require supplies and a clinical care setup; abscess/source control requires procedure capability. Oxygen, airway supplies and emergency transport are specific dependencies, not assumed features of the medicine cabinet. |
+| **Eye exposure and burn cooling** | Accessible irrigation is needed immediately. NLM chemical-eye guidance calls for at least 15 minutes of flushing; two small eyewash bottles do not establish that capacity. Cool burns before topical products; keep the rest of the person warm. |
+| **Cold chain and controlled storage** | Vaccine/immune-globulin access and particular medicines may require monitored refrigeration. Indoor, child-locked, seismically accessible storage, printed expiry and shorter after-opening limits remain essential. |
+| **Essential prescriptions, feeding and recovery** | Inventory exact existing medicines/devices privately; newborn feeding, safe sleep and postpartum recovery need materials and care access in addition to symptom medicines. |
+| **Exposure controls** | CO alarms, lighting, safer cleanup, clean air, shade/cooling and dry shelter reduce emergencies for which pills provide little protection. No newborn respirator fit is assumed; protected clean air is the relevant infant resource. |
+
+The cooling/cream source difference remains explicit: NHS acute-burn advice emphasizes cool water for 20 minutes and no acute creams; AAD supports petrolatum/nonstick coverage for a suitable superficial first-degree burn after cooling. Both refer to defined situations; serious or infant burns are assessed separately.
+
+### Derived shopping priorities
+
+**P1:** cover common essential function and treatments whose shortage can cause death, major deterioration or permanent harm; include indispensable supporting resources. **P2:** additional useful coverage for frequent problems or accumulated problems over weeks. **P3:** narrower, overlapping or comfort-focused options after essential coverage. These are qualitative decisions, not a numerical probability score. Prescription status is a procurement field, and a rare but time-critical rescue can be P1.
+
+The table prioritizes treatment modules. A module can contain household items, licensed-pharmacy medicines and clinician/advanced-care resources. Final selection and quantity are still proposals; an existing item should be counted before buying a duplicate. “P1 advanced care” means establishing actual usable resources/access, not equipping the household as a complete hospital.
+
+| Priority | Supply module / candidates | Why it belongs here |
+|---|---|---|
+| **P1 — Hydration/feeding capability** | ORS, safe mixing water and immediately usable suitable fluids; clinically selected ondansetron where useful to restore drinking. | Fluid loss can become fatal; infant feeding and formulation are separate requirements. |
+| **P1 — Systemic infection treatment** | Selected oral antibiotic formulary with adult/child dispensing plan; parenteral infection-treatment resources where severe/neonatal disease requires them. | High consequence of unavailable effective treatment; route and source control determine real coverage. |
+| **P1 — Anaphylaxis and relevant breathing rescue** | Patient-compatible epinephrine; albuterol inhalation setup for clinically appropriate bronchospasm. | Rare but time-critical; identify usable formulation/device and clinical indications. |
+| **P1 — Core pain/fever and accurate measurement** | Adult/child acetaminophen; suitable ibuprofen option; thermometers, mL-marked dosing devices and dose log. | Common needs, preserved function and recognition of illness; no newborn fever-reducer pathway inferred. |
+| **P1 — Wound/skin protection and eye irrigation** | Safe cleaning/irrigation water, soap, gloves, nonstick coverage and plain petrolatum; eye shield/irrigation. | Prevents deterioration and vision-threatening delay. Check existing bag before duplicating supplies. |
+| **P1 — Essential monitoring, newborn and recovery needs** | Private prescription continuity; feeding/safe sleep, pads/hygiene, temperature assessment and needed clinical monitoring. | Preserves essential care when utilities and access fail; supplies must match actual patients. |
+| **P1 — Exposure control and emergency-care resources** | Lighting, CO detection, safe shelter/cooling/clean air; accessible resuscitation, oxygen/IV/procedure/transport resources for indicated emergencies. | Medication alone leaves major failure modes uncovered. Bleeding-kit audit remains deferred. |
+| **P1 — Time-sensitive exposure prevention and crisis care** | Actual tetanus/rabies prevention access, clinician-selected post-assault prophylaxis and urgent psychiatric/perinatal crisis resources. | Delay can cause preventable severe harm; clinical resources and cold chain are supply/access requirements. |
+| **P2 — Common symptom and skin coverage** | Loratadine; suitable PEG 3350; hydrocortisone 1%; clotrimazole 1%; zinc-oxide barrier; nasal saline; lubricating eye drops. | Useful frequent-illness coverage; avoid overlap and age/site-inappropriate products. |
+| **P2 — Eligible adult diarrhea symptom control** | Loperamide for appropriate short-term adult watery diarrhea. | Functional benefit; hydration/source treatment carries the larger consequence of shortage. |
+| **P2 — Localized diagnosis-specific medicines/procedure items** | Clinician-selected ophthalmic antibiotic, infestation treatment or temporary dental-care items if relevant to expected scenarios. | Match diagnosis and patient; these need different resources from generalized infection treatment. |
+| **P2 — Recovery and longer-duration supports** | Additional clean skin/diaper/foot-care supplies, manual feeding support, oral hygiene and mental-health support resources. | Reduces accumulating problems over weeks; broad function matters without assuming every product is necessary. |
+| **P3 — Narrow or overlapping symptom options** | Adult meclizine for motion sickness; famotidine for acid symptoms; second laxative if useful; allergy eye drops. | Choose for demonstrated usefulness after shared essential functions are covered. |
+| **P3 — Optional topical first-aid antibiotic** | Suitable minor-wound topical product such as bacitracin/polymyxin B if selected. | Localized optional role; systemic infection treatment remains P1, and routine clean-cut/burn use is not the default. |
+| **P3 — Other overlapping comforts** | Bismuth, additional duplicate symptom products or broad supplements only if a defined role remains. | Breastfeeding/child restrictions and duplication can limit value; no automatic broad supplement purchase. |
+
+A symptom medicine’s assigned priority can change with its role. For example, ondansetron can belong in P1 hydration support for an eligible patient who cannot retain fluid; adult motion-sickness meclizine has a narrower P3 role. Pain/fever medicines retain a basic P1 role for frequent illness and function while infection capability also stays P1. Vaccine/immune-globulin availability for an actual exposure is urgent even though routine speculative home stock may not be appropriate or feasible.
+
+| Service level | What the medicine/response design covers |
+|---|---|
+| **Survival minimum** | P1 recognition, feeding/hydration, essential treatment and effective urgent-care resources. A small cache cannot replace missing water, source control or neonatal care. |
+| **Moderate conservation** | P1 plus P2 skin/bowel/allergy/eye/hygiene coverage and redundancy for probable illness episodes. Stock is sized by episodes and actual formulations, not 90 daily doses of everything. |
+| **Higher comfort** | Add selected P3 options and convenient package formats once essential functions and formulation dependencies are covered. Patient-critical treatment does not become optional because it is more complex. |
+
+### Veterinary response options
+
+Secondary to the human plan; these are proposed veterinary coverage categories rather than extrapolated human doses.
+
+| Dog problem | Prevention / recognition | Medicine or treatment options | Supplies / resources |
+|---|---|---|---|
+| Stress, poor eating, vomiting or diarrhea | Maintain suitable food/routine; identify persistent vomiting, poor intake or lethargy. | Vet-selected antiemetic such as maropitant when appropriate; fluid/cause treatment as needed. | Dog food/water, veterinary formulation and assessment; obstruction/toxin exposure changes the plan. |
+| Paw cuts, minor injuries, skin/ear problems or bites | Paw/exposure protection and skin checks; recognize infection or major pain. | Veterinary wound/pain/skin treatment; antibiotics when indicated. | Appropriate wound coverage, protective handling, current vaccine records and vet access. |
+| Heat, smoke or chemical exposure | Reduce exposure; recognize abnormal breathing, overheating or ingestion. | Cooling, respiratory/poison treatment and fluid care as indicated. | Shade/cooling, clean air, labelled exposure information and veterinary emergency resources. |
+| Bloat/obstruction, severe infection, anaphylaxis or major trauma | Recognize severe pain/distension, unproductive retching, collapse or breathing difficulty. | Urgent diagnosis-specific veterinary treatment; surgery/resuscitation when required. | Transport, emergency vet and procedure resources. Dog supplies are sized separately from human needs. |
+
+FDA says a human or another animal’s pain medicine may be unsuitable for the dog; veterinary pain selection accounts for kidney/liver/GI and dehydration risks. The earlier inspected maropitant label supplies the product role, not a new dose or confirmed prescription.
+
+### Response evidence and completion
+
+Response mapping and priorities are `RESEARCHER PROPOSALS`; exact individual prescribing, quantities and future availability remain open. Clinical mechanisms/drug roles use the sources below and the earlier indexed drug labels. Older sources remain dated: IDSA’s SSTI guideline is **2014**, not a 2026 edition; disaster-wound guidance is a **2015** review of heterogeneous settings. NLM/NICE and current medical-society guidance were inspected on **2026-11-17**. UK clinical guidance supports indication/dependency comparisons; US labels and local susceptibility govern the US dispensing plan.
+
+Contrary evidence retained: ADA guidance emphasizes definitive dental care and limits antibiotic use for most localized dental pain/swelling; AAD does not recommend routine topical antibiotics for clean minor cuts or superficial burns. These findings narrow particular uses without demoting systemic treatment of a diagnosed infection. Patient/site/formulation choices can change the best stock; owning several antibiotics alone is not verified complete coverage.
+
+<details>
+<summary>Response sources and supporting audit files</summary>
+
+| Source / evidence IDs | Scope |
+|---|---|
+| [idsa_ssti_options](https://www.idsociety.org/practice-guideline/skin-and-soft-tissue-infections/) | IDSA SSTI guideline (2014): cellulitis, abscess drainage, selected skin/bite agents and resistant-organism scenarios. |
+| [nice_cellulitis_options](https://www.nice.org.uk/guidance/ng141/chapter/Recommendations) | NICE NG141: oral/IV selection and serious cellulitis/sepsis referral. |
+| [nice_bites_options](https://www.nice.org.uk/guidance/ng184/chapter/Recommendations) | NICE NG184: bite-wound assessment and selected prophylaxis/treatment. |
+| [nice_lower_uti_options](https://www.nice.org.uk/guidance/ng109/chapter/Recommendations) | NICE NG109: lower-UTI selection, renal assessment and distinction from kidney/systemic infection. |
+| [nice_pyelo_options](https://www.nice.org.uk/guidance/ng111/chapter/Recommendations) | NICE NG111: kidney-infection treatment and pediatric/IV considerations. |
+| [ada_antibiotic_options](https://www.ada.org/resources/ada-library/oral-health-topics/antibiotic-stewardship) | ADA stewardship page, including a 2026 practice statement: definitive dental care and systemic-involvement limits. |
+| [amoxicillin_options](https://medlineplus.gov/druginfo/meds/a685001.html) | NLM amoxicillin role/formulation/storage. |
+| [co_amoxiclav_options](https://medlineplus.gov/druginfo/meds/a685024.html) | NLM amoxicillin/clavulanate role and refrigerated mixed-liquid/discard requirements. |
+| [cephalexin_options](https://medlineplus.gov/druginfo/meds/a682733.html) | NLM cephalexin role and liquid refrigeration/discard requirements. |
+| [nitrofurantoin_options](https://medlineplus.gov/druginfo/meds/a682291.html) | NLM nitrofurantoin role and renal/patient assessment. |
+| [smx_tmp_options](https://medlineplus.gov/druginfo/meds/a684026.html) | NLM co-trimoxazole role and patient/interaction precautions; no neonatal approval inferred. |
+| [epinephrine_options](https://medlineplus.gov/druginfo/meds/a603002.html) | NLM epinephrine injection: anaphylaxis/emergency role; formulations/clinical contexts differ. |
+| [albuterol_options](https://medlineplus.gov/druginfo/meds/a682145.html) | NLM inhaled albuterol: indication, aerosol/nebulizer devices and device-specific instructions. |
+| [ondansetron_options](https://medlineplus.gov/druginfo/meds/a601209.html) | NLM ondansetron: labelled nausea roles and QT/electrolyte precautions. Infectious-gastroenteritis use needs a separate clinical indication. |
+| [diarrhea_options](https://www.niddk.nih.gov/health-information/digestive-diseases/diarrhea/treatment) | NIDDK diarrhea treatment: fluid replacement, children and antidiarrheal limitations. |
+| [constipation_options](https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/treatment) | NIDDK constipation treatment: diet/activity and cause-specific medicines. |
+| [eye_emergency_options](https://medlineplus.gov/ency/article/000054.htm) | NLM eye emergencies: injury recognition, chemical irrigation and urgent eye care. |
+| [appendicitis_options](https://medlineplus.gov/appendicitis.html) | NLM appendicitis: recognition and surgical-treatment role. |
+| [crush_options](https://medlineplus.gov/ency/article/000024.htm) | NLM crush injury: serious injury, assessment and possible surgery; not a detailed rhabdomyolysis protocol. |
+| [neonatal_sepsis_options](https://medlineplus.gov/ency/article/007303.htm) | NLM neonatal sepsis: recognition, diagnostics and parenteral/supportive treatment. |
+| [newborn_jaundice_options](https://medlineplus.gov/ency/article/001559.htm) | NLM newborn jaundice: feeding, bilirubin assessment and phototherapy. |
+| [aap_sleep_options](https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx) | AAP safe infant sleep: supine, firm flat clear approved surface and caregiver considerations. |
+| [aap_fever_options](https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-and-Your-Baby.aspx) | AAP infant fever: immediate assessment threshold. |
+| [aap_acetaminophen_options](https://www.healthychildren.org/English/safety-prevention/at-home/medication-safety/Pages/Acetaminophen-for-Fever-and-Pain.aspx) | AAP acetaminophen: weight-based, concentration-specific and accurate device requirements. |
+| [aap_ibuprofen_options](https://www.healthychildren.org/English/safety-prevention/at-home/medication-safety/Pages/Ibuprofen-for-Fever-and-Pain.aspx) | AAP ibuprofen: infant age limits, measurement and pediatric guidance. |
+| [aad_burn_options](https://www.aad.org/public/everyday-care/injured-skin/burns/treat-minor-burns) | AAD superficial burn role and cooling/petrolatum limits. |
+| [aad_cut_options](https://www.aad.org/public/everyday-care/injured-skin/burns/treat-minor-cuts) | AAD minor cut cleaning/protection and topical-antibiotic limitations. |
+| [nhs_burn_options](https://www.nhs.uk/conditions/burns-and-scalds/) | NHS burns page, reviewed 2026-03-31: acute cooling and serious-burn criteria. |
+| [nhs_mastitis_options](https://www.nhs.uk/conditions/mastitis/) | NHS mastitis: continued feeding, gentle support and clinically indicated antibiotics. |
+| [fda_pet_options](https://www.fda.gov/animal-veterinary/animal-health-literacy/get-facts-about-pain-relievers-pets) | FDA veterinary pain safety and species/patient-specific selection. |
+| [poison_options](https://poisonhelp.org/) | America’s Poison Centers: poison response and immediate exposure advice. |
+
+Additional response checks, inspected 2026-11-17: [NLM heat emergencies](https://medlineplus.gov/ency/article/000056.htm) explicitly says fever medicines do not treat heat illness; [AAP newborn jaundice](https://www.healthychildren.org/English/ages-stages/baby/Pages/Jaundice.aspx) says sunlight is not safe treatment; [NLM CO poisoning](https://medlineplus.gov/ency/article/002804.htm) describes emergency oxygen/airway/IV resources; [NLM sexual assault](https://medlineplus.gov/sexualassault.html) identifies medical/exposure and psychological consequences. These four additional records are included in the audit, bringing the response collection to 36 records.
+
+Other mechanism sources retain their earlier inventory dates: NLM sepsis/dehydration/CO, WHO hazards, NHS postpartum and AirNow smoke guidance were inspected November 17; the earlier DailyMed/FDA OTC/veterinary labels were inspected November 15. Their evidence IDs/dates are in the structured response record. No new retail price, stock, ASIN, shelf-life guarantee or certificate was inferred.
+
+Audit files:
+
+- `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/data/response_options_20261117.json` — complete risk-ID map, grouping, candidates, priorities and evidence dates.
+- `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/data/response_options_urls_20261117.json` — bounded response-source URL inputs.
+- `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/data/response_options_urls_20261117_retrieved.json` — retrieved text, response hashes, dates and content-access results.
+
+The existing collector remains the reproducible retrieval method. Required research is saved in the real local macOS checkout; no Pluto scratch is used and remote backup is not claimed.
+
+</details>
+
+**Completed:** all 46 main human risk IDs and all 10 newborn/postpartum IDs have explicit response coverage; dog information is separate. The original text/tables remain unchanged. **Next procurement batch:** deduplicate against confirmed owned items, select exact adult/child formulations and complete-course stock counts with the available doctors/pharmacist, then verify actual licensed-pharmacy/Amazon products, package sizes, expiry and prices. No purchase is inferred.
+
+### Risk inventory sources and gaps
+
+**Retrieved/inspected 2026-11-17.** Historical publication dates are retained. Agency guidance establishes hazards, not family incidence. Selected disaster-patient samples overrepresent injuries/severity and cannot supply a household denominator. Exact fine ordering, the chance of each complication, event season, exposure magnitude, residual sanitation, evacuation crowding and the resources accessible to nearby doctors remain unknown. Some specific diagnoses in the broad inventory are clinical completeness prompts rather than independently verified disaster-incidence claims. This is a broad practical inventory, not a claim to list every possible diagnosis.
+
+| Evidence ID / source | Class and date scope | What it supports and limits |
+|---|---|---|
+| [who_earthquake_topic: WHO, Earthquakes](https://www.who.int/health-topics/earthquakes) | Primary public-health agency; current page | Traumatic injury, wound infection, interrupted obstetric/neonatal/chronic care and damaged transport/facilities; global scope. |
+| [who_floods: WHO, Floods](https://www.who.int/health-topics/floods) | Primary public-health agency; current page | Drowning, trauma, electrocution, CO and disruption of health infrastructure; global scope, not local flood probabilities. |
+| [epmc_northridge_ed_abstract: The effects of the Northridge earthquake on the pattern of emergency department care (1998)](https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:9596426&format=json&resultType=core) | Primary observational study; abstract inspected | One California hospital, six-day before/after comparison. Laceration visit share rose from 7.1% to 22.4%; these are visit percentages, not household infection probabilities. |
+| [disaster_wounds_2015_fulltext: Wound Management in Disaster Settings (2015 issue; DOI dated 2014)](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4356884/fullTextXML) | Peer-reviewed systematic review/consensus; full text inspected | 62 studies of disaster wounds; contaminated injuries, high infection rates in injured samples, local/systemic complications. Historical, heterogeneous and often resource-poor settings; not a San Jose household risk estimate or a current regimen. |
+| [epidemics_disasters_2007_fulltext: Epidemics after Natural Disasters (2007)](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2725828/fullTextXML) | WHO authors, CDC journal; historical perspective, full text inspected | Outbreak risk depends on displacement, safe water, sanitation, crowding, health and local ecology. Does not predict automatic epidemics after an earthquake. |
+| [epmc_northridge_medications_abstract: Impact of the 1994 Northridge earthquake on the utilization and difficulties associated with prescription medications and health aids (2000)](https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:11227605&format=json&resultType=core) | Primary household survey; abstract inspected | Historical moderate earthquake with short disruption; reported relatively limited medication problems. Cannot estimate a hypothetical 90-day complete outage; useful contrary evidence. |
+| [sepsis_medline: MedlinePlus, Sepsis](https://medlineplus.gov/sepsis.html) | US NLM federal medical reference; current page | Sepsis can start from a small infected cut or other infection; children under one are a higher-risk group. Antibiotics, blood-flow support and source treatment are part of emergency treatment. |
+| [nih_dehydration: MedlinePlus, Dehydration](https://medlineplus.gov/dehydration.html) | US NLM federal medical reference; current page | Fluid loss and inadequate intake, child vulnerability, electrolyte/organ complications and severe disease. |
+| [aap_dehydration_refresh: AAP, Signs of Dehydration in Infants & Children](https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/dehydration.aspx) | Primary pediatric-society guidance; current page | Infant/child recognition and urgency; cannot be replaced by adult assumptions. |
+| [aap_newborn_fever_refresh: AAP, Fever and Your Baby](https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-and-Your-Baby.aspx) | Primary pediatric-society guidance; current page | At age three months or younger, rectal temperature at least 38°C/100.4°F requires immediate pediatric contact/assessment; does not supply incidence data. |
+| [nhs_postnatal: NHS, Your body after the birth](https://www.nhs.uk/pregnancy/labour-and-birth/after-the-birth/your-body/) | Primary UK health-service guidance; page review 2024-04-25 | Recovery, infection, postpartum hemorrhage, pre-eclampsia and DVT/PE warning patterns; US local care/procurement differs. |
+| [nhs_mastitis: NHS, Mastitis](https://www.nhs.uk/conditions/mastitis/) | Primary UK health-service guidance; current page | Breastfeeding breast inflammation/infection and complications; not all mastitis is bacterial. |
+| [nih_postpartum: MedlinePlus, Postpartum Care](https://medlineplus.gov/postpartumcare.html) | US NLM federal medical reference; current page | Ordinary recovery and postpartum depression; no personalized likelihood. |
+| [nih_heat: MedlinePlus, Heat Illness](https://medlineplus.gov/heatillness.html) | US NLM federal medical reference; current page | Heat exhaustion/heat stroke and fluid/exposure interaction; actual home temperature unknown. |
+| [nih_hypothermia: MedlinePlus, Hypothermia](https://medlineplus.gov/hypothermia.html) | US NLM federal medical reference; current page | Cold/wet exposure and life-threatening cooling; season and shelter dependent. |
+| [nih_co: MedlinePlus, Carbon Monoxide Poisoning](https://medlineplus.gov/carbonmonoxidepoisoning.html) | US NLM federal medical reference; current page | Fuel-combustion exposure, overlapping symptoms and fatal poisoning. |
+| [nih_poison: MedlinePlus, Poisoning](https://medlineplus.gov/poisoning.html) | US NLM federal medical reference; current page | Medicines, household chemicals, routes of exposure and child access. |
+| [nih_dental_abscess: MedlinePlus Medical Encyclopedia, Tooth abscess](https://medlineplus.gov/ency/article/001060.htm) | Federal-hosted medical reference; current page | Dental infection and potential spreading complications. |
+| [airnow_smoke: AirNow, When Smoke is in the Air](https://www.airnow.gov/wildfires/when-smoke-is-in-the-air/) | Primary US air-quality/public-health guidance; current page | Smoke exposure, indoor/outdoor air, simultaneous heat problem and affected pets; no measured family respiratory probabilities. |
+| [nih_disasters: MedlinePlus, Disaster Preparation and Recovery](https://medlineplus.gov/disasterpreparationandrecovery.html) | US NLM federal preparedness reference; current page | Ordinary medical problems, evacuation and emotional distress. |
+| [samhsa_disasters: SAMHSA, Disaster Distress Helpline](https://www.samhsa.gov/find-help/disaster-distress-helpline) | Primary US behavioral-health agency; current page | Disaster-related distress and counseling need; no individual incidence estimate. |
+| [medline_tetanus: MedlinePlus, Tetanus](https://medlineplus.gov/tetanus.html) | US NLM federal medical reference; current page | Contaminated wound/tetanus risk; routine vaccination/exposure history changes risk. |
+
+Contrary evidence retained: the Northridge medication survey reported relatively limited medication-access difficulties after that moderate event; it does not justify assuming all systems fail or extrapolating to 90 days. The historical WHO-author outbreak review says outbreaks depend on water, sanitation, crowding and local disease ecology; an earthquake does not automatically imply cholera, typhoid or other epidemics. Neither point removes wound infection or sepsis from the inventory.
+
+Access/quality failures are preserved: the guessed WHO earthquake factsheet returned HTTP 200 with navigation only, while the WHO earthquake topic page contained actual guidance. Two guessed EPA smoke pages returned 404; inspected AirNow guidance was used instead. The direct PMC wound page previously returned a browser challenge; the Europe PMC full-text XML was retrieved and inspected. Discovery search results and API abstracts are identified as such; article availability alone is not full-text verification. No numerical household probability, guaranteed safety, new prescription or hospital capability is invented.
+
+Audit files, all inside the durable local checkout:
+
+- `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/data/risk_register_20261117.json` — structured risks, stable IDs, assumed likelihoods and evidence links for the next mapping phase.
+- `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/data/risk_inventory_urls_20261117.json` — bounded input URLs, including failed/discovery leads.
+- `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/data/risk_inventory_urls_20261117_retrieved.json` — retrieved text, dates, response hashes and access outcomes.
+- `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/data/priority_audit_20261117.json` — earlier same-day infection/tetanus guidance and access audit.
+
+The existing source collector is reused. Article abstracts and full-text XML were retrieved through the Europe PMC public REST API; no credentials, private family data or external changes were involved. Required documents/data are saved in the local macOS checkout, outside Pluto scratch. Remote backup is not verified or claimed.
+
+### Next phase: options for each problem
+
+**Risk inventory complete as a first qualitative draft; ranking remains a researcher proposal.** Next, map each stable risk ID to prevention, recognition, treatment options, medicines, non-drug equipment, adult/child formulations, water/power/cold-chain/diagnostic/procedure dependencies and the outcome of a shortage. Compare minimum survival, moderate conservation and higher comfort where meaningful. Then derive P1/P2/P3 procurement priorities from likelihood plus harm, urgency, effectiveness, overlap and availability; prescription status remains a purchasing detail. No product selection or quantity recalculation is done in this phase, per the user's requested order.
+
+The original November 15 document follows unchanged for evidence/history. Its old priorities and next shopping steps are superseded by the process above.
+
+---
+
 As of: 2026-11-15. Research batch M0–M3 complete. **All new medicines and shopping quantities are proposals; no purchase is inferred.**
 
 ## Table of contents

@@ -16,6 +16,72 @@ Last updated: **2026-11-15**, Codex queue-visibility/database-lease Q&A (prior w
 
 ## Current status
 
+**Queued lesson 2 questions completed, November 16:**
+`http-close-connection-2026-11-16` and `final-position-logits-decoding-2026-11-16` are now saved and
+verified beside their passages in `ML_INFERENCE_GUIDE.md`. The additions explain CPython's handler
+flag/request-loop/socket-cleanup path and the final-position hidden state → output projection →
+softmax/decoding/generation path, with scoped primary sources and explicit toy-example boundaries.
+No listener, model run or benchmark was performed; no human completion or mastery is inferred.
+The next action remains the lesson 2 exercise. Historical pending snapshots below are retained.
+
+**Pending document questions, November 16 — latest queue snapshot:** both
+`http-close-connection-2026-11-16` and `final-position-logits-decoding-2026-11-16` are pending.
+The second question is: “I don't understand these parts: Transformer layers ... a toy
+final-position representation is `h = [1, 0.5, 0]`; Output projection ... `h @ W` gives toy logits
+`[2, 1, 0]`; Decoding policy ... probabilities approximately 66.52%, 24.47%, 9.00% ... Put more
+details there on these things. Give more theory and examples. Like what is a final position
+representaton (h)?” Target: the three corresponding rows in the existing request-path example
+in `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/learning/first-pass/ML_INFERENCE_GUIDE.md`.
+Keep the HTTP question queued too. One background updater owns both insertions and their verified
+completion records; later questions add to this queue. Earlier single-question snapshots are historical.
+
+**Latest workflow, November 16 — answer file/tutorial questions in the document:** Hooman has now
+explicitly requested this in the main thread. It supersedes both November 15's answer-first rule
+and the earlier side-conversation-only qualifier. Retain every question and its answer in a closed
+collapsible section beside the relevant passage; preserve all existing text/date lines; use quiet
+background updates and serialize writes. Accumulate pending questions rather than replacing them
+when more messages arrive. Other conversation requests can still receive chat answers.
+
+**Pending document question at this checkpoint — `http-close-connection-2026-11-16`:** “For this
+line in the example http server you gave: `self.close_connection = True`. How does this actually
+close the connection? does this mean that when the function ends/reutnrs, the connection should
+automatically close”. Target: the existing streaming-server example in
+`/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/learning/first-pass/ML_INFERENCE_GUIDE.md`.
+Add an insertion-only explanation of the standard-library handler flag, request-loop return and
+socket cleanup, with Python source support. Do not post the explanation in chat. Completion must
+be recorded only after checking the inserted answer; no other question is pending in this thread.
+
+**Side-conversation handoff, November 16 — job-search workflow and md-viewer:** Hooman supplied
+`https://github.com/hooman67/job-search` and `https://github.com/hooman67/md-viewer` for inspection
+and explicitly asked to persist the findings for the main session. The canonical repo/source,
+dependency, recording, data-flow and implementation summary is:
+`/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/research/job-search-tooling/SUMMARY.md`.
+Confirmed: Mac only; all call types; no existing recordings/transcripts; local transcription
+preferred; viewer may remain running, with manual startup acceptable. MacWhisper/local models,
+optional Google integration, Codex skill adaptation and login-started viewing are proposals.
+No clone, install, model download, account integration or job-search/viewer service launch was
+performed. Read the summary and recheck live state before implementation; do not restart this
+inspection, duplicate the curriculum, infer acceptance or supersede the main thread's active task.
+
+**Lesson 2 additions completed in the side conversation, November 16:** inserted five closed
+collapsible Q&As in
+`/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/learning/first-pass/ML_INFERENCE_GUIDE.md`:
+examples for all nine request-path steps, GPT-5.5 conceptual applicability with architecture limits,
+temperature/logits/softmax/ranges, standard-library HTTP streaming code, and chat-template/role-
+dictionary/history examples. Every original byte was preserved. Six Python snippets parsed;
+five temperature rows and exact template output checked; the HTTP example delivered four pieces
+over a real loopback connection, then its test listener was closed. The standalone example file
+was not created. No GPU/model run, human mastery or exercise completion is inferred.
+Hooman asked **in this side conversation** to accumulate questions and save all answers in the
+document without a chat reply to every question; do not silently turn that session-scoped request
+into a global replacement of the main thread's earlier answer-first preference.
+
+**Latest lesson 2 clarification saved, November 16 — shapes, work and variable lengths:** added
+the requested part 2 matrix-shape and dot-product walkthrough, explicit FLOP-count-versus-runtime
+distinction, and padded, packed and separate variable-length sequence examples. The examples are
+illustrative and source-scoped; no benchmark, human completion or mastery is inferred. Next action
+remains the lesson 2 exercise.
+
 **Latest request, November 15 — parallel document additions and the next lesson:** the section 12
 interview rehearsal sample is now saved beside the six-point presentation list, and section 10's
 five-question alternatives expansion was independently reviewed. A Batch clarification was inserted:

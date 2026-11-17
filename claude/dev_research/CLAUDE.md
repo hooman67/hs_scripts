@@ -145,6 +145,7 @@ only the relevant topic after that. There is one current curriculum and one posi
 | Original posting descriptions, not current vacancies | `/home/colligo/hs_scripts/claude/dev_research/research/job-market/postings.jsonl` |
 | Bookmark-derived sources and discovery rationale | `/home/colligo/hs_scripts/claude/dev_research/research/x-bookmarks/SUMMARY.md` |
 | Friend-plan comparison and retained audit links | `/home/colligo/hs_scripts/claude/dev_research/research/plan-comparison/SUMMARY.md` |
+| Current job-search/md-viewer source review, Mac preferences and implementation handoff | `/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/research/job-search-tooling/SUMMARY.md` |
 | Research method and evidence rules | `/home/colligo/hs_scripts/claude/dev_research/research-plan.md` |
 
 The small JSON audit files and validator beneath the comparison topic support its historical

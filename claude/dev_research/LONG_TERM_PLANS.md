@@ -12,6 +12,14 @@ superseded. User-confirmed goal: an accepted offer in approximately two months, 
 
 ## Current horizon
 
+**Tooling option reviewed November 16 — not yet implemented:** reuse the friend's job-search
+records and company-round preparation alongside the current curriculum, with Mac-local
+transcription and a local Markdown viewer. Hooman's platform/data preferences are confirmed;
+MacWhisper, Google integration, automatic startup and the template migration remain proposals.
+This is not a new curriculum stage or prerequisite for continuing study. The implementation
+handoff and source limits are in
+`/Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/dev_research/research/job-search-tooling/SUMMARY.md`.
+
 1. **First month: cover essential interview capabilities.** Begin with system design and
    ML/inference fundamentals, then introduce timed coding and keep it recurring. Add production
    design, operations, measured performance and evaluation/modeling breadth. Finish with unfamiliar

@@ -1,5 +1,16 @@
 # Durable Learnings
 
+## Medicine availability depends on formulation and resources — 2026-11-17
+
+- `[VERIFIED]` NLM says mixed amoxicillin/clavulanate liquid needs refrigeration and disposal after 10 days; cephalexin liquid needs refrigeration/disposal after 14 days; amoxicillin liquid permits room temperature with disposal after 14 days, refrigeration preferred. Exact dispensed labels control. Sources inspected 2026-11-17: https://medlineplus.gov/druginfo/meds/a685024.html, https://medlineplus.gov/druginfo/meds/a682733.html, https://medlineplus.gov/druginfo/meds/a685001.html. Scope: these liquids after preparation, not unopened powder shelf-life guarantees.
+- `[RESEARCHER PROPOSAL]` Systemic infection-treatment capability belongs in P1 for the doctors-available disaster model. Required source control, pediatric formulation and severe/neonatal parenteral resources are part of coverage; a topical first-aid ointment has a different optional role. Full response/source map: /Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/SUMMARY.md.
+
+## Medical risk method and evidence — 2026-11-17
+
+- `[USER-CONFIRMED METHOD]` — Medical preparedness proceeds from risks to response options to supply priorities; doctors are available and medicine availability matters. Prescription status is a procurement field, not a proxy for harm or need.
+- `[VERIFIED; HISTORICAL SCOPE]` — WHO earthquake guidance explicitly includes secondary wound infection, interrupted obstetric/neonatal/chronic care and damaged health access. A historical disaster-wound systematic review found high infection rates in injured disaster samples. These sources establish important hazards, not numerical 90-day San Jose household probabilities. Sources: https://www.who.int/health-topics/earthquakes and https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4356884/fullTextXML. Retrieved/inspected 2026-11-17; review issue 2015.
+- `[ASSUMED / EVIDENCE LIMIT]` — Household likelihood ordering uses broad relative bands plus exposure-dependent hazards. One hospital's earthquake visit percentages or global outbreak samples cannot become family risk percentages. Mild first events and severe downstream complications overlap and must not be summed. Canonical method/source audit: /Users/ana.rodrigues/Desktop/hooman/hs_scripts/claude/s_research/research/medicine/SUMMARY.md.
+
 ## Medicine findings — 2026-11-15
 
 - `[VERIFIED]` — AAP says a baby 3 months or younger with a rectal temperature at or above 100.4°F / 38°C needs immediate pediatric assessment. Scope: young-infant fever; owning fever reducers does not create a neonatal home-treatment plan. Source: https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-and-Your-Baby.aspx. Retrieved 2026-11-15.

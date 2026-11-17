@@ -1,5 +1,27 @@
 # Decisions
 
+## 2026-11-17 — Response mapping and availability-based priorities
+
+Status: `[USER-AUTHORIZED DOCUMENT ADDITION COMPLETE]`; clinical options and P1/P2/P3 are `[RESEARCHER PROPOSALS]`.
+
+Decision: Preserve the existing risk tables/text, add compact response tables with traceable IDs, and derive priorities from likely demand, shortage harm, urgency, treatment effectiveness and dependencies. Prescription status is not a demotion criterion. Systemic infection capability is P1; exact formulary/quantity is unresolved. Existing trauma inventory is not re-audited.
+
+Rationale/alternatives: Shared responses are grouped to reduce table clutter. Separate antibiotic indications and child/IV/cold-chain dependencies give more real coverage than a generic drug bundle. Doctor availability is user-confirmed; equipment/facilities are not inferred. No doses, purchases or new diagnosis are recorded.
+
+Next/revisit: Select exact formulations, stock counts and verified procurement options after deduplication. Revisit with actual clinical needs, source/formulation changes or confirmed equipment availability. Original text remains insertion-only and recoverable.
+
+## 2026-11-17 — Medical risks before treatment options and shopping
+
+Status: `[CONFIRMED BY USER — METHOD]`; likelihood bands and inventory are `[RESEARCHER PROPOSAL]`.
+
+Decision: First list medical problems over 90 days, sort by probability, then build options addressing each problem and derive supplies. Doctors are available per the user; prescription/unsupervised-use status must not lower a treatment capability's medical importance. Human risks first, dog secondary; existing trauma-supply review deferred.
+
+Rationale: The previous OTC-oriented rank obscured systemic infection treatment and mixed procurement constraints with clinical need. Alternative rejected: re-rank the original medicines without auditing what emergencies they address. A qualitative, exposure-aware inventory is used because this bounded evidence set has no matched household incidence denominator.
+
+Uncertainty: Likelihood bands are estimates; within-band ordering is not proven. Doctors' available equipment/facilities, actual exposure and future stock quantities remain unresolved. Prior November 15 priorities are historical proposals, superseded as the procurement basis.
+
+Reversibility/revisit: Reorder for the actual hazard, changes in patient needs, or defensible local/household incidence evidence. Next: map options per risk before retailer selection.
+
 Entries are newest first.
 
 ## 2026-11-15 — Prioritized medicine reserve; trauma supplies deferred
