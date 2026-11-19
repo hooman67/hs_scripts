@@ -4,6 +4,29 @@ Last updated: 2026-11-12
 
 Format: **Date — Decision — Rationale — Who decided**
 
+## 2026-11-18 — Ameritrade GLDM/SLVR purchases recorded; all three fills complete
+
+- **[CONFIRMED BY USER]** Both new purchases belong to **Ameritrade/Schwab**. This resolves the interim pending-account entry below.
+- **[EXECUTED BY USER; LIVE VERIFIED]** Bought **47 `GLDM` at US$74.0674**, **US$3,481.1678 gross**. Existing 48 shares at US$78.82 combine to **95 shares / US$7,264.5278 basis / US$76.46871368421053 weighted average**.
+- **[EXECUTED BY USER; LIVE VERIFIED]** Bought **64 `SLVR` at US$39.58**, **US$2,533.12 gross**. New position maps to existing Silver/Plat; no additional target or WPM reduction is inferred.
+- The completed Questrade RRSP `LULU.TO` full sale remains **1,000 at C$4.79 / C$4,790 gross / C$410 provisional price profit**, with zero shares remaining.
+- Fees not reported; preserve gross fill costs and distinguish them from fee-inclusive broker tax basis. Standing manual account-cash/SGOV convention remains; no cash arithmetic was applied. All 22 targets and protected user notes were verified unchanged; the daily-check source now reads 95 GLDM / 64 SLVR / no LULU. — Hooman + Codex.
+
+## 2026-11-18 — LULU exit and GLDM/SLVR fills supplied; purchase accounts pending
+
+- **[EXECUTED BY USER; LIVE SALE UPDATE VERIFIED]** Sold **1,000 `LULU.TO` at C$4.79** in the existing Questrade RRSP holding. Gross **C$4,790**, provisional **C$410** price profit before unreported fees and broker basis adjustments. Zero shares and closed status are verified in the live portfolio.
+- **[EXECUTED BY USER; RECORD UPDATE PENDING ACCOUNT]** Bought **47 `GLDM` at US$74.0674** for **US$3,481.1678**; expected post-add aggregate **95 shares / US$7,264.5278 basis / US$76.4687136842 average**. Existing source has 48 shares in Ameritrade; new-lot account requested.
+- **[EXECUTED BY USER; RECORD UPDATE PENDING ACCOUNT]** Bought **64 `SLVR` at US$39.58** for **US$2,533.12**; assign to existing Silver/Plat after confirming account. No standalone target or assumed reduction of WPM is created.
+- Fees not supplied. Per standing convention, no account-cash or SGOV arithmetic is applied. Preserve accepted gold reconciliation and all allocation targets. The two purchase writes await account clarification rather than inventing account ownership. — Hooman + Codex.
+
+## Gold reconciliation confirmed; daily-review blocker withdrawn — 2026-11-17
+
+- **[CONFIRMED BY USER]** Gold has already been reconciled and the portfolio is correct. The November 10 confirmation remains authoritative; there is no pending gold-holdings/basis reconciliation.
+- The November 17 fin-check incorrectly used a gold-futures sensitivity estimate and WPM revenue mix to label GLDM as WAIT pending reconciliation. That rationale is withdrawn. Use the accepted live portfolio and target grid for allocation decisions; distinguish quote/valuation freshness from ownership or basis reconciliation.
+- WPM gold/silver revenue mix may inform overlap monitoring, but it does not by itself change the accepted Gold-core target, move WPM between sleeves, or erase the live Gold-core gap. No targets or holdings were changed.
+- Latest live-dashboard reread shows Gold core about **14.9% versus 15%, approximately US$702 short**. The earlier closing snapshot independently showed 14.84% / US$996 short on its unmodified total. Different timestamps/quote sources must remain explicit; the futures-proxy US$4,806 shortfall is not the accepted allocation gap.
+- GLDM remains a MEDIUM raw buy signal; any portfolio add must be small and within the current live gap and non-reserve buying power. It is not blocked by an unfinished reconciliation. No trade or new fill is inferred.
+
 ## 2026-11-12 — CLX profitable-exit rule executed
 
 - **[EXECUTED BY USER]** Ameritrade sold all **23 `CLX` shares at $108.785** on November 12 at

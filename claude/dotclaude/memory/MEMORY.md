@@ -32,6 +32,7 @@
 - [reference_seedance_video_skill.md](reference_seedance_video_skill.md) — /generate-video-fal-seedance: Seedance 2.5 video via fal.ai; fal key in thd/creds.txt; the 5 hard API rules
 - [project_thd_video_rewriter.md](project_thd_video_rewriter.md) — THD article→video rewriter experiments; person-free PLATE technique (nano-banana paint-out) + R3 boundary (hands OK, any body/head rejected); assets + gallery locations
 - [feedback_fan_out_subagents.md](feedback_fan_out_subagents.md) — Parallelize with subagents, keep main session free; respect sequential dependencies; integrate shared files centrally
+- [feedback_agent_supervision.md](feedback_agent_supervision.md) — Check agent health and actual progress every minute during active work; resume interrupted agents and dispatch the next authorized batch when unfinished work would otherwise go idle.
 - [feedback_include_all_inputs_in_artifacts.md](feedback_include_all_inputs_in_artifacts.md) — Always show full prompt + every input next to each output in galleries/reports (Hooman reviews inputs→outputs)
 - [feedback_lighter_touch_prompts.md](feedback_lighter_touch_prompts.md) — Prompt tuning = smallest delta; heavy all-caps multi-clause additions made Seedance output WORSE. Keep good prompt verbatim + one short clause; A/B it.
 - [project_ffdy7304_laundry_sink.md](project_ffdy7304_laundry_sink.md) — FFDY-7304: Glacier Bay laundry-sink storyboard → ~:60 video from customer STILLS (i2v/cover_body, not sketches); consistent invented couple; face-free macros first; separate gallery (laundry_sink S3 prefix). gen_shot.py = stills→video.
@@ -42,3 +43,4 @@
 - [project_kdp_ffdy_8567_lifestyle_poc.md](project_kdp_ffdy_8567_lifestyle_poc.md) — KDP scraped-data lifestyle-image POC: dataset findings, GPT Image 2.5 Sunburst generation procedure, published galleries, 22-output status, provenance constraints, and blind-eval design.
 - [Pluto dev-box restart / new pod SSH](reference_pluto_devbox_restart_ssh.md) — alias stays the same; replace pod if the key is rejected
 - [Portfolio machine setup](reference_fin_portfolio_machine_setup.md) — verified Google Sheets key locations, secure standard copy, and fin-check Python dependencies on Linux.
+- [Gold reconciliation confirmation](feedback_fin_reconciled_gold.md) — Gold holdings/bases are confirmed; use accepted live allocation and do not retain the erroneous GLDM reconciliation blocker.

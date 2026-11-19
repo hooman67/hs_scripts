@@ -3,6 +3,31 @@
 **Last updated:** 2026-11-12
 **Status:** Portfolio implementation and targeted sleeve reviews in progress
 
+## November 18 LULU/GLDM/SLVR updates completed — 2026-11-18
+
+- **[CONFIRMED BY USER; LIVE PURCHASE UPDATES VERIFIED]** Both November 18 purchases were in **Ameritrade/Schwab**. The earlier pending-account entry below records the interim state and is resolved by this completion.
+- Ameritrade bought **47 `GLDM` at US$74.0674** for **US$3,481.1678**. Live aggregate: **95 shares / US$7,264.5278 basis / US$76.46871368421053 average**, Gold core.
+- Ameritrade bought **64 `SLVR` at US$39.58** for **US$2,533.12**. Live aggregate: **64 shares / US$2,533.12 basis / US$39.58 average**, existing Silver/Plat sleeve. No WPM sale or new target is inferred.
+- Questrade RRSP `LULU.TO` remains closed after all **1,000 shares sold at C$4.79**, **C$4,790 gross proceeds / C$410 provisional price profit** before unreported fees.
+- Post-write independent source validation: **69 positive holdings**, **22 targets totaling 100%**, holding aggregate formulas expanded through row **147**, all protected `FR_Portfolio!E1:K23` cells/formulas and manually maintained cash/SGOV cells unchanged. Purchase fees were not supplied; recorded costs use gross fills.
+- **Next exact step:** subsequent portfolio reviews must use 95 GLDM, 64 SLVR and no LULU position; Hooman maintains account cash/SGOV values manually. No purchase-account question remains pending.
+
+## November 18 fills recorded; purchase-account confirmation pending — 2026-11-18
+
+- **[EXECUTED BY USER; LIVE SALE UPDATE VERIFIED]** Questrade RRSP sold all **1,000 `LULU.TO` shares at C$4.79**. Gross proceeds **C$4,790**; provisional price gain **C$410** against the C$4.38 recorded average, before unreported fees. The live holding is zero and closed.
+- **[EXECUTED BY USER; LIVE PURCHASE UPDATES PENDING ACCOUNT]** Bought **47 `GLDM` at US$74.0674**, gross **US$3,481.1678**. Once the purchase account is confirmed, the expected aggregate is **95 shares / US$7,264.5278 basis / US$76.4687136842 average** before unreported fees. The pre-update source has 48 GLDM in Ameritrade.
+- **[EXECUTED BY USER; LIVE PURCHASE UPDATE PENDING ACCOUNT]** Bought **64 `SLVR` at US$39.58**, gross **US$2,533.12**. Sprott Silver Miners & Physical Silver ETF is a Nasdaq-listed USD ETF; record under existing Silver/Plat, with no new allocation target. It is not yet in the live Sheet because the purchase account is pending.
+- Purchase-account clarification is pending for both buys. Fees were not supplied; retain gross fill arithmetic without inventing commissions. Cash/SGOV cells remain manually maintained and unchanged. LULU write preserved all targets and protected `FR_Portfolio!E1:K23` cells/formulas.
+- **Next exact step:** confirm the GLDM/SLVR purchase accounts, run the prepared private purchase update against freshly reread live rows, verify 95 GLDM / 64 SLVR / zero LULU and expanded holdings formulas, and insert a completion note.
+
+## Gold reconciliation confirmed; daily-review blocker withdrawn — 2026-11-17
+
+- **[CONFIRMED BY USER]** Gold has already been reconciled and the portfolio is correct. The November 10 confirmation remains authoritative; there is no pending gold-holdings/basis reconciliation.
+- The November 17 fin-check incorrectly used a gold-futures sensitivity estimate and WPM revenue mix to label GLDM as WAIT pending reconciliation. That rationale is withdrawn. Use the accepted live portfolio and target grid for allocation decisions; distinguish quote/valuation freshness from ownership or basis reconciliation.
+- WPM gold/silver revenue mix may inform overlap monitoring, but it does not by itself change the accepted Gold-core target, move WPM between sleeves, or erase the live Gold-core gap. No targets or holdings were changed.
+- Latest live-dashboard reread shows Gold core about **14.9% versus 15%, approximately US$702 short**. The earlier closing snapshot independently showed 14.84% / US$996 short on its unmodified total. Different timestamps/quote sources must remain explicit; the futures-proxy US$4,806 shortfall is not the accepted allocation gap.
+- GLDM remains a MEDIUM raw buy signal; any portfolio add must be small and within the current live gap and non-reserve buying power. It is not blocked by an unfinished reconciliation. No trade or new fill is inferred.
+
 ## CLX profitable exit completed — 2026-11-12
 
 - Ameritrade sold all **23 `CLX` shares at $108.785** for **$2,502.055 gross proceeds**.
